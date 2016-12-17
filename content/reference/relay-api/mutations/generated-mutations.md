@@ -1,0 +1,62 @@
+---
+alias: vah0igucil
+path: /docs/reference/relay-api/generated-mutations
+layout: REFERENCE
+shorttitle: Generated Mutations
+description: Use mutations to modify data. Generated mutations in the GraphQL schema of your project are derived from models and relations that you defined.
+simple_relay_twin: ol0yuoz6go
+tags:
+  - relay-api
+  - mutations
+related:
+  further:
+    - oodoi6zeit
+    - uath8aifo6
+    - oojie3ooje
+  more:
+    - saigai7cha
+    - dah6aifoce
+---
+
+# Generated Mutations in the Relay API
+
+With a *mutation* you can modify the data of your project.
+Similar to queries, all mutations are automatically generated. Explore them by using the [playground](!alias-uh8shohxie#playground) inside your project.
+
+All mutations look like this:
+
+```graphql
+mutation {
+  <mutation>(input: {<list of arguments>}) {
+    <subselection of fields>
+  }
+}
+```
+
+Every mutation has to include the `clientMutationId` argument. If you are running the mutation in the playground, you can choose some arbitrary value like `clientMutationId: "abc"` for this argument. If you run a mutation with Relay, the `clientMutationId` is automatically filled by Relay.
+
+Note: The subselection of fields cannot be empty. If you have no specific data requirements, you can just select an arbitrary field.
+
+## Modifying nodes
+
+For every [model](!alias-ij2choozae) in your project, there are different mutations to
+
+* [Create nodes](!alias-oodoi6zeit)
+* [Updating nodes](!alias-uath8aifo6)
+* [Deleting nodes](!alias-oojie3ooje)
+
+## Modifying edges
+
+For every [relation](!alias-goh5uthoc1) in your project, there are mutations to connect and disconnect related nodes via an edge. The actual mutations depend on the multiplicity relations, so there are the following cases:
+
+* [modifying edges for one-to-one relations](!alias-da7pu3seew)
+* [modifying edges for one-to-many relations](!alias-ek8eizeish)
+* modifying edges for many-to-many relations
+
+## User Authentication
+
+Mutations related to [user authentication](!alias-yoh9thaip0) allow you to create new users or sign in existing users.
+
+## File Management
+
+Mutations related to [file management](!alias-aechiosh8u) allow you to upload, rename or delete files.

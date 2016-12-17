@@ -1,0 +1,55 @@
+---
+alias: eer4wiang0
+path: /docs/reference/platform/file-management
+layout: REFERENCE
+description: The file management system allows you to upload, modify and delete files with the GraphQL APIs. Files will be directly available in your backend.
+tags:
+  - platform
+  - file-management
+  - plain-http
+  - client-apis
+related:
+  further:
+    - eetai5meic
+  more:
+    - eefoovo2ah
+---
+
+# File Management
+
+As part of our file management system you are able to
+
+* upload files that are up to 50 MB
+* rename or delete existing files
+
+Each project contains a [file model](!alias-uhieg2shio#file-model) by default that provides the possibility to add and modify files.
+
+## Uploading a file with plain HTTP
+
+Use the file endpoint `https://api.graph.cool/file/v1/__PROJECT_ID__` to upload files by using the multipart form parameter `data` and providing the local file path as its value in a HTTP POST request.
+With`curl` you could execute:
+
+`curl -X POST 'https://api.graph.cool/file/v1/__PROJECT_ID__' -F "data=@example.png"`
+
+The response could look something like this:
+
+```JSON
+{
+  "secret": "__SECRET__",
+  "name": "example.png",
+  "size": <omitted>,
+  "url": "https://files.graph.cool/__PROJECT_ID__/__SECRET__",
+  "id": <omitted>,
+  "contentType": "image/png"
+}
+```
+
+After this request, the file is publicly available at its `url`. Each property in the response corresponds to a field of the [file model](!alias-uhieg2shio#file-model).
+
+## File Management with the Client APIs
+
+Files can be also uploaded and modified by using queries and mutations from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah).
+
+## File Access
+
+As with any other model, you can make use of our [permission system](!alias-iegoo0heez) for file nodes. These permissions apply to the actual file nodes, however, **the file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.
