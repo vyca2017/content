@@ -71,5 +71,3 @@ Savona](https://github.com/josephsavona), [Rene Brandel](http://brene/) and
 We hope this guide helps you to get started with Relay. We highly recommend
 using it for your next application. If you have questions about Learn Relay or
 need help to get started, let's chat on [Slack](http://slack.graph.cool/). 🙌
-
-![](../open-source-banner.png)
