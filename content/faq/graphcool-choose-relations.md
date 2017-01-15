@@ -1,6 +1,6 @@
 ---
 alias: chietu0ahn
-path: /docs/faq/graphcool-relation-multiplicities
+path: /docs/faq/graphcool-choose-relations
 layout: FAQ
 preview: faq-icon.png
 title: How to choose the correct relation?
