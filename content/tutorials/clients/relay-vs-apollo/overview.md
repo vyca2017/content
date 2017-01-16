@@ -22,7 +22,7 @@ related:
     - voht5ach9i
 ---
 
-# Relay vs. Apollo - Introduction
+# Relay vs. Apollo - Overview
 
 With JavaScript you have a few choices to connect to a GraphQL backend.
 Using http clients like `fetch` or `request` can get you quite far when all you need is sending queries and mutations.
@@ -39,7 +39,7 @@ It should be noted though that outside of React and React Native, Relay cannot b
 * What environment setup for the frontend application is needed to be able to use the GraphQL client?
 * What setup for the GraphQL server is needed?
 
-Read more about requirements for Relay and Apollo Client.
+Read more about [requirements for Relay and Apollo Client](!alias-iep9yi0ri6).
 
 ## Queries
 
@@ -47,7 +47,7 @@ Read more about requirements for Relay and Apollo Client.
 * What happens with the query response?
 * How do GraphQL fragments come into play?
 
-Read more about GraphQL queries in Apollo Client and Relay.
+Read more about [GraphQL queries in Apollo Client and Relay](!alias-iph7aevae7).
 
 ## Mutations
 
@@ -55,7 +55,7 @@ Read more about GraphQL queries in Apollo Client and Relay.
 * What happens with the query response?
 * What about optimistic responses?
 
-Read more about GraphQL mutations in Apollo Client and Relay.
+Read more about [GraphQL mutations in Apollo Client and Relay](!alias-koht6ethe3).
 
 ## More topics
 
