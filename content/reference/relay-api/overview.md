@@ -3,7 +3,7 @@ alias: aizoong9ah
 path: /docs/reference/relay-api/overview
 layout: REFERENCE
 description: Relay API is supposed to be consumed by Facebook's GraphQL client Relay but any other GraphQL client such as Apollo, Lokka can be used as well.
-simple_relay_twin: aizoong9ah
+simple_relay_twin: heshoov3ai
 tags:
   - relay-api
 related:

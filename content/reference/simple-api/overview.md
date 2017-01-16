@@ -3,7 +3,7 @@ alias: heshoov3ai
 path: /docs/reference/simple-api/overview
 layout: REFERENCE
 description: Simple API is supposed to be consumed by GraphQL clients such as Meteor's Apollo, Kadira's Lokka or simpler clients like curl or plain http.
-simple_relay_twin: aecou7haj9
+simple_relay_twin: aizoong9ah
 tags:
   - simple-api
 related:
