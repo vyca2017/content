@@ -30,32 +30,38 @@ However, you have to handle things like escaping for query arguments yourself, w
 
 The two most popular GraphQL clients right now are [Relay](https://facebook.github.io/relay/) and [Apollo Client](http://dev.apollodata.com/). Both offer several advanced features to benefit the most from using GraphQL, such as client-side caching and optimistic updates.
 
-Instead of giving a distinct answer on which GraphQL client is the better one, we will compare the differences between Relay and Apollo Client from several perspectives. Because both Relay and Apollo Client run best in combination with React, most subsections will compare Relay with the `react-apollo` integration of Apollo Client.
-
-It should be noted though that outside of React and React Native, Relay cannot be used at all while Apollo Client offers several integrations for other environments, such as Angular 2 or iOS.
+Instead of giving a distinct answer on which GraphQL client is the better one, we will compare the differences between Relay and Apollo Client from several perspectives.
 
 ## Requirements
 
-* What environment setup for the frontend application is needed to be able to use the GraphQL client?
-* What setup for the GraphQL server is needed?
+Both Relay and Apollo Client run best in combination with React. However, Apollo Client offers several integrations for other development environments. Furthermore, Relay is opinionated about the GraphQL server.
 
-Read more about [requirements for Relay and Apollo Client](!alias-iep9yi0ri6).
+Read about [requirements for Relay and Apollo Client](!alias-iep9yi0ri6):
+
+* What environment setup is needed?
+* What requirements does the GraphQL server have?
 
 ## Queries
+
+Apollo Client and Relay allow you to send GraphQL queries by means of React higher-order components (HOC).
+Queries are used to fetch data from a GraphQL server. Both GraphQL clients integrate nicely with the React lifecycle and offer GraphQL fragment usage.
+
+Read about [GraphQL queries in Apollo Client and Relay](!alias-iph7aevae7):
 
 * How can queries be sent to the GraphQL backend?
 * What happens with the query response?
 * How do GraphQL fragments come into play?
 
-Read more about [GraphQL queries in Apollo Client and Relay](!alias-iph7aevae7).
-
 ## Mutations
+
+Apollo Client and Relay handle GraphQL mutations very differently. Relay requires you to describe the mutation based on a versatile but difficult-to-grasp API. This helps Relay to keep the cache consistent when a node is created or modified. Apollo Client on the other hand makes calling mutations very easy but requires extra work on the client for a consistent cache.
+
+Read about [GraphQL mutations in Apollo Client and Relay](!alias-koht6ethe3):
 
 * How can mutations be sent to the GraphQL server?
 * What happens with the query response?
 * What about optimistic responses?
 
-Read more about [GraphQL mutations in Apollo Client and Relay](!alias-koht6ethe3).
 
 ## More topics
 
