@@ -41,6 +41,8 @@ You can upload files up to 50MB each.
 
 ### 2.1 Uploading a File with plain HTTP
 
+#### 2.1.1 curl
+
 Let's upload our first file now! Pick a funny picture or similar and navigate to the folder containing it, for example
 
 ```sh
@@ -68,9 +70,40 @@ The response could look something like this:
 }
 ```
 
-> Regardless of your http library, make sure to **set the header `Content-Type` to `multipart/form-data`** and **use the file key `data`**.
-
 Go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` model](!alias-uhieg2shio#file-model).
+
+
+#### 2.1.2 AJAX
+
+With AJAX, you could have this file upload form:
+
+```js
+<form>
+    <input type="file" id="file" name="file">
+    <input type="submit">
+</form>
+```
+
+Then you can upload the file like this:
+
+```js
+$( 'form' ).submit(function ( e ) {
+  // prepare the file data
+  var data = new FormData()
+  data.append( 'file', $( '#file' )[0].files[0] )
+
+  // do a post request
+  var xhr = new XMLHttpRequest()
+  xhr.open('POST', 'https://api.graph.cool/file/v1/__PROJECT_ID__', true)
+  xhr.onreadystatechange = function ( response ) {}
+  xhr.send( data )
+  e.preventDefault()
+})
+```
+
+Remember to replace the file endpoint. You can copy your file endpoint from inside your project.
+
+> Regardless of your http library, make sure to **set the header `Content-Type` to `multipart/form-data`** and **use the file key `data`**.
 
 ### 2.2 Uploading a File with the Client APIs
 
