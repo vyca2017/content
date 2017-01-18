@@ -199,7 +199,10 @@ const AddPokemonComponentWithMutation = graphql(createPokemonMutation, {
           updateQueries: {
             allPokemonsQuery: (prev, { mutationResult }) => {
               const newPokemon = mutationResult.data.createPokemon
-              return [...prev, newPokemon]
+              return {
+                ...prev,
+                allPokemons: [...prev.allPokemons, newPokemon]
+              }
             },
           },
         })
