@@ -21,13 +21,25 @@ related:
 A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
 All queries are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.
 
-After you send a query to your [endpoint](!alias-uh8shohxie#client-api-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query:
+After you send a query to your [endpoint](!alias-uh8shohxie#client-api-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query.
+
+This is an example query:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
+disabled: false
+---
 query {
   viewer {
-    <query> {
-      <subselection of fields>
+    allPosts {
+      edges {
+        node {
+          id
+          title
+          published
+        }
+      }
     }
   }
 }
@@ -35,7 +47,31 @@ query {
 {
   "data": {
     "viewer": {
-      <response data>
+      "allPosts": {
+        "edges": [
+          {
+            "node": {
+              "id": "cixnen24p33lo0143bexvr52n",
+              "title": "My biggest Adventure",
+              "published": false
+            }
+          },
+          {
+            "node": {
+              "id": "cixnenqen38mb0134o0jp1svy",
+              "title": "My latest Hobbies",
+              "published": true
+            }
+          },
+          {
+            "node": {
+              "id": "cixneo7zp3cda0134h7t4klep",
+              "title": "My great Vacation",
+              "published": true
+            }
+          }
+        ]
+      }
     }
   }
 }

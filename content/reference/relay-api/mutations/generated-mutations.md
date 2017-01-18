@@ -23,12 +23,35 @@ related:
 With a *mutation* you can modify the data of your project.
 Similar to queries, all mutations are automatically generated. Explore them by using the [playground](!alias-uh8shohxie#playground) inside your project.
 
-All mutations look like this:
+This is an example mutation:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
+disabled: true
+---
 mutation {
-  <mutation>(input: {<list of arguments>}) {
-    <subselection of fields>
+  createPost(input: {
+    title: "My great Vacation",
+    slug: "my-great-vacation",
+    published: true,
+    text: "Read about my great vacation."
+    clientMutationId: "abc"
+  }) {
+    post {
+      id
+    }
+  }
+}
+---
+{
+  "data": {
+    "createPost": {
+      "post": {
+        "id": "cixneo7zp3cda0134h7t4klep",
+        "slug": "my-great-vacation"
+      }
+    }
   }
 }
 ```
