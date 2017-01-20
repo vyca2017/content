@@ -4,7 +4,7 @@ path: /docs/tutorials/designing-powerful-apis-with-graphql-query-parameters
 layout: TUTORIAL
 shorttitle: Designing Powerful GraphQL APIs
 description: GraphQL queries provide an efficient way to fetch data. Our GraphQL API leverages different GraphQL query arguments to provide even more control.
-preview: coffee-filters.jpg
+preview: query-parameter.png
 tags:
   - platform
   - queries
