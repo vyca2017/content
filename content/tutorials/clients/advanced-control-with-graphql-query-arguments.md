@@ -23,7 +23,7 @@ related:
     - cahzai2eur
 ---
 
-# Designing powerful APIs with GraphQL query parameters
+# Designing Powerful APIs with GraphQL Query Parameters
 
 ![](./coffee-filters.jpg)
 
