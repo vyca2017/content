@@ -1,6 +1,6 @@
 ---
 alias: aing7uech3
-path: /docs/tutorial/designing-powerful-apis-with-graphql-query-parameters
+path: /docs/tutorials/designing-powerful-apis-with-graphql-query-parameters
 layout: TUTORIAL
 shorttitle: Designing Powerful GraphQL APIs
 description: GraphQL queries provide an efficient way to fetch data. Our GraphQL API leverages different GraphQL query arguments to provide even more control.
