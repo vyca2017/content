@@ -1,7 +1,8 @@
 ---
 alias: aing7uech3
-path: /tutorial/advanced-control-with-graphql-query-arguments
+path: /docs/tutorial/designing-powerful-apis-with-graphql-query-parameters
 layout: TUTORIAL
+shorttitle: Designing Powerful GraphQL APIs
 description: GraphQL queries provide an efficient way to fetch data. Our GraphQL API leverages different GraphQL query arguments to provide even more control.
 preview: coffee-filters.jpg
 tags:
@@ -27,7 +28,9 @@ related:
 
 ![](./coffee-filters.jpg)
 
-GraphQL queries provide an efficient way to fetch data, even across multiple models. This results in a great abstraction layer on top of databases, but sometimes more is needed to satify specific data requirements of modern applications. Our GraphQL API **puts the client in control of the data** and provides **the best possible developer experience (DX)** by exposing different query arguments. Similar to our [nested mutations syntax](!alias-vietahx7ih) which sees adoption by more and more companies, we at Graphcool are happy to share our view point for good API design with the GraphQL community.
+GraphQL queries provide an efficient way to fetch data, even across multiple models. This results in a great abstraction layer on top of databases, but sometimes more is needed to satify specific data requirements of modern applications.
+
+Our GraphQL API **puts the client in control of the data** and provides **the best possible developer experience (DX)** by exposing different query arguments. Similar to our [nested mutations syntax](!alias-vietahx7ih) which sees adoption by more and more companies, we at Graphcool are happy to share our best practices designing powerful GraphQL APIs with the GraphQL community.
 
 This tutorial explores some of the capabilities of our GraphQL APIs including:
 
