@@ -11,12 +11,12 @@ tags:
   - queries
   - mutations
 related:
+  further:
+    - eefoovo2ah
   more:
     - yoh9thaip0
     - thaiph8ung
     - uo6uv0ecoh
-  further:
-    - eefoovo2ah
 ---
 
 # Working with files in the Relay API

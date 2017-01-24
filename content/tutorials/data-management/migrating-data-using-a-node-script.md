@@ -26,7 +26,7 @@ related:
 
 # Migrating Data using a Node Script
 
-Sometimes you want to do a specific bulk migration on your existing data. You can use a migration script that combines [multiple mutations](https://www.graph.cool/docs/faq/graphql-multiple-requests-cahzai2eur) so only one HTTP request is sent to the GraphQL backend.
+Sometimes you want to do a specific bulk migration on your existing data. You can use a migration script that combines [multiple mutations](!alias-cahzai2eur) so only one HTTP request is sent to the GraphQL backend.
 
 In this guide we will see how a migration of potentially thousands of nodes can look like. First, we'll create a new project and populate it with test data of images. We will then run a simple script that does a bulk rename on all the images. Here, we use [Lokka](https://github.com/kadirahq/lokka) and Node, however you can choose whatever language and GraphQL client you prefer to run a migration script. You can find the code [here](https://github.com/graphcool-examples/migration-scripts/tree/master/images).
 
@@ -143,7 +143,7 @@ const migrateImages = async(images) => {
 
 **If the image names might contain the string `sm` elsewhere than in the `sm.jpg` part, this script will break!** In that case, please adjust accordingly.
 
-Note that we're using aliases to include the same [mutation multiple times in one request](https://www.graph.cool/docs/faq/graphql-multiple-requests-cahzai2eur).
+Note that we're using aliases to include the same [mutation multiple times in one request](!alias-cahzai2eur).
 
 That's it. If you have to update thousands of images, batching the mutations in say groups of a hundred might be better than to batch all of them in one request. Note that [mutations run sequentially](http://graphql.org/learn/queries/#multiple-fields-in-mutations) on the GraphQL server.
 
