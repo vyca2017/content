@@ -27,7 +27,7 @@ Apollo makes it easy to compose your application from individual components that
 
 In this article we will dive into transport-level query batching, an advanced Apollo feature that enables you to significantly improve performance of complex applications.
 
-## The Exapmle App
+## The Example App
 
 We will use an extended version of the [Learn Apollo](https://learnapollo.com) Pokedex app to explore the performance gains query batching can provide. The original Pokedex app lists all Pokemon for a single trainer. We make the app multi-tenant by rendering the Pokedex component for each trainer. This is how the app looks like with 6 trainers
 
