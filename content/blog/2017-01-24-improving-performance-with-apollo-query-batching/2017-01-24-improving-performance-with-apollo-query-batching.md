@@ -2,8 +2,8 @@
 alias: ligh7fmn38
 path: /blog/improving-performance-with-apollo-query-batching
 layout: BLOG
-shorttitle: Query Batching
-description: Apollo Query Batching enables better performance for your application. 
+shorttitle: Query Batching with Apollo Client
+description: Apollo Query Batching enables better performance for your application by grouping multiple GraphQL queries together on the transport-level.
 preview: batched-pokedex-no-batching.png
 publication_date: '2017-01-24'
 tags:
@@ -11,6 +11,14 @@ tags:
   - client-apis
   - apollo
 related:
+  further:
+    - ahlohd8ohn
+    - uh8shohxie
+    - nia9nushae
+  more:
+    - ul6ue9gait
+    - he6jaicha8
+    - pheiph4ooj
 ---
 
 # Improving performance with Apollo Query Batching
@@ -21,21 +29,21 @@ In this article we will dive into transport-level query batching, an advanced Ap
 
 ## The Exapmle App
 
-We will use an extended version of the Learn Apollo Pokedex app to explore the performance gains query batching can provide. The original Pokedex app lists all Pokemon for a single trainer. We make the app multi-tenant by rendering the Pokedex component for each trainer. This is how the app looks like with 6 trainers
+We will use an extended version of the [Learn Apollo](https://learnapollo.com) Pokedex app to explore the performance gains query batching can provide. The original Pokedex app lists all Pokemon for a single trainer. We make the app multi-tenant by rendering the Pokedex component for each trainer. This is how the app looks like with 6 trainers
 
-![](./batched-pokedex-1.png) 
+![](./batched-pokedex-1.png)
 
-To really stress test Apollo, we'll load each trainer twice :-)
+To really stress test Apollo, we'll load each trainer twice!
 
 ## Measuring Performance using Chrome DevTools
 
-Chrome DevTools has a very detailed network traffic inspection feature. If you are serious about app performance I would highly encourage you to read through the [documentation](https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3). When you load the extended pokedex and filter for requests to the GraphQL backend it looks like this
+Chrome DevTools has a very detailed network traffic inspection feature. If you are serious about app performance take a look at the [documentation](https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3). When you load the extended pokedex and filter for requests to the GraphQL backend it looks like this
 
 ![](./batched-pokedex-no-batching.png)
 
-The first thing you notice is that Apollo is generating 12 requests. This makes sense as we are rendering 12 Pokedex components. Each request takes around 100 ms and the first 6 requests completes within 126 ms. But now something interestign happens. The following 6 requests are stalled for up to 126 ms while the first requests complete. All browsers has a limit on [concurrent connections](http://www.browserscope.org/?category=network). For Chrome the limit is currently 6 concurrent requests to the same hostname, so 7 requests will take roughly double the amount of time to complete as 6 requests.
+The first thing you notice is that Apollo is generating 12 requests. This makes sense as we are rendering 12 Pokedex components. Each request takes around 100 ms and the first 6 requests completes within 126 ms. But now something interesting happens. The following 6 requests are stalled for up to 126 ms while the first requests complete. All browsers have a limit on [concurrent connections](http://www.browserscope.org/?category=network). For Chrome the limit is currently 6 concurrent requests to the same hostname, so 7 requests will take roughly double the amount of time to complete as 6 requests.
 
-This is where Apollos Query Batching comes into play. If Query Batching is enabled Apollo will not issue requests immediately. Instead it will wait for up to 10 ms to see if other requests come in from other components. After the 10 ms Apollo will issue 1 request containing all the queries. This eliminates the issue with stalled connections and delivers significantly better performance
+This is where Apollos Query Batching comes into play. If Query Batching is enabled, Apollo will not issue requests immediately. Instead it will wait for up to 10 ms to see if more requests come in from other components. After the 10 ms, Apollo will issue 1 request containing all the queries. This eliminates the issue with stalled connections and delivers significantly better performance
 
 ![](./batched-pokedex-with-batching.png)
 
@@ -43,7 +51,7 @@ The performance of this combined query is almost as good as a single query from 
 
 ## Enabling Apollo Query Batching
 
-Enabling query batching is super simple. The original Pokedex app looked like this:
+Enabling Query Batching is super simple. The original Pokedex app looked like this:
 
 ```
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
@@ -54,7 +62,7 @@ const client = new ApolloClient({
 })
 ```
 
-To enable query batching, simply use the BatchingNetworkInterface:
+To enable Query Batching, simply use the `BatchingNetworkInterface`:
 
 ```
 import ApolloClient, { createBatchingNetworkInterface } from 'apollo-client'
@@ -68,13 +76,13 @@ const client = new ApolloClient({
 })
 ```
 
-Query batching is supported out of the box by the [Apollo Server](https://github.com/apollostack/graphql-server) and [Graphcool](https://www.graph.cool/).
+Query Batching is supported out of the box by the [Apollo Server](https://github.com/apollostack/graphql-server) and [Graphcool](https://www.graph.cool/).
 
 ## Under the hood
 
 If you are familiar with the GraphQL specification you might be wondering how Apollo is able to batch 12 queries into one. Let's have a look at what actually goes over the wire.
 
-A single request without batching:
+A single request without Batching:
 
 ```json
 {
@@ -186,12 +194,13 @@ batched response:
 
 ## Query deduplication
 
-Enabling Query batching already provided a significant boost to performance. Can we do even better? Remember how the BatchingNetworkInterface queued up all requests for a predetermined amount of time before sending them all in one batch. Query deduplication takes this a step further and inspects all queries in the batch to find and remove duplicates. Let's see how this affects our performance:
+Enabling Query Batching already provided a significant boost to performance. Can we do even better? Remember how the `BatchingNetworkInterface` queued up all requests for a predetermined amount of time before sending them all in one batch. Query deduplication takes this a step further and inspects all queries in the batch to find and remove duplicates. Let's see how this affects our performance:
 
 ![](./batched-pokedex-batching-and-deduplication.png)
 
 As you can see the request size is slightly smaller and the request is now just as fast as a single unbatched request.
 
+Please be aware that both Query Batching and query de-duplication are recent features in Apollo, so make sure you are using the latest version.
 
-
-Please be aware that both query batching and query de-duplication are recent features in Apollo, so make sure you are using the latest version :-)
+Do you have questions about Query Batching using Apollo Client?
+Tell us in our [Slack channel](http://slack.graph.cool/) to start a discussion. If you want to benefit from Query Batching, setup your own GraphQL backend in less than 5 minutes on [Graphcool](https://graph.cool/).
