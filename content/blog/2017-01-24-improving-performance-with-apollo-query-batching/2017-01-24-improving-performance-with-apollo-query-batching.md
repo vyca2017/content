@@ -194,11 +194,27 @@ batched response:
 
 ## Query deduplication
 
-Enabling Query Batching already provided a significant boost to performance. Can we do even better? Remember how the `BatchingNetworkInterface` queued up all requests for a predetermined amount of time before sending them all in one batch. Query deduplication takes this a step further and inspects all queries in the batch to find and remove duplicates. Let's see how this affects our performance:
+Enabling Query Batching already provided a significant boost to performance. Can we do even better? Remember how the `BatchingNetworkInterface` queues up all requests for a predetermined amount of time before sending them all in one batch. Query deduplication takes this a step further by inspecting all queries in the batch to find and remove duplicates. Let's see how this affects our performance:
 
 ![](./batched-pokedex-batching-and-deduplication.png)
 
 As you can see the request size is slightly smaller and the request is now just as fast as a single unbatched request.
+
+To enable Query Deduplication simply pass an extra argument to `ApolloCLient`:
+
+```js
+import ApolloClient, { createBatchingNetworkInterface } from 'apollo-client'
+
+const client = new ApolloClient({
+    networkInterface: createBatchingNetworkInterface({
+    uri: 'https://api.graph.cool/simple/v1/ciybssqs700el0132puboqa9b',
+    batchInterval: 10
+  }),
+  dataIdFromObject: o => o.id,
+  queryDeduplication: true
+})
+```
+
 
 Please be aware that both Query Batching and query de-duplication are recent features in Apollo, so make sure you are using the latest version.
 
