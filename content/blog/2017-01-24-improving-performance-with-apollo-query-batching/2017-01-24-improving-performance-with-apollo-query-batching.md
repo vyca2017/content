@@ -21,7 +21,7 @@ related:
     - pheiph4ooj
 ---
 
-# Improving performance with Apollo Query Batching
+# Improving Performance with Apollo Query Batching
 
 Apollo makes it easy to compose your application from individual components that manage their own data dependencies. This pattern enables you to grow your app and add new features without risk of breaking existing functionality. It does however come with a performance cost as each component will fire off uncoordinated GraphQL queries as they are being mounted by React.
 
