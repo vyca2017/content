@@ -53,7 +53,7 @@ The performance of this combined query is almost as good as a single query from 
 
 Enabling Query Batching is super simple. The original Pokedex app looked like this:
 
-```
+```js
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 
 const client = new ApolloClient({
@@ -64,7 +64,7 @@ const client = new ApolloClient({
 
 To enable Query Batching, simply use the `BatchingNetworkInterface`:
 
-```
+```js
 import ApolloClient, { createBatchingNetworkInterface } from 'apollo-client'
 
 const client = new ApolloClient({
@@ -124,7 +124,7 @@ A single request without Batching:
 
 normal response:
 
-```
+```json
 {
   "data": {
     "Trainer": {
@@ -158,7 +158,7 @@ normal response:
 
 batched response:
 
-```
+```json
 [{
   "data": {
     "Trainer": {
@@ -188,7 +188,7 @@ batched response:
     }
   }
 },
-  [ 11 additional responses ]
+  // [ 11 additional responses ]
 ]
 ```
 
