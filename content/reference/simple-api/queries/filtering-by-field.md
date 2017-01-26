@@ -112,6 +112,129 @@ query {
 
 Note: you have to supply a *list* as the `<field>_in` argument: `title_in: ["My biggest Adventure", "My latest Hobbies"]`.
 
+### Relation filters
+
+* For to-one relations, you can define conditions on the related node by nesting the according argument in `filter`
+
+> Query all posts of authors with the `USER` access role
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
+disabled: false
+---
+query {
+  allPosts(
+    filter: {
+      author: {
+        accessRole: USER
+      }
+    }
+  ) {
+    title
+  }
+}
+---
+{
+  "data": {
+    "allPosts": [
+      {
+        "title": "My biggest Adventure"
+      },
+      {
+        "title": "My latest Hobbies"
+      },
+      {
+        "title": "My great Vacation"
+      }
+    ]
+  }
+}
+```
+
+
+* For to-many relations, three additional arguments are avaiable: `every`, `some` and `none`, to define that a condition should match every, some or none related nodes.
+
+> Query all users that have at least one published post
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
+disabled: false
+---
+query {
+  allUsers(filter: {
+    posts_some: {
+      published: true,
+    }
+  }) {
+    id
+    posts {
+      published
+    }
+  }
+}
+---
+{
+  "data": {
+    "allUsers": [
+      {
+        "id": "cixnekqnu2ify0134ekw4pox8",
+        "posts": [
+          {
+            "published": false
+          },
+          {
+            "published": true
+          },
+          {
+            "published": true
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+* Relation filters are also available in the nested arguments for to-one or to-many relations.
+
+> Query all users that did not like a post of an author in the `ADMIN` access role
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
+disabled: false
+---
+query {
+  allUsers(filter: {
+    likedPosts_none: {
+      author: {
+        accessRole: ADMIN
+      }
+    }
+  }) {
+    name
+  }
+}
+---
+{
+  "data": {
+    "allUsers": [
+      {
+        "name": "John Doe"
+      },
+      {
+        "name": "Sally Housecoat"
+      },
+      {
+        "name": "Admin"
+      }
+    ]
+  }
+}
+```
+
 ## Combining multiple filters
 
 You can use the filter combinators `OR` and `AND` to create an arbitrary logical combination of filter conditions.
