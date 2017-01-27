@@ -4,7 +4,7 @@ path: /blog/improving-performance-with-apollo-query-batching
 layout: BLOG
 shorttitle: Query Batching with Apollo Client
 description: Apollo Query Batching enables better performance for your application by grouping multiple GraphQL queries together on the transport-level.
-preview: batched-pokedex-no-batching.png
+preview: preview.png
 publication_date: '2017-01-24'
 tags:
   - queries
