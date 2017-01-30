@@ -14,6 +14,7 @@ related:
   more:
     - saigai7cha
     - dah6aifoce
+    - soiyaquah7
 ---
 
 # Mutation callbacks

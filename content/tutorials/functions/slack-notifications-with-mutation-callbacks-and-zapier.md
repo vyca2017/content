@@ -17,6 +17,7 @@ related:
     - ahlohd8ohn
   more:
     - saigai7cha
+    - soiyaquah7
 ---
 
 # Slack notifications with Mutation Callbacks and Zapier
