@@ -87,6 +87,8 @@ These are the permissions that we use in your application:
 
 Additionally, we'll need to generate a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) to give our microservices access to read and modify data in our GraphQL backend.
 
+> Note: Make sure to remove all permissions for `CardDetails` to ensure that no unauthorized actions can be done with the credit card credentials.
+
 ## Setup now
 
 > Note: You can use any serverless solution like AWS Lambda or Auth0 Webtask, or even host your own microservices. In this tutorial though, we're continuing with Zeit's micro and now.
@@ -306,8 +308,8 @@ disabled: true
 ---
 mutation {
   createCardDetails(
-    cardToken: "card-token",
-    userId: "user-id"
+    cardToken: "tok_19cIRbD7TaYA8JWHv5WIEOiL",
+    userId: "cixyw53tg6i8a0173kx2nrwto"
   ) {
     id
   }
@@ -338,7 +340,7 @@ mutation {
     amount: 50000,
     description: "A new laptop",
     isPaid: false
-    userId: "user-id",
+    userId: "cixyw53tg6i8a0173kx2nrwto",
   ) {
     isPaid
   }
