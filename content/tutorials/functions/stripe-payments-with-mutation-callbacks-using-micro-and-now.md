@@ -85,9 +85,9 @@ These are the permissions that we use in your application:
 }
 ```
 
-Additionally, we'll need to generate a PAT to give our microservices access to read and modify data in our GraphQL backend.
+Additionally, we'll need to generate a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) to give our microservices access to read and modify data in our GraphQL backend.
 
-## Deploy the microservices and mutation callbacks
+## Setup now
 
 > Note: You can use any serverless solution like AWS Lambda or Auth0 Webtask, or even host your own microservices. In this tutorial though, we're continuing with Zeit's micro and now.
 
@@ -97,16 +97,15 @@ We'll setup two microservices and each will be used for a different mutation cal
 npm install -g now
 ```
 
+
 Now add the needed secrets:
 
 * `now secret add stripe-secret sk_test_XXXXXXXXXXXXXXXXXXXXXXXX`
 * `now secret add gc-pat XXX`
 * `now secret add endpoint https://api.graph.cool/simple/v1/__PROJECT_ID__`
 
-Install the dependencies and deploy the microservices with now:
-
-* `cd create && npm install && now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint createCustomer.js`
 * `cd ../charge && npm install && now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint chargeCustomer.js`
+
 
 The last two commands return a url that we need in the next step.
 
@@ -128,7 +127,50 @@ Now we can add a new mutation callback with the trigger `CardDetails is created`
 }
 ```
 
-Enter the url of the `createCustomer.js` microservice from above.
+Now, when new card details are added to a specific user, we'll run this code by means of the mutation callback:
+
+```js
+stripe.customers.create({
+    email: user.email,
+    description: user.name,
+    source: cardDetails.cardToken
+  }, (err, customer) => {
+    if (err) {
+      console.log(err)
+      send(res, 400, { error: `Stripe customer with card details ${cardDetailsId} could not be created for user ${userId}` })
+    } else {
+      // then update user with obtained Stripe customer id
+      const updateUser = `mutation {
+        updateUser(id: "${userId}", stripeId: "${customer.id}") {
+          id
+        }
+      }`
+      request.post({
+        url: endpoint,
+        headers: {
+          'Authorization' : graphcoolToken,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({query: updateUser}),
+      }).on('error', (e) => {
+        send(res, 400, { error: `User ${userId} could not be updated` })
+      }).on('response', (response) => {
+        send(res, 200, { message: `User ${userId} was successfully registered at Stripe` })
+      })
+    }
+  }
+)
+```
+
+* First, we're calling `stripe.customers.create` to create a new Stripe customer using Stripe's JavaScript SDK.
+* If the Stripe customer was created successfully, we store the Stripe customer id in the user node in our GraphQL backend using the `updateUser` mutation.
+* We're calling the `updateUser` mutation using `request.post`. Note that we need to supply the permanent authentication token in the `Authorization` header to gain the needed permission access.
+
+Deploy the microservices with now:
+
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint createCustomer.js`
+
+Insert the obtained url in the mutation callback target url.
 
 ### When purchase is created charge Stripe customer
 
@@ -148,7 +190,58 @@ We'll add another mutation callback that handles the actual charging when a new 
 }
 ```
 
-Enter the url of the `chargeCustomer.js` microservice from above.
+When a new purchase node is created, we'll run the following code. First, we check if the purchase has already been paid to avoid charging twice:
+
+```js
+if (purchase.isPaid) {
+  send(res, 400, { error: `Customer ${customerId} could not be charged, because purchase ${purchaseId} was already paid` })
+}
+```
+
+If the purchase has not been paid yet, we'll continue the charging process:
+
+```js
+stripe.charges.create({
+  amount: purchase.amount,
+  currency: 'usd',
+  description: purchase.description,
+  customer: customerId,
+}, (err, charge) => {
+  if (err) {
+    console.log(err)
+    send(res, 400, { error: `Customer ${customerId} could not be charged` })
+  } else {
+    const mutation = `mutation {
+      updatePurchase(id: "${purchaseId}", isPaid: true) {
+        id
+      }
+    }`
+
+    request.post({
+      url: endpoint,
+      headers: {
+        'Authorization' : graphcoolToken,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({query: mutation}),
+    }).on('error', (e) => {
+      send(res, 400, { error: `Customer ${customerId} was charged, but purchase ${purchaseId} was not marked as paid` })
+    }).on('response', (response) => {
+      send(res, 200, { message: `Customer ${customerId} was charged and purchase ${purchaseId} was marked as paid` })
+    })
+  }
+})
+```
+
+* First, we're calling `stripe.charges.create` to create a new Stripe charge using Stripe's JavaScript SDK.
+* If the Stripe charge was created successfully, we're updating the according purchase as already paid.
+* We're calling the `updatePurchase` mutation using `request.post`. Note that we need to supply the permanent authentication token in the `Authorization` header again.
+
+Deploy the microservices with now:
+
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint chargeCustomer.js`
+
+Insert the obtained url in the mutation callback target url.
 
 ## Test the Stripe Payment Workflow
 
@@ -157,6 +250,10 @@ Enter the url of the `chargeCustomer.js` microservice from above.
 We'll create a first user that we'll use to make test purchases:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixysf7tr0id50173u64kn6zi
+disabled: true
+---
 mutation {
   createUser(
     name: "Nilan",
@@ -168,6 +265,14 @@ mutation {
     }
   ) {
     id
+  }
+}
+---
+{
+  "data": {
+    "createUser": {
+      "id": "cixyw53tg6i8a0173kx2nrwto"
+    }
   }
 }
 ```
@@ -195,12 +300,24 @@ Alternatively, you can generate a valid token for a test credit card and your ac
 Using the token we can now create new card details for our test user:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixysf7tr0id50173u64kn6zi
+disabled: true
+---
 mutation {
   createCardDetails(
     cardToken: "card-token",
     userId: "user-id"
   ) {
     id
+  }
+}
+---
+{
+  "data": {
+    "createCardDetails": {
+      "id": "ciyjwspy33sod0127v904gjtu"
+    }
   }
 }
 ```
@@ -212,6 +329,10 @@ Now our first microservice should kick in and create a new Stripe customer accor
 Now whenever the test user makes a purchase, the second microservice makes sure that the according Stripe customer we'll be charged. To confirm this, create a new test purchase in the Graphcool playground:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixysf7tr0id50173u64kn6zi
+disabled: true
+---
 mutation {
   createPurchase(
     amount: 50000,
@@ -220,6 +341,14 @@ mutation {
     userId: "user-id",
   ) {
     isPaid
+  }
+}
+---
+{
+  "data": {
+    "createPurchase": {
+      "isPaid": false
+    }
   }
 }
 ```
