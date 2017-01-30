@@ -87,7 +87,7 @@ These are the permissions that we use in your application:
 
 Additionally, we'll need to generate a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) to give our microservices access to read and modify data in our GraphQL backend.
 
-> Note: Make sure to remove all permissions for `CardDetails` to ensure that no unauthorized actions can be done with the credit card credentials.
+> Note: Make sure to remove all permissions for `CardDetails` and `User.stripeId` to ensure that no unauthorized actions can be done with the credit card credentials.
 
 ## Setup now
 
@@ -105,11 +105,6 @@ Now add the needed secrets:
 * `now secret add stripe-secret sk_test_XXXXXXXXXXXXXXXXXXXXXXXX`
 * `now secret add gc-pat XXX`
 * `now secret add endpoint https://api.graph.cool/simple/v1/__PROJECT_ID__`
-
-* `cd ../charge && npm install && now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint chargeCustomer.js`
-
-
-The last two commands return a url that we need in the next step.
 
 ### When new card details are created, create according Stripe customer
 
@@ -170,7 +165,7 @@ stripe.customers.create({
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint createCustomer.js`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint create/createCustomer.js`
 
 Insert the obtained url in the mutation callback target url.
 
@@ -241,7 +236,7 @@ stripe.charges.create({
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint chargeCustomer.js`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint charge/chargeCustomer.js`
 
 Insert the obtained url in the mutation callback target url.
 
