@@ -43,7 +43,15 @@ Of course you can also enter an url pointing to a server that you are running yo
 
 ## Payload
 
-Every mutation callback has a payload, that is sent to the handler when the mutation callback is triggered. You can define the payload with a GraphQL query on the node that is either created, updated or deleted.
+Every mutation callback has a payload, that is sent to the handler when the mutation callback is triggered. You can define the payload with a GraphQL query on the node that is either created, updated or deleted. These are the available fields depending on the type of mutation:
+
+* **create**:
+  * *createdNode* - makes the fields of the created node available through subselection
+* **update**:
+  * *updatedNode* - makes the fields of the updated node available through subselection
+  * *changedFields* - a list of strings with all the field names that were included as arguments of the update mutation
+* **delete**:
+  * *deletedNode* - makes the fields of the deleted node available through subselection
 
 > Imagine you want to send a newsletter whenever you update one of your posts. Then you could include the post's slug and title like this:
 
@@ -54,6 +62,7 @@ Every mutation callback has a payload, that is sent to the handler when the muta
     slug
     title
   }
+  changedFields # this is a list of field names that were included as parameters of the update mutation
 }
 ```
 
