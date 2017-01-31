@@ -21,9 +21,16 @@ related:
 
 # Stripe Payment Workflow with Mutation Callbacks using micro and now
 
-In this guide, we'll explore implementing a custom Stripe payment workflow with Graphcool mutation callbacks. While you can use any serverless solution like AWS Lambda or Auth0 webtask, we'll use Zeit's [micro](https://github.com/zeit/micro) and [now](https://zeit.co/now) in this tutorial.
+In this guide, we'll explore implementing a custom Stripe payment workflow with Graphcool mutation callbacks. While you can use any serverless solution like AWS Lambda or Auth0 webtask, we'll use zeit's [micro](https://github.com/zeit/micro) and [now](https://zeit.co/now) in this tutorial.
 
 You can find the code for this tutorial [here](https://github.com/graphcool-examples/micro-stripe-example).
+
+Together we will go through these steps:
+
+* register at Stripe and setup a Graphcool project for an example e-commerce application
+* implement a process that creates a new Stripe customer whenever a Graphcool user adds new credit card details
+* implement a process that charges the according Stripe customer whenever a Graphcool user makes a new purchase
+* test the two processes by creating example credit card details and purchases
 
 ## Register at Stripe
 
@@ -63,12 +70,14 @@ type Purchase {
 
 Here is a checklist of necessary steps to end up with the correct schema:
 
-* Add fields `name`, `stripeId` to `User`
+* Add string fields `name`, `stripeId` to `User` - `stripeId` is not required!
 * Create `CardDetails` model with string field `cardToken`
 * Create `Purchase` model with the fields string `description`, int `amount`, boolean `isPaid`
 * Create one-to-one relation `UserCardDetails`, `user` - `cardDetails`
 * Create one-to-many relation `UserPurchases`, `user` - `purchases`
 * Enable email/password provider
+
+Additionally, make sure that `isPaid` for purchases has the default value `false`.
 
 ## Permission setup
 
@@ -77,7 +86,7 @@ These are the permissions that we use in your application:
 * everyone can create a User node - meaning that everyone can sign up
 * authenticated users can add card details to their own user node
 
-> Note: You can use permission queries to express the last permission like this:
+> Note: Use a permission query on the createCardDetails mutation like this:
 
 ```graphql
 {
@@ -85,15 +94,27 @@ These are the permissions that we use in your application:
 }
 ```
 
+* authenticated users can add purchases to their own user node
+
+> Note: Use a permission query on the createPurchases mutation and make sure to unselect the `isPaid` field. This is the query:
+
+```graphql
+{
+  allUsers(filter:{AND:[{id:$userId}, {id:$new_userId}]}){id}
+}
+```
+
+The default value `false` for `isPaid` and the missing permission to set `isPaid` when creating a new purchase guarantees that new purchases are automatically unpaid - ensuring that our payment workflow kicks in.
+
 Additionally, we'll need to generate a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) to give our microservices access to read and modify data in our GraphQL backend.
 
-> Note: Make sure to remove all permissions for `CardDetails` and `User.stripeId` to ensure that no unauthorized actions can be done with the credit card credentials.
+> Note: Make sure to remove all other permissions, especially all permissions for `CardDetails` and the `stripeId` field on `User` to ensure that no unauthorized actions can be done with the credit card credentials.
 
 ## Setup now
 
 > Note: You can use any serverless solution like AWS Lambda or Auth0 Webtask, or even host your own microservices. In this tutorial though, we're continuing with Zeit's micro and now.
 
-We'll setup two microservices and each will be used for a different mutation callback. First, let's and now:
+We'll setup two microservices and each will be used for a different mutation callback. First, let's install now:
 
 ```sh
 npm install -g now
@@ -165,7 +186,7 @@ stripe.customers.create({
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint create/createCustomer.js`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint create/`
 
 Insert the obtained url in the mutation callback target url.
 
@@ -231,12 +252,12 @@ stripe.charges.create({
 ```
 
 * First, we're calling `stripe.charges.create` to create a new Stripe charge using Stripe's JavaScript SDK.
-* If the Stripe charge was created successfully, we're updating the according purchase as already paid.
+* If the Stripe charge was created successfully, we're marking the according purchase as paid.
 * We're calling the `updatePurchase` mutation using `request.post`. Note that we need to supply the permanent authentication token in the `Authorization` header again.
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint charge/chargeCustomer.js`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint charge/`
 
 Insert the obtained url in the mutation callback target url.
 
@@ -285,14 +306,14 @@ Stripe.card.createToken({
   exp_year: 2018,
   cvc: '123'
 }, function(status, response) {
-  // response.id is the card token. now we cann call the mutation
+  // response.id is the card token. now we can call the mutation
   // createCardDetails(cardToken: "response.id", userId: "userId")
-  // to new card details for the signed in user
+  // to add new card details for the signed in user
   console.log(response.id)
 })
 ```
 
-Alternatively, you can generate a valid token for a test credit card and your account in the [Stripe documentation](https://stripe.com/docs#try-now).
+Alternatively, you can generate a valid token for a test credit card to your Stripe account in the [Stripe documentation](https://stripe.com/docs#try-now).
 
 Using the token we can now create new card details for our test user:
 
@@ -334,7 +355,6 @@ mutation {
   createPurchase(
     amount: 50000,
     description: "A new laptop",
-    isPaid: false
     userId: "cixyw53tg6i8a0173kx2nrwto",
   ) {
     isPaid
@@ -350,10 +370,10 @@ mutation {
 }
 ```
 
-The mutation callback charges the according Stripe customer and sets `isPaid` to `true` to signify that the amount has been charged.
+The mutation callback charges the according Stripe customer and after a few seconds, `isPaid` is set to `true` to signify that the amount has been charged. Confirm that in both your Stripe account (a new charge should appear) and in your Graphcool data (`isPaid` should be set to true).
 
 > Note: Stripe uses integers to express the amount of money charged. In this case, a total of 1000 equals 10 USD.
 
 ## Next steps
 
-The mutation callback system as demonstrated is flexible enough to not only handle one-off purchases, but also Stripe Subscriptions for recurring payments, Stripe Connect for marketplace applications and more! You can find out more the available options using Stripe in the [Stripe documentation](https://stripe.com/docs).
+The mutation callback system as demonstrated is flexible enough to not only handle one-off purchases, but also Stripe Subscriptions for recurring payments, Stripe Connect for marketplace applications and more! You can find out more about the available options in the [Stripe documentation](https://stripe.com/docs).
