@@ -8,6 +8,14 @@ dependencies:
 
 deployment:
   master:
-    branch: [master, dev]
+    branch: master
     commands:
-      - ./scripts/deploy.sh
+      - ./scripts/deploy.sh:
+        environment:
+          GRAPHCOOL_PROJECT_ID: 'ciwkuhq2s0dbf0131rcb3isiq'
+  dev:
+    branch: dev
+    commands:
+      - ./scripts/deploy.sh:
+        environment:
+          GRAPHCOOL_PROJECT_ID: 'ciyn862op3bgx01208bxt03x6'
