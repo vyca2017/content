@@ -8,6 +8,6 @@ dependencies:
 
 deployment:
   master:
-    branch: /^(?!(dev|master)$).*/
+    branch: [master, dev]
     commands:
       - ./scripts/deploy.sh
