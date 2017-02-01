@@ -1,6 +1,6 @@
 #! /bin/bash
 
-npm i -g markdown-to-graphcool
+set -e
 
 markdown-to-graphcool -c content --reset 
 
