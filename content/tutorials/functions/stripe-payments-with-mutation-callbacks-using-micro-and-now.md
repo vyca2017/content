@@ -2,7 +2,7 @@
 alias: soiyaquah7
 path: /docs/tutorials/stripe-payments-with-mutation-callbacks-using-micro-and-now
 layout: TUTORIAL
-preview: stripe-graphql.png
+preview: stripe.png
 title: Stripe Payment Workflow with Mutation Callbacks
 description: Use mutation callbacks to implement a custom Stripe payment workflow to verify credit card details and charge customers.
 tags:
