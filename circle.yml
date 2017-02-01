@@ -10,4 +10,4 @@ deployment:
   master:
     branch: /^(?!(dev|master)$).*/
     commands:
-      - ./scripts/deploy.sh:
+      - ./scripts/deploy.sh
