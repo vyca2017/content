@@ -6,6 +6,10 @@ dependencies:
   override:
     - npm i -g markdown-to-graphcool
 
+test:
+  override:
+    - echo "No tests"
+
 deployment:
   master:
     branch: master
