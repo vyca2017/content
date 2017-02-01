@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 6.8.1
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - ./scripts/deploy.sh
