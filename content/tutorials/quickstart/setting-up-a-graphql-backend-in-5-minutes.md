@@ -103,6 +103,6 @@ This guide doesn't cover how to implement the frontend but the provided source c
 Good job! You've now learned how to setup a powerful GraphQL backend for your next project and how to manage its data and connect it to your frontend application. And keep in mind - what you've seen so far are just the basics of what's possible with the Graphcool platform.
 And because Graphcool manages the backend and database for you, you don't have to worry about data migrations when changing your data model. Any required transformations will be automatically applied.
 
-Please feel free to check out [other guides](/docs/guides) or the [reference documentation](/docs/reference) to learn about concepts like authentication, permissions or file handling.
+Please feel free to check out [other guides](/docs/tutorials) or the [reference documentation](/docs/reference) to learn about concepts like authentication, permissions or file handling.
 
 Go ahead and learn how to [add relations between models](!alias-daisheeb9x) to further enrich your data model.
