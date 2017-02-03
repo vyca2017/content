@@ -15,7 +15,7 @@ This page contains a lot of legalese pertaining to policies and terms. It's all 
 
 ### 1. Your Agreement with Graphcool
 
-1.1 Your use of the Graphcool service is governed by this agreement (the "Terms"). "Graphcool" means Graphcool LLC, located at 1601 Willow Road, Menlo Park, CA, 94025, United States, and its subsidiaries or affiliates involved in providing the Graphcool Service. The "Graphcool Services" means the services Graphcool makes available through this website, including this website, the Graphcool cloud computing platform, the Graphcool API, the Graphcool Add-ons, and any other software or services offered by Graphcool in connection to any of those.
+1.1 Your use of the Graphcool service is governed by this agreement (the "Terms"). "Graphcool" means Graphcool, Inc and its subsidiaries or affiliates involved in providing the Graphcool Service. The "Graphcool Services" means the services Graphcool makes available through this website, including this website, the Graphcool cloud computing platform, the Graphcool API, the Graphcool Add-ons, and any other software or services offered by Graphcool in connection to any of those.
 
 1.2 In order to use the Graphcool Services, you must first agree to the Terms. You can agree to the Terms by actually using the Graphcool Services. You understand and agree that Graphcool will treat your use of the Graphcool Services as acceptance of the Terms from that point onwards.
 
@@ -37,13 +37,13 @@ This page contains a lot of legalese pertaining to policies and terms. It's all 
 
 3.1 You agree to comply with the Graphcool Acceptable Use Policy available at acceptable use policy (the "Acceptable Use Policy") which is incorporated herein by this reference and which may be updated from time to time.
 
-3.2 The Graphcool Services shall be subject to the privacy policy available at www.Graphcool.com/about/privacy. You agree to the use of your data in accordance with Graphcool's privacy policies.
+3.2 The Graphcool Services shall be subject to the [privacy policy](#privacy-policy). You agree to the use of your data in accordance with Graphcool's privacy policies.
 
 3.3 You agree that you will protect the privacy and legal rights of the End Users of your application. You must obtain any consents required by applicable data protection laws and provide legally adequate privacy notice, access, and protection for End Users. If End Users provide you with user names, passwords, or other login information or personal information, you must make the End Users aware that the information will be available to your application and to Graphcool.
 
 ### 4. Fees for Use of the Graphcool Services
 
-4.1 Subject to the Terms, the Graphcool Services are provided to you without charge up to certain limits. Usage over this limit requires your purchase of additional resources or services. The pricing for additional resources and services can be found at http://Graphcool.com/plans (or such URL as Graphcool may provide).
+4.1 Subject to the Terms, the Graphcool Services are provided to you without charge up to certain limits. Usage over this limit requires your purchase of additional resources or services. The pricing for additional resources and services can be found at https://www.graph.cool/pricing (or such URL as Graphcool may provide).
 
 4.2 For all purchased resources and services, we will charge your credit card on a monthly basis or at the interval indicated in Graphcool fees and payment policies, if different. Late payments may bear interest at the rate of 1.5% per month (or the highest rate permitted by law, if less). Charges are exclusive of taxes. You are responsible for paying all taxes and government charges, and all reasonable expenses and attorneys fees Graphcool incurs collecting late amounts. To the fullest extent permitted by law, you waive all claims relating to charges unless claimed within 60 days after the charge (this does not affect your credit card issuer rights). Charges are solely based on Graphcool's measurements of your use of the Graphcool Services, unless otherwise agreed to in writing. To the fullest extent permitted by law, refunds (if any) are at the discretion of Graphcool and only in the form of credit for the Graphcool Services. Nothing in these Terms obligates Graphcool to extend credit to any party. You acknowledge and agree that any credit card and related billing and payment information that you provide to Graphcool may be shared by Graphcool with companies who work on Graphcool's behalf, such as payment processors and/or credit agencies, solely for the purposes of checking credit, effecting payment to Graphcool and servicing your account. Graphcool may also provide information in response to valid legal process, such as subpoenas, search warrants and court orders, or to establish or exercise its legal rights or defend against legal claims. Graphcool shall not be liable for any use or disclosure of such information by such third parties. Graphcool reserves the right to discontinue the provision of the Graphcool Services to you for any late payments.
 
@@ -119,7 +119,7 @@ This page contains a lot of legalese pertaining to policies and terms. It's all 
 
 ### 13. Copyright Policy
 
-13.1 You agree to set up a process to respond to notices of alleged infringement that comply with the United States' Digital Millennium Copyright Act ("DMCA notices"). It is Graphcool's policy to respond to DMCA notices or other applicable copyright laws and to terminate the accounts of repeat infringers. We reserve the right to take down content in your Application or, if necessary, the Application itself upon receipt of a valid DMCA notice. For more information, please go to http://www.Graphcool.com/about/policies.
+13.1 You agree to set up a process to respond to notices of alleged infringement that comply with the United States' Digital Millennium Copyright Act ("DMCA notices"). It is Graphcool's policy to respond to DMCA notices or other applicable copyright laws and to terminate the accounts of repeat infringers. We reserve the right to take down content in your Application or, if necessary, the Application itself upon receipt of a valid DMCA notice.
 
 ### 14. Other Content
 
@@ -268,7 +268,7 @@ Graphcool staff does not access or interact with customer data or applications a
 
 ### 1. Web Site Covered
 
-This Privacy Statement covers the information practices of http://Graphcool.com.
+This Privacy Statement covers the information practices of https://www.graph.cool.
 
 ### 2. Information Collected
 
@@ -338,11 +338,11 @@ As part of our participation in the Safe Harbor program, we agree to resolve cer
 
 ### 8. Communications Preferences
 
-Graphcool offers Customers and Visitors who provide contact information a means to choose how the Company uses the information provided. You may manage your receipt of marketing and non-transactional communications by clicking on the “unsubscribe” link located on the bottom of the Company’s marketing emails. Additionally, you may send a request specifying your communications preferences to community@Graphcool.com. Customers cannot opt out of receiving transactional emails related to their account with Graphcool or the Services.
+Graphcool offers Customers and Visitors who provide contact information a means to choose how the Company uses the information provided. You may manage your receipt of marketing and non-transactional communications by clicking on the “unsubscribe” link located on the bottom of the Company’s marketing emails. Additionally, you may send a request specifying your communications preferences to community@graph.cool. Customers cannot opt out of receiving transactional emails related to their account with Graphcool or the Services.
 
 ### 9. Correcting and Updating Your Information
 
-Customers may update or change their registration information by logging in to their accounts at http://Graphcool.com. Requests to access, change, or delete your information will be handled within 30 days.
+Customers may update or change their registration information by logging in to their accounts at https://www.graph.cool. Requests to access, change, or delete your information will be handled within 30 days.
 
 ### 10. Security
 
@@ -354,7 +354,7 @@ Graphcool reserves the right to change this Privacy Statement. Graphcool will pr
 
 ### 12. Contacting Us
 
-If you have questions or complaints regarding our Privacy Statement or practices, please contact us by mail. If you are located in the U.S. or Canada, our mailing address is Facebook Inc., 1601 Willow Road, Menlo Park, CA 94025. If you are located outside the U.S. or Canada, our mailing address is Facebook Ireland Ltd., Hanover Reach, 5-7 Hanover Quay, Dublin 2 Ireland. You may also contact us at community@Graphcool.com.
+If you have questions or complaints regarding our Privacy Statement or practices, please contact us by mail. If you are located in the U.S. or Canada, our mailing address is Facebook Inc., 1601 Willow Road, Menlo Park, CA 94025. If you are located outside the U.S. or Canada, our mailing address is Facebook Ireland Ltd., Hanover Reach, 5-7 Hanover Quay, Dublin 2 Ireland. You may also contact us at community@graph.cool.
 
 > Last Updated: 1/31/2017
 
