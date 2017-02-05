@@ -34,7 +34,7 @@ Importing existing data to one of your Graphcool projects manually can be quite 
 
 Importing nested JSON data can be handled by creating models and relations. If your data has a simpler structure, check out the [guide for importing simple data](!alias-ga2ahnee2a).
 
-All code and data in this example can be found in the [repository on GitHub](https://github.com/graphcool-examples/node-import-movies-example/tree/master/advanced).
+All code and data in this example can be found in the [repository on GitHub](https://github.com/graphcool-examples/node-import-movies-example/tree/master/advanced-javascript).
 
 ## 1. Preparing the data
 
