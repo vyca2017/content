@@ -5,7 +5,6 @@ layout: REFERENCE
 shorttitle: Filtering
 description: Use complex filter conditions to receive only the data you need. Filters are expressed by using GraphQL query arguments.
 simple_relay_twin: aephaimu5n
-beta: true
 tags:
   - simple-api
   - queries
