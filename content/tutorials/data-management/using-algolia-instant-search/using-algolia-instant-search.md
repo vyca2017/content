@@ -17,7 +17,7 @@ related:
     - pheiph4ooj
 ---
 
-# Algolia auto-syncing for GraphQL backends
+# Algolia Auto-Sync for GraphQL backends
 
 Algolia Instant Search allows you to create an intuitive and fast search experience for your website. Using the Algolia integration, you can get started with using Algolia in minutes. In this tutorial we'll integrate a GraphQL backend with Algolia to automatically synchronize changes to your data to Algolia search indices.
 
