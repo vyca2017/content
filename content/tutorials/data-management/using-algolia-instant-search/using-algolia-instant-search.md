@@ -108,10 +108,20 @@ Now we want to use Algolia to build a search experience for our marketplace webs
 
 ## Creating Algolia Search Indices
 
-Let's see how to create a new Algolia search index. On the integration page, you first have to enter your Algolia credentials:
+Let's see how to create a new Algolia search index. On the integration page, you first have to enter your Algolia credentials.
+
+### Create a new Algolia Restricted Key
+
+The key needs the ACL **Add records** and **Delete records** as shown in this screenshot:
+
+![](./algolia-graphcool-key.png)
+
+### Enter credentials
+
+Enter the credentials:
 
 * **Application ID**: you can copy the application id from your Algolia account
-* **API Key**: Please create a new API Key and do not use the Admin Key. The new API Key needs the ACL *Add records* and *Delete records*.
+* **API Key**: copy the restricted key we created above
 
 ![](./algolia-credentials.png)
 
