@@ -47,9 +47,7 @@ In queries or mutations, Int fields have to be specified without any enclosing c
 
 A Float is a number that can have decimals. Use this to store values such as the price of an item in a store or the result of complex calculations.
 
-Note: We store Float values as Double inside our databases.
-
-Note: Float value can have 65 digits in total, of which at most 35 can be in front of the decimal point, and 30 behind the decimal point.
+Note: We store Float values as [DECIMAL(65, 30)](https://dev.mysql.com/doc/refman/5.7/en/fixed-point-types.html) inside our databases. Float value can have 65 digits in total, of which at most 35 can be in front of the decimal point, and 30 behind the decimal point.
 
 In queries or mutations, Float fields have to be specified without any enclosing characters and an optional decimal point: `float: 42`, `float: 4.2`.
 
