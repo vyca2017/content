@@ -57,7 +57,7 @@ We believe that the best GraphQL backend should be available to everybody, so bu
 
 Our intention behind the new pricing structure is to be transparent and fair to as many kinds of apps as possible. Graphcool projects are billed based on database storage and number of requests per month. You should be able to estimate your cost even before signing up and different apps have different requirements.
 
-So to iterate - with Graphcool you can start building for free and host a real app with thousands of users for just $9. This means that you don't have to be scared from scaling up and can stay focused on improving your product instead.
+So to reiterate - with Graphcool you can start building for free and host a real app with thousands of users for just $9. This means that you don't have to be scared from scaling up and can stay focused on improving your product instead.
 
 If you are interested in an on-premise solution or more dedicated support as you are starting to introduce GraphQL in your organisation we are happy to set up a call to discuss our Enterprise offering.
 
@@ -65,6 +65,6 @@ If you are interested in an on-premise solution or more dedicated support as you
 
 We have some exciting new features in the pipeline and would love to get your feedback. By participating in our beta program you will be able to shape the future of Graphcool and ensure new features cover all your needs from the beginning.
 
-Currently the beta program contains two major features. Subscriptions with full filter support enable your apps to be updated with data changes in realtime. Permission Queries make it easy to add even complex permission rules to your projects. While we already received great feedback, we're still searching beta testers. Just drop us a message in [Slack](http://slack.graph.cool) or talk to us right from the Console.
+Currently the beta program contains two major features. Subscriptions with full filter support enable your apps to be updated with data changes in realtime. Permission Queries make it easy to add even complex permission rules to your projects. While we already received great feedback, we're still searching for beta testers. Just drop us a message in [Slack](http://slack.graph.cool) or talk to us right from the Console.
 
 We are also working on support for new datacenter regions in US and Asia. Stay tuned for more information.
