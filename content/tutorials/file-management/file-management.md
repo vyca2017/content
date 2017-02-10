@@ -90,12 +90,14 @@ Then you can upload the file like this:
 $( 'form' ).submit(function ( e ) {
   // prepare the file data
   var data = new FormData()
-  data.append( 'file', $( '#file' )[0].files[0] )
+  data.append( 'data', $( '#file' )[0].files[0] )
 
   // do a post request
   var xhr = new XMLHttpRequest()
   xhr.open('POST', 'https://api.graph.cool/file/v1/__PROJECT_ID__', true)
-  xhr.onreadystatechange = function ( response ) {}
+  xhr.onreadystatechange = function ( response ) {
+    // here you can obtain the new id of the uploaded file
+  }
   xhr.send( data )
   e.preventDefault()
 })
