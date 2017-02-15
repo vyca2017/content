@@ -27,7 +27,7 @@ In order to make the platform as seamless and integrated as possible, we introdu
 
 Every project has a system model called `User`. As the `User` model is the foundation for our [built-in authentication system](!alias-wejileech9) you cannot delete it. But of course you can still extend the `User` model to suit your needs and it behaves like every other model.
 
-Apart from the predefined system fields, the `User` model can have additional system fields depending on the enabled [auth proviers](!alias-wejileech9#auth-providers).
+Apart from the predefined system fields, the `User` model can have additional system fields depending on the enabled [auth providers](!alias-wejileech9#auth-providers).
 
 You can add additional [fields](!alias-teizeit5se) as with any other model.
 
