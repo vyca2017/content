@@ -15,13 +15,16 @@ related:
     - naed3eecie
   more:
     - aroozee9zu
+    - aing7uech3
 ---
 
 # Algolia Integration
 
+The [Algolia](https://algolia.com) integration allows you to automatically synchronize your data with Algolia search indices. While the Graphcool APIs offer very flexible query arguments for [filtering](!alias-xookaexai0) or [ordering](vequoog7hu), Algolia is specialized in full-text searches and comes with prepared libraries to build great search experiences.
+
 ## Collect the needed Credentials
 
-In your [Algolia](https://algolia.com) settings, copy the Algolia App Id and create a new API key with **Add Records** and **Delete Records** enabled:
+In your Algolia settings, copy the Algolia App Id and create a new API key with **Add Records** and **Delete Records** enabled:
 
 ![](./algolia-settings.png)
 
