@@ -236,7 +236,7 @@ With another GraphQL backend, your ids might only be unique per model. In this c
 ```js
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__'}),
-  dataIdFromObject: o => o.__typename + o.id
+  dataIdFromObject: o => o.__typename + ' ' + o.id
 })
 ```
 
