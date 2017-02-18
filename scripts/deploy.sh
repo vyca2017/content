@@ -10,10 +10,10 @@ fi
 
 
 BRANCH="${CIRCLE_BRANCH:-dev}"
-
-GRAPHCOOL_PAT="${GRAPHCOOL_PAT:?GRAPHCOOL_PAT env variable not set}"
-GRAPHCOOL_PROJECT_ID="${GRAPHCOOL_PROJECT_ID:?GRAPHCOOL_PROJECT_ID env variable not set}"
 CIRCLE_TOKEN="${CIRCLE_TOKEN:?CIRCLE_TOKEN env variable not set}"
+
+export GRAPHCOOL_PAT="${GRAPHCOOL_PAT:?GRAPHCOOL_PAT env variable not set}"
+export GRAPHCOOL_PROJECT_ID="${GRAPHCOOL_PROJECT_ID:?GRAPHCOOL_PROJECT_ID env variable not set}"
 
 markdown-to-graphcool -c content
 
