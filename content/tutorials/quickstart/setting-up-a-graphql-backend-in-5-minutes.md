@@ -20,7 +20,7 @@ related:
 
 # Setting up a GraphQL backend in 5 minutes
 
-<iframe height="315" src="https://www.youtube.com/embed/wSkZFfuAToM" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/SooujCyMHe4" frameborder="0" allowfullscreen></iframe>
 
 In this guide, you will learn how to setup the GraphQL backend for an Instagram clone in less than 5 minutes - without writing any server code. [Click here for a demo.](http://instacat.surge.sh) 📷
 
