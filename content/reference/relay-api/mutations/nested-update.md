@@ -54,6 +54,7 @@ Let's explore the available nested update mutations for the `one-to-one` relatio
 #### Creating a new Author node and connect it to existing ContactDetails
 
 ```graphql
+---
 endpoint: https://api.graph.cool/relay/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -66,9 +67,37 @@ Note the nested `contactDetailsId` argument that we pass the id of an existing `
 Similarly, we can update an author and simultaneously connect it to existing contact details:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/relay/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
+mutation createAuthorAndConnectContactDetails {
+  createAuthor(
+    input: {
+      description: "I am a good author!"
+      contactDetailsId: "ciz7573ffx1w80112cjwjduxn"
+      clientMutationId: "abc"
+    }
+  ) {
+    author {
+      cont
+    }
+    contactDetails {
+      id
+    }
+  }
+}
+---
+{
+  "data": {
+    "createAuthor": {
+      "id": "ciz7573ffx1w70112hwj04hqv",
+      "contactDetails": {
+        "id": "ciz7573ffx1w80112cjwjduxn"
+      }
+    }
+  }
+}
 ```
 
 ## Nested Update Mutations for to-many Relations
@@ -78,8 +107,43 @@ Let's explore the available nested update mutations for the `one-to-many` relati
 #### Creating a new Author node and connect it to multiple existing Posts
 
 ```graphql
+---
 endpoint: https://api.graph.cool/relay/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
+---
+mutation createAuthorAndConnectPosts($postsIds: [ID!]) {
+  createAuthor(
+    input: {
+      description: "I am a good author!"
+      postsIds: $postsIds
+      clientMutationId: "abc"
+    }
+  ) {
+    author {
+      description
+      posts {
+        count
+      }
+    }
+  }
+}
+---
+{
+  "postsIds": ["ciz787j6eqmf5014929vvo2hp", "ciz787j6eqmf60149lg3jvi4r"]
+}
+---
+{
+  "data": {
+    "createAuthor": {
+      "author": {
+        "description": "I am a good author!",
+        "posts": {
+          "count": 2
+        }
+      }
+    }
+  }
+}
 ```
 
 Note the nested `postsIds` list of `Post` ids. After running this mutation, the new author node and the existing post nodes are now connected via the `AuthorPosts` relation.
@@ -89,7 +153,42 @@ Note the nested `postsIds` list of `Post` ids. After running this mutation, the 
 Similarly, we can update an author and simultaneously connect it to multiple existing new posts for that author:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/relay/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
+mutation updateAuthorAndConnectPosts($postsIds: [ID!]) {
+  updateAuthor(
+    input: {
+      id: "ciz7573ffx1w70112hwj04hqv"
+      description: "I am a good author!"
+      postsIds: $postsIds
+      clientMutationId: "abc"
+    }
+  ) {
+    author {
+      description
+      posts {
+        count
+      }
+    }
+  }
+}
+---
+{
+  "postsIds": ["ciz787j6eqmf5014929vvo2hp", "ciz787j6eqmf60149lg3jvi4r"]
+}
+---
+{
+  "data": {
+    "createAuthor": {
+      "author": {
+        "description": "I am a good author!",
+        "posts": {
+          "count": 2
+        }
+      }
+    }
+  }
+}
 ```

@@ -54,6 +54,7 @@ Let's explore the available nested create mutations for the `one-to-one` relatio
 #### Creating a new Author node and connect it to new ContactDetails
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -89,6 +90,7 @@ Note the nested `contactDetails` object that takes the same input arguments as t
 Here's the same mutation using GraphQL variables:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -138,6 +140,7 @@ You can also find the type name in the documentation in the Playground:
 Similarly, we can update an author and simultaneously create new contact details for that author:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -180,6 +183,7 @@ Let's explore the available nested create mutations for the `one-to-many` relati
 #### Creating a new Author node and connect it to multiple new Posts
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -221,6 +225,7 @@ Note the nested `posts` object that takes a list of arguments needed for the `cr
 Here's the same mutation using GraphQL variables:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -276,6 +281,7 @@ You can also find the type name in the documentation in the Playground:
 Similarly, we can update an author and simultaneously create multiple new posts for that author:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---

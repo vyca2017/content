@@ -54,6 +54,7 @@ Let's explore the available nested update mutations for the `one-to-one` relatio
 #### Creating a new Author node and connect it to existing ContactDetails
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -79,7 +80,6 @@ mutation createAuthorAndConnectContactDetails {
     }
   }
 }
-
 ```
 
 Note the nested `contactDetailsId` argument that we pass the id of an existing `ContactDetails` node. After running this mutation, the new author node and the existing contact detail node are connected via the `AuthorContactDetails` relation.
@@ -89,6 +89,7 @@ Note the nested `contactDetailsId` argument that we pass the id of an existing `
 Similarly, we can update an author and simultaneously connect it to existing contact details:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
@@ -125,10 +126,11 @@ Let's explore the available nested update mutations for the `one-to-many` relati
 #### Creating a new Author node and connect it to multiple existing Posts
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
-mutation createAuthorAndPosts($postsIds: [ID!]) {
+mutation createAuthorAndConnectPosts($postsIds: [ID!]) {
   createAuthor(
     description: "I am a good author!"
     postsIds: $postsIds
@@ -168,10 +170,11 @@ Note the nested `postsIds` list of `Post` ids. After running this mutation, the 
 Similarly, we can update an author and simultaneously connect it to multiple existing new posts for that author:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
 disabled: true
 ---
-mutation updateAuthorAndCreatePosts($postsIds: [ID!]) {
+mutation updateAuthorAndConnectPosts($postsIds: [ID!]) {
   updateAuthor(
     id: "ciz7573ffx1w70112hwj04hqv"
     description: "I write posts"
