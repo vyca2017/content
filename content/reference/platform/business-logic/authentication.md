@@ -37,7 +37,7 @@ Read how to use the `createUser` and `signinUser` mutations to create or signin 
 
 ### Auth0 Social Logins
 
-[Auth0](https://auth0.com/) is an external auth provider that allows your users to authenticate with different social logins like Facebook, Google, Twitter and more. You need a domain, a client id and a client secret to enable this auth provider which you can obtain after creating a new client at Auth0. Read how to use the `createUser` mutation to create users in the [Simple API](!alias-eixu9osueb#auth0-social-logins) and [Relay API](!alias-yoh9thaip0#auth0-social-logins).
+[Auth0](https://auth0.com/) is an external auth provider that allows your users to authenticate with different social logins like Facebook, Google, Twitter or other methods like Passwordless. You need a domain, a client id and a client secret to enable this auth provider which you can obtain after creating a new client at Auth0. Read how to use the `createUser` mutation to create users in the [Simple API](!alias-eixu9osueb#auth0-social-logins) and [Relay API](!alias-yoh9thaip0#auth0-social-logins).
 
 ## Session User
 

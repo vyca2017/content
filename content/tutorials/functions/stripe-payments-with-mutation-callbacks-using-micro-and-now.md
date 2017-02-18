@@ -34,7 +34,7 @@ Together we will go through these steps:
 
 ## Register at Stripe
 
-First, you need to register at [Stripe](stripe.com/) to obtain a **secret Stripe key** that allows you to add new Stripe customers and charge them. The secret key looks like this: `sk_test_XXXXXXXXXXXXXXXXXXXXXXXX`
+First, you need to register at [Stripe](https://stripe.com/) to obtain a **secret Stripe key** that allows you to add new Stripe customers and charge them. The secret key looks like this: `sk_test_XXXXXXXXXXXXXXXXXXXXXXXX`
 
 > **Warning:** When following this guide, use the secret key associated with your **test account** to avoid charging real customers by accident. Once you are sure that all works as you intended, you can use your real Stripe account.
 
