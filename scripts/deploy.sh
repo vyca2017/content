@@ -15,7 +15,7 @@ GRAPHCOOL_PAT="${GRAPHCOOL_PAT:?GRAPHCOOL_PAT env variable not set}"
 GRAPHCOOL_PROJECT_ID="${GRAPHCOOL_PROJECT_ID:?GRAPHCOOL_PROJECT_ID env variable not set}"
 CIRCLE_TOKEN="${CIRCLE_TOKEN:?CIRCLE_TOKEN env variable not set}"
 
-markdown-to-graphcool -c content --reset 
+markdown-to-graphcool -c content
 
 # trigger rebuild of homepage
 curl -X POST https://circleci.com/api/v1.1/project/github/graphcool/homepage/tree/$BRANCH?circle-token=$CIRCLE_TOKEN
