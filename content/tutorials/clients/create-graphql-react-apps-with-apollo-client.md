@@ -287,6 +287,7 @@ Apart from `Post` to render a single post, we import `gql` and `graphql`. `gql` 
 First, let's think about the query to display all posts:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q
 disabled: true
 ---
@@ -378,6 +379,7 @@ import gql from 'graphql-tag'
 The mutation to create a new post looks like this:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q
 disabled: true
 ---
@@ -454,6 +456,7 @@ import gql from 'graphql-tag'
 This is how we can delete a post in the playground:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q
 disabled: true
 ---
