@@ -28,7 +28,7 @@ The Relay API is conforming with the Relay specifications. If you don't use Rela
 ### Connecting to the Relay API
 
 Connect your application to the endpoint of your project to [make API requests](!alias-thaiph8ung).
-The Simple API provides several possibilities to fetch, modify or traverse your data.
+The Relay API provides several possibilities to fetch, modify or traverse your data.
 
 ### Generated Queries
 
