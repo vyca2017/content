@@ -211,4 +211,4 @@ query enumValuesOfMetaInformationTags {
 }
 ```
 
-Here we can see that the `META_INFORMATION_TAGS` offers the valid values `GENERAl` and `TRAVELLING`.
+Here we can see that the `META_INFORMATION_TAGS` offers the valid values `GENERAL` and `TRAVELLING`.
