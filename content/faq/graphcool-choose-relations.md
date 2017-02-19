@@ -2,7 +2,6 @@
 alias: chietu0ahn
 path: /docs/faq/graphcool-choose-relations
 layout: FAQ
-preview: faq-icon.png
 title: How to choose the correct relation?
 description: Learn what relations are and how you can make the correct choice when designing relations as part of your GraphQL schema and data model.
 tags:

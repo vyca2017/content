@@ -2,7 +2,6 @@
 alias: cahzai2eur
 path: /docs/faq/graphql-multiple-requests
 layout: FAQ
-preview: faq-icon.png
 title: How to execute multiple operations in one request?
 shorttitle: Multiple operations in GraphQL
 description: In GraphQL you can run multiple queries or mutations in one request using GraphQL aliases.

@@ -2,7 +2,6 @@
 alias: goij0cooqu
 path: /docs/faq/graphcool-session-user
 layout: FAQ
-preview: faq-icon.png
 title: How to query the currently logged-in user?
 shorttitle: Querying the logged-in user
 description: Learn how to send a GraphQL query to fetch signed in users that are registered with an authentication provider like Auth0 or Digits.

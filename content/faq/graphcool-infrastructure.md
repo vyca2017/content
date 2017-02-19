@@ -2,7 +2,6 @@
 alias: ul6ue9gait
 path: /docs/faq/graphcool-technology
 layout: FAQ
-preview: faq-icon.png
 title: What technology is Graphcool using?
 description: Learn more about the technology and infrastructure used at Graphcool.
 tags:
