@@ -74,9 +74,6 @@ To progress further with Zapier, we will execute a test mutation.
 Run this mutation in your Graphcool playground for the Simple API:
 
 ```graphql
----
-disabled: true
----
 mutation {
   createUser(name: "Nilan") {
     id
