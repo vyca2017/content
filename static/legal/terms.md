@@ -352,10 +352,6 @@ Graphcool uses appropriate administrative, technical, and physical security meas
 
 Graphcool reserves the right to change this Privacy Statement. Graphcool will provide notification of the material changes to this Privacy Statement through the Company’s Web site at least thirty (30) business days prior to the change taking effect.
 
-### 12. Contacting Us
-
-If you have questions or complaints regarding our Privacy Statement or practices, please contact us by mail. If you are located in the U.S. or Canada, our mailing address is Facebook Inc., 1601 Willow Road, Menlo Park, CA 94025. If you are located outside the U.S. or Canada, our mailing address is Facebook Ireland Ltd., Hanover Reach, 5-7 Hanover Quay, Dublin 2 Ireland. You may also contact us at community@graph.cool.
-
 > Last Updated: 1/31/2017
 
 ## Support Policy
