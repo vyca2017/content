@@ -67,7 +67,25 @@ query {
 }
 ```
 
-In the documentation view to the right, you can see all available operations, as well as expected input and output arguments. The best thing is that you can actually query all that information in your client application as well! You can use [this tool](https://github.com/graphcool/get-graphql-schema) to download the complete GraphQL schema of any GraphQL endpoint. Let's explore a few other useful introspection queries!
+In the documentation view to the right, you can see all available operations, as well as expected input and output arguments.
+
+## Download the GraphQL schema
+
+The best thing is that you can actually query all that information in your client application as well! You can use [get-graphql-schema](https://github.com/graphcool/get-graphql-schema) to download the complete GraphQL schema of any GraphQL endpoint.
+
+First, install the tool
+
+```sh
+npm install -g get-graphql-schema
+```
+
+Then download the GraphQL schema to `schema.json`
+
+```sh
+get-graphql-schema ENDPOINT_URL > schema.json
+```
+
+Let's explore a few other useful introspection queries for more specific uses!
 
 ## Query the Fields of a Model
 
