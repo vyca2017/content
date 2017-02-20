@@ -15,6 +15,7 @@ related:
   more:
     - dah6aifoce
     - pheiph4ooj
+    - ul6ue9gait
 ---
 
 # Algolia Auto-Sync for GraphQL backends
@@ -189,8 +190,8 @@ For example, if we wanted to do a location search for shops, we could define thi
   node {
     name
     _geoloc: location {
-      lng
       lat
+      lng
     }
   }
 }
