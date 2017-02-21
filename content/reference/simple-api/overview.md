@@ -42,6 +42,11 @@ Using GraphQL, you can select the individual fields that the response of a query
 
 Depending on your models and relations certain [generated mutations](!alias-ol0yuoz6go) are available that allow you to modify your data.
 
+### Generated Subscriptions
+
+Depending on your models and relations, certain [generated subscriptions]() allow you to be notified in real time of changes to your data.
+All available subscriptions are automatically generated.
+
 ### Errors
 
 If something goes wrong when sending a query or mutation, [errors](!alias-aecou7haj9) are returned in the response enabling you to further investigate the issue.

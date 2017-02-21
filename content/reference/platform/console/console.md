@@ -57,6 +57,10 @@ You can send requests to their respective endpoints that look like this:
 `https://api.graph.cool/simple/v1/__PROJECT_ID__`
 `https://api.graph.cool/relay/v1/__PROJECT_ID__`
 
+For subscriptions you can use this endpoint:
+
+`wss://subscriptions.graph.cool/__PROJECT_ID__`
+
 ## File API Endpoint
 
 The endpoint for [file management](!alias-aechiosh8u) in your project looks like this:
