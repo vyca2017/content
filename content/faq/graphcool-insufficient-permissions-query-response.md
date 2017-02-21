@@ -43,7 +43,7 @@ The permission setup allows `EVERYONE` to view the `public` field, but `optional
 
 Let's query the `public` information of all documents.
 
-```grapqhl
+```graphql
 ---
 endpoint: https://api.graph.cool/simple/v1/cizfedue03pfv0139ego227lv
 disabled: false
@@ -74,7 +74,7 @@ This case is straight-forward. All fields are accessible, so the query response 
 
 Now we also query for the optional field `optionalSecret` of all documents:
 
-```grapqhl
+```graphql
 ---
 endpoint: https://api.graph.cool/simple/v1/cizfedue03pfv0139ego227lv
 disabled: false
@@ -144,7 +144,7 @@ Even though an error is returned, the data that is valid is still included in th
 
 Now we also add the required field `requiredSecret`, as part of the nested `child` node:
 
-```grapqhl
+```graphql
 ---
 endpoint: https://api.graph.cool/simple/v1/cizfedue03pfv0139ego227lv
 disabled: false
