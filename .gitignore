@@ -1,2 +1,4 @@
 .envrc
 content/drafts/_*
+*/.DS_STORE
+*/*/.DS_STORE
