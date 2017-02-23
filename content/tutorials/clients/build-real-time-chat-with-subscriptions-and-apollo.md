@@ -4,7 +4,7 @@ path: /docs/tutorials/worldchat-subscriptions-example
 layout: TUTORIAL
 preview:
 shorttitle: How to Build Real-Time Chat with GraphQL Subscriptions
-description: Build a real-time chat where the users can see the locations of all participants on a map - using GraphQL subscriptions and Apollo 
+description: Build a real-time chat where the users can see the locations of all participants on a map - using GraphQL subscriptions and the Apollo client 
 tags:
   - subscriptions
   - apollo
@@ -30,27 +30,27 @@ The simplest way to get started with a subscription is to specify a callback fun
 
 ```js
 this.newMessageObserver = this.props.client.subscribe({
-	query: gql`
-		subscription {
-			Message {
-			mutation # contains `CREATED`, `UPDATED` or `DELETED` 
-			  node {
-      	  text
-      		sentBy {
-  					name
-  				}
-			  }
-			}
-		}
-	`,
-	}).subscribe({
+  query: gql`
+    subscription {
+      Message {
+        mutation # contains `CREATED`, `UPDATED` or `DELETED` 
+        node {
+          text
+          sentBy {
+            name
+          }
+        }
+      }
+    }
+  `,
+  }).subscribe({
       next(data) {
- 			console.log('A mutation of the following type happened on the Message model: ', data.mutation)
-			console.log('The changed data looks as follows: ',data.node)
-		},
-		error(error) {
-  		console.error('Subscription callback with error: ', error)
-		},
+      console.log('A mutation of the following type happened on the Message model: ', data.mutation)
+      console.log('The changed data looks as follows: ',data.node)
+    },
+    error(error) {
+      console.error('Subscription callback with error: ', error)
+    },
 })
 ```
 
@@ -201,10 +201,10 @@ const allMessages = gql`
 
 const createMessage = gql`
   mutation createMessage($text: String!, $sentById: ID!) {
-      createMessage(text: $text, sentById: $sentById) {
-          id
-          text
-      }
+    createMessage(text: $text, sentById: $sentById) {
+      id
+      text
+    }
   }
 `
 ```
