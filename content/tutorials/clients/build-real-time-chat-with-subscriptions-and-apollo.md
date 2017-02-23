@@ -15,7 +15,7 @@ related:
     - kengor9ei3
 ---
 
-# How to build a Real-Time Chat with GraphQL Subscriptions and Apollo
+# How to build a Real-Time Chat with GraphQL Subscriptions and Apollo 🌍
 
 In this tutorial, we explain how to build a chat application where the users can see their own and the locations of the other participants on a map. Not only the chat, but also the locations on the map get updated in real-time using GraphQL subscriptions.
 
@@ -29,6 +29,7 @@ Using the Apollo client, you can benefit from the full power of subscriptions. A
 The simplest way to get started with a subscription is to specify a callback function where the modified data from the backend is provided as an argument. In a fully-fledged chat application where you're interested in any changes on the `Message` type, which is either that a _new message has been sent_, that _an existing message was modified_ or an _existing message was deleted_ this could look as follows:
 
 ```js
+// subscribe to `CREATED`, `UPDATED` and `DELETED` mutations
 this.newMessageObserver = this.props.client.subscribe({
   query: gql`
     subscription {
@@ -45,8 +46,8 @@ this.newMessageObserver = this.props.client.subscribe({
   `,
   }).subscribe({
       next(data) {
-      console.log('A mutation of the following type happened on the Message model: ', data.mutation)
-      console.log('The changed data looks as follows: ',data.node)
+      console.log('A mutation of the following type happened on the Message model: ', data.Message.mutation)
+      console.log('The changed data looks as follows: ', data.Message.node)
     },
     error(error) {
       console.error('Subscription callback with error: ', error)
@@ -68,7 +69,40 @@ The _kind_ of change that happened in the database is reflected by the `mutation
   
 #### Getting Information about the changed Node
 
-The `node` field in the payload allows us to retrieve information about the modified node. In the `DELETED` case you'll only be able to retrieve the `id` field of the deleted node in the payload.
+The `node` field in the payload allows us to retrieve information about the modified node. It is also possible to ask for the state that node had _before_ the mutation, you can do so by including the `previousValues` field in the payload:
+
+```graphql
+subscription {
+  Message {
+    mutation # contains `CREATED`, `UPDATED` or `DELETED` 
+    # node carries the new values
+    node {
+      text
+      sentBy {
+        name
+      }
+    }
+    # previousValues carries values from before the mutation happened
+    previousValues {
+      text
+      sentBy {
+        name
+      }
+    }
+  }
+}
+```
+
+Now you could compare the fields in your code like so:
+
+```js
+next(data) {
+  console.log('Old text: ', data.Message.previousValues.text)
+  console.log('New text: ', data.Message.node.text)
+}
+```
+
+If you specify `previousValues` for a `CREATED` mutation, this field will just be `null`.
 
 
 #### Subscriptions with Apollo
@@ -162,10 +196,10 @@ const client = new ApolloClient({
 
 Now, as usual, you will have to pass the `ApolloClient` as a prop to the `ApolloProvider` and wrap all components that you'd like to access the data that is managed by Apollo. In the case of our chat, this step looks as follows:
 
-```
+```js
 class App extends Component {
 
-  ...
+  // ...
 
   render() {
     return (
@@ -180,7 +214,7 @@ class App extends Component {
 You can view the full implementation [here](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/App.js).
 
 
-## Building a Real-Time Chat with Subscriptions
+## Building a Real-Time Chat with Subscriptions 💬
 
 Let's now look at how we implemented the chat feature in our application. You can refer to the [actual implementation](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/Chat.js) whenever you like.
 
@@ -217,16 +251,18 @@ export default graphql(createMessage, {name : 'createMessageMutation'})(
 )
 ```
 
-We then can subscribe for any changes on the `Message` type. 
+We then subscribe for changes on the `Message` type, filtering for mutations of type `CREATED`. 
 
 > Note: Generally, a mutation can take one of three forms: `CREATED`, `UPDATED` or `DELETED`. Our subscription API allows to use a `filter` to specify which of these you'd like to subscribe to. If you don't specify a filter, you'll subsribe to _all_ of them by default. It is also possible to filter for more complex changes, e.g. for `UPDATED` mutations, you could only subscribe to changes that happen on a specific _field_.
 
 ```js
-// Subscribe to `CREATED`, `UPDATED` and `DELETED` mutations
+// Subscribe to `CREATED`-mutations
 this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
   document: gql`
     subscription {
-      Message {
+      Message(filter: {
+        mutation_in: [CREATED]
+      }) {
         node {
           text
           createdAt
@@ -249,108 +285,201 @@ this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
 })
 ```
 
-Notice that we're using a different method to subscribe to the changes compared the first example where we used `subscribe` directly on an instance of the `ApolloClient`. This time, we're calling [`subscribeToMore`](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions) on the `allMessagesQuery` which is available in the `props` of our compoment because we wrapped it with `graphql` before.
+Notice that we're using a different method to subscribe to the changes compared the first example where we used `subscribe` directly on an instance of the `ApolloClient`. This time, we're calling [`subscribeToMore`](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions) on the `allMessagesQuery` (which is available in the `props` of our compoment because we wrapped it with `graphql` before).
 
-Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the `ApolloStore`.  It takes in the _previous state_ which is the the former _query result_ of our `allMessagesQuery` and the _subscription data_ which contains the payload that we specified in our subscription, in our case that's the `node` that carries information about the new message.
+Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the `ApolloStore`.  It takes in the `previousState` which is the the former _query result_ of our `allMessagesQuery` and the `subscriptionData` which contains the payload that we specified in our subscription, in our case that's the `node` that carries information about the new message.
 
 > From the Apollo [docs](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions): `subscribeToMore` is a convenient way to update the result of a single query with a subscription. The `updateQuery` function passed to `subscribeToMore` runs every time a new subscription result arrives, and it’s responsible for updating the query result.
 
 Fantastic, this is all we need in order for our chat to update in real-time! 🚀
 
 
-## Complex Subscriptions
+## Adding Geo-Location to the App 🗺
 
-As mentioned before, our subscription API allows you to use powerful filters so that you can precisely specify what kind of changes you're actually interested in. You can read about all available features in our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
+Let's now look at how to add a geo-location feature to the app so that we can display the chat participants on a map. The full implementation is located [here](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/WorldChat.js).
 
+At first, we need one query that we use to initially retrieve all locations and their associated travellers. 
 
-### Filtering for Mutation Type:  `CREATED`, `UPDATED`, `DELETED` 
+```js
+const allLocations = gql`
+    query allLocations {
+        allLocations {
+            id
+            latitude
+            longitude
+            traveller {
+                id
+                name
+            }
+        }
+    }
+    `
+```
 
-Maybe in your application you're only interested in the case when a new _node_ for one one of your model types is _added_. In that case, you could `filter` for mutations of type `CREATED` on your model. If we implemented that in our chat application, this would look as follows:
+Then we'll use two different mutations. The first one is a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo) that allows us to initially create a `Traveller` along with their `Location`, rather than having to do this in two different requests:
 
+```js
+const createTravellerAndLocation = gql`
+    mutation createTravellerAndLocation($name: String!, $latitude: Float!, $longitude: Float!) {
+        createTraveller(name: $name, location: {
+        latitude: $latitude,
+        longitude: $longitude,
+        }) {
+            id
+            name
+            location {
+                id
+                latitude
+                longitude
+            }
+        }
+    }
+`
+```
+
+We also have a simpler mutation that will be fired whenever a traveller logs back in to the system and we update their location:
+
+```js
+const updateLocation = gql`
+    mutation updateLocation($locationId: ID!, $latitude: Float!, $longitude: Float!) {
+        updateLocation(id: $locationId, latitude: $latitude, longitude: $longitude) {
+            traveller {
+                id
+                name
+            }
+            latitude
+            longitude
+        }
+    }
+`
+```
+
+Like before, we're wrapping our component before exponent it using `graphql`:
+
+```
+export default graphql(allLocations, {name: 'allLocationsQuery'})(
+    graphql(createTravellerAndLocation, {name: 'createTravellerAndLocationMutation'})(
+      graphql(updateLocation, {name: 'updateLocationMutation'})(WorldChat)
+  )
+)
+```
+
+Finally, we need to subscribe to the changes on the `Location` model. Every time a new traveller and location are created or an existing traveller updates their location, we want to reflect this on the map. 
+
+However, in the second case when an existing traveller logs back in, we actually only want to receive a notification if their location is different from before, that is either `latitude` or `longitude` or both have to be changed through the mutation. We'll include this requirement in the subscription using a filter again:
+
+```js
+this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
+  document: gql`
+      subscription {
+          Location(filter: {
+              OR: [{
+                  mutation_in: [CREATED]
+              },
+              {
+                  AND: [{
+                      mutation_in: [UPDATED]
+                  },
+                  {
+                    updatedFields_contains_some: ["latitude", "longitude"]
+                  }]
+              }]
+          })   {
+              mutation
+              node {
+                  id
+                  latitude
+                  longitude
+                  traveller {
+                      id
+                      name
+                  }
+              }
+          }
+      }
+  `,
+  updateQuery: (previousState, {subscriptionData}) => {
+    // we'll look at this in a second
+  }
+})
+```
+
+Let's try to understand the `filter` step by step. We want to get notified in either of two cases:
+
+- A new location was `CREATED`, the condidition that we specified for this is simply: 
+ 
+    ```graphql
+    mutation_in: [CREATED]
+    ```
+
+- An existing location was `UPDATED`, however, there must have been a change in the `latitude` and/or `longitude` fields. We express this as follows:
+ 
+    ```graphql
+    AND: [{
+      mutation_in: [UPDATED]
+    },
+    {
+      updatedFields_contains_some: ["latitude", "longitude"]
+    }]
+    ```
+
+We're then putting these two cases together connecting them with an `OR`:
 
 ```graphql
-subscription {
-  Message(filter: {
-    mutation_in: [CREATED]
-  }) {
-    node {
-      text
-      sentBy {
-        name
+OR: [{
+  mutation_in: [CREATED]
+},
+{
+  AND: [{
+    mutation_in: [UPDATED]
+  },
+  {
+    updatedFields_contains_some: ["latitude", "longitude"]
+  }]
+}]
+```
+
+Now, we only need to specify what should happen with the data that we receive through the subscription - we can do so using the `updateQueries` argument of `subscribeToMore` again:
+
+```js
+this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
+  document: gql`
+    // ... see above for the implementation of the subscription
+  `,
+  updateQuery: (previousState, {subscriptionData}) => {
+   if (subscriptionData.data.Location.mutation === 'CREATED') {
+      const newLocation = subscriptionData.data.Location.node
+      const locations = previousState.allLocations.concat([newLocation])
+      return {
+        allLocations: locations,
       }
     }
-  }
-}
-```
-
-As mentioned before, in the `DELETED` case, we can only ask for the `id` of the deleted node in the payload of the subscription:
-
-```graphql
-subscription {
-  Message(filter: {
-    mutation_in: [DELETED]
-  }) {
-    node {
-      id # this is the only field we can return
-    }
-  }
-}
-```
-
-
-### Filtering on Fields
-
-In an app with a `User` model that has a `username` and a `birthday` property, you might only be interested in users changing their usernames but not their birthdays. In that case, your subscription would look as follows:
-
-```graphql
-subscription {
-  User(filter: {
-    mutation_in: [UPDATED]
-    updatedFields_contains: "username" # only notify when the username changes
-  }) {
-    node {
-      id
-      username # contains the new username
-    }
-    previousValues {
-      username # contains the old username
-    }
-  }
-}
-```
-
-Generally, you can include the information about which fields have changed in the payload of your subscription by specifying `updatedFields` in the subscription payload:
-
-```graphql
-subscription {
-  User(filter: {
-    mutation_in: [UPDATED]
-  }) {
-    updatedFields # contains a list of all the fields that have changed
-  }
-```
-
-> Note: If you include `previousValues` or `updatedFields` in subscriptions on `CREATED` and `DELETED` mutations, they will just be `null`. 
-
-You can of course also filter on fields for `CREATED` and `DELETED` mutations, e.g. if you only want to get notified about newly created messages that contain the word `"everyone"`:
-
-```graphql
-subscription {
-  Message(filter: {
-    mutation_in: [CREATED]
-    node: {
-      text_contains: "everyone"
-    }
-  }) {
-    node {
-      text
-      sentBy {
-        name
+    else if (subscriptionData.data.Location.mutation === 'UPDATED') {
+      const updatedLocation = subscriptionData.data.Location.node
+      const locations = previousState.allLocations.concat([updatedLocation])
+      const oldLocationIndex = locations.findIndex(location => {
+        return updatedLocation.id === location.id
+      })
+      locations[oldLocationIndex] = updatedLocation
+      return {
+        allLocations: locations,
       }
     }
+    return previousState
   }
-}
+})
 ```
+
+In both cases, we're simply incorporating the changes that we received from the subscription and specify how they should be merged into the `ApolloStore`. In the `CREATED`-case, we just append the new location to the existing list of locations. In the `UPDATED`-case, we replace the old version of that location in the `ApolloStore`.
+
+
+
+
+
+
+
+
+
 
 
 
