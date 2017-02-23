@@ -20,6 +20,22 @@ related:
 In this tutorial, we explain how to build a chat application where the users can see their own and the locations of the other participants on a map. Not only the chat, but also the locations on the map get updated in real-time using GraphQL subscriptions.
 
 
+## Table of Contents
+
+  - [What are GraphQL Subscriptions?](#what-are-graphql-subscriptions)
+    - [Figuring our the Mutation Type](#figuring-out-the-mutation-type)     
+    - [Getting Information about the changed Node](#getting-information-about-the-changed-node)     
+ 
+  - [Setting up your Graphcool backend](#setting-up-your-graphql-backend)
+ 
+  - [Setting up the Apollo Client to use Subscriptions](#setting-up-the-apollo-client-to-use-subscriptions)
+ 
+  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-real-time-chat-with-subscriptions)
+ 
+  - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app)
+ 
+  - [Summing Up](#summing-up)
+
 ## What are GraphQL Subscriptions?
 
 _Subscriptions_ are a GraphQL feature that allow to get **real-time updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
@@ -302,38 +318,38 @@ At first, we need one query that we use to initially retrieve all locations and 
 
 ```js
 const allLocations = gql`
-    query allLocations {
-        allLocations {
-            id
-            latitude
-            longitude
-            traveller {
-                id
-                name
-            }
-        }
+  query allLocations {
+    allLocations {
+      id
+      latitude
+      longitude
+      traveller {
+          id
+          name
+      }
     }
-    `
+  }
+`
 ```
 
 Then we'll use two different mutations. The first one is a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo) that allows us to initially create a `Traveller` along with their `Location`, rather than having to do this in two different requests:
 
 ```js
 const createTravellerAndLocation = gql`
-    mutation createTravellerAndLocation($name: String!, $latitude: Float!, $longitude: Float!) {
-        createTraveller(name: $name, location: {
-        latitude: $latitude,
-        longitude: $longitude,
-        }) {
-            id
-            name
-            location {
-                id
-                latitude
-                longitude
-            }
-        }
+  mutation createTravellerAndLocation($name: String!, $latitude: Float!, $longitude: Float!) {
+    createTraveller(name: $name, location: {
+      latitude: $latitude,
+      longitude: $longitude,
+    }) {
+      id
+      name
+      location {
+        id
+        latitude
+        longitude
+      }
     }
+  }
 `
 ```
 
@@ -341,16 +357,16 @@ We also have a simpler mutation that will be fired whenever a traveller logs bac
 
 ```js
 const updateLocation = gql`
-    mutation updateLocation($locationId: ID!, $latitude: Float!, $longitude: Float!) {
-        updateLocation(id: $locationId, latitude: $latitude, longitude: $longitude) {
-            traveller {
-                id
-                name
-            }
-            latitude
-            longitude
-        }
+  mutation updateLocation($locationId: ID!, $latitude: Float!, $longitude: Float!) {
+    updateLocation(id: $locationId, latitude: $latitude, longitude: $longitude) {
+      traveller {
+        id
+        name
+      }
+      latitude
+      longitude
     }
+  }
 `
 ```
 
@@ -371,32 +387,32 @@ However, in the second case when an existing traveller logs back in, we actually
 ```js
 this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
   document: gql`
-      subscription {
-          Location(filter: {
-              OR: [{
-                  mutation_in: [CREATED]
-              },
-              {
-                  AND: [{
-                      mutation_in: [UPDATED]
-                  },
-                  {
-                    updatedFields_contains_some: ["latitude", "longitude"]
-                  }]
-              }]
-          })   {
-              mutation
-              node {
-                  id
-                  latitude
-                  longitude
-                  traveller {
-                      id
-                      name
-                  }
-              }
+    subscription {
+      Location(filter: {
+        OR: [{
+          mutation_in: [CREATED]
+        },
+        {
+          AND: [{
+            mutation_in: [UPDATED]
+          },
+          {
+            updatedFields_contains_some: ["latitude", "longitude"]
+          }]
+        }]
+      })   {
+        mutation
+        node {
+          id
+          latitude
+          longitude
+          traveller {
+            id
+            name
           }
+        }
       }
+    }
   `,
   updateQuery: (previousState, {subscriptionData}) => {
     // we'll look at this in a second
@@ -447,7 +463,7 @@ this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
     // ... see above for the implementation of the subscription
   `,
   updateQuery: (previousState, {subscriptionData}) => {
-   if (subscriptionData.data.Location.mutation === 'CREATED') {
+    if (subscriptionData.data.Location.mutation === 'CREATED') {
       const newLocation = subscriptionData.data.Location.node
       const locations = previousState.allLocations.concat([newLocation])
       return {
@@ -471,6 +487,14 @@ this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
 ```
 
 In both cases, we're simply incorporating the changes that we received from the subscription and specify how they should be merged into the `ApolloStore`. In the `CREATED`-case, we just append the new location to the existing list of locations. In the `UPDATED`-case, we replace the old version of that location in the `ApolloStore`.
+
+
+## Summing Up
+
+In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
+
+
+
 
 
 
