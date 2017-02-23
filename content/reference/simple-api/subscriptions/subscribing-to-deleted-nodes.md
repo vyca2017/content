@@ -66,7 +66,7 @@ subscription followedAuthorUpdatedPost {
     }
   ) {
     mutation
-    node {
+    previousValues {
       id
     }
   }
