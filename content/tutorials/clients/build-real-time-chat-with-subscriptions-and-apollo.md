@@ -30,9 +30,9 @@ In this tutorial, we explain how to build a chat application where the users can
  
   - [Setting up the Apollo Client to use Subscriptions](#setting-up-the-apollo-client-to-use-subscriptions)
  
-  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-real-time-chat-with-subscriptions)
+  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-real-time-chat-with-subscriptions-💬)
  
-  - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app)
+  - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app-🗺)
  
   - [Summing Up](#summing-up)
 
