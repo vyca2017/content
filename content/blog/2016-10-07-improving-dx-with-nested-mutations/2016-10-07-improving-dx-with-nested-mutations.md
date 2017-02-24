@@ -71,8 +71,6 @@ of network requests.
 These new mutations are called **nested mutations** and are a shortcut for the
 workarounds mentioned above. They look like this:
 
-![](./nested-mutations-example.png)
-
 ```graphql
 ---
 endpoint: https://api.graph.cool/simple/v1/ciz751zxu2nnd01494hr653xl
