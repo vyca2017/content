@@ -1,6 +1,7 @@
 # content
 
 :notebook: [Documentation](https://graph.cool/docs) for Graphcool.
+
 [![CircleCI](https://circleci.com/gh/graphcool/content/tree/master.svg?style=svg)](https://circleci.com/gh/graphcool/content/tree/master)
 
 * [Read the reference docs](https://graph.cool/docs/reference)
