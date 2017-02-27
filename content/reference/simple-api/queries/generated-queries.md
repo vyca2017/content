@@ -1,9 +1,8 @@
 ---
 alias: nia9nushae
-path: /docs/reference/simple-api/generated-queries
+path: /docs/reference/simple-api/queries
 layout: REFERENCE
-shorttitle: Generated Queries
-description: Use queries to fetch data. Generated queries in the GraphQL schema of your project are derived from models and relations that you defined.
+description: Use queries to fetch data. Queries in the GraphQL schema of your project are derived from models and relations that you defined.
 simple_relay_twin: oiviev0xi7
 tags:
   - simple-api
@@ -15,7 +14,7 @@ related:
     - cahzai2eur
 ---
 
-# Generated Queries in the Simple API
+# Queries in the Simple API
 
 A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
 All queries are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.

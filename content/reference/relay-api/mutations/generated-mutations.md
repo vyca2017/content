@@ -1,9 +1,8 @@
 ---
 alias: vah0igucil
-path: /docs/reference/relay-api/generated-mutations
+path: /docs/reference/relay-api/mutations
 layout: REFERENCE
-shorttitle: Generated Mutations
-description: Use mutations to modify data. Generated mutations in the GraphQL schema of your project are derived from models and relations that you defined.
+description: Use mutations to modify data. Mutations in the GraphQL schema of your project are derived from models and relations that you defined.
 simple_relay_twin: ol0yuoz6go
 tags:
   - relay-api
@@ -18,7 +17,7 @@ related:
     - dah6aifoce
 ---
 
-# Generated Mutations in the Relay API
+# Mutations in the Relay API
 
 With a *mutation* you can modify the data of your project.
 Similar to queries, all mutations are automatically generated. Explore them by using the [playground](!alias-uh8shohxie#playground) inside your project.

@@ -1,9 +1,9 @@
 ---
 alias: aip7oojeiv
-path: /docs/reference/simple-api/generated-subscriptions
+path: /docs/reference/simple-api/subscriptions
 layout: REFERENCE
-shorttitle: Generated Subscriptions
-description: Use subscriptions to receive data updates in realtime. Generated subscriptions in the GraphQL schema are derived from models and relations.
+shorttitle: Subscriptions
+description: Use subscriptions to receive data updates in realtime. Subscriptions in the GraphQL schema are derived from models and relations.
 simple_relay_twin: eih4eew7re
 tags:
   - simple-api
@@ -16,7 +16,7 @@ related:
     - kengor9ei3
 ---
 
-# Generated Subscriptions in the Simple API
+# Subscriptions in the Simple API
 
 *GraphQL subscriptions* allow you to be notified in real time of changes to your data.
 All available subscriptions are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.
