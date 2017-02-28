@@ -23,21 +23,21 @@ A quick look at how it works (read on for the backstory):
 
 ![](subscriptions.gif)
 
-If you want to dive into code directly check out [this live demo](https://demo.graph.cool/worldchat).
+If you want to dive into code directly, check out [this live demo](https://demo.graph.cool/worldchat).
 
-## Subscriptions are Coming 🎉 🚀
+## Subscriptions Are Coming 🎉 🚀
 
 It's an exciting time to be a GraphQL developer.
 
-Over the past six months the developers behind Meteor have been hard at work bringing powerful realtime capabilities to GraphQL. Through an iterative process Apollo, Graphcool and the entire GraphQL community have worked on defining a stable subscriptions API. This will ensure interoperability between clients, server implementations and tools like GraphiQL.
+Over the past six months developers behind Graphcool, Meteor, and the rest of the GraphQL community have been hard at work defining a stable Subscriptions API to bring powerful realtime capabilities to GraphQL. The effort has resulted in interoperability between clients, server implementations, and tools like GraphiQL.
 
-As a result of this community effort, Facebook has now started the formal process to adopt subscriptions in the official GraphQL specification. If you are interested in participating, head over to [the RFC on GitHub](https://github.com/facebook/graphql/pull/267).
+As a result of this community effort, Facebook has now started the formal process of adopting Subscriptions in the official GraphQL specification. If you are interested in participating, head over to [the RFC on GitHub](https://github.com/facebook/graphql/pull/267).
 
 ## Launching Subscriptions on Graphcool
 
-Graphcool has participated in the specification effort from the start. We included many of you in this process by means of our Beta Program where you provided invaluable feedback. We have incorporated all the learnings and are happy to announce today that **subscriptions are officially available for production use on Graphcool**. 🎉
+Graphcool has participated in the specification effort from the start. We included many of you in this process by means of our Beta Program, where you provided invaluable feedback. We have incorporated all the learnings and are happy to announce today that **Subscriptions are now production ready on Graphcool**. 🎉
 
-As a Graphcool user you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the Graphcool subscriptions API. Client applications can simply define the events they want to be notified about, using familiar GraphQL filters.
+As a Graphcool user you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the Graphcool Subscriptions API. Client applications can simply define the events they want to be notified about using familiar GraphQL filters.
 
 For example, this subscription notifies you of all new photos by people followed by the current user:
 
