@@ -21,7 +21,7 @@ related:
 
 A quick look at how it works (read on for the backstory):
 
-![](subscriptions.gif)
+![](http://graphcool-random.s3.amazonaws.com/images/subscriptions.gif)
 
 If you want to dive into code directly check out [this live demo](https://demo.graph.cool/worldchat).
 
