@@ -39,7 +39,7 @@ You can create multiple indices and select exactly the data you want to be synce
 
 One of the [most requested features](https://github.com/graphcool/feature-requests/issues/19) we received from our community was the ability to add team collaborators to a project. This is now possible in the new "Team" tab in your project settings. Here you can invite your colleagues by entering their email address.
 
-![](./collaboration.gif)
+![Adding a collaborator](./collaboration.gif?width=682)
 
 Note: Every collaborator currently has the same access rights. However, there is already a [feature request](https://github.com/graphcool/feature-requests/issues/94) to define different access control levels for collaborators.
 
