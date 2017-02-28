@@ -70,4 +70,4 @@ You can start exploring GraphQL Subscriptions in the interactive playground by [
 
 <iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
 
-To find out more, you can read the [subscriptions tutorial](https://graph.cool/docs/tutorials/worldchat-subscriptions-example-ui0eizishe) or the [reference documentation](https://graph.cool/docs/reference/simple-api/subscriptions-aip7oojeiv). If you have any questions, feel free to reach out to us in [Slack](https://slack.graph.cool).
+To find out more, you can read the [subscriptions tutorial](!alias-ui0eizishe) or the [reference documentation](!alias-aip7oojeiv). If you have any questions, feel free to reach out to us in [Slack](https://slack.graph.cool).
