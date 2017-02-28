@@ -44,7 +44,7 @@ Depending on your models and relations certain [generated mutations](!alias-ol0y
 
 ### Generated Subscriptions
 
-Depending on your models and relations, certain [generated subscriptions]() allow you to be notified in real time of changes to your data.
+Depending on your models and relations, certain [generated subscriptions]() allow you to be notified in realtime of changes to your data.
 All available subscriptions are automatically generated.
 
 ### Errors

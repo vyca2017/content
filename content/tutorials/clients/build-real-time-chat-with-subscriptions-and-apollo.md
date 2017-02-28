@@ -3,8 +3,8 @@ alias: ui0eizishe
 path: /docs/tutorials/worldchat-subscriptions-example
 layout: TUTORIAL
 preview:
-shorttitle: How to Build Real-Time Chat with GraphQL Subscriptions
-description: Build a real-time chat where the users can see the locations of all participants on a map - using GraphQL subscriptions and the Apollo client
+shorttitle: How to Build Realtime Chat with GraphQL Subscriptions
+description: Build a realtime chat where the users can see the locations of all participants on a map - using GraphQL subscriptions and the Apollo client
 tags:
   - subscriptions
   - apollo
@@ -17,7 +17,7 @@ related:
 
 # How to build a Real-Time Chat with GraphQL Subscriptions and Apollo 🌍
 
-In this tutorial, we explain how to build a chat application where the users can see their own and the locations of the other participants on a map. Not only the chat, but also the locations on the map get updated in real-time using GraphQL subscriptions.
+In this tutorial, we explain how to build a chat application where the users can see their own and the locations of the other participants on a map. Not only the chat, but also the locations on the map get updated in realtime using GraphQL subscriptions.
 
 
 ## Table of Contents
@@ -30,7 +30,7 @@ In this tutorial, we explain how to build a chat application where the users can
 
   - [Setting up the Apollo Client to use Subscriptions](#setting-up-the-apollo-client-to-use-subscriptions)
 
-  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-real-time-chat-with-subscriptions-💬)
+  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-realtime-chat-with-subscriptions-💬)
 
   - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app-🗺)
 
@@ -39,7 +39,7 @@ In this tutorial, we explain how to build a chat application where the users can
 
 ## What are GraphQL Subscriptions?
 
-_Subscriptions_ are a GraphQL feature that allow to get **real-time updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
+_Subscriptions_ are a GraphQL feature that allow to get **realtime updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
 
 Using the Apollo client, you can benefit from the full power of subscriptions. Apollo [implements subscriptions based on web sockets](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb#.fapq8d7yc).
 
@@ -316,7 +316,7 @@ Next to the actual subscription that we're passing as the `document` argument to
 
 > From the Apollo [docs](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions): `subscribeToMore` is a convenient way to update the result of a single query with a subscription. The `updateQuery` function passed to `subscribeToMore` runs every time a new subscription result arrives, and it's responsible for updating the query result.
 
-Fantastic, this is all we need in order for our chat to update in real-time! 🚀
+Fantastic, this is all we need in order for our chat to update in realtime! 🚀
 
 
 ## Adding Geo-Locations to the App 🗺
@@ -498,8 +498,6 @@ In both cases, we're simply incorporating the changes that we received from the 
 In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
 
 
-## Help & Community 
+## Help & Community
 
 Join our [Slack community](http://slack.graph.cool/) if you run into issues or have questions. We love talking to you!
-
-
