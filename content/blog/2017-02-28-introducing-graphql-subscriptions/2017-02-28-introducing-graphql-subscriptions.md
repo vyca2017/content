@@ -2,8 +2,8 @@
 alias: in4ohtae4e
 path: /blog/2017-02-28-introducing-graphql-subscriptions
 layout: BLOG
-description: We are happy to announce that subscriptions are officially available for production use on Graphcool.
-preview: subscriptions-preview.png
+description: Graphcool now supports building real-time apps with GraphQL subscriptions.
+preview: ./subscriptions-preview.png
 publication_date: '2017-02-28'
 tags:
   - platform
@@ -17,29 +17,23 @@ related:
 
 # Introducing GraphQL Subscriptions
 
-## TL:DR - Start Building Realtime GraphQL Apps Today!
+Today we're excited to announce that Graphcool now supports building real-time apps with GraphQL subscriptions.
 
-A quick look at how it works (read on for the backstory):
+## Subscriptions are coming...
 
-![](http://graphcool-random.s3.amazonaws.com/images/subscriptions.gif)
+It's an exciting time to be a GraphQL developer! Over the past six months developers behind Graphcool, Apollo, and the rest of the GraphQL community have been hard at work defining a stable subscriptions API to bring powerful realtime capabilities to GraphQL. The effort has resulted in interoperability between clients, server implementations, and tools like GraphiQL.
 
-If you want to dive into code directly, check out [this live demo](https://demo.graph.cool/worldchat/).
+![](./rfc.png?width=796)
 
-## Subscriptions Are Coming 🎉 🚀
+Based on this community effort, Facebook has now started the formal process of adopting subscriptions in the official GraphQL specification. If you are interested in participating, head over to [the RFC on GitHub](https://github.com/facebook/graphql/pull/267).
 
-It's an exciting time to be a GraphQL developer.
+## Launching Subscriptions on Graphcool 🎉
 
-Over the past six months developers behind Graphcool, Meteor, and the rest of the GraphQL community have been hard at work defining a stable Subscriptions API to bring powerful realtime capabilities to GraphQL. The effort has resulted in interoperability between clients, server implementations, and tools like GraphiQL.
+Graphcool has participated in the specification effort from the start. We included many of you in this process by means of our Beta Program, where you provided invaluable feedback. We have incorporated all the learnings and are excited to announce today that **subscriptions are now production ready on Graphcool**. ([See docs](!alias-aip7oojeiv))
 
-As a result of this community effort, Facebook has now started the formal process of adopting Subscriptions in the official GraphQL specification. If you are interested in participating, head over to [the RFC on GitHub](https://github.com/facebook/graphql/pull/267).
+As a Graphcool developer you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the new Graphcool Subscriptions API. Client applications can simply define the events they want to be notified about using familiar the [GraphQL filter syntax](!alias-aing7uech3).
 
-## Launching Subscriptions on Graphcool
-
-Graphcool has participated in the specification effort from the start. We included many of you in this process by means of our Beta Program, where you provided invaluable feedback. We have incorporated all the learnings and are happy to announce today that **Subscriptions are now production ready on Graphcool**. 🎉
-
-As a Graphcool user you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the Graphcool Subscriptions API. Client applications can simply define the events they want to be notified about using familiar GraphQL filters.
-
-For example, this subscription notifies you of all new photos by people followed by the current user:
+Take a look at the following example. This subscription query notifies you of all new photos by people followed by the current user:
 
 ```graphql
 subscription {
@@ -49,7 +43,7 @@ subscription {
       node: {
         creator: {
           followedBy_some: {
-            id: "current-user"
+            id: "current-user-id"
           }
         }
       }
@@ -64,10 +58,20 @@ subscription {
 }
 ```
 
-You can start exploring GraphQL Subscriptions in the interactive playground by [creating an account](http://console.graph.cool/signup).
+## Subscriptions Workflow using the Playground
 
-## More Resources
+One of GraphQLs best features are interactive tools like [GraphiQL](https://github.com/graphql/graphiql). For the best possible developer experience, the Graphcool Playground now supports GraphQL subscriptions out of the box. Here is an example workflow:
+
+![](http://graphcool-random.s3.amazonaws.com/images/subscriptions.gif)
+
+## Try it out: Building a realtime chat app
+
+To make it as easy as possible for you to get started with GraphQL subscriptions, [we've prepared a tutorial](https://www.graph.cool/docs/tutorials/worldchat-subscriptions-example-ui0eizishe) for you. You will learn how to build a realtime chat app with GraphQL subscriptions and Apollo.
+
+Check out the [live demo](https://demo.graph.cool/worldchat/) to see how it looks like or dive into the [source code on Github](https://github.com/graphcool-examples/worldchat-subscriptions-example). We've also recorded a video tutorial:
 
 <iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
 
-To find out more, you can read the [subscriptions tutorial](!alias-ui0eizishe) or the [reference documentation](!alias-aip7oojeiv). If you have any questions, feel free to reach out to us in [Slack](https://slack.graph.cool).
+We hope you're as excited as we are about GraphQL subscriptions and this release. To find out more, please take a look into the [reference documentation](!alias-aip7oojeiv). You can start exploring GraphQL subscriptions in the interactive playground by [creating an account](http://console.graph.cool/signup).
+
+As always, if you have any questions, feel free to reach out to us in [Slack](https://slack.graph.cool). 🙌
