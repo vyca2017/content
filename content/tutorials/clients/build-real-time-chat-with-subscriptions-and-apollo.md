@@ -36,6 +36,7 @@ In this tutorial, we explain how to build a chat application where the users can
  
   - [Summing Up](#summing-up)
 
+
 ## What are GraphQL Subscriptions?
 
 _Subscriptions_ are a GraphQL feature that allow to get **real-time updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
@@ -118,7 +119,7 @@ next(data) {
 }
 ```
 
-If you specify `previousValues` for a `CREATED` mutation, this field will just be `null`.
+If you specify `previousValues` for a `CREATED` mutation, this field will just be `null`. Likewise, the `node` for a `DELETED` mutation will be `null` as well.
 
 
 #### Subscriptions with Apollo
@@ -189,7 +190,7 @@ import {SubscriptionClient, addGraphQLSubscriptions} from 'subscriptions-transpo
 import { ApolloProvider } from 'react-apollo'
 
 // Create WebSocket client
-const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/__PROJECT ID__`, {
+const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/v1/__PROJECT ID__`, {
   reconnect: true,
   connectionParams: {
     // Pass any arguments you want for initialization
@@ -240,9 +241,11 @@ All we need for the chat functionality is _one query_ to retrieve all messages f
 const allMessages = gql`
   query allMessages {
     allMessages {
+      id
       text
       createdAt
       sentBy {
+        id
         name
       }
     }
@@ -254,12 +257,17 @@ const createMessage = gql`
     createMessage(text: $text, sentById: $sentById) {
       id
       text
+      createdAt
+      sentBy {
+        id
+        name
+      }
     }
   }
 `
 ```
 
-When exporting the component, we're making these two operations available to our component by wrapping them around it using the Apollo's higher-order compoment [`graphql`](http://dev.apollodata.com/react/higher-order-components.html#graphql):
+When exporting the component, we're making these two operations available to our component by wrapping them around it using Apollo's higher-order compoment [`graphql`](http://dev.apollodata.com/react/higher-order-components.html#graphql):
 
 ```js
 export default graphql(createMessage, {name : 'createMessageMutation'})(
@@ -269,7 +277,7 @@ export default graphql(createMessage, {name : 'createMessageMutation'})(
 
 We then subscribe for changes on the `Message` type, filtering for mutations of type `CREATED`. 
 
-> Note: Generally, a mutation can take one of three forms: `CREATED`, `UPDATED` or `DELETED`. Our subscription API allows to use a `filter` to specify which of these you'd like to subscribe to. If you don't specify a filter, you'll subsribe to _all_ of them by default. It is also possible to filter for more complex changes, e.g. for `UPDATED` mutations, you could only subscribe to changes that happen on a specific _field_.
+> Note: Generally, a mutation can take one of three forms: `CREATED`, `UPDATED` or `DELETED`. Our subscription API allows to use a `filter` to specify which of these you'd like to subscribe to. If you don't specify a filter, you'll subscribe to _all_ of them by default. It is also possible to filter for more complex changes, e.g. for `UPDATED` mutations, you could only subscribe to changes that happen on a specific _field_.
 
 ```js
 // Subscribe to `CREATED`-mutations
@@ -280,9 +288,11 @@ this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
         mutation_in: [CREATED]
       }) {
         node {
+          id
           text
           createdAt
           sentBy {
+            id
             name
           }
         }
@@ -290,9 +300,8 @@ this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
     }
   `,
   updateQuery: (previousState, {subscriptionData}) => {
-    const newMessage = subscriptionData.data.node
+    const newMessage = subscriptionData.data.Message.node
     const messages = previousState.allMessages.concat([newMessage])
-
     return {
       allMessages: messages,
     }
@@ -303,14 +312,14 @@ this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
 
 Notice that we're using a different method to subscribe to the changes compared the first example where we used `subscribe` directly on an instance of the `ApolloClient`. This time, we're calling [`subscribeToMore`](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions) on the `allMessagesQuery` (which is available in the `props` of our compoment because we wrapped it with `graphql` before).
 
-Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the `ApolloStore`.  It takes in the `previousState` which is the the former _query result_ of our `allMessagesQuery` and the `subscriptionData` which contains the payload that we specified in our subscription, in our case that's the `node` that carries information about the new message.
+Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the local `ApolloStore`.  It takes in the `previousState` which is the the former _query result_ of our `allMessagesQuery` and the `subscriptionData` which contains the payload that we specified in our subscription, in our case that's the `node` that carries information about the new message.
 
 > From the Apollo [docs](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions): `subscribeToMore` is a convenient way to update the result of a single query with a subscription. The `updateQuery` function passed to `subscribeToMore` runs every time a new subscription result arrives, and it’s responsible for updating the query result.
 
 Fantastic, this is all we need in order for our chat to update in real-time! 🚀
 
 
-## Adding Geo-Location to the App 🗺
+## Adding Geo-Locations to the App 🗺
 
 Let's now look at how to add a geo-location feature to the app so that we can display the chat participants on a map. The full implementation is located [here](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/WorldChat.js).
 
@@ -332,24 +341,23 @@ const allLocations = gql`
 `
 ```
 
-Then we'll use two different mutations. The first one is a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo) that allows us to initially create a `Traveller` along with their `Location`, rather than having to do this in two different requests:
+Then we'll use two different mutations. The first one is a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo) that allows us to initially create a `Location` along with a `Traveller`, rather than having to do this in two different requests:
 
 ```js
-const createTravellerAndLocation = gql`
-  mutation createTravellerAndLocation($name: String!, $latitude: Float!, $longitude: Float!) {
-    createTraveller(name: $name, location: {
-      latitude: $latitude,
-      longitude: $longitude,
-    }) {
-      id
-      name
-      location {
-        id
-        latitude
-        longitude
-      }
+const createLocationAndTraveller = gql`
+    mutation createLocationAndTraveller($name: String!, $latitude: Float!, $longitude: Float!) {
+        createLocation(latitude: $latitude, longitude: $longitude, traveller: {
+            name: $name
+        }) {
+            id
+            latitude
+            longitude
+            traveller {
+                id
+                name
+            }
+        }
     }
-  }
 `
 ```
 
@@ -363,6 +371,7 @@ const updateLocation = gql`
         id
         name
       }
+      id
       latitude
       longitude
     }
@@ -370,7 +379,7 @@ const updateLocation = gql`
 `
 ```
 
-Like before, we're wrapping our component before exponent it using `graphql`:
+Like before, we're wrapping our component before exporting it using `graphql`:
 
 ```
 export default graphql(allLocations, {name: 'allLocationsQuery'})(
@@ -415,7 +424,7 @@ this.locationSubscription = this.props.allLocationsQuery.subscribeToMore({
     }
   `,
   updateQuery: (previousState, {subscriptionData}) => {
-    // we'll look at this in a second
+    // ... we'll take a look at this in a second
   }
 })
 ```
@@ -493,6 +502,12 @@ In both cases, we're simply incorporating the changes that we received from the 
 
 In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
 
+
+## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
+
+Join our [Slack community](http://slack.graph.cool/) if you run into issues or have questions. We love talking to you!
+
+![](http://i.imgur.com/5RHR6Ku.png)
 
 
 
