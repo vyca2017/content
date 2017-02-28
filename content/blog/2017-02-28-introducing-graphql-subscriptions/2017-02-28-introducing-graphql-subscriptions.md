@@ -23,7 +23,7 @@ A quick look at how it works (read on for the backstory):
 
 ![](subscriptions.gif)
 
-If you want to dive into code directly check out [this live demo](https://www.demo.graph.cool/worldchat)
+If you want to dive into code directly check out [this live demo](https://demo.graph.cool/worldchat).
 
 ## Subscriptions are Coming 🎉 🚀
 
@@ -68,6 +68,6 @@ You can start exploring GraphQL Subscriptions in the interactive playground by [
 
 ## More Resources
 
-<iframe height="315" src="https://www.youtube.com/embed/SooujCyMHe4" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
 
 To find out more, you can read the [subscriptions tutorial](https://graph.cool/docs/tutorials/worldchat-subscriptions-example-ui0eizishe) or the [reference documentation](https://graph.cool/docs/reference/simple-api/subscriptions-aip7oojeiv). If you have any questions, feel free to reach out to us in [Slack](https://slack.graph.cool).
