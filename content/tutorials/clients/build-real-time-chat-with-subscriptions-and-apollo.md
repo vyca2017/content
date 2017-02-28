@@ -498,10 +498,8 @@ In both cases, we're simply incorporating the changes that we received from the 
 In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
 
 
-## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
+## Help & Community 
 
 Join our [Slack community](http://slack.graph.cool/) if you run into issues or have questions. We love talking to you!
-
-![](http://i.imgur.com/5RHR6Ku.png)
 
 
