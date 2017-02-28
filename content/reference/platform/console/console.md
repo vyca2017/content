@@ -59,7 +59,7 @@ You can send requests to their respective endpoints that look like this:
 
 For subscriptions you can use this endpoint:
 
-`wss://subscriptions.graph.cool/__PROJECT_ID__`
+`wss://subscriptions.graph.cool/v1/__PROJECT_ID__`
 
 ## File API Endpoint
 
