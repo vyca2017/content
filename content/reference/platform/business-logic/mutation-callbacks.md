@@ -49,6 +49,7 @@ Every mutation callback has a payload, that is sent to the handler when the muta
   * *createdNode* - makes the fields of the created node available through subselection
 * **update**:
   * *updatedNode* - makes the fields of the updated node available through subselection
+  * *previousValues* - makes the scalar previous values of the node available through subselection
   * *changedFields* - a list of strings with all the field names that were included as arguments of the update mutation
 * **delete**:
   * *deletedNode* - makes the fields of the deleted node available through subselection
