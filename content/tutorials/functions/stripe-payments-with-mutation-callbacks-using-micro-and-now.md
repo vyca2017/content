@@ -120,11 +120,14 @@ We'll setup two microservices and each will be used for a different mutation cal
 npm install -g now
 ```
 
+To protect our microservices from unauthorized access, let's generate two secret passphrases, we'll use length 32 here. Let's call them `create-secret` and `charge-secret`.
 
-Now add the needed secrets:
+Now add the needed secrets to `now`:
 
 * `now secret add stripe-secret sk_test_XXXXXXXXXXXXXXXXXXXXXXXX`
 * `now secret add gc-pat XXX`
+* `now secret add create-secret XXX`
+* `now secret add charge-secret XXX`
 * `now secret add endpoint https://api.graph.cool/simple/v1/__PROJECT_ID__`
 
 ### When new card details are created, create according Stripe customer
@@ -186,9 +189,15 @@ stripe.customers.create({
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint create/`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint TOKEN=@create-secret create/`
 
-Insert the obtained url in the mutation callback target url.
+Now take the obtained url, add the `create-secret` as a query parameter and paste it to the mutation callback url. For example:
+
+```
+https://yourappname-create-customer-zstygsglsj.now.sh?token=XXX
+```
+
+Where `XXX` should be replaced with your `create-secret`.
 
 ### When purchase is created charge Stripe customer
 
@@ -257,9 +266,15 @@ stripe.charges.create({
 
 Deploy the microservices with now:
 
-* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint charge/`
+* `now -e STRIPE_SECRET=@stripe-secret -e GC_PAT=@gc-pat -e ENDPOINT=@endpoint TOKEN=@charge-secret charge/`
 
-Insert the obtained url in the mutation callback target url.
+Now take the obtained url, add the `charge-secret` as a query parameter and paste it to the mutation callback url. For example:
+
+```
+https://yourappname-charge-customer-asyygagwsj.now.sh?token=XXX
+```
+
+Where `XXX` should be replaced with your `charge-secret`.
 
 ## Test the Stripe Payment Workflow
 
