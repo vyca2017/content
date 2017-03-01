@@ -3,7 +3,7 @@ alias: in4ohtae4e
 path: /blog/2017-02-28-introducing-graphql-subscriptions
 layout: BLOG
 description: Graphcool now supports building real-time apps with GraphQL subscriptions.
-preview: ./subscriptions-preview.png
+preview: subscriptions-preview.png
 publication_date: '2017-02-28'
 tags:
   - platform
@@ -31,7 +31,7 @@ Based on this community effort, Facebook has now started the formal process of a
 
 Graphcool has participated in the specification effort from the start. We included many of you in this process by means of our Beta Program, where you provided invaluable feedback. We have incorporated all the learnings and are excited to announce today that **subscriptions are now production ready on Graphcool**. ([See docs](!alias-aip7oojeiv))
 
-As a Graphcool developer you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the new Graphcool Subscriptions API. Client applications can simply define the events they want to be notified about using familiar the [GraphQL filter syntax](!alias-aing7uech3).
+As a Graphcool developer you understand how a flexible API allows you to iterate at high-speed and deliver value faster. The same experience is ingrained into the new Graphcool Subscriptions API. Client applications can simply define the events they want to be notified about using the familiar [GraphQL filter syntax](!alias-aing7uech3).
 
 Take a look at the following example. This subscription query notifies you of all new photos by people followed by the current user:
 
@@ -58,7 +58,7 @@ subscription {
 }
 ```
 
-## Subscriptions Workflow using the Playground
+## Subscriptions workflow using the Playground
 
 One of GraphQLs best features are interactive tools like [GraphiQL](https://github.com/graphql/graphiql). For the best possible developer experience, the Graphcool Playground now supports GraphQL subscriptions out of the box. Here is an example workflow:
 
