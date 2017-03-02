@@ -22,7 +22,7 @@ related:
     - voht5ach9i
 ---
 
-# Relay vs. Apollo - Overview
+# Relay vs. Apollo - Comparing GraphQL Clients
 
 With JavaScript you have a few choices to connect to a GraphQL backend.
 Using http clients like `fetch` or `request` can get you quite far when all you need is sending queries and mutations.
