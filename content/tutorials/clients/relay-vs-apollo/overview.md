@@ -25,18 +25,17 @@ related:
 # Relay vs. Apollo - Comparing GraphQL Clients
 
 With JavaScript you have a few choices to connect to a GraphQL backend.
-Using http clients like `fetch` or `request` can get you quite far when all you need is sending queries and mutations.
-However, you have to handle things like escaping for query arguments yourself, which can become quite tedious.
+Using HTTP clients like `fetch` or `request` can get you quite far when all you need is sending queries or mutations. However, you have to handle things like escaping for query arguments by hand, which can become quite tedious.
 
-The two most popular GraphQL clients right now are [Relay](https://facebook.github.io/relay/) and [Apollo Client](http://dev.apollodata.com/). Both offer several advanced features to benefit the most from using GraphQL, such as client-side caching and optimistic updates.
+The two most popular GraphQL clients right now are [Relay](https://facebook.github.io/relay/) and [Apollo Client](http://dev.apollodata.com/). Both offer several advanced features to benefit the most from using GraphQL, such as **client-side caching and optimistic updates**.
 
-Instead of giving a distinct answer on which GraphQL client is the better one, we will compare the differences between Relay and Apollo Client from several perspectives.
+> This article won't tell you which GraphQL client is "the better one" but objectively compares the differences (advantages/disadantages) between Relay and Apollo Client from several perspectives.
 
 ## Requirements
 
-Both Relay and Apollo Client run best in combination with React. However, Apollo Client offers several integrations for other development environments. Furthermore, Relay is opinionated about the GraphQL server.
+Both Relay and Apollo Client are used best in combination with React. However, Apollo Client offers several integrations for other development environments. Furthermore, Relay is opinionated about the GraphQL server.
 
-Read about [requirements for Relay and Apollo Client](!alias-iep9yi0ri6):
+Read more about the [requirements for Relay and Apollo Client](!alias-iep9yi0ri6). The following points are covered:
 
 * What environment setup is needed?
 * What requirements does the GraphQL server have?
