@@ -2,7 +2,7 @@
 alias: ui0eizishe
 path: /docs/tutorials/worldchat-subscriptions-example
 layout: TUTORIAL
-preview:
+preview: build-real-time-chat-with-subscriptions-and-apollo.png
 shorttitle: How to Build Realtime Chat with GraphQL Subscriptions
 description: Build a realtime chat where the users can see the locations of all participants on a map - using GraphQL subscriptions and the Apollo client
 tags:
