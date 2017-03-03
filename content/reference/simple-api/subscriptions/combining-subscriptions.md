@@ -76,13 +76,13 @@ subscription changedPost {
 }
 ```
 
-> Note: `previousValues` is `null` for `CREATED` subscriptions and `updatedFields` is `null` for `CREATED` and `DELETED` susbcriptions.
+> Note: `previousValues` is `null` for `CREATED` subscriptions and `updatedFields` is `null` for `CREATED` and `DELETED` subscriptions.
 
 ## Advanced Subscription Filters
 
 You can make use of a similar [filter system as for queries](!alias-xookaexai0) using the `filter` argument.
 
-For example, you can subscribe to all `CREATED` and `DELETE` susbcriptions, as well as all `UPDATED` subscriptions when the `imageUrl` was updated
+For example, you can subscribe to all `CREATED` and `DELETE` subscriptions, as well as all `UPDATED` subscriptions when the `imageUrl` was updated
 
 ```graphql
 subscription changedPost {
@@ -112,4 +112,4 @@ subscription changedPost {
 
 > Note: Using any of the `updatedFields` filter conditions together with `CREATED` or `DELETED` subscriptions results in an error.
 
-> Note: `previousValues` is `null` for `CREATED` subscriptions and `updatedFields` is `null` for `CREATED` and `DELETED` susbcriptions.
+> Note: `previousValues` is `null` for `CREATED` subscriptions and `updatedFields` is `null` for `CREATED` and `DELETED` subscriptions.
