@@ -125,7 +125,7 @@ Rather than using the updated data manually in a callback though, you can benefi
 
 ## Setting up your Graphcool backend
 
-First, we need to configure our backend. In order to do so, you can use the following [schema](https://www.graph.cool/docs/reference/platform/data-schema-ahwoh2fohj) file that represents the data model for our application:
+First, we need to configure our backend. In order to do so, you can use the following [schema](!alias-ahwoh2fohj) file that represents the data model for our application:
 
 ```graphql
 type Traveller {
@@ -335,7 +335,7 @@ const allLocations = gql`
 `
 ```
 
-Then we'll use two different mutations. The first one is a [nested mutation](https://www.graph.cool/docs/reference/simple-api/nested-mutations-ubohch8quo) that allows us to initially create a `Location` along with a `Traveller`, rather than having to do this in two different requests:
+Then we'll use two different mutations. The first one is a [nested mutation](!alias-ubohch8quo) that allows us to initially create a `Location` along with a `Traveller`, rather than having to do this in two different requests:
 
 ```js
 const createLocationAndTraveller = gql`
@@ -489,7 +489,7 @@ In both cases, we're simply incorporating the changes that we received from the 
 
 ## Summing Up
 
-In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](https://www.graph.cool/docs/reference/simple-api/generated-subscriptions-aip7oojeiv).
+In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](!alias-aip7oojeiv).
 
 
 ## Help & Community
