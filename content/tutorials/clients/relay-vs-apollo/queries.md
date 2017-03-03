@@ -20,19 +20,19 @@ related:
     - koht6ethe3
 ---
 
-# Relay vs. Apollo - Queries
+# Relay vs. Apollo - Fetching Data With GraphQL
 
 Sending queries is a core feature of any GraphQL client allowing you to fetch data from a GraphQL backend.
+Both Relay and Apollo Client offer higher-order components (HOC) for sending queries and injecting its result to another React component.
 
-## Overview
-
-Both Relay and Apollo Client offer higher-order components (HCO) to define a query and inject its result to another React component. The internal cache is also updated with the results of a query to initate a potential rerender for all React components relying on the queried data. Relay's data normalization comes out-of-the-box based on the node ids a Relay-conforming GraphQL server provides. Apollo Client's data normalization needs to be setup manually but is more flexible on the other hand.
+The internal cache is also updated with the results of a query and depending components are rerendered on cache updates. Relay's data normalization comes out-of-the-box based on the node ids a Relay-conforming GraphQL server provides. Apollo Client's data normalization needs to be setup manually but is more flexible on the other hand.
 
 Let's see how we can send the following GraphQL query with Relay and Apollo Client:
 
 ```graphql
 ---
 endpoint: https://api.graph.cool/simple/v1/ciwdaxg682vpi0171tw2ga8fy
+disabled: false
 ---
 query {
   allPokemons(filter: {
@@ -74,11 +74,11 @@ query {
 }
 ```
 
-## Queries with Relay
+## Co-located Queries with Relay
 
 Relay heavily relies on GraphQL fragments to express queries. Every component that requires data from a GraphQL server needs to define an according GraphQL fragment. Parent components can include fragments from child components in their query without knowing the exact data requirements of their children. This concept is referred to as data masking.
 
-### Wrapping a React component
+### Wrapping A Component with Relay Containers
 
 To send a query with Relay, we have to wrap a React component using `Relay.createContainer`. The actual query is defined using the `Relay.QL` syntax seen below and we have to define a fragment on the viewer (or possibly another connection).
 
@@ -117,8 +117,6 @@ export default Relay.createContainer(
 
 Note the additional `first: 1000` argument that is required by Relay in queries like this. Relay specifies this and more arguments as part of the [Cursor Connections Specification](https://facebook.github.io/relay/graphql/connections.htm).
 
-### Using the injected data in the React component
-
 In the wrapped React component, we should specify props according to the defined fragments on the Relay container. In this case, we need to specify `viewer` that includes the `allPokemons` object.
 
 ```js
@@ -146,17 +144,19 @@ class Pokedex extends React.Component {
 }
 ```
 
-### Interaction with the cache
+### Data Normalization with Nodes
 
-Relay requires the unique `id` field on every node in the GraphQL backend. The id is heavily used by Relay to normalize the data and make sure that all components rerender when there is new data for a certain node id. No more configuration is needed to make the cache consistent from the client side - however, there is also no possibility to change this behaviour. For example, for a GraphQL backend that only has unique `id`s per model, Relay's cache mechanisms would break. Graphcool uses [cuids](https://github.com/graphcool/cuid-java) to generate unique ids across all nodes in your project, so this is not an issue.
+Relay requires the unique `id` field on every node in the GraphQL backend. The id is heavily used by Relay to normalize the data and make sure that all components rerender when there is new data for a certain node id. No more configuration is needed to make the cache consistent from the client side - however, there is also no possibility to change this behaviour.
+
+For example, for a GraphQL backend that only has unique `id`s per model, Relay's cache mechanisms would break. Graphcool uses [cuids](https://github.com/graphcool/cuid-java) to generate unique ids across all nodes in your project, so this is not an issue.
 
 To read more about GraphQL queries in Relay, refer to the [Learn Relay guide](https://www.learnrelay.org/queries/what-is-a-query).
 
-## Queries with Apollo Client
+## Flexible Queries with Apollo Client
 
 Apollo Client offers convenience functions to check the loading and error states of a query. This makes rendering a loading animation really simple. Using fragments with Apollo Client is an option, but it's not enforced.
 
-### Wrapping a React component
+### Exposing Apollo Client to React Components
 
 To send a query with Apollo Client in React, we have to wrap a React component using `graphql`. The actual query is defined using the `gql` syntax seen below.
 
@@ -179,8 +179,6 @@ export default graphql(allPokemonsQuery)(Pokedex)
 ```
 
 In the wrapped React component, we should specify the `data` prop. `data.loading` and `data.error` is always available. In our example we need to additionally specify the `allPokemons` array as property on `data`.
-
-### Using the injected data in the React component
 
 ```js
 // the Pokedex class is responsible to display multiple pokemons
@@ -220,7 +218,7 @@ class Pokedex extends React.Component {
 }
 ```
 
-### Caching the queried data
+### Controlling the Apollo Store
 
 To normalize the Apollo Store and uniquely identify nodes, you have to define the `dataIdFromObject` method when setting up the Apollo Client. Because nodes at Graphcool have a unique `id`, this setup is enough:
 
