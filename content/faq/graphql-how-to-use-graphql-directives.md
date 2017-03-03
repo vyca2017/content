@@ -2,7 +2,7 @@
 alias: moach1gich
 path: /docs/faq/how-to-use-graphql-directives
 layout: FAQ
-shorttitle: How t use GraphQL directives?
+shorttitle: How to use GraphQL directives?
 description: GraphQL directives encode additional functionalities. Using the skip and include directives you can control the shape of queries and mutations.
 tags:
   - graphql
