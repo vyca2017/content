@@ -55,7 +55,7 @@ To express the additional information, we can introduce a meta model `Subscripti
 type Subscriber {
   id: ID
   name: String!
-  susbriptions: [Subscription] @relation(name: "SubscriberOnSubscription")
+  subscriptions: [Subscription] @relation(name: "SubscriberOnSubscription")
 }
 
 type Topic {
