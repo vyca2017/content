@@ -26,7 +26,7 @@ The [Algolia](https://algolia.com) integration allows you to automatically synch
 
 In your Algolia settings, copy the Algolia App Id and create a new API key with **Add Records** and **Delete Records** enabled:
 
-![](./algolia-settings.png)
+![](./algolia-settings.png?width=589)
 
 ## Activate the Algolia Integration
 

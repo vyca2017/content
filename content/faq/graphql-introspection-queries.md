@@ -2,6 +2,7 @@
 alias: shoe5xailo
 path: /docs/faq/graphql-introspection-queries
 layout: FAQ
+preview: graphql-introspection-queries.png
 title: How to use GraphQL Introspection Queries?
 shorttitle: GraphQL Introspection Queries
 description: GraphQL servers expose a type safe GraphQL schema. You can query information about the schema using GraphQL introspection queries.
