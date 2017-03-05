@@ -1,3 +1,21 @@
+---
+alias: kohj2aengo
+path: /docs/tutorials/graphql-and-jquery
+layout: TUTORIAL
+preview: jquery.png
+shorttitle: How to use GraphQL with jQuery
+description: Build a simple Pokedex application with jQuery
+tags:
+  - queries
+  - mutations
+  - jquery
+  - open-source
+related:
+  further:
+    - thaeghi8ro
+---
+
+
 # Using GraphQL from jQuery
 
 Despite the number of modern web frameworks and javascript libraries that are emerging at a rapid pace nowadays, there is still a great community of developers out there who are using plain javascript and [jQuery](https://jquery.com/) to build web applications.
