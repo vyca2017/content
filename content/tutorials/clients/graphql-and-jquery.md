@@ -18,9 +18,9 @@ related:
 
 # Using GraphQL from jQuery
 
-Despite the number of modern web frameworks and javascript libraries that are emerging at a rapid pace nowadays, there is still a great community of developers out there who are using plain javascript and [jQuery](https://jquery.com/) to build web applications.
+Despite the growing number of modern web frameworks and Javascript libraries such as React & Angular, there is still a big community of developers using plain Javascript and [jQuery](https://jquery.com/) to build web applications.
 
-In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$ajax` requests.
+In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$.ajax`.
 
 
 ## What is GraphQL?
