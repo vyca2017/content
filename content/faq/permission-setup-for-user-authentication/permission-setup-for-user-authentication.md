@@ -32,6 +32,7 @@ Note that by choosing `Apply to whole model`, we select all current and future f
 Using the email auth provider it works like this:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciwf90ykz03b20171wbj92kw2
 disabled: true
 ---
@@ -63,6 +64,7 @@ mutation {
 In the above setting, we additionally allowed everyone to query the `id` of a user. If this is not what you want, you can disable that permission. When you now create a user, you'll get the following response:
 
 ```graphql
+---
 endpoint: https://api.graph.cool/simple/v1/ciwf90ykz03b20171wbj92kw2
 disabled: true
 ---
