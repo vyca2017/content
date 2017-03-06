@@ -115,7 +115,7 @@ Let's see how to create a new Algolia search index. On the integration page, you
 
 The key needs the ACL **Add records** and **Delete records** as shown in this screenshot:
 
-![](./algolia-graphcool-key.png)
+![](./algolia-graphcool-key.png?width=295)
 
 ### Enter credentials
 
@@ -124,7 +124,7 @@ Enter the credentials:
 * **Application ID**: you can copy the application id from your Algolia account
 * **API Key**: copy the restricted key we created above
 
-![](./algolia-credentials.png)
+![](./algolia-credentials.png?width=295)
 
 Then you can create a new index on the `Beer` model. Name the index `Beers` and enter this query:
 

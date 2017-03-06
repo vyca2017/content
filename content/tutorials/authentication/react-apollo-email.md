@@ -66,15 +66,15 @@ As we want to restrict the creation of posts only to `AUTHENTICATED` users, we h
 To allow everyone to see posts, we have to add a `EVERYONE` permissions for `View Data` as well.
 Make sure that these two permissions are the only enabled ones, otherwise the final permissions might be too restrictive or too relaxed.
 
-![](./post-permissions.png)
+![](./post-permissions.png?width=350)
 
 As we want to allow `EVERYONE` to signup, we create the according `Create Node` permission on the `User` model.
 
-![](./create-user-permissions.png)
+![](./create-user-permissions.png?width=350)
 
 We also allow `EVERYONE` to view users by creating a new permission for `View Data`.
 
-![](./user-permissions.png)
+![](./user-permissions.png?width=350)
 
 ## 2. Building the application
 

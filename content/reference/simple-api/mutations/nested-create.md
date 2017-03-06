@@ -133,7 +133,7 @@ Note the variable type `AuthorcontactDetailsContactDetails` that follows a consi
 
 You can also find the type name in the documentation in the Playground:
 
-![](./graphql-variables-type-name.png)
+![](./graphql-variables-type-name.png?width=351)
 
 #### Updating an existing Author and connect it to new ContactDetails
 
