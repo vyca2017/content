@@ -95,4 +95,4 @@ At this point you are good to go - if you want, you can run the mutation from ab
 
 You just setup a mutation callback that eventually notifies you whenever a new user signs up, neat!
 
- If you want to read more about mutation callbacks, head over to the [reference documentation](!alias-ahlohd8ohn) or read [this guide on email notifications with mutation callbacks and Mailgun](!alias-saigai7cha.md).
+ If you want to read more about mutation callbacks, head over to the [reference documentation](!alias-ahlohd8ohn) or read [this guide on email notifications with mutation callbacks and Mailgun](!alias-saigai7cha).
