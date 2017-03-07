@@ -3,8 +3,7 @@ alias: kohj2aengo
 path: /docs/tutorials/graphql-and-jquery
 layout: TUTORIAL
 preview: jquery.png
-shorttitle: How to use GraphQL with jQuery
-description: Build a simple Pokedex application with jQuery
+description: Learn how to use GraphQL with jQuery by building a simple Pokedex example app
 tags:
   - queries
   - mutations
@@ -18,11 +17,11 @@ related:
 ---
 
 
-# Using GraphQL from jQuery
+# How to use GraphQL with jQuery
 
 Despite the growing number of modern web frameworks and Javascript libraries such as React & Angular, there is still a big community of developers using plain Javascript and [jQuery](https://jquery.com/) to build web applications.
 
-In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$.ajax`.
+In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$.post` (`$.ajax` works as well).
 
 
 ## What is GraphQL?
