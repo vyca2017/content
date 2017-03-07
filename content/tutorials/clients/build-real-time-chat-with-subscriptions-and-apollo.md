@@ -21,16 +21,6 @@ In this tutorial, we explain how to build a chat application where the users can
 
 <iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
 
-## Table of Contents
-
-  - [What are GraphQL Subscriptions?](#what-are-graphql-subscriptions)
-  - [Setting up your Graphcool backend](#setting-up-your-graphql-backend)
-  - [Setting up the Apollo Client to use Subscriptions](#setting-up-the-apollo-client-to-use-subscriptions)
-  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-realtime-chat-with-subscriptions-💬)
-  - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app-🗺)
-  - [Summing Up](#summing-up)
-
-
 ## What are GraphQL Subscriptions?
 
 _Subscriptions_ are a GraphQL feature that allow to get **realtime updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
@@ -490,8 +480,5 @@ In both cases, we're simply incorporating the changes that we received from the 
 ## Summing Up
 
 In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](!alias-aip7oojeiv).
-
-
-## Help & Community
 
 Join our [Slack community](http://slack.graph.cool/) if you run into issues or have questions. We love talking to you!
