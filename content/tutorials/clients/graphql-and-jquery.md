@@ -107,7 +107,7 @@ As mentioned before, every request that we send to the GraphQL API has to be a P
 
 ```js
 $.post({
-  url: graphQLEndpoint,
+  url: 'https://api.graph.cool/simple/v1/__PROJECT_ID__',
   data: JSON.stringify({ "query": " { allPokemons { id name } } " }),
   contentType: 'application/json'
 }).done(function(response) {
@@ -137,7 +137,7 @@ We can create a new Pokemon using jQuery like so:
 
 ```js
 $.post({
-  url: graphQLEndpoint,
+  url: 'https://api.graph.cool/simple/v1/__PROJECT_ID__',
   data: JSON.stringify({ "query": "mutation { createPokemon(name: \"Pikachu\") { id name } } " }),
   contentType: 'application/json'
 }).done(function(response) {
