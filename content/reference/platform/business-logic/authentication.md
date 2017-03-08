@@ -69,4 +69,6 @@ Read more about how user authentication works with different auth providers in t
 
 You can create *permanent authentication tokens* in the Console for server-side services that need access to your data.
 
+![](./copy-pat.gif?width=400)
+
 Note: Be **very** careful where you use the permanent authentication tokens. Everyone with a permanent authentication token can do serious harm to your data, so you should never include them anywhere client-side, like on a website or a mobile app.
