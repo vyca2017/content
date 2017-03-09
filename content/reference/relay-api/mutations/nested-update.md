@@ -150,7 +150,7 @@ Note the nested `postsIds` list of `Post` ids. After running this mutation, the 
 
 #### Updating an existing Author and Connecting it to multiple new Posts
 
-Similarly, we can update an author and simultaneously connect it to multiple existing new posts for that author:
+Similarly, we can update an author and simultaneously assign it to a new list of existing posts:
 
 ```graphql
 ---
@@ -192,3 +192,5 @@ mutation updateAuthorAndConnectPosts($postsIds: [ID!]) {
   }
 }
 ```
+
+> Note: This mutation will *replace* the existing list of posts assigned to the author. If instead you want to *append* more posts to the list, you can [modify the edge](!alias-ek8eizeish) directly instead.

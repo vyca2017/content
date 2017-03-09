@@ -266,7 +266,7 @@ You can also find the type name in the documentation in the Playground:
 
 #### Updating an existing Author and Connecting it to multiple new Posts
 
-Similarly, we can update an author and simultaneously create multiple new posts for that author:
+Similarly, we can update an author and simultaneously assign it to a new list of new posts:
 
 ```graphql
 ---
@@ -307,3 +307,5 @@ mutation updateAuthorAndConnectToPosts($postsIds: [ID!]) {
   }
 }
 ```
+
+> Note: This mutation will *replace* the existing list of posts assigned to the author. If instead you want to *append* more posts to the list, you can [modify the edge](!alias-ek8eizeish) directly instead.
