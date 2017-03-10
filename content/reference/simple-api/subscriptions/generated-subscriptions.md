@@ -26,6 +26,10 @@ You subscribe to a subscription using your [endpoint](!alias-uh8shohxie#client-a
 This is an example subscription that notifies you whenever a new post is created:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription newPosts {
   Post(
     filter: {
@@ -36,6 +40,18 @@ subscription newPosts {
     node {
       description
       imageUrl
+    }
+  }
+}
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "CREATED",
+      "node": {
+        "description": "#bridge",
+        "imageUrl": "https://images.unsplash.com/photo-1420768255295-e871cbf6eb81"
+      }
     }
   }
 }

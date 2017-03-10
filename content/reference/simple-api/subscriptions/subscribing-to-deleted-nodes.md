@@ -52,6 +52,10 @@ You can make use of a similar [filter system as for queries](!alias-xookaexai0) 
 For example, to only be notified of a deleted post if a specific user follows the author:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription followedAuthorUpdatedPost {
   Post(
     filter: {
@@ -59,7 +63,7 @@ subscription followedAuthorUpdatedPost {
       node: {
         author: {
           followedBy_some: {
-            id: "some-user-id"
+            id: "cj03x3nacox6m0119755kmcm3"
           }
         }
       }
@@ -68,6 +72,17 @@ subscription followedAuthorUpdatedPost {
     mutation
     previousValues {
       id
+    }
+  }
+}
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "DELETED",
+      "previousValues": {
+        "id": "cj03x8r0mqhdq01190hx2ad2b"
+      }
     }
   }
 }

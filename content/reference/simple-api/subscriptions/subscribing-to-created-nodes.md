@@ -24,6 +24,10 @@ For a given model, you can subscribe to all successfully created nodes using the
 If you want to subscribe to created nodes of the `Post` model, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [CREATED]`.
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription createPost {
   Post(
     filter: {
@@ -36,6 +40,21 @@ subscription createPost {
       imageUrl
       author {
         id
+      }
+    }
+  }
+}
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "CREATED",
+      "node": {
+        "description": "#bridge",
+        "imageUrl": "https://images.unsplash.com/photo-1420768255295-e871cbf6eb81",
+        "author": {
+          "id": "cj03wz212nbvt01925reuolju"
+        }
       }
     }
   }
@@ -54,6 +73,10 @@ You can make use of a similar [filter system as for queries](!alias-xookaexai0) 
 For example, to only be notified of a created post if a specific user follows the author:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription followedAuthorCreatedPost {
   Post(
     filter: {
@@ -61,7 +84,7 @@ subscription followedAuthorCreatedPost {
       node: {
         author: {
           followedBy_some: {
-            id: "some-user-id"
+            id: "cj03x3nacox6m0119755kmcm3"
           }
         }
       }
@@ -73,6 +96,21 @@ subscription followedAuthorCreatedPost {
       imageUrl
       author {
         id
+      }
+    }
+  }
+}
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "CREATED",
+      "node": {
+        "description": "#bridge",
+        "imageUrl": "https://images.unsplash.com/photo-1420768255295-e871cbf6eb81",
+        "author": {
+          "id": "cj03wz212nbvt01925reuolju"
+        }
       }
     }
   }
