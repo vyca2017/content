@@ -24,6 +24,10 @@ For a given model, you can subscribe to all successfully updated nodes using the
 If you want to subscribe for updated nodes of the `Post` model, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [UPDATED]`.
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription updatePost {
   Post(
     filter: {
@@ -45,6 +49,28 @@ subscription updatePost {
     }
   }
 }
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "UPDATED",
+      "node": {
+        "description": "#food",
+        "imageUrl": "https://images.unsplash.com/photo-1432139438709-ee8369449944",
+        "author": {
+          "id": "cj03wz212nbvt01925reuolju"
+        }
+      }
+      "updatedFields": [
+        "imageUrl"
+      ],
+      "previousValues": {
+        "description": "#food",
+        "imageUrl": "https://images.unsplash.com/photo-1457518919282-b199744eefd6"
+      }
+    }
+  }
+}
 ```
 
 The payload contains
@@ -63,6 +89,10 @@ You can make use of a similar [filter system as for queries](!alias-xookaexai0) 
 For example, to only be notified of an updated post if its `description` changed:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj03vcl4777hv0180zqjk5a6q
+disabled: true
+---
 subscription followedAuthorUpdatedPost {
   Post(
     filter: {
@@ -77,6 +107,30 @@ subscription followedAuthorUpdatedPost {
     updatedFields
     previousValues {
       description
+    }
+  }
+}
+---
+{
+  "data": {
+    "Post": {
+      "mutation": "UPDATED",
+      "node": {
+        "description": "#best #food",
+        "imageUrl": "https://images.unsplash.com/photo-1457518919282-b199744eefd6",
+        "author": {
+          "id": "cj03wz212nbvt01925reuolju"
+        }
+      }
+      "node": {
+        "description": "#best #food"
+      },
+      "updatedFields": [
+        "description"
+      ],
+      "previousValues": {
+        "description": "#food"
+      }
     }
   }
 }
