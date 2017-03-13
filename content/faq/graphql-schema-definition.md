@@ -5,13 +5,13 @@ layout: FAQ
 description: A GraphQL Schema Definition is the easiest way to describe an entire GraphQL api. With Graphcool you can use Schema Definitions to create new projects
 ---
 
-# GraphQL Schema Definition
+# GraphQL IDL - GraphQL Schema Definition
 
 ## What is a GraphQL Schema Definition?
 
-A GraphQL Schema Definition is the most concise way to specify a GraphQL schema. The syntax is well-defined and will be adopted in the official [GraphQL Spec](https://github.com/facebook/graphql/pull/90). Schema Definitions are sometimes referred to as IDL (Interface Definition Language) or SDL (Schema Definition Language)
+A GraphQL Schema Definition is the most concise way to specify a GraphQL schema. The syntax is well-defined and [will be adopted in the official GraphQL Spec](https://github.com/facebook/graphql/pull/90). Schema Definitions are sometimes referred to as IDL (Interface Definition Language) or SDL (Schema Definition Language)
 
-The GraphQL api for a blog could be specified like this:
+The GraphQL schema for a blog app could be specified like this:
 
 ```graphql
 type Post {
