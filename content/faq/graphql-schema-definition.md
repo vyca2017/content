@@ -19,14 +19,14 @@ type Post {
   title: String!
   publishedAt: DateTime!
   likes: Int! @default(value: 0)
-  blog: Blog! @relation(name: "posts")
+  blog: Blog @relation(name: "Posts")
 }
 
 type Blog {
   id: String!
   name: String!
   description: String,
-  posts: [Post!]! @relation(name: "posts")
+  posts: [Post!]! @relation(name: "Posts")
 }
 ```
 
@@ -38,6 +38,7 @@ A type has a name and can extend one or more interfaces:
 
 ```graphql
 type Post extends Item {
+  # ...
 }
 ```
 
