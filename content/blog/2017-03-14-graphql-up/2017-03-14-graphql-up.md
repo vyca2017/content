@@ -71,3 +71,11 @@ Just add the following Markdown snippet and replace the __SCHEMA_URL__ with a li
 ```md
 [![graphql-up](http://static.graph.cool/images/graphql-up.svg)](https://www.graph.cool/graphql-up/new?source=__SCHEMA_URL__)
 ```
+
+## Composition Is The Future of Software Development
+
+We believe the future of software development belongs to small focused services. Combining these in countless ways developers will build complete applications with ease. 
+
+`graphql-up` completely eliminates the overhead of spinning up a GraphQL backend thereby enabling new use cases. At Graphcool we are heavy users of `graphql-up` both in our ci-infrastructure as well as for all demos we are giving. 
+
+We would love to talk to you about your use case - so head over to [slack](https://slack.graph.cool)
