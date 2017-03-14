@@ -32,7 +32,7 @@ First you need to install the CLI tool. `graphql-up` is available via NPM and ca
 npm install -g graphql-up
 ```
 
-When calling `graphql-up` on the command line, all you need is provide the [schema](!alias-kr84dktnp0#what-is-a-graphql-schema-definition) file for your backend as an argument. Here is an example schema for a simple version of Twitter:
+When calling `graphql-up` in the command line, all you need is provide the [schema](!alias-kr84dktnp0#what-is-a-graphql-schema-definition) file for your backend as an argument. Here is an example schema for a simple version of Twitter:
 
 ```graphql
 type User {
