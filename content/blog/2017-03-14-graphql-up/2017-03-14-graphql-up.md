@@ -48,10 +48,10 @@ type Tweet {
 }
 ``` 
 
-Simply save your schema in a file called `instagram.schema` and run the following command:
+Simply save your schema in a file called `twitter.schema` and run the following command:
 
 ```sh
-graphql-up instagram.schema
+graphql-up twitter.schema
 ```
 
 `graphql-up` will generate two different API endpoints for you:
