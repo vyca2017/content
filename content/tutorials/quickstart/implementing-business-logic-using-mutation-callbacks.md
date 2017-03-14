@@ -46,7 +46,7 @@ For this guide we will use webtask where we use Mailgun to send out notification
 
 Sign up at [Mailgun](https://mailgun.com) and get your Mailgun API Base URL and secret Mailgun API key for later use.
 The URL starts with `https://api.mailgun.net/v3/` and the API key starts with `key-`. Both can be found at your Mailgun domain overview.
-We have to append `/message` to the URL so we can use it from within the webtask.
+We have to append `/messages` to the URL so we can use it from within the webtask.
 
 ### 2.2 Cloning the example code
 
