@@ -21,7 +21,7 @@ GraphQL is an amazing technology that makes working with APIs for frontend devel
 
 At Graphcool, **we want to make it as easy as possible to get started with GraphQL.** That's why we've built [`graphql-up`](https://graph.cool/graphql-up/), a command-line tool that lets you spin up a ready-to-use GraphQL API by simply providing a GraphQL schema that describes your data model.
 
-![](http://i.imgur.com/jzdsHz6.gif)
+![](./terminal.gif)
 
 
 ## How to get your GraphQL API
