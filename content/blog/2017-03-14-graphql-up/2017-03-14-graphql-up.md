@@ -17,11 +17,11 @@ related:
 
 # Introducing `graphql-up`
 
-GraphQL is an amazing technology that makes working with APIs for frontend developers a breeze. However, if you just want to try out GraphQL you first have to develop your GraphQL backend which takes a lot of time until you can even write your first query. 
+GraphQL is an amazing technology that makes working with APIs for frontend developers a breeze. However, just to try out GraphQL, you first have to develop your own GraphQL backend. This takes a lot of time until you can even run your first query.
 
 At Graphcool, **we want to make it as easy as possible to get started with GraphQL.** That's why we've built [`graphql-up`](https://graph.cool/graphql-up/), a command-line tool that lets you spin up a ready-to-use GraphQL API by simply providing a GraphQL schema that describes your data model.
 
-![](http://i.imgur.com/jzdsHz6.gif)
+![](./terminal.gif)
 
 
 ## How to get your GraphQL API
@@ -32,7 +32,7 @@ First you need to install the CLI tool. `graphql-up` is available via NPM and ca
 npm install -g graphql-up
 ```
 
-When calling `graphql-up` in the command line, all you need is provide the [schema](!alias-kr84dktnp0#what-is-a-graphql-schema-definition) file for your backend as an argument. Here is an example schema for a simple version of Twitter:
+When calling `graphql-up` in the command line, all you need is to provide the [schema](!alias-kr84dktnp0#what-is-a-graphql-schema-definition) file for your backend as an argument. Here is an example schema for a simple version of Twitter:
 
 ```graphql
 type User {
