@@ -148,4 +148,41 @@ query {
 }
 ```
 
+## Leveraging Nested Mutations
+
+You can also use nested mutations to add new data across the two original models and the meta model in one request. Let's have a look at an example:
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cizlhmdf2hkdr0172mhyyjehy
+disabled: true
+---
+mutation {
+  createSubscriber(
+    name: "Minney"
+    subscriptions: [{
+      priority: LOW
+      subscribedAt: "2016-11-18"
+      topicId: "cizlhrhx6ycbf01858mz4h5v5"
+    }, {
+      priority: HIGH
+      subscribedAt: "2016-12-09"
+      topicId: "cizlhsqdpv2h10149mghn27il"
+    }]
+  ) {
+    name
+  }
+}
+---
+{
+  "data": {
+    "createSubscriber": {
+      "name": "Minney"
+    }
+  }
+}
+```
+
+By introducing meta models, we gain a flexible data model that synergizes seamlessy with the power of nested mutations and the hierarchical query capabilities of GraphQL.
+
 Do you have further questions or suggestions regarding relation metadata? Share your thoughts [on GitHub](https://github.com/graphcool/feature-requests/issues/116)!
