@@ -23,7 +23,7 @@ related:
 ---
 
 
-# Relay vs Apollo - Comparing GraphQL Clients
+# Comparing GraphQL Clients
 
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose? 
 
@@ -54,16 +54,8 @@ In the following, we are going to explore how to solve common and recurring clie
 
 To give you a broad overview on what you can expect from either client, here is a high-level comparison before we dive into more details.
 
-| | Relay | Apollo | 
-| --- | --- | --- | 
-| Built by | [Facebook](https://code.facebook.com/projects/) (Check out the project on [GitHub](https://github.com/facebook/relay)) | [Meteor](https://www.meteor.com/) (Check out the project on [GitHub](https://github.com/apollographql)) | 
-| Frontend Technologies | Requires [React](https://facebook.github.io/react/) / [React Native](https://facebook.github.io/react-native/) and configuration of [Babel plugin](https://facebook.github.io/relay/docs/guides-babel-plugin.html#content) | Framework and platform agnostic (works with any JS framework such as React, Angular or Vue as well as on the native mobile platforms) |
-| GraphQL API | Requires a certain structure in the GraphQL schema | Works with any GraphQL schema |
-| Complexity | Slow learning curve: Lots of powerful _magic_ happening behind the scenes | Low entrance barrier: Let's you get started quickly and involves more manual work for certain features |
-| Flexibility | Almost no flexibility, strict rules how to integrate Relay with React components | Lots of flexibility how Apollo is used throughout a whole project, easy to adopt incrementally |
-| Usage of GraphQL [Fragments](https://facebook.github.io/graphql/#sec-Language.Fragments) | Relies on fragments as an essential tool to express data requirements per component | Fragments are a convenience to improve structuring of GraphQL queries and mutations that generally enable reusablity of GraphQL code | 
-| GraphQL [Subscriptions](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) | No explicit means to integrate subscriptions | Subscriptions supported through [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws) | 
-| Best Use Case | Large, complex systems with lots of interdependencies that are handled by Relay (ensures long-term productivity) | Small to medium scale applications |   
+![](./table.png)
+
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
@@ -89,7 +81,7 @@ type Trainer {
 ```
 
 
-## Relay vs Apollo - Environment and setup
+## Environment and setup
 
 ### Server-side requirements
 
@@ -144,7 +136,7 @@ While Apollo can be used in [any client-side environment](http://dev.apollodata.
 However, they actually both follow a similar approach when being used in a React application: With both clients, the general idea is that React components are wrapped using a [higher-order component](https://facebook.github.io/react/docs/higher-order-components.html) which takes care of fetching the data and making it available to the component through its props. Data requirements for a component are specified in a declarative manner and all actual networking logic is completely abstracted away and hidden from the developer. A major benefit of this approach is that the container can manage data fetching and resolution logic without interfering with the state of the inner component.
 
 
-## Relay vs Apollo - Fetching data using GraphQL queries
+## Fetching data using GraphQL queries
 
 A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, there is only one way how to get access to data in a React component and that is through a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content). With Apollo, it is possible to use a similar approach with the [`graphql`](http://dev.apollodata.com/react/api.html#graphql) higher-order component. Another way to obtain data from the server would be to directly send queries using the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and process the returned data in a callback function. In the following, we are going to dive into what data fetching with Relay and with Apollo looks like.
 
@@ -197,7 +189,7 @@ query {
 
 ### Data fetching with Relay
 
-##### Co-located queries
+#### Co-located queries
 
 Relay heavily relies on GraphQL fragments to express data requirements. In fact, when working with Relay, we're not actually writing full-blown GraphQL queries but only specify the data that is needed for each component in terms of a fragment. Relay is then taking care of composing the fragments and building the actual queries that are getting sent to the server. As developers, this process is completely hidden from us and we don't have an easy way to influence it. 
 
@@ -268,7 +260,7 @@ class Pokedex extends React.Component {
 }
 ```
 
-##### Data normalization with nodes 
+#### Data normalization with nodes 
 
 Relay requires the unique `id` field on every node in the GraphQL backend. This ID is heavily used by Relay to normalize the data and make sure that all components rerender when there is new data for a certain node. No more configuration is needed to make the cache consistent from the client side - however, there is also no possibility to change this behaviour.
 
@@ -284,7 +276,7 @@ With Apollo, it is possible to fetch data in two different ways:
 1. Wrapping the React component with the `graphql` higher-order component and make the data available through the props
 2. Send a query directly using the `ApolloClient` and handle the return data in a promise
 
-##### 1. Using `graphql` to wrap a React component
+#### 1. Using `graphql` to wrap a React component
 
 When a React component requires some data, it can be wrapped with a query that expresses these data requirements and then the data will be available through the component's props. Apollo further injects a `loading` and `error` property into the wrapped component. This allows the component to render in situations where the data has not yet arrived in the client (where `loading` will be `true`) or where the network request failed (so `error` will contain some info about what went wrong).
 
@@ -348,7 +340,7 @@ class Pokedex extends React.Component {
 }
 ```
 
-##### 2. Directly send queries using `ApolloClient`
+#### 2. Directly send queries using `ApolloClient`
 
 The second option is to send a query using the `ApolloClient` and processing the result as a promise. In that case, the [`query`](http://dev.apollodata.com/core/apollo-client-api.html#ApolloClient\.query) method of the `ApolloClient` can be used:
 
@@ -374,7 +366,7 @@ client.query({
 This approach leads to more flexibility if you require certain data for something other than displaying it in the UI.
 
 
-##### Controlling the Apollo Store
+#### Controlling the Apollo Store
 
 Apollo uses a [normalized store](https://dev-blog.apollodata.com/building-a-graphql-store-from-first-principles-413e19ea65b4#.kzjmjvfo9) for its local cache. That means that the data that is being returned by the server and (potentially) has a nested shape will be flattened before being put into the store. All objects will be stored on the first level of the cache uniquely identified by their ID.
 
@@ -457,7 +449,7 @@ const client = new ApolloClient({
 In both cases, you have to make sure to include the `id` in all queries and mutations whose results should be normalized. To read more about GraphQL queries in Apollo Client, refer to the [Learn Apollo](https://ww.learnapollo.com/tutorial-react/react-02/). There's also an [excursion on the Apollo Store](https://www.learnapollo.com/excursions/excursion-02).
 
 
-## Relay vs Apollo - Creating, updating and deleting data with mutations
+## Creating, updating and deleting data with mutations
 
 Sending mutations is a core feature of any GraphQL client allowing you to create, modify or delete data in a GraphQL backend.
 
@@ -614,7 +606,7 @@ Calling mutations with the Apollo client follows the same approach as sending qu
 
 In contrast to Relay however, Apollo doesn't take care of cache consistency with every mutation that is sent, so we have to manually specify how Apollo should update the cache after the mutation has been performed. 
 
-##### 1. Wrapping the component with `graphql`
+#### 1. Wrapping the component with `graphql`
 
 First, we define a mutation with variables using the `gql` syntax and wrap a React component with `graphql` to later call the mutation:
 
@@ -692,7 +684,7 @@ We would have to include a `TrainerQuery` as part of the returned object in `upd
 To find our more, you can read about other [advanced mutations](https://www.learnrelay.org/mutations/mutation-types), [managing Apollo Store](https://www.learnapollo.com/excursions/excursion-02) or read the [official mutation documentation](http://dev.apollodata.com/react/cache-updates.html).
 
 
-##### 2. Using `ApolloCient` to directly send a mutation
+#### 2. Using `ApolloCient` to directly send a mutation
 
 Rather than making the mutation available through the props of a component, we can also use an instance of the `ApolloClient` to directly send a mutation. The code for that would look similar to sending a query but using the [`mutate`](http://dev.apollodata.com/core/apollo-client-api.html#ApolloClient\.mutate) method of the client:
 
@@ -727,7 +719,7 @@ mutate({
 Note that we can specify how Apollo should be updating the local cache after the mutation in the same way as before using `updateQueries`.
 
 
-## Relay vs Apollo - Realtime updates with subscriptions
+## Realtime updates with subscriptions
 
 GraphQL offers the ability for clients to [subscribe](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) to changes that are caused by mutations in a GraphQL backend. This allows the client to implement realtime functionality in an application and always keep the UI up to date with the current server-side state.
 
