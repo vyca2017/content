@@ -1,3 +1,28 @@
+---
+alias: iechu0shia
+path: /docs/tutorials/relay-vs-apollo-overview
+layout: TUTORIAL
+preview: relay-vs-apollo.png
+description: 'Relay vs. Apollo Client: Find out which GraphQL client works best for you by learning about differences between Relay and Apollo Client.'
+tags:
+  - clients
+  - queries
+  - mutations
+  - relay
+  - apollo-client
+related:
+  further:
+  - heshoov3ai
+  - aizoong9ah
+  more:
+    - iep9yi0ri6
+    - iph7aevae7
+    - koht6ethe3
+    - tioghei9go
+    - voht5ach9i
+---
+
+
 # Relay vs Apollo - Comparing GraphQL Clients
 
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose? 
