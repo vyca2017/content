@@ -19,17 +19,9 @@ related:
 
 In this tutorial, we explain how to build a chat application where the users can see their own and the locations of the other participants on a map. Not only the chat, but also the locations on the map get updated in realtime using GraphQL subscriptions.
 
+You can check out a hosted demo of the application [here](https://demo.graph.cool/worldchat).
+
 <iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
-
-## Table of Contents
-
-  - [What are GraphQL Subscriptions?](#what-are-graphql-subscriptions)
-  - [Setting up your Graphcool backend](#setting-up-your-graphql-backend)
-  - [Setting up the Apollo Client to use Subscriptions](#setting-up-the-apollo-client-to-use-subscriptions)
-  - [Building a Real-Time Chat with Subscriptions 💬](#building-a-realtime-chat-with-subscriptions-💬)
-  - [Adding Geo-Location to the App 🗺](#adding-geo-location-to-the-app-🗺)
-  - [Summing Up](#summing-up)
-
 
 ## What are GraphQL Subscriptions?
 

@@ -129,7 +129,7 @@ Okay, let's see what's going on here. The `actors` connection now has a more
 complex structure containing the fields edges and node. These terms should be a
 bit more clear when looking at the following image.
 
-![](./movies-actors.png)
+![](./movies-actors.png?width=559)
 
 Don't worry. In order to use Relay, you don't have to understand the reasons why
 the structure is designed this way but rest assured that [it makes a lot of

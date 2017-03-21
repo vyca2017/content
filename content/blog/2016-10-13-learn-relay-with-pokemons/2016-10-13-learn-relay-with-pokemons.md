@@ -24,7 +24,7 @@ related:
 
 > Learn Relay offers a new, interactive learning experience for Relay
 
-![](lr-banner.png)
+![](./lr-banner.png)
 
 Getting started with [Relay](https://facebook.github.io/relay/), the GraphQL
 client, is pretty difficult based purely on its reference documentation, which
@@ -54,7 +54,7 @@ following the guide, you will build a Pokedex app from start to finish.
 [A live demo of the Pokedex is available here](http://demo.learnrelay.org/)!
 (Note: We disabled mutations to prevent a global mess.)
 
-![](./lr-demo.gif)
+![](./lr-demo-small.gif)
 <span class="figcaption_hack">We're providing the UI of the Pokedex app, so you can focus on learning the
 concepts of Relay</span>
 

@@ -55,7 +55,7 @@ When designing the data schema, we think of the general structure of our data an
 
 Let's visualize the progress we made so far on our data schema:
 
-![](models-yed.svg)
+![](./models-yed.svg)
 
 Now we have a good overview of the models that we need for our data. But how do they interact with each other? That's where the real action begins!
 
@@ -82,7 +82,7 @@ We name this relation *ordersPortraits*. It consists of the field *portraits* on
 
 This is starting to get confusing... let's look at our current data schema to get a better understanding of our current situation:
 
-![](models-relations-yed.svg)
+![](./models-relations-yed.svg)
 
 ## Thinking about concrete Data
 
@@ -95,7 +95,7 @@ Our current visualization helps us to think about all the models and relations f
 
 To think of specific data items, we use the term *node*. A node contains actual information and is usually referred to using an `id`.
 
-![](nodes-yed.svg)
+![](./nodes-yed.svg)
 
 ### Edges
 
@@ -103,7 +103,7 @@ When two nodes are related, we say that they are connected by an *edge*.
 
 In our two use cases, Sandra is connected to one `order` node which in turn is connected to one `portrait` node. John is connected to one `order` node that is connected to multiple `portrait` nodes.
 
-![](nodes-and-edges-yed.svg)
+![](./nodes-and-edges-yed.svg)
 
 ### Connection
 
@@ -113,7 +113,7 @@ All the edges for one specific relation combined form its *connection*.
 
 Putting all the graphs together that we built, we get both a good broad overview of our models and also a good detailed view about Sandra and Johns context.
 
-![](result-yed.svg)
+![](./result-yed.svg)
 
 ## Wrap up
 

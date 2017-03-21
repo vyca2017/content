@@ -26,13 +26,13 @@ The [Algolia](https://algolia.com) integration allows you to automatically synch
 
 In your Algolia settings, copy the Algolia App Id and create a new API key with **Add Records** and **Delete Records** enabled:
 
-![](./algolia-settings.png?width=589)
+![](./algolia-settings.png?width=295)
 
 ## Activate the Algolia Integration
 
 Enter the collected credentials in the Algolia integration popup in the Console:
 
-![](./algolia-credentials.png)
+![](./algolia-credentials.png?width=295)
 
 ## Create new Search Indices
 

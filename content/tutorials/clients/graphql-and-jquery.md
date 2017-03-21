@@ -3,8 +3,7 @@ alias: kohj2aengo
 path: /docs/tutorials/graphql-and-jquery
 layout: TUTORIAL
 preview: jquery.png
-shorttitle: How to use GraphQL with jQuery
-description: Build a simple Pokedex application with jQuery
+description: Learn how to use GraphQL with jQuery by building a simple Pokedex example app
 tags:
   - queries
   - mutations
@@ -12,15 +11,17 @@ tags:
   - open-source
 related:
   further:
+    - koo4eevun4
+  more:
     - thaeghi8ro
 ---
 
 
-# Using GraphQL from jQuery
+# How to use GraphQL with jQuery
 
-Despite the number of modern web frameworks and javascript libraries that are emerging at a rapid pace nowadays, there is still a great community of developers out there who are using plain javascript and [jQuery](https://jquery.com/) to build web applications.
+Despite the growing number of modern web frameworks and Javascript libraries such as React & Angular, there is still a big community of developers using plain Javascript and [jQuery](https://jquery.com/) to build web applications.
 
-In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$ajax` requests.
+In this post, we are going to to give a quick example demonstrating how to interact with a GraphQL backend using `$.post` (`$.ajax` works as well).
 
 
 ## What is GraphQL?
@@ -43,9 +44,9 @@ GET
 
 GET
 /user/<id>/followers
-``` 
+```
 
-The first endpoint, `user`, returns a list of all users (containing each user's `name` and `id`) in the server's database. The second endpoint can be used to request all the followers of a specific user by providing the user's `id`. 
+The first endpoint, `user`, returns a list of all users (containing each user's `name` and `id`) in the server's database. The second endpoint can be used to request all the followers of a specific user by providing the user's `id`.
 
 In GraphQL, there is only one API endpoint and all request that are sent to the server have to be POST requests! That is because the _body_ of the POST request will carry the actual `GraphQL` query that the server will resolve and fetch from the database.
 
@@ -65,7 +66,7 @@ Body:
 POST
 Body:
 # get ids and names of all followers of user with id <id>
-{ 
+{
   User(id: "<id>") {
     followers {
       id
@@ -77,7 +78,7 @@ Body:
 
 ## Creating your own GraphQL API
 
-Since GraphQL is only a _specification_, an actual GraphQL server can be implemented with any server-side technology. However, implementing your own GraphQL server is not a trivial task! 
+Since GraphQL is only a _specification_, an actual GraphQL server can be implemented with any server-side technology. However, implementing your own GraphQL server is not a trivial task!
 
 With [Graphcool](https://graph.cool) you can set up your GraphQL API and get started in only a few minutes. All you need to do is defining the _data model_ of your application and you're good to go.
 
@@ -87,7 +88,7 @@ The [schema](!alias-ahwoh2fohj/) for our example simply consists of a `Pokemon` 
 
 ```graphql
 type Pokemon {
-  name: String 
+  name: String
 }
 ```
 
@@ -106,7 +107,7 @@ As mentioned before, every request that we send to the GraphQL API has to be a P
 
 ```js
 $.post({
-  url: graphQLEndpoint,
+  url: 'https://api.graph.cool/simple/v1/__PROJECT_ID__',
   data: JSON.stringify({ "query": " { allPokemons { id name } } " }),
   contentType: 'application/json'
 }).done(function(response) {
@@ -117,12 +118,11 @@ $.post({
 Notice that there is that the actual GraphQL query needs to passed as the value in a JSON object with the key `query`, so the plain query looks as follows:
 
 ```graphql
-{ 
-  allPokemons 
-  { 
-    id 
-    name 
-  } 
+{
+  allPokemons {
+    id
+    name
+  }
 }
 ```
 
@@ -137,7 +137,7 @@ We can create a new Pokemon using jQuery like so:
 
 ```js
 $.post({
-  url: graphQLEndpoint,
+  url: 'https://api.graph.cool/simple/v1/__PROJECT_ID__',
   data: JSON.stringify({ "query": "mutation { createPokemon(name: \"Pikachu\") { id name } } " }),
   contentType: 'application/json'
 }).done(function(response) {
@@ -153,27 +153,12 @@ Notice two important things about this request:
 Let's take a look at the raw GraphQL mutation written in multiple lines for better readability:
 
 ```graphl
-mutation { 
-  createPokemon(name: "Pikachu") { 
-    id 
+mutation {
+  createPokemon(name: "Pikachu") {
+    id
     name
   }
 }
 ```
 
 If you want to see how you can use these mutations in an example project, you can check out our [example project](https://github.com/graphcool-examples/pokedex-jquery).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

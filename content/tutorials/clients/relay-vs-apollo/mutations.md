@@ -162,6 +162,7 @@ To find our more, you can read about other [mutation configurations](https://www
 Calling mutations with Apollo Client is as simple as sending queries. However, quite often, mutation responses have to be integrated in the Apollo Store manually to ensure cache consistency.
 
 First, we define a mutation with variables using the `gql` syntax and wrap a React component with `graphql` to later call the mutation:
+
 ```js
 const createPokemonMutation = gql`
   mutation createPokemon($name: String!, $url: String!) {
@@ -179,6 +180,7 @@ export default AddPokemonComponentWithMutation
 ```
 
 After the component is rendered, we can call the mutation like this:
+
 ```js
 const {name, url} = this.state
 this.props.mutate({variables: {name, url}})
