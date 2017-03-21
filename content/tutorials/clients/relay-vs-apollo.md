@@ -37,6 +37,7 @@ To give you a broad overview on what you can expect from either client, here is 
 | Complexity | Slow learning curve: Lots of powerful _magic_ happening behind the scenes | Low entrance barrier: Let's you get started quickly and involves more manual work for certain features |
 | Flexibility | Almost no flexibility, strict rules how to integrate Relay with React components | Lots of flexibility how Apollo is used throughout a whole project, easy to adopt incrementally |
 | Usage of GraphQL [fragments](https://facebook.github.io/graphql/#sec-Language.Fragments) | Relies on fragments as an essential tool to express data requirements per component | Fragments are a convenience to improve structuring of GraphQL queries and mutations that generally enable reusablity of GraphQL code | 
+| GraphQL Subscription | No explicit means to integrate subscriptions | Subscriptions supported through [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws) | 
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
@@ -277,7 +278,7 @@ class Pokedex extends React.Component {
 
 ##### 2. Directly send queries using `ApolloClient`
 
-The second option is to send a query using the `ApolloClient` and processing the result as a promise. In that case, the `query` method of the `ApolloClient` can be used:
+The second option is to send a query using the `ApolloClient` and processing the result as a promise. In that case, the [`query`](http://dev.apollodata.com/core/apollo-client-api.html#ApolloClient\.query) method of the `ApolloClient` can be used:
 
 ```js
 client.query({
@@ -396,7 +397,7 @@ Next, we want to explore how we can send the following GraphQL mutation with Rel
 mutation {
   createPokemon(
     name: "Zapdos",
-  	url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png"
+  	 url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png"
   ) {
     id
     name
@@ -601,10 +602,52 @@ const TrainerQuery = gql`
 
 We would have to include a `TrainerQuery` as part of the returned object in `updateQueries` as well.
 
-To find our more, you can read about other [advanced mutations](https://www.learnrelay.org/mutations/mutation-types),  [managing Apollo Store](https://www.learnapollo.com/excursions/excursion-02) or read the [official mutation documentation](http://dev.apollodata.com/react/cache-updates.html).
+To find our more, you can read about other [advanced mutations](https://www.learnrelay.org/mutations/mutation-types), [managing Apollo Store](https://www.learnapollo.com/excursions/excursion-02) or read the [official mutation documentation](http://dev.apollodata.com/react/cache-updates.html).
 
 
+##### 2. Using `ApolloCient` to directly send a mutation
 
+Rather than making the mutation available through the props of a component, we can also use an instance of the `ApolloClient` to directly send a mutation. The code for that would look similar to sending a query but using the [`mutate`](http://dev.apollodata.com/core/apollo-client-api.html#ApolloClient\.mutate) method of the client:
+
+```js
+mutate({
+  mutation: gql`
+     mutation createPokemon($name: String!, $url: String!) {
+       createPokemon(name: $name, url: $url) {
+        id
+        name
+        url
+      }
+    }
+  `,
+  variables: { 
+    name: "Zapdos", 
+    url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png" 
+  },
+  updateQueries: {
+    allPokemonsQuery: (prev, { mutationResult }) => {
+      const newPokemon = mutationResult.data.createPokemon
+        return {
+          ...prev,
+          allPokemons: [...prev.allPokemons, newPokemon]
+        }
+      },
+    }
+})
+.then(result => console.log(result))
+```
+
+Note that we can specify how Apollo should be updating the local cache after the mutation in the same way as before using `updateQueries`.
+
+
+## Relay vs Apollo - Realtime updates with subscriptions
+
+GraphQL offers the ability for clients to [subscribe](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) to changes that are caused by mutations in a GraphQL backend. This allows the client to implement realtime functionality in an application and always keep the UI up to date with the current server-side state.
+
+With Relay, there is not a lot of support for handling subscriptions on the client. You can use this [helper](https://github.com/taion/graphql-relay-subscription) package to ease up integration of subscriptions in Relay. Other than that there is not a lot of support that comes with Relay.
+
+Apollo on the other hand offers a relatively sophisticated support for subscriptions through an additional package called [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws). If you're keen on learning more about how subscriptions work with the Apollo client, you can read up on it in our comprehensive [tutorial](!alias-ui0eizishe/) and checkout the example project.
+ 
 
 
 
