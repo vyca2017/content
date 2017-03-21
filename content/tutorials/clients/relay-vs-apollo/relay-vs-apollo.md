@@ -646,7 +646,7 @@ GraphQL offers the ability for clients to [subscribe](http://graphql.org/blog/su
 
 With Relay, there is not a lot of support for handling subscriptions on the client. You can use this [helper](https://github.com/taion/graphql-relay-subscription) package to ease up integration of subscriptions in Relay. Other than that there is not a lot of support that comes with Relay.
 
-Apollo on the other hand offers a relatively sophisticated support for subscriptions through an additional package called [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws). If you're keen on learning more about how subscriptions work with the Apollo client, you can read up on it in our comprehensive [tutorial](!alias-ui0eizishe/) and checkout the example project.
+Apollo on the other hand offers a relatively sophisticated support for subscriptions through an additional package called [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws). If you're keen on learning more about how subscriptions work with the Apollo client, you can read up on it in our comprehensive [tutorial](!alias-ui0eizishe/) and checkout the [example project](https://demos.graph.cool/worldchat).
  
 
 
