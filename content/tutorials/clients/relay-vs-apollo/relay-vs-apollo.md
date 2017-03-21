@@ -48,7 +48,7 @@ A GraphQL client should come with that kind of functionality so that you don't h
 
 
 
-## Relay vs Apollo - Overview
+## Overview
 
 In the following, we are going to explore how to solve common and recurring client-side tasks when working with a GraphQL API, both from a Relay and an Apollo perspective. 
 
