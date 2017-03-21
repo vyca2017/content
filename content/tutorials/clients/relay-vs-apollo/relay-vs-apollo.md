@@ -32,7 +32,7 @@ To give you a broad overview on what you can expect from either client, here is 
 | | Relay | Apollo | 
 | --- | --- | --- | 
 | Built by | [Facebook](https://code.facebook.com/projects/) (Check out the project on [GitHub](https://github.com/facebook/relay)) | [Meteor](https://www.meteor.com/) (Check out the project on [GitHub](https://github.com/apollographql)) | 
-| Frontend Technologies | requires [React](https://facebook.github.io/react/) / [React Native](https://facebook.github.io/react-native/); needs configuration of [Babel plugin](https://facebook.github.io/relay/docs/guides-babel-plugin.html#content) | framework and platform agnostic (works with any JS framework such as React, Angular or Vue as well as on the native mobile platforms) |
+| Frontend Technologies | Requires [React](https://facebook.github.io/react/) / [React Native](https://facebook.github.io/react-native/) and configuration of [Babel plugin](https://facebook.github.io/relay/docs/guides-babel-plugin.html#content) | Framework and platform agnostic (works with any JS framework such as React, Angular or Vue as well as on the native mobile platforms) |
 | GraphQL API | Requires a certain structure in the GraphQL schema | Works with any GraphQL schema |
 | Complexity | Slow learning curve: Lots of powerful _magic_ happening behind the scenes | Low entrance barrier: Let's you get started quickly and involves more manual work for certain features |
 | Flexibility | Almost no flexibility, strict rules how to integrate Relay with React components | Lots of flexibility how Apollo is used throughout a whole project, easy to adopt incrementally |
