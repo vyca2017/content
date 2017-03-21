@@ -37,7 +37,7 @@ To give you a broad overview on what you can expect from either client, here is 
 | Complexity | Slow learning curve: Lots of powerful _magic_ happening behind the scenes | Low entrance barrier: Let's you get started quickly and involves more manual work for certain features |
 | Flexibility | Almost no flexibility, strict rules how to integrate Relay with React components | Lots of flexibility how Apollo is used throughout a whole project, easy to adopt incrementally |
 | Usage of GraphQL [fragments](https://facebook.github.io/graphql/#sec-Language.Fragments) | Relies on fragments as an essential tool to express data requirements per component | Fragments are a convenience to improve structuring of GraphQL queries and mutations that generally enable reusablity of GraphQL code | 
-| GraphQL Subscription | No explicit means to integrate subscriptions | Subscriptions supported through [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws) | 
+| GraphQL Subscriptions | No explicit means to integrate subscriptions | Subscriptions supported through [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws) | 
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
