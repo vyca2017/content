@@ -46,6 +46,14 @@ The response could look something like this:
 
 After this request, the file is publicly available at its `url`. Each property in the response corresponds to a field of the [file model](!alias-uhieg2shio#file-model).
 
+## Image API
+
+When downloading images, you can use a separate image API to control the size of the file. To get a 600x500 image, you can use
+
+```
+https://images.graph.cool/__PROJECT_ID__/__FILE_ID__/600x500
+```
+
 ## File Management with the Client APIs
 
 Files can be also uploaded and modified by using queries and mutations from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah).
