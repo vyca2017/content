@@ -63,6 +63,7 @@ To give you a broad overview on what you can expect from either client, here is 
 | Flexibility | Almost no flexibility, strict rules how to integrate Relay with React components | Lots of flexibility how Apollo is used throughout a whole project, easy to adopt incrementally |
 | Usage of GraphQL [Fragments](https://facebook.github.io/graphql/#sec-Language.Fragments) | Relies on fragments as an essential tool to express data requirements per component | Fragments are a convenience to improve structuring of GraphQL queries and mutations that generally enable reusablity of GraphQL code | 
 | GraphQL [Subscriptions](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) | No explicit means to integrate subscriptions | Subscriptions supported through [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws) | 
+| Best Use Case | Large, complex systems with lots of interdependencies that are handled by Relay (ensures long-term productivity) | Small to medium scale applications |   
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
@@ -147,6 +148,52 @@ However, they actually both follow a similar approach when being used in a React
 
 A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, there is only one way how to get access to data in a React component and that is through a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content). With Apollo, it is possible to use a similar approach with the [`graphql`](http://dev.apollodata.com/react/api.html#graphql) higher-order component. Another way to obtain data from the server would be to directly send queries using the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and process the returned data in a callback function. In the following, we are going to dive into what data fetching with Relay and with Apollo looks like.
 
+In the next two sections, we are going to analyze the following query and how it would be incorporated using each Relay and Apollo:
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/ciwdaxg682vpi0171tw2ga8fy
+disabled: false
+---
+query {
+  allPokemons(filter: {
+    trainer: {
+      name: "Ash Ketchum"
+    }
+  }) {
+    id
+    name
+    url
+  }
+}
+---
+{
+  "data": {
+    "allPokemons": [
+      {
+        "id": "ciweua484po2v0132pwbff23p",
+        "name": "Charmander",
+        "url": "http://cdn.bulbagarden.net/media/upload/thumb/7/73/004Charmander.png/600px-004Charmander.png"
+      },
+      {
+        "id": "ciweubn4qh6at0197pa72feyj",
+        "name": "Bulbasaur",
+        "url": "http://cdn.bulbagarden.net/media/upload/thumb/e/ea/001Bulbasaur_AG_anime.png/654px-001Bulbasaur_AG_anime.png"
+      },
+      {
+        "id": "ciwf1cn7c02zn01610hw2m6gc",
+        "name": "Squirtle",
+        "url": "http://cdn.bulbagarden.net/media/upload/1/15/007Squirtle_XY_anime.png"
+      },
+      {
+        "id": "ciwf6jo150ec20161e6usjku8",
+        "name": "Pikachu",
+        "url": "http://cdn.bulbagarden.net/upload/thumb/0/0d/025Pikachu.png/600px-025Pikachu.png"
+      }
+    ]
+  }
+}
+```
 
 ### Data fetching with Relay
 
@@ -419,16 +466,31 @@ While calling mutations in both Relay and Apollo is done with mutation strings w
 Next, we want to explore how we can send the following GraphQL mutation with Relay and Apollo:
 
 ```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/ciwdaxg682vpi0171tw2ga8fy
+disabled: true
+---
 mutation {
   createPokemon(
     name: "Zapdos",
-  	 url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png"
+    types: [FLYING, ELECTRIC],
+  	url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png"
   ) {
     id
     name
   }
 }
+---
+{
+  "data": {
+    "createPokemon": {
+      "id": "ciy09vh0lja1e01108eo6ja34",
+      "name": "Zapdos"
+    }
+  }
+}
 ```
+
 
 ### Mutations with Relay
 
