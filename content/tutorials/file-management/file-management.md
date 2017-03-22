@@ -41,37 +41,34 @@ You can upload files up to 50MB each.
 
 ### 2.1 Uploading a File with plain HTTP
 
-#### 2.1.1 curl
+<!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-apollo-file-upload-example') -->
 
-Let's upload our first file now! Pick a funny picture or similar and navigate to the folder containing it, for example
+Uploading a file will result in a response containing the new file id and the url. Let's upload our first file now. Pick a funny picture or similar and upload it! You can then go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` model](!alias-uhieg2shio#file-model).
 
-```sh
-cd ~/Downloads
-```
+Remember to replace the file endpoint. You can copy your file endpoint from inside your project.
 
-Using `curl` you can then execute
+> Regardless of your http library, make sure to **set the header `Content-Type` to `multipart/form-data`** and **use the file key `data`**.
 
-```sh
-curl -X POST 'https://api.graph.cool/file/v1/__PROJECT_ID__' -F "data=@example.png"
-```
+#### 2.1.1 fetch
 
-after replacing `__PROJECT_ID__` with your project id and `example.png` with the name of your file. You can copy your file endpoint from inside your project.
+Using fetch, this is how we can upload a file
 
-The response could look something like this:
+```js
+uploadFile = (files) => {
+  let data = new FormData()
+  data.append('data', files[0])
 
-```JSON
-{
-  "secret": "__SECRET__",
-  "name": "example.png",
-  "size": <omitted>,
-  "url": "https://files.graph.cool/__PROJECT_ID__/__SECRET__",
-  "id": <omitted>,
-  "contentType": "image/png"
+  // use the file endpoint
+  fetch('https://api.graph.cool/file/v1/__PROJECT_ID__'), {
+    method: 'POST',
+    body: data
+  }).then(response => {
+    return response.json()
+  }).then(file => {
+    const fileId = file.id
+  })
 }
 ```
-
-Go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` model](!alias-uhieg2shio#file-model).
-
 
 #### 2.1.2 AJAX
 
@@ -103,9 +100,34 @@ $( 'form' ).submit(function ( e ) {
 })
 ```
 
-Remember to replace the file endpoint. You can copy your file endpoint from inside your project.
+#### 2.1.3 curl
 
-> Regardless of your http library, make sure to **set the header `Content-Type` to `multipart/form-data`** and **use the file key `data`**.
+With curl, first navigate to the folder containing the file:
+
+```sh
+cd ~/Downloads
+```
+
+You can then execute
+
+```sh
+curl -X POST 'https://api.graph.cool/file/v1/__PROJECT_ID__' -F "data=@example.png"
+```
+
+after replacing `__PROJECT_ID__` with your project id and `example.png` with the name of your file. You can copy your file endpoint from inside your project.
+
+The response could look something like this:
+
+```JSON
+{
+  "secret": "__SECRET__",
+  "name": "example.png",
+  "size": <omitted>,
+  "url": "https://files.graph.cool/__PROJECT_ID__/__SECRET__",
+  "id": <omitted>,
+  "contentType": "image/png"
+}
+```
 
 ### 2.2 Uploading a File with the Client APIs
 
