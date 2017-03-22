@@ -59,7 +59,7 @@ To give you a broad overview of both clients, here is a high-level comparison be
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
-In short, Relay lends itself well for large-scale applications that have complex data requirements and many dependencies between different parts of the application where maintaining these dependencies by hand would be very tedious and error-prone. Apollo on the other hand provides a much more lightweight and flexible approach that works in any environment. Many tasks such as keeping the local cache consistent can also be achieved with the Apollo client but require more manual work and bookkeeping.
+In short, Relay lends itself well for large-scale applications that have complex data requirements and many dependencies between different parts of the application where maintaining these dependencies by hand would be very tedious and error-prone. Apollo on the other hand provides a much more lightweight and flexible approach that works in any environment. Many tasks such as keeping the local cache consistent can also be achieved with the Apollo Client but require more manual work and bookkeeping.
 
 ## An example to follow along
 
@@ -87,7 +87,7 @@ type Trainer {
 
 ### Server-side requirements
 
-In contrast to the Apollo client that works with any GraphQL schema, Relay actually has a few requirements when it comes to the structure of the GraphQL schema that's implemented on the server.
+In contrast to the Apollo Client that works with any GraphQL schema, Relay actually has a few requirements when it comes to the structure of the GraphQL schema that's implemented on the server.
 
 Basically, with Relay the GraphQL server is expected to expose two kinds of capabilities:
 
@@ -97,7 +97,7 @@ Basically, with Relay the GraphQL server is expected to expose two kinds of capa
 
 ### Modelling relationships
 
-With Relay, creating relations between model objects in the GraphQL schema also needs to follow a specific pattern whereas in the Apollo client it doesn't matter what the relation between two model types looks like. 
+With Relay, creating relations between model objects in the GraphQL schema also needs to follow a specific pattern whereas in the Apollo Client it doesn't matter what the relation between two model types looks like. 
 
 The Relay approach again contains some additional complexity but comes with nice benefits when implementing features such as pagination for collections. The concept that is used to model a relationship in Relay is called [connection](https://facebook.github.io/relay/docs/graphql-connections.html#content). It requires that a relation in the data model is expressed using `edges` that each contain a `node`.
 
@@ -601,7 +601,7 @@ To find out more, you can read about other [mutation configurations](https://www
 
 ### Mutations with Apollo
 
-Calling mutations with the Apollo client follows the same approach as sending queries. We again have two options:
+Calling mutations with the Apollo Client follows the same approach as sending queries. We again have two options:
 
 1. Wrapping the React component that should send the mutation with the `graphql` higher-order component 
 2. Send a mutation directly using the `ApolloClient` and handle the return data in a promise
@@ -667,7 +667,7 @@ const AddPokemonComponentWithMutation = graphql(createPokemonMutation, {
 })(AddPokemonComponent)
 ```
 
-What happens here with `updateQueries` is that we tell the Apollo client to update all places where we used the `allPokemonsQuery` to also include the new pokemon. Once the mutation is sent and the data is returned from the server, the function we specified for the `allPokemonsQuery` will be called and the cache will be updated as specified. The resulting change is made available through the props of all components that were using data from that query and the UI will be rerendered.
+What happens here with `updateQueries` is that we tell the Apollo Client to update all places where we used the `allPokemonsQuery` to also include the new pokemon. Once the mutation is sent and the data is returned from the server, the function we specified for the `allPokemonsQuery` will be called and the cache will be updated as specified. The resulting change is made available through the props of all components that were using data from that query and the UI will be rerendered.
 
 Note that if we have multiple queries that are affected by a mutation, all of them need to included in `updateQueries` individually. For example, consider this query:
 
@@ -727,7 +727,7 @@ GraphQL offers the ability for clients to [subscribe](http://graphql.org/blog/su
 
 With Relay, there is not a lot of support for handling subscriptions on the client. You can use this [helper](https://github.com/taion/graphql-relay-subscription) package to ease up integration of subscriptions in Relay. Other than that there is not a lot of support that comes with Relay.
 
-Apollo on the other hand offers a relatively sophisticated support for subscriptions through an additional package called [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws). If you're keen on learning more about how subscriptions work with the Apollo client, you can read up on it in our comprehensive [tutorial](!alias-ui0eizishe/) and checkout the [example project](https://demos.graph.cool/worldchat).
+Apollo on the other hand offers a relatively sophisticated support for subscriptions through an additional package called [`subscriptions-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws). If you're keen on learning more about how subscriptions work with the Apollo Client, you can read up on it in our comprehensive [tutorial](!alias-ui0eizishe/) and checkout the [example project](https://demos.graph.cool/worldchat).
  
 
 
