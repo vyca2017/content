@@ -52,14 +52,16 @@ A GraphQL client should come with that kind of functionality so that you don't h
 
 In the following, we are going to explore how to solve common and recurring client-side tasks when working with a GraphQL API, both from a Relay and an Apollo perspective. 
 
-To give you a broad overview on what you can expect from either client, here is a high-level comparison before we dive into more details.
+To give you a broad overview of both clients, here is a high-level comparison before we dive into more details.
 
 ![](./table.png)
 
 
 When reading about the differences of Relay and Apollo, you'll notice that a major difference lies in the flexibility of the two approaches. While Relay is very opiniated and doesn't give you a lot of freedom in how you want to structure your application, Apollo has a variety of options that range from lightweight integrations to much more sophisticated approaches. 
 
-In short, Relay lends itself well for large-scale applications that have complex data requirements and many dependencies between different parts of the application where maintaining these dependencies by hand would be very tedious and error-prone. Apollo on the other hand provides a much more lightweight and flexible approach that works in any environment. Many tasks such as keeping the local cache consistent can also be achieved with the Apollo client but require a little more manual work upfront.
+In short, Relay lends itself well for large-scale applications that have complex data requirements and many dependencies between different parts of the application where maintaining these dependencies by hand would be very tedious and error-prone. Apollo on the other hand provides a much more lightweight and flexible approach that works in any environment. Many tasks such as keeping the local cache consistent can also be achieved with the Apollo client but require more manual work and bookkeeping.
+
+## An example to follow along
 
 In the following, we are going to to compare Apollo and Relay by practical examples and show how each of them can be used to deal with a certain use case. We are going to use the data model for the Pokedex application that is being used on [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com).
 
