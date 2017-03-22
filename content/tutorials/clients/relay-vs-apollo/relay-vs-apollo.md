@@ -1,6 +1,6 @@
 ---
 alias: iechu0shia
-path: /docs/tutorials/relay-vs-apollo-overview
+path: /docs/tutorials/relay-vs-apollo
 layout: TUTORIAL
 preview: relay-vs-apollo.png
 description: 'Relay vs. Apollo Client: Find out which GraphQL client works best for you by learning about differences between Relay and Apollo Client.'
@@ -23,13 +23,13 @@ related:
 ---
 
 
-# Comparing GraphQL Clients
+# Relay vs Apollo - Comparing GraphQL Clients
 
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose? 
 
 In this article, we are going to shed some light on the commonalities and differences between Relay and Apollo and want to help you in making an informed decision on which GraphQL client is the best for your next project!
 
-> This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, if you're keen in learning about Relay and Apollo in more detail, you can visit [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com) for comprehensive tutorials.
+> This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, to get started with both technologies, you can visit [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com) for comprehensive tutorials.
 
 
 ## Why using a GraphQL client? 
@@ -39,9 +39,9 @@ GraphQL backends commonly expose their API over HTTP where queries and mutations
 However, there are a number of recurring challenges and use cases in working with a GraphQL backend that are agnostic to the app that's being built and that would have to be reimplemented with every new project. A few examples are:
 
 - caching data that is returned by the server
-- making received data available to the UI
+- UI framework integration (React, Angular, Vue, ...)
 - keeping the local cache consistent after a mutation
-- setting up websockets to implement subscriptions for realtime updates
+- managing up websockets for GraphQL subscriptions enabling realtime updates
 - pagination for collections
 
 A GraphQL client should come with that kind of functionality so that you don't have to reimplement these behaviours yourself. Instead, you can completely focus on your application domain and on implementing the specific requirements of your app.
