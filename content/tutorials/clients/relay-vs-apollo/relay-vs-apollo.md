@@ -32,7 +32,7 @@ In this article, we are going to shed some light on the commonalities and differ
 > This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, to get started with both technologies, you can visit [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com) for comprehensive tutorials.
 
 
-## Why using a GraphQL client? 
+## Why a GraphQL client? 
 
 GraphQL backends commonly expose their API over HTTP where queries and mutations can be sent in the _body_ of a POST request. When building a JavaScript app, this means that you can get quite far by using `fetch` or `request` and thus interact with the GraphQL API directly.
 
