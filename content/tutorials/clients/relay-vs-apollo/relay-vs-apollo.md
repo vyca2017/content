@@ -82,6 +82,7 @@ type Trainer {
 }
 ```
 
+<!-- alias:section1 -->
 
 ## Server Requirements
 
@@ -464,12 +465,13 @@ const client = new ApolloClient({
 
 In both cases, you have to make sure to include the `id` in all queries and mutations whose results should be normalized. To read more about GraphQL queries in Apollo Client, refer to the [Learn Apollo](https://ww.learnapollo.com/tutorial-react/react-02/). There's also an [excursion on the Apollo Store](https://www.learnapollo.com/excursions/excursion-02).
 
+<!-- alias:section2 -->
 
 ## Mutations
 
 Sending mutations is a core feature of any GraphQL client allowing you to create, modify or delete data in a GraphQL backend.
 
-While calling mutations in both Relay and Apollo is done with mutation strings where GraphQL variables are injected, the two clients handle cache consistency in combination with mutations in completely different manners. Mutations in Relay are extremely powerful and guarantee that the local store is always in a consistent state with the server. With Apollo on the other hand, achieving cache constistency requires a bit more manual work and potentially allows the developers to make mistakes which can lead to inconsistent states on the client.
+While calling mutations in both Relay and Apollo is done with mutation strings where GraphQL variables are injected, the two clients handle cache consistency in combination with mutations in completely different manners. Mutations in Relay are extremely powerful and guarantee that the local store is always in a consistent state with the server. With Apollo on the other hand, achieving cache constistency requires a bit more manual work and potentially allows the developers to make mistakes which can lead to inconsistencies on the client-side.
 
 We now want to explore how we can send the following GraphQL mutation with Relay and Apollo:
 
@@ -737,6 +739,7 @@ mutate({
 
 Note that we can specify how Apollo should be updating the local cache after the mutation in the same way as before using `updateQueries`.
 
+<!-- alias:section3 -->
 
 ## Subscriptions
 
