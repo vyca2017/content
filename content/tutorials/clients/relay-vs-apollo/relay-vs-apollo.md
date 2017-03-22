@@ -23,7 +23,7 @@ related:
 ---
 
 
-# Comparing GraphQL Clients
+# Comparing GraphQL Clients for React applications
 
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose? 
 
@@ -31,6 +31,11 @@ In this article, we are going to shed some light on the commonalities and differ
 
 > This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, if you're keen in learning about Relay and Apollo in more detail, you can visit [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com) for comprehensive tutorials.
 
+Share learning from usage of these technologies for the last year... 
+
+Info: Perspective from React developer
+
+**With this article we want **
 
 ## Why using a GraphQL client? 
 
@@ -81,16 +86,19 @@ type Trainer {
 ```
 
 
-## Environment and setup
+## Server-side requirements
 
 ### Server-side requirements
 
 In contrast to the Apollo client that works with any GraphQL schema, Relay actually has a few requirements when it comes to the structure of the GraphQL schema that's implemented on the server.
 
-Basically, with Relay the GraphQL server is expected to expose two kinds of capabilities:
-
-- query one particular resource by its ID using a root field in the GraphQL schema called `node` that takes an `ID` as an argument
+Basically, with Relay the GraphQL server is expected to expose five kinds of capabilities:
+- query one particular resource by its ID using a root field in the GraphQL schema called `node` that takes an `ID` as an argument (any type needs to implement `Node` interface and thus has a unique `id` field) --> can efficiently get new node after a mutation
 - query the data graph using a root field called `viewer` that contains all other fields as children
+- mutation arguments must be wrapped in input type object
+- mutations must include certain fields in the payload
+
+Relay only allows changes coming from the server - no manual adjustments of the cache! Every change not coming from the server is an optimistic update!
 
 
 ### Modelling relationships
@@ -128,6 +136,9 @@ A more intuitive but less powerful model of relationships is implemented in the 
   }
 }
 ```
+
+## Integration with React
+
 
 ### Using GraphQL with higher-order components in React
 
@@ -191,7 +202,8 @@ query {
 
 #### Co-located queries
 
-Relay heavily relies on GraphQL fragments to express data requirements. In fact, when working with Relay, we're not actually writing full-blown GraphQL queries but only specify the data that is needed for each component in terms of a fragment. Relay is then taking care of composing the fragments and building the actual queries that are getting sent to the server. As developers, this process is completely hidden from us and we don't have an easy way to influence it. 
+Relay heavily relies on GraphQL fragments to express data requirements. In fact, when working with Relay, we're not actually writing full-blown GraphQL queries but only specify the data that is needed for each component in terms of a fragment. Relay is then taking care of composing the fragments and building the actual queries that are getting sent to the server. As developers, this process is completely hidden and proivides a nice abstraction ...
+
 
 As mentioned above, React components that need data from the server need to be wrapped with a `Relay.Container`. This higher-order component does not directly take care of fetching the data but rather provides the wrapped component with the ability to define its data requirements in the form of a fragment and then guarantees that this data is available before the component is rendered.
 
@@ -235,6 +247,8 @@ export default Relay.createContainer(
 
 In the wrapped React component, we have to specify props according to the defined fragments on the Relay container. In this case, we need to specify `viewer` that includes the `allPokemons` object.
 
+"What React is to the DOM, Relay is to your data"
+
 ```js
 // the Pokedex class is responsible to display multiple pokemons
 class Pokedex extends React.Component {
@@ -259,6 +273,8 @@ class Pokedex extends React.Component {
   }
 }
 ```
+
+Fragments are used as a tool for performance optimization. Relay is heaviliy 
 
 #### Data normalization with nodes 
 
@@ -729,6 +745,8 @@ Apollo on the other hand offers a relatively sophisticated support for subscript
  
 
 
+
+## Conclusion
 
 
 
