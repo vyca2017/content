@@ -61,7 +61,7 @@ When reading about the differences of Relay and Apollo, you'll notice that a maj
 
 In short, Relay lends itself well for large-scale applications that have complex data requirements and many dependencies between different parts of the application where maintaining these dependencies by hand would be very tedious and error-prone. Apollo on the other hand provides a much more lightweight and flexible approach that works in any environment. Many tasks such as keeping the local cache consistent can also be achieved with the Apollo Client but require more manual work and bookkeeping.
 
-## An example to follow along
+### An example to follow along
 
 In the following, we are going to to compare Apollo and Relay by practical examples and show how each of them can be used to deal with a certain use case. We are going to use the data model for the Pokedex application that is being used on [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com).
 
