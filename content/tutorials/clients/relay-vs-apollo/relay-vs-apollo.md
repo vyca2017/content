@@ -99,7 +99,7 @@ Basically, with Relay the GraphQL server is expected to expose two kinds of capa
 
 With Relay, creating relations between model objects in the GraphQL schema also needs to follow a specific pattern whereas in the Apollo Client it doesn't matter what the relation between two model types looks like. 
 
-The Relay approach again contains some additional complexity but comes with nice benefits when implementing features such as pagination for collections. The concept that is used to model a relationship in Relay is called `[Connection](https://facebook.github.io/relay/docs/graphql-connections.html#content)`. It requires that a relation in the data model is expressed using `edges` that each contain a `node`.
+The Relay approach again contains some additional complexity but comes with nice benefits when implementing features such as pagination for collections. The concept that is used to model a relationship in Relay is called [`Connection`](https://facebook.github.io/relay/docs/graphql-connections.html#content). It requires that a relation in the data model is expressed using `edges` that each contain a `node`.
 
 If you wanted to access all the pokemons in the database, this would look as follows with Relay:
 
