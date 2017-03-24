@@ -1,11 +1,11 @@
 ---
-alias: aidae4Aeg5
-path: /docs/tutorials/create-react-apps-with-apollo-client
+alias: weeg6chaiw
+path: /docs/tutorials/create-react-native-apps-with-apollo-client
 layout: TUTORIAL
 preview: create-graphql-react-apps.png
-description: Connecting to a GraphQL backend is really simple with create react app and Apollo Client.
+description: Connecting to a GraphQL backend is really simple with create-react-native-app and Apollo Client.
 tags:
-  - react
+  - react-native
   - clients
   - apollo
   - instagram
@@ -20,10 +20,11 @@ related:
     - ga2ahnee2a
 ---
 
-# Building React Apps with GraphQL & Apollo
+# Building React Native Apps with GraphQL & Apollo
 
-The easiest way to get started with React apps that are using a GraphQL backend is with [`create-react-app`](https://github.com/facebookincubator/create-react-app) and [Apollo](http://dev.apollodata.com/).
-In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
+The easiest way to get started with React Native apps that are using a GraphQL backend is with [`create-react-native-app`](https://github.com/react-community/create-react-native-app) and [Apollo](http://dev.apollodata.com/).
+In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-native-apollo-instagram-example).
+
 
 ## Getting your GraphQL endpoint
 
@@ -46,16 +47,16 @@ Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can gene
 That's it, copy the endpoint for the `Simple API` since we'll need it later on. Notice that you can now also manage this project in the [Graphcool console](https://console.graph.cool) or explore it in a [GraphQL playground](https://www.graph.cool/docs/faq/tips-and-tricks-graphql-playground-ook6luephu/).
 
 
-## Getting started with`create-react-app`
+## Getting started with`create-react-native-app`
 
 ### Installation 
 
-With `create-react-app`, it's super easy to start out with a new React application! It comes with a lot of nice features out-of-the-box, such as a preconfigured [Webpack](https://github.com/webpack/webpack) and [Babel](https://babeljs.io/) setup for zero build configurations. Furthermore, features like [JSX](https://jsx.github.io/) and [ES6](http://es6-features.org/) syntax as well as static typechecking with [Flow](https://flowtype.org/) are already included. The generated boilerplate code also gives you a head-start with your new app.
+With `create-react-native-app`, it's super easy to start out with a new React Native application! It comes with a lot of nice features and configurations out-of-the-box, let's you easily run your app on a real-device by scanning a QR code from the terminal and saves you from having to use native development tools such as Xcode or Android Studio.
 
-If you don't have `create-react-app` installed on your machine yet, now is the time to do so with the following command:
+If you don't have `create-react-native-app` installed on your machine yet, now is the time to do so with the following command:
 
 ```sh
-npm install -g create-react-app
+npm install -g create-react-native-app
 ```
 
 ### Creating a new React app
@@ -63,19 +64,24 @@ npm install -g create-react-app
 After installing, we can easily create and run a new project from the command line:
 
 ```sh
-create-react-app react-apollo-instagram-example
-cd react-apollo-instagram-example
-npm start # open http://localhost:3000
+create-react-native-app react-native-apollo-instagram-example
+cd react-native-apollo-instagram-example
+npm run ios # or
+npm run android
 ```
 
-![](http://i.imgur.com/bfsiVUB.png)
+Here is what the initial screen looks like in the iOS simulator:
 
-Hot-reloading and linting is included as well, the terminal window keeps us updated about errors and linter problems.
+![](http://imgur.com/sR9G2rI.png)
+
+Hot-reloadingis already setup as well, so any changes you make in the JavaScript code will immediately appear on the screen!
 
 
-## Integrating Apollo in a React Application
+
+## Integrating Apollo in a React Native Application
 
 #### Installing the Dependencies
+
 
 [Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze. 
 
@@ -91,17 +97,12 @@ You can install all three dependencies at once:
 npm install apollo-client react-apollo graphql-tag --save
 ```
 
-Additionally, we're using [React Router](https://github.com/ReactTraining/react-router) to deal with navigation in our app, let's go ahead install that as well:
+Additionally, we're using [React Router Native](https://github.com/jmurzy/react-router-native) to deal with navigation in our app, let's go ahead install that as well:
 
 ```sh
-npm install react-router --save
+npm install react-router-native --save
 ```
 
-For styling, we're using [tachyons](http://tachyons.io/):
-
-```sh
-npm install tachyons --save
-```
 
 #### Mocking the needed Components
 
@@ -113,33 +114,50 @@ These are the three components that we need:
 
 ```js
 import React from 'react'
-import { Link } from 'react-router'
+import { ScrollView, View, Text, Button } from 'react-native'
+import { withRouter } from 'react-router-native'
 
 class ListPage extends React.Component {
 
   render () {
-
     return (
-      <div className='w-100 flex justify-center'>
-        <Link to='/create' className='fixed bg-white top-0 right-0 pa4 ttu dim black no-underline'>
-          + New Post
-        </Link>
-        <div className='w-100' style={{ maxWidth: 400 }}>
-          TODO: Display all posts...
-        </div>
-      </div>
+      <View>
+        <ScrollView>
+          <View
+            style={
+              {
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              }
+            }
+              >
+            // here is where we will render our posts
+          </View>
+        </ScrollView>
+        <Button
+          onPress={this.createPost}
+          title="Create Post"
+        />
+      </View>
     )
+  }
+
+  createPost = () => {
+    this.props.router.push('/create');
   }
 }
 
-export default ListPage
+
 ```
 
-* `CreatePost` in `src/components/CreatePage.js` to create new posts
+* `CreatePage` in `src/components/CreatePage.js` to create new posts
 
 ```js
 import React from 'react'
-import { withRouter } from 'react-router'
+import { View, TextInput, Button, Image, Text } from 'react-native'
+import { withRouter } from 'react-router-native'
 
 class CreatePage extends React.Component {
 
@@ -149,110 +167,86 @@ class CreatePage extends React.Component {
   }
 
   render () {
+
     return (
-      <div className='w-100 pa4 flex justify-center'>
-        <div style={{ maxWidth: 400 }} className=''>
-          <input
-            className='w-100 pa3 mv2'
-            value={this.state.description}
-            placeholder='Description'
-            onChange={(e) => this.setState({description: e.target.value})}
-          />
-          <input
-            className='w-100 pa3 mv2'
-            value={this.state.imageUrl}
-            placeholder='Image Url'
-            onChange={(e) => this.setState({imageUrl: e.target.value})}
-          />
-          {this.state.imageUrl &&
-            <img src={this.state.imageUrl} role='presentation' className='w-100 mv3' />
-          }
-          {this.state.description && this.state.imageUrl &&
-            <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={this.handlePost}>Post</button>
-          }
-        </div>
-      </div>
+      <View>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.setState({description: text})}
+          placeholder={'Description'}
+        />
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.setState({imageUrl: text})}
+          placeholder={'Image Url'}
+        />
+        {this.renderImage()}
+        {this.renderButton()}
+      </View>
     )
   }
 
+  renderButton() {
+    if (this.state.description && this.state.imageUrl) {
+      return (
+        <Button title={'Post'} onPress={this.handlePost} />
+      )
+    }
+    return null
+  }
+
+  renderImage() {
+    if (this.state.imageUrl) {
+      return (
+        <Image
+          source={{ uri: this.state.imageUrl }}
+          style={{width: 200, height: 200}}
+        />
+      )
+    }
+    return null
+  }
+
   handlePost = () => {
-    // TODO: create post before going back to ListPage
-    console.log(this.state)
-    this.props.router.push('/')
+    // we'll learn what to do here in a bit :)
   }
 }
-
-export default withRouter(CreatePage)
 ```
 
 * `Post` in `src/componens/Post.js` to display and delete a single post
 
 ```js
 import React from 'react'
+import { View, Image, Text } from 'react-native'
 
-class Post extends React.Component {
+export default class Post extends React.Component {
+
+  static propTypes = {
+    post: React.PropTypes.object,
+  }
 
   render () {
     return (
-      <div className='pa3 bg-black-05 ma3'>
-        <div
-          className='w-100'
-          style={{
-            backgroundImage: `url(${this.props.post.imageUrl})`,
-            backgroundSize: 'cover',
-            paddingBottom: '100%',
-          }}
+      <View style={{flex: 1, width: 150, height: 150}}>
+        <Image
+          source={{ uri: this.props.post.imageUrl }}
+          style={{flex: 1, width: 150, height: 150}}
         />
-        <div className='pt3'>
-          {this.props.post.description}&nbsp;
-          <span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
-        </div>
-      </div>
+        <Text>{this.props.post.description}</Text>
+      </View>
     )
   }
-
-  handleDelete = () => {
-    // TODO: delete post before reloading posts
-    this.props.refresh()
-  }
-}
-
-export default Post
-```
-
-#### Setting up React Router and Apollo Client
-
-First, add these styles in `src/index.ccs`:
-
-```js
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-}
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 ```
 
-Now we're importing the needed packages in `src/index.js`
+#### Setting up React Router Native and Apollo Client
+
+First, we have to import all required dependencies in `src/root.js`:
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ListPage from './components/ListPage'
-import CreatePage from './components/CreatePage'
-import { Router, Route, browserHistory } from 'react-router'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
-import 'tachyons'
-import './index.css'
+import { nativeHistory, Route, Router, } from 'react-router-native'
 ```
 
 Next we can create a new instance of `ApolloClient` below the import statements:
@@ -272,22 +266,20 @@ const client = new ApolloClient({
 Let's now setup the routes for our application:
 
 ```js
-ReactDOM.render((
+export default (
   <ApolloProvider client={client}>
-    <Router history={browserHistory}>
-      <Route path='/' component={ListPage} />
-      <Route path='/create' component={CreatePage} />
+    <Router history={nativeHistory}>
+      <Route path="/" component={ListPage} />
+      <Route path="/create" component={CreatePage} />
     </Router>
   </ApolloProvider>
-  ),
-  document.getElementById('root')
 )
 ```
 
-Note that the `ApolloProvider` is wrapping `Router`, which enables all child components to access the functionality from Apollo Client to send queries and mutations.
+Note that the `ApolloProvider` is wrapping `Router`, which enables all child components to use access the Apollo functionality to send queries and mutations.
 
 
-## Using Apollo Client for Queries and Mutations
+## Using Apollo for Queries and Mutations
 
 Now we are ready to use Apollo in our components to interact with the GraphQL API!
 
@@ -358,7 +350,7 @@ We're sorting the posts in descending order, so the latest posts appear on top o
 Now we're replacing the current `export` statement with this:
 
 ```js
-export default graphql(FeedQuery)(ListPage)
+export default withRouter(graphql(FeedQuery)(ListPage))
 ```
 
 This injects a new prop called  `data` to `ListPage`. Back in the `render` method of `ListPage`, we can first check if the data has already been loaded with `this.props.data.loading`. If `loading` is set to `false`, the data has arrived and we can `map` over `this.props.data.allPosts` to display the posts. We're also passing the `this.props.data.refetch` method to every post to reexecute the query after a post has been deleted.
@@ -366,25 +358,38 @@ This injects a new prop called  `data` to `ListPage`. Back in the `render` metho
 Putting it all together, this is the `render` method that we end up with:
 
 ```js
-render () {
-  if (this.props.data.loading) {
-    return (<div>Loading</div>)
-  }
+ render () {
+    if (this.props.data.loading) {
+      return (<Text>Loading</Text>)
+    }
 
-  return (
-    <div className='w-100 flex justify-center'>
-      <Link to='/create' className='fixed bg-white top-0 right-0 pa4 ttu dim black no-underline'>
-        + New Post
-      </Link>
-      <div className='w-100' style={{ maxWidth: 400 }}>
-        {this.props.data.allPosts.map((post) =>
-          <Post key={post.id} post={post} refresh={() => this.props.data.refetch()} />
-        )}
-      </div>
-    </div>
-  )
-}
+    return (
+      <View>
+        <ScrollView>
+          <View
+            style={
+              {
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              }
+            }
+          >
+              {this.props.data.allPosts.reverse().map((post) =>
+                <Post key={post.id} post={post} />
+              )}
+          </View>
+        </ScrollView>
+        <Button
+          onPress={this.createPost}
+          title="Create Post"
+        />
+      </View>
+    )
+  }
 ```
+
 
 #### Creating Posts in `CreatePage`
 
@@ -394,6 +399,7 @@ Adding mutations to React components is similar to adding queries, but instead o
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 ```
+
 
 The mutation to create a new post looks as follows:
 
@@ -438,84 +444,22 @@ const addMutation = gql`
 `
 ```
 
-Similar to the `FeedQuery` before, we now have to replace the `export` statement with the following code snippet:
+Similar to the `FeedQuery` before, we now have to replace the `export` statement like so:
 
 ```js
-export default graphql(addMutation, {
-  props: ({ ownProps, mutate }) => ({
-    addPost: ({ description, imageUrl }) =>
-      mutate({
-        variables: { description, imageUrl },
+const PageWithMutation = graphql(addMutation)(withRouter(CreatePage))
+```
+
+This will inject a function called `mutate` into the props of the `CreatePage` component. This function takes a `description` and the `imageUrl` as arguments so that we can provide the necessary info for each post that's being created. Using that, we can implement the `handlePost` method of the `CreatePage` class to create a post:
+
+```js
+  handlePost = () => {
+    const {description, imageUrl} = this.state
+    this.props.mutate({variables: {description, imageUrl}})
+      .then(() => {
+        this.props.router.replace('/')
       })
-  })
-})(withRouter(CreatePage))
-```
-
-This injects a new function to the props of `CreatePage` accessible with `this.props.addPost`. This function takes a `description` and the `imageUrl` as arguments so that we can provide the necessary info for each post that's being created. Using that, we can implement the `handlePost` method of the `CreatePage` class to create a post:
-
-```js
-handlePost = () => {
-  const {description, imageUrl} = this.state
-  this.props.addPost({ description, imageUrl })
-    .then(() => {
-      this.props.router.push('/')
-  })
-}
-```
-
-#### Deleting Posts in `Post`
-
-To delete a post, we again need to import the Apollo Client related packages at the top of `src/components/Post.js`:
-
-```js
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-```
-
-Let's take a look at the mutation that we can use to delete a post from a playground:
-
-```graphql
----
-endpoint: https://api.graph.cool/simple/v1/ciwce5xw82kh7017179gwzn7q
-disabled: true
----
-mutation deletePost($id: ID!) {
-  deletePost(id: $id) {
-    id
   }
-}
----
-{
-  "id": "ciwcegunr21380122lvmexoga"
-}
----
-{
-  "data": {
-    "deletePost": {
-      "id": "ciwcegunr21380122lvmexoga"
-    }
-  }
-}
-```
-
-Now we can define that `deletePost` mutation in our JavaScript code and then inject it into our component by wrapping it with the `graphql` function. As before, we'll do that right before the `export default Post` statement:
-
-```js
-const deleteMutation = gql`
-  mutation deletePost($id: ID!) {
-    deletePost(id: $id) {
-      id
-    }
-  }
-`
-
-const PostWithMutation = graphql(deleteMutation)(Post)
-```
-
-Finally, we need to adjust the `export` statement like so:
-
-```js
-export default PostWithMutation
 ```
 
 
@@ -524,3 +468,5 @@ export default PostWithMutation
 That's it! Using `create-react-app` and Apollo Client, it's easy to write React applications that work with a GraphQL backend. If you want to dive deeper in the example code, you can check it out on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
 
 For a more comprehensive tutorial, checkout [Learn Apollo](https://learnapollo.com), a hands-on guide for Apollo Client created by Graphcool.
+
+
