@@ -1,7 +1,8 @@
 ---
 alias: iechu0shia
-path: /docs/tutorials/relay-vs-apollo
-layout: TUTORIAL
+path: /blog/2017-03-24-relay-vs-apollo
+layout: BLOG
+publication_date: '2017-03-24'
 preview: relay-vs-apollo.png
 description: 'Relay vs. Apollo Client: Find out which GraphQL client works best for you by learning about differences between Relay and Apollo Client.'
 tags:
@@ -12,8 +13,8 @@ tags:
   - apollo-client
 related:
   further:
-  - heshoov3ai
-  - aizoong9ah
+    - heshoov3ai
+    - aizoong9ah
   more:
     - tioghei9go
     - voht5ach9i
