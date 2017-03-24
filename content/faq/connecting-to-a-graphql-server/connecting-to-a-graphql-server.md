@@ -11,8 +11,6 @@ related:
   further:
     - uh8shohxie
     - koo4eevun4
-  more:
-    - iu5niesain
 ---
 
 # Connecting to a GraphQL Server in Two Simple Steps
