@@ -26,6 +26,8 @@ Each project contains a [file model](!alias-uhieg2shio#file-model) by default th
 
 ## Uploading a file with plain HTTP
 
+<!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-apollo-file-upload-example') -->
+
 Use the file endpoint `https://api.graph.cool/file/v1/__PROJECT_ID__` to upload files by using the multipart form parameter `data` and providing the local file path as its value in a HTTP POST request.
 With`curl` you could execute:
 
