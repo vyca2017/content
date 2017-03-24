@@ -15,9 +15,6 @@ related:
   - heshoov3ai
   - aizoong9ah
   more:
-    - iep9yi0ri6
-    - iph7aevae7
-    - koht6ethe3
     - tioghei9go
     - voht5ach9i
 ---
