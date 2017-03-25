@@ -89,7 +89,7 @@ disabled: true
 ---
 mutation {
   updatePost(
-    id: "wrong-id",
+    id: "wrong-id"
     title: "My new Title"
   ) {
     id

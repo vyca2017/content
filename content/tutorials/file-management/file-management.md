@@ -138,7 +138,10 @@ Coming soon.
 To modify an existing file, you can use the `updateFile` mutation available in both the [Relay API](!alias-aizoong9ah) and [Simple API](!alias-heshoov3ai). Let's rename the file we just uploaded. Grab the id of the according file node and execute the `updateFile` mutation. With the Simple API, this would look like this:
 
 ```graphql
-updateFile(id: "<your-file-id>" name: "newName.png") {
+updateFile(
+  id: "<your-file-id>"
+  name: "newName.png"
+) {
   name
 }
 ```

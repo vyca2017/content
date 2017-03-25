@@ -41,9 +41,7 @@ endpoint: https://api.graph.cool/simple/v1/ciypopbp04gjw01328iph19uo
 disabled: false
 ---
 query {
-  allBreweries(
-    first: 1
-  ) {
+  allBreweries(first: 1) {
     name
     city
     beers {

@@ -36,8 +36,8 @@ disabled: true
 ---
 mutation {
   updatePost(
-    id: "cixnen24p33lo0143bexvr52n",
-    text: "This is the start of my biggest adventure!",
+    id: "cixnen24p33lo0143bexvr52n"
+    text: "This is the start of my biggest adventure!"
     published: true
   ) {
     id

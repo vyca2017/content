@@ -174,7 +174,11 @@ Copy the id and create a new post:
 
 ```graphql
 mutation {
-  createPost(description: "#graphcool", imageUrl: "not-found.png", authorId: "__ID__") {
+  createPost(
+    description: "#graphcool"
+    imageUrl: "not-found.png"
+    authorId: "__ID__"
+  ) {
     id
   }
 }

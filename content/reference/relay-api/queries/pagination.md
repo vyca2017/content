@@ -37,9 +37,7 @@ endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 ---
 query {
   viewer {
-    allPosts(
-      first: 3
-    ) {
+    allPosts(first: 3) {
       edges {
         node {
           id
@@ -89,7 +87,7 @@ endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 query {
   viewer {
     allPosts(
-      first: 2,
+      first: 2
       after: "cixnen24p33lo0143bexvr52n"
     ) {
       edges {
@@ -134,10 +132,14 @@ endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 ---
 query {
   viewer {
-    allPosts(first: 3, skip: 3) {
+    allPosts(
+      first: 3
+      skip: 3
+    ) {
       edges {
         node {
-          id, title
+          id
+          title
         }
     }
   }
@@ -187,7 +189,8 @@ query {
     allPosts(last: 3) {
       edges {
         node {
-          id, title
+          id
+          title
         }
       }
     }

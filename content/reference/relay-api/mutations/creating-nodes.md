@@ -37,9 +37,9 @@ disabled: true
 ---
 mutation {
   createPost(input: {
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
     text: "Read about my great vacation."
     clientMutationId: "abc"
   }) {
@@ -78,11 +78,11 @@ disabled: true
 ---
 mutation {
   createPost(input: {
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
-    text: "Read about my great vacation.",
-    authorId: "cixnekqnu2ify0134ekw4pox8",
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
+    text: "Read about my great vacation."
+    authorId: "cixnekqnu2ify0134ekw4pox8"
     clientMutationId: "abc"
   }) {
     post {
@@ -115,13 +115,13 @@ endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 disabled: true
 ---
 createPost(input: {
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
-    text: "Read about my great vacation.",
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
+    text: "Read about my great vacation."
     metaInformation: {
       tags: [TRAVELLING]
-    },
+    }
     clientMutationId: "abc"
   }) {
     post {

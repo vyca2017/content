@@ -39,9 +39,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  Post(
-    id: "cixnen24p33lo0143bexvr52n"
-  ) {
+  Post(id: "cixnen24p33lo0143bexvr52n") {
     id
     title
     published
@@ -71,9 +69,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  Post(
-    slug: "my-biggest-adventure"
-  ) {
+  Post(slug: "my-biggest-adventure") {
     id
     slug
     title

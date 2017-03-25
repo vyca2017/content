@@ -59,7 +59,10 @@ To rename a file, use the `updateFile` mutation and choose a new value for the `
 
 ```graphql
 mutation {
-  updateFile(id: "my-file-id" name: "new-comment-name.png") {
+  updateFile(
+    id: "my-file-id"
+    name: "new-comment-name.png"
+  ) {
     file {
       id
       name

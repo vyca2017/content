@@ -31,9 +31,9 @@ disabled: true
 ---
 mutation {
   createPost(
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
     text: "Read about my great vacation."
   ) {
     id

@@ -88,9 +88,9 @@ endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 disabled: true
 ---
 mutation {
-  updatePost(input:{
-    id: "wrong-id",
-    title: "My new Title",
+  updatePost(input: {
+    id: "wrong-id"
+    title: "My new Title"
     clientMutationId: "abc"
   }) {
     post {

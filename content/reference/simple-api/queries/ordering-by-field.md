@@ -31,9 +31,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    orderBy: title_ASC
-  ) {
+  allPosts(orderBy: title_ASC) {
     id
     title
     published
@@ -71,9 +69,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    orderBy: published_DESC
-  ) {
+  allPosts(orderBy: published_DESC) {
     id
     title
     published

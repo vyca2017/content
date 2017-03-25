@@ -39,8 +39,8 @@ disabled: true
 ---
 mutation {
   setPostMetaInformation(input: {
-    metaInformationMetaInformationId: "cixnjj4l90ipl0106vp6u7a2f",
-    postPostId: "cixnen24p33lo0143bexvr52n",
+    metaInformationMetaInformationId: "cixnjj4l90ipl0106vp6u7a2f"
+    postPostId: "cixnen24p33lo0143bexvr52n"
     clientMutationId: "abc"
   }) {
     metaInformationMetaInformation {
@@ -79,8 +79,9 @@ disabled: true
 ---
 mutation {
   updatePost(input: {
-    id: "cixnen24p33lo0143bexvr52n",
+    id: "cixnen24p33lo0143bexvr52n"
     metaInformationId: "cixnjj4l90ipl0106vp6u7a2f"
+    clientMutationId: "abc"
   }) {
     metaInformation {
       tags
@@ -92,8 +93,9 @@ mutation {
 # mutation {
 #   updateMetaInformation(input: {
 #    id: "cixnjj4l90ipl0106vp6u7a2f",
-#      postId: "cixnen24p33lo0143bexvr52n"
-#    }) {
+#    postId: "cixnen24p33lo0143bexvr52n"
+#    clientMutationId: "abc"
+#  }) {
 #      post {
 #        title
 #      }
@@ -138,8 +140,8 @@ disabled: true
 ---
 mutation {
   unsetPostMetaInformation(input: {
-    metaInformationMetaInformationId: "cixnjj4l90ipl0106vp6u7a2f",
-    postPostId: "cixnen24p33lo0143bexvr52n",
+    metaInformationMetaInformationId: "cixnjj4l90ipl0106vp6u7a2f"
+    postPostId: "cixnen24p33lo0143bexvr52n"
     clientMutationId: "abc"
   }) {
     metaInformationMetaInformation {

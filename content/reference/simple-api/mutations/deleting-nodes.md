@@ -33,9 +33,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: true
 ---
 mutation {
-  deletePost(
-    id: "cixneo7zp3cda0134h7t4klep"
-  ) {
+  deletePost(id: "cixneo7zp3cda0134h7t4klep") {
     id
     title
   }

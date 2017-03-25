@@ -90,7 +90,15 @@ These are the permissions that we use in your application:
 
 ```graphql
 {
-  allUsers(filter:{AND:[{id:$userId}, {id:$new_userId}]}){id}
+  allUsers(filter: {
+    AND: [{
+      id: $userId
+    }, {
+      id: $new_userId
+    }]
+  }) {
+    id
+  }
 }
 ```
 
@@ -100,7 +108,15 @@ These are the permissions that we use in your application:
 
 ```graphql
 {
-  allUsers(filter:{AND:[{id:$userId}, {id:$new_userId}]}){id}
+  allUsers(filter: {
+    AND: [{
+      id: $userId
+    }, {
+      id: $new_userId
+    }]
+  }) {
+    id
+  }
 }
 ```
 
@@ -136,7 +152,7 @@ Now we can add a new mutation callback with the trigger `CardDetails is created`
 
 ```graphql
 {
-  createdNode{
+  createdNode {
     id
     cardToken
     user {
@@ -205,7 +221,7 @@ We'll add another mutation callback that handles the actual charging when a new 
 
 ```graphql
 {
-  createdNode{
+  createdNode {
     id
     user {
       stripeId
@@ -289,10 +305,10 @@ disabled: true
 ---
 mutation {
   createUser(
-    name: "Nilan",
+    name: "Nilan"
     authProvider: {
       email: {
-      	email: "nilan@graph.cool",
+      	email: "nilan@graph.cool"
         password: "password"
       }
     }
@@ -339,7 +355,7 @@ disabled: true
 ---
 mutation {
   createCardDetails(
-    cardToken: "tok_19cIRbD7TaYA8JWHv5WIEOiL",
+    cardToken: "tok_19cIRbD7TaYA8JWHv5WIEOiL"
     userId: "cixyw53tg6i8a0173kx2nrwto"
   ) {
     id
@@ -370,7 +386,7 @@ mutation {
   createPurchase(
     amount: 50000,
     description: "A new laptop",
-    userId: "cixyw53tg6i8a0173kx2nrwto",
+    userId: "cixyw53tg6i8a0173kx2nrwto"
   ) {
     isPaid
   }

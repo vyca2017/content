@@ -37,9 +37,7 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: true
 ---
 query {
-  allPosts(
-    first: 3
-  ) {
+  allPosts(first: 3) {
     id
     title
   }
@@ -74,7 +72,7 @@ disabled: true
 ---
 query {
   allPosts(
-    first: 2,
+    first: 2
     after: "cixnen24p33lo0143bexvr52n"
   ) {
     id

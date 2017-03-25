@@ -40,9 +40,7 @@ disabled: false
 ---
 query {
   viewer {
-    Post(
-      id: "cixnen24p33lo0143bexvr52n"
-    ) {
+    Post(id: "cixnen24p33lo0143bexvr52n") {
       id
       title
       published
@@ -76,9 +74,7 @@ disabled: false
 ---
 query {
   viewer {
-    Post(
-      slug: "my-biggest-adventure"
-    ) {
+    Post(slug: "my-biggest-adventure") {
       id
       slug
       title

@@ -47,11 +47,9 @@ This is a great use case for GraphQL [query arguments](https://facebook.github.i
 endpoint: https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr
 ---
 query darkKnightMovie {
-  allMovies(
-    filter: {
-      title: "The Dark Knight"
-    }
-  ) {
+  allMovies(filter: {
+    title: "The Dark Knight"
+  }) {
     releaseDate
   }
 }
@@ -76,19 +74,17 @@ You can combine filter conditions using the `OR` and `AND` operators to select m
 endpoint: https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr
 ---
 query combineMovies {
-  allMovies(
-    filter: {
-      OR: [{
-        AND: [{
-          releaseDate_gte: "2009"
-        }, {
-          title_starts_with: "The Dark Knight"
-        }]
+  allMovies(filter: {
+    OR: [{
+      AND: [{
+        releaseDate_gte: "2009"
       }, {
-        title: "Inception"
+        title_starts_with: "The Dark Knight"
       }]
-    }
-  ) {
+    }, {
+      title: "Inception"
+    }]
+  }) {
     title
     releaseDate
   }
@@ -130,8 +126,8 @@ query actorsAfter2009 {
       movies_some: {
         releaseDate_gte: "2009"
       }
-    },
-    first: 3,
+    }
+    first: 3
     orderBy: name_ASC
   ) {
     name
@@ -199,9 +195,9 @@ query paginateMoviesAndActors($movieFirst: Int, $movieSkip: Int, $actorFirst: In
   allMovies (
     filter: {
       releaseDate_gt: "2000"
-    },
-    orderBy: $movieOrder,
-    first: $movieFirst,
+    }
+    orderBy: $movieOrder
+    first: $movieFirst
     skip: $movieSkip
   ) {
     title

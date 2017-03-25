@@ -43,7 +43,12 @@ To create a new user with email and password, enable the built-in email and pass
 
 ```graphql
 mutation {
-  createUser(authProvider: { email: { email: "user@email.com", password: "secret-password" }}) {
+  createUser(authProvider: {
+    email: {
+      email: "user@email.com"
+      password: "secret-password"
+    }
+  }) {
     id
   }
 }
@@ -55,7 +60,10 @@ To sign in an existing user with email and password, provide his `email` and `pa
 
 ```graphql
 mutation {
-  signinUser(email: {email: "user@email.com", password: "secret-password" }) {
+  signinUser(email: {
+    mail: "user@email.com"
+    password: "secret-password"
+  }) {
     token
   }
 }
@@ -76,7 +84,12 @@ To create a new user with Digits, provide the `apiUrl` and `credentials` tokens 
 
 ```graphql
 mutation {
-  createUser(authProvider: { digits: { apiUrl: "<apiUrl>", credentials: "<credentials>" }}) {
+  createUser(authProvider: {
+    digits: {
+      apiUrl: "<apiUrl>"
+      credentials: "<credentials>"
+    }
+  }) {
     id
   }
 }
@@ -88,7 +101,10 @@ To sign in an existing user with Digits, provide his `apiUrl` and `credentials` 
 
 ```graphql
 mutation {
-  signinUser(digits: { apiUrl: "<apiUrl>", credentials: "<credentials>" }) {
+  signinUser(digits: {
+    apiUrl: "<apiUrl>"
+    credentials: "<credentials>"
+  }) {
     token
   }
 }
@@ -109,7 +125,11 @@ To create a new user provide the `idToken` token obtained from Auth0:
 
 ```graphql
 mutation {
-  createUser(authProvider: { auth0: { idToken: "<idToken>" }}) {
+  createUser(authProvider: {
+    auth0: {
+      idToken: "<idToken>"
+    }
+  }) {
     id
   }
 }
@@ -125,10 +145,18 @@ You might want to create a user and sign him in right afterwards. You can includ
 
 ```graphql
 mutation {
-  createUser(authProvider: { email:{ email:user@email.com", password:"secret-password" }}){
+  createUser(authProvider: {
+    email:{
+      email:user@email.com"
+      password:"secret-password"
+    }
+  }) {
     id
   }
-  signinUser(email: { email:"user@email.com", password: "secret-password" }){
+  signinUser(email: {
+    email: "user@email.com"
+    password: "secret-password"
+  }){
     token
   }
 }

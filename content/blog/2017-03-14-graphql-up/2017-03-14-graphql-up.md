@@ -46,7 +46,7 @@ type Tweet {
   title: String!
   author: User @relation(name: "Tweets")
 }
-``` 
+```
 
 Simply save your schema in a file called `twitter.schema` and run the following command:
 
@@ -56,7 +56,7 @@ graphql-up twitter.schema
 
 `graphql-up` will generate two different API endpoints for you:
 
-1. [Simple API](!alias-heshoov3ai): Optimised for Apollo, but can be used with any GraphQL client 
+1. [Simple API](!alias-heshoov3ai): Optimised for Apollo, but can be used with any GraphQL client
 2. [Relay API](!alias-aizoong9ah): Optimized for Relay
 
 Simply copy any of these endpoints into your app and start developing. You can also directly open an endpoint in your browser to access the GraphQL Playground (our enhanced version of GraphiQL).
@@ -74,8 +74,8 @@ Just add the following Markdown snippet and replace the __SCHEMA_URL__ with a li
 
 ## Composition Is The Future of Software Development
 
-We believe the future of software development belongs to small focused services. Combining these in countless ways developers will build complete applications with ease. 
+We believe the future of software development belongs to small focused services. Combining these in countless ways developers will build complete applications with ease.
 
-`graphql-up` completely eliminates the overhead of spinning up a GraphQL backend thereby enabling new use cases. At Graphcool we are heavy users of `graphql-up` both in our ci-infrastructure as well as for all demos we are giving. 
+`graphql-up` completely eliminates the overhead of spinning up a GraphQL backend thereby enabling new use cases. At Graphcool we are heavy users of `graphql-up` both in our ci-infrastructure as well as for all demos we are giving.
 
-We would love to talk to you about your use case - so head over to [slack](https://slack.graph.cool)
+We would love to talk to you about your use case - so head over to [Slack](https://slack.graph.cool).

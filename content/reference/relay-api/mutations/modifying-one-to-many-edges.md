@@ -42,8 +42,8 @@ disabled: true
 ---
 mutation {
   addToAuthorPosts(input: {
-    authorUserId: "cixnekqnu2ify0134ekw4pox8",
-    postsPostId: "cixnen24p33lo0143bexvr52n",
+    authorUserId: "cixnekqnu2ify0134ekw4pox8"
+    postsPostId: "cixnen24p33lo0143bexvr52n"
     clientMutationId: "abc"
   }) {
     authorUser {
@@ -86,8 +86,8 @@ disabled: true
 ---
 mutation {
   removeFromAuthorPosts(input: {
-    authorUserId: "cixnekqnu2ify0134ekw4pox8",
-    postsPostId: "cixnen24p33lo0143bexvr52n",
+    authorUserId: "cixnekqnu2ify0134ekw4pox8"
+    postsPostId: "cixnen24p33lo0143bexvr52n"
     clientMutationId: "abc"
   }) {
     authorUser {

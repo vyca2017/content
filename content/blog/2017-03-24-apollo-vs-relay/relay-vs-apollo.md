@@ -480,8 +480,8 @@ disabled: true
 ---
 mutation {
   createPokemon(
-    name: "Zapdos",
-    types: [FLYING, ELECTRIC],
+    name: "Zapdos"
+    types: [FLYING, ELECTRIC]
   	url: "http://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png"
   ) {
     id

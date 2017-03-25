@@ -41,11 +41,9 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    filter: {
-      published: false
-    }
-  ) {
+  allPosts(filter: {
+    published: false
+  }) {
     id
     title
     published
@@ -77,14 +75,9 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    filter: {
-      title_in: [
-        "My biggest Adventure",
-        "My latest Hobbies"
-      ]
-    }
-  ) {
+  allPosts(filter: {
+    title_in: ["My biggest Adventure", "My latest Hobbies"]
+  }) {
     id
     title
     published
@@ -123,13 +116,11 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    filter: {
-      author: {
-        accessRole: USER
-      }
+  allPosts(filter: {
+    author: {
+      accessRole: USER
     }
-  ) {
+  }) {
     title
   }
 }
@@ -164,7 +155,7 @@ disabled: false
 query {
   allUsers(filter: {
     posts_some: {
-      published: true,
+      published: true
     }
   }) {
     id
@@ -250,15 +241,13 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
-  allPosts(
-    filter: {
-      AND: [{
-        title_in: ["My biggest Adventure", "My latest Hobbies"]
-      }, {
-        published: true
-      }]
-    }
-  ) {
+  allPosts(filter: {
+    AND: [{
+      title_in: ["My biggest Adventure", "My latest Hobbies"]
+    }, {
+      published: true
+    }]
+  }) {
     id
     title
     published
@@ -292,19 +281,17 @@ endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query($published: Boolean) {
-  allPosts(
-    filter: {
-      OR: [{
-        AND: [{
-          title_in: ["My biggest Adventure", "My latest Hobbies"]
-        }, {
-          published: $published
-        }]
+  allPosts(filter: {
+    OR: [{
+      AND: [{
+        title_in: ["My biggest Adventure", "My latest Hobbies"]
       }, {
-        id: "cixnen24p33lo0143bexvr52n"
+        published: $published
       }]
-    }
-  ) {
+    }, {
+      id: "cixnen24p33lo0143bexvr52n"
+    }]
+  }) {
     id
     title
     published

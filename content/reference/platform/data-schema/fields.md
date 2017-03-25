@@ -80,20 +80,6 @@ Note: JSON values are currently limited to 64KB in size.
 
 In queries or mutations, JSON fields have to be specified with enclosing double quotes. Special characters have to be escaped: `json: "[\"this\",\"is\",\"json\"]"`.
 
-Note: If you supply JSON values using GraphQL variables, you don't have to escape special characters:
-
-```graphql
-mutation myMutation($v: Json) {
-  createJsonModel(json: $v) {
-    json
-  }
-}
-
-variables = {
-  "v": ["this","is","json"]
-}
-```
-
 <!--
 ### GeoPoint
 
