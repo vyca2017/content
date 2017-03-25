@@ -268,7 +268,7 @@ class Pokedex extends React.Component {
 }
 ```
 
-It's really important however that this approach still requires the `viewer` prop to be passed in to the `Pokedex` component through the component hierarchy - the mere fact that we have declared the `viewer` as a data requirement in a fragment does not yet guarantee its availability! It only serves to express what parts of the `viewer` are needed in that particular component. When working with React and Relay, there are two separate _trees_ being managed by these frameworks: The component tree that is managed by React
+It's really important however that this approach still requires the `viewer` prop to be passed in to the `Pokedex` component through the component hierarchy - the mere fact that we have declared the `viewer` as a data requirement in a fragment does not yet guarantee its availability! It only serves to express what parts of the `viewer` are needed in that particular component. When working with React and Relay, there are two separate _trees_ being managed by these frameworks: The _component tree_ that is managed by React and that will eventually represent the UI of the application as well as the _fragment tree_ managed by Relay where the individual GraphQL fragments will be composed to queries that are sent over to the server.
 
 Relay is heavily based on conventions. A major advantage of this approach is that following these conventions will enforce a very clean architecture and reduce subtle bugs that appear when changing certain parts of a system that had interdependencies with other parts.
 
