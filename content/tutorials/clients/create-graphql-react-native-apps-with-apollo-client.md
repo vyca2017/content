@@ -110,7 +110,7 @@ Let's first build the components needed for our app, where we want to display, c
 
 These are the three components that we need:
 
-* `ListPage` in `src/components/ListPage.js` that will list all posts in our backend
+* `ListPage` in `components/ListPage.js` that will list all posts in our backend
 
 ```js
 import React from 'react'
@@ -152,7 +152,7 @@ class ListPage extends React.Component {
 
 ```
 
-* `CreatePage` in `src/components/CreatePage.js` to create new posts
+* `CreatePage` in `components/CreatePage.js` to create new posts
 
 ```js
 import React from 'react'
@@ -213,7 +213,7 @@ class CreatePage extends React.Component {
 }
 ```
 
-* `Post` in `src/componens/Post.js` to display and delete a single post
+* `Post` in `componens/Post.js` to display and delete a single post
 
 ```js
 import React from 'react'
@@ -241,7 +241,7 @@ export default class Post extends React.Component {
 
 #### Setting up React Router Native and Apollo Client
 
-First, we have to import all required dependencies in `src/root.js`:
+First, we have to import all required dependencies in `App.js`:
 
 ```js
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
@@ -285,7 +285,7 @@ Now we are ready to use Apollo in our components to interact with the GraphQL AP
 
 #### Querying all Posts in `ListPage`
 
-To display all posts in `ListPage`, we're adding three new imports in `src/component/ListPage.js`:
+To display all posts in `ListPage`, we're adding three new imports in `components/ListPage.js`:
 
 ```js
 import Post from '../components/Post'
@@ -393,7 +393,7 @@ Putting it all together, this is the `render` method that we end up with:
 
 #### Creating Posts in `CreatePage`
 
-Adding mutations to React components is similar to adding queries, but instead of injected data, functions are injected for each mutation. Again, we need to import the Apollo related packages at the top of `src/components/CreatePage.js`:
+Adding mutations to React components is similar to adding queries, but instead of injected data, functions are injected for each mutation. Again, we need to import the Apollo related packages at the top of `components/CreatePage.js`:
 
 ```js
 import { graphql } from 'react-apollo'
