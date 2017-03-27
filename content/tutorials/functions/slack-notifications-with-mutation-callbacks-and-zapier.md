@@ -2,9 +2,9 @@
 alias: dah6aifoce
 path: /docs/tutorials/slack-notifications-with-mutation-callbacks
 layout: TUTORIAL
-preview: zapier-slack-full-pipeline.png
-title: Slack notifications with Mutation Callbacks
-description: Use mutation callbacks to create a Slack integration for your GraphQL server and get Slack notifications whenever a certain mutation is executed.
+preview: slack-zapier-mutation-callback.png
+title: 'Sending Slack Notifications with GraphQL & Zapier'
+description: Use Zapier to create a Slack integration for your GraphQL server and get Slack notifications whenever a certain mutation is executed.
 tags:
   - mutation-callbacks
   - functions
@@ -20,7 +20,7 @@ related:
     - soiyaquah7
 ---
 
-# Slack notifications with Mutation Callbacks and Zapier
+# Sending Slack Notifications with GraphQL & Zapier
 
 [Slack](https://slack.com/) is very popular to handle the internal communication for teams. Slack notifications help to easily stay uptodate with things like successful or failing builds. In this guide we will focus on another use case: tracking business related events like a new user signing up or a finished purchase.
 
