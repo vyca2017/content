@@ -62,4 +62,4 @@ Files can be also uploaded and modified by using queries and mutations from the 
 
 ## File Access
 
-As with any other model, you can make use of our [permission system](!alias-iegoo0heez) for file nodes. These permissions apply to the actual file nodes, however, **the file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.
+Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.
