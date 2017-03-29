@@ -85,12 +85,9 @@ subscription {
         name
       }
     }
-    # previousValues carries values from before the mutation happened
+    # previousValues carries scalar values from before the mutation happened
     previousValues {
       text
-      sentBy {
-        name
-      }
     }
   }
 }
