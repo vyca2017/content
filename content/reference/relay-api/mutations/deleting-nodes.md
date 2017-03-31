@@ -23,7 +23,7 @@ related:
 
 Deletes a node specified by the `id` field.
 
-The query response can contain all fields of the deleted node.
+The query response can contain all scalar fields of the deleted node.
 
 > Delete an existing post and query its id and title:
 
@@ -34,7 +34,7 @@ disabled: true
 ---
 mutation {
   deletePost(input: {
-    id: "cixp00vkv069v0156d9xxtjbw",
+    id: "cixp00vkv069v0156d9xxtjbw"
     clientMutationId: "abc"
   }) {
     deletedId
@@ -57,3 +57,5 @@ mutation {
   }
 }
 ```
+
+> Note: it's not possible to [query related fields as part of delete mutations](https://github.com/graphcool/feature-requests/issues/108).

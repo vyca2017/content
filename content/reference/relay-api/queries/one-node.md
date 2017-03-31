@@ -33,16 +33,14 @@ You can always use the [system field](!alias-uhieg2shio#id-field) `id` to identi
 
 > Query a specific post by id:
 
-```
+```graphql
 ---
 endpoint: https://api.graph.cool/relay/v1/cixne4sn40c7m0122h8fabni1
 disabled: false
 ---
 query {
   viewer {
-    Post(
-      id: "cixnen24p33lo0143bexvr52n"
-    ) {
+    Post(id: "cixnen24p33lo0143bexvr52n") {
       id
       title
       published
@@ -76,9 +74,7 @@ disabled: false
 ---
 query {
   viewer {
-    Post(
-      slug: "my-biggest-adventure"
-    ) {
+    Post(slug: "my-biggest-adventure") {
       id
       slug
       title

@@ -36,7 +36,9 @@ To query a specific file use one of the unique fields `id`, `secret` or `url` fi
 ```graphql
 query {
   viewer {
-    File(input: {id: "my-file-id"}) {
+    File(input: {
+      id: "my-file-id"
+    }) {
       file {
         id
         name
@@ -65,7 +67,11 @@ To rename a file, use the `updateFile` mutation and choose a new value for the `
 
 ```graphql
 mutation {
-  updateFile(input: {id: "my-file-id" name: "new-comment-name.png" clientMutationId: "abc"}) {
+  updateFile(input: {
+    id: "my-file-id"
+    name: "new-comment-name.png"
+    clientMutationId: "abc"
+  }) {
     file {
       id
       name
@@ -91,7 +97,10 @@ To delete a file, use the `deleteFile` mutation as you would use any other delet
 
 ```graphql
 mutation {
-  deleteFile(input: {id: "my-file-id" clientMutationId: "abc"}) {
+  deleteFile(input: {
+    id: "my-file-id"
+    clientMutationId: "abc"
+  }) {
     file {
       id
     }

@@ -43,11 +43,9 @@ disabled: false
 ---
 query {
   viewer {
-    allPosts(
-      filter: {
-        published: false
-      }
-    ) {
+    allPosts(filter: {
+      published: false
+    }) {
       edges {
         node {
           id
@@ -91,14 +89,9 @@ disabled: false
 ---
 query {
   viewer {
-    allPosts(
-      filter: {
-        title_in: [
-          "My biggest Adventure",
-          "My latest Hobbies"
-        ]
-      }
-    ) {
+    allPosts(filter: {
+      title_in: ["My biggest Adventure", "My latest Hobbies"]
+    }) {
       edges {
         node {
           id
@@ -151,13 +144,11 @@ disabled: false
 ---
 query {
   viewer {
-    allPosts(
-      filter: {
-        author: {
-          accessRole: USER
-        }
+    allPosts(filter: {
+      author: {
+        accessRole: USER
       }
-    ) {
+    }) {
       edges {
         node {
           title
@@ -208,7 +199,7 @@ query {
   viewer {
     allUsers(filter: {
       posts_some: {
-        published: true,
+        published: true
       }
     }) {
       edges {
@@ -334,15 +325,13 @@ disabled: false
 ---
 query {
   viewer {
-    allPosts(
-      filter: {
-        AND: [{
-          title_in: ["My biggest Adventure", "My latest Hobbies"]
-        }, {
-          published: true
-        }]
-      }
-    ) {
+    allPosts(filter: {
+      AND: [{
+        title_in: ["My biggest Adventure", "My latest Hobbies"]
+      }, {
+        published: true
+      }]
+    }) {
       edges {
         node {
           id
@@ -388,19 +377,17 @@ disabled: false
 ---
 query {
   viewer {
-    allPosts(
-      filter: {
-        OR: [{
-          AND: [{
-            title_in: ["My biggest Adventure", "My latest Hobbies"]
-          }, {
-            published: true
-          }]
+    allPosts(filter: {
+      OR: [{
+        AND: [{
+          title_in: ["My biggest Adventure", "My latest Hobbies"]
         }, {
-          id: "cixnen24p33lo0143bexvr52n"
+          published: true
         }]
-      }
-    ) {
+      }, {
+        id: "cixnen24p33lo0143bexvr52n"
+      }]
+    }) {
       edges {
         node {
           id

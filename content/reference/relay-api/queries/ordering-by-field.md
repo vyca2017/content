@@ -32,9 +32,7 @@ disabled: true
 ---
 query {
   viewer {
-    allPosts(
-      orderBy: title_ASC
-    ) {
+    allPosts(orderBy: title_ASC) {
       edges {
         node {
           id
@@ -88,9 +86,7 @@ disabled: true
 ---
 query {
   viewer {
-    allPosts(
-      orderBy: title_DESC
-    ) {
+    allPosts(orderBy: title_DESC) {
       edges {
         node {
           id

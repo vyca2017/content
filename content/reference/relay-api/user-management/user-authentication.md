@@ -40,7 +40,15 @@ To create a new user with email and password, enable the built-in email and pass
 
 ```graphql
 mutation {
-  createUser(input: {authProvider: { email: { email: "user@email.com", password: "secret-password" }}, clientMutationId: "abc" }) {
+  createUser(input: {
+    authProvider: {
+      email: {
+        email: "user@email.com"
+        password: "secret-password"
+      }
+    }
+    clientMutationId: "abc"
+  }) {
     user {
       id
     }
@@ -54,7 +62,13 @@ To sign in an existing user with email and password, provide his `email` and `pa
 
 ```graphql
 mutation {
-  signinUser(input: {email: {email: "user@email.com", password: "secret-password"}, clientMutationId: "abc" }) {
+  signinUser(input: {
+    email: {
+      email: "user@email.com"
+      password: "secret-password"
+    }
+    clientMutationId: "abc"
+  }) {
     token
   }
 }
@@ -73,7 +87,15 @@ To create a new user with Digits, provide the `apiUrl` and `credentials` tokens 
 
 ```graphql
 mutation {
-  createUser(input: {authProvider: { digits: { apiUrl: "<apiUrl>", credentials: "<credentials>" }}, clientMutationId: "abc" }) {
+  createUser(input: {
+    authProvider: {
+      digits: {
+        apiUrl: "<apiUrl>"
+        credentials: "<credentials>"
+      }
+    }
+    clientMutationId: "abc"
+  }) {
     user {
       id
     }
@@ -87,7 +109,13 @@ To sign in an existing user with Digits, provide his `apiUrl` and `credentials` 
 
 ```graphql
 mutation {
-  signinUser(input: { digits: { apiUrl: "<apiUrl>", credentials: "<credentials>" }, clientMutationId: "abc" }) {
+  signinUser(input: {
+    digits: {
+      apiUrl: "<apiUrl>"
+      credentials: "<credentials>"
+    }
+    clientMutationId: "abc"
+  }) {
     token
   }
 }
@@ -106,7 +134,14 @@ To create a new user provide the `idToken` token obtained from Auth0:
 
 ```graphql
 mutation {
-  createUser(input: { authProvider: { auth0: { idToken: "<idToken>" }}, clientMutationId: "abc" }) {
+  createUser(input: {
+    authProvider: {
+      auth0: {
+        idToken: "<idToken>"
+      }
+    }
+    clientMutationId: "abc"
+  }) {
     user {
       id
     }
@@ -124,10 +159,24 @@ You might want to create a user and sign him in right afterwards. You can includ
 
 ```graphql
 mutation {
-  createUser(input: { authProvider: { email:{ email:user@email.com", password:"secret-password" }}, clientMutationId: "abc" }){
+  createUser(input: {
+    authProvider: {
+      email:{
+        email: user@email.com"
+        password: "secret-password"
+        }
+      }
+    clientMutationId: "abc"
+  }){
     id
   }
-  signinUser(input: { email: { email:"user@email.com", password: "secret-password" }, clientMutationId: "abc" }){
+  signinUser(input: {
+    email: {
+      email: "user@email.com"
+      password: "secret-password"
+    }
+    clientMutationId: "abc"
+  }){
     token
   }
 }

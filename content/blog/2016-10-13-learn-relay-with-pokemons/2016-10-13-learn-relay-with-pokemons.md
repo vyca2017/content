@@ -17,7 +17,6 @@ related:
     - thaiph8ung
   more:
     - tioghei9go
-    - iu5niesain
 ---
 
 # Learn Relay with Pokemons

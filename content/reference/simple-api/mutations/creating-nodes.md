@@ -38,9 +38,9 @@ disabled: true
 ---
 mutation {
   createPost(
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
     text: "Read about my great vacation."
   ) {
     id
@@ -75,10 +75,10 @@ disabled: true
 ---
 mutation {
   createPost(
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
-    text: "Read about my great vacation.",
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
+    text: "Read about my great vacation."
     authorId: "cixnekqnu2ify0134ekw4pox8"
   ) {
     id
@@ -107,10 +107,10 @@ disabled: true
 ---
 mutation {
   createPost(
-    title: "My great Vacation",
-    slug: "my-great-vacation",
-    published: true,
-    text: "Read about my great vacation.",
+    title: "My great Vacation"
+    slug: "my-great-vacation"
+    published: true
+    text: "Read about my great vacation."
     metaInformation: {
       tags: [TRAVELLING]
     }

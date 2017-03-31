@@ -26,6 +26,8 @@ Each project contains a [file model](!alias-uhieg2shio#file-model) by default th
 
 ## Uploading a file with plain HTTP
 
+<!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-apollo-file-upload-example') -->
+
 Use the file endpoint `https://api.graph.cool/file/v1/__PROJECT_ID__` to upload files by using the multipart form parameter `data` and providing the local file path as its value in a HTTP POST request.
 With`curl` you could execute:
 
@@ -46,10 +48,18 @@ The response could look something like this:
 
 After this request, the file is publicly available at its `url`. Each property in the response corresponds to a field of the [file model](!alias-uhieg2shio#file-model).
 
+## Image API
+
+When downloading images, you can use a separate image API to control the size of the file. To get a 600x500 image, you can use
+
+```
+https://images.graph.cool/__PROJECT_ID__/__FILE_ID__/600x500
+```
+
 ## File Management with the Client APIs
 
 Files can be also uploaded and modified by using queries and mutations from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah).
 
 ## File Access
 
-As with any other model, you can make use of our [permission system](!alias-iegoo0heez) for file nodes. These permissions apply to the actual file nodes, however, **the file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.
+Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.

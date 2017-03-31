@@ -29,7 +29,7 @@ Together we will go through these steps:
 
 * register at Stripe and setup a Graphcool project for an example e-commerce application
 * implement a process that creates a new Stripe customer whenever a Graphcool user adds new credit card details
-* implement a process that charges the according Stripe customer whenever a Graphcool user makes a new purchase
+* implement a process that charges the corresponding Stripe customer whenever a Graphcool user makes a new purchase
 * test the two processes by creating example credit card details and purchases
 
 ## Register at Stripe
@@ -40,7 +40,7 @@ First, you need to register at [Stripe](https://stripe.com/) to obtain a **secre
 
 ## Prepare your GraphQL schema
 
-Next, we're preparing a Graphcool project for our example application. We're implementing a generic e-commerce platform where customers can sign up and order purchases. This is the according GraphQL schema:
+Next, we're preparing a Graphcool project for our example application. We're implementing a generic e-commerce platform where customers can sign up and order purchases. This is the corresponding GraphQL schema:
 
 ```idl
 type User {
@@ -90,7 +90,15 @@ These are the permissions that we use in your application:
 
 ```graphql
 {
-  allUsers(filter:{AND:[{id:$userId}, {id:$new_userId}]}){id}
+  allUsers(filter: {
+    AND: [{
+      id: $userId
+    }, {
+      id: $new_userId
+    }]
+  }) {
+    id
+  }
 }
 ```
 
@@ -100,7 +108,15 @@ These are the permissions that we use in your application:
 
 ```graphql
 {
-  allUsers(filter:{AND:[{id:$userId}, {id:$new_userId}]}){id}
+  allUsers(filter: {
+    AND: [{
+      id: $userId
+    }, {
+      id: $new_userId
+    }]
+  }) {
+    id
+  }
 }
 ```
 
@@ -130,13 +146,13 @@ Now add the needed secrets to `now`:
 * `now secret add charge-secret XXX`
 * `now secret add endpoint https://api.graph.cool/simple/v1/__PROJECT_ID__`
 
-### When new card details are created, create according Stripe customer
+### When new card details are created, create corresponding Stripe customer
 
 Now we can add a new mutation callback with the trigger `CardDetails is created`. This mutation callback creates a new Stripe customer whenever new card details are created. Use this as its payload:
 
 ```graphql
 {
-  createdNode{
+  createdNode {
     id
     cardToken
     user {
@@ -205,7 +221,7 @@ We'll add another mutation callback that handles the actual charging when a new 
 
 ```graphql
 {
-  createdNode{
+  createdNode {
     id
     user {
       stripeId
@@ -261,7 +277,7 @@ stripe.charges.create({
 ```
 
 * First, we're calling `stripe.charges.create` to create a new Stripe charge using Stripe's JavaScript SDK.
-* If the Stripe charge was created successfully, we're marking the according purchase as paid.
+* If the Stripe charge was created successfully, we're marking the corresponding purchase as paid.
 * We're calling the `updatePurchase` mutation using `request.post`. Note that we need to supply the permanent authentication token in the `Authorization` header again.
 
 Deploy the microservices with now:
@@ -289,10 +305,10 @@ disabled: true
 ---
 mutation {
   createUser(
-    name: "Nilan",
+    name: "Nilan"
     authProvider: {
       email: {
-      	email: "nilan@graph.cool",
+      	email: "nilan@graph.cool"
         password: "password"
       }
     }
@@ -339,7 +355,7 @@ disabled: true
 ---
 mutation {
   createCardDetails(
-    cardToken: "tok_19cIRbD7TaYA8JWHv5WIEOiL",
+    cardToken: "tok_19cIRbD7TaYA8JWHv5WIEOiL"
     userId: "cixyw53tg6i8a0173kx2nrwto"
   ) {
     id
@@ -355,11 +371,11 @@ mutation {
 }
 ```
 
-Now our first microservice should kick in and create a new Stripe customer according to the card and user details. Go to your Stripe account to confirm.
+Now our first microservice should kick in and create a new Stripe customer corresponding to the card and user details. Go to your Stripe account to confirm.
 
 ### Make a purchase
 
-Now whenever the test user makes a purchase, the second microservice makes sure that the according Stripe customer we'll be charged. To confirm this, create a new test purchase in the Graphcool playground:
+Now whenever the test user makes a purchase, the second microservice makes sure that the corresponding Stripe customer we'll be charged. To confirm this, create a new test purchase in the Graphcool playground:
 
 ```graphql
 ---
@@ -370,7 +386,7 @@ mutation {
   createPurchase(
     amount: 50000,
     description: "A new laptop",
-    userId: "cixyw53tg6i8a0173kx2nrwto",
+    userId: "cixyw53tg6i8a0173kx2nrwto"
   ) {
     isPaid
   }
@@ -385,7 +401,7 @@ mutation {
 }
 ```
 
-The mutation callback charges the according Stripe customer and after a few seconds, `isPaid` is set to `true` to signify that the amount has been charged. Confirm that in both your Stripe account (a new charge should appear) and in your Graphcool data (`isPaid` should be set to true).
+The mutation callback charges the corresponding Stripe customer and after a few seconds, `isPaid` is set to `true` to signify that the amount has been charged. Confirm that in both your Stripe account (a new charge should appear) and in your Graphcool data (`isPaid` should be set to true).
 
 > Note: Stripe uses integers to express the amount of money charged. In this case, a total of 1000 equals 10 USD.
 

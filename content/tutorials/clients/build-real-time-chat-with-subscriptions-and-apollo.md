@@ -85,12 +85,9 @@ subscription {
         name
       }
     }
-    # previousValues carries values from before the mutation happened
+    # previousValues carries scalar values from before the mutation happened
     previousValues {
       text
-      sentBy {
-        name
-      }
     }
   }
 }
@@ -482,5 +479,8 @@ In both cases, we're simply incorporating the changes that we received from the 
 ## Summing Up
 
 In this tutorial, we've only scratched the surface of what you can do with our subscription API. To see what else is possible, you can check out our [documentation](!alias-aip7oojeiv).
+
+
+## Help & Community
 
 Join our [Slack community](http://slack.graph.cool/) if you run into issues or have questions. We love talking to you!

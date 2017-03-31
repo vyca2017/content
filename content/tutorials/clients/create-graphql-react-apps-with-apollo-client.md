@@ -20,14 +20,14 @@ related:
     - ga2ahnee2a
 ---
 
-# Create GraphQL React Apps with Apollo Client
+# How to use `create-react-app` with GraphQL & Apollo
 
-The easiest way to get started with GraphQL React apps is using `create-react-app` and Apollo Client.
-In this tutorial we will learn how we can construct an Instagram app, where posts are displayed, created or deleted. The complete code in this tutorial is [available on GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
+The easiest way to get started with React apps that are using a GraphQL backend is with [`create-react-app`](https://github.com/facebookincubator/create-react-app) and [Apollo](http://dev.apollodata.com/).
+In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
 
-## Prerequisites
+## Getting your GraphQL endpoint
 
-For this tutorial you need a GraphQL project with this schema:
+For this tutorial you'll need a GraphQL project with the following schema:
 
 ```graphql
 type Post {
@@ -37,48 +37,67 @@ type Post {
 }
 ```
 
-You can read the [quickstart guide](!alias-thaeghi8ro) to see how that is done!
-Create some example posts and copy your endpoint. We will now build a React that queries a GraphQL server with Apollo Client and allows to display, create and delete posts.
+Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can generate a fully-fledged GraphQL server from your command line by providing this schema as an input argument to the `graphcool create` command:
 
-## Installing Create React App
+1. In case you haven't already, install the Graphcool CLI: `npm install -g graphcool`
+2. Save the schema from above in a file called `instagram.schema`
+3. Create the GraphQL server: `graphcool create instagram.schema`
 
-With `create-react-app`, it's super simple to initialize a React app that connects to a GraphQL backend! `create-react-app` comes with a lot of nice features out-of-the-box, such as a preconfigured Webpack and babel setup for zero build configurations. Furthermore, React, JSX, ES6, and Flow syntax support is included as well as language extras beyond ES6 like the object spread operator.
+That's it, copy the endpoint for the `Simple API` since we'll need it later on. Notice that you can now also manage this project in the [Graphcool console](https://console.graph.cool) or explore it in a [GraphQL playground](https://www.graph.cool/docs/faq/tips-and-tricks-graphql-playground-ook6luephu/).
 
-Let's install it:
+
+## Getting started with`create-react-app`
+
+### Installation 
+
+With `create-react-app`, it's super easy to start out with a new React application! It comes with a lot of nice features out-of-the-box, such as a preconfigured [Webpack](https://github.com/webpack/webpack) and [Babel](https://babeljs.io/) setup for zero build configurations. Furthermore, features like [JSX](https://jsx.github.io/) and [ES6](http://es6-features.org/) syntax as well as static typechecking with [Flow](https://flowtype.org/) are already included. The generated boilerplate code also gives you a head-start with your new app.
+
+If you don't have `create-react-app` installed on your machine yet, now is the time to do so with the following command:
 
 ```sh
 npm install -g create-react-app
 ```
 
-## Development with Create React App
+### Creating a new React app
 
 After installing, we can easily create and run a new project from the command line:
 
 ```sh
 create-react-app react-apollo-instagram-example
-cd react-apollo-instagram-example/
+cd react-apollo-instagram-example
 npm start # open http://localhost:3000
 ```
 
+![](http://i.imgur.com/bfsiVUB.png)
+
 Hot-reloading and linting is included as well, the terminal window keeps us updated about errors and linter problems.
 
-## Using Apollo Client with a React App
+
+## Integrating Apollo in a React Application
 
 #### Installing the Dependencies
 
-Apollo Client is a popular GraphQL client. We'll use it to query our GraphQL backend. Let's install the needed packages:
+[Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze. 
+
+We will need three dependencies to use it in our React application: 
+
+1. [`apollo-client`](https://github.com/apollographql/apollo-client): Contains the general functionality of Apollo Client
+2. [`react-apollo`](https://github.com/apollographql/react-apollo): Implements React-specific bindings for Apollo
+3. [`graphql-tag`](https://github.com/apollographql/graphql-tag): Provides functionality for parsing the [JavaScript template literals](http://exploringjs.com/es6/ch_template-literals.html) that will contain our GraphQL queries and mutations
+
+You can install all three dependencies at once:
 
 ```sh
 npm install apollo-client react-apollo graphql-tag --save
 ```
 
-Additionally, we're using React Router, so let's install that as well:
+Additionally, we're using [React Router](https://github.com/ReactTraining/react-router) to deal with navigation in our app, let's go ahead install that as well:
 
 ```sh
 npm install react-router --save
 ```
 
-For styling, we're using tachyons:
+For styling, we're using [tachyons](http://tachyons.io/):
 
 ```sh
 npm install tachyons --save
@@ -86,16 +105,15 @@ npm install tachyons --save
 
 #### Mocking the needed Components
 
-Let's first build the components needed for our Instagram app, where we want to display, create or delete posts.  Afterwards, we'll inject the needed data with Apollo Client and wire everything up with React Router.
+Let's first build the components needed for our app, where we want to display, create or delete posts. Afterwards, we'll inject the required data using Apollo and wire everything up with React Router.
 
 These are the three components that we need:
 
-* `ListPage` in `src/components/ListPage.js` that will list all posts in our backend.
+* `ListPage` in `src/components/ListPage.js` that will list all posts in our backend
 
 ```js
 import React from 'react'
 import { Link } from 'react-router'
-
 
 class ListPage extends React.Component {
 
@@ -237,7 +255,7 @@ import 'tachyons'
 import './index.css'
 ```
 
-Now we can create a new instance of Apollo Client below the import statements:
+Next we can create a new instance of `ApolloClient` below the import statements:
 
 ```js
 const networkInterface = createNetworkInterface({
@@ -249,9 +267,9 @@ const client = new ApolloClient({
 })
 ```
 
-Pass your project endpoint to the `uri` parameter of the `networkInterface` to connect the app to your GraphQL backend.
+> The `uri` that we have to pass to the `createNetworkInterface` call is the GraphQL endpoint for the `Simple API` that we generated in the first step using `graphcool create`. You can also retrieve that endpoint from the [Graphcool console](https://console.graph.cool) by selecting your project and then clicking the `ENDPOINTS`-button in the bottom-left corner.
 
-Now let's setup the needed routes for our application below:
+Let's now setup the routes for our application:
 
 ```js
 ReactDOM.render((
@@ -266,11 +284,12 @@ ReactDOM.render((
 )
 ```
 
-Note that `ApolloProvider` is wrapping `Router`, which enables all child components to use Apollo Client for queries and mutations.
+Note that the `ApolloProvider` is wrapping `Router`, which enables all child components to access the functionality from Apollo Client to send queries and mutations.
+
 
 ## Using Apollo Client for Queries and Mutations
 
-Now we are ready to use Apollo Client in our different components!
+Now we are ready to use Apollo in our components to interact with the GraphQL API!
 
 #### Querying all Posts in `ListPage`
 
@@ -282,7 +301,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 ```
 
-Apart from `Post` to render a single post, we import `gql` and `graphql`. `gql` is used to create query and mutation. `graphql` takes queries and mutations created with `gql` and a React component and injects the data from a query or the mutation function to the component as a prop.
+Apart from the `Post` component that renders a single post, we import `gql` and `graphql`. `gql` is used to create queries and mutations. [`graphql`](http://dev.apollodata.com/react/api.html#graphql) actually is a higher-order component that takes as input arguments one or more queries and/or mutations that were created with `gql` as well as a React component and injects the data from the query and/or the mutation function into the component as a prop.
 
 First, let's think about the query to display all posts:
 
@@ -322,7 +341,7 @@ query allPosts {
 }
 ```
 
-At the end of the file, outside of the `Post` class, we are now adding the `FeedQuery` GraphQL query with `gql` that queries information of all our posts:
+At the end of the file, outside of the `Post` class, we are now adding the `FeedQuery` with `gql` which queries information about all our posts:
 
 ```js
 const FeedQuery = gql`query allPosts {
@@ -334,7 +353,7 @@ const FeedQuery = gql`query allPosts {
 }`
 ```
 
-We're sorting the posts descending, so the latest posts appear on top of the list.
+We're sorting the posts in descending order, so the latest posts appear on top of the list.
 
 Now we're replacing the current `export` statement with this:
 
@@ -342,9 +361,9 @@ Now we're replacing the current `export` statement with this:
 export default graphql(FeedQuery)(ListPage)
 ```
 
-This injects a new `data` prop to `ListPage`. Back in the `render` method of `ListPage`, we can first check if the data has been loaded with `this.props.data.loading`. If loading is `false`, the data has arrived and we can map over `this.props.data.allPosts` to display the posts. We're also passing the `this.props.data.refetch` method to every post to reexecute the query after a post has been deleted.
+This injects a new prop called  `data` to `ListPage`. Back in the `render` method of `ListPage`, we can first check if the data has already been loaded with `this.props.data.loading`. If `loading` is set to `false`, the data has arrived and we can `map` over `this.props.data.allPosts` to display the posts. We're also passing the `this.props.data.refetch` method to every post to reexecute the query after a post has been deleted.
 
-Combined, this is the `render` method that we end up with:
+Putting it all together, this is the `render` method that we end up with:
 
 ```js
 render () {
@@ -369,14 +388,14 @@ render () {
 
 #### Creating Posts in `CreatePage`
 
-Adding mutations to React components is similar to adding queries, but instead of injected data, functions are injected for each mutation. Again, we need to import the Apollo Client related packages at the top of `src/components/CreatePage.js`:
+Adding mutations to React components is similar to adding queries, but instead of injected data, functions are injected for each mutation. Again, we need to import the Apollo related packages at the top of `src/components/CreatePage.js`:
 
 ```js
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 ```
 
-The mutation to create a new post looks like this:
+The mutation to create a new post looks as follows:
 
 ```graphql
 ---
@@ -419,7 +438,7 @@ const addMutation = gql`
 `
 ```
 
-Now we can replace the `export` statement by this:
+Similar to the `FeedQuery` before, we now have to replace the `export` statement with the following code snippet:
 
 ```js
 export default graphql(addMutation, {
@@ -432,7 +451,7 @@ export default graphql(addMutation, {
 })(withRouter(CreatePage))
 ```
 
-This injects a new function to the props of `CreatePage` accessible with `this.props.addPost`. Using that, we can implement the `handlePost` method of the `CreatePage` class to create a post:
+This injects a new function to the props of `CreatePage` accessible with `this.props.addPost`. This function takes a `description` and the `imageUrl` as arguments so that we can provide the necessary info for each post that's being created. Using that, we can implement the `handlePost` method of the `CreatePage` class to create a post:
 
 ```js
 handlePost = () => {
@@ -440,20 +459,20 @@ handlePost = () => {
   this.props.addPost({ description, imageUrl })
     .then(() => {
       this.props.router.push('/')
-    })
+  })
 }
 ```
 
 #### Deleting Posts in `Post`
 
-To delete a post, we first import the Apollo Client related packages at the top of `src/components/Post.js`:
+To delete a post, we again need to import the Apollo Client related packages at the top of `src/components/Post.js`:
 
 ```js
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 ```
 
-This is how we can delete a post in the playground:
+Let's take a look at the mutation that we can use to delete a post from a playground:
 
 ```graphql
 ---
@@ -479,7 +498,7 @@ mutation deletePost($id: ID!) {
 }
 ```
 
-Now we can define the `deletePost` mutation, as always just before the `export default Post` statement:
+Now we can define that `deletePost` mutation in our JavaScript code and then inject it into our component by wrapping it with the `graphql` function. As before, we'll do that right before the `export default Post` statement:
 
 ```js
 const deleteMutation = gql`
@@ -489,10 +508,19 @@ const deleteMutation = gql`
     }
   }
 `
+
+const PostWithMutation = graphql(deleteMutation)(Post)
 ```
+
+Finally, we need to adjust the `export` statement like so:
+
+```js
+export default PostWithMutation
+```
+
 
 ## Conclusion
 
-That's it! Using `create-react-app` and Apollo Client, it's easy to write GraphQL applications. If you want to dive deeper in the example code, it's [available on GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
+That's it! Using `create-react-app` and Apollo Client, it's easy to write React applications that work with a GraphQL backend. If you want to dive deeper in the example code, you can check it out on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
 
-Apollo Client supports more features like subscriptions or [query batching](!alias-ligh7fmn38). For a more comprehensive tutorial, checkout [Learn Apollo](https://learnapollo.com), a hands-on guide for Apollo Client created by Graphcool.
+For a more comprehensive tutorial, checkout [Learn Apollo](https://learnapollo.com), a hands-on guide for Apollo Client created by Graphcool.
