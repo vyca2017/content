@@ -20,7 +20,7 @@ related:
 ---
 
 
-# Relay vs Apollo - Comparing GraphQL Clients for React apps
+# Relay vs Apollo - Comparing GraphQL clients for React apps
 
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose?
 
