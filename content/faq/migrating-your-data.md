@@ -7,13 +7,16 @@ description: When working with fields in your GraphQL schema, you might have to 
 tags:
   - platform
   - data-management
+  - data-schema
   - fields
   - relations
+  - migrations
 related:
   further:
     - ahwoh2fohj
     - ij2choozae
     - teizeit5se
+    - kie1quohli
   more:
     - ga2ahnee2a
     - taith2va1l
