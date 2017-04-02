@@ -6,7 +6,7 @@ description: All the capabilities of the Simple API collected in a compact cheat
 tags:
   - platform
   - simple-api
-  -clients
+  - clients
 related:
   further:
     - heshoov3ai
