@@ -7,8 +7,8 @@ description: TODO.
 tags:
   - freecom
 related:
-  further:
   more:
+   - 8uakjj68lp
 ---
 
 # Freecom: Building Intercom with GraphQL and Apollo
@@ -19,7 +19,7 @@ Everybody loves the live chat experience of [Intercom](www.intercom.com), but fo
 
 ![](./overview-demo.png)
 
-## Learning by Building 
+## Learning by Building
 
 In the next couple of weeks, we are going to release increments of the final product along with tutorial chapters, teaching you how to build a fully-fledged application from scratch. Freecom will be powered by a Graphcool backend, thus making it a perfect opportunity for you to get started with [GraphQL](www.graphql.org) while discovering all major functionality of the Graphcool platform!
 
@@ -58,7 +58,7 @@ The _3rd chapter_ is all about bringing **realtime functionality** into our chat
 
 In the _4th chapter_, we'll use the [**permission system**](https://www.graph.cool/docs/reference/platform/permissions-iegoo0heez/) to make sure customers can only ever view their own messages.
 
-Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the _5th chapter_, we'll therefore explain how to use **[mutation callbacks](https://www.graph.cool/docs/reference/platform/mutation-callbacks-ahlohd8ohn/) and [serverless functions](https://stdlib.com/)** to integrate with the Slack API. 
+Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the _5th chapter_, we'll therefore explain how to use **[mutation callbacks](https://www.graph.cool/docs/reference/platform/mutation-callbacks-ahlohd8ohn/) and [serverless functions](https://stdlib.com/)** to integrate with the Slack API.
 
 Finally, in the _6th chapter_, we are going to cover how to **[upload files](https://www.graph.cool/docs/reference/platform/file-management-eer4wiang0/)** and do proper file management in a Graphcool backend.
 
