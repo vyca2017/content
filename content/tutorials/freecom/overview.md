@@ -11,13 +11,13 @@ related:
   more:
 ---
 
-# Freecom: Building a production-ready Intercom-clone with GraphQL and Apollo
+# Freecom: Building Intercom with GraphQL and Apollo
 
 <VIDEO>
 
 Everybody loves the live chat experience of [Intercom](www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
 
-![](http://imgur.com/6KNCMG4.png)
+![](./overview-demo.png)
 
 ## Learning by Building 
 
@@ -33,7 +33,7 @@ For the frontend, we are choosing a modern and easy-to-get-started set of techno
 
 The view layer of Freecom will be implemented in [React](https://facebook.github.io/react/). Then, for the interaction with the GraphQL server we are using [Apollo](http://dev.apollodata.com/), a sophisticated GraphQL client that implements features like caching, optimistic UI and realtime subscriptions, thus making it perfect for our use case. [React and Apollo play nicely together](http://dev.apollodata.com/react/#react-toolbox) and make interaction with a GraphQL API a breeze 🚀  
 
-![](https://canvas-files-prod.s3.amazonaws.com/uploads/a417a77e-fc03-4e53-a98c-63ceed78c694/Screen Shot 2017-04-04 at 14.14.40.png)
+![](./overview-arch.png)
 
 To have a head start with our project and save ourselves some configuration time, we'll be using [create-react-app](https://github.com/facebookincubator/create-react-app) to create our initial project. This will generate a boilerplate React project with [JSX](https://jsx.github.io/), [ES6](http://es6-features.org/) and [Flow](https://flow.org/) support as well as some other [handy configurations](https://github.com/facebookincubator/create-react-app#why-use-this).
 
