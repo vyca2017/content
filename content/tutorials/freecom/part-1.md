@@ -1,5 +1,5 @@
 ---
-alias: 8uakjj68lp
+alias: xuakjj68lp
 path: /docs/tutorials/freecom-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
