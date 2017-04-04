@@ -41,7 +41,7 @@ To have a head start with our project and save ourselves some configuration time
 
 As mentioned before, you'll be able to up your support game after this tutorial and use the final product in your own website to help your customers! You and your support agents will be able to answer customer questions through a dedicated Slack team.
 
-If you want to get a taste of what the final version looks like, you can go [here for a hosted demo](http://freecom.netlify.com/), play the role of a customer and ask some support questions. If you'd like to put on the shoes of a support agent, you can log in to the [Demo Slack account](https://freecom-team.slack.com) with the following data:
+If you want to get a taste of what the final version looks like, you can go [here for a hosted demo](https://demo.graph.cool/freecom/), play the role of a customer and ask some support questions. If you'd like to put on the shoes of a support agent, you can log in to the [Demo Slack account](https://freecom-team.slack.com) with the following data:
 
 - Email: `freecom-agent@graph.cool`
 - Password: `freecom`
