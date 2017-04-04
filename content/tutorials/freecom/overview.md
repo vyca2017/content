@@ -3,7 +3,7 @@ alias: e8a6ajt8ax
 path: /docs/tutorials/freecom-overview
 layout: TUTORIAL
 preview: freecom-overview.png
-description: Use Zapier to create a Slack integration for your GraphQL server and get Slack notifications whenever a certain mutation is executed.
+description: TODO.
 tags:
   - freecom
 related:
