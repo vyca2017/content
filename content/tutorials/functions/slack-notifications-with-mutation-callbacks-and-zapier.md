@@ -2,7 +2,7 @@
 alias: dah6aifoce
 path: /docs/tutorials/slack-notifications-with-mutation-callbacks
 layout: TUTORIAL
-preview: slack-zapier-mutation-callback.png
+preview: slack-zapier-notification-mutation-callback.png
 title: 'Sending Slack Notifications with GraphQL & Zapier'
 description: Use Zapier to create a Slack integration for your GraphQL server and get Slack notifications whenever a certain mutation is executed.
 tags:
