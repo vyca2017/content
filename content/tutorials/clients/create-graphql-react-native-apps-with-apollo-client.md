@@ -2,7 +2,7 @@
 alias: weeg6chaiw
 path: /docs/tutorials/create-react-native-apps-with-apollo-client
 layout: TUTORIAL
-preview: create-graphql-react-apps.png
+preview: create-graphql-react-native-apps.png
 description: Connecting to a GraphQL backend is really simple with create-react-native-app and Apollo Client.
 tags:
   - react-native
@@ -49,7 +49,7 @@ That's it, copy the endpoint for the `Simple API` since we'll need it later on. 
 
 ## Getting started with`create-react-native-app`
 
-### Installation 
+### Installation
 
 With `create-react-native-app`, it's super easy to start out with a new React Native application! It comes with a lot of nice features and configurations out-of-the-box, let's you easily run your app on a real-device by scanning a QR code from the terminal and saves you from having to use native development tools such as Xcode or Android Studio.
 
@@ -83,9 +83,9 @@ Hot-reloadingis already setup as well, so any changes you make in the JavaScript
 #### Installing the Dependencies
 
 
-[Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze. 
+[Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze.
 
-We will need three dependencies to use it in our React application: 
+We will need three dependencies to use it in our React application:
 
 1. [`apollo-client`](https://github.com/apollographql/apollo-client): Contains the general functionality of Apollo Client
 2. [`react-apollo`](https://github.com/apollographql/react-apollo): Implements React-specific bindings for Apollo
@@ -468,5 +468,3 @@ This will inject a function called `mutate` into the props of the `CreatePage` c
 That's it! Using `create-react-app` and Apollo Client, it's easy to write React applications that work with a GraphQL backend. If you want to dive deeper in the example code, you can check it out on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
 
 For a more comprehensive tutorial, checkout [Learn Apollo](https://learnapollo.com), a hands-on guide for Apollo Client created by Graphcool.
-
-
