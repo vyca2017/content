@@ -22,7 +22,7 @@ related:
 
 # Sending Slack Notifications with GraphQL & Zapier
 
-[Slack](https://slack.com/) is very popular to handle the internal communication for teams. Slack notifications help to easily stay uptodate with things like successful or failing builds. In this guide we will focus on another use case: tracking business related events like a new user signing up or a finished purchase.
+[Slack](https://slack.com/) is very popular to handle the internal communication for teams. Slack notifications help to easily stay uptodate with things like successful or failing builds. In this guide we will focus on another use case: tracking business related events like when a new user signs up or a purchase is made.
 
 We will use Mutation Callbacks to trigger the Slack plugin offered by [Zapier](https://zapier.com/)'s webhook feature.
 
