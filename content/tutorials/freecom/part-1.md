@@ -3,7 +3,6 @@ alias: xuakjj68lp
 path: /docs/tutorials/freecom-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
-title: 'Requirements Analysis & Designing the Data Model'
 description: Freecom is the free alternative to Intercom
 tags:
   - freecom
@@ -76,7 +75,7 @@ In general, there will be _one Slack channel per conversation_. The name of a Sl
 
 Notice that the `agent` associated with the conversation might change, while the `customer` will always be the same.
 
-```graphl
+```graphql
 type Conversation {
   slackChannelIndex: Int!
   customer: Customer @relation(name: "ConversationsFromCustomer")
@@ -186,7 +185,7 @@ The left part of the Playground is for you to enter the queries and mutations yo
 
 If you want to create some initial data, feel free to send a couple of mutations through the Playground, e.g. for creating a new `Customer`:
 
-```
+```graphql
 mutation {
   createCustomer(name: "Weird-Broccoli") {
     id
@@ -196,7 +195,7 @@ mutation {
 
 After having created this `Customer` in the DB, you can convince yourself that the data was actually stored by either verifying it in the [data browser](https://www.youtube.com/watch?v=XeLKw2BSdI4&t=18s) or by sending the following query for which the response should will now include the newly created user:
 
-```
+```graphql
 allCustomers {
   id
   name
