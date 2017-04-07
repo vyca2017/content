@@ -3,7 +3,7 @@ alias: e8a6ajt8ax
 path: /docs/tutorials/freecom-overview
 layout: TUTORIAL
 preview: freecom-overview.png
-description: TODO.
+description: We're starting a full-stack tutorial series to build an Intercom-clone.
 tags:
   - freecom
 related:
@@ -27,7 +27,7 @@ The final project not only can be used in production, it also is a great referen
 
 ## The "Stack"
 
-As already mentioned, on the backend we are going to use a GraphQL API by Graphcool, connecting to its [Simple API](https://www.graph.cool/docs/reference/simple-api/overview-heshoov3ai/).
+As already mentioned, on the backend we are going to use a GraphQL API by Graphcool, connecting to its [Simple API](!alias-heshoov3ai/).
 
 For the frontend, we are choosing a modern and easy-to-get-started set of technologies!
 
@@ -50,17 +50,17 @@ If you want to get a taste of what the final version looks like, you can go [her
 
 Here is a brief overview of the tutorial chapters to come:
 
-In the _1st chapter_ that's released today along with this article, we will start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](https://www.graph.cool/docs/reference/platform/data-schema-ahwoh2fohj/)** that we can use to set up our API.
+In the _1st chapter_ that's released today along with this article, we will start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](!alias-ahwoh2fohj/)** that we can use to set up our API.
 
 The _2nd chapter_ explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**.
 
-The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](https://www.graph.cool/docs/reference/simple-api/subscriptions-aip7oojeiv/). We'll explain how you can integrate subscriptions in the Freecom to make the messages appear without the user refreshing the page.
+The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in the Freecom to make the messages appear without the user refreshing the page.
 
-In the _4th chapter_, we'll use the [**permission system**](https://www.graph.cool/docs/reference/platform/permissions-iegoo0heez/) to make sure customers can only ever view their own messages.
+In the _4th chapter_, we'll use the [**permission system**](!alias-iegoo0heez/) to make sure customers can only ever view their own messages.
 
-Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the _5th chapter_, we'll therefore explain how to use **[mutation callbacks](https://www.graph.cool/docs/reference/platform/mutation-callbacks-ahlohd8ohn/) and [serverless functions](https://stdlib.com/)** to integrate with the Slack API.
+Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the _5th chapter_, we'll therefore explain how to use **[mutation callbacks](!alias-ahlohd8ohn/) and [serverless functions](https://stdlib.com/)** to integrate with the Slack API.
 
-Finally, in the _6th chapter_, we are going to cover how to **[upload files](https://www.graph.cool/docs/reference/platform/file-management-eer4wiang0/)** and do proper file management in a Graphcool backend.
+Finally, in the _6th chapter_, we are going to cover how to **[upload files](!alias-eer4wiang0/)** and do proper file management in a Graphcool backend.
 
 ## Getting Started 🚀
 
@@ -69,3 +69,5 @@ We already provide all needed UI components, so you can focus on using GraphQL w
 The chapters are deep dives into the relevant concepts that are needed to implement the required functionality. Our goal is to provide you with the right background information to be able to build the functionality yourself. To make this easier, there will be a _starter_ and a _final_ project for every chapter, so you'll have plenty of code to look at and draw inspiration from for your own projects!
 
 > If you're looking for a comprehensive _step-by-step_ tutorial, definitely check out the [Learn Apollo](www.learnapollo.com) tutorial series.
+
+Click [here](!alias-xuakjj68lp) for the first chapter of your tutorial series where we analyse requirements and develop the data model for Freecom.
