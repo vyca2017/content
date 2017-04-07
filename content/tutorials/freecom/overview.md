@@ -3,7 +3,7 @@ alias: e8a6ajt8ax
 path: /docs/tutorials/freecom-overview
 layout: TUTORIAL
 preview: freecom-overview.png
-description: TODO.
+description: We're starting a full-stack tutorial series to build an Intercom-clone.
 tags:
   - freecom
 related:

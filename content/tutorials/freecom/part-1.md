@@ -3,7 +3,7 @@ alias: xuakjj68lp
 path: /docs/tutorials/freecom-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
-description: Freecom is the free alternative to Intercom
+description: Learn about Freecom's data model and how to generate a Graphcool backend from the CLI.  
 tags:
   - freecom
 related:
