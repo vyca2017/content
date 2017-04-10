@@ -149,7 +149,7 @@ Since the schema file is already included in this repository, all you have to do
 ```sh
 git clone https://github.com/graphcool-examples/worldchat-subscriptions-example.git
 cd worldchat
-graphcool create Worldchat.schema
+graphcool init Worldchat.schema
 ```
 
 This will automatically create a project called `Worldchat` that you can now access in our [console](https://console.graph.cool).

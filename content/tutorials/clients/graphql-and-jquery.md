@@ -95,7 +95,7 @@ type Pokemon {
 In order to create a Graphcool project for the Pokedex application, you can simply download the schema file from [here](https://github.com/graphcool-examples/pokedex-jquery/blob/master/Pokedex.schema) and then run the following command in the terminal:
 
 ```
-graphcool create Pokedex.schema
+graphcool init Pokedex.schema
 ```
 
 This will create a new project called `Pokedex` in the [Graphcool console](https://console.graph.cool) along with one model type called `Pokemon`.

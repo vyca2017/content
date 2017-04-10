@@ -9,7 +9,7 @@ tags:
 related:
   further:
     - e8a6ajt8ax
-  more: 
+  more:
     - thaeghi8ro
     - heshoov3ai
     - uh8shohxie
@@ -20,7 +20,7 @@ related:
 
 <iframe height="315" src="https://www.youtube.com/embed/4q0fFEypacA" frameborder="0" allowfullscreen></iframe>
 
-In this first part of our tutorial series, we're focussing on generating a data model from a set of requirements that we have for the Freecom app. 
+In this first part of our tutorial series, we're focussing on generating a data model from a set of requirements that we have for the Freecom app.
 
 If you want to find out more about the background of this tutorial, check out our previous [overview article](!alias-e8a6ajt8ax).
 
@@ -59,7 +59,7 @@ The `name` will be randomly generated for each customer, so that there is no ove
 
 Similarly, the `Agent` type represents the _support agents_. Since the support agents will use Slack, they have two fields that represent their Slack identity: `slackUserId` and `slackUserName`.  
 
-Each `Agent` is associated with the list of conversations that they're currently engaged in. However, since the agent that participates in a conversation can potentially change, we also maintain a list of `messages` that each agent sent in their chats. That is so that it's possible to clearly identify the sender of a message. Note that we didn't need to associate the `Customer` with any messages because the `customer` on a `Conversation` can never change, so we always know who was the customer that sent a specific message by tracing back through the `Conversation`. 
+Each `Agent` is associated with the list of conversations that they're currently engaged in. However, since the agent that participates in a conversation can potentially change, we also maintain a list of `messages` that each agent sent in their chats. That is so that it's possible to clearly identify the sender of a message. Note that we didn't need to associate the `Customer` with any messages because the `customer` on a `Conversation` can never change, so we always know who was the customer that sent a specific message by tracing back through the `Conversation`.
 
 ```graphql
 type Agent {
@@ -74,7 +74,7 @@ Everyone joining the Slack channel will be able to act as a support agent using 
 
 #### `Conversation`
 
-A `Conversation` is associated with one `Customer`, one `Agent` and a list of `messages`. 
+A `Conversation` is associated with one `Customer`, one `Agent` and a list of `messages`.
 
 In general, there will be _one Slack channel per conversation_. The name of a Slack channel is derived from the customer's name and index that increments with every new conversation the customer initiates, so e.g. `cool-tomato-1` would be the Slack channel that represents the very first conversation of the customer named `cool-tomato`. We thus store the `slackChannelIndex` as specific field on the `Conversation` type.
 
@@ -216,7 +216,7 @@ disabled: false
 }
 ```
 
-The left part of the Playground is for you to enter the queries and mutations you'd like to send to the GraphQL server. Right next to it on the right the responses sent by the server will be displayed. And finally, the rightmost area is for you to explore the documentation of the API, listing all available query, mutation and subscription fields. 
+The left part of the Playground is for you to enter the queries and mutations you'd like to send to the GraphQL server. Right next to it on the right the responses sent by the server will be displayed. And finally, the rightmost area is for you to explore the documentation of the API, listing all available query, mutation and subscription fields.
 
 If you want to create some initial data in your own project, feel free to send a couple of mutations through the Playground, e.g. for creating a new `Customer`:
 
@@ -241,9 +241,9 @@ allCustomers {
 
 ## Wrap Up
 
-That's it for today! We hope you enjoyed this first part of our tutorial series and learning about how to create a GraphQL server from the command line using `graphcool create`.
+That's it for today! We hope you enjoyed this first part of our tutorial series and learning about how to create a GraphQL server from the command line using `graphcool init`.
 
-In the next chapter, we'll start writing some actual code. We are going to write some basic React components and integrate them with the Apollo client, also sending our first queries and mutations to interact with the API. 
+In the next chapter, we'll start writing some actual code. We are going to write some basic React components and integrate them with the Apollo client, also sending our first queries and mutations to interact with the API.
 
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 

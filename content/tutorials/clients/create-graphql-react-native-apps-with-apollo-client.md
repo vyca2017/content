@@ -38,11 +38,11 @@ type Post {
 }
 ```
 
-Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can generate a fully-fledged GraphQL server from your command line by providing this schema as an input argument to the `graphcool create` command:
+Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can generate a fully-fledged GraphQL server from your command line by providing this schema as an input argument to the `graphcool init` command:
 
 1. In case you haven't already, install the Graphcool CLI: `npm install -g graphcool`
 2. Save the schema from above in a file called `instagram.schema`
-3. Create the GraphQL server: `graphcool create instagram.schema`
+3. Create the GraphQL server: `graphcool init instagram.schema`
 
 That's it, copy the endpoint for the `Simple API` since we'll need it later on. Notice that you can now also manage this project in the [Graphcool console](https://console.graph.cool) or explore it in a [GraphQL playground](https://www.graph.cool/docs/faq/tips-and-tricks-graphql-playground-ook6luephu/).
 
@@ -261,7 +261,7 @@ const client = new ApolloClient({
 })
 ```
 
-> The `uri` that we have to pass to the `createNetworkInterface` call is the GraphQL endpoint for the `Simple API` that we generated in the first step using `graphcool create`. You can also retrieve that endpoint from the [Graphcool console](https://console.graph.cool) by selecting your project and then clicking the `ENDPOINTS`-button in the bottom-left corner.
+> The `uri` that we have to pass to the `createNetworkInterface` call is the GraphQL endpoint for the `Simple API` that we generated in the first step using `graphcool init`. You can also retrieve that endpoint from the [Graphcool console](https://console.graph.cool) by selecting your project and then clicking the `ENDPOINTS`-button in the bottom-left corner.
 
 Let's now setup the routes for our application:
 
