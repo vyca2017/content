@@ -7,13 +7,13 @@ description: Learn about Freecom's data model and how to generate a Graphcool ba
 tags:
   - freecom
 related:
-  further:
-    - koo4eevun4
   more:
+    - koo4eevun4
+  further:
     - e8a6ajt8ax
 ---
 
-# Freecom: Requirements Analysis & Designing the Data Model
+# Freecom (1/6): Requirements Analysis & Data Model
 
 <iframe height="315" src="https://www.youtube.com/embed/4q0fFEypacA" frameborder="0" allowfullscreen></iframe>
 
@@ -23,7 +23,7 @@ If you want to find out more about the background of this tutorial, check out ou
 
 ### Features
 
-We have a few requirements for the app, here's a list of features we want to implement:
+We have a few requirements for the app, here's the list of features we want to implement:
 
 - A customer visits a website and can open the support window
 - The support window displays a list of the customer's previous conversations with support agents if any, or otherwise directly opens a new conversation
@@ -143,7 +143,7 @@ Notice that each of the types now also includes the Graphcool [system fields](!a
 
 Here is a graphical overview of the relations in our final schema:
 
-![](http://imgur.com/obSadCn.png)
+![](./img/fc1-data-model.png)
 
 - **one** `Agent` is related to **many** `Message`s
 - **one** `Agent` is related to **many** `Conversation `s
@@ -155,7 +155,7 @@ Here is a graphical overview of the relations in our final schema:
 You can now either create these model types and relations manually in the Web UI of the  [Graphcool console](https://console.graph.cool) or use the [command-line interface](https://www.npmjs.com/package/graphcool) to create the project including the data model. Simply download the complete [schema file](https://github.com/graphcool-examples/schemas/blob/master/freecom.schema) and execute the following command in a Terminal:
 
 ```sh
-graphcool create freecom.schema
+graphcool init --url freecom.schema --name Freecom
 ```
 
 Note that this will require you to authenticate with Graphcool by opening a browser window before creating the actual project.
@@ -165,25 +165,55 @@ Once the project was created, you can interact with it via two different endpoin
 - [`Simple API`](!alias-heshoov3ai/): This endpoint creates an intuitive GraphQL API based on the provided data model and is optimized for usage with Apollo - _it's the one we'll be using in this tutorial!_
 - [`Relay API`](!alias-aizoong9ah/): This endpoint can be used in applications that use [Relay](https://facebook.github.io/relay/), a GraphQL client developed by Facebook and with some specific requirements for the GraphQL API
 
-![](http://i.imgur.com/6yMWjrA.png)
+![](./img/fc1-graphcool-init.png)
 
 We'll be using the endpoint for the `Simple API`! If you ever lose the endpoint, you can simply find it in the [Graphcool console](https://console.graph.cool) by selecting your project and clicking the _Endpoints_-button in the bottom-left corner.
 
-![](http://imgur.com/kPF9uqs.png)
+![](./img/fc1-endpoint.png)
 
 ## Playgrounds
 
 If you're keen on trying out your GraphQL API before we start writing actual code in the next chapter, you can explore the capabilities of the API in a [Playground](!alias-uh8shohxie/), a browser-based and interactive environment for interacting with a GraphQL server.
 
-To open up a Playground, simply paste the GraphQL endpoint (so, in your case that's the URL for the `Simple API` ) into the address bar of a browser.
+To open up a Playground, simply paste the GraphQL endpoint (so, in your case that's the URL for the `Simple API` ) into the address bar of a browser or try it out right here:
 
-![](http://imgur.com/vamb7WQ.png)
-
-![](https://canvas-files-prod.s3.amazonaws.com/uploads/255f0ee2-ed4f-4b78-a324-d555687365ca/vamb7WQ.png)
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cj1bse9l1eilg0105jcl6nglk
+disabled: false
+---
+{
+  allCustomers {
+    name
+    _conversationsMeta {
+      count
+    }
+  }
+}
+---
+{
+  "data": {
+    "allCustomers": [
+      {
+        "name": "Quiverfly-Reaper",
+        "_conversationsMeta": {
+          "count": 2
+        }
+      },
+      {
+        "name": "Violetspear-Puma",
+        "_conversationsMeta": {
+          "count": 2
+        }
+      }
+    ]
+  }
+}
+```
 
 The left part of the Playground is for you to enter the queries and mutations you'd like to send to the GraphQL server. Right next to it on the right the responses sent by the server will be displayed. And finally, the rightmost area is for you to explore the documentation of the API, listing all available query, mutation and subscription fields. 
 
-If you want to create some initial data, feel free to send a couple of mutations through the Playground, e.g. for creating a new `Customer`:
+If you want to create some initial data in your own project, feel free to send a couple of mutations through the Playground, e.g. for creating a new `Customer`:
 
 ```graphql
 mutation {
@@ -193,7 +223,9 @@ mutation {
 }
 ```
 
-After having created this `Customer` in the DB, you can convince yourself that the data was actually stored by either verifying it in the [data browser](https://www.youtube.com/watch?v=XeLKw2BSdI4&t=18s) or by sending the following query for which the response should will now include the newly created user:
+Note that mutations are disabled in the embedded Playground above.
+
+After having created this `Customer` in the database, you can convince yourself that the data was actually stored by either verifying it in the [data browser](https://www.youtube.com/watch?v=XeLKw2BSdI4&t=18s) or by sending the following query for which the response should will now include the newly created user:
 
 ```graphql
 allCustomers {
