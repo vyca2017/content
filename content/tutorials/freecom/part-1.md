@@ -9,8 +9,6 @@ tags:
 related:
   further:
     - e8a6ajt8ax
-  more:
-    - koo4eevun4
 ---
 
 # Freecom (1/6): Requirements Analysis & Data Model
