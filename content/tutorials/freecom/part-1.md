@@ -7,10 +7,10 @@ description: Learn about Freecom's data model and how to generate a Graphcool ba
 tags:
   - freecom
 related:
-  more:
-    - koo4eevun4
   further:
     - e8a6ajt8ax
+  more:
+    - koo4eevun4
 ---
 
 # Freecom (1/6): Requirements Analysis & Data Model
