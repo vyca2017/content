@@ -120,6 +120,7 @@ type Agent {
   updatedAt: DateTime!
   slackUserId: String!
   slackUserName: String!
+  conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
   messages: [Message!]! @relation(name: "MessagesFromAgents")
 }
 
@@ -127,8 +128,9 @@ type Conversation {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  slackChannelName: String!
+  slackChannelIndex: Int!
   customer: Customer @relation(name: "ConversationsFromCustomer")
+  agent: Agent @relation(name: "ConversationsFromAgent")
   messages: [Message!]! @relation(name: "MessagesInConversation")
 }
 
