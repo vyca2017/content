@@ -248,3 +248,5 @@ In the next chapter, we'll start writing some actual code. We are going to write
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 
 Until next time, stay (Graph)cool! 😎
+
+<!-- -->
