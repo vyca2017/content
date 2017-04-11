@@ -20,24 +20,22 @@ This is the second chapter of our tutorial series where we explain how to build 
 
 <iframe height="315" src="https://www.youtube.com/embed/ZItsQWNPw1U" frameborder="0" allowfullscreen></iframe>
 
+
 ## What is a GraphQL Client?
 
 When working with GraphQL APIs, client applications will have to perform a lot of repetetive tasks. Some of these tasks might be relatively trivial, such as sending a GraphQL query in the body of an HTTP POST request or parsing the JSON response that is received from the server. Other tasks like caching data or obtaining realtime updates using GraphQL subscriptions are a lot more complicated to implement but still are desirable in lots of applications.
 
-This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are three popular GraphQL clients that differ very much in their complexity and the work they'll take off your shoulders:
+This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity:
 
-- [**Lokka**](https://github.com/kadirahq/lokka) is a simple and very lightweight GraphQL client that features handling of queries and mutations and implements a basic caching approach
 - [**Relay**](https://facebook.github.io/relay/) is a fully-featured GraphQL client that was developed by Facebook and gives you lots of benefits - integrating and making proper use of its features can get pretty complicated though, so it's not as easy to get started with
-- [**Apollo**](http://dev.apollodata.com/) hits a nice middle ground between Lokka and Relay, providing a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
+- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
 
 
 ## How to choose the right GraphQL Client?
 
-Unless you only have very little interaction with the GraphQL backend from inside your app, you'll probably want to use either Relay or Apollo. In all other cases, where you only very occasionaly need to interact with a GraphQL API and the interaction is only around simple queries and mutations, Lokka might be the right client to pick.
-
 When it comes to comparing Apollo and Relay, it really depends on the kind of application you're planning to build. Relay is highly optimized for performance, but it's also quite opinionated, includes a lot of _magic_ and generally won't give you a lot of flexibility. It also comes with a notable learning curve, so make sure you understand that your application can really benefit from Relay's features before choosing it. Apollo on the other hand provides lots of flexibility, is platform independent and implements a way to use [GraphQL subscriptions](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb) which is an important factor to take into consideration if you want to have realtime functionality in your app!
 
-We also wrote an [article](!alias-iechu0shia) with an extensive comparison between Apollo and Relay to help you pick the right tool for the job 🔨
+We also published an [extensive comparison between Apollo and Relay](!alias-iph7aevae7) to help you pick the right tool for the job.
 
 
 ## Why Apollo Client?
