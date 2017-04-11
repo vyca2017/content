@@ -53,9 +53,9 @@ If you want to get a taste of what the final version looks like, you can go [her
 
 Here is a brief overview of the tutorial chapters to come:
 
-In the [_1st chapter_](!alias-e8a6ajt8ax), we start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](!alias-xuakjj68lp/)** that we can use to set up our API. [Video](https://www.youtube.com/watch?v=4q0fFEypacA)
+In the [_1st chapter_](!alias-e8a6ajt8ax), we start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](!alias-xuakjj68lp/)** that we can use to set up our API. Watch the [video](https://www.youtube.com/watch?v=4q0fFEypacA).
 
-The [_2nd chapter_](!alias-oe8ahyo2ei) explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**. [Video](https://www.youtube.com/watch?v=ZItsQWNPw1U)
+The [_2nd chapter_](!alias-oe8ahyo2ei) explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**. Watch the [video](https://www.youtube.com/watch?v=ZItsQWNPw1U).
 
 The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in Freecom to make the messages appear without the user refreshing the page.
 
