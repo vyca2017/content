@@ -20,8 +20,6 @@ related:
 
 Everybody loves the live chat experience of [Intercom](www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
 
-![](./overview-demo.png)
-
 ## Learning by Building
 
 In the next couple of weeks, we are going to release increments of the final product along with tutorial chapters, teaching you how to build a fully-fledged application from scratch. Freecom will be powered by a Graphcool backend, thus making it a perfect opportunity for you to get started with [GraphQL](www.graphql.org) while discovering all major functionality of the Graphcool platform!
@@ -48,6 +46,8 @@ If you want to get a taste of what the final version looks like, you can go [her
 
 - Email: `freecom-agent@graph.cool`
 - Password: `freecom`
+
+![](./overview-demo.png)
 
 ## Tutorial Curriculum
 
