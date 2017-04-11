@@ -1,6 +1,6 @@
 ---
 alias: xuakjj68lp
-path: /docs/tutorials/freecom-graphql-server
+path: /docs/tutorials/freecom-1-schema-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
 description: Learn about Freecom's data model and how to generate a Graphcool backend from the CLI.  
