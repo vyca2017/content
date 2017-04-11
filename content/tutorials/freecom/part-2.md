@@ -19,6 +19,7 @@ related:
 This is the second chapter of our tutorial series where we explain how to build an Intercom clone using a Graphcool backend. In the [last chapter](!alias-xuakjj68lp), we already prepared the GraphQL server and can now start interacting with the API from our React application! 🚀
 
 > **Tutorial Workflow**
+> 
 > We're hosting all the code for the tutorial on [GitHub](https://github.com/graphcool-examples/freecom-tutorial). Each chapter comes with _two_ folders:
 > 1. `freecom-0X`:  Contains the starter code for chapter `X`
 > 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
