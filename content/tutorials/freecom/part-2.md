@@ -63,6 +63,7 @@ If you want to try out and learn about Apollo Client separately, make sure to ch
 > We're hosting all the code for the tutorial on [GitHub](https://github.com/graphcool-examples/freecom-tutorial). Each chapter comes with _two_ folders:
 > 1. `freecom-0X`:  Contains the starter code for chapter `X`
 > 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
+> 
 > Each written chapter gives a high-level overview on the current topic. For step-by-step instructions watch the corresponding video.
 
 As mentioned before, Apollo provides the [react-apollo](https://github.com/apollographql/react-apollo) package to easily get started with React as a frontend technology.
