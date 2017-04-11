@@ -18,38 +18,29 @@ related:
 
 This is the second chapter of our tutorial series where we explain how to build an Intercom clone using a Graphcool backend. In the [last chapter](!alias-xuakjj68lp), we already prepared the GraphQL server and can now start interacting with the API from our React application! 🚀
 
-> **Tutorial Workflow**
-> 
-> We're hosting all the code for the tutorial on [GitHub](https://github.com/graphcool-examples/freecom-tutorial). Each chapter comes with _two_ folders:
-> 1. `freecom-0X`:  Contains the starter code for chapter `X`
-> 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
-> Each written chapter gives a high-level overview on the current topic. For step-by-step instructions watch the corresponding video.
-
 <iframe height="315" src="https://www.youtube.com/embed/ZItsQWNPw1U" frameborder="0" allowfullscreen></iframe>
+
 
 ## What is a GraphQL Client?
 
 When working with GraphQL APIs, client applications will have to perform a lot of repetetive tasks. Some of these tasks might be relatively trivial, such as sending a GraphQL query in the body of an HTTP POST request or parsing the JSON response that is received from the server. Other tasks like caching data or obtaining realtime updates using GraphQL subscriptions are a lot more complicated to implement but still are desirable in lots of applications.
 
-This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are three popular GraphQL clients that differ very much in their complexity and the work they'll take off your shoulders:
+This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity:
 
-- [**Lokka**](https://github.com/kadirahq/lokka) is a simple and very lightweight GraphQL client that features handling of queries and mutations and implements a basic caching approach
 - [**Relay**](https://facebook.github.io/relay/) is a fully-featured GraphQL client that was developed by Facebook and gives you lots of benefits - integrating and making proper use of its features can get pretty complicated though, so it's not as easy to get started with
-- [**Apollo**](http://dev.apollodata.com/) hits a nice middle ground between Lokka and Relay, providing a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
+- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
 
 
 ## How to choose the right GraphQL Client?
 
-Unless you only have very little interaction with the GraphQL backend from inside your app, you'll probably want to use either Relay or Apollo. In all other cases, where you only very occasionaly need to interact with a GraphQL API and the interaction is only around simple queries and mutations, Lokka might be the right client to pick.
-
 When it comes to comparing Apollo and Relay, it really depends on the kind of application you're planning to build. Relay is highly optimized for performance, but it's also quite opinionated, includes a lot of _magic_ and generally won't give you a lot of flexibility. It also comes with a notable learning curve, so make sure you understand that your application can really benefit from Relay's features before choosing it. Apollo on the other hand provides lots of flexibility, is platform independent and implements a way to use [GraphQL subscriptions](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb) which is an important factor to take into consideration if you want to have realtime functionality in your app!
 
-We also wrote an [article](!alias-iechu0shia) with an extensive comparison between Apollo and Relay to help you pick the right tool for the job 🔨
+We also published an [extensive comparison between Apollo and Relay](!alias-iph7aevae7) to help you pick the right tool for the job.
 
 
-## Why the Apollo Client?
+## Why Apollo Client?
 
-The [Apollo client](http://dev.apollodata.com/) is a flexible GraphQL client implementing various features that enable you to take full advantage of a GraphQL API:
+[Apollo Client](http://dev.apollodata.com/) is a flexible GraphQL client implementing various features that enable you to take full advantage of a GraphQL API:
 
 - easily send **queries and mutations**
 - **caching** data of previous queries
@@ -60,32 +51,32 @@ The [Apollo client](http://dev.apollodata.com/) is a flexible GraphQL client imp
 
 You can use Apollo in combination with any frontend technology and there are bindings available to use it with [React](http://dev.apollodata.com/react/) and [Angular](http://dev.apollodata.com/angular/). Apollo itself however is platform agnostic and can also be used from [plain Javascript](http://dev.apollodata.com/core/).
 
-Apollo also shows great efforts in bringing the Apollo client to the native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
+Apollo also shows great efforts in bringing their GraphQL client to the native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
 
-If you want to try out and learn about the Apollo client separately, make sure to check out our interactive tutorial on [**Learn Apollo**](https://learnapollo.com).
+If you want to try out and learn about Apollo Client separately, make sure to check out our interactive tutorial on [**Learn Apollo**](https://learnapollo.com).
 
 
-## Setting up the Apollo Client in React
+## Setting up Apollo Client in React
 
-As mentioned before, Apollo provides the [react-apollo](https://github.com/apollographql/react-apollo) package to easily get started with the Apollo client and React as a frontend technology.
+> **Tutorial Workflow**
+> 
+> We're hosting all the code for the tutorial on [GitHub](https://github.com/graphcool-examples/freecom-tutorial). Each chapter comes with _two_ folders:
+> 1. `freecom-0X`:  Contains the starter code for chapter `X`
+> 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
+> Each written chapter gives a high-level overview on the current topic. For step-by-step instructions watch the corresponding video.
+
+As mentioned before, Apollo provides the [react-apollo](https://github.com/apollographql/react-apollo) package to easily get started with React as a frontend technology.
 
 In the following, we'll explain the basic setup for Apollo in a React application. You can read more about all setup options in the Apollo [docs](http://dev.apollodata.com/react/initialization.html).
 
 
 ### 1. Including the Dependencies 
 
-If you're using `npm`, you can use the following command to add the Apollo dependencies that you need to get started:
+If you're using `npm`, you can use the following command to add the `react-apollo` dependency that you need to get started:
 
 ```sh
-npm install apollo-client react-apollo graphql-tag --save
+npm install react-apollo --save
 ```
-
-This installs three dependencies in your app:
-
-- [apollo-client](https://github.com/apollographql/apollo-client): Platform independent implementation of various GraphQL client features
-- [react-apollo](https://github.com/apollographql/react-apollo): Gives you a head start when using Apollo with React, essentially a data container for your React components
-- [graphql-tag](https://github.com/apollographql/graphql-tag): Parsing GraphQL queries based on Javascript template literals
-
 
 ### 2. Instantiating the `ApolloClient`
 
@@ -138,82 +129,12 @@ In this case, `App` is the root component of our application. Since we're wrappi
 
 You generally have two options when it comes to sending GraphQL queries and mutations with Apollo: 
 
-1. Directly calling `query` or `mutate` on the `ApolloClient` instance 
-2. Wrapping a component with the `graphql` higher-order component
+1. Wrapping a component with the `graphql` higher-order component
+2. Directly calling `query` or `mutate` on the `ApolloClient` instance 
 
-### Option 1: Directly use the `ApolloClient`
+### Option 1: Wrap the Component with `graphql`
 
-The first option is to use the `query`/`mutate`-methods directly on the `ApolloClient` instance and handle the response with a [_promise_](https://developers.google.com/web/fundamentals/getting-started/primers/promises). For this approach, you need to explicitly make the `ApolloClient` instance available to the React component that should send the request by wrapping the component using [`withApollo`](http://dev.apollodata.com/react/higher-order-components.html#withApollo).
-
-This option can be handy when you need to send a query or mutation only once, for example when you need a single bit of information upon initialization of a component, but it's not important that this information is available later on.
-
-A simple query that fetches all the messages from the database could then be sent as follows:
-
-```js
-import { withApollo } from 'react-apollo'
-import gql from 'graphql-tag'
-  
-class Chat extends Component {
-  
-  componentDidMount() {
-    // this requires wrapping `Chat` with `withApollo`
-    this.props.client.query({
-      query: gql`
-        query allMessages { 
-          allMessages {
-            id
-            text
-          }
-        }
-      `
-    }).then(response => {
-      // handle the response
-    })
-  }
-    
-  // ...
-  
-}
-  
-export default withApollo(Chat)
-```
-
-The syntax for a mutation is identical, execpt that you're calling `mutate` on the `ApolloClient` and pass in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well, just pass a second argument called variables to the call to `query` or `mutate`: 
-
-```js
-import { withApollo } from 'react-apollo'
-import gql from 'graphql-tag'
-  
-class Chat extends Component {
-  
-  // ...
-  
-  _onSend = () => {
-    this.props.client.mutate({
-      mutation: gql`
-        mutation createMessage($text: String!) {
-          createMessage(text: $text) {
-            id
-            text
-          }
-        }
-      `,
-      variables: {
-        text: 'Hello'
-      }      
-    }).then(response => {
-      // handle the response
-    })
-  }
-}
-  
-export default withApollo(Chat)
-```
-
-
-### Option 2: Wrap the Component with `graphql`
-
-The second options is to wrap the component using `graphql` which is a function that takes in a GraphQL query or mutation as well as a regular React component. The nice thing about this approach is that the response data of the query or mutation will automatically be available through the props of the component, so you don't have to implement any kind of callback to handle the response.
+The first options is to wrap the component using `graphql` which is a function that takes in a GraphQL query or mutation as well as a regular React component. The nice thing about this approach is that the response data of the query or mutation will automatically be available through the props of the component, so you don't have to implement any kind of callback to handle the response.
 
 This is generally what you want if a component is supposed to display the data that is received from a query.
 
@@ -281,10 +202,79 @@ export default compose(
 
 Notice that this time, the `allMessagesQuery` also takes in an argument which is the `conversationId` of the `Conversation` that we're filtering for, so that we only retrieve messages that belong to this specific conversation.
 
-However, since we're not explicitly sending the query using the `ApolloClient` any more, we don't have a way to pass the required argument `conversationId` to some function call. In such a case where we're using `graphql` to wrap our component with a query, we need to provide the input arguments for the query (or mutation) through the props of the component!
+However, since we're not explicitly sending the query using the `ApolloClient`, we don't have a way to pass the required argument `conversationId` to some function call. In such a case where we're using `graphql` to wrap our component with a query, we need to provide the input arguments for the query (or mutation) through the props of the component!
 
 So, in our case, the `allMessagesQuery` will only work if the `Chat` component's props contain a value for the key `conversationId`.
 
+
+### Option 2: Directly use the `ApolloClient`
+
+The second option is to use the `query`/`mutate`-methods directly on the `ApolloClient` instance and handle the response with a [_promise_](https://developers.google.com/web/fundamentals/getting-started/primers/promises). For this approach, you need to explicitly make the `ApolloClient` instance available to the React component that should send the request by wrapping the component using [`withApollo`](http://dev.apollodata.com/react/higher-order-components.html#withApollo).
+
+This option can be handy when you need to send a query or mutation only once, for example when you need a single bit of information upon initialization of a component, but it's not important that this information is available later on.
+
+A simple query that fetches all the messages from the database could then be sent as follows:
+
+```js
+import { withApollo } from 'react-apollo'
+import gql from 'graphql-tag'
+  
+class Chat extends Component {
+  
+  componentDidMount() {
+    // this requires wrapping `Chat` with `withApollo`
+    this.props.client.query({
+      query: gql`
+        query allMessages { 
+          allMessages {
+            id
+            text
+          }
+        }
+      `
+    }).then(response => {
+      // handle the response
+    })
+  }
+    
+  // ...
+  
+}
+  
+export default withApollo(Chat)
+```
+
+The syntax for a mutation is identical, execpt that you're calling `mutate` on the `ApolloClient` and pass in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well, just pass a second argument called variables to the call to `query` or `mutate`: 
+
+```js
+import { withApollo } from 'react-apollo'
+import gql from 'graphql-tag'
+  
+class Chat extends Component {
+  
+  // ...
+  
+  _onSend = () => {
+    this.props.client.mutate({
+      mutation: gql`
+        mutation createMessage($text: String!) {
+          createMessage(text: $text) {
+            id
+            text
+          }
+        }
+      `,
+      variables: {
+        text: 'Hello'
+      }      
+    }).then(response => {
+      // handle the response
+    })
+  }
+}
+  
+export default withApollo(Chat)
+```
 
 ## Wrap Up
 
