@@ -25,11 +25,7 @@ This is the second chapter of our tutorial series where we explain how to build 
 
 When working with GraphQL APIs, client applications will have to perform a lot of repetitive tasks. Some of these tasks might be relatively trivial, such as sending a GraphQL query in the body of an HTTP POST request or parsing the JSON response that is received from the server. Other tasks like caching data or obtaining realtime updates using GraphQL subscriptions are a lot more complicated to implement but still are desirable in lots of applications.
 
-This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity:
-
-- [**Relay**](https://facebook.github.io/relay/) is a fully-featured GraphQL client that was developed by Facebook and gives you lots of benefits - integrating and making proper use of its features can get pretty complicated though, so it's not as easy to get started with
-- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API that takes advantage of all the features that make GraphQL so compelling in the first place
-
+This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity: [**Apollo**](http://dev.apollodata.com/) & [**Relay**](https://facebook.github.io/relay/).
 
 ## How to choose the right GraphQL Client?
 
