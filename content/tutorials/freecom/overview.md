@@ -1,23 +1,24 @@
 ---
 alias: e8a6ajt8ax
-path: /docs/tutorials/freecom-overview
+path: /docs/tutorials/freecom-overview-intercom-tutorial
 layout: TUTORIAL
 preview: freecom-overview.png
-description: We're starting a full-stack tutorial series to build an Intercom-clone.
+description: Full-stack tutorial series to build an Intercom-clone with React, Apollo & GraphQL.
 tags:
   - freecom
 related:
   more:
    - iechu0shia
+  further: 
+    - xuakjj68lp
+    - oe8ahyo2ei
 ---
 
-# Freecom (0/6): Building Intercom with GraphQL and Apollo
+# Freecom: Building Intercom with GraphQL and Apollo (Overview)
 
-<iframe height="315" src="https://www.youtube.com/embed/VEPAoDDv6dg" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/E3dRRSIyNjc?list=PLn2e1F9Rfr6lF80_-VUDlZir2GIoW32Lo" frameborder="0" allowfullscreen></iframe>
 
 Everybody loves the live chat experience of [Intercom](www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
-
-![](./overview-demo.png)
 
 ## Learning by Building
 
@@ -33,7 +34,7 @@ For the frontend, we are choosing a modern and easy-to-get-started set of techno
 
 The view layer of Freecom will be implemented in [React](https://facebook.github.io/react/). Then, for the interaction with the GraphQL server we are using [Apollo](http://dev.apollodata.com/), a sophisticated GraphQL client that implements features like caching, optimistic UI and realtime subscriptions, thus making it perfect for our use case. [React and Apollo play nicely together](http://dev.apollodata.com/react/#react-toolbox) and make interaction with a GraphQL API a breeze 🚀  
 
-![](./overview-arch.png)
+![](./overview-arch.png?width=550)
 
 To have a head start with our project and save ourselves some configuration time, we'll be using [create-react-app](https://github.com/facebookincubator/create-react-app) to create our initial project. This will generate a boilerplate React project with [JSX](https://jsx.github.io/), [ES6](http://es6-features.org/) and [Flow](https://flow.org/) support as well as some other [handy configurations](https://github.com/facebookincubator/create-react-app#why-use-this).
 
@@ -46,15 +47,17 @@ If you want to get a taste of what the final version looks like, you can go [her
 - Email: `freecom-agent@graph.cool`
 - Password: `freecom`
 
+![](./overview-demo.png)
+
 ## Tutorial Curriculum
 
 Here is a brief overview of the tutorial chapters to come:
 
-In the _1st chapter_ that's released today along with this article, we will start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](!alias-ahwoh2fohj/)** that we can use to set up our API.
+In the [_1st chapter_](!alias-e8a6ajt8ax), we start by discussing the **concrete requirements** for the app and **develop a [GraphQL schema](!alias-xuakjj68lp/)** that we can use to set up our API. Watch the [video](https://www.youtube.com/watch?v=4q0fFEypacA).
 
-The _2nd chapter_ explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**.
+The [_2nd chapter_](!alias-oe8ahyo2ei) explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**. Watch the [video](https://www.youtube.com/watch?v=ZItsQWNPw1U).
 
-The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in the Freecom to make the messages appear without the user refreshing the page.
+The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in Freecom to make the messages appear without the user refreshing the page.
 
 In the _4th chapter_, we'll use the [**permission system**](!alias-iegoo0heez/) to make sure customers can only ever view their own messages.
 

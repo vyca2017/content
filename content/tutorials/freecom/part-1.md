@@ -1,6 +1,6 @@
 ---
 alias: xuakjj68lp
-path: /docs/tutorials/freecom-graphql-server
+path: /docs/tutorials/freecom-1-schema-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
 description: Learn about Freecom's data model and how to generate a Graphcool backend from the CLI.  
@@ -9,6 +9,7 @@ tags:
 related:
   further:
     - e8a6ajt8ax
+    - oe8ahyo2ei
   more:
     - thaeghi8ro
     - heshoov3ai
@@ -16,7 +17,7 @@ related:
     - ahwoh2fohj
 ---
 
-# Freecom (1/6): Requirements Analysis & Data Model
+# Freecom Tutorial (1/6): Designing the Schema & GraphQL Server
 
 <iframe height="315" src="https://www.youtube.com/embed/4q0fFEypacA" frameborder="0" allowfullscreen></iframe>
 
@@ -148,7 +149,7 @@ Notice that each of the types now also includes the Graphcool [system fields](!a
 
 Here is a graphical overview of the relations in our final schema:
 
-![](./img/fc1-data-model.png)
+![](./img/fc1-data-model.png?width=750)
 
 - **one** `Agent` is related to **many** `Message`s
 - **one** `Agent` is related to **many** `Conversation `s
@@ -170,7 +171,7 @@ Once the project was created, you can interact with it via two different endpoin
 - [`Simple API`](!alias-heshoov3ai/): This endpoint creates an intuitive GraphQL API based on the provided data model and is optimized for usage with Apollo - _it's the one we'll be using in this tutorial!_
 - [`Relay API`](!alias-aizoong9ah/): This endpoint can be used in applications that use [Relay](https://facebook.github.io/relay/), a GraphQL client developed by Facebook and with some specific requirements for the GraphQL API
 
-![](./img/fc1-graphcool-init.png)
+![](./img/fc1-graphcool-init.png?width=800)
 
 We'll be using the endpoint for the `Simple API`! If you ever lose the endpoint, you can simply find it in the [Graphcool console](https://console.graph.cool) by selecting your project and clicking the _Endpoints_-button in the bottom-left corner.
 
@@ -246,7 +247,5 @@ That's it for today! We hope you enjoyed this first part of our tutorial series 
 In the next chapter, we'll start writing some actual code. We are going to write some basic React components and integrate them with the Apollo client, also sending our first queries and mutations to interact with the API.
 
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
-
-Until next time, stay (Graph)cool! 😎
 
 <!-- FREECOM_SIGNUP -->
