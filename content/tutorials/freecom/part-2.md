@@ -3,7 +3,7 @@ alias: oe8ahyo2ei
 path: /docs/tutorials/freecom-2-apollo-queries-mutations
 layout: TUTORIAL
 preview: freecom-part-2.png
-description: Integrate Apollo and learn how to update the UI after queries and mutations.  
+description: Learn how to integrate Apollo into your React app and run GraphQL queries & mutations.  
 tags:
   - freecom
 related:
