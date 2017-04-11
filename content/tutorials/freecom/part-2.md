@@ -14,7 +14,7 @@ related:
     - xuakjj68lp
 ---
 
-# Freecom Tutorial (2/6): Setting up the Apollo Client to perform Queries & Mutations
+# Freecom Tutorial: Apollo Setup & GraphQL Queries/Mutations in React (2/6)
 
 This is the second chapter of our tutorial series where we explain how to build an Intercom clone using a Graphcool backend. In the [last chapter](!alias-xuakjj68lp), we already prepared the GraphQL server and can now start interacting with the API from our React application! 🚀
 
