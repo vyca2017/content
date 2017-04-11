@@ -108,7 +108,7 @@ const client = new ApolloClient({
 
 ### 3. Instantiating the `ApolloProvider` 
 
-The `ApolloProvider` implements the bindings from Apollo to React. It's component that, when wrapped around other React components, allows these children to interact with the specified GraphQL endpoint.
+The `ApolloProvider` implements the bindings from Apollo to React. It's a component that, when wrapped around other React components, allows these children to interact with the specified GraphQL endpoint.
 
 ![](http://i.imgur.com/7mYNUxM.png)
 
