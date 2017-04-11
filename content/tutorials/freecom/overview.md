@@ -36,7 +36,7 @@ For the frontend, we are choosing a modern and easy-to-get-started set of techno
 
 The view layer of Freecom will be implemented in [React](https://facebook.github.io/react/). Then, for the interaction with the GraphQL server we are using [Apollo](http://dev.apollodata.com/), a sophisticated GraphQL client that implements features like caching, optimistic UI and realtime subscriptions, thus making it perfect for our use case. [React and Apollo play nicely together](http://dev.apollodata.com/react/#react-toolbox) and make interaction with a GraphQL API a breeze 🚀  
 
-![](./overview-arch.png)
+![](./overview-arch.png?width=550)
 
 To have a head start with our project and save ourselves some configuration time, we'll be using [create-react-app](https://github.com/facebookincubator/create-react-app) to create our initial project. This will generate a boilerplate React project with [JSX](https://jsx.github.io/), [ES6](http://es6-features.org/) and [Flow](https://flow.org/) support as well as some other [handy configurations](https://github.com/facebookincubator/create-react-app#why-use-this).
 
