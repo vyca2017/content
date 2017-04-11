@@ -23,12 +23,12 @@ This is the second chapter of our tutorial series where we explain how to build 
 
 ## What is a GraphQL Client?
 
-When working with GraphQL APIs, client applications will have to perform a lot of repetetive tasks. Some of these tasks might be relatively trivial, such as sending a GraphQL query in the body of an HTTP POST request or parsing the JSON response that is received from the server. Other tasks like caching data or obtaining realtime updates using GraphQL subscriptions are a lot more complicated to implement but still are desirable in lots of applications.
+When working with GraphQL APIs, client applications will have to perform a lot of repetitive tasks. Some of these tasks might be relatively trivial, such as sending a GraphQL query in the body of an HTTP POST request or parsing the JSON response that is received from the server. Other tasks like caching data or obtaining realtime updates using GraphQL subscriptions are a lot more complicated to implement but still are desirable in lots of applications.
 
 This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity:
 
 - [**Relay**](https://facebook.github.io/relay/) is a fully-featured GraphQL client that was developed by Facebook and gives you lots of benefits - integrating and making proper use of its features can get pretty complicated though, so it's not as easy to get started with
-- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
+- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API that takes advantage of all the features that make GraphQL so compelling in the first place
 
 
 ## How to choose the right GraphQL Client?
@@ -51,7 +51,7 @@ We also published an [extensive comparison between Apollo and Relay](!alias-iph7
 
 You can use Apollo in combination with any frontend technology and there are bindings available to use it with [React](http://dev.apollodata.com/react/) and [Angular](http://dev.apollodata.com/angular/). Apollo itself however is platform agnostic and can also be used from [plain Javascript](http://dev.apollodata.com/core/).
 
-Apollo also shows great efforts in bringing their GraphQL client to the native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
+Apollo also shows great efforts in bringing their GraphQL client to native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
 
 If you want to try out and learn about Apollo Client separately, make sure to check out our interactive tutorial on [**Learn Apollo**](https://learnapollo.com).
 
@@ -101,7 +101,7 @@ const client = new ApolloClient({
 
 The `ApolloProvider` implements the bindings from Apollo to React. It's a component that, when wrapped around other React components, allows these children to interact with the specified GraphQL endpoint.
 
-![](http://i.imgur.com/7mYNUxM.png)
+![](./img/fc2-architecture-overview.png?width=600)
 
 In the picture, the react application is wrapped with the `ApolloProvider`, which again is associated with the `ApolloClient` that knows how to connect to the GraphQL API through its `NetworkInterface`. In code, the integration of the `ApolloProvider` looks as follows:
 
