@@ -294,6 +294,4 @@ Next week, we'll talk about how we can make the chat messages appear on the scre
 
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 
-Until next time, stay (Graph)cool 😎
-
 <!-- FREECOM_SIGNUP -->
