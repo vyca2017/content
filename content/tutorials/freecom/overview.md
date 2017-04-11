@@ -11,7 +11,7 @@ related:
    - iechu0shia
 ---
 
-# Freecom (0/6): Building Intercom with GraphQL and Apollo
+# Freecom: Building Intercom with GraphQL and Apollo (Overview)
 
 <iframe height="315" src="https://www.youtube.com/embed/VEPAoDDv6dg" frameborder="0" allowfullscreen></iframe>
 
