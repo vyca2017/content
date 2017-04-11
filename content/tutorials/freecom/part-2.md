@@ -51,7 +51,7 @@ We also published an [extensive comparison between Apollo and Relay](!alias-iph7
 
 You can use Apollo in combination with any frontend technology and there are bindings available to use it with [React](http://dev.apollodata.com/react/) and [Angular](http://dev.apollodata.com/angular/). Apollo itself however is platform agnostic and can also be used from [plain Javascript](http://dev.apollodata.com/core/).
 
-Apollo also shows great efforts in bringing their GraphQL client to the native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
+Apollo also shows great efforts in bringing their GraphQL client to native mobile platforms. At the time of writing this tutorial, the [iOS](http://dev.apollodata.com/ios/) client is already in a quite advanced state and an [Android](http://dev.apollodata.com/android/) client is in the making as well.
 
 If you want to try out and learn about Apollo Client separately, make sure to check out our interactive tutorial on [**Learn Apollo**](https://learnapollo.com).
 
