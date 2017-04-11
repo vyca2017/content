@@ -84,7 +84,7 @@ When instantiating it, you'll have to provide a [`NetworkInterface`](http://dev.
 The code for creating the `NetworkInterface` along with the `ApolloClient` looks as follows:
 
 ```js
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import { ApolloClient, createNetworkInterface } from 'react-apollo'
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__YOUR_PROJECT_ID__' }),
@@ -103,8 +103,7 @@ The `ApolloProvider` implements the bindings from Apollo to React. It's a compon
 In the picture, the React application is wrapped with the `ApolloProvider`, which again is associated with the `ApolloClient` that knows how to connect to the GraphQL API through its `NetworkInterface`. In code, the integration of the `ApolloProvider` looks as follows:
 
 ```js
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import { ApolloProvider } from 'react-apollo'
+import ApolloClient, { createNetworkInterface, ApolloProvider } from 'react-apollo'
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__YOUR_PROJECT_ID__' }),
