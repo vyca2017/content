@@ -28,7 +28,7 @@ When working with GraphQL APIs, client applications will have to perform a lot o
 This is why it's beneficial to use GraphQL client libraries that will perform these tasks for you. At the moment, there are two popular GraphQL clients that differ very much in their complexity:
 
 - [**Relay**](https://facebook.github.io/relay/) is a fully-featured GraphQL client that was developed by Facebook and gives you lots of benefits - integrating and making proper use of its features can get pretty complicated though, so it's not as easy to get started with
-- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API to benefit from all the features that make GraphQL so compelling in the first place
+- [**Apollo**](http://dev.apollodata.com/) provides a flexible yet very powerful API that takes advantage of all the features that make GraphQL so compelling in the first place
 
 
 ## How to choose the right GraphQL Client?
