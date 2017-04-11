@@ -1,6 +1,6 @@
 ---
 alias: e8a6ajt8ax
-path: /docs/tutorials/freecom-overview
+path: /docs/tutorials/freecom-overview-intercom-tutorial
 layout: TUTORIAL
 preview: freecom-overview.png
 description: Full-stack tutorial series to build an Intercom-clone with React, Apollo & GraphQL.
