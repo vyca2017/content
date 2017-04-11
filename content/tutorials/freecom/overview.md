@@ -11,7 +11,7 @@ related:
    - iechu0shia
 ---
 
-# Freecom: Building Intercom with GraphQL and Apollo
+# Freecom (0/6): Building Intercom with GraphQL and Apollo
 
 <iframe height="315" src="https://www.youtube.com/embed/VEPAoDDv6dg" frameborder="0" allowfullscreen></iframe>
 
@@ -71,3 +71,5 @@ The chapters are deep dives into the relevant concepts that are needed to implem
 > If you're looking for a comprehensive _step-by-step_ tutorial, definitely check out the [Learn Apollo](www.learnapollo.com) tutorial series.
 
 Click [here](!alias-xuakjj68lp) for the first chapter of your tutorial series where we analyse requirements and develop the data model for Freecom.
+
+<!-- FREECOM_SIGNUP -->

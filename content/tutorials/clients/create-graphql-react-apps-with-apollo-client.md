@@ -37,18 +37,18 @@ type Post {
 }
 ```
 
-Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can generate a fully-fledged GraphQL server from your command line by providing this schema as an input argument to the `graphcool create` command:
+Using the [Graphcool CLI](https://www.npmjs.com/package/graphcool), you can generate a fully-fledged GraphQL server from your command line by providing this schema as an input argument to the `graphcool init` command:
 
 1. In case you haven't already, install the Graphcool CLI: `npm install -g graphcool`
 2. Save the schema from above in a file called `instagram.schema`
-3. Create the GraphQL server: `graphcool create instagram.schema`
+3. Create the GraphQL server: `graphcool init instagram.schema`
 
 That's it, copy the endpoint for the `Simple API` since we'll need it later on. Notice that you can now also manage this project in the [Graphcool console](https://console.graph.cool) or explore it in a [GraphQL playground](https://www.graph.cool/docs/faq/tips-and-tricks-graphql-playground-ook6luephu/).
 
 
 ## Getting started with`create-react-app`
 
-### Installation 
+### Installation
 
 With `create-react-app`, it's super easy to start out with a new React application! It comes with a lot of nice features out-of-the-box, such as a preconfigured [Webpack](https://github.com/webpack/webpack) and [Babel](https://babeljs.io/) setup for zero build configurations. Furthermore, features like [JSX](https://jsx.github.io/) and [ES6](http://es6-features.org/) syntax as well as static typechecking with [Flow](https://flowtype.org/) are already included. The generated boilerplate code also gives you a head-start with your new app.
 
@@ -77,9 +77,9 @@ Hot-reloading and linting is included as well, the terminal window keeps us upda
 
 #### Installing the Dependencies
 
-[Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze. 
+[Apollo Client](http://dev.apollodata.com/react/) is one of the most popular GraphQL clients available at the moment. It implements features like caching, optimistic UI, [query batching](!alias-ligh7fmn38) as well as [realtime updates using subscriptions](!alias-ui0eizishe) and generally makes interacting with a GraphQL backend a breeze.
 
-We will need three dependencies to use it in our React application: 
+We will need three dependencies to use it in our React application:
 
 1. [`apollo-client`](https://github.com/apollographql/apollo-client): Contains the general functionality of Apollo Client
 2. [`react-apollo`](https://github.com/apollographql/react-apollo): Implements React-specific bindings for Apollo
@@ -267,7 +267,7 @@ const client = new ApolloClient({
 })
 ```
 
-> The `uri` that we have to pass to the `createNetworkInterface` call is the GraphQL endpoint for the `Simple API` that we generated in the first step using `graphcool create`. You can also retrieve that endpoint from the [Graphcool console](https://console.graph.cool) by selecting your project and then clicking the `ENDPOINTS`-button in the bottom-left corner.
+> The `uri` that we have to pass to the `createNetworkInterface` call is the GraphQL endpoint for the `Simple API` that we generated in the first step using `graphcool init`. You can also retrieve that endpoint from the [Graphcool console](https://console.graph.cool) by selecting your project and then clicking the `ENDPOINTS`-button in the bottom-left corner.
 
 Let's now setup the routes for our application:
 

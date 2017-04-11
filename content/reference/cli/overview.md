@@ -32,7 +32,7 @@ npm install -g graphcool
 > Create a new project (uses graphcool.schema in [IDL Schema definition syntax](!alias-kr84dktnp0) as template if exists).
 
 ```sh
-graphcool create --name 'My Project' --alias 'my-project' --region 'us-west-1'
+graphcool init --name 'My Project' --alias 'my-project' --region 'us-west-1'
 ```
 
 ## Updating the Schema of a Project
