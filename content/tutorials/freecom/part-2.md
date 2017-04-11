@@ -44,7 +44,7 @@ Unless you only have very little interaction with the GraphQL backend from insid
 
 When it comes to comparing Apollo and Relay, it really depends on the kind of application you're planning to build. Relay is highly optimized for performance, but it's also quite opinionated, includes a lot of _magic_ and generally won't give you a lot of flexibility. It also comes with a notable learning curve, so make sure you understand that your application can really benefit from Relay's features before choosing it. Apollo on the other hand provides lots of flexibility, is platform independent and implements a way to use [GraphQL subscriptions](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb) which is an important factor to take into consideration if you want to have realtime functionality in your app!
 
-We also wrote an [article](!alias-iph7aevae7) with an extensive comparison between Apollo and Relay to help you pick the right tool for the job 🔨
+We also wrote an [article](!alias-iechu0shia) with an extensive comparison between Apollo and Relay to help you pick the right tool for the job 🔨
 
 
 ## Why the Apollo Client?
