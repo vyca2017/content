@@ -13,7 +13,7 @@ related:
 
 # Freecom: Building Intercom with GraphQL and Apollo (Overview)
 
-<iframe height="315" src="https://www.youtube.com/embed/E3dRRSIyNjc" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/E3dRRSIyNjc?list=PLn2e1F9Rfr6lF80_-VUDlZir2GIoW32Lo" frameborder="0" allowfullscreen></iframe>
 
 Everybody loves the live chat experience of [Intercom](www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
 
