@@ -35,7 +35,7 @@ This is why it's beneficial to use GraphQL client libraries that will perform th
 
 When it comes to comparing Apollo and Relay, it really depends on the kind of application you're planning to build. Relay is highly optimized for performance, but it's also quite opinionated, includes a lot of _magic_ and generally won't give you a lot of flexibility. It also comes with a notable learning curve, so make sure you understand that your application can really benefit from Relay's features before choosing it. Apollo on the other hand provides lots of flexibility, is platform independent and implements a way to use [GraphQL subscriptions](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb) which is an important factor to take into consideration if you want to have realtime functionality in your app!
 
-We also published an [extensive comparison between Apollo and Relay](!alias-iph7aevae7) to help you pick the right tool for the job.
+We also published an [extensive comparison between Apollo and Relay](!alias-iechu0shia) to help you pick the right tool for the job.
 
 
 ## Why Apollo Client?
@@ -81,9 +81,9 @@ npm install react-apollo --save
 
 ### 2. Instantiating the `ApolloClient`
 
-Before you can make use of any of the functionality implemented in Apollo, you need to instantiate the [`ApollClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and integrate it in your application. This `ApolloClient` instance will do most of the GraphQL-related work for you and basically serves as your interface to the GraphQL API.
+Before you can make use of any of the functionality implemented in Apollo, you need to instantiate the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and integrate it in your application. This `ApolloClient` instance will do most of the GraphQL-related work for you and basically serves as your interface to the GraphQL API.
 
-When instantiating it, you'll have to provide a [`NetworkInterface`](http://dev.apollodata.com/core/apollo-client-api.html#NetworkInterface) so that the client knows the GraphQL endpoint that it should connect to.
+When instantiating it, you'll have to provide a [`NetworkInterface`](http://dev.apollodata.com/core/apollo-client-api.html#NetworkInterface) so that the client knows which GraphQL endpoint it should connect to.
 
 The code for creating the `NetworkInterface` along with the `ApolloClient` looks as follows:
 
@@ -104,7 +104,7 @@ The `ApolloProvider` implements the bindings from Apollo to React. It's a compon
 
 ![](./img/fc2-architecture-overview.png?width=600)
 
-In the picture, the react application is wrapped with the `ApolloProvider`, which again is associated with the `ApolloClient` that knows how to connect to the GraphQL API through its `NetworkInterface`. In code, the integration of the `ApolloProvider` looks as follows:
+In the picture, the React application is wrapped with the `ApolloProvider`, which again is associated with the `ApolloClient` that knows how to connect to the GraphQL API through its `NetworkInterface`. In code, the integration of the `ApolloProvider` looks as follows:
 
 ```js
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
@@ -135,11 +135,11 @@ You generally have two options when it comes to sending GraphQL queries and muta
 
 ### Option 1: Wrap the Component with `graphql`
 
-The first options is to wrap the component using `graphql` which is a function that takes in a GraphQL query or mutation as well as a regular React component. The nice thing about this approach is that the response data of the query or mutation will automatically be available through the props of the component, so you don't have to implement any kind of callback to handle the response.
+The first option is to wrap the component using `graphql` which is a function that takes in a GraphQL query or mutation as well as a regular React component. The nice thing about this approach is that the response data of the query or mutation will automatically be available through the props of the component, so you don't have to implement any kind of callback to handle the response.
 
 This is generally what you want if a component is supposed to display the data that is received from a query.
 
-Let's see what the code would look like if we wanted our `Chat` component to query all the message from a specific conversation while also giving it the ability to perform a `createMessage` mutation:
+Let's see what the code would look like if we wanted our `Chat` component to query all the messages from a specific conversation while also giving it the ability to perform a `createMessage` mutation:
 
 
 ```js
@@ -203,7 +203,7 @@ export default compose(
 
 Notice that this time, the `allMessagesQuery` also takes in an argument which is the `conversationId` of the `Conversation` that we're filtering for, so that we only retrieve messages that belong to this specific conversation.
 
-However, since we're not explicitly sending the query using the `ApolloClient`, we don't have a way to pass the required argument `conversationId` to some function call. In such a case where we're using `graphql` to wrap our component with a query, we need to provide the input arguments for the query (or mutation) through the props of the component!
+However, since we're not explicitly sending the query using the `ApolloClient`, we don't have a way to pass the required argument `conversationId` to some function call. In such a case when we're using `graphql` to wrap our component with a query, we need to provide the input arguments for the query (or mutation) through the props of the component!
 
 So, in our case, the `allMessagesQuery` will only work if the `Chat` component's props contain a value for the key `conversationId`.
 
@@ -245,7 +245,7 @@ class Chat extends Component {
 export default withApollo(Chat)
 ```
 
-The syntax for a mutation is identical, execpt that you're calling `mutate` on the `ApolloClient` and pass in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well, just pass a second argument called variables to the call to `query` or `mutate`: 
+The syntax for a mutation is identical, except that you're calling `mutate` on the `ApolloClient` and passing in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well. Just pass a second argument called `variables` to the call to `query` or `mutate`: 
 
 ```js
 import { withApollo } from 'react-apollo'
@@ -279,7 +279,7 @@ export default withApollo(Chat)
 
 ## Wrap Up
 
-In today's chapter, you learned how to integrate React and Apollo to send some basic queries and mutations. Apollo makes it easy to display data with React: A component can be combined with one ore more queries and the query result is then injected into the components props. Mutations work in a similar way where a mutation function is injencted into the props of the component and can be called from there. 
+In today's chapter, you learned how to integrate React and Apollo to send some basic queries and mutations. Apollo makes it easy to display data with React. A component can be combined with one ore more queries and the query result is then injected into the component's props. Mutations work in a similar way where a mutation function is injected into the props of the component and can be called from there. 
 
 Next week, we'll talk about how we can make the chat messages appear on the screen in realtime using GraphQL subscriptions.
 
