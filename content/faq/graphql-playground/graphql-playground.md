@@ -2,6 +2,7 @@
 alias: ook6luephu
 path: /docs/faq/tips-and-tricks-graphql-playground
 layout: FAQ
+preview: graphql-playground.png
 description: The GraphQL Playground GraphiQL is a super handy tool. Use these simple tricks for a great developer experience when working with GraphQL.
 tags:
   - graphql
