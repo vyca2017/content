@@ -8,7 +8,7 @@ tags:
   - freecom
 related:
   more:
-    - aidae4Aeg5
+    - aidae4aeg5
   further:
     - e8a6ajt8ax
     - xuakjj68lp
@@ -55,11 +55,11 @@ If you want to try out and learn about Apollo Client separately, make sure to ch
 ## Setting up Apollo Client in React
 
 > **Tutorial Workflow**
-> 
+>
 > We're hosting all the code for the tutorial on [GitHub](https://github.com/graphcool-examples/freecom-tutorial). Each chapter comes with _two_ folders:
 > 1. `freecom-0X`:  Contains the starter code for chapter `X`
-> 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
-> 
+> 2. `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way
+>
 > Each written chapter gives a high-level overview on the current topic. For step-by-step instructions watch the corresponding video.
 
 As mentioned before, Apollo provides the [react-apollo](https://github.com/apollographql/react-apollo) package to easily get started with React as a frontend technology.
@@ -67,7 +67,7 @@ As mentioned before, Apollo provides the [react-apollo](https://github.com/apoll
 In the following, we'll explain the basic setup for Apollo in a React application. You can read more about all setup options in the Apollo [docs](http://dev.apollodata.com/react/initialization.html).
 
 
-### 1. Including the Dependencies 
+### 1. Including the Dependencies
 
 If you're using `npm`, you can use the following command to add the `react-apollo` dependency that you need to get started:
 
@@ -94,7 +94,7 @@ const client = new ApolloClient({
 > Note: You can find your project Id in our [console](https://console.graph.cool). Simply select your project in the left sidebar and then navigate to `Settings -> General`.
 
 
-### 3. Instantiating the `ApolloProvider` 
+### 3. Instantiating the `ApolloProvider`
 
 The `ApolloProvider` implements the bindings from Apollo to React. It's a component that, when wrapped around other React components, allows these children to interact with the specified GraphQL endpoint.
 
@@ -123,10 +123,10 @@ In this case, `App` is the root component of our application. Since we're wrappi
 
 ## Sending Queries and Mutations with Apollo
 
-You generally have two options when it comes to sending GraphQL queries and mutations with Apollo: 
+You generally have two options when it comes to sending GraphQL queries and mutations with Apollo:
 
 1. Wrapping a component with the `graphql` higher-order component
-2. Directly calling `query` or `mutate` on the `ApolloClient` instance 
+2. Directly calling `query` or `mutate` on the `ApolloClient` instance
 
 ### Option 1: Wrap the Component with `graphql`
 
@@ -140,7 +140,7 @@ Let's see what the code would look like if we wanted our `Chat` component to que
 ```js
 import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
-  
+
 const createMessage = gql`
   mutation createMessage($text: String!, conversationId: ID!) {
     createMessage(text: $text, conversationId: $conversationId) {
@@ -164,19 +164,19 @@ const allMessages = gql`
 class Chat extends Component {
 
   render() {
-    
+
     // return loading indicator if the data is still loading
     if (this.props.allMessagesQuery.loading) {
       return <div>Loading</div>
     }
-    
+
     // retrieve the messages from the query
     const messages = this.props.allMessagesQuery.allMessages
-    
+
     // use `messages` to render the component
     return ...
   }
-  
+
   _onSend = () => {
     this.props.createMessageMutation({
       variables: {
@@ -189,7 +189,7 @@ class Chat extends Component {
   }
 
 }
-  
+
 export default compose(
   graphql(allMessages, {name: 'allMessagesQuery'}),
   graphql(createMessage, {name : 'createMessageMutation'})
@@ -214,14 +214,14 @@ A simple query that fetches all the messages from the database could then be sen
 ```js
 import { withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
-  
+
 class Chat extends Component {
-  
+
   componentDidMount() {
     // this requires wrapping `Chat` with `withApollo`
     this.props.client.query({
       query: gql`
-        query allMessages { 
+        query allMessages {
           allMessages {
             id
             text
@@ -232,24 +232,24 @@ class Chat extends Component {
       // handle the response
     })
   }
-    
+
   // ...
-  
+
 }
-  
+
 export default withApollo(Chat)
 ```
 
-The syntax for a mutation is identical, except that you're calling `mutate` on the `ApolloClient` and passing in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well. Just pass a second argument called `variables` to the call to `query` or `mutate`: 
+The syntax for a mutation is identical, except that you're calling `mutate` on the `ApolloClient` and passing in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well. Just pass a second argument called `variables` to the call to `query` or `mutate`:
 
 ```js
 import { withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
-  
+
 class Chat extends Component {
-  
+
   // ...
-  
+
   _onSend = () => {
     this.props.client.mutate({
       mutation: gql`
@@ -268,13 +268,13 @@ class Chat extends Component {
     })
   }
 }
-  
+
 export default withApollo(Chat)
 ```
 
 ## Wrap Up
 
-In today's chapter, you learned how to integrate React and Apollo to send some basic queries and mutations. Apollo makes it easy to display data with React. A component can be combined with one ore more queries and the query result is then injected into the component's props. Mutations work in a similar way where a mutation function is injected into the props of the component and can be called from there. 
+In today's chapter, you learned how to integrate React and Apollo to send some basic queries and mutations. Apollo makes it easy to display data with React. A component can be combined with one ore more queries and the query result is then injected into the component's props. Mutations work in a similar way where a mutation function is injected into the props of the component and can be called from there.
 
 Next week, we'll talk about how we can make the chat messages appear on the screen in realtime using GraphQL subscriptions.
 

@@ -1,5 +1,5 @@
 ---
-alias: aidae4Aeg5
+alias: aidae4aeg5
 path: /docs/tutorials/create-react-apps-with-apollo-client
 layout: TUTORIAL
 preview: create-graphql-react-apps.png
