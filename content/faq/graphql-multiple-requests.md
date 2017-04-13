@@ -140,3 +140,8 @@ mutation {
 ```
 
 However, other than queries, *multiple mutations are executed sequentially*. That means that a mutation is only executed after the previous mutation has finished execution. The execution order is the same as the order in the query itself, from top to bottom.
+
+
+# Resources
+
+You can use this mechanism to batch queries, such as with the [batchql library](https://github.com/matthiasak/batchql) that wraps GraphQL queries with ES6 promises. It batches queries that are sent from different parts of the application and makes sure that the responses are mapped correctly to the different queries. Apollo Client uses [a similar mechanism](!alias-ligh7fmn38).
