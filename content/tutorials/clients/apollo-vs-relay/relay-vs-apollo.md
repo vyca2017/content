@@ -145,7 +145,9 @@ However, they actually both follow a similar approach when being used in a React
 
 ## Queries
 
-A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, there is only one way how to get access to data in a React component and that is through a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content). With Apollo, it is possible to use a similar approach with the [`graphql`](http://dev.apollodata.com/react/api.html#graphql) higher-order component. With Apollo, another way to obtain data from the server would be to directly send queries using the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and process the returned data with a promise. In the following, we are going to dive into what data fetching with Relay and with Apollo looks like.
+A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, the major way of getting access to data inside of a React component is by means of a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content). 
+
+With Apollo, it is possible to use a similar approach with the [`graphql`](http://dev.apollodata.com/react/api.html#graphql) higher-order component. With Apollo, another way to obtain data from the server would be to directly send queries using the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and process the returned data with a promise. In the following, we are going to dive into what data fetching with Relay and with Apollo looks like.
 
 In the next two sections, we are going to analyze the following query and how it would be incorporated using each Relay and Apollo:
 
@@ -267,7 +269,7 @@ class Pokedex extends React.Component {
 }
 ```
 
-It's really important however that this approach still requires the `viewer` prop to be passed in to the `Pokedex` component through the component hierarchy - the mere fact that we have declared the `viewer` as a data requirement in a fragment does not yet guarantee its availability! It only serves to express what parts of the `viewer` are needed in that particular component. When working with React and Relay, there are two separate _trees_ being managed by these frameworks: The _component tree_ that is managed by React and that will eventually represent the UI of the application as well as the _fragment tree_ managed by Relay where the individual GraphQL fragments will be composed to queries that are sent over to the server.
+It's important to note however that this approach still requires the `viewer` prop to be passed in to the `Pokedex` component through the component hierarchy - the mere fact that we have declared the `viewer` as a data requirement in a fragment does not yet guarantee its availability! It only serves to express what parts of the `viewer` are needed in that particular component. When working with React and Relay, there are two separate _trees_ being managed by these frameworks: The _component tree_ that is managed by React and that will eventually represent the UI of the application as well as the _fragment tree_ managed by Relay where the individual GraphQL fragments will be composed to queries that are sent over to the server.
 
 Relay is heavily based on conventions. A major advantage of this approach is that following these conventions will enforce a very clean architecture and reduce subtle bugs that appear when changing certain parts of a system that had interdependencies with other parts.
 
