@@ -97,7 +97,7 @@ With Relay, the GraphQL server is expected to expose the following capabilities:
    }
    ```
 
-   The reason for this is that Relay can efficiently fetch a node by its ID after it was mutated.
+   The reason for this is that Relay can efficiently fetch a node by its ID after it was mutated and generally brings further performance benefits when working with the data graph.
 
 
 2. The ability to query the data graph using a root field called `viewer` that contains all other fields as children
