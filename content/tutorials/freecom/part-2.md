@@ -138,11 +138,10 @@ Let's see what the code would look like if we wanted our `Chat` component to que
 
 
 ```js
-import { graphql, compose } from 'react-apollo'
-import gql from 'graphql-tag'
+import { graphql, compose, gql } from 'react-apollo'
 
 const createMessage = gql`
-  mutation createMessage($text: String!, conversationId: ID!) {
+  mutation createMessage($text: String!, $conversationId: ID!) {
     createMessage(text: $text, conversationId: $conversationId) {
       id
       text
@@ -153,7 +152,9 @@ const createMessage = gql`
 const allMessages = gql`
   query allMessages($conversationId: ID!) {
     allMessages(filter: {
-      conversationId: $conversationId
+      conversation: {
+        id: $conversationId
+      }
     }) {
       id
       text
@@ -212,8 +213,7 @@ This option can be handy when you need to send a query or mutation only once, fo
 A simple query that fetches all the messages from the database could then be sent as follows:
 
 ```js
-import { withApollo } from 'react-apollo'
-import gql from 'graphql-tag'
+import { withApollo, gql } from 'react-apollo'
 
 class Chat extends Component {
 
@@ -243,8 +243,7 @@ export default withApollo(Chat)
 The syntax for a mutation is identical, except that you're calling `mutate` on the `ApolloClient` and passing in a `mutation` rather than a `query`. Notice that you can provide parameters for the operation as well. Just pass a second argument called `variables` to the call to `query` or `mutate`:
 
 ```js
-import { withApollo } from 'react-apollo'
-import gql from 'graphql-tag'
+import { withApollo, gql } from 'react-apollo'
 
 class Chat extends Component {
 
