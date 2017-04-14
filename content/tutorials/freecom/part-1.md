@@ -17,7 +17,7 @@ related:
     - ahwoh2fohj
 ---
 
-# Freecom Tutorial (1/6): Designing the Schema & GraphQL Server
+# Freecom Tutorial: Designing the Schema & GraphQL Server (1/6)
 
 <iframe height="315" src="https://www.youtube.com/embed/4q0fFEypacA" frameborder="0" allowfullscreen></iframe>
 
