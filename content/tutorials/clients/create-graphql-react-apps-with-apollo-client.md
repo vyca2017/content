@@ -68,7 +68,7 @@ cd react-apollo-instagram-example
 npm start # open http://localhost:3000
 ```
 
-![](http://i.imgur.com/bfsiVUB.png)
+![](./cra.png)
 
 Hot-reloading and linting is included as well, the terminal window keeps us updated about errors and linter problems.
 
