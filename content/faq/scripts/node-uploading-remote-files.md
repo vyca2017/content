@@ -2,7 +2,7 @@
 alias: boneix7ohm
 path: /docs/faq/node-uploading-remote-files
 layout: FAQ
-description: Using node and request you can uploade remote files as form data.
+description: Using node and request you can upload remote files as form data.
 tags:
   - files
   - node
