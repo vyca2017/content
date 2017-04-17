@@ -72,7 +72,7 @@ npm run android
 
 Here is what the initial screen looks like in the iOS simulator:
 
-![](http://imgur.com/sR9G2rI.png)
+![](./cran-screenshot.png?width=400)
 
 Hot-reloadingis already setup as well, so any changes you make in the JavaScript code will immediately appear on the screen!
 
