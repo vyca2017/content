@@ -2,6 +2,7 @@
 alias: cahzai2eur
 path: /docs/faq/graphql-combining-multiple-queries-and-mutations
 layout: FAQ
+preview: graphql-multiple-queries.png
 title: Combining multiple GraphQL queries or mutations in one request
 shorttitle: Combining multiple GraphQL queries or mutations
 description: In GraphQL you can run multiple queries or mutations in one request using GraphQL aliases.
