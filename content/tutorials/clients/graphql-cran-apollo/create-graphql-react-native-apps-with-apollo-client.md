@@ -1,8 +1,8 @@
 ---
 alias: weeg6chaiw
-path: /docs/tutorials/create-react-native-apps-with-apollo-client
+path: /docs/tutorials/create-graphql-react-native-apps-with-apollo-client
 layout: TUTORIAL
-preview: create-graphql-react-native-apps.png
+preview: create-react-native-apps.png
 description: Connecting to a GraphQL backend is really simple with create-react-native-app and Apollo Client. Learn how to do so in this simple tutorial.
 tags:
   - react-native
