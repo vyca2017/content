@@ -56,6 +56,8 @@ When downloading images, you can use a separate image API to control the size of
 https://images.graph.cool/__PROJECT_ID__/__FILE_ID__/600x500
 ```
 
+For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
+
 ## File Management with the Client APIs
 
 Files can be also uploaded and modified by using queries and mutations from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah).
