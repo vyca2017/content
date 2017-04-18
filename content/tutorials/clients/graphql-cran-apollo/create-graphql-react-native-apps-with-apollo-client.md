@@ -1,9 +1,9 @@
 ---
 alias: weeg6chaiw
-path: /docs/tutorials/create-react-native-apps-with-apollo-client
+path: /docs/tutorials/create-graphql-react-native-apps-with-apollo-client
 layout: TUTORIAL
-preview: create-graphql-react-native-apps.png
-description: Connecting to a GraphQL backend is really simple with create-react-native-app and Apollo Client.
+preview: create-react-native-apps.png
+description: Connecting to a GraphQL backend is really simple with create-react-native-app and Apollo Client. Learn how to do so in this simple tutorial.
 tags:
   - react-native
   - clients
@@ -20,7 +20,7 @@ related:
     - ga2ahnee2a
 ---
 
-# How to use `create-react-native-app` with GraphQL & Apollo
+# Tutorial: Using create-react-native-app with GraphQL & Apollo
 
 The easiest way to get started with React Native apps that are using a GraphQL backend is with [`create-react-native-app`](https://github.com/react-community/create-react-native-app) and [Apollo](http://dev.apollodata.com/).
 In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-native-apollo-instagram-example).
@@ -72,7 +72,7 @@ npm run android
 
 Here is what the initial screen looks like in the iOS simulator:
 
-![](http://imgur.com/sR9G2rI.png)
+![](./cran-screenshot.png?width=400)
 
 Hot-reloadingis already setup as well, so any changes you make in the JavaScript code will immediately appear on the screen!
 

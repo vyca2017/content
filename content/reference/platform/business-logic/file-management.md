@@ -56,10 +56,14 @@ When downloading images, you can use a separate image API to control the size of
 https://images.graph.cool/__PROJECT_ID__/__FILE_ID__/600x500
 ```
 
+For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
+
 ## File Management with the Client APIs
 
-Files can be also uploaded and modified by using queries and mutations from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah).
+Currently, files cannot be uploaded from the [Simple API](!alias-heshoov3ai) or the [Relay API](!alias-aizoong9ah). Read [this issue on GitHub](https://github.com/apollographql/apollo/issues/65) for more information.
 
 ## File Access
 
-Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to your file! Knowing the file name is not enough to guess the file url.
+Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access the file.
+
+**You can protect the file secrets** using the permission system as usual though, so you can make sure that only users who are supposed to find a file are able to query its secret.
