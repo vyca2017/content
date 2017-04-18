@@ -7,7 +7,7 @@ description: Learn about Freecom's data model and how to generate a Graphcool ba
 tags:
   - freecom
 related:
- more:
+  more:
     - thaeghi8ro
     - heshoov3ai
     - uh8shohxie
