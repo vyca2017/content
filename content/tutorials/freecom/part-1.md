@@ -11,11 +11,11 @@ related:
     - thaeghi8ro
     - heshoov3ai
     - uh8shohxie
-    - ahwoh2foh
+    - ahwoh2fohj
   further:
-   - e8a6ajt8ax
-   - oe8ahyo2ei
-   - die6mewitu
+    - e8a6ajt8ax
+    - oe8ahyo2ei
+    - die6mewitu
 ---
 
 # Freecom Tutorial: Designing the Schema & GraphQL Server (1/6)
