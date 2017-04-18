@@ -16,7 +16,7 @@ related:
     - oe8ahyo2ei
 ---
 
-## Freecom Tutorial (3/6): Realtime Updates with GraphQL Subscriptions
+## Freecom Tutorial: Realtime Updates with GraphQL Subscriptions (3/6)
 
 This is the third chapter of our tutorial series where we teach you how to build a fully-fledged Intercom clone using Graphcool and Apollo Client. In the [last chapter](!alias-oe8ahyo2ei), you learned how to develop the fundament for the app by configuring Apollo and setting up the required queries and mutations. Today is all about getting the realtime functionality into our app!⚡️
 
@@ -25,11 +25,11 @@ This is the third chapter of our tutorial series where we teach you how to build
 
 ### What are GraphQL Subscriptions?
 
-[Subscriptions](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) are a GraphQL feature that allow to get **realtime updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
+[Subscriptions](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) are a GraphQL feature that allow you to get **realtime updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
 
 Using Apollo Client, you can benefit from the full power of subscriptions. Apollo [implements subscriptions based on web sockets](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb#.fapq8d7yc).
 
-The simplest way to get started with a subscription is to specify a callback function where the modified data from the backend is provided as an argument. In a chat application where you're interested in any changes on the `Message` type, which is either that a _new message has been sent_, that _an existing message was modified_ or an _existing message was deleted_ this could look as follows:
+The simplest way to get started with a subscription is to specify a callback function where the modified data from the backend is provided as an argument. In a chat application you might be interested in any changes on the `Message` type. This can be either a _new message has been sent_, _an existing message was modified_ or an _existing message was deleted_. The code for such a subscription could look as follows:
 
 ```js
 // subscribe to `CREATED`, `UPDATED` and `DELETED` mutations
@@ -61,7 +61,7 @@ this.newMessageObserver = this.props.client.subscribe({
 
 ### Figuring out the Mutation Type
 
-The _kind_ of change that happened in the database is reflected by the `mutation` field in the payload which contains either of three values:
+The _kind_ of change that happened in the database is reflected by the `mutation` field in the payload which contains either one of the three values:
 
 - `CREATED`: for a node that was _added_
 - `UPDATED`: for a node that was _updated_
@@ -70,7 +70,7 @@ The _kind_ of change that happened in the database is reflected by the `mutation
 
 ### Getting Information about the changed Node
 
-The `node` field in the payload allows us to retrieve information about the modified data record. It is also possible to ask for the state that node had _before_ the mutation, you can do so by including the `previousValues` field in the payload:
+The `node` field in the payload allows us to retrieve information about the modified data record. It is also possible to ask for the state that node had _before_ the mutation. You can do so by including the `previousValues` field in the payload:
 
 ```graphql
 subscription {
@@ -126,7 +126,7 @@ previousValues {
 
 Apollo uses the concept of an `Observable` (which you might be familiar with if you have worked with [RxJS](https://github.com/Reactive-Extensions/RxJS) before) in order to deliver updates to your application.
 
-Rather than using the updated data manually in a callback though, you can benefit from further Apollo features that conventiently allow you to update the local `ApolloStore` which contains the cached data from previous queries.
+Rather than using the updated data manually in a callback, you can benefit from further Apollo features that conveniently allow you to update the local `ApolloStore` which contains the cached data from previous queries.
 
 > **Tutorial Workflow**
 >
@@ -145,7 +145,7 @@ To use subscriptions in your app, you need to configure the `ApolloClient` accor
 	
 To find out more about how the `SubscriptionClient` works, you can visit the [repository](https://github.com/apollographql/subscriptions-transport-ws) where it's implemented.
 
-Let's now see what the actual code looks like that we need to setup the `ApolloClient` and prepare it for subscriptions.
+Let's now see how we can to setup the `ApolloClient` and prepare it for using subscriptions.
 
 First, in order to use the `SubscriptionClient` in your application, you need to add it as a dependency:
 
@@ -156,7 +156,7 @@ npm install subscriptions-transport-ws --save
 Once you've installed the package, you can instantiate the `SubscriptionClient` as follows (adjusting the setup of the `ApolloClient` that we saw in the previous chapter):
 
 ```js
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import ApolloClient, { createNetworkInterface } from 'react-apollo'
 import {SubscriptionClient, addGraphQLSubscriptions} from 'subscriptions-transport-ws'
 
 // Create WebSocket client
@@ -179,7 +179,7 @@ const client = new ApolloClient({
 
 #### Integrate Subscriptions for realtime Updates in the `Chat`
 
-Recapping the `Chat` component in Freecom so far, there are essentially only one query and one mutation that are required to enable the `Customer` and the support `Agent` to have a `Conversation` where they can exchange messages:
+Recapping the `Chat` component in Freecom, essentially only one query and one mutation are required to enable the `Customer` and the support `Agent` to have a `Conversation` where they can exchange messages:
 
 ```js
 const createMessage = gql`
@@ -235,9 +235,9 @@ this.createMessageSubscription = this.props.allMessagesQuery.subscribeToMore({
 })
 ```
 
-Notice that we're using a different method to subscribe to the changes compared the first example where we used `subscribe` directly on an instance of the `ApolloClient`. This time, we're calling [`subscribeToMore`](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions) on the `allMessagesQuery` (which is available in the `props` of our compoment because we wrapped it with `graphql` before).
+Notice that we're using a different method to subscribe to the changes compared to the first example where we used `subscribe` directly on an instance of the `ApolloClient`. This time we're calling [`subscribeToMore`](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions) on the `allMessagesQuery`, which is available in the `props` of our component because we wrapped it with `graphql` before.
 
-Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the local `ApolloStore`. It takes in the `previousState` which is the the former _query result_ of our `allMessagesQuery` and the `subscriptionData` which contains the payload that we specified in our subscription, in our case that's the `node` that carries information about the new message.
+Next to the actual subscription that we're passing as the `document` argument to `subscribeToMore`, we're also passing a function for the `updateQuery` parameter. This function follows the same principle as a [Redux reducer](http://redux.js.org/docs/basics/Reducers.html) and allows us to conveniently merge the changes that are delivered by the subscription into the local `ApolloStore`. It takes in the `previousState` which is the the former _query result_ of our `allMessagesQuery` and the `subscriptionData` which contains the payload that we specified in our subscription. In the implementation, we then retrieve the new message by accessing the `node` property of the specified payload.
 
 > From the Apollo [docs](http://dev.apollodata.com/react/receiving-updates.html#Subscriptions): `subscribeToMore` is a convenient way to update the result of a single query with a subscription. The `updateQuery` function passed to `subscribeToMore` runs every time a new subscription result arrives, and it's responsible for updating the query result.
 
