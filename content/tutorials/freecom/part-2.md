@@ -12,6 +12,7 @@ related:
   further:
     - e8a6ajt8ax
     - xuakjj68lp
+    - die6mewitu
 ---
 
 # Freecom Tutorial: Apollo Setup & GraphQL Queries/Mutations in React (2/6)
@@ -275,7 +276,7 @@ export default withApollo(Chat)
 
 In today's chapter, you learned how to integrate React and Apollo to send some basic queries and mutations. Apollo makes it easy to display data with React. A component can be combined with one ore more queries and the query result is then injected into the component's props. Mutations work in a similar way where a mutation function is injected into the props of the component and can be called from there.
 
-Next week, we'll talk about how we can make the chat messages appear on the screen in realtime using GraphQL subscriptions.
+[Next week](!alias-die6mewitu), we'll talk about how we can make the chat messages appear on the screen in realtime using GraphQL subscriptions.
 
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 
