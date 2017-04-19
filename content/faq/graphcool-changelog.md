@@ -16,6 +16,11 @@ related:
 
 # Changelog
 
+## Week 16 (April 17 - April 23)
+
+- We fixed a subtle bug when trying to delete nodes in self-relations with only a single field.
+- Input data when creating or updating JSON fields is now properly validated and a GraphQL error is returned for invalid JSON.
+
 ## Week 15 (April 10 - April 16)
 
 - [Part 2 of the Freecom tutorial](!alias-oe8ahyo2ei) takes a deep dive into running GraphQL mutations and queries with Apollo Client.
