@@ -7,14 +7,15 @@ description: Learn about Freecom's data model and how to generate a Graphcool ba
 tags:
   - freecom
 related:
-  further:
-    - e8a6ajt8ax
-    - oe8ahyo2ei
   more:
     - thaeghi8ro
     - heshoov3ai
     - uh8shohxie
     - ahwoh2fohj
+  further:
+    - e8a6ajt8ax
+    - oe8ahyo2ei
+    - die6mewitu
 ---
 
 # Freecom Tutorial: Designing the Schema & GraphQL Server (1/6)

@@ -2,6 +2,7 @@
 alias: thaexex7av
 path: /docs/faq/flexibility-and-control-with-graphql-variables
 layout: FAQ
+preview: graphql-variables.png
 description: GraphQL variables extend queries and mutations to be more flexible and can be used for simple scalar values, enums or input object types.
 tags:
   - graphql

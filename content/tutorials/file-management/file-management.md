@@ -111,10 +111,10 @@ cd ~/Downloads
 You can then execute
 
 ```sh
-curl -X POST 'https://api.graph.cool/file/v1/__PROJECT_ID__' -F "data=@example.png"
+curl -X POST 'https://api.graph.cool/file/v1/__PROJECT_ID__' -F "data=@example.png;filename=myname.png"
 ```
 
-after replacing `__PROJECT_ID__` with your project id and `example.png` with the name of your file. You can copy your file endpoint from inside your project.
+after replacing `__PROJECT_ID__` with your project id and `example.png` with the name of your file. The uploaded file will receive the new file name `myname.png`. You can copy your file endpoint from inside your project.
 
 The response could look something like this:
 
