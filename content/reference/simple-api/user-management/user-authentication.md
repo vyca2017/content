@@ -61,7 +61,7 @@ To sign in an existing user with email and password, provide his `email` and `pa
 ```graphql
 mutation {
   signinUser(email: {
-    mail: "user@email.com"
+    email: "user@email.com"
     password: "secret-password"
   }) {
     token
