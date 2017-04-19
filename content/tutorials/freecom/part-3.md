@@ -16,14 +16,14 @@ related:
     - oe8ahyo2ei
 ---
 
-## Freecom Tutorial: Realtime Updates with GraphQL Subscriptions (3/6)
+# Freecom Tutorial: Realtime Updates with GraphQL Subscriptions (3/6)
 
 This is the third chapter of our tutorial series where we teach you how to build a fully-fledged Intercom clone using Graphcool and Apollo Client. In the [last chapter](!alias-oe8ahyo2ei), you learned how to develop the fundament for the app by configuring Apollo and setting up the required queries and mutations. Today is all about getting the realtime functionality into our app!⚡️
 
 <iframe height="315" src="https://www.youtube.com/watch?v=mJMYyniCJe4" frameborder="0" allowfullscreen></iframe>
 
 
-### What are GraphQL Subscriptions?
+## What are GraphQL Subscriptions?
 
 [Subscriptions](http://graphql.org/blog/subscriptions-in-graphql-and-relay/) are a GraphQL feature that allow you to get **realtime updates** from the database in a GraphQL backend. You set them up by _subscribing_ to changes that are caused by specific _mutations_ and then execute some code in your application to react to that change.
 
@@ -59,7 +59,7 @@ this.newMessageObserver = this.props.client.subscribe({
 > Note: This code assumes that you have configured and set up the `ApolloClient` and made it available in the `props` of your React component using [`withApollo`](http://dev.apollodata.com/react/higher-order-components.html#withApollo), just like we saw in the previous chapter. We'll explain how to setup the `ApolloClient` for subscriptions in just a bit.
 
 
-### Figuring out the Mutation Type
+## Figuring out the Mutation Type
 
 The _kind_ of change that happened in the database is reflected by the `mutation` field in the payload which contains either one of the three values:
 
@@ -68,7 +68,7 @@ The _kind_ of change that happened in the database is reflected by the `mutation
 - `DELETED`: for a node that was _deleted_
 
 
-### Getting Information about the changed Node
+## Getting Information about the changed Node
 
 The `node` field in the payload allows us to retrieve information about the modified data record. It is also possible to ask for the state that node had _before_ the mutation. You can do so by including the `previousValues` field in the payload:
 
@@ -122,7 +122,7 @@ previousValues {
 
 
 
-### Subscriptions with Apollo
+## Subscriptions with Apollo
 
 Apollo uses the concept of an `Observable` (which you might be familiar with if you have worked with [RxJS](https://github.com/Reactive-Extensions/RxJS) before) in order to deliver updates to your application.
 
@@ -137,7 +137,7 @@ Rather than using the updated data manually in a callback, you can benefit from 
 > Each written chapter gives a high-level overview on the current topic. For step-by-step instructions watch the corresponding video.
 
 
-#### Setting up the `ApolloClient` to use Subscriptions
+### Setting up the `ApolloClient` to use Subscriptions
 
 To use subscriptions in your app, you need to configure the `ApolloClient` accordingly. This time, in addition to the GraphQL endpoint, we also need to provide a `SubscriptionClient` that handles the websocket connection between our app and the server.
  
@@ -175,7 +175,7 @@ const client = new ApolloClient({
 ```
 
 
-#### Integrate Subscriptions for realtime Updates in the `Chat`
+### Integrate Subscriptions for realtime Updates in the `Chat`
 
 Considering the `Chat` component in Freecom, essentially only one query and one mutation are required to enable the `Customer` and the support `Agent` to have a `Conversation` where they can exchange messages:
 
