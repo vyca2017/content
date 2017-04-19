@@ -20,7 +20,7 @@ related:
 
 This is the third chapter of our tutorial series where we teach you how to build a fully-fledged Intercom clone using Graphcool and Apollo Client. In the [last chapter](!alias-oe8ahyo2ei), you learned how to develop the fundament for the app by configuring Apollo and setting up the required queries and mutations. Today is all about getting the realtime functionality into our app!⚡️
 
-<iframe height="315" src="" frameborder="0" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/watch?v=mJMYyniCJe4" frameborder="0" allowfullscreen></iframe>
 
 
 ### What are GraphQL Subscriptions?
@@ -143,9 +143,7 @@ To use subscriptions in your app, you need to configure the `ApolloClient` accor
  
 ![](./img/fc3-subscriptions_overview.png)
 	
-To find out more about how the `SubscriptionClient` works, you can visit the [repository](https://github.com/apollographql/subscriptions-transport-ws) where it's implemented.
-
-Let's now see how we can to setup the `ApolloClient` and prepare it for using subscriptions.
+To find out more about how the `SubscriptionClient` works, you can visit the [repository](https://github.com/apollographql/subscriptions-transport-ws) where it's implemented. Let's now see how we can to setup the `ApolloClient` and prepare it for using subscriptions.
 
 First, in order to use the `SubscriptionClient` in your application, you need to add it as a dependency:
 
@@ -179,7 +177,7 @@ const client = new ApolloClient({
 
 #### Integrate Subscriptions for realtime Updates in the `Chat`
 
-Recapping the `Chat` component in Freecom, essentially only one query and one mutation are required to enable the `Customer` and the support `Agent` to have a `Conversation` where they can exchange messages:
+Considering the `Chat` component in Freecom, essentially only one query and one mutation are required to enable the `Customer` and the support `Agent` to have a `Conversation` where they can exchange messages:
 
 ```js
 const createMessage = gql`
@@ -205,7 +203,7 @@ const allMessages = gql`
 `
 ```
 
-> Note: This code is slighlty simplified compared to the version we're using in the video series!
+> Note: This code is slighlty simplified compared to the version we're using in the [video series](https://www.youtube.com/watch?v=mJMYyniCJe4)!
 
 Let's now see how we can use a subscription to get the promised realtime updates in our code. As mentioned before, we need to subscribe to the `allMessagesQuery`:
 
