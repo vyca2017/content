@@ -1,5 +1,5 @@
 ---
-alias: xa35dtag99
+alias: r43xamiu15
 path: /blog/2017-04-20-graphql-radio
 layout: BLOG
 description: GraphQL Radio is a regular podcast about the GraphQL ecosystem and community.
