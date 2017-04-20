@@ -2,7 +2,7 @@
 alias: kr84dktnp0
 path: /docs/faq/graphql-idl-schema-definition-language
 layout: FAQ
-description: A GraphQL Schema Definition is the easiest way to describe an entire GraphQL api. With Graphcool you can use Schema Definitions to create new projects
+description: A GraphQL Schema Definition is the easiest way to describe an entire GraphQL API. You can use them to create a new Graphcool project.
 preview: ./graphql-idl-schema-definition-language.png
 tags:
   - graphql
@@ -14,6 +14,7 @@ related:
     - ij2choozae
   more:
     - moach1gich
+    - jor2ohy6uu
 ---
 
 # GraphQL IDL - Schema Definition Language
