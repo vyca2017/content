@@ -20,7 +20,7 @@ related:
 
 With the [IDL schema definition language](!alias-kr84dktnp0), it's easy to describe the data model of a GraphQL project. Here's an example schema:
 
-```
+```graphql
 type User {
   id: ID!
   name: String!
