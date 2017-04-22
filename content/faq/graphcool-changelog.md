@@ -18,11 +18,15 @@ related:
 
 ## Week 16 (April 17 - April 23)
 
-- We fixed a subtle bug when trying to delete nodes in self-relations with only a single field.
-- Input data when creating or updating JSON fields is now properly validated and a GraphQL error is returned for invalid JSON.
-- The size limit of uploading files to the [File API]() has been increased to 200MB to support even big video files. Filenames now also support UTF-8 encoded characters.
-- Thanks to the help of the community, the initial synchronization for the Algolia integration could be improved when using `DateTime` or `Json` fields.
-- It's now possible to filter nodes that are related to `null` in a to-one relation.
+- [GraphQL Radio](https://graphqlradio.com) has been launched in cooperation with [Abhi Aiyer](https://twitter.com/AbhiAiyer).
+- Many bugs have been fixed:
+  - A subtle bug that prevented the deletion of nodes in self-relations with only a single field
+  - Input data when creating or updating JSON fields is now properly validated and a GraphQL error is returned for invalid JSON.
+  - The initial synchronization for the Algolia integration could be improved when using `DateTime` or `Json` fields.
+- Improvements to relation filters, the File API and String fields:
+  - It's now possible to filter nodes that are related to `null` in a to-one relation.
+  - The size limit of uploading files to the [File API](!alias-eer4wiang0) has been increased to 200MB to support even big video files. File names now also support UTF-8 encoded characters.
+  - [String fields](!alias-teizeit5se) can now hold up to 256 KB data, compared to 64KB before.
 
 ## Week 15 (April 10 - April 16)
 
