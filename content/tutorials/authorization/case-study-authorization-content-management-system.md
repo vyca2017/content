@@ -1,6 +1,6 @@
 ---
 alias: miesho4goo
-path: /docs/tutorials/case-study-authorization-content-management-system
+path: /docs/tutorials/authorization-content-management-system
 layout: TUTORIAL
 description: Learn how to build secure authorization in GraphQL by defining role-based, owner-based and relation-based permissions powered by flexible filters.
 tags:
@@ -15,7 +15,7 @@ related:
     - pheiph4ooj
 ---
 
-# Case Study: Authorization for A Content Management System with GraphQL
+# Authorization for a CMS with GraphQL Permission Queries
 
 Security is one of the most critical parts of an application. Combining authentication methods with authorization rules empowers developers to build secure apps in a straight-forward way.
 
