@@ -20,6 +20,9 @@ related:
 
 - We fixed a subtle bug when trying to delete nodes in self-relations with only a single field.
 - Input data when creating or updating JSON fields is now properly validated and a GraphQL error is returned for invalid JSON.
+- The size limit of uploading files to the [File API]() has been increased to 200MB to support even big video files. Filenames now also support UTF-8 encoded characters.
+- Thanks to the help of the community, the initial synchronization for the Algolia integration could be improved when using `DateTime` or `Json` fields.
+- It's now possible to filter nodes that are related to `null` in a to-one relation.
 
 ## Week 15 (April 10 - April 16)
 
