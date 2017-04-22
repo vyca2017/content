@@ -37,7 +37,7 @@ There are two ways to upload files
 * uploading a file with plain HTTP
 * uploading a file with the Client APIs
 
-You can upload files up to 50MB each.
+You can upload files up to 200MB each.
 
 ### 2.1 Uploading a File with plain HTTP
 
