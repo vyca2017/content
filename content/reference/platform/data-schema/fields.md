@@ -32,7 +32,7 @@ related:
 
 A String holds text. This is the type you would use for a username, the content of a blog post or anything else that is best represented as text.
 
-Note: String values are currently limited to 64KB in size.
+Note: String values are currently limited to 256KB in size.
 
 In queries or mutations, String fields have to be specified using enclosing double quotes: `string: "some-string"`.
 
