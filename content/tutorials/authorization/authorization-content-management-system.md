@@ -38,7 +38,7 @@ type Document {
   published: Boolean!
   title: String!
   accessGroups: [AccessGroup!]! @relation(name: "AccessGroupDocuments")
-  owner: [Document!]! @relation(name: "DocumentOwner")
+  owner: [User!]! @relation(name: "DocumentOwner")
 }
 
 type AccessGroup {
