@@ -27,7 +27,7 @@ Let's consider the following GraphQL schema in [IDL syntax](!alias-kr84dktnp0):
 type User {
   id: ID
   name: String!
-  role: USER_ROLE!
+  role: UserRole!
   accessGroups: [AccessGroup!]! @relation(name: "AccessGroupMembers")
   documents: [Document!]! @relation(name: "DocumentOwner")
 }
@@ -43,9 +43,21 @@ type Document {
 
 type AccessGroup {
   id: ID
-  operation: ACCESS_GROUP_OPERATION!
+  operation: AccessGroupOperation!
   members: [User!]! @relation(name: "AccessGroupMembers")
   documents: [Document!]! @relation(name: "AccessGroupDocuments")
+}
+
+enum UserRole {
+  EDITOR,
+  MODERATOR,
+  ADMIN
+}
+
+enum AccessGroupOperation {
+  READ,
+  UPDATE,
+  DELETE
 }
 ```
 
@@ -55,7 +67,7 @@ There are three broad categories of permissions types that enable extremely powe
 
 #### User Roles for Broad Authorization Rules
 
-In our schema, we can assign different roles to users via the *enum field `role` on the `User` model* with the possible values `ADMIN`, `MODERATOR` and `EDITOR`. This paves the way for **role-based permissions**, which are very useful if different kinds of users should have different access levels.
+In our schema, we can assign different roles to users via the *enum field `role` on the `User` model* with the possible values `EDITOR`, `MODERATOR` and `ADMIN`. This paves the way for **role-based permissions**, which are very useful if different kinds of users should have different access levels.
 
 #### Elevated Access for Owners
 
