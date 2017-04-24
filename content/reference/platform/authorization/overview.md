@@ -16,7 +16,7 @@ related:
     - miesho4goo
 ---
 
-# Permission System
+# Authorization
 
 Graphcool features a simple yet powerful permission system that integrates seamlessly with the available authentication providers. It combines different concepts that are described in detail below.
 
