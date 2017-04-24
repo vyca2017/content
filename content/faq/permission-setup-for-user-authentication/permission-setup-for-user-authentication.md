@@ -114,7 +114,7 @@ Even though we receive a permission error, the user is still created because the
 
 You can use the advanced permission system to restrict user signup to certain user groups. This is useful if you are working on an internal application for example.
 
-Let's introduce an enum field `role` with the possible values `USER` and `MANAGER` to the `User` model for demonstration purposes. Then we can use the following authenticated [permission query](!alias-iegoo0heez#query-permissions) with the `Create` operation on the `User` model.
+Let's introduce an enum field `role` with the possible values `USER` and `MANAGER` to the `User` model for demonstration purposes. Then we can use the following authenticated [permission query](!alias-iox3aqu0ee) with the `Create` operation on the `User` model.
 
 ![](./manager-signups.png)
 
@@ -122,12 +122,10 @@ This is the custom rule we're using:
 
 ```graphql
 query permitUsers($userId: ID!) {
-  allUsers(filter: {
+  someUserExists(filter: {
     id: $userId
     role: MANAGER
-  }) {
-    id
-  }
+  })
 }
 ```
 
