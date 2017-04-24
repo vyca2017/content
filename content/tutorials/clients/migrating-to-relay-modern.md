@@ -14,7 +14,7 @@ tags:
 related:
   more:
     - iechu0shia
- further:
+  further:
     - voht5ach9i
     - aizoong9ah
 ---
@@ -40,14 +40,14 @@ In the following post, we're going to explore what it's like to migrate a projec
 
 Facebook not only released a new version of Relay, they also included a dedicated API to help transition to it: [Relay Compat](https://facebook.github.io/relay/docs/relay-compat.html). This allows for developers to gradually migrate their existing code instead of having to go through one huge update process that would be accompanied by much sweat and tears.
 
-Relay consists of two major parts: 
+Relay consists of two major parts:
 
 * The API that allows developers to specify the data requirements for their components using on GraphQL fragments
 * A runtime that receives the components' data requirements and implements the lower-level responsibilities related to networking and caching
 
 The idea of Relay Compat is to allow updating the API while still working the old Relay runtime. This allows developer to update their apps component by component to using the new API without compatibility issues. The compatibility mode is available out-of-the-box with the new release candidate and can be accessed by importing from `react-relay/compat` instead of just `react-relay`.
 
-> [Relay Docs](https://facebook.github.io/relay/docs/relay-compat.html#api-and-runtime): In order to incrementally convert an existing codebase, we will need to use the Relay Modern API while continuing to use the Relay Classic runtime until all components are converted. 
+> [Relay Docs](https://facebook.github.io/relay/docs/relay-compat.html#api-and-runtime): In order to incrementally convert an existing codebase, we will need to use the Relay Modern API while continuing to use the Relay Classic runtime until all components are converted.
 
 ## The "Conversion Playbook"
 
@@ -77,7 +77,7 @@ To make sure the existing app still works, we now have to change all our imports
 
 #### Installing the Relay Compiler
 
-There are a few more things we have to do to completely finish this step, that is adding the Relay compiler as well as updating and configuring our `babel-plugin-relay`. 
+There are a few more things we have to do to completely finish this step, that is adding the Relay compiler as well as updating and configuring our `babel-plugin-relay`.
 
 > A major part of the new release was untangling Relay into three major and independent components:
 >
@@ -88,7 +88,7 @@ There are a few more things we have to do to completely finish this step, that i
 > The descriptions for the packages are taken from the [announcement blog post](https://code.facebook.com/posts/1362748677097871/relay-modern-simpler-faster-more-extensible) by Lee Byron and Joe Savona.
 
 
-First, let's add the Relay compiler: 
+First, let's add the Relay compiler:
 
 ```sh
 yarn add --dev relay-compiler@dev
@@ -168,7 +168,7 @@ export default Relay.createContainer(TodoList, {
 })
 ```
 
-Here, the `TodoList` component declares its data requirements by means of a GraphQL fragment where it specifies that it needs access to all todos. It also pulls in the data requirements from the `Todo` component. 
+Here, the `TodoList` component declares its data requirements by means of a GraphQL fragment where it specifies that it needs access to all todos. It also pulls in the data requirements from the `Todo` component.
 
 When converting, we need to switch from `Relay.createContainer` to using `createFragmentContainer` to wrap the `TodoList` component. Fragments are also not specified with `Relay.QL` any more but instead the `graphql` function is used:
 
@@ -291,7 +291,7 @@ export default createFragmentContainer(Todo, {
 
 A major change in Relay Modern is a new mutation API. Instead of subclassing `Relay.Mutation`, we can now call `commitMutation` and pass in an [*environment*](https://facebook.github.io/relay/docs/relay-environment.html) as well as an object to describe the mutation. In that object, we'll provide all necessary information about the mutation and how we want Relay to perform it.
 
-We can follow ideas from Relay Classic by providing a [*Mutator configuration*](https://facebook.github.io/relay/docs/guides-mutations.html#mutator-configuration). A new opportunity in Relay Modern however is to pass in an `updater` function to imperatively update the store. 
+We can follow ideas from Relay Classic by providing a [*Mutator configuration*](https://facebook.github.io/relay/docs/guides-mutations.html#mutator-configuration). A new opportunity in Relay Modern however is to pass in an `updater` function to imperatively update the store.
 
 Let's take a look at the `ChangeTodoStatusMutation` we're using to toggle the `complete` status of a `Todo`. This is what it looks like before the conversion:
 
@@ -310,11 +310,11 @@ export default class ChangeTodoStatusMutation extends Relay.Mutation {
       }
     `,
   }
-  
+
   getMutation () {
     return Relay.QL`mutation{updateTodo}`
   }
-  
+
   getFatQuery () {
     return Relay.QL`
       fragment on UpdateTodoPayload {
@@ -327,7 +327,7 @@ export default class ChangeTodoStatusMutation extends Relay.Mutation {
       }
     `
   }
-  
+
   getConfigs () {
     return [{
       type: 'FIELDS_CHANGE',
@@ -337,14 +337,14 @@ export default class ChangeTodoStatusMutation extends Relay.Mutation {
       },
     }]
   }
-  
+
   getVariables () {
     return {
       complete: this.props.complete,
       id: this.props.todo.id,
     }
   }
-  
+
   getOptimisticResponse () {
     var viewerPayload = {id: this.props.viewer.id}
     return {
@@ -519,7 +519,7 @@ function fetchQuery(
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    }, 
+    },
     body: JSON.stringify({
       query: operation.text,
       variables,
@@ -567,13 +567,12 @@ const root = <QueryRenderer
 
 ### 5. Clean up
 
-The last step is simply cleaning up all the imports where we used `react-relay/classic` and `react-relay/compat`. Since we ensured that all our components are now using the new Relay APIs, we don't have to pull in the old Relay code any more. So, at this point running through our source files and adjusting all Relay imports to `react-relay` will do. 
+The last step is simply cleaning up all the imports where we used `react-relay/classic` and `react-relay/compat`. Since we ensured that all our components are now using the new Relay APIs, we don't have to pull in the old Relay code any more. So, at this point running through our source files and adjusting all Relay imports to `react-relay` will do.
 
-You can view the final state of the codebase [here](https://github.com/graphcool-examples/react-relay-todo-example/tree/modern). Another important info for projects to be upgraded and making use of `react-relay-router` is that Relay Modern currently isn't supported by react-router-relay, but can be included with a slight workaround as explained in this [GitHub issue](https://github.com/relay-tools/react-router-relay/issues/234). 
+You can view the final state of the codebase [here](https://github.com/graphcool-examples/react-relay-todo-example/tree/modern). Another important info for projects to be upgraded and making use of `react-relay-router` is that Relay Modern currently isn't supported by react-router-relay, but can be included with a slight workaround as explained in this [GitHub issue](https://github.com/relay-tools/react-router-relay/issues/234).
 
 ## Summary
 
-Congratulations, you've now learned how to transform your existing Relay project to Relay Modern! 
+Congratulations, you've now learned how to transform your existing Relay project to Relay Modern!
 
 Relay Modern is an extremely promising iteration of Relay. Facebook did a great job in making sure that the migration from the previous version can be done in a smooth and iterative manner. An improved documentation and stepwise instruction for the update process vastly contribute to that.
-
