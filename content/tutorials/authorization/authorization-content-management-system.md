@@ -13,6 +13,7 @@ related:
     - iegoo0heez
   more:
     - pheiph4ooj
+    - kr84dktnp0
 ---
 
 # Authorization for a CMS with GraphQL Permission Queries
@@ -78,13 +79,13 @@ Permissions are described using different **parameters**.
 
 * The **operation** of a permission describes what types of requests it is evaluated for. There are operations related to a *type* and those related to a  *relation*. While the available CRUD operations are covered by type operations, connecting or disconnecting nodes for a relation are governed by relation operations.
 
-> Note: [nested mutations], are broken down into multiple isolated operations. A nested mutation might need to pass a `Create Type` and multiple `Update Relation` permissions for instance.
+> Note: [nested mutations](!alias-ubohch8quo), are broken down into multiple isolated operations. A nested mutation might need to pass a `Create Type` and multiple `Update Relation` permissions for instance.
 
 * For most type operations, it's of interest which **fields** the permission governs while relation permissions can affect connecting, disconnecting or both operations.
 
 * The **audience** of a permission describes how the permission relates to the authenticated state of a request. A permission can either be open to `EVERYONE` or only to `AUTHENTICATED` users.
 
-Depending on the permission operation, different GraphQL variables are available that can be used to express the permission. The [reference documentation](#TODO) gives a full overview.
+Depending on the permission operation, different GraphQL variables are available that can be used to express the permission. The [reference documentation](!alias-iox3aqu0ee) gives a full overview.
 
 ## Authorization Design Patterns
 
@@ -230,9 +231,9 @@ query permitDeleteDocuments($user_id: ID!) {
 }
 ```
 
-## Access Control Lists based on Relations
+## Relation-based permissions for complete control
 
-Finally, the `AccessGroup` model acts as way to express **relation-based** permissions. These are similar to *owner-based* permissions, but allow much more flexibility. The `accessLevel` enum field with possible values `READ`, `UPDATE` and `DELETE` can be used to define **access control lists or ACLs**.
+Finally, the `AccessGroup` model acts as way to express **relation-based** permissions. These allow complete and granular access control and can even be used to define **access control lists or ACLs**. In this case, the `accessLevel` enum field with possible values `READ`, `UPDATE` and `DELETE` is used to control the access level.
 
 ### Users with read access for a specific document can see it
 
