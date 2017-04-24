@@ -353,7 +353,7 @@ export default class ChangeTodoStatusMutation extends Relay.Mutation {
       viewer: viewerPayload,
     }
   }
-}`
+}
 ```
 
 After the conversion, it'll look as follows:
