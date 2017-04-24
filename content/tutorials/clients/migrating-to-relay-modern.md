@@ -32,7 +32,7 @@ The goals of the new version are threefold:
 
 If you want to get an idea about the major changes in the new version, the updated (and majorly improved) [documentation](https://facebook.github.io/relay/docs/new-in-relay-modern.html) is a great place to start. Additionally, [Sashko](https://twitter.com/stubailo) from the Apollo team wrote an excellent in-depth [article](https://dev-blog.apollodata.com/exploring-relay-modern-276f5965f827) shedding light on different aspects of the new Relay Modern.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6TN1fj0MGsc" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QcoEQzXWnKs" frameborder="0" allowfullscreen></iframe>
 
 In the following post, we're going to explore what it's like to migrate a project from *Relay Classic* (yes, that's what the old API is called now) to its *Modern* counterpart. The project we're going to convert is a simple Todo app (TodoMVC). You can find the code for it on [Github](https://github.com/graphcool-examples/react-relay-todo-example). Note that the repo contains a branch `classic`, representing the code before the conversion as well as a branch called `modern` with the upgraded code.
 
