@@ -20,7 +20,7 @@ related:
 
 Security is one of the most critical parts of an application. Combining authentication methods with authorization rules empowers developers to build secure apps in a straight-forward way.
 
-This article is a case study that gives an idea how to combine **role-based**, **owner-based** and **relation-based** permissions to secure access when building a *content management system*.
+This article is a deep dive into the permission system used at Graphcool. The use case we want to explore is a *content management system* for documents.
 
 Let's consider the following GraphQL schema in [IDL syntax](!alias-kr84dktnp0):
 
@@ -62,34 +62,17 @@ enum AccessGroupOperation {
 }
 ```
 
-## How Permission Queries Work
+Different kinds of users are interacting with this CMS. There are editors that can create and edit their own documents, moderators that have some elevated permissions and admins that have access to all operations.
 
-#### Whitelist Permissions for Modular Authorization
-
-Permission queries work by defining a GraphQL query that runs against a specific **GraphQL permission schema**. They return a boolean and the permission is only granted if it resolves to `true`. In general, permissions follow a **whitelist approach**:
-
-* *no operation is permitted unless explicitely allowed*
-* *a permission cannot be nullified by other permissions*
-
-This means that as soon as a matching permission has been found for a given request, it can be executed which allows us to think about authorization in a modular way. Focusing on a specific use case when defining a permission rule leads to many simple permissions instead of fewer complex ones.
-
-#### Permission Parameters and GraphQL Variables
-
-Permissions are described using different **parameters**.
-
-* The **operation** of a permission describes what types of requests it is evaluated for. There are operations related to a *type* and those related to a  *relation*. While the available CRUD operations are covered by type operations, connecting or disconnecting nodes for a relation are governed by relation operations.
-
-> Note: [nested mutations](!alias-ubohch8quo), are broken down into multiple isolated operations. A nested mutation might need to pass a `Create Type` and multiple `Update Relation` permissions for instance.
-
-* For most type operations, it's of interest which **fields** the permission governs while relation permissions can affect connecting, disconnecting or both operations.
-
-* The **audience** of a permission describes how the permission relates to the authenticated state of a request. A permission can either be open to `EVERYONE` or only to `AUTHENTICATED` users.
-
-Depending on the permission operation, different GraphQL variables are available that can be used to express the permission. The [reference documentation](!alias-iox3aqu0ee) gives a full overview.
+Additionally to the different user roles, access groups can be defined to grant granular access control.
 
 ## Authorization Design Patterns
 
-Before diving into the different **authorization design patterns**, let's start this off with a simple example to get used to the different terms:
+Before diving into the different **authorization design patterns**, let's start this off with a simple example to get used to the used terminology.
+
+For more background information, the reference documentation offers a general [overview of the permission system](!alias-iegoo0heez) as well as a detailed list of available [permission queries, parameters and variables](!alias-iox3aqu0ee).
+
+Let's have a look at a simple permission query:
 
 ### Everyone can see published documents
 
@@ -109,7 +92,8 @@ query permitViewDocuments($node_id: ID!) {
   })
 }
 ```
-Note how the `$node_id` variable is used in combination with the `filter` argument to check if the *queried node is published*. If this is the case, `someDocumentExists` returns `true`, and the operation is granted permission.
+
+Here we use the `someDocumentExists` query to check if a given node of type `Document` (identified by `$node_id`) is published. Only then `someDocumentExists` returns `true`, and the operation is matched by this permission.
 
 There are three broad categories of commonly used permission types that enable extremely powerful authorization rules when combined. Let's have a closer look!
 
@@ -117,11 +101,9 @@ There are three broad categories of commonly used permission types that enable e
 
 In our schema, we can assign different roles to users via the *enum field `role` on the `User` model* with the possible values `EDITOR`, `MODERATOR` and `ADMIN`. This paves the way for **role-based permissions**, which are very useful if different kinds of users should have different access levels.
 
-### Admins can view unpublished documents
+Most role-based permission do not depend on the specific state of the node, or the relation between the node and the requesting user. Instead, mostly **the role of the user is the deciding factor whether an operation is allowed** or not.
 
-This is our first *role-based* permission:
-
-> Users with the role `ADMIN` can query all documents.
+### Admins can view all documents
 
 #### Permission Parameters
 
@@ -132,7 +114,7 @@ This is our first *role-based* permission:
 #### Permission Query
 
 ```graphql
-query permitViewDocuments($node_id: ID!, $user_id: ID!) {
+query permitViewDocuments($user_id: ID!) {
   someUserExists(filter: {
     id: $user_id
     role: ADMIN
@@ -140,42 +122,44 @@ query permitViewDocuments($node_id: ID!, $user_id: ID!) {
 }
 ```
 
-In this case, we use the `someUserExists` to check if the session user has the `ADMIN` role using the `$user_id` variable. We don't use `someDocumentExists` because the document is irrelevant in this case.
+In this case, we use the `someUserExists` query to check if the session user (identified by the `$user_id` variable) has the `ADMIN` role. We don't use `someDocumentExists` because the document is irrelevant in this case.
 
 ### Editors can only assign themselves as the document owner
 
-Whenever our schema contains relations that express ownership, we need to make sure that users don't maliciously assign a wrong owner. This is a combination of a `role-based` and `owner-based` rule.
+Whenever our schema contains relations that express ownership, we need to make sure that users don't maliciously assign a wrong owner. This works by defining a permission on the `DocumentOwner` relation.
 
 #### Permission Parameters
 
-* **Operation:** `Create Document`
-* **Fields:** `id`, `content`, `published`, `title`
+* **Operation:** `Connect DocumentOwner`
+* **Fields:** *relation permissions are not applicable to fields*
 * **Audience:** `AUTHENTICATED`
 
 #### Permission Query
 
 ```graphql
-query permitCreateDocuments($user_id: ID!, $input_ownerId: ID!) {
+query permitCreateDocuments($user_id: ID!, $ownerUserId: ID!) {
   someUserExists(filter: {
     AND: [{
       id: $user_id
     }, {
-      id: $input_ownerId
+      id: $ownerUserId
+    }, {
+      role: EDITOR
     }]
   })
 }
 ```
 
-Because we want to express two conditions on the `id` variable, we need to use the logical operator `AND`. Then we check that the two variables `$user_id` (the logged-in user) and `$input_ownerId` (the id that identifies the owner-to-be of the document).
+Because we want to express two conditions on the `id` variable, we need to use the logical operator `AND`. Then we check that the two variables `$user_id` (the logged-in user) and `$ownerUserId` (the owner-to-be of the document) are the same. To only allow editors executing this operation, we add the `role: EDITOR` condition as well.
 
 ### Moderators and admins can assign anyone as the document owner
 
-This is another `role-based` rule.
+This is another permission on the `DocumentOwner` relation. But because moderators and admins can assign anyone as the owner of a document, we don't need the `$ownerUserId` variable in this case.
 
 #### Permission Parameters
 
-* **Operation:** `Create Document`
-* **Fields:** `id`, `content`, `published`, `title`
+* **Operation:** `Connect DocumentOwner`
+* **Fields:** *relation permissions are not applicable to fields*
 * **Audience:** `AUTHENTICATED`
 
 #### Permission Query
@@ -191,7 +175,7 @@ query permitCreateDocuments($user_id: ID!) {
 
 ### Moderators and admins can publish or unpublish any document
 
-This is a `role-based` permission that only acts on a subset of the available fields. In this case, we only express a permission about the `published` field.
+This is a `role-based` permission that only acts on a subset of the available fields, in this case the `published` field.
 
 #### Permission Parameters
 
@@ -204,7 +188,7 @@ This is a `role-based` permission that only acts on a subset of the available fi
 ```graphql
 query permitUpdateDocuments($user_id: ID!) {
   someUserExists(filter: {
-    id: $node_id
+    id: $user_id
     role_in: [ADMIN, MODERATOR]
   })
 }
@@ -233,11 +217,13 @@ query permitDeleteDocuments($user_id: ID!) {
 
 ## Relation-based permissions for complete control
 
-Finally, the `AccessGroup` model acts as way to express **relation-based** permissions. These allow complete and granular access control and can even be used to define **access control lists or ACLs**. In this case, the `accessLevel` enum field with possible values `READ`, `UPDATE` and `DELETE` is used to control the access level.
+**Relation-based** permissions offer a lot of power and flexibility when defining permissions. In general, the existence of **a special path from a node to the session user across multiple relations** determines whether an operation is allowed.
+
+A typical example is that a document can only be accessed if the session user is in the collaborators relation of the document owner. In this article however, we're implementing an **access control list or ACL** using the `AccessGroup` type. The `accessLevel` enum field with possible values `READ`, `UPDATE` and `DELETE` is used to control the access level on documents for specific users.
+
+Access control lists are a common concept when defining authorization because they allow extreme granularity.
 
 ### Users with read access for a specific document can see it
-
-This is our first *relation-based* rule.
 
 #### Permission Parameters
 
@@ -261,7 +247,7 @@ query permitViewDocuments($node_id: ID!, $user_id: ID!) {
 }
 ```
 
-Here we use relational filters, starting with the `someDocumentExists` query, to check if the document to be viewed (identified by `$node_id`) is connected to an access group with `READ` access that the session user (identified by `$user_id`) is connected to as well. Note that we can also turn it around, starting with `someUserExists`:
+Here we use relational filters, starting with the `someDocumentExists` query, to check if the document to be viewed (identified by `$node_id`) is connected to an access group with `READ` access that the session user (identified by `$user_id`) is connected to as well. Note that we can also turn the query around, starting with `someUserExists`:
 
 ```graphql
 query permitViewDocuments($node_id: ID!, $user_id: ID!) {
@@ -277,9 +263,9 @@ query permitViewDocuments($node_id: ID!, $user_id: ID!) {
 }
 ```
 
-### Users with the update access level can edit a specific document
+Here we follow the relation from the other side of the path, starting at the user, passing the access group and finally reach the document.
 
-Another *relation-based* rule.
+### Users with the update access level can edit a specific document
 
 #### Permission Parameters
 
@@ -305,8 +291,6 @@ query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
 
 ### Users with the delete access level can delete a specific document
 
-Another *relation-based* permission.
-
 #### Permission Parameters
 
 * **Operation:** `Delete Document`
@@ -331,11 +315,9 @@ query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
 
 ## Elevated Access for Owners
 
-Additionally, the relation `DocumentOwner` acts as the basis for **owner-based** permissions. Usually, we want to allow the owner of a node access to special operations, like deleting or publishing an owned document.
+Finally, a special case for relation-based permissions are **owner-based permissions**. It's a very common use case and useful to most applications, because usually, we want to allow the owner of a node access to special operations. In our case, the relation `DocumentOwner` determines the ownership of a document.
 
 ### Owners can view the documents they own
-
-This is our first *owner-based* rule.
 
 #### Permission Parameters
 
@@ -360,8 +342,6 @@ Here, we use the `someDocumentExists` query and combine it with the `$node_id` a
 
 ### The owner of a document can edit it
 
-This is another `owner-based` permission rule.
-
 #### Permission Parameters
 
 * **Operation:** `Update Document`
@@ -383,8 +363,6 @@ query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
 
 ### The owner of a document can delete it
 
-This is another `owner-based` permission.
-
 #### Permission Parameters
 
 * **Operation:** `Delete Document`
@@ -403,3 +381,9 @@ query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
   })
 }
 ```
+
+## Conclusion
+
+Permission queries combine the simplicity and expressiveness of GraphQL queries with common authorization design patterns, allowing developers to specify complex permission setups in a straight-forward way.
+
+Thinking in terms of the concepts of role-based, relation-based and owner-based permissions helps when designing the permissions for your application. If you need help with your authorization configuration, feel free to [reach out in the forum](https://www.graph.cool/forum/c/platform).
