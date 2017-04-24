@@ -1,6 +1,6 @@
 ---
 alias: zievoo3oht
-path: /docs/reference/platform/permissions/examples-and-patterns
+path: /docs/reference/platform/authorization/examples-and-patterns
 layout: REFERENCE
 description: Several permission queries, following the authorization patterns of role-based authorization, access control lists and ownership derived access.
 tags:
