@@ -1,6 +1,6 @@
 ---
 alias: iox3aqu0ee
-path: /docs/reference/platform/permissions/permission-queries
+path: /docs/reference/platform/authorization/permission-queries
 layout: REFERENCE
 description: GraphQL permission queries leverage the power of GraphQL to define data requirements in a straight-forward way.
 tags:
