@@ -25,7 +25,7 @@ Existing backend services such as Firebase only allow very limited and unflexibl
 
 Over the last six months, we've been working on an incredibly exiting addition to the permission system of the Graphcool platform. It's an entirely new concept we're calling "Permission Queries" which allows you to express any kind of relational permission logic just using a GraphQL query.
 
-The idea is that for each operation (read, create, update, ...) you're specifiying rules in form of a simple GraphQL query. Our permission engine will execute the query at the right time and based on the result (which is either `true` or `false`), the operation will be granted or denied. The idea behind these queries is to specify a condition based on your schema using the [filter system](!alias-aing7uech3).
+The idea is that for each operation (read, create, update, ...) you're specifying rules in form of a simple GraphQL query. Our permission engine will execute the query at the right time and based on the result (which is either `true` or `false`), the operation will be granted or denied. The idea behind these queries is to specify a condition based on your schema using the [filter system](!alias-aing7uech3).
 
 Take a look at the following example to get a better understanding of how this works:
 
