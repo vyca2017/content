@@ -29,7 +29,7 @@ The idea is that for each operation (read, create, update, ...) you're specifiyi
 
 Take a look at the following example to get a better understanding of how this works:
 
-<!-- __SOME_EXAMPLE__ -->
+<!-- PERMISSION_EXAMPLES -->
 
 The permission system follows a whitelist approach which means by default no operation is permitted unless explicitely allowed. For more details please read the [reference documentation about Authorization](!alias-iegoo0heez). You can also [read this guide](!alias-miesho4goo) to see how you can implement the permission logic needed for a CMS.
 
