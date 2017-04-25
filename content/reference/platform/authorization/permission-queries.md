@@ -33,9 +33,11 @@ For **read operations**, all matching permission queries are executed and evalua
 
 **A permission query grants permission to an operation if and only if all top-level fields return `true`**.
 
+## Available GraphQL Variables for Permission Queries
+
 Depending on the pending operation, several **GraphQL variables** are available that can be used to influence the behaviour of a permission query.
 
-## Available GraphQL Variables for Permission Queries
+**You can't specify the values for these variables. You can only use the variables in the query itself**.
 
 ### Custom Variables
 

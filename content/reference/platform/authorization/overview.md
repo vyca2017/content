@@ -20,6 +20,8 @@ related:
 
 Graphcool features a simple yet powerful permission system that integrates seamlessly with the available authentication providers. It combines different concepts that are described in detail below.
 
+> Note: for a better getting started experience, every new Graphcool project is prepopulated with permissions that allow all operations. **Make sure to adjust the permissions before your app goes to production**.
+
 ## Whitelist Permissions for Modular Authorization
 
 In general, permissions follow a **whitelist approach**:
