@@ -64,6 +64,6 @@ Currently, files cannot be uploaded from the [Simple API](!alias-heshoov3ai) or 
 
 ## File Access
 
-Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access the file.
+Currently, **uploading and downloading files is allowed to everyone**. **The file itself is publicly available at the url of the file node**, so everyone who knows the file secret and your project id has access to the file.
 
 **You can protect the file secrets** using the permission system as usual though, so you can make sure that only users who are supposed to find a file are able to query its secret.
