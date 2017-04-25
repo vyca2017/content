@@ -96,7 +96,7 @@ An ID value is a generated unique 25-character string based on [cuid](https://gi
 
 Scalar fields can be marked with the list field type. A field of a relation that has the many multiplicity will also be marked as a list.
 
-Note: List values are currently limited to 64KB in size, independently of the [scalar type](#scalar-types) of the field.
+Note: List values are currently limited to 256KB in size, independently of the [scalar type](#scalar-types) of the field.
 
 In queries or mutations, list fields have to be enclosed by square brackets, while the separate entries of the list adhere to the same formatting rules as lined out above: `listString: ["a string", "another string"]`, `listInt: [12, 24]`.
 
