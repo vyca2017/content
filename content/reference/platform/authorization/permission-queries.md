@@ -2,7 +2,7 @@
 alias: iox3aqu0ee
 path: /docs/reference/platform/authorization/permission-queries
 layout: REFERENCE
-description: GraphQL permission queries leverage the power of GraphQL to define data requirements in a straight-forward way.
+description: GraphQL permission queries allow you to express permissions by leveraging the power of GraphQL queries. This is a simple and powerful combination.
 tags:
   - platform
   - permissions
@@ -15,20 +15,25 @@ related:
 
 # Permission Queries
 
-Permission queries work by defining a GraphQL query that runs against a specific **GraphQL permission schema**.
-
-* *For read permissions, the permission query is executed and evaluated for every single node*
-* *For all other permissions, the permission query is executed and evaulated  before the pending operation*
+Permission queries allow you to **express permissions by leveraging the power of GraphQL queries**. This combination is a powerful concept and provides a great tool to express even complex permission scenarios in a simple form.
 
 ## The GraphQL Permission Schema
 
 <!-- PERMISSION_EXAMPLES -->
 
-All available queries in the GraphQL permission schema are derived from the available types and relations in your data model. The permisson schema leverages the familiar and powerful [filter system](!alias-xookaexai0) that allows you to define very specific permissions.
+All available queries in the **GraphQL permission schema** are derived from the available types and relations in your data model. The permisson schema leverages the familiar and powerful [filter system](!alias-xookaexai0) that allows you to define very specific permissions.
 
-For every type `Type` in your data model, the field `someTypeExists(filter: TypeFilter): Boolean` is available in your permission query. `someTypeExists` returns `true` only if the given filters match at least one `Type` node. If all fields in your permission query return `true`, the permission is granted.
+For every type `Type` in your data model, the field `someTypeExists(filter: TypeFilter): Boolean` is part of the permission schema. `someTypeExists` returns `true` only if the given filters match at least one existing `Type` node.
 
-Depending on the permission operation, several **GraphQL variables** are available that can be used as input to the different queries.
+## The Execution and Evaluation of Permission Queries
+
+The execution of permission queries differs for read and write operations:
+
+For **read operations**, all matching permission queries are executed and evaluated for every single node that is part of the response. For all **write operations**, all matching permission queries are executed and evaluated before the pending operation.
+
+**A permission query grants permission to an operation if and only if all top-level fields return `true`**.
+
+Depending on the pending operation, several **GraphQL variables** are available that can be used to influence the behaviour of a permission query.
 
 ## Available GraphQL Variables for Permission Queries
 
