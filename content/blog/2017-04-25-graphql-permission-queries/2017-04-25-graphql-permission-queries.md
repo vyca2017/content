@@ -37,7 +37,7 @@ The permission system follows a whitelist approach which means by default no ope
 
 The right level of abstraction is one of the most important aspects about programming and building large systems. With the concept of permission queries, we're creating a new level of abstraction to think about and implement permission logic.
 
-Building and maintaining an infrastructure like this requires and incredible amount of work and resources but we're convinced that this "trade of complexity" (i.e. we're doing the hard work) is worth it. Ultimately this enables you to focus on the core value of your applications without worriying about implementation details, infrastructure and performance.
+Building and maintaining an infrastructure like this requires and incredible amount of work and resources but we're convinced that this "trade of complexity" (i.e. we're doing the hard work) is worth it. Ultimately this enables you to focus on the core value of your applications without worrying about implementation details, infrastructure and performance.
 
 In cases where permission logic isn't entirely based on relational information of your data graph, you'll [soon](https://github.com/graphcool/feature-requests/issues/183) be able to implement arbitrary permission rules using serverless functions. You will hear more about this soon!
 
