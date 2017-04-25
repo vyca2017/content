@@ -47,6 +47,6 @@ In cases where permission logic isn't entirely based on relational information o
 
 A special thanks to more than 100 private beta testers, who helped us shaping this feature over the last months. We received an overwhelming amount of positive feedback and are very proud to make this feature available to all of our developers.
 
-We hope that this declarative authorization mechanism can be useful aswell for other developers implementing thier own GraphQL server. We'll soon write up more backend implementation details in some more technical blog posts.
+We hope this declarative authorization mechanism can be useful as well for other developers implementing thier own GraphQL server. We'll soon write up more backend implementation details in some more technical blog posts.
 
 We couldn't be more excited for the future and can't wait to see what you'll be building!
