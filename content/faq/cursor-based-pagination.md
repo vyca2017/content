@@ -207,10 +207,10 @@ By combining the query using `first` and `after` with a query using `last` and `
 endpoint: https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr
 disabled: false
 ---
-query movieTriple($middleId: ID!){
+query movieTriple($middleId: ID!, $middleCursor:String!){
   before: allMovies(
     last: 1
-    before: $middleId
+    before: $middleCursor
   ) {
     ... movieDetails
   }
@@ -221,7 +221,7 @@ query movieTriple($middleId: ID!){
   }
   after: allMovies(
     first: 1
-    after: $middleId
+    after: $middleCursor
   ) {
     ... movieDetails
   }
@@ -233,7 +233,8 @@ fragment movieDetails on Movie {
 }
 ---
 {
-  "middleId": "cixxhjs04pm0h015815qnrkyu"
+  "middleId": "cixxhjs04pm0h015815qnrkyu",
+  "middleCursor": "cixxhjs04pm0h015815qnrkyu"
 }
 ---
 {
