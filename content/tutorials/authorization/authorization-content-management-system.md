@@ -3,6 +3,7 @@ alias: miesho4goo
 path: /docs/tutorials/authorization-content-management-system
 layout: TUTORIAL
 description: Learn how to build secure authorization in GraphQL by defining role-based, owner-based and relation-based permissions powered by flexible filters.
+preview: ./authorization-content-management-system.png
 tags:
   - permissions
   - authorization
