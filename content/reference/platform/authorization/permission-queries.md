@@ -6,7 +6,6 @@ description: GraphQL permission queries leverage the power of GraphQL to define 
 tags:
   - platform
   - permissions
-  - authentication
 related:
   further:
     - xookaexai0
@@ -23,9 +22,11 @@ Permission queries work by defining a GraphQL query that runs against a specific
 
 ## The GraphQL Permission Schema
 
-All available queries in the GraphQL permission schema are derived from the available types in your data schema. For a given type `Type`, the query `someTypeExists(filter: TypeFilter): Boolean` is generated. This applies the familiar and powerful [filter system](!alias-xookaexai0) to define very specific permissions.
+<!-- PERMISSION_EXAMPLES -->
 
-`someTypeExists` returns `true` only if the given filters match at least one `Type` node.
+All available queries in the GraphQL permission schema are derived from the available types and relations in your data model. The permisson schema leverages the familiar and powerful [filter system](!alias-xookaexai0) that allows you to define very specific permissions.
+
+For every type `Type` in your data model, the field `someTypeExists(filter: TypeFilter): Boolean` is available in your permission query. `someTypeExists` returns `true` only if the given filters match at least one `Type` node. If all fields in your permission query return `true`, the permission is granted.
 
 Depending on the permission operation, several **GraphQL variables** are available that can be used as input to the different queries.
 
@@ -46,3 +47,7 @@ Depending on the permission operation, several **GraphQL variables** are availab
 ### Variables for Relation Permissions
 
 * `$leftModel_id: ID!`, `$rightModel_id: ID!` the ids of the nodes to be connected or disconnected
+
+## Common Authorization Patterns
+
+Permission queries can be used to express all common authorization patterns like **role-based authorization**, **access control lists** and **ownership derived access**. For more information check [the full guide](!alias-miesho4goo).

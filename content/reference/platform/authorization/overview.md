@@ -47,7 +47,7 @@ Permissions are described using different **parameters**.
 
 * The **audience** of a permission describes how the permission relates to the authenticated state of a request. A permission can either be open to `EVERYONE` or only to `AUTHENTICATED` users.
 
-Permissions described with the above parameters are referred to as *simple permissions*. Additionally, you can define custom permissions using [permission queries]().
+Permissions described with the above parameters are referred to as *simple permissions*. Additionally, you can define custom permissions using [permission queries](!alias-iox3aqu0ee).
 
 ## Permissions and user authentication
 
