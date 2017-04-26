@@ -56,12 +56,12 @@ They have to be supplied using the `Authorization` header of your http requests:
 Authorization: Bearer <authentication token>
 ```
 
-If a request to your endpoint contains a valid authentication token, it is granted certain [permissions](permissions) that you can configure on a field granularity. If a request to your endpoint contains an invalid authentication token, all operations available to not authenticated users will be executed, public data will be returned, and an error is additionally returned.
+If a request to your endpoint contains a valid authentication token, it is granted certain [permissions](alias-iegoo0heez) that you can configure on a field granularity. If a request to your endpoint contains an invalid authentication token, all operations available to not authenticated users will be executed, public data will be returned, and an error is additionally returned.
 
 ## Temporary Authentication Token
 
 Temporary authentication tokens have a certain validity duration and can be obtained from authentication mutations.
-To enable an auth provider, head over to the [`User` model](system-artifacts) in your project and choose between different options.
+To enable an auth provider, head over to the [`User` model](!alias-uhieg2shio) in your project and choose between different options.
 
 Read more about how user authentication works with different auth providers in the [Simple API](!alias-eixu9osueb) and [Relay API](!alias-yoh9thaip0).
 
