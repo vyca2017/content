@@ -26,7 +26,7 @@ related:
 
 In this article, we are going to shed some light on the commonalities and differences between Relay and Apollo and want to help you in making an informed decision on which GraphQL client is the best for your next project! Our goal is to keep the contents of the article up to date as Apollo and Relay evolve.
 
-> This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, to learn more about both technologies, you can visit [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com) for comprehensive tutorials.
+> This article assumes some familiarity with basic GraphQL concepts such as queries, mutations or fragments. If you're just getting started with GraphQL, you can read up on these concepts in the [GraphQL docs](http://graphql.org/). Also, to learn more about both technologies, you can visit [Learn Relay](https://www.learnrelay.org) and [Learn Apollo](https://www.learnapollo.com) for comprehensive tutorials.
 
 At Graphcool, we have been using Relay and Apollo extensively over the last year and now want to share our learnings with the community. Also note that while Apollo can also be used with other frameworks, this article primarily targets React developers and specfically compares Relay and Apollo in the context of React applications.
 
