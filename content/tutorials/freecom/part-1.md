@@ -108,41 +108,42 @@ type Message {
 The complete schema that we need in order to create the Graphcool backend looks as follows:
 
 ```graphql
-type Customer {
-  id: ID!
+type Message {
+  agent: Agent @relation(name: "MessagesFromAgents")
+  conversation: Conversation @relation(name: "MessagesInConversation")
   createdAt: DateTime!
-  updatedAt: DateTime!
-  name: String!
-  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
-}
-
-type Agent {
   id: ID!
-  createdAt: DateTime!
+  text: String!
   updatedAt: DateTime!
-  slackUserId: String!
-  slackUserName: String!
-  conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
-  messages: [Message!]! @relation(name: "MessagesFromAgents")
 }
 
 type Conversation {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  slackChannelIndex: Int!
-  customer: Customer @relation(name: "ConversationsFromCustomer")
   agent: Agent @relation(name: "ConversationsFromAgent")
+  createdAt: DateTime!
+  customer: Customer @relation(name: "ConversationsFromCustomer")
+  id: ID!
   messages: [Message!]! @relation(name: "MessagesInConversation")
+  slackChannelIndex: Int!
+  updatedAt: DateTime!
 }
 
-type Message {
-  id: ID!
+type Agent {
+  conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
   createdAt: DateTime!
+  id: ID!
+  imageUrl: String!
+  messages: [Message!]! @relation(name: "MessagesFromAgents")
+  slackUserId: String!
+  slackUserName: String!
   updatedAt: DateTime!
-  text: String!
-  agent: Agent @relation(name: "MessagesFromAgents")
-  conversation: Conversation @relation(name: "MessagesInConversation")
+}
+
+type Customer {
+  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
+  createdAt: DateTime!
+  id: ID!
+  name: String!
+  updatedAt: DateTime!
 }
 ```
 
