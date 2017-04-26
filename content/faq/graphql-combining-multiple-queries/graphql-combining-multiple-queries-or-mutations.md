@@ -140,7 +140,7 @@ mutation {
 }
 ```
 
-However, other than queries, *multiple mutations are executed sequentially*. That means that a mutation is only executed after the previous mutation has finished execution. The execution order is the same as the order in the query itself, from top to bottom.
+However, unlike queries, *multiple mutations are executed sequentially*. That means that a mutation is only executed after the previous mutation has finished execution. The execution order is the same as the order in the query itself, from top to bottom.
 
 
 # Resources
