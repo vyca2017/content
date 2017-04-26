@@ -42,7 +42,7 @@ Read how to use the `createUser` and `signinUser` mutations to create or signin 
 ## Session User
 
 A user is considered to be signed in during a request, if the user is identified by the authentication token supplied to the request.
-If an invalid or no authentication token is supplied to a request, the request is granted [`EVERYONE` permission](permissions#permission-level)
+If an invalid or no authentication token is supplied to a request, the request is granted [`EVERYONE` permission](!alias-iegoo0heez#permission-parameters)
 
 To allow users to login or sign up you might want to setup the according [permissions](permissions) and setup an auth provider within the [Simple API](!alias-eixu9osueb) or [Relay API](!alias-yoh9thaip0).
 
