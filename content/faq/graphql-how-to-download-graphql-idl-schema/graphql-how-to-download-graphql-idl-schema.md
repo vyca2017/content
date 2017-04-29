@@ -2,7 +2,7 @@
 alias: maiv5eekan
 path: /docs/faq/graphql-how-to-download-graphql-idl-schema
 layout: FAQ
-title: How to Download the GraphQL IDL Schema
+title: How to download the GraphQL IDL Schema
 description: GraphQL servers expose a type safe GraphQL schema. You can download it in IDL or JSON syntax and use it with Relay Modern or other tools.
 tags:
   - tooling
