@@ -16,6 +16,12 @@ related:
 
 # Changelog
 
+## Week 17 (April 24 - April 30)
+
+- We [released permission queries](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries-oolooch8oh/)! This is a novel approach for customizable authorization rules and we're very excited about the launch. Thanks to the **over 100 developers** in our beta program for throroughly testing this feature!
+- We improved working with scalar lists in the databrowser.
+- To make debugging subscriptions in the Playground easier, API errors are now directly printed.
+
 ## Week 16 (April 17 - April 23)
 
 - [GraphQL Radio](https://graphqlradio.com) has been launched in cooperation with [Abhi Aiyer](https://twitter.com/AbhiAiyer).
@@ -31,7 +37,7 @@ related:
 ## Week 15 (April 10 - April 16)
 
 - [Part 2 of the Freecom tutorial](!alias-oe8ahyo2ei) takes a deep dive into running GraphQL mutations and queries with Apollo Client.
-- We improved the UI and workflow of connecting a node in a relation using the Data Browser. This should feel much smoother now.
+- We improved the UI and workflow of connecting nodes in a relation using the Data Browser. This should feel much smoother now.
 
 ## Week 14 (April 3 - April 9)
 
