@@ -15,7 +15,8 @@ related:
     - teizeit5se
     - ij2choozae
   more:
-  - cahzai2eur
+    - cahzai2eur
+    - maiv5eekan
 ---
 
 # How to use GraphQL Introspection Queries
@@ -72,21 +73,9 @@ In the documentation view to the right, you can see all available operations, as
 
 ## Download the GraphQL schema
 
-The best thing is that you can actually query all that information in your client application as well! You can use [get-graphql-schema](https://github.com/graphcool/get-graphql-schema) to download the complete GraphQL schema of any GraphQL endpoint.
+The best thing is that you can actually query all that information in your client application as well! You can use [get-graphql-schema](https://github.com/graphcool/get-graphql-schema) to download the complete GraphQL schema of any GraphQL endpoint [as described here](!alias-maiv5eekan).
 
-First, install the tool
-
-```sh
-npm install -g get-graphql-schema
-```
-
-Then download the GraphQL schema to `schema.json`
-
-```sh
-get-graphql-schema ENDPOINT_URL > schema.json
-```
-
-Let's explore a few other useful introspection queries for more specific uses!
+Let's explore more specific introspection queries now!
 
 ## Query the Fields of a Model
 
