@@ -18,7 +18,7 @@ related:
     - shoe5xailo
 ---
 
-# How to Download the GraphQL IDL Schema
+# How to download the GraphQL IDL Schema
 
 The GraphQL schema describes the available types in a GraphQL API. The used syntax is the [IDL schema definition language](!alias-kr84dktnp0).
 
