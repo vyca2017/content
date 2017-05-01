@@ -2,6 +2,7 @@
 alias: cae2ahz0ne
 path: /docs/faq/using-graphql-fragments
 layout: FAQ
+preview: graphql-fragment.png
 shorttitle: Using GraphQL Fragments
 description: GraphQL fragments allow you to construct groups of fields that can be included in queries where you need them.
 tags:

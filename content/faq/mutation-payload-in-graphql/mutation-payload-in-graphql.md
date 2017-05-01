@@ -2,6 +2,7 @@
 alias: gahth9quoo
 path: /docs/faq/the-mutation-payload-in-graphql
 layout: FAQ
+preview: graphql-mutation-payload.png
 description: Mutations can be used to execute different data changes. The mutation payload in GraphQL is the data that is returned as a result of the mutation.
 tags:
   - graphql
