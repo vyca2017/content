@@ -38,5 +38,5 @@ This downloads a GraphQL schema in IDL syntax, which is needed for Relay Modern 
 You can also download the schema in JSON syntax based on a [GraphQL introspection query](!alias-shoe5xailo):
 
 ```sh
-get-graphql-schema --json ENDPOINT_URL > schema.json
+get-graphql-schema ENDPOINT_URL --json > schema.json
 ```
