@@ -15,6 +15,8 @@ master | dev
 
 ## Add a new article
 
+### Frontmatter
+
 There are different types of articles:
 
 * `BLOG` - a blog article located in `content/blog`
@@ -25,6 +27,8 @@ There are different types of articles:
 Different article types need different properties in their frontmatter. For a valid frontmatter, have a look at one of the existing articles.
 
 ### Gotchas
+
+* The description of an article must not be longer than 160 characters.
 
 * Use the alias of the article to be linked to for internal links:
 
