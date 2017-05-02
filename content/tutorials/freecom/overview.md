@@ -19,11 +19,11 @@ related:
 
 <iframe height="315" src="https://www.youtube.com/embed/E3dRRSIyNjc?list=PLn2e1F9Rfr6lF80_-VUDlZir2GIoW32Lo" frameborder="0" allowfullscreen></iframe>
 
-Everybody loves the live chat experience of [Intercom](www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
+Everybody loves the live chat experience of [Intercom](https://www.intercom.com), but for many early-stage startups and projects the pricing can be a problem. To demonstrate how you can build a _production-ready_ alternative to Intercom all by yourself, we're happy to announce a new full-stack tutorial series: **Freecom**  🎉🍾
 
 ## Learning by Building
 
-In the next couple of weeks, we are going to release increments of the final product along with tutorial chapters, teaching you how to build a fully-fledged application from scratch. Freecom will be powered by a Graphcool backend, thus making it a perfect opportunity for you to get started with [GraphQL](www.graphql.org) while discovering all major functionality of the Graphcool platform!
+In the next couple of weeks, we are going to release increments of the final product along with tutorial chapters, teaching you how to build a fully-fledged application from scratch. Freecom will be powered by a Graphcool backend, thus making it a perfect opportunity for you to get started with [GraphQL](https://www.graphql.org) while discovering all major functionality of the Graphcool platform!
 
 The final project not only can be used in production, it also is a great reference project and starting point for your next GraphQL app!
 
@@ -72,7 +72,7 @@ We already provide all needed UI components, so you can focus on using GraphQL w
 
 The chapters are deep dives into the relevant concepts that are needed to implement the required functionality. Our goal is to provide you with the right background information to be able to build the functionality yourself. To make this easier, there will be a _starter_ and a _final_ project for every chapter, so you'll have plenty of code to look at and draw inspiration from for your own projects!
 
-> If you're looking for a comprehensive _step-by-step_ tutorial, definitely check out the [Learn Apollo](www.learnapollo.com) tutorial series.
+> If you're looking for a comprehensive _step-by-step_ tutorial, definitely check out the [Learn Apollo](https://www.learnapollo.com) tutorial series.
 
 Click [here](!alias-xuakjj68lp) for the first chapter of your tutorial series where we analyse requirements and develop the data model for Freecom.
 
