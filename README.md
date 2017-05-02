@@ -28,11 +28,15 @@ Different article types need different properties in their frontmatter. For a va
 
 * Use the alias of the article to be linked to for internal links:
 
-> Look in the [Simple API](!alias-heshoov3ai).
+```
+Look in the [Simple API](!alias-heshoov3ai)
+```
 
 * Don't start links with `www` but with `https://` or `http://`:
 
-> Learn more at [the official GraphQL documentation](https://www.graphql.org).
+```
+Learn more at [the official GraphQL documentation](https://www.graphql.org)
+```
 
 * Aliases are a unique alphanumeric string of length 10, that may contain either lower case letters or digits. **Aliases have to start with a letter**. You can create a new alias with
 
