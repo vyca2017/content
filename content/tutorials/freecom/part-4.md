@@ -36,7 +36,7 @@ While that's a valid scenario for most applications, it doesn't quite fit the us
 
 ## Auth Providers
 
-This dilemma can be solved using Graphcool's [anonymous auth provider](!alias-). In general, Graphcool implements authentication based on so-called [Auth Providers](!alias-wejileech9/#auth-providers). The idea is to have mutation that will create an _authenticated_ node. This mutation also returns a token that has to be sent along (in the `Authorization` header) of any subsequent request to the API. 
+This dilemma can be solved using Graphcool's [anonymous auth provider](!alias-wejileech9). In general, Graphcool implements authentication based on so-called [Auth Providers](!alias-wejileech9/#auth-providers). The idea is to have mutation that will create an _authenticated_ node. This mutation also returns a token that has to be sent along (in the `Authorization` header) of any subsequent request to the API. 
 
 
 ## Enabling Anonymous Authentication
