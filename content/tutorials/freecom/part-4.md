@@ -20,26 +20,26 @@ related:
     - die6mewitu
 ---
 
-## Freecom Tutorial (4/6): Controlling Data Access with Authentication & Permissions
+# Freecom Tutorial (4/6): Controlling Data Access with Authentication & Permissions
 
 In this fourth chapter of our [Freecom tutorial series](!alias-e8a6ajt8ax) you will learn how to use the autentication and permission features of Graphcool to control data access of your users. The [last chapter](!alias-die6mewitu) was about realtime functionality using GraphQL subscriptions. The goal for today is to make sure that customers only have access to their own conversations.
 
 <iframe height="315" src="" frameborder="0" allowfullscreen></iframe>
 
 
-### Authentication in Freecom
+## Authentication in Freecom
 
 In most applications, authentication requires the user to create an account by providing email and password or by using a _social login_ as provided by Google, Facebook or GitHub, etc.
 
 While that's a valid scenario for most applications, it doesn't quite fit the use case of Freecom since users should be able to start chatting with support agents right away and without having to go through a login process. However, we also want to make sure that customers only have access to messages in their own conversations. How can we still authenticate users and specify permissions and access rights?
 
 
-### Auth Providers
+## Auth Providers
 
 This dilemma can be solved using Graphcool's [anonymous auth provider](!alias-). In general, Graphcool implements authentication based on so-called [Auth Providers](!alias-wejileech9/#auth-providers). The idea is to have mutation that will create an _authenticated_ node. This mutation also returns a token that has to be sent along (in the `Authorization` header) of any subsequent request to the API. 
 
 
-### Enabling Anonymous Authentication
+## Enabling Anonymous Authentication
 
 To use the [anonymous auth provider]() in our app, we first need to enable it in the **Integrations** section in the [Graphcool console](https://console.graph.cool):
 
@@ -58,12 +58,12 @@ authenticateAnonymousCustomer(secret: String!): token
 This mutation can be used to create a new `Customer` by providing a _secret_. The secret should be unique and not publicly available, since it can be used to generate a new session for the customer it belongs to.
 
 
-### Authentication with Apollo Client
+## Authentication with Apollo Client
 
 As mentioned above, the `authenticateAnonymousCustomer` mutation returns an authentication token that we have to use on subsequent requests. This token will identify and authenticate the corresponding customer on the server-side.
 
 
-#### Creating the Mutation
+### Creating the Mutation
 
 To get access to the authentication token, we first need to send the mutation whenever we want to create a new `Customer` in the backend. We'll therefore replace the mutation we previously used to create new customers with the following one:
 
@@ -101,7 +101,7 @@ localStorage.setItem(FREECOM_CUSTOMER_ID_KEY, customerId)
 
 Whenever this code is executed, a new `Customer` will be created in the database and their corresponding authentication token is stored in local storage.
 
-#### Configuring Apollo Client
+### Configuring Apollo Client
 
 We need put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we don't direct access to the requests' headers. However, we can configure our instance of the `ApolloClient` such that it adds the token on every request it sends. 
 
@@ -121,7 +121,7 @@ networkInterface.use([{
 }])
 ```
 
-### Controlling Data Access with Permission Queries
+## Controlling Data Access with Permission Queries
 
 We now have our frontend setup to authenticate new customers. However, from a functionality perspective not much has changed since we also need to configure the access control and permissions in the backend.
 
@@ -132,7 +132,7 @@ To recap, our requirement is that only the customer that is part of a specific `
 - Modifying and deleting existing messages in that conversation
 
 
-#### Permissions in Graphcool
+### Permissions in Graphcool
 
 Graphcool follows a [_whitelist_](!alias-iegoo0heez/#whitelist-permissions-for-modular-authorization) approach when it comes to data access. That means that by default, no operation is permitted. The only way to read or update data is by explicitly allowing (i.e. _whitelisting_) the respective operation.
 
@@ -152,7 +152,7 @@ If we only specify the first, option a user that sends a valid authentication to
 _Permission queries_ on the other hand are more sophisticated and allow to express data access rules by leveraging the power of GraphQL queries.
 
 
-#### Writing a Permission Query
+### Writing a Permission Query
  
 To implement our requirements from above, we have to take the second approach and actually write a permission query to specify that customers can only access messages in their own conversations. 
 
