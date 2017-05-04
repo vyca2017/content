@@ -43,11 +43,11 @@ This dilemma can be solved using Graphcool's [anonymous auth provider](!alias-we
 
 To use the [anonymous auth provider]() in our app, we first need to enable it in the **Integrations** section in the [Graphcool console](https://console.graph.cool):
 
-![](./img/fc4-anon-auth-provider-1.png)
+![](./img/fc4-anon-auth-provider-1.png?width=600)
 
 In the popup, we have to specify the _type_ that we'd like to be able to authenticate - in our case that's the `Customer`:
 
-![](./img/fc4-anon-auth-provider-2.png)
+![](./img/fc4-anon-auth-provider-2.png?width=100)
 
 Once the integration is enabled, there is a new mutation available that's looks as follows:
 
