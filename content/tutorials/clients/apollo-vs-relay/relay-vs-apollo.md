@@ -60,7 +60,7 @@ In short, Relay lends itself well for large-scale applications that have complex
 
 ### An example to follow along
 
-In the following, we are going to compare Apollo and Relay by practical examples and show how each of them can be used to deal with a certain use case. We are going to use the data model for the Pokedex application that is being used on [Learn Relay](www.learnrelay.org) and [Learn Apollo](www.learnapollo.com).
+In the following, we are going to compare Apollo and Relay by practical examples and show how each of them can be used to deal with a certain use case. We are going to use the data model for the Pokedex application that is being used on [Learn Relay](https://www.learnrelay.org) and [Learn Apollo](https://www.learnapollo.com).
 
 This is what the data model looks like:
 
@@ -145,7 +145,7 @@ However, they actually both follow a similar approach when being used in a React
 
 ## Queries
 
-A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, the major way of getting access to data inside of a React component is by means of a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content). 
+A major responsibility of any GraphQL client is the ability to fetch data and make it available to the view layer of the app. In Relay, the major way of getting access to data inside of a React component is by means of a higher-order component called [`Relay.Container`](https://facebook.github.io/relay/docs/guides-containers.html#content).
 
 With Apollo, it is possible to use a similar approach with the [`graphql`](http://dev.apollodata.com/react/api.html#graphql) higher-order component. With Apollo, another way to obtain data from the server would be to directly send queries using the [`ApolloClient`](http://dev.apollodata.com/core/apollo-client-api.html#apollo-client) and process the returned data with a promise. In the following, we are going to dive into what data fetching with Relay and with Apollo looks like.
 

@@ -441,7 +441,7 @@ ChangeTodoStatusMutation.commit(
 )
 ```
 
-### 3. Replace** `Relay.RootContainer` with `QueryRenderer`
+### 3. Replace `Relay.RootContainer` with `QueryRenderer`
 
 After we've converted all components and mutations, the next step is to replace all occurrences of `Relay.RootContainer` or `Relay.Renderer` with the new `QueryRenderer`. In our example app, we're only using the `Relay.RootContainer` at the moment:
 
