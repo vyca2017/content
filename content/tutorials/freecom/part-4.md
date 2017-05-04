@@ -170,10 +170,10 @@ Next, we are switching to the **Define Rules** tab of the popup to specify the p
 
 There are few things we need to know about permission queries before we start writing one:
 
-- A permission query always returns `true` or `false`
-- The permission query will be executed right before the operation is performed  
-- Only if it returns `true`, the operation will actually be performed
-- The `$node_id` that's passed in identifies the node on which the operation is to be performed, in our case that'll be the `Message` to be read
+- A permission query always returns `true` or `false`.
+- The permission query will be executed right before the operation is performed in the backend.
+- Only if it returns `true`, the operation will actually be performed.
+- The `$node_id` that's passed in identifies the node on which the operation is to be performed, in our case that'll be the `Message` to be read.
 - If we require authentication for an operation (by ticking the **Authentication required** checkbox), we also have access to the ID of the user who wants to perform the operation as an argument inside the query. This allows to specify the permission with respect to the currently authenticated user!
 
 The last point particularly is important, since we indeed want to express a permission requirements where the current user is involved. We thus first have to check the **Authentication required** checkbox before starting to write the query.
