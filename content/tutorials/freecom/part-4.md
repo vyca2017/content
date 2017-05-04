@@ -67,7 +67,7 @@ As mentioned above, the `authenticateAnonymousCustomer` mutation returns an auth
 
 To get access to the authentication token, we first need to send the mutation whenever we want to create a new `Customer` in the backend. We'll therefore replace the mutation we previously used to create new customers with the following one:
 
-```
+```js
 const createAuthenticatedCustomer = gql`
   mutation authenticateAnonymousCustomer($secret: String!) {
     authenticateAnonymousCustomer(secret: $secret) {
