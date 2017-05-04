@@ -11,12 +11,9 @@ tags:
   - authorization
 related:
   more:
-    - aip7oojeiv
-    - ui0eizishe
+    - wejileech9
+    - iegoo0heez
   further:
-    - e8a6ajt8ax
-    - xuakjj68lp
-    - oe8ahyo2ei
     - die6mewitu
 ---
 
@@ -103,7 +100,7 @@ Whenever this code is executed, a new `Customer` will be created in the database
 
 ### Configuring Apollo Client
 
-We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. However, we can configure our instance of the `ApolloClient` such that it adds the token on every request it sends. 
+We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request. 
 
 Apollo Client uses the concept of [_middleware_](http://dev.apollodata.com/core/network.html#networkInterfaceMiddleware) for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
 
@@ -125,7 +122,7 @@ networkInterface.use([{
 
 We now have our frontend setup to authenticate new customers. However, from a functionality perspective nothing has actually changed, the app will continue working in the same way that it did before. That's why we also need to configure the access control and permissions in the backend to actually restrict data access and make sure the authentication token actually has a purpose.
 
-To recap, our requirement is that only the customer that is part of a specific `Conversation` should have acccess to the messages that are associated with it, that includes:
+To recap, our requirement is that only the customer that is part of a specific `Conversation` should have access to the messages that are associated with it. This includes:
 
 - Reading messages from that conversation
 - Creating new messages in that conversation
@@ -162,7 +159,7 @@ Since we want to restrict access on the `Message` type, we are going to adjust t
 
 Let's adjust the permission for the _Read_ operation, simply click the corresponding rwo to bring up the configuration popup.
 
-In the popup, we first have to specify which _fields_ this permission should apply to. So, at this point we could potentially specify that _everyone_ should still be able e.g. to read the `id` of the messages, but only a specific audience can read the `text` and other fields. However, we actually want to restrict the access on the whole type, so we're going to select all the fields:
+In the popup, we first have to specify which _fields_ this permission should apply to. At this point we could potentially specify that _everyone_ should still be able to read the `id` of the messages, but only a specific audience can read the `text` and other fields. However, we actually want to restrict the access on the whole type, so we're going to select all the fields:
 
 ![](./img/fc4-select-fields.png?width=500)
 
@@ -244,7 +241,7 @@ The permissions queries for the remaining operations on the `Message` type (_Cre
 
 That's it for today's Freecom chapter! We learned how to express precise data access permissions for our users. For the Freecom app, we restricted the access on the `Message` type only to customers who are directly involved in the conversation where this message appears. 
 
-The authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent request to identify the user on the server-side and enabling to check the access permissions of the user performing the request. 
+The authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent requests. This token is then used to identify the user on the server-side and enabling to check the access permissions of the user performing the request. 
 
 In the next chapter, we'll enable support agents to respond to a customer by integrating Slack using _mutation callbacks_ and _serverless functions_.
 

@@ -11,9 +11,8 @@ related:
     - aip7oojeiv
     - ui0eizishe
   further:
-    - e8a6ajt8ax
-    - xuakjj68lp
     - oe8ahyo2ei
+    - pei9aid6ei
 ---
 
 # Freecom Tutorial: Realtime Updates with GraphQL Subscriptions (3/6)

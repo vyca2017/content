@@ -15,7 +15,6 @@ related:
   further:
     - e8a6ajt8ax
     - oe8ahyo2ei
-    - die6mewitu
 ---
 
 # Freecom Tutorial: Designing the Schema & GraphQL Server (1/6)
