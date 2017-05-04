@@ -36,7 +36,7 @@ While that's a valid scenario for most applications, it doesn't quite fit the us
 
 ## Auth Providers
 
-This dilemma can be solved using Graphcool's [anonymous auth provider](!alias-wejileech9). In general, Graphcool implements authentication based on so-called [Auth Providers](!alias-wejileech9/#auth-providers). The idea is to have mutation that will create an _authenticated_ node. This mutation also returns a token that has to be sent along (in the `Authorization` header) of any subsequent request to the API. 
+This dilemma can be solved using Graphcool's [Anonymous Auth Provider](!alias-wejileech9). In general, Graphcool implements authentication functionality based on so-called [Auth Providers](!alias-wejileech9/#auth-providers). These Auth Providers will generate tokens that are used to authenticate requests against the API and check the data access permissions of the user who sent the request. If the token is associated with a user that doesn't have the required permissions, an error will be returned.
 
 
 ## Enabling Anonymous Authentication
@@ -60,7 +60,7 @@ This mutation can be used to create a new `Customer` by providing a _secret_. Th
 
 ## Authentication with Apollo Client
 
-As mentioned above, the `authenticateAnonymousCustomer` mutation returns an authentication token that we have to use on subsequent requests. This token will identify and authenticate the corresponding customer on the server-side.
+As mentioned above, the `authenticateAnonymousCustomer` mutation returns an authentication token that we have to put into the `Authorization` header field on subsequent API requests. This token will identify and authenticate the corresponding customer on the server-side.
 
 
 ### Creating the Mutation
@@ -103,9 +103,9 @@ Whenever this code is executed, a new `Customer` will be created in the database
 
 ### Configuring Apollo Client
 
-We need put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we don't direct access to the requests' headers. However, we can configure our instance of the `ApolloClient` such that it adds the token on every request it sends. 
+We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. However, we can configure our instance of the `ApolloClient` such that it adds the token on every request it sends. 
 
-Apollo Client uses the concept of _middleware_ for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
+Apollo Client uses the concept of [_middleware_](http://dev.apollodata.com/core/network.html#networkInterfaceMiddleware) for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
 
 ```js
 networkInterface.use([{
@@ -123,7 +123,7 @@ networkInterface.use([{
 
 ## Controlling Data Access with Permission Queries
 
-We now have our frontend setup to authenticate new customers. However, from a functionality perspective not much has changed since we also need to configure the access control and permissions in the backend.
+We now have our frontend setup to authenticate new customers. However, from a functionality perspective nothing has actually changed, the app will continue working in the same way that it did before. That's why we also need to configure the access control and permissions in the backend to actually restrict data access and make sure the authentication token actually has a purpose.
 
 To recap, our requirement is that only the customer that is part of a specific `Conversation` should have acccess to the messages that are associated with it, that includes:
 
@@ -136,14 +136,14 @@ To recap, our requirement is that only the customer that is part of a specific `
 
 Graphcool follows a [_whitelist_](!alias-iegoo0heez/#whitelist-permissions-for-modular-authorization) approach when it comes to data access. That means that by default, no operation is permitted. The only way to read or update data is by explicitly allowing (i.e. _whitelisting_) the respective operation.
 
-However, note that when you're creating new types for your schema, a set of permissions are generated for you allowing _all operations_ - this is why we were able to interact with the API in the previous chapter even though we've never actually created any permissions. You can verify this by selecting the **Permissions**-tab in the [Graphcool console](https://console.graph.cool).
+However, note that when you're creating new types for your schema, a set of permissions is generated for you allowing _all operations_ - this is why we were able to interact with the API in the previous chapter even though we've never actually created any permissions. You can verify this by selecting the **Permissions**-tab in the [Graphcool console](https://console.graph.cool).
 
 ![](./img/fc4-permission-overview.png)
 
 When restricting the access for specific operations on a type, we have two options:
 
-1. General requirement that the user performing the operation needs to be _authenticated_
-2. Fine-grained control to declare _specific requirements_ which the user has to meet in order to be allowed to perform the operation, using a so-called [permission query](!alias-iox3aqu0ee)
+1. Add the general requirement that the user performing the operation needs to be _authenticated_
+2. Exercise fine-grained control and declare _specific requirements_ which the user has to meet in order to be allowed to perform the operation, using a so-called [permission query](!alias-iox3aqu0ee)
 
 ![](./img/fc4-permissions-popup.png)
 
@@ -162,7 +162,7 @@ Since we want to restrict access on the `Message` type, we are going to adjust t
 
 Let's adjust the permission for the _Read_ operation, simply click the corresponding rwo to bring up the configuration popup.
 
-In the popup, we first have to specify which _fields_ this permission should apply to. So, at this point we could potentially specify that _everyone_ should still be able e.g. to see the `id` of the messages, but only a specific audience can read the `text` and other fields. However, we actually want to restrict the access on the whole type, so we're going to select all the fields:
+In the popup, we first have to specify which _fields_ this permission should apply to. So, at this point we could potentially specify that _everyone_ should still be able e.g. to read the `id` of the messages, but only a specific audience can read the `text` and other fields. However, we actually want to restrict the access on the whole type, so we're going to select all the fields:
 
 ![](./img/fc4-select-fields.png)
 
@@ -174,7 +174,7 @@ There are few things we need to know about permission queries before we start wr
 - The permission query will be executed right before the operation is performed  
 - Only if it returns `true`, the operation will actually be performed
 - The `$node_id` that's passed in identifies the node on which the operation is to be performed, in our case that'll be the `Message` to be read
-- If we also require the user to be authenticated, we also have access to the ID of the user who wants to perform the operation as an argument in the query. This allows to specify the permission with respect to the currently authenticated user!
+- If we require authentication for an operation (by ticking the **Authentication required** checkbox), we also have access to the ID of the user who wants to perform the operation as an argument inside the query. This allows to specify the permission with respect to the currently authenticated user!
 
 The last point particularly is important, since we indeed want to express a permission requirements where the current user is involved. We thus first have to check the **Authentication required** checkbox before starting to write the query.
 
@@ -212,7 +212,7 @@ Let's try to understand exactly what's going on by considering an example. Let's
 }
 ```
 
-Now the user `Violetspear-Puma` (who is indeed the sender of the message) tries to read it with the following query:
+Now the user `Violetspear-Puma`, who is indeed the sender of the message, tries to read it with the following query (assuming a valid authentication token is attached to the request header):
 
 ```graphql
 {
