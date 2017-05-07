@@ -1,6 +1,6 @@
 ---
 alias: uhieg2shio
-path: /docs/reference/platform/system-artifacts
+path: /docs/reference/schema/system-artifacts
 layout: REFERENCE
 description: In order to make the platform as seamless and integrated as possible, we introduced some predefined artifacts in each project.
 tags:

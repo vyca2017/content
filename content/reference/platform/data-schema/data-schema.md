@@ -1,6 +1,6 @@
 ---
 alias: ahwoh2fohj
-path: /docs/reference/platform/data-schema
+path: /docs/reference/schema
 layout: REFERENCE
 description: The data schema of a project is defined with models, fields and relations that will define the GraphQL schema of your GraphQL backend.
 tags:
@@ -8,17 +8,11 @@ tags:
   - data-schema
 related:
   further:
-    - ij2choozae
-    - teizeit5se
-    - goh5uthoc1
-    - uhieg2shio
-    - oe3raifamo
+    - kie1quohli
   more:
     - ga2ahnee2a
-    - aing2chaih
     - ahsoow1ool
     - he6jaicha8
-    - uu2xighaef
 ---
 
 # Data Schema

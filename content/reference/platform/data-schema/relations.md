@@ -1,6 +1,6 @@
 ---
 alias: goh5uthoc1
-path: /docs/reference/platform/relations
+path: /docs/reference/schema/relations
 layout: REFERENCE
 description: A relation defines the interaction between two models. Related models are reflected in both the data model as well as the GraphQL schema.
 tags:

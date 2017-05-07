@@ -1,6 +1,6 @@
 ---
 alias: oe3raifamo
-path: /docs/reference/platform/naming-conventions
+path: /docs/reference/schema/naming-conventions
 layout: REFERENCE
 description: The different objects you encounter in a Graphcool project like models or relations follow separate naming conventions to help you distinguish them.
 tags:
@@ -39,7 +39,7 @@ Project names can contain **alphanumeric characters and spaces** and need to sta
 
 The model name determines the name of derived queries and mutations as well as the argument names for nested mutations. Model names can only contain **alphanumeric characters** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
 
-*It's recommended to choose model names in the singular form.*  
+*It's recommended to choose model names in the singular form.*
 *Model names are unique on a project level.*
 
 #### Examples
@@ -53,7 +53,7 @@ The name of a scalar field is used in queries and in query arguments of mutation
 
 The name of relation fields follows the same conventions and determines the argument names for relation mutations.
 
-*It's recommended to only choose plural names for list fields*.  
+*It's recommended to only choose plural names for list fields*.
 *Field names are unique on a model level.*
 
 #### Examples

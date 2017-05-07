@@ -1,6 +1,6 @@
 ---
 alias: ij2choozae
-path: /docs/reference/platform/models
+path: /docs/reference/schema/models
 layout: REFERENCE
 description: Models define the structure of your data and consist of fields. They can be compared with table schemas in SQL databases.
 tags:

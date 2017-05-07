@@ -1,6 +1,6 @@
 ---
 alias: teizeit5se
-path: /docs/reference/platform/fields
+path: /docs/reference/schema/fields
 layout: REFERENCE
 description: Fields are the building blocks of a model, defining a node's shape. A field has a name and is either scalar or belongs to a relation.
 tags:

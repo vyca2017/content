@@ -1,3 +1,16 @@
+---
+alias: aeph6oyeez
+path: /docs/reference/schema/schema-files
+layout: REFERENCE
+description: The GraphQL schema of a project is managed using schema files in IDL syntax.
+tags:
+  - platform
+  - schema
+related:
+  further:
+  more:
+---
+
 # Schema Files
 
 The GraphQL schema of a project is managed using **schema files in IDL syntax**.
