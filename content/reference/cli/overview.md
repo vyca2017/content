@@ -29,9 +29,10 @@ graphcool auth
 graphcool init
 ```
 
-This creates a [Graphcool project configuration file]().
+This creates a new Graphcool project and a corresponding [project configuration file](!alias-ow2yei7mew).
 
 ## Next Steps
 
-* Explore [common workflows](!alias-xaiveilie5) tackled with the CLI
+* Explore how to [create or clone projects](!alias-aetoh3vad6)
+* Find more information about [project configuration files](!alias-ow2yei7mew)
 * Learn more about specific commands in [the full command reference](!alias-oogie5uawi)
