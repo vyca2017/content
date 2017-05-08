@@ -39,7 +39,7 @@ type User {
 }
 ```
 
-The project configuration contains the [GraphQL schema](!alias-) of the project as well as additional metadata such as the **project endpoint** and the **version number** of the schema.
+The project configuration contains the [GraphQL schema](!alias-ahwoh2fohj) of the project as well as additional metadata such as the **project endpoint** and the **version number** of the schema.
 
 Every change to the project schema done by using the Console or the CLI will increment the schema version.
 
@@ -54,5 +54,5 @@ More information can be found in the command reference.
 
 ### Push Local Changes
 
-You can push changes made to your local project configuration file using `graphcool push`. Typically, those are changes to the [schema file](!alias-aeph6oyeez), resulting in [schema migrations](!alias-).
+You can push changes made to your local project configuration file using `graphcool push`. Typically, those are changes to the [schema file](!alias-aeph6oyeez), resulting in [schema migrations]().
 More information can be found in the command reference.

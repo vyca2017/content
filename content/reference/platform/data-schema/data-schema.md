@@ -45,7 +45,7 @@ The schema file follows the [IDL syntax](!alias-kr84dktnp0) and consists of diff
 
 * [Types](!alias-ij2choozae) consist of multiple [fields](!alias-teizeit5se) and are used to group similar entities together.
 * [Relations](!alias-goh5uthoc1) describe interactions between types.
-* Special [Directives](!alias-) that cover different use cases are available.
+* Special [Directives](!alias-aeph6oyeez) that cover different use cases are available.
 
 Additionally, a project contains prepopulated types and fields, referred to as [system artifacts](!alias-uhieg2shio). Different [naming conventions](!alias-oe3raifamo) define valid names.
 

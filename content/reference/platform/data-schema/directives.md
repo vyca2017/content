@@ -21,7 +21,7 @@ Static directives describe additional information about types or fields in the G
 
 ### Unique Scalar Fields
 
-The *static directive `@isUnique`* denotes [a unique, scalar field](!alias-).
+The *static directive `@isUnique`* denotes [a unique, scalar field](!alias-teizeit5se#unique).
 
 ```graphql
 # the `Post` type has a unique `slug` field
@@ -32,7 +32,7 @@ type Post {
 
 ### Relation Fields
 
-The *static directive `@relation(name: String!)`* denotes a [relation field](!alias-). Most of the time, the same `@relation` directive appears twice in a schema file, to denote both sides of the relation
+The *static directive `@relation(name: String!)`* denotes a [relation field](!alias-goh5uthoc1). Most of the time, the same `@relation` directive appears twice in a schema file, to denote both sides of the relation
 
 ```graphql
 # the types `Post` and `User` are connected via the `PostAuthor` relation
@@ -46,7 +46,7 @@ type User {
 ```
 ### Default Value for Scalar Fields
 
-The *static directive `@defaultValue(value: String!)`* denotes [the default value](!alias-) of a scalar field. Note that the `value` argument is of type String for all scalar fields
+The *static directive `@defaultValue(value: String!)`* denotes [the default value](!alias-teizeit5se#default-value) of a scalar field. Note that the `value` argument is of type String for all scalar fields
 
 ```graphql
 # the `title` and `published` fields have default values `New Post` and `false`

@@ -46,7 +46,7 @@ Both sides of a relation can have two different multiplicities, singular and plu
 
 ## Relations in the Data Schema
 
-A relation is defined in the Data Schema using the [@relation directive](!alias-):
+A relation is defined in the Data Schema using the [@relation directive](!alias-aeph6oyeez#relation-fields):
 
 ```graphql
 type User {
