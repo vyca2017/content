@@ -2,7 +2,7 @@
 alias: oe3raifamo
 path: /docs/reference/schema/naming-conventions
 layout: REFERENCE
-description: The different objects you encounter in a Graphcool project like models or relations follow separate naming conventions to help you distinguish them.
+description: The different objects you encounter in a Graphcool project like types or relations follow separate naming conventions to help you distinguish them.
 tags:
   - platform
   - queries
@@ -21,7 +21,7 @@ related:
 
 # Naming Conventions
 
-Different objects you encounter in a Graphcool project like models or relations follow separate naming conventions to help you distinguish them.
+Different objects you encounter in a Graphcool project like types or relations follow separate naming conventions to help you distinguish them.
 
 ## Projects
 
@@ -35,12 +35,12 @@ Project names can contain **alphanumeric characters and spaces** and need to sta
 * `MyProject2`
 * `MY PROJECT`
 
-## Models
+## Types
 
-The model name determines the name of derived queries and mutations as well as the argument names for nested mutations. Model names can only contain **alphanumeric characters** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
+The type name determines the name of derived queries and mutations as well as the argument names for nested mutations. Type names can only contain **alphanumeric characters** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
 
-*It's recommended to choose model names in the singular form.*
-*Model names are unique on a project level.*
+*It's recommended to choose type names in the singular form.*
+*Type names are unique on a project level.*
 
 #### Examples
 
@@ -54,7 +54,7 @@ The name of a scalar field is used in queries and in query arguments of mutation
 The name of relation fields follows the same conventions and determines the argument names for relation mutations.
 
 *It's recommended to only choose plural names for list fields*.
-*Field names are unique on a model level.*
+*Field names are unique on a type level.*
 
 #### Examples
 
@@ -73,12 +73,13 @@ The relation name determines the name of mutations to connect or disconnect node
 * `UserOnPost`, `UserPosts` or `PostAuthor`, with field names `user` and `posts`
 * `EmployeeAppointments`, `EmployeeOnAppointment` or `AppointmentEmployee`, with field names `employee` and `appointments`
 
-## Enum Values
+## Enums
 
 Enum values can only contain **alphanumeric characters and underscores** and need to start with an uppercase letter.
 The name of an enum value can be used in query filters and mutations. They can contain **maximally 191 characters**.
 
-*Enum names are unique on a field level.*
+*Enum names are unique on a project level.*
+*Enum value names are unique on an enum level.*
 
 #### Examples
 

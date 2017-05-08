@@ -15,25 +15,42 @@ related:
     - he6jaicha8
 ---
 
-# Data Schema
+# Schema
 
-Every project has its own *data schema*. You can organize your data in [models](#models) and define [relations](#relations) between them.
+The GraphQL schema of a project can be described in [IDL syntax](!alias-kr84dktnp0) and is usally managed using [schema files](!alias-aeph6oyeez).
 
-> For example, if you are running a blog, you need to organize `User`s and `Post`s. A user should be able to be associated with all the posts that he writes. However, a post should only be associated with its single author.
-You can transfer this situation by using the `User` and `Post` models and define a relation between them.
+GraphQL schemas are typically saved as `.graphql` files. This is an example schema file, `schema.graphql`:
 
-## Models
+```graphql
+type Tweet {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  owner: User! @relation(name: "UserOnTweet")
+  text: String!
+  updatedAt: DateTime!
+}
 
-[Models](!alias-ij2choozae) define the structure for a certain type of your data and consist of different fields.
+type User {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+  name: String!
+  tweets: [Tweet!]! @relation(name: "UserOnTweet")
+}
+```
 
-## Fields
+The schema file follows the [IDL syntax](!alias-kr84dktnp0) and consists of different elements.
 
-[Fields](!alias-teizeit5se) are used to define a model and can have several properties like a type and a default value.
+## Elements in a GraphQL Schema
 
-## Relations
+* [Types](!alias-ij2choozae) consist of multiple [fields](!alias-teizeit5se) and are used to group similar entities together.
+* [Relations](!alias-goh5uthoc1) describe interactions between types.
+* Special [Directives](!alias-) that cover different use cases are available.
 
-[Relations](!alias-goh5uthoc1) can be used to define the relationship between two models.
+Additionally, a project contains prepopulated types and fields, referred to as [system artifacts](!alias-uhieg2shio). Different [naming conventions](!alias-oe3raifamo) define valid names.
 
-## System Artifacts
+## Obtaining a schema file
 
-In your Graphcool projects you will encounter certain models and fields that are automatically created. They are referred to as [system artifacts](!alias-uhieg2shio) and cannot be removed from your project.
+You can obtain the schema file for a Graphcool project in the Schema view of the Console or by using the [get-graphql-schema tool](!alias-maiv5eekan).
+
+To create a new schema file from scratch, simply use your favorite text editor.

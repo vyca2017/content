@@ -1,6 +1,6 @@
 ---
 alias: aeph6oyeez
-path: /docs/reference/schema/schema-files
+path: /docs/reference/schema/directives
 layout: REFERENCE
 description: The GraphQL schema of a project is managed using schema files in IDL syntax.
 tags:
@@ -11,33 +11,9 @@ related:
   more:
 ---
 
-# Schema Files
+# GraphQL Directives
 
-The GraphQL schema of a project is managed using **schema files in IDL syntax**.
-
-GraphQL schemas are typically saved as `.graphql` files and contain information about the types and enums in a Graphcool project.
-
-This is an example schema file, `schema.graphql`:
-
-```graphql
-type Tweet {
-  createdAt: DateTime!
-  id: ID! @isUnique
-  owner: User! @relation(name: "UserOnTweet")
-  text: String!
-  updatedAt: DateTime!
-}
-
-type User {
-  createdAt: DateTime!
-  id: ID! @isUnique
-  updatedAt: DateTime!
-  name: String!
-  tweets: [Tweet!]! @relation(name: "UserOnTweet")
-}
-```
-
-The schema file follows the [IDL syntax](!alias-kr84dktnp0) and can contain additional **static and temporary GraphQL directives**.
+A schema file follows the [IDL syntax](!alias-kr84dktnp0) and can contain additional **static and temporary GraphQL directives**.
 
 ## Static Directives
 
@@ -45,7 +21,7 @@ Static directives describe additional information about types or fields in the G
 
 ### Unique Scalar Fields
 
-The *static directive `@isUnique`* denotes [a unique, scalar field]().
+The *static directive `@isUnique`* denotes [a unique, scalar field](!alias-).
 
 ```graphql
 # the `Post` type has a unique `slug` field
@@ -56,7 +32,7 @@ type Post {
 
 ### Relation Fields
 
-The *static directive `@relation(name: String!)`* denotes a [relation field](). Most of the time, the same `@relation` directive appears twice in a schema file, to denote both sides of the relation
+The *static directive `@relation(name: String!)`* denotes a [relation field](!alias-). Most of the time, the same `@relation` directive appears twice in a schema file, to denote both sides of the relation
 
 ```graphql
 # the types `Post` and `User` are connected via the `PostAuthor` relation
@@ -70,7 +46,7 @@ type User {
 ```
 ### Default Value for Scalar Fields
 
-The *static directive `@defaultValue(value: String!)`* denotes [the default value]() of a scalar field. Note that the `value` argument is of type String for all scalar fields
+The *static directive `@defaultValue(value: String!)`* denotes [the default value](!alias-) of a scalar field. Note that the `value` argument is of type String for all scalar fields
 
 ```graphql
 # the `title` and `published` fields have default values `New Post` and `false`
@@ -98,9 +74,3 @@ type Story @rename(oldName: "Post") {
 ### Migrating the Value of a Scalar Field
 
 The *temporary directive `@migrationValue(value: String!)`* is used to migrate the value of a scalar field. When changing an optional field to a requried field, it's necessary to also use this directive.
-
-## Obtaining a schema file
-
-You can obtain the schema file for a Graphcool in the Schema view of the Console or by using the [get-graphql-schema tool](!alias-maiv5eekan).
-
-To create a new schema file from scratch, simply use your favorite text editor.

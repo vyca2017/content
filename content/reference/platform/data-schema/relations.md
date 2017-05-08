@@ -21,13 +21,11 @@ related:
 
 # Relations
 
-A *relation* defines the interaction between two [models](!alias-ij2choozae). Related models are reflected in both the data model as well as the GraphQL schema.
+A *relation* defines the interaction between two [types](!alias-ij2choozae). Two types in a relation are connected via a [relation field](!alias-teizeit5se) on each type.
 
-If two models are related to each other via a relation, each of them gets a new [field](!alias-teizeit5se). The names of the relation and fields will define how [generated queries](!alias-nia9nushae) and [mutations](!alias-ol0yuoz6go) look like.
+> Note: A type can be related to itself.
 
-Note: A model can be related to itself.
-
-Note: Relations are symmetrical in such a way that it makes no difference which sides of the relation you assign to the two related models.
+## Relation parameters
 
 ## Multiplicity
 
@@ -46,8 +44,25 @@ Both sides of a relation can have two different multiplicities, singular and plu
 
 > If a book can have multiple authors, `BookAuthors` could be a many-to-many relation between the `Book` and `User` model, because one author can write many books, while one book also can be written by multiple authors.
 
-## Connection & Edges
+## Relations in the Data Schema
 
-A relation can only exist between two [models](!alias-ij2choozae). Two nodes that are related to each other are connected by an *edge*. All edges belonging to the same relation form a *connection*.
+A relation is defined in the Data Schema using the [@relation directive](!alias-):
 
-Note: Two nodes can only be connected once for each relation between the according two models.
+```graphql
+type User {
+  id: ID!
+  stories: [Story!]! @relation(name: "UserOnStory")
+}
+
+type Story {
+  id: ID!
+  text: String!
+  author: User! @relation(name: "UserOnStory")
+}
+```
+
+Here we are defining a *one-to-many* relation between the `User` and `Story` types. The relation fields are `stores: [Story!]!` and `author: User!`. Note how `[Story!]!` defines multiple stories and `User!` a single user.
+
+## Generated Operations Based On Relations
+
+The names of the relation and fields will define how [generated queries](!alias-nia9nushae) and [mutations](!alias-ol0yuoz6go) look like.

@@ -22,7 +22,7 @@ related:
 
 # Fields
 
-*Fields* are the building blocks of a [model](!alias-ij2choozae) giving a node its shape. Every field is referenced by its name and has a type which is either a [scalar type](#scalar-types) or a [relation](!alias-goh5uthoc1).
+*Fields* are the building blocks of a [types](!alias-ij2choozae) giving a node its shape. Every field is referenced by its name and is either [scalar](#scalar-types) or a [relation field](!alias-goh5uthoc1).
 
 > The `Post` model might have a `title` and a `text` field both of type String and an `id` field of type ID.
 
@@ -66,19 +66,21 @@ In queries or mutations, DateTime fields have to be specified in [ISO 8601 forma
 
 ### Enum
 
+Enums are defined on a project scope.
+
 Like a Boolean an Enum can have one of a predefined set of values. The difference is that you can define the possible values. For example you could specify how an article should be formatted by creating an Enum with the possible values `COMPACT`, `WIDE` and `COVER`.
 
 Note: Enum values can at most be 191 characters long.
 
-In queries or mutations, Enum fields have to be specified without any enclosing characters. You can only use values that you defined for the field: `enum: A`, `enum: B`.
+In queries or mutations, Enum fields have to be specified without any enclosing characters. You can only use values that you defined for the enum: `enum: COMPACT`, `enum: WIDE`.
 
 ### JSON
 
-Sometimes you need to store arbitrary JSON values like unstructured meta information. The JSON type makes sure that it is actually valid JSON and returns the value as a parsed JSON object/array instead of a string.
+Sometimes you need to store arbitrary JSON values for loosely structured data. The JSON type makes sure that it is actually valid JSON and returns the value as a parsed JSON object/array instead of a string.
 
 Note: JSON values are currently limited to 64KB in size.
 
-In queries or mutations, JSON fields have to be specified with enclosing double quotes. Special characters have to be escaped: `json: "[\"this\",\"is\",\"json\"]"`.
+In queries or mutations, JSON fields have to be specified with enclosing double quotes. Special characters have to be escaped: `json: "{\"int\": 1, \"string\": \"value\"}"`.
 
 <!--
 ### GeoPoint
@@ -124,6 +126,6 @@ Please note that only the first 191 characters in a String field are considered 
 
 You can set a default value for scalar fields. The value will be taken for new nodes when no value was supplied during creation.
 
-## Fields in the data schema
+## Generated Operations Based On Fields
 
-Fields indirectly define your [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying  multiple nodes in the [Simple API](!alias-pa2aothaec) or the [Relay API](!alias-uu4ohnaih7).
+Fields indirectly define your [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying multiple nodes in the [API](!alias-pa2aothaec).
