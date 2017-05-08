@@ -23,9 +23,9 @@ related:
 
 # Querying one node in the Relay API
 
-For each [model](!alias-ij2choozae) in your project, the Relay API provides an automatically generated query to fetch one specific node of that model. To specify the node, all you need to provide is its `id` or another unique field.
+For each [type](!alias-ij2choozae) in your project, the Relay API provides an automatically generated query to fetch one specific node of that type. To specify the node, all you need to provide is its `id` or another unique field.
 
-For example, for the model called `Post` a top-level query `Post` will be generated.
+For example, for the type called `Post` a top-level query `Post` will be generated.
 
 ## Specifying the node by id
 
@@ -63,7 +63,7 @@ query {
 
 ## Specifying the node by another unique field
 
-You can also supply any [unique field](!alias-teizeit5se#unique) as an argument to the query to identify a node. For example, if you already declared the `slug` field of the `Post` model to be unique, you could select a post by specifying its slug:
+You can also supply any [unique field](!alias-teizeit5se#unique) as an argument to the query to identify a node. For example, if you already declared the `slug` field of the `Post` type to be unique, you could select a post by specifying its slug:
 
 > Query a specific node by slug:
 

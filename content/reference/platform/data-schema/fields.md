@@ -2,7 +2,7 @@
 alias: teizeit5se
 path: /docs/reference/schema/fields
 layout: REFERENCE
-description: Fields are the building blocks of a model, defining a node's shape. A field has a name and is either scalar or belongs to a relation.
+description: Fields are the building blocks of a type, defining a node's shape. A field has a name and is either scalar or belongs to a relation.
 tags:
   - platform
   - fields
@@ -24,7 +24,7 @@ related:
 
 *Fields* are the building blocks of a [types](!alias-ij2choozae) giving a node its shape. Every field is referenced by its name and is either [scalar](#scalar-types) or a [relation field](!alias-goh5uthoc1).
 
-> The `Post` model might have a `title` and a `text` field both of type String and an `id` field of type ID.
+> The `Post` type might have a `title` and a `text` field both of type String and an `id` field of type ID.
 
 ## Scalar Types
 
@@ -108,7 +108,7 @@ Scalar fields can be marked as required (sometimes also referred to as "non-null
 
 Required fields are usually marked using a `!` after the field type.
 
-> An example for a required field on the `User` model could look like this: `name: String!`.
+> An example for a required field on the `User` type could look like this: `name: String!`.
 
 ## Field Constraints
 
@@ -116,9 +116,9 @@ Fields can be configured with certain field constraints to add further semantics
 
 ### Unique
 
-Setting the *unique* constraint makes sure that two nodes of the model in question cannot have the same value for a certain field. The only exception is the `null` value, meaning that multiple nodes can have the value `null` without violating the constraint.
+Setting the *unique* constraint makes sure that two nodes of the type in question cannot have the same value for a certain field. The only exception is the `null` value, meaning that multiple nodes can have the value `null` without violating the constraint.
 
-> A typical example is the `email` field on the `User` model.
+> A typical example is the `email` field on the `User` type.
 
 Please note that only the first 191 characters in a String field are considered for uniqueness. Storing two different strings is not possible if the first 191 characters are the same.
 

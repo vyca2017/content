@@ -23,7 +23,7 @@ GraphQL fragments are used to define a combination of fields that can be reused 
 
 ## GraphQL Fragments And The Typename
 
-When we are including the same set of fields in a query multiple times, we can define a fragment for the field set that can be reused. Let's try a fragment on the `Post` model:
+When we are including the same set of fields in a query multiple times, we can define a fragment for the field set that can be reused. Let's try a fragment on the `Post` type:
 
 ```graphql
 ---
@@ -81,12 +81,12 @@ fragment PostInfo on Post {
 ---
 ```
 
-* with `fragment PostInfo on Post` we define a fragment on the `Post` model called `PostInfo`
+* with `fragment PostInfo on Post` we define a fragment on the `Post` type called `PostInfo`
 * Now we can include the fragment anywhere in the query with `... PostInfo`
 
 ## Fetching A Single Node By Id
 
-Typically, you would use the model-specific query to fetch a single node, in this case a `Post`:
+Typically, you would use the type-specific query to fetch a single node, in this case a `Post`:
 
 ```graphql
 ---
@@ -147,7 +147,7 @@ However, we can't query much more than its id. Let's see how fragments can help 
 
 ## Combining The Node Query With Fragments
 
-By combining the `node` query with the `__typename` we can now define a fragment for both the `Comment` and the `Post` model. So depending on what type the node with the given id is, the response will look differently:
+By combining the `node` query with the `__typename` we can now define a fragment for both the `Comment` and the `Post` type. So depending on what type the node with the given id is, the response will look differently:
 
 ```graphql
 ---

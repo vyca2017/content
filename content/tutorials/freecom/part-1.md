@@ -3,7 +3,7 @@ alias: xuakjj68lp
 path: /docs/tutorials/freecom-1-schema-graphql-server
 layout: TUTORIAL
 preview: freecom-part-1.png
-description: Learn about Freecom's data model and how to generate a Graphcool backend from the CLI.  
+description: Learn about Freecom's data model and how to generate a Graphcool backend from the CLI.
 tags:
   - freecom
 related:
@@ -58,7 +58,7 @@ The `name` will be randomly generated for each customer, so that there is no ove
 
 #### `Agent`
 
-Similarly, the `Agent` type represents the _support agents_. Since the support agents will use Slack, they have two fields that represent their Slack identity: `slackUserId` and `slackUserName`.  
+Similarly, the `Agent` type represents the _support agents_. Since the support agents will use Slack, they have two fields that represent their Slack identity: `slackUserId` and `slackUserName`.
 
 Each `Agent` is associated with the list of conversations that they're currently engaged in. However, since the agent that participates in a conversation can potentially change, we also maintain a list of `messages` that each agent sent in their chats. That is so that it's possible to clearly identify the sender of a message. Note that we didn't need to associate the `Customer` with any messages because the `customer` on a `Conversation` can never change, so we always know who was the customer that sent a specific message by tracing back through the `Conversation`.
 
@@ -159,7 +159,7 @@ Here is a graphical overview of the relations in our final schema:
 
 ## Preparing the GraphQL server
 
-You can now either create these model types and relations manually in the Web UI of the  [Graphcool console](https://console.graph.cool) or use the [command-line interface](https://www.npmjs.com/package/graphcool) to create the project including the data model. Simply download the complete [schema file](https://github.com/graphcool-examples/schemas/blob/master/freecom.schema) and execute the following command in a Terminal:
+You can now either create these types and relations manually in the Web UI of the  [Graphcool console](https://console.graph.cool) or use the [command-line interface](https://www.npmjs.com/package/graphcool) to create the project including the data model. Simply download the complete [schema file](https://github.com/graphcool-examples/schemas/blob/master/freecom.schema) and execute the following command in a Terminal:
 
 ```sh
 graphcool init --url freecom.schema --name Freecom

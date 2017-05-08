@@ -21,7 +21,7 @@ related:
 
 # Filtering by field in the Relay API
 
-When querying all nodes of a model you can supply different parameters to the `filter` argument to filter the query response accordingly. The available options depend on the scalar fields defined on the model in question.
+When querying all nodes of a type you can supply different parameters to the `filter` argument to filter the query response accordingly. The available options depend on the scalar fields defined on the type in question.
 
 You can also include filters when including related fields in your queries to [traverse your data graph](!alias-uo6uv0ecoh).
 
@@ -429,4 +429,4 @@ Note how we nested the `AND` combinator inside the `OR` combinator, on the same 
 
 ## Explore available filter criteria
 
-Apart from the filter combinators `AND` and `OR`, the available filter arguments for a query for all nodes of a model depend on the fields of the model and their types. To explore the available filters, use the playground and its documentation and auto-completion features.
+Apart from the filter combinators `AND` and `OR`, the available filter arguments for a query for all nodes of a type depend on the fields of the type and their types. To explore the available filters, use the playground and its documentation and auto-completion features.

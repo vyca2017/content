@@ -42,7 +42,7 @@ If you don't use Zapier yet, [sign up for free](https://zapier.com/sign-up/).
 
 You can create a new Graphcool project so you can freely experiment. If you have no Graphcool account yet, [create a free account here](https://graph.cool).
 
-Head over to your Graphcool project and add a new required `name` field of type String to the `User` model. We will print a user's name in the Slack channel whenever a new one signs up.
+Head over to your Graphcool project and add a new required `name` field of type String to the `User` type. We will print a user's name in the Slack channel whenever a new one signs up.
 
 ## 2. Creating a new mutation callback to a Zapier webhook
 

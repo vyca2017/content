@@ -31,7 +31,7 @@ related:
 
 When working with [fields](!alias-teizeit5se), you might be prompted to set a *migration value*.
 
-A migration value is a field value which is applied to existing nodes. In case a [model](!alias-ij2choozae) doesn't have any nodes yet, you do not have to provide a migration value.
+A migration value is a field value which is applied to existing nodes. In case a [type](!alias-ij2choozae) doesn't have any nodes yet, you do not have to provide a migration value.
 
 Migration values are not the same as [default values](!alias-teizeit5se#default-value) and just exist temporarily in one of the following scenarios:
 

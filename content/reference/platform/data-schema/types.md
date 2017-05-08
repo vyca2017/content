@@ -5,7 +5,7 @@ layout: REFERENCE
 description: GraphQL types define the structure of your data and consist of fields. They can be compared with table schemas in SQL databases.
 tags:
   - platform
-  - models
+  - types
   - data-schema
 related:
   further:
@@ -22,7 +22,7 @@ related:
 
 # GraphQL Types
 
-A *GraphQL type* defines the structure for a certain type of your data. If you are familiar with SQL databases you can think of a model as the schema for a table. A type has a name, an optional description and one or multiple [fields](!alias-teizeit5se).
+A *GraphQL type* defines the structure for a certain type of your data. If you are familiar with SQL databases you can think of a type as the schema for a table. A type has a name, an optional description and one or multiple [fields](!alias-teizeit5se).
 
 An instantiation of a type is called a *node*. The collection of all nodes is what you would refer to as "your data". The term node refers to a node inside your data graph.
 

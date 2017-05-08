@@ -124,7 +124,7 @@ Enter the credentials:
 
 ![](./algolia-credentials.png?width=295)
 
-Then you can create a new index on the `Beer` model. Name the index `Beers` and enter this query:
+Then you can create a new index on the `Beer` type. Name the index `Beers` and enter this query:
 
 ```graphql
 {
@@ -153,7 +153,7 @@ In general, you can use the `Rankings` settings for your Algolia index to contro
 
 ## Fine Control Over Synced Records
 
-When defining an index, you can use filters in the index query to get fine control over which records will be synchronized. In this example, we're building an index for a specific shop. Create a new index called `ChampionBrewery` on the `Beer` model and enter this query:
+When defining an index, you can use filters in the index query to get fine control over which records will be synchronized. In this example, we're building an index for a specific shop. Create a new index called `ChampionBrewery` on the `Beer` type and enter this query:
 
 ```graphql
 {
@@ -178,10 +178,10 @@ Now only nodes that are available in the `Champion Brewing Company` are synchron
 
 We can also Algolia Geosearch with this setup. To make that work, you need a special setup based on Algolia's API:
 
-* the location values need to be stored in a location model with the fields `lng` and `lat` of type float
-* when defining the search index, you need to use an alias `_geoloc` for nested location model
+* the location values need to be stored in a location type with the fields `lng` and `lat` of type float
+* when defining the search index, you need to use an alias `_geoloc` for nested location type
 
-For example, if we wanted to do a location search for shops, we could define this Algolia index query on the `Shop` model:
+For example, if we wanted to do a location search for shops, we could define this Algolia index query on the `Shop` type:
 
 ```graphql
 {

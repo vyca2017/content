@@ -21,7 +21,7 @@ related:
 
 # Ordering by field in the Simple API
 
-When querying all nodes of a [model](!alias-ij2choozae) you can supply the `orderBy` argument for every scalar field of the model: `orderBy: <field>_ASC` or `orderBy: <field>_DESC`.
+When querying all nodes of a [type](!alias-ij2choozae) you can supply the `orderBy` argument for every scalar field of the type: `orderBy: <field>_ASC` or `orderBy: <field>_DESC`.
 
 > Order the list of all posts ascending by title:
 

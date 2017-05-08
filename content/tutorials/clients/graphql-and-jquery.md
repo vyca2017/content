@@ -98,7 +98,7 @@ In order to create a Graphcool project for the Pokedex application, you can simp
 graphcool init Pokedex.schema
 ```
 
-This will create a new project called `Pokedex` in the [Graphcool console](https://console.graph.cool) along with one model type called `Pokemon`.
+This will create a new project called `Pokedex` in the [Graphcool console](https://console.graph.cool) along with one type called `Pokemon`.
 
 
 ## Fetching the List of Pokemons

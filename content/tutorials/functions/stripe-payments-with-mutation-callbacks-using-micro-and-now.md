@@ -71,8 +71,8 @@ type Purchase {
 Here is a checklist of necessary steps to end up with the correct schema:
 
 * Add string fields `name`, `stripeId` to `User` - `stripeId` is not required!
-* Create `CardDetails` model with string field `cardToken`
-* Create `Purchase` model with the fields string `description`, int `amount`, boolean `isPaid`
+* Create `CardDetails` type with string field `cardToken`
+* Create `Purchase` type with the fields string `description`, int `amount`, boolean `isPaid`
 * Create one-to-one relation `UserCardDetails`, `user` - `cardDetails`
 * Create one-to-many relation `UserPurchases`, `user` - `purchases`
 * Enable email/password provider

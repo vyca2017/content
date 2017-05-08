@@ -49,7 +49,7 @@ this.newMessageObserver = this.props.client.subscribe({
   `,
   }).subscribe({
       next(data) {
-      console.log('A mutation of the following type happened on the Message model: ', data.Message.mutation)
+      console.log('A mutation of the following type happened on the Message type: ', data.Message.mutation)
       console.log('The changed data looks as follows: ', data.Message.node)
     },
     error(error) {
@@ -372,7 +372,7 @@ export default graphql(allLocations, {name: 'allLocationsQuery'})(
 )
 ```
 
-Finally, we need to subscribe to the changes on the `Location` model. Every time a new traveller and location are created or an existing traveller updates their location, we want to reflect this on the map.
+Finally, we need to subscribe to the changes on the `Location` type. Every time a new traveller and location are created or an existing traveller updates their location, we want to reflect this on the map.
 
 However, in the second case when an existing traveller logs back in, we actually only want to receive a notification if their location is different from before, that is either `latitude` or `longitude` or both have to be changed through the mutation. We'll include this requirement in the subscription using a filter again:
 

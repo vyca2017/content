@@ -32,7 +32,7 @@ Importing existing data to one of your Graphcool projects manually can be quite 
 
 > This example uses modified JSON from the [Open Movie Database](https://www.omdbapi.com/).
 
-Importing nested JSON data can be handled by creating models and relations. If your data has a simpler structure, check out the [guide for importing simple data](!alias-ga2ahnee2a).
+Importing nested JSON data can be handled by creating types and relations. If your data has a simpler structure, check out the [guide for importing simple data](!alias-ga2ahnee2a).
 
 All code and data in this example can be found in the [repository on GitHub](https://github.com/graphcool-examples/node-import-movies-example/tree/master/advanced-javascript).
 
@@ -95,17 +95,17 @@ The data here is already ready to be imported, so we can think about the data sc
 
 Before actually importing the data, we have to setup the correct data schema for our project. First, let's create a new Graphcool project.
 
-### 2.1 The `Movie` model
+### 2.1 The `Movie` type
 
-In your new project, create the `Movie` model. To determine its fields, we have to look at our existing data. As we can see above, a movie has the fields `id`, `description`, `released` and `title`.
+In your new project, create the `Movie` type. To determine its fields, we have to look at our existing data. As we can see above, a movie has the fields `id`, `description`, `released` and `title`.
 
 For the `id` field in our data, you have to think about if you need to keep the old ids or not. In our case, let's just store them in the `oldId` field of type String with the `unique` constraint. That leaves us with the `description` and `title` fields of type String and the `released` field of type DateTime which you should create now as well.
 
-### 2.2 The `Actor` model
+### 2.2 The `Actor` type
 
-Next create the `Actor` model. An actor is described by a `birthday` of type DateTime, a `name` and a `gender` of type String.
+Next create the `Actor` type. An actor is described by a `birthday` of type DateTime, a `name` and a `gender` of type String.
 
-For the `id` in our data the same considerations as for the `Movie` model can be made, so let's just create an `oldId` field of type String as well.
+For the `id` in our data the same considerations as for the `Movie` type can be made, so let's just create an `oldId` field of type String as well.
 
 ### 2.3 The `ActorMovies` relation
 

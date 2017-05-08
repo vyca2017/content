@@ -2,7 +2,7 @@
 alias: oiviev0xi7
 path: /docs/reference/relay-api/queries
 layout: REFERENCE
-description: Use queries to fetch data. Queries in the GraphQL schema of your project are derived from models and relations that you defined.
+description: Use queries to fetch data. Queries in the GraphQL schema of your project are derived from types and relations that you defined.
 simple_relay_twin: nia9nushae
 tags:
   - relay-api
@@ -80,11 +80,11 @@ There are different categories of generated queries. Depending on the query cate
 
 ## Querying one node
 
-For each [model](!alias-ij2choozae) in your project there is a query to fetch [one specific node](!alias-ga4chied8m) of that model.
+For each [type](!alias-ij2choozae) in your project there is a query to fetch [one specific node](!alias-ga4chied8m) of that type.
 
 ## Querying multiple nodes
 
-For each [model](!alias-ij2choozae) in your project there is a query to fetch [multiple nodes](!alias-uu4ohnaih7) of that model.
+For each [type](!alias-ij2choozae) in your project there is a query to fetch [multiple nodes](!alias-uu4ohnaih7) of that type.
 
 ## Session user
 

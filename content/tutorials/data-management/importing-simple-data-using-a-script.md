@@ -65,7 +65,7 @@ The data here is already ready to be imported, so we can think about the data sc
 
 ## 2. Preparing your project
 
-Before actually importing the data, we have to setup the correct data schema for our project. First, let's create a new Graphcool project. In this example, all we need to do is create the `Movie` model. To determine its fields, we have to look at our existing data. As we can see above, a movie has the fields `id`, `description`, `released` and `title`.
+Before actually importing the data, we have to setup the correct data schema for our project. First, let's create a new Graphcool project. In this example, all we need to do is create the `Movie` type. To determine its fields, we have to look at our existing data. As we can see above, a movie has the fields `id`, `description`, `released` and `title`.
 
 For the `id` field in our data, you have to think about if you need to keep the old ids or not. In our case, let's just store them in the `oldId` field of type String with the `unique` constraint. That leaves us with the `description` and `title` fields of type String and the `released` field of type DateTime which you should create now as well.
 

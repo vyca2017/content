@@ -2,7 +2,7 @@
 alias: ahwoh2fohj
 path: /docs/reference/schema
 layout: REFERENCE
-description: The data schema of a project is defined with models, fields and relations that will define the GraphQL schema of your GraphQL backend.
+description: The data schema of a project is defined with types, fields and relations that will define the GraphQL schema of your GraphQL backend.
 tags:
   - platform
   - data-schema

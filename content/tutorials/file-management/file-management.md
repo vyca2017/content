@@ -28,7 +28,7 @@ In this guide we will use the file management system at Graphcool to upload, dow
 
 ## 1. The File Management Workflow
 
-Every project at Graphcool comes with a `File` model that is used for file management. Whenever you upload a new file, a `File` node is created. Afterwards, your file will be available at a secret location that is stored in that node, amongst other meta information. While access to the file node is protected with the same role-based permission system as all other nodes, everyone with knowledge of the secret or url of a file can access it!
+Every project at Graphcool comes with a `File` type that is used for file management. Whenever you upload a new file, a `File` node is created. Afterwards, your file will be available at a secret location that is stored in that node, amongst other meta information. While access to the file node is protected with the same role-based permission system as all other nodes, everyone with knowledge of the secret or url of a file can access it!
 
 ## 2. Uploading a File
 
@@ -43,7 +43,7 @@ You can upload files up to 200MB each.
 
 <!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-apollo-file-upload-example') -->
 
-Uploading a file will result in a response containing the new file id and the url. Let's upload our first file now. Pick a funny picture or similar and upload it! You can then go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` model](!alias-uhieg2shio#file-model).
+Uploading a file will result in a response containing the new file id and the url. Let's upload our first file now. Pick a funny picture or similar and upload it! You can then go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` type](!alias-uhieg2shio#file-type).
 
 Remember to replace the file endpoint. You can copy your file endpoint from inside your project.
 
@@ -168,4 +168,4 @@ curl -O -J <your-file-url>
 
 Congratulations, you now should be able to work with files in your GraphQL backend on your own. If you want to read more about the file management system in detail, find out more in the [documentation](!alias-eer4wiang0).
 
-Remember that the `File` model is just another model in your backend. That means that you can create new fields and relations just as with any other model. For example, creating a relation `FileOwner` between the `User` and the `File` model could come in handy. If you want to read more on relations in general the [relations guide](!alias-daisheeb9x) might be useful to you.
+Remember that the `File` type is just another type in your backend. That means that you can create new fields and relations just as with any other type. For example, creating a relation `FileOwner` between the `User` and the `File` types could come in handy. If you want to read more on relations in general the [relations guide](!alias-daisheeb9x) might be useful to you.

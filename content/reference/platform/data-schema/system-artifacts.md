@@ -31,7 +31,7 @@ Apart from the predefined system fields, the `User` type can have additional sys
 
 You can add additional [fields](!alias-teizeit5se) as with any other type.
 
-## `File` Model
+## `File` Type
 
 The `File` type is part of our [file management](!alias-eer4wiang0). Every time you upload a file, a new `File` node is created. Aside from the predefined system fields, the `File` type contains several other fields that contain meta information:
 * `contentType: `: our best guess as to what file type the file has. For example `image/png`. Can be `null`

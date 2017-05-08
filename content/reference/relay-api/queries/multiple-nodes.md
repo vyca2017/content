@@ -3,7 +3,7 @@ alias: uu4ohnaih7
 path: /docs/reference/relay-api/multiple-nodes
 layout: REFERENCE
 shorttitle: Querying multiple nodes
-description: Query all nodes of a model and combine filter, order and pagination query arguments to exactly define what data you want to fetch.
+description: Query all nodes of a type and combine filter, order and pagination query arguments to exactly define what data you want to fetch.
 simple_relay_twin: pa2aothaec
 tags:
   - relay-api
@@ -23,9 +23,9 @@ related:
 
 # Querying multiple nodes in the Relay API
 
-The Relay API contains automatically generated queries to fetch all nodes of a certain [model](!alias-ij2choozae). For example, for the `Post` model the query `allPosts` will be generated that is available through the `viewer`.
+The Relay API contains automatically generated queries to fetch all nodes of a certain [type](!alias-ij2choozae). For example, for the `Post` type the query `allPosts` will be generated that is available through the `viewer`.
 
-## Querying all nodes of a specific model
+## Querying all nodes of a specific type
 
 > Query all post nodes:
 
@@ -82,9 +82,9 @@ query {
 ```
 
 > A few examples for query names
-* model name: `Post`, query name: `allPosts`
-* model name: `Todo`, query name: `allTodoes`
-* model name: `Hobby`, query name: `allHobbies`.
+* type name: `Post`, query name: `allPosts`
+* type name: `Todo`, query name: `allTodoes`
+* type name: `Hobby`, query name: `allHobbies`.
 
 Note: The query name approximate the plural rules of the English language. If you are unsure about the actual query name, explore available queries in your [playground](!alias-uh8shohxie#playground).
 

@@ -21,7 +21,7 @@ related:
 
 # Pagination in the Simple API
 
-When querying all nodes of a specific [model](!alias-ij2choozae) you can supply arguments that allow you to paginate the query response.
+When querying all nodes of a specific [type](!alias-ij2choozae) you can supply arguments that allow you to paginate the query response.
 
 Pagination allows you to request a certain amount of nodes at the same time. You can seek forwards or backwards through the nodes and supply an optional starting node:
 * to seek forwards, use `first`; specify a starting node with `after`.

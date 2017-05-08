@@ -3,7 +3,7 @@ alias: ohmeta3pi4
 path: /docs/reference/simple-api/subscribing-to-updated-nodes
 layout: REFERENCE
 shorttitle: Subscribing to Updated Nodes
-description: For a given model, you can subscribe to all successfully updated nodes using the generated model subscription.
+description: For a given type, you can subscribe to all successfully updated nodes using the generated type subscription.
 simple_relay_twin: eih4eew7re
 tags:
   - simple-api
@@ -17,11 +17,11 @@ related:
 
 # Subscribing to Updated Nodes
 
-For a given model, you can subscribe to all successfully updated nodes using the generated model subscription.
+For a given type, you can subscribe to all successfully updated nodes using the generated type subscription.
 
 ## Subscribe to all Updated Nodes
 
-If you want to subscribe for updated nodes of the `Post` model, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [UPDATED]`.
+If you want to subscribe for updated nodes of the `Post` type, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [UPDATED]`.
 
 ```graphql
 ---

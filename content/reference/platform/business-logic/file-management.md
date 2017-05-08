@@ -22,7 +22,7 @@ As part of our file management system you are able to
 * upload files that are up to 50 MB
 * rename or delete existing files
 
-Each project contains a [file model](!alias-uhieg2shio#file-model) by default that provides the possibility to add and modify files.
+Each project contains a [file type](!alias-uhieg2shio#file-type) by default that provides the possibility to add and modify files.
 
 ## Uploading a file with plain HTTP
 
@@ -46,7 +46,7 @@ The response could look something like this:
 }
 ```
 
-After this request, the file is publicly available at its `url`. Each property in the response corresponds to a field of the [file model](!alias-uhieg2shio#file-model).
+After this request, the file is publicly available at its `url`. Each property in the response corresponds to a field of the [file type](!alias-uhieg2shio#file-type).
 
 ## Image API
 

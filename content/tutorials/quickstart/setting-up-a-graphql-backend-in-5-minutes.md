@@ -7,7 +7,7 @@ shorttitle: Create a GraphQL backend
 description: Getting started with a powerful GraphQL backend can be done in a few minutes with Graphcool.
 tags:
   - console
-  - models
+  - types
   - fields
 related:
   further:

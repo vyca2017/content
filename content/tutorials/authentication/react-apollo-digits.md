@@ -43,7 +43,7 @@ If you have no Digits account yet, head over to their [website](https://get.digi
 
 ### 1.2 Configure Digits with Graphcool
 
-In the [console](https://console.graph.cool), let's create a new project so we can freely experiment with Digits. Head over to the `User` model of your new project, select *Configure Auth Providers*, enable Digits and enter the information collected from above.
+In the [console](https://console.graph.cool), let's create a new project so we can freely experiment with Digits. Head over to the `User` type of your new project, select *Configure Auth Providers*, enable Digits and enter the information collected from above.
 
 Now it's time to design our data schema.
 
@@ -51,8 +51,8 @@ Now it's time to design our data schema.
 
 ### 2.1 Setting up the data schema
 
-As before, we want to create a `Post` model which the String fields `imageUrl` and `description`.
-In order to do that, please open your [console](https://console.graph.cool) and add a new model called `Post`.
+As before, we want to create a `Post` type which the String fields `imageUrl` and `description`.
+In order to do that, please open your [console](https://console.graph.cool) and add a new type called `Post`.
 
 ![](../../images/building-instagram-in-5-minutes-model.gif)
 
@@ -60,13 +60,13 @@ Now create the fields `imageUrl` and `description` of type String.
 
 ![](../../images/building-instagram-in-5-minutes-field.gif)
 
-We also add three required fields to the `User` model. Go to your `User` model and create the three required fields `emailSubscription` of type boolean and `name` and `emailAddress` of type String.
+We also add three required fields to the `User` type. Go to your `User` type and create the three required fields `emailSubscription` of type boolean and `name` and `emailAddress` of type String.
 
 ### 2.2 Setting the permissions
 
-To make our application behave correctly we have to setup permissions for the `Post` and `User` model in our project.
+To make our application behave correctly we have to setup permissions for the `Post` and `User` type in our project.
 
-As we want to restrict the creation of posts only to `AUTHENTICATED` users, we have to create the according permission for `Create Node` on the `Post` model.
+As we want to restrict the creation of posts only to `AUTHENTICATED` users, we have to create the according permission for `Create Node` on the `Post` type.
 
 ![](./create-post-permissions.png?width=350)
 
@@ -75,7 +75,7 @@ Make sure that these two permissions are the only enabled ones, otherwise the fi
 
 ![](./post-permissions.png?width=350)
 
-As we want to allow `EVERYONE` to signup with Digits, we create the according `Create Node` permission on the `User` model.
+As we want to allow `EVERYONE` to signup with Digits, we create the according `Create Node` permission on the `User` type.
 
 ![](./create-user-permissions.png?width=350)
 

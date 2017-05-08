@@ -3,7 +3,7 @@ alias: oodoi6zeit
 path: /docs/reference/relay-api/creating-nodes
 layout: REFERENCE
 shorttitle: Creating nodes
-description: Creates a new node for a specific model in your GraphQL backend. The node gets assigned a unique node id on creation.
+description: Creates a new node for a specific type in your GraphQL backend. The node gets assigned a unique node id on creation.
 simple_relay_twin: wooghee1za
 tags:
   - relay-api
@@ -21,8 +21,8 @@ related:
 
 # Creating a node with the Relay API
 
-Creates a new node for a specific model that gets assigned a new `id`.
-All [required](!alias-teizeit5se#required) fields of the model without a [default value](!alias-teizeit5se#default-value) have to be specified, the other fields are optional arguments.
+Creates a new node for a specific type that gets assigned a new `id`.
+All [required](!alias-teizeit5se#required) fields of the type without a [default value](!alias-teizeit5se#default-value) have to be specified, the other fields are optional arguments.
 
 The query response can contain all fields of the newly created node, including the `id` field.
 

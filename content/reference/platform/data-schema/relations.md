@@ -2,7 +2,7 @@
 alias: goh5uthoc1
 path: /docs/reference/schema/relations
 layout: REFERENCE
-description: A relation defines the interaction between two models. Related models are reflected in both the data model as well as the GraphQL schema.
+description: A relation defines the interaction between two types. Related types are reflected in both the data model as well as the GraphQL schema.
 tags:
   - platform
   - relations
@@ -33,16 +33,16 @@ Both sides of a relation can have two different multiplicities, singular and plu
 
 ### One-to-one
 
-> `PostMetadata` could be a one-to-one relation relating the `Post` model to the `Metadata` model. Starting from a `Post` node you can access the related `Metadata` node via the `metadata` field. The related post is exposed on nodes of the `Metadata` model using the `post` field.
+> `PostMetadata` could be a one-to-one relation relating the `Post` type to the `Metadata` type. Starting from a `Post` node you can access the related `Metadata` node via the `metadata` field. The related post is exposed on nodes of the `Metadata` type using the `post` field.
 
 ### One-to-many
 
-> `PostAuthor` could be a one-to-many relation relating the `User` model to the `Post` model, because one author can write multiple posts while a post can only have one author. Starting from a `User` node you can access the related `Post` nodes via the `posts` field. The author is exposed on nodes of the Post model using the `author` field.
+> `PostAuthor` could be a one-to-many relation relating the `User` type to the `Post` type, because one author can write multiple posts while a post can only have one author. Starting from a `User` node you can access the related `Post` nodes via the `posts` field. The author is exposed on nodes of the Post type using the `author` field.
 
 
 ### Many-to-many
 
-> If a book can have multiple authors, `BookAuthors` could be a many-to-many relation between the `Book` and `User` model, because one author can write many books, while one book also can be written by multiple authors.
+> If a book can have multiple authors, `BookAuthors` could be a many-to-many relation between the `Book` and `User` types, because one author can write many books, while one book also can be written by multiple authors.
 
 ## Relations in the Data Schema
 

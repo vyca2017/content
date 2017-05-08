@@ -77,9 +77,9 @@ The best thing is that you can actually query all that information in your clien
 
 Let's explore more specific introspection queries now!
 
-## Query the Fields of a Model
+## Query the Fields of a Type
 
-You can use the introspection capabilities of the GraphQL backend to query the available fields of a model. Let's see what fields are available for the `MetaInformation` model:
+You can use the introspection capabilities of the GraphQL backend to query the available fields of a type. Let's see what fields are available for the `MetaInformation` type:
 
 ```graphql
 ---

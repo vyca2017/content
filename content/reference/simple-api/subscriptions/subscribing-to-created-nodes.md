@@ -3,7 +3,7 @@ alias: oe8oqu8eis
 path: /docs/reference/simple-api/subscribing-to-created-nodes
 layout: REFERENCE
 shorttitle: Subscribing to Created Nodes
-description: For a given model, you can subscribe to all successfully created nodes using the generated model subscription.
+description: For a given type, you can subscribe to all successfully created nodes using the generated type subscription.
 simple_relay_twin: eih4eew7re
 tags:
   - simple-api
@@ -17,11 +17,11 @@ related:
 
 # Subscribing to Created Nodes
 
-For a given model, you can subscribe to all successfully created nodes using the generated model subscription.
+For a given type, you can subscribe to all successfully created nodes using the generated type subscription.
 
 ## Subscribe to all Created Nodes
 
-If you want to subscribe to created nodes of the `Post` model, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [CREATED]`.
+If you want to subscribe to created nodes of the `Post` type, you can use the `Post` subscription and specify the `filter` object and set `mutation_in: [CREATED]`.
 
 ```graphql
 ---
