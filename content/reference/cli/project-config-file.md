@@ -10,13 +10,9 @@ related:
   more:
 ---
 
-# Project Configuration Files
+# The project.graphcool File
 
-Working with **project configuration files** is a central part of using the Graphcool CLI.
-
-Project configuration files are typically saved as `.graphcool` and contain the project's GraphQL schema as well as additional data like the project endpoint.
-
-This is an example project configuration file, `project.graphcool`:
+Working with the `project.graphcool` file is a central part of using the Graphcool CLI. They contain the project's [GraphQL schema](!alias-ahwoh2fohj) as well as additional metadata such as the **project id** and the **version number** of the schema. This is how a `project.graphcool` file looks like:
 
 ```graphql
 # project: cj2deyxfmpmwi0104pce2xucz
@@ -39,9 +35,9 @@ type User {
 }
 ```
 
-The project configuration contains the [GraphQL schema](!alias-ahwoh2fohj) of the project as well as additional metadata such as the **project endpoint** and the **version number** of the schema.
-
 Every change to the project schema done by using the Console or the CLI will increment the schema version.
+
+> Read more about types, fields, relations and directives in the [data schema section](!alias-ahwoh2fohj). 
 
 ## Synchronize Changes
 
@@ -54,5 +50,5 @@ More information can be found in the command reference.
 
 ### Push Local Changes
 
-You can push changes made to your local project configuration file using `graphcool push`. Typically, those are changes to the [schema file](!alias-aeph6oyeez), resulting in [schema migrations]().
+You can push changes made to your local project configuration file using `graphcool push`. Typically, those are changes to the [data schema](!alias-ahwoh2fohj), potentially resulting in [schema migrations]().
 More information can be found in the command reference.
