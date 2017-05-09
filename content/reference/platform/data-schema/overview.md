@@ -1,6 +1,6 @@
 ---
 alias: ahwoh2fohj
-path: /docs/reference/schema
+path: /docs/reference/schema/overview
 layout: REFERENCE
 description: The data schema of a project is defined with types, fields and relations that will define the GraphQL schema of your GraphQL backend.
 tags:
@@ -41,7 +41,7 @@ type User {
 
 The schema file follows the [IDL syntax](!alias-kr84dktnp0) and consists of different elements.
 
-## Elements in a GraphQL Schema
+## Building blocks of a GraphQL Schema
 
 * [Types](!alias-ij2choozae) consist of multiple [fields](!alias-teizeit5se) and are used to group similar entities together.
 * [Relations](!alias-goh5uthoc1) describe interactions between types.

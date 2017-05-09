@@ -34,8 +34,17 @@ A GraphQL type is defined in the Data Schema with the keyword `type`:
 
 ```graphql
 type Story {
-  id: ID!
+  id: ID! @isUnique
   text: String!
+  isPublished: Boolean @defaultValue(value: "false")
+  author: Author! @relation(name: "AuthorStories")
+}
+
+type Author {
+  id: ID! @isUnique
+  age: Int
+  name: String!
+  stories: [Story!]! @relation(name: "AuthorStories")
 }
 ```
 
