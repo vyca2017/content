@@ -1,6 +1,6 @@
 ---
 alias: gechieb9ae
-path: /docs/reference/cli/pull-and-push-project-file
+path: /docs/reference/cli/project-collaboration
 layout: REFERENCE
 description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
 tags:

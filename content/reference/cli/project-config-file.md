@@ -38,17 +38,3 @@ type User {
 Every change to the project schema done by using the Console or the CLI will increment the schema version.
 
 > Read more about types, fields, relations and directives in the [data schema section](!alias-ahwoh2fohj).
-
-## Synchronize Changes
-
-The project configuration file is used to synchronize changes to general project settings as well as the data schema between the Console and local changes.
-
-### Update Local Project Config
-
-To pull the latest changes from your project and update your local config file, you can use `graphcool pull`.
-More information can be found in the command reference.
-
-### Push Local Changes
-
-You can push changes made to your local project configuration file using `graphcool push`. Typically, those are changes to the [data schema](!alias-ahwoh2fohj), potentially resulting in [schema migrations]().
-More information can be found in the command reference.

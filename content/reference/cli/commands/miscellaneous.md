@@ -43,7 +43,14 @@ graphcool console
 graphcool playground
 ```
 
-## Other Commands
+## General Commands
+
+## status
+
+```sh
+# prints general information about the status of your local environment
+graphcool status
+```
 
 ## projects
 

@@ -29,10 +29,5 @@ graphcool auth
 graphcool init
 ```
 
-This creates a new Graphcool project and a corresponding [project configuration file](!alias-ow2yei7mew).
-
-## Next Steps
-
-* Explore how to [create or clone projects](!alias-aetoh3vad6)
-* Find more information about [project configuration files](!alias-ow2yei7mew)
-* Learn more about specific commands in [the full command reference](!alias-tha5feef7i)
+This creates a new Graphcool project and a corresponding [`project.graphcool` file](!alias-ow2yei7mew).
+Now you can explore common workflows and [available commands](!alias-tha5feef7i).
