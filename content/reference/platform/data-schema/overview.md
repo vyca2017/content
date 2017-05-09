@@ -17,7 +17,7 @@ related:
 
 # Schema
 
-The GraphQL schema of a project can be described in [IDL syntax](!alias-kr84dktnp0) and is usally managed using [schema files](!alias-aeph6oyeez).
+The GraphQL schema of a project can be described in [IDL syntax](!alias-kr84dktnp0) and is usally managed using [schema files](!alias-aeph6oyeez). **The schema directly influences the available operations in the client APIs**.
 
 GraphQL schemas are typically saved as `.graphql` files. This is an example schema file, `schema.graphql`:
 
@@ -42,6 +42,8 @@ type User {
 The schema file follows the [IDL syntax](!alias-kr84dktnp0) and consists of different elements.
 
 ## Building blocks of a GraphQL Schema
+
+There are several available building blocks to shape your GraphQL schema.
 
 * [Types](!alias-ij2choozae) consist of multiple [fields](!alias-teizeit5se) and are used to group similar entities together.
 * [Relations](!alias-goh5uthoc1) describe interactions between types.

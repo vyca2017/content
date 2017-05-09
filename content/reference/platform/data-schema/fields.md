@@ -128,4 +128,4 @@ You can set a default value for scalar fields. The value will be taken for new n
 
 ## Generated Operations Based On Fields
 
-Fields indirectly define your [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying multiple nodes in the [API](!alias-pa2aothaec).
+Fields are part of the [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying multiple nodes in the [API](!alias-pa2aothaec).

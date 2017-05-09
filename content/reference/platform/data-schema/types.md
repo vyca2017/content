@@ -49,3 +49,5 @@ type Author {
 ```
 
 ## Generated Operations Based On Types
+
+The types that are included in your schema influence the available [queries](!alias-nia9nushae), [mutations](!alias-ol0yuoz6go) and [subscriptions](!alias-ol0yuoz6go).
