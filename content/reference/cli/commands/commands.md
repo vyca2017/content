@@ -15,11 +15,7 @@ related:
 
 # Commands Overview
 
-The Graphcool CLI covers a wide range of use cases. As such, there are several commonly used commands:
-
-* `graphcool init` and `graphcool clone` for [creating and cloning new projects](!alias-aetoh3vad6)
-* `graphcool pull` and `graphcool push` for [project collaboration](!alias-gechieb9ae)
-* Many [miscellaneous commands](!alias-air0eiph9p)
+The Graphcool CLI covers a wide range of use cases. As such, there are several commonly used commands. You can [create and clone new projects](!alias-aetoh3vad6), [synchronize changes](!alias-gechieb9ae) to your project file and other [miscellaneous commands](!alias-air0eiph9p).
 
 ## More information
 
