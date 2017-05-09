@@ -1,6 +1,6 @@
 ---
 alias: ow2yei7mew
-path: /docs/reference/cli/project-configuration-files
+path: /docs/reference/cli/project-files
 layout: REFERENCE
 description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
 tags:
@@ -37,7 +37,7 @@ type User {
 
 Every change to the project schema done by using the Console or the CLI will increment the schema version.
 
-> Read more about types, fields, relations and directives in the [data schema section](!alias-ahwoh2fohj). 
+> Read more about types, fields, relations and directives in the [data schema section](!alias-ahwoh2fohj).
 
 ## Synchronize Changes
 

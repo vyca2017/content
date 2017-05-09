@@ -1,6 +1,6 @@
 ---
 alias: aetoh3vad6
-path: /docs/reference/cli/common-workflows/creating-projects
+path: /docs/reference/cli/commands/creating-and-cloning-projects
 layout: REFERENCE
 description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
 tags:
@@ -10,7 +10,7 @@ related:
   more:
 ---
 
-# Creating Projects
+# Creating and Cloning Projects
 
 To create a new project, you can use `graphcool init`. This will create a new [project configuration file](!alias-ow2yei7mew) in the current folder.
 
@@ -21,19 +21,19 @@ See also the full reference of the `graphcool init` command.
 * the **name of the new project** can be controlled with `--name`
 
   ```sh
-    graphcool init --name 'My new Project'
+  graphcool init --name 'My new Project'
   ```
 
 * the **project alias** can be controlled with `--alias`
 
   ```sh
-    graphcool init --alias 'my-new-project'
+  graphcool init --alias 'my-new-project'
   ```
 
 * the **project region** can be controlled with `--region`
 
   ```sh
-    graphcool init --region 'eu-west-1'
+  graphcool init --region 'eu-west-1'
   ```
 
 ## Quickstart and Starting From Scratch

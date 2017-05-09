@@ -12,10 +12,14 @@ related:
 
 # Miscellaneous Commands
 
+## Project specific commands
+
+Those commands need to be run in a folder that contains a `*.graphcool` file. If there are multiple `*.graphcool` files, you need to specify one of them using the `--project` argument.
+
 ## export
 
 ```sh
-# export data as JSON (use if only one *.graphcool file in folder)
+# export data as JSON for the current project
 graphcool export
 
 # export data as JSON for specified project file
@@ -39,6 +43,8 @@ graphcool console
 graphcool playground
 ```
 
+## Other Commands
+
 ## projects
 
 ```sh
@@ -48,10 +54,14 @@ graphcool projects
 
 ## auth
 
+Typically, it's not needed to run this command directly. If you run a command that requires authentication, such as `graphcool init` you will be automatically prompted to authenticate in your browser.
+
 ```sh
-# opens browser and authenticates CLI as the user that's currently logged into the Console
+# opens browser and authenticates as the logged in Console user
 graphcool auth
 ```
+
+> Note: Your session token is stored at ~/.graphcool
 
 ## version
 
