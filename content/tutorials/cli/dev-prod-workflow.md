@@ -2,7 +2,6 @@
 alias: ex4wo4zaep
 path: /docs/tutorials/cli-dev-prod-workflow
 layout: TUTORIAL
-preview: freecom-part-1.png
 description: Learn best practices to manage a development-production-workflow with the Graphcool CLI
 tags:
   - cli
@@ -41,7 +40,7 @@ The workflow we are going to simulate in this tutorial looks as follows:
 3. Iterate on the application by adjusting the schema of the dev project 
 4. Move all changes that happened in dev to prod
 
-### 1. Creating development project
+## 1. Creating development project
 
 Let's go ahead and create the development environment with `graphcool init`:
 
@@ -85,7 +84,7 @@ type User implements Node {
 
 This is the project that we'll use for our development environment. It will never actually store any data from our end users.
 
-### 2. Cloning for production
+## 2. Cloning for production
 
 Fast forward a bit and assume we're now done with all the frontend work and ready to deploy version 1.0 of the app. Before we do so, we need to create the _production environment_ with a schema that's identical to the one from dev. This can be done by calling the `init` command again and passing in the `--copy` and `--copy-options` arguments:
 
@@ -102,7 +101,7 @@ This will create the same project file as above excepted for the first line whic
 Depending on the client technology that was used, we now only have to adjust the API endpoints in the code that we wrote in the actual application and are ready to deploy 🚀
 
 
-### 3. Another product iteration
+## 3. Another product iteration
 
 After version 1.0 of our app was deployed, we collected some feedback and did another iteration on the schema. In particular, there are two changes that we added incrementally to our app (and schema):
 
@@ -187,7 +186,7 @@ type User implements Node {
 }
 ```
 
-### 4. Update production environment
+## 4. Update production environment
 
 To make sure our changes are transferred to the production environment, we have to update the schema in `prod.graphcool` manually and then performing the migration as before. 
 
