@@ -1,7 +1,20 @@
-Functions give you the possibility to define custom business logic. Are a simple yet powerful concept to handle your custom business logic workflow without the need to host and maintain your own infrastructure
+---
+alias: ahbohb4phi
+path: /docs/reference/functions/input-and-output
+layout: REFERENCE
+description: Function gives developers a nice and familiar way to employ custom business logic.
+tags:
+  - functions
+related:
+  further:
+  more:
+---
 
-And the error handling:
-There are two cases:
+# Function Input and Output
+
+Most functions receive
+
+## In
 
 1) The function failed in a way the developer did not anticipate (it returns a 4xx or 5xx status code.) In this case we return:
 
