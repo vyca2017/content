@@ -395,6 +395,5 @@ This will create a GraphQL API that you can access using the displayed endpoints
 
 ## Summary
 
-* Firebase enforces an artificial way of thinking about data to make sure there are no performance penalties and permissions work properly ---> GraphQL solves this naturally
-* 
+Firebase enforces an artificial way of thinking about data to make sure there are no performance penalties and permissions work properly.
 
