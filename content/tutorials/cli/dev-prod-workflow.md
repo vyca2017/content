@@ -45,12 +45,12 @@ The workflow we are going to simulate in this tutorial looks as follows:
 Let's go ahead and create the development environment with `graphcool init`:
 
 ```bash
-graphcool init --schema https://graphqlbin.com/instagram.graphql --name InstagramDev -alias insta-dev --output dev.graphcool
+graphcool init --schema https://graphqlbin.com/instagram.graphql --name InstagramDev --alias insta-dev --output dev.graphcool
 ```
 
 This will create a new project called `InstagramDev` in our Graphcool account. In future commands, we can further refer to the project by using the _alias_ `insta-dev` instead of using the project ID. The schema is fetched from the remote URL `https://graphqlbin.com/instagram.grapqhl` and the project file will be written to `dev.graphcool`.
 
-This what the project `dev.graphcool` file look like:
+This is what the project `dev.graphcool` file look like:
 
 ```graphql
 # project: insta-dev
@@ -92,7 +92,7 @@ Fast forward a bit and assume we're now done with all the frontend work and read
 graphcool init --copy insta-dev --name Instagram --alias insta-prod --copy-options mutation-callbacks --output prod.graphcool 
 ```
 
-This will create the same project file as above excepted for the first line which now is:
+Thiamine now is:
 
 ```
 # project: insta-prod 
@@ -103,9 +103,25 @@ Depending on the client technology that was used, we now only have to adjust the
 
 ## 3. Another product iteration
 
-After version 1.0 of our app was deployed, we collected some feedback and did another iteration on the schema. In particular, there are two changes that we added incrementally to our app (and schema):
+After version 1.0 of our app was deployed, we collected some feedback and did another iteration on the app and the schema. In particular, there are three changes that we added incrementally to the schema:
 
-1. Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
+
+1. Updating the `Post` type by renaming the `description` field to `title`, adding an optional field `subTitle` and a required field `location`
+
+```graphql
+type Post implements Node {
+  ...
+  title: String! @rename(oldName: "description")
+  subTitle: String
+  location: String! @migrationValue(value: "Unknown")
+}
+```
+
+Note that we're using the `@rename` and `@migrationValue` [directives](!alias-aeph6oyeez). The latter is necessary because we already have posts in the database. Since we're now adding a new required field to the `Post` type, these existing posts need a value that can be written into these fields, that's preciselt what we specify with the `@migrationValue` directive. 
+
+We can submit the changes with `graphcool push dev.graphcool`.
+
+2. Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
 
 ```graphql
 type Post implements Node {
@@ -115,13 +131,13 @@ type Post implements Node {
 
 type User implements Node {
   ...
-  posts: [Post!] @relation(name: "PostsByUser")
+  posts: [Post!]! @relation(name: "PostsByUser")
 }
 ```
 
-The changes were submitted by using `graphcool push dev.graphcool`.
+The changes were again submitted by using `graphcool push dev.graphcool`.
 
-2. Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
+3. Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
 
 ```graphql
 type Comment implements Node {
@@ -131,12 +147,12 @@ type Comment implements Node {
 
 type Post implements Node {
   ...
-  comments: [Comment!] @relation(name: "CommentsOnPost")
+  comments: [Comment!]! @relation(name: "CommentsOnPost")
 }
 
 type User implements Node {
   ...
-  comments: [Comment!] @relation(name: "CommentsByUser")
+  comments: [Comment!]! @relation(name: "CommentsByUser")
 }
 ```
 
@@ -146,7 +162,7 @@ After we've performed these migrations, our project file has now grown to look a
 
 ```graphql
 # project: insta-dev
-# version: 3
+# version: 4
 
 type Comment implements Node {
   author: User @relation(name: "CommentsByUser")
@@ -170,10 +186,12 @@ type File implements Node {
 type Post implements Node {
   comments: [Comment!]! @relation(name: "CommentsOnPost")
   createdAt: DateTime!
-  description: String!
   id: ID! @isUnique
   imageUrl: String!
+  location: String!
   postedBy: User @relation(name: "PostsByUser")
+  subTitle: String
+  title: String!
   updatedAt: DateTime!
 }
 
@@ -186,11 +204,13 @@ type User implements Node {
 }
 ```
 
+Note that `@rename` and `@migrationValue` were only _temporary_ directives that were used for one particular schema migration, so they've been removed by the server after that migration was performed.
+
 ## 4. Update production environment
 
-To make sure our changes are transferred to the production environment, we have to update the schema in `prod.graphcool` manually and then performing the migration as before. 
+To make sure our changes are transferred to the production environment, we have to update the schema in `prod.graphcool` manually and then perform the migration in the same way we did before. The schema needs to be identical to the one we currently have in `dev.graphcool`, plus any directives that we used for schema migrations along the way. 
 
-The manual process can also be replaced by a script where the schema from `dev.graphcool` are written automatically into `prod.graphcool`. Assuming we either used such a script or pasted the schema over manually, our `prod.graphcool` file should now look similar to `dev.graphcool` - except for the frontmatter:
+The manual process can also be replaced by a script where the schema from `dev.graphcool` is written automatically into `prod.graphcool`. Assuming we either used such a script or pasted the schema over manually, our `prod.graphcool` file should now look similar to `dev.graphcool` - except for the frontmatter and the migration directives:
 
 ```graphql
 # project: insta-prod
@@ -218,10 +238,12 @@ type File implements Node {
 type Post implements Node {
   comments: [Comment!]! @relation(name: "CommentsOnPost")
   createdAt: DateTime!
-  description: String!
   id: ID! @isUnique
   imageUrl: String!
+  location: String! @migrationValue(value: "Unknown")
   postedBy: User @relation(name: "PostsByUser")
+  subTitle: String
+  title: String! @rename(oldName: "description")
   updatedAt: DateTime!
 }
 
