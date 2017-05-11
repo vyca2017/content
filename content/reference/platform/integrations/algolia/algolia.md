@@ -36,7 +36,7 @@ Enter the collected credentials in the Algolia integration popup in the Console:
 
 ## Create new Search Indices
 
-* select the model that you want to define the index on
+* select the type that you want to define the index on
 * enter the name of the search index. This name needs to be entered in your application as well!
 * enter the query that defines the structure of the search index
 

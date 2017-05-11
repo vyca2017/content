@@ -2,49 +2,26 @@
 alias: kie1quohli
 path: /docs/reference/cli/overview
 layout: REFERENCE
-description: The Graphcool CLI
-beta: true
+description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
 tags:
   - cli
-  - data-schema
-  - data-management
-  - migrations
 related:
   further:
-    - chohbah0eo
-    - he6jaicha8
   more:
-    - kr84dktnp0
 ---
 
-# CLI
+# Graphcool CLI
 
-With the CLI you can manage changes to a project's schema and data. You can install it with npm:
+You can use the Graphcool CLI to manage your Graphcool projects and run schema migrations.
+
+## Getting Started
+
+* Install the `graphcool` command-line tool and create a new project:
 
 ```sh
 npm install -g graphcool
+graphcool init
 ```
 
-> Note: the CLI is under active development and will be released in the future
-
-## Creating a new Project
-
-> Create a new project (uses graphcool.schema in [IDL Schema definition syntax](!alias-kr84dktnp0) as template if exists).
-
-```sh
-graphcool init --name 'My Project' --alias 'my-project' --region 'us-west-1'
-```
-
-## Updating the Schema of a Project
-
-> Apply local config changes to a project.
-
-```sh
-graphcool update --config 'graphcool.schema' --dry-run
-```
-
-## Fetch Latest Config for a Project
-
-```sh
-graphcool fetch --project-id 'my-project'
-```
+This creates a new Graphcool project and a corresponding [`project.graphcool` file](!alias-ow2yei7mew).
+Now you can explore the [available commands](!alias-tha5feef7i) to tackle common workflows.

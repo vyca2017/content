@@ -16,6 +16,11 @@ related:
 
 # Changelog
 
+## Week 18 (May 1 - May 7)
+
+- Enums are now managed on a project-level instead a type-level. This means you can define the possible values for one enum and create fields that use this enum in different types now.
+- We added a new authentication provider that allows authentication based on a unique secret: **Anonymous Authentication**. Check [the latest Freecom chapter](!alias-pei9aid6ei) to learn how to use it!
+
 ## Week 17 (April 24 - April 30)
 
 - We [released permission queries](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries-oolooch8oh/)! This is a novel approach for customizable authorization rules and we're very excited about the launch. Thanks to the **over 100 developers** in our beta program for throroughly testing this feature!

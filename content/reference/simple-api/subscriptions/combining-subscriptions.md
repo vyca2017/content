@@ -17,7 +17,7 @@ related:
 
 # Combining Subscriptions
 
-You can subscribe to multiple mutations on the same model in one subscription.
+You can subscribe to multiple mutations on the same type in one subscription.
 
 ## Subscribe to all Changes to all Nodes
 

@@ -26,7 +26,7 @@ A node in a one-to-one [relation](!alias-goh5uthoc1) can at most be connected to
 
 ## Connect two nodes in a one-to-one relation
 
-Creates a new edge between two nodes specified by their `id`. The according models have to be in the same [relation](!alias-goh5uthoc1).
+Creates a new edge between two nodes specified by their `id`. The according types have to be in the same [relation](!alias-goh5uthoc1).
 
 The query response can contain both nodes of the new edge. The names of query arguments and node names depend on the field names of the relation.
 

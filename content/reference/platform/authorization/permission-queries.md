@@ -53,7 +53,7 @@ Depending on the pending operation, several **GraphQL variables** are available 
 
 ### Variables for Relation Permissions
 
-* `$leftModel_id: ID!`, `$rightModel_id: ID!` the ids of the nodes to be connected or disconnected
+* `$leftType_id: ID!`, `$rightType_id: ID!` the ids of the nodes to be connected or disconnected
 
 ## Common Authorization Patterns
 

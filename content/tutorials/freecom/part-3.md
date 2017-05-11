@@ -3,7 +3,7 @@ alias: die6mewitu
 path: /docs/tutorials/freecom-3-subscriptions
 layout: TUTORIAL
 preview: freecom-part-3.png
-description: Realtime Updates with GraphQL Subscriptions  
+description: Realtime Updates with GraphQL Subscriptions
 tags:
   - freecom
 related:
@@ -46,7 +46,7 @@ this.newMessageObserver = this.props.client.subscribe({
   `,
   }).subscribe({
       next(data) {
-      console.log('A mutation of the following type happened on the Message model: ', data.Message.mutation)
+      console.log('A mutation of the following type happened on the Message type: ', data.Message.mutation)
       console.log('The changed data looks as follows: ', data.Message.node)
     },
     error(error) {
@@ -103,7 +103,7 @@ Also notice that `node` will give you access to values from related fields while
 ```graphql
 # this works
 node {
-  text 
+  text
   agent {
     id
   }
@@ -139,9 +139,9 @@ Rather than using the updated data manually in a callback, you can benefit from 
 ### Setting up the `ApolloClient` to use Subscriptions
 
 To use subscriptions in your app, you need to configure the `ApolloClient` accordingly. This time, in addition to the GraphQL endpoint, we also need to provide a `SubscriptionClient` that handles the websocket connection between our app and the server.
- 
+
 ![](./img/fc3-subscriptions_overview.png)
-	
+
 To find out more about how the `SubscriptionClient` works, you can visit the [repository](https://github.com/apollographql/subscriptions-transport-ws) where it's implemented. Let's now see how we can to setup the `ApolloClient` and prepare it for using subscriptions.
 
 First, in order to use the `SubscriptionClient` in your application, you need to add it as a dependency:
@@ -250,4 +250,3 @@ In the next chapter, we're going to enable support agents to join the chat by in
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 
 <!-- FREECOM_SIGNUP -->
-

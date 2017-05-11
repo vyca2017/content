@@ -100,7 +100,7 @@ There are three broad categories of commonly used permission types that enable e
 
 ## User Roles for Broad Authorization Rules
 
-In our schema, we can assign different roles to users via the *enum field `role` on the `User` model* with the possible values `EDITOR`, `MODERATOR` and `ADMIN`. This paves the way for **role-based permissions**, which are very useful if different kinds of users should have different access levels.
+In our schema, we can assign different roles to users via the *enum field `role` on the `User` type* with the possible values `EDITOR`, `MODERATOR` and `ADMIN`. This paves the way for **role-based permissions**, which are very useful if different kinds of users should have different access levels.
 
 Most role-based permission do not depend on the specific state of the node, or the relation between the node and the requesting user. Instead, mostly **the role of the user is the deciding factor whether an operation is allowed** or not.
 

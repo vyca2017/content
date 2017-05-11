@@ -30,7 +30,7 @@ We will expand the Instagram clone from the previous guide by associating posts 
 
 ## 1. Preparation
 
-Let's create an example user to see the notification emails in action. Go to the `User` model and add a new node. To verify later that notification emails are being sent correctly, enter your own name and email. Now navigate to the `Post` model and set the `author` field of all the post nodes to the user you just created.
+Let's create an example user to see the notification emails in action. Go to the `User` type and add a new node. To verify later that notification emails are being sent correctly, enter your own name and email. Now navigate to the `Post` type and set the `author` field of all the post nodes to the user you just created.
 
 Optionally, create as many other users that you want. They can be used as the author of comments in a later section.
 
@@ -111,7 +111,7 @@ Now that we have setup our mutation callback handler, we are ready to configure 
 
 Here we have the possibility to configure the trigger and the payload for the mutation callback and enter a URL that points to the handler we just created.
 
-For the trigger, select the `Comment` model and the `is created` mutation, so the mutation callback is triggered whenever a comment is created.
+For the trigger, select the `Comment` type and the `is created` mutation, so the mutation callback is triggered whenever a comment is created.
 
 The payload is the information the handler needs to complete the mutation callback. In our case, we are interested in the actual comment, its author and the author of the post the comment is related to. We can express this by selecting fields on the exposed `createdNode`:
 
@@ -136,7 +136,7 @@ As the last step, we have to enter the URL to our handler and confirm to create 
 
 ## 4. Triggering an Mutation Callback
 
-To trigger the mutation callback that sends notification emails, we should add a few comments. Navigate to the `Comment` model and create some comments setting one of the users we created before as author. You should get a new email after a few moments. Alternatively you can run
+To trigger the mutation callback that sends notification emails, we should add a few comments. Navigate to the `Comment` type and create some comments setting one of the users we created before as author. You should get a new email after a few moments. Alternatively you can run
 ```
 wt logs
 ```

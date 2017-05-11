@@ -28,12 +28,12 @@ When creating or updating nodes, you can connect it to an existing related node 
 
 ### Nested Create Mutations
 
-For every relation of a model, the `update` and `create` mutations expose an argument to issue a nested create operation on the related model. Depending on the relation multiplicity, this argument allows to either create a single related node (for to-one relations) or multiple related nodes (for to-many relations).
+For every relation of a type, the `update` and `create` mutations expose an argument to issue a nested create operation on the related type. Depending on the relation multiplicity, this argument allows to either create a single related node (for to-one relations) or multiple related nodes (for to-many relations).
 
 [Read more about nested create mutations](!alias-vaet3eengo).
 
 ### Nested Update Mutations
 
-For every relation of a model, the `update` and `create` mutations expose an argument to connect the original node to an existing related node. Depending on the relation multiplicity, this argument allows to either add a single related node (for to-one relations) or multiple related nodes (for to-many relations) to the relation.
+For every relation of a type, the `update` and `create` mutations expose an argument to connect the original node to an existing related node. Depending on the relation multiplicity, this argument allows to either add a single related node (for to-one relations) or multiple related nodes (for to-many relations) to the relation.
 
 [Read more about nested update mutations](!alias-tu9ohwa1ui).

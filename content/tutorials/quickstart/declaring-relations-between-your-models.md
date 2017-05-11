@@ -8,7 +8,7 @@ preview: declaring-relations-between-your-models-preview.png
 tags:
   - console
   - relations
-  - models
+  - types
   - fields
 related:
   further:

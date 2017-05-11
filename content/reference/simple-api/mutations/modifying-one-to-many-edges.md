@@ -22,14 +22,14 @@ related:
 
 # Modifying edges for one-to-many relations with the Simple API
 
-One-to-many [relations](!alias-goh5uthoc1) relate two models to each other.
+One-to-many [relations](!alias-goh5uthoc1) relate two types to each other.
 
 A node of the one side of a one-to-many relation can be connected to multiple nodes.
 A node of the many side of a one-to-many relation can at most be connected to one node.
 
 ## Connect two nodes in a one-to-many relation
 
-Creates a new edge between two nodes specified by their `id`. The according [models](!alias-ij2choozae) have to be in the same [relation](!alias-goh5uthoc1).
+Creates a new edge between two nodes specified by their `id`. The according [types](!alias-ij2choozae) have to be in the same [relation](!alias-goh5uthoc1).
 
 The query response can contain both nodes of the new edge. The names of query arguments and node names depend on the field names of the relation.
 

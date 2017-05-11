@@ -26,7 +26,7 @@ related:
 
 # Designing Powerful APIs with GraphQL Query Parameters
 
-GraphQL queries provide an efficient way to fetch data, even across multiple models. This results in a great abstraction layer on top of databases, but sometimes more is needed to satify specific data requirements of modern applications.
+GraphQL queries provide an efficient way to fetch data, even across multiple types. This results in a great abstraction layer on top of databases, but sometimes more is needed to satify specific data requirements of modern applications.
 
 Our GraphQL API **puts the client in control of the data** and provides **the best possible developer experience (DX)** by exposing different query arguments. Similar to our [nested mutations syntax](!alias-vietahx7ih) which sees adoption by more and more companies, we at Graphcool are happy to share our best practices designing powerful GraphQL APIs with the GraphQL community.
 

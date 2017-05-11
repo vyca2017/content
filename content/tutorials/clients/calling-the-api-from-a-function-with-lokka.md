@@ -40,7 +40,7 @@ In this guide, we will again use our Instagram example. We will create a mutatio
 
 To keep track of which posts a user likes, let's create the `LikedPosts` relation.
 It is a many-to-many relation, because a user can like many posts, and a post can be liked by many users at the same time.
-So go ahead and create the relation between the `User` and `Post` models. Name the fields `likedPosts` and `likedBy`, respectively.
+So go ahead and create the relation between the `User` and `Post` types. Name the fields `likedPosts` and `likedBy`, respectively.
 
 ### 1.2 On permissions
 

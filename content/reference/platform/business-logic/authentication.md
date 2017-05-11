@@ -24,7 +24,7 @@ related:
 
 ## Auth Providers
 
-Authentication is provided by means of so called auth providers. They can be configured in the `User` model of your project and multiple auth providers can be enabled at the same. However, one user can only authenticate with one auth provider at the same time.
+Authentication is provided by means of so called auth providers. They can be configured in the `User` type of your project and multiple auth providers can be enabled at the same. However, one user can only authenticate with one auth provider at the same time.
 
 ### Email and Password
 
@@ -61,7 +61,7 @@ If a request to your endpoint contains a valid authentication token, it is grant
 ## Temporary Authentication Token
 
 Temporary authentication tokens have a certain validity duration and can be obtained from authentication mutations.
-To enable an auth provider, head over to the [`User` model](!alias-uhieg2shio) in your project and choose between different options.
+To enable an auth provider, head over to the [`User` type](!alias-uhieg2shio) in your project and choose between different options.
 
 Read more about how user authentication works with different auth providers in the [Simple API](!alias-eixu9osueb) and [Relay API](!alias-yoh9thaip0).
 

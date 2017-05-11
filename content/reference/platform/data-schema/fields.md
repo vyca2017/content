@@ -1,8 +1,8 @@
 ---
 alias: teizeit5se
-path: /docs/reference/platform/fields
+path: /docs/reference/schema/fields
 layout: REFERENCE
-description: Fields are the building blocks of a model, defining a node's shape. A field has a name and is either scalar or belongs to a relation.
+description: Fields are the building blocks of a type, defining a node's shape. A field has a name and is either scalar or belongs to a relation.
 tags:
   - platform
   - fields
@@ -22,9 +22,9 @@ related:
 
 # Fields
 
-*Fields* are the building blocks of a [model](!alias-ij2choozae) giving a node its shape. Every field is referenced by its name and has a type which is either a [scalar type](#scalar-types) or a [relation](!alias-goh5uthoc1).
+*Fields* are the building blocks of a [types](!alias-ij2choozae) giving a node its shape. Every field is referenced by its name and is either [scalar](#scalar-types) or a [relation field](!alias-goh5uthoc1).
 
-> The `Post` model might have a `title` and a `text` field both of type String and an `id` field of type ID.
+> The `Post` type might have a `title` and a `text` field both of type String and an `id` field of type ID.
 
 ## Scalar Types
 
@@ -66,19 +66,21 @@ In queries or mutations, DateTime fields have to be specified in [ISO 8601 forma
 
 ### Enum
 
+Enums are defined on a project scope.
+
 Like a Boolean an Enum can have one of a predefined set of values. The difference is that you can define the possible values. For example you could specify how an article should be formatted by creating an Enum with the possible values `COMPACT`, `WIDE` and `COVER`.
 
 Note: Enum values can at most be 191 characters long.
 
-In queries or mutations, Enum fields have to be specified without any enclosing characters. You can only use values that you defined for the field: `enum: A`, `enum: B`.
+In queries or mutations, Enum fields have to be specified without any enclosing characters. You can only use values that you defined for the enum: `enum: COMPACT`, `enum: WIDE`.
 
 ### JSON
 
-Sometimes you need to store arbitrary JSON values like unstructured meta information. The JSON type makes sure that it is actually valid JSON and returns the value as a parsed JSON object/array instead of a string.
+Sometimes you need to store arbitrary JSON values for loosely structured data. The JSON type makes sure that it is actually valid JSON and returns the value as a parsed JSON object/array instead of a string.
 
 Note: JSON values are currently limited to 64KB in size.
 
-In queries or mutations, JSON fields have to be specified with enclosing double quotes. Special characters have to be escaped: `json: "[\"this\",\"is\",\"json\"]"`.
+In queries or mutations, JSON fields have to be specified with enclosing double quotes. Special characters have to be escaped: `json: "{\"int\": 1, \"string\": \"value\"}"`.
 
 <!--
 ### GeoPoint
@@ -106,7 +108,7 @@ Scalar fields can be marked as required (sometimes also referred to as "non-null
 
 Required fields are usually marked using a `!` after the field type.
 
-> An example for a required field on the `User` model could look like this: `name: String!`.
+> An example for a required field on the `User` type could look like this: `name: String!`.
 
 ## Field Constraints
 
@@ -114,9 +116,9 @@ Fields can be configured with certain field constraints to add further semantics
 
 ### Unique
 
-Setting the *unique* constraint makes sure that two nodes of the model in question cannot have the same value for a certain field. The only exception is the `null` value, meaning that multiple nodes can have the value `null` without violating the constraint.
+Setting the *unique* constraint makes sure that two nodes of the type in question cannot have the same value for a certain field. The only exception is the `null` value, meaning that multiple nodes can have the value `null` without violating the constraint.
 
-> A typical example is the `email` field on the `User` model.
+> A typical example is the `email` field on the `User` type.
 
 Please note that only the first 191 characters in a String field are considered for uniqueness. Storing two different strings is not possible if the first 191 characters are the same.
 
@@ -124,6 +126,6 @@ Please note that only the first 191 characters in a String field are considered 
 
 You can set a default value for scalar fields. The value will be taken for new nodes when no value was supplied during creation.
 
-## Fields in the data schema
+## Generated Operations Based On Fields
 
-Fields indirectly define your [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying  multiple nodes in the [Simple API](!alias-pa2aothaec) or the [Relay API](!alias-uu4ohnaih7).
+Fields are part of the [data schema](!alias-ahwoh2fohj) and determine the available options for ordering and filtering when querying multiple nodes in the [API](!alias-pa2aothaec).

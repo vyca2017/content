@@ -27,7 +27,7 @@ Most applications will work best if signups are open to everyone - here's the pe
 
 ![](./permission-create-user-everyone.gif)
 
-Note that by choosing `Apply to whole model`, we select all current and future fields allowing a user signing up to set all the fields like a `name` or `emailAddress`.
+Note that by choosing `Apply to whole type`, we select all current and future fields allowing a user signing up to set all the fields like a `name` or `emailAddress`.
 
 Using the email auth provider it works like this:
 
@@ -114,7 +114,7 @@ Even though we receive a permission error, the user is still created because the
 
 You can use the advanced permission system to restrict user signup to certain user groups. This is useful if you are working on an internal application for example.
 
-Let's introduce an enum field `role` with the possible values `USER` and `MANAGER` to the `User` model for demonstration purposes. Then we can use the following authenticated [permission query](!alias-iox3aqu0ee) with the `Create` operation on the `User` model.
+Let's introduce an enum field `role` with the possible values `USER` and `MANAGER` to the `User` type for demonstration purposes. Then we can use the following authenticated [permission query](!alias-iox3aqu0ee) with the `Create` operation on the `User` type.
 
 ![](./manager-signups.png)
 
@@ -133,7 +133,7 @@ Now only users with the `MANAGER` role are able to create new accounts - of cour
 
 ## Restrict The Creation Of New Accounts
 
-Finally, you can remove or disable all permissions for the `Create` operation on the `User` model.
+Finally, you can remove or disable all permissions for the `Create` operation on the `User` type.
 
 ![](./no-signups.png)
 

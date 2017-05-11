@@ -21,7 +21,7 @@ related:
 
 # Nested Create Mutations in the Simple API
 
-Nested create mutations connect the created node to a new node in the related model.
+Nested create mutations connect the created node to a new node in the related type.
 Let's assume the following schema:
 
 ```idl
@@ -127,9 +127,9 @@ mutation createAuthorAndContactDetails($contactDetails: AuthorcontactDetailsCont
 
 Note the variable type `AuthorcontactDetailsContactDetails` that follows a consistent naming schema:
 
-* The original model name `Author`
+* The original type name `Author`
 * The related field name `contactDetails`
-* The related model name `ContactDetails`
+* The related type name `ContactDetails`
 
 You can also find the type name in the documentation in the Playground:
 
@@ -268,9 +268,9 @@ mutation createAuthorAndPosts($posts: [AuthorpostsPost!]) {
 
 Note the variable type `[AuthorpostsPost!]` that follows a consistent naming schema:
 
-* The original model name `Author`
+* The original type name `Author`
 * The related field name `posts`
-* The related model name `Post`
+* The related type name `Post`
 
 You can also find the type name in the documentation in the Playground:
 

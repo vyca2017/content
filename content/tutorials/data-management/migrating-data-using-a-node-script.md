@@ -32,7 +32,7 @@ In this guide we will see how a migration of potentially thousands of nodes can 
 
 ## 1. Setup a new project
 
-Create a new Graphcool project with a `Image` model that has a required `name` field of type String as described in this schema:
+Create a new Graphcool project with a `Image` type that has a required `name` field of type String as described in this schema:
 
 ```idl
 type Image {

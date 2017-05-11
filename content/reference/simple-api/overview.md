@@ -31,19 +31,19 @@ The Simple API provides several possibilities to fetch, modify or traverse your 
 
 ### Generated Queries
 
-Depending on your models and relations, certain automatically [generated queries](!alias-nia9nushae) are available to fetch your data.
+Depending on your types and relations, certain automatically [generated queries](!alias-nia9nushae) are available to fetch your data.
 
 ### Traversing the data graph
 
-Using GraphQL, you can select the individual fields that the response of a query or mutation should contain. The GraphQL schema of your project is built according to your models and relations and allows you to [traverse the data graph](!alias-aihaeph5ip) in your query.
+Using GraphQL, you can select the individual fields that the response of a query or mutation should contain. The GraphQL schema of your project is built according to your types and relations and allows you to [traverse the data graph](!alias-aihaeph5ip) in your query.
 
 ### Generated Mutations
 
-Depending on your models and relations certain [generated mutations](!alias-ol0yuoz6go) are available that allow you to modify your data.
+Depending on your types and relations certain [generated mutations](!alias-ol0yuoz6go) are available that allow you to modify your data.
 
 ### Generated Subscriptions
 
-Depending on your models and relations, certain [generated subscriptions]() allow you to be notified in realtime of changes to your data.
+Depending on your types and relations, certain [generated subscriptions]() allow you to be notified in realtime of changes to your data.
 All available subscriptions are automatically generated.
 
 ### Errors

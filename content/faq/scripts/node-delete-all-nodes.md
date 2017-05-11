@@ -2,7 +2,7 @@
 alias: iet3phoum8
 path: /docs/faq/node-delete-all-nodes
 layout: FAQ
-description: Using node and Lokka you can quickly delete all nodes of a specific model with a small script.
+description: Using node and Lokka you can quickly delete all nodes of a specific type with a small script.
 tags:
   - scripts
   - lokka
@@ -16,9 +16,9 @@ related:
     - ga2ahnee2a
 ---
 
-# Deleting all nodes of a specific model
+# Deleting all nodes of a specific type
 
-With `node` it's simple to delete all nodes of a specific model.
+With `node` it's simple to delete all nodes of a specific type.
 Using [Lokka](https://github.com/kadirahq/lokka), we can first query the id of the nodes that we then delete in the next step.
 
 <!-- GITHUB_EXAMPLE('Delete all nodes', 'https://github.com/graphcool-examples/scripts') -->

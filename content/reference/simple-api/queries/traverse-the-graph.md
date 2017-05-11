@@ -3,7 +3,7 @@ alias: aihaeph5ip
 path: /docs/reference/simple-api/traverse-the-graph
 layout: REFERENCE
 shorttitle: Traversing the data graph
-description: Traverse nodes in your query response by using edges. Available edges in the GraphQL schema depend on models and relations in your backend.
+description: Traverse nodes in your query response by using edges. Available edges in the GraphQL schema depend on types and relations in your backend.
 simple_relay_twin: uo6uv0ecoh
 tags:
   - simple-api
@@ -26,7 +26,7 @@ related:
 
 You can traverse the data graph in a query by including the field of a specific [relation](!alias-goh5uthoc1) and adding nested fields inside the now selected node.
 
-Consider the following project setup: the `Post` and `User` models are related via the `author` and `posts` fields. Any query for posts will expose the `user` field, and any query for users will expose the `posts` field.
+Consider the following project setup: the `Post` and `User` types are related via the `author` and `posts` fields. Any query for posts will expose the `user` field, and any query for users will expose the `posts` field.
 
 ## Traversing a one-to-one edge
 

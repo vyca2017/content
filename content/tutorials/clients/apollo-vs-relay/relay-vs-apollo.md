@@ -89,7 +89,7 @@ With Relay, the GraphQL server is expected to expose the following capabilities:
 
 1. The ability to query one particular resource (_node_) by its ID
 
-   This is done with a root query field in the GraphQL schema called `node` that takes an `ID` as an argument: `node(id: ID!)`. In Relay, every object is expected to have a unique ID which is why every model type needs to implement the `Node` interface:
+   This is done with a root query field in the GraphQL schema called `node` that takes an `ID` as an argument: `node(id: ID!)`. In Relay, every object is expected to have a unique ID which is why every type needs to implement the `Node` interface:
 
    ```graphql
    interface Node {
@@ -114,7 +114,7 @@ With Relay, the GraphQL server is expected to expose the following capabilities:
 
 5. Using connections for modelling relationships
 
-    In Relay, the concept that is used to model a relationship between two model types is called [`Connection`](https://facebook.github.io/relay/docs/graphql-connections.html#content). It requires that a relation in the data model is expressed using `edges` that each contain a `node`.
+    In Relay, the concept that is used to model a relationship between two types is called [`Connection`](https://facebook.github.io/relay/docs/graphql-connections.html#content). It requires that a relation in the data model is expressed using `edges` that each contain a `node`.
 
     If you wanted to access the first 100 Pokemons in the database, this would look as follows with Relay:
 
@@ -280,7 +280,7 @@ Relay also optimizes for performance and tries to minimize the data transfer by 
 
 Relay requires the unique `id` field on every node in the GraphQL backend. This ID is heavily used by Relay to normalize the data and make sure that all components rerender when there is new data for a certain node. No more configuration is needed to make the cache consistent from the client side - however, there is also no possibility to change this behaviour.
 
-For example, for a GraphQL backend that only has unique IDs per model, Relay's cache mechanisms would break. Graphcool uses [cuids](https://github.com/graphcool/cuid-java) to generate unique IDs across all nodes in your project, so this is not an issue.
+For example, for a GraphQL backend that only has unique IDs per type, Relay's cache mechanisms would break. Graphcool uses [cuids](https://github.com/graphcool/cuid-java) to generate unique IDs across all nodes in your project, so this is not an issue.
 
 To read more about GraphQL queries in Relay, refer to the section in [Learn Relay](https://www.learnrelay.org/queries/what-is-a-query).
 
@@ -399,7 +399,7 @@ query {
     }
   }
 }
-```  
+```
 
 And assume it returns the following JSON data:
 
@@ -453,7 +453,7 @@ const client = new ApolloClient({
 })
 ```
 
-With another GraphQL backend, your IDs might only be unique per model. In this case, you can use the following setup:
+With another GraphQL backend, your IDs might only be unique per type. In this case, you can use the following setup:
 
 ```js
 const client = new ApolloClient({

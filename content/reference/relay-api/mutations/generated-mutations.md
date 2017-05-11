@@ -2,7 +2,7 @@
 alias: vah0igucil
 path: /docs/reference/relay-api/mutations
 layout: REFERENCE
-description: Use mutations to modify data. Mutations in the GraphQL schema of your project are derived from models and relations that you defined.
+description: Use mutations to modify data. Mutations in the GraphQL schema of your project are derived from types and relations that you defined.
 simple_relay_twin: ol0yuoz6go
 tags:
   - relay-api
@@ -61,7 +61,7 @@ Note: The subselection of fields cannot be empty. If you have no specific data r
 
 ## Modifying nodes
 
-For every [model](!alias-ij2choozae) in your project, there are different mutations to
+For every [type](!alias-ij2choozae) in your project, there are different mutations to
 
 * [Create nodes](!alias-oodoi6zeit)
 * [Updating nodes](!alias-uath8aifo6)

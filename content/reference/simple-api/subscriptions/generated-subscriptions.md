@@ -3,7 +3,7 @@ alias: aip7oojeiv
 path: /docs/reference/simple-api/subscriptions
 layout: REFERENCE
 shorttitle: Subscriptions
-description: Use subscriptions to receive data updates in realtime. Subscriptions in the GraphQL schema are derived from models and relations.
+description: Use subscriptions to receive data updates in realtime. Subscriptions in the GraphQL schema are derived from types and relations.
 simple_relay_twin: eih4eew7re
 tags:
   - simple-api

@@ -31,15 +31,15 @@ The Relay API provides several possibilities to fetch, modify or traverse your d
 
 ### Generated Queries
 
-Depending on your models and relations, certain automatically [generated queries](!alias-oiviev0xi7) are available to fetch your data.
+Depending on your types and relations, certain automatically [generated queries](!alias-oiviev0xi7) are available to fetch your data.
 
 ### Traversing the data graph
 
-Using GraphQL, you can select the individual fields that the response of a query or mutation should contain. The GraphQL schema of your project is built according to your models and relations and allows you to [traverse the data graph](!alias-uo6uv0ecoh) in your query.
+Using GraphQL, you can select the individual fields that the response of a query or mutation should contain. The GraphQL schema of your project is built according to your types and relations and allows you to [traverse the data graph](!alias-uo6uv0ecoh) in your query.
 
 ### Generated Mutations
 
-Depending on your models and relations certain [generated mutations](!alias-vah0igucil) are available that allow you to modify your data.
+Depending on your types and relations certain [generated mutations](!alias-vah0igucil) are available that allow you to modify your data.
 
 ### Errors
 
