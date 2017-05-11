@@ -88,13 +88,13 @@ This is the project that we'll use for our development environment. It will neve
 
 Fast forward a bit and assume we're now done with all the frontend work and ready to deploy version 1.0 of the app. Before we do so, we need to create the _production environment_ with a schema that's identical to the one from dev. This can be done by calling the `init` command again and passing in the `--copy` and `--copy-options` arguments:
 
-```
+```bash
 graphcool init --copy insta-dev --name Instagram --alias insta-prod --copy-options mutation-callbacks --output prod.graphcool 
 ```
 
 The only difference now is in the first line of the two project files:
 
-```
+```graphql
 # project: insta-prod 
 ```
 
