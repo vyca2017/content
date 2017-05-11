@@ -92,7 +92,7 @@ Fast forward a bit and assume we're now done with all the frontend work and read
 graphcool init --copy insta-dev --name Instagram --alias insta-prod --copy-options mutation-callbacks --output prod.graphcool 
 ```
 
-Thiamine now is:
+The only difference now is in the first line of the two project files:
 
 ```
 # project: insta-prod 
