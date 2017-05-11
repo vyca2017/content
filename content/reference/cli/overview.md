@@ -16,18 +16,12 @@ You can use the Graphcool CLI to manage your Graphcool projects and run schema m
 
 ## Getting Started
 
-* Install the `graphcool` command-line tool:
+* Install the `graphcool` command-line tool and create a new project:
 
 ```sh
 npm install -g graphcool
-graphcool auth
-```
-
-* Create a new project:
-
-```sh
 graphcool init
 ```
 
 This creates a new Graphcool project and a corresponding [`project.graphcool` file](!alias-ow2yei7mew).
-Now you can explore common workflows and [available commands](!alias-tha5feef7i).
+Now you can explore the [available commands](!alias-tha5feef7i) to tackle common workflows.
