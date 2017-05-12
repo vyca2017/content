@@ -23,18 +23,6 @@ related:
 
 Different objects you encounter in a Graphcool project like types or relations follow separate naming conventions to help you distinguish them.
 
-## Projects
-
-Project names can contain **alphanumeric characters and spaces** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
-
-*Project names are unique on an account level.*
-
-#### Examples
-
-* `My Project`
-* `MyProject2`
-* `MY PROJECT`
-
 ## Types
 
 The type name determines the name of derived queries and mutations as well as the argument names for nested mutations. Type names can only contain **alphanumeric characters** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
