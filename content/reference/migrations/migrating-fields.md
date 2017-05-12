@@ -1,18 +1,25 @@
-# Migrating Fields
+---
+alias: ahv6rohnge
+path: /docs/reference/migrations/overview/fields
+layout: REFERENCE
+description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
+tags:
+  - migrations
+related:
+  further:
+  more:
+---
 
-TODO
-* Console
-* CLI
-* Field modifiers (required, unique, lists)
-* enums
-* defaultValue
-* migrationValue
+# Migrating Scalar Fields
+
+Fields in your GraphQL schema are always part of a GraphQL type and consist of a name and a [scalar GraphQL type]().
+Different modifiers exist to mark a fields as [unique]() or [list fields]().
+
+Apart from scalar fields, fields can also be used to work with [relations]().
+
+> Read more about GraphQL [fields in the schema chapter]()
 
 ## Adding a new scalar field
-
-TODO
-* enums
-* relation fields
 
 You can add new fields to your GraphQL schema by including them in an existing type. This will modify existing [queries](), [mutations]() and [subscriptions]() in your GraphQL API.
 

@@ -1,9 +1,21 @@
+---
+alias: shiz6ov4ae
+path: /docs/reference/migrations/overview/relations
+layout: REFERENCE
+description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
+tags:
+  - migrations
+related:
+  further:
+  more:
+---
+
 # Migrating Relations
 
-* relation directive
-* relation fields
-* multiplicities
-* required -> part of `schema` chapter
+The `@relation` directive can be attached to fields in your GraphQL schema to control relations.
+Relations consist of two fields (or, in rare cases only one), have a name and both fields can either be singular or plural. Singular relation fields can be optional, but plural relation fields are always required.
+
+> Read more about GraphQL [relations in the schema chapter]()
 
 ## Adding a new relation
 

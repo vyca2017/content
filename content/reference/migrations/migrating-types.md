@@ -1,8 +1,20 @@
-# Migrating GraphQL Types
+---
+alias: xohs5xooph
+path: /docs/reference/migrations/overview/types
+layout: REFERENCE
+description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
+tags:
+  - migrations
+related:
+  further:
+  more:
+---
 
-* Console
-* CLI
-* relations
+# Migrating Types
+
+GraphQL types in your GraphQL schema can be controlled using the `type` keyword.
+
+> Read more about GraphQL [types in the schema chapter]()
 
 ## Adding a new type
 
