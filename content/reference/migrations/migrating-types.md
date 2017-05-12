@@ -1,6 +1,6 @@
 ---
 alias: xohs5xooph
-path: /docs/reference/migrations/overview/types
+path: /docs/reference/migrations/types
 layout: REFERENCE
 description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
 tags:

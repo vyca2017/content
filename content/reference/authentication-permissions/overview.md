@@ -1,6 +1,6 @@
 ---
 alias: wejileech9
-path: /docs/reference/platform/authentication
+path: /docs/reference/auth/overview
 layout: REFERENCE
 description: Authentication allows you to manage users in your GraphQL backend. Use authentication providers like Auth0 and Digits out-of-the-box.
 tags:

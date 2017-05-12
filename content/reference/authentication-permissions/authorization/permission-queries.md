@@ -1,6 +1,6 @@
 ---
 alias: iox3aqu0ee
-path: /docs/reference/platform/authorization/permission-queries
+path: /docs/reference/auth/permission-queries
 layout: REFERENCE
 description: GraphQL permission queries allow you to express permissions by leveraging the power of GraphQL queries. This is a simple and powerful combination.
 tags:

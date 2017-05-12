@@ -1,6 +1,6 @@
 ---
 alias: eer4wiang0
-path: /docs/reference/platform/file-management
+path: /docs/reference/file-handling/overview
 layout: REFERENCE
 description: The file management system allows you to upload, modify and delete files with the GraphQL APIs. Files will be directly available in your backend.
 tags:

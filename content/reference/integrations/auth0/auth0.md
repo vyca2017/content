@@ -1,6 +1,6 @@
 ---
 alias: naed3eecie
-path: /docs/reference/platform/integrations/auth0
+path: /docs/reference/integrations/auth0
 layout: REFERENCE
 description: Auth0 enables you to add authentication to your apps in under 10 minutes. With the Auth0 integration it's easy to use GraphQL with Auth0.
 tags:

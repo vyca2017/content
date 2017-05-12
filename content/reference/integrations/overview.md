@@ -1,6 +1,6 @@
 ---
 alias: seimeish6e
-path: /docs/reference/platform/integrations
+path: /docs/reference/integrations/overview
 layout: REFERENCE
 description: Graphcool integrates seamlessly with external services like Auth0 and Algolia. For even more flexibility you can use mutation callbacks.
 tags:

@@ -1,6 +1,6 @@
 ---
 alias: iaxohpee8o
-path: /docs/reference/platform/integrations/digits
+path: /docs/reference/integrations/digits
 layout: REFERENCE
 description: Integrate Digits easily with GraphQL and send users an SMS confirmation code, which they enter into your app to confirm their identity.
 tags:

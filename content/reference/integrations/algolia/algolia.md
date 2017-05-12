@@ -1,6 +1,6 @@
 ---
 alias: emaig4uiki
-path: /docs/reference/platform/integrations/algolia
+path: /docs/reference/integrations/algolia
 layout: REFERENCE
 description: Algolia is a hosted Search API that delivers instant results. Auto-sync your GraphQL data to Algolia search indices with this integration.
 tags:
