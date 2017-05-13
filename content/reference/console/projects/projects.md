@@ -14,11 +14,13 @@ related:
 
 Apps you are building with Graphcool are organized into different projects. A project consists of a [data schema](), the data itself and other components like [integrations]() or [permission configuration]().
 
+More options to manage your project can be found in the [project settings]().
+
 ## Project Endpoints
 
 A project offers different [API]() endpoints that all contain the project id.
 
-![](./endpoints.png?width=400)
+![](./endpoints.png?width=600)
 
 ## Managing projects
 
@@ -28,14 +30,26 @@ By clicking the arrow next to the active project's name, you can expand the proj
 
 Click the plus button to create new projects. The schema of a new project will be populated with the existing [system models]().
 
+## Project names and aliases
+
 Project names can contain **alphanumeric characters and spaces** and need to start with an uppercase letter. They can contain **maximally 64 characters**.
 
 *Project names are unique on an account level.*
 
+Project aliases can contain **lowercase letters and dashes**.
+
+*Project aliaes are globally unique.*
+
 #### Examples
+
+Valid project names:
 
 * `My Project`
 * `MyProject2`
 * `MY PROJECT`
 
-More options to manage your project can be found in the [project settings]().
+Valid project aliases:
+
+* `my-project`
+* `my-project-dev`
+* `myproject`
