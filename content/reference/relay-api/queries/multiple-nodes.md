@@ -86,7 +86,7 @@ query {
 * type name: `Todo`, query name: `allTodoes`
 * type name: `Hobby`, query name: `allHobbies`.
 
-Note: The query name approximate the plural rules of the English language. If you are unsure about the actual query name, explore available queries in your [playground](!alias-uh8shohxie#playground).
+Note: The query name approximate the plural rules of the English language. If you are unsure about the actual query name, explore available queries in your [playground](!alias-oe1ier4iej).
 
 ## Modifying the query response
 

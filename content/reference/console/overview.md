@@ -24,4 +24,4 @@ The [Graphcool Console](http://console.graph.cool) provides a wide range of poss
 
 * The [Functions View]() gives an overview over existing [functions](), including most recent invocations and a detailed execution log
 
-* In the [Playground](), you can explore and execute all GraphQL queries, mutations and subscriptions available in your [GraphQL API]().
+* In the [playground](!alias-oe1ier4iej), you can explore and execute all GraphQL queries, mutations and subscriptions available in your [GraphQL API]().

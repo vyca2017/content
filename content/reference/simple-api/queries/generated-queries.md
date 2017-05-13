@@ -17,7 +17,7 @@ related:
 # Queries in the Simple API
 
 A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
-All queries are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.
+All queries are automatically generated. To explore them, use the [playground](!alias-oe1ier4iej) inside your project.
 
 After you send a query to your [endpoint](!alias-yahph3foch#project-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query.
 
