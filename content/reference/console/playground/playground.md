@@ -43,5 +43,3 @@ For each tab, you can choose to run queries to the [Simple API]() or [Relay API]
 ### Authenticating as a user
 
 In the Playground you can choose to run GraphQL operations either as `ADMIN` (all operations are allowed), `EVERYONE` or a specific user.
-
-![](./view-as.png)

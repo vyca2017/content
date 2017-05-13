@@ -18,13 +18,13 @@ Apps you are building with Graphcool are organized into different projects. A pr
 
 A project offers different [API]() endpoints that all contain the project id.
 
-![](./endpoints.png?width=250)
+![](./endpoints.png?width=400)
 
 ## Managing projects
 
 By clicking the arrow next to the active project's name, you can expand the project list to get an overview of all your existing projects.
 
-![](./project-list.png)
+![](./project-list.png?width=200)
 
 Click the plus button to create new projects. The schema of a new project will be populated with the existing [system models]().
 
