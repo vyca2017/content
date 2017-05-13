@@ -7,20 +7,15 @@ tags:
   - functions
 related:
   further:
-    - uh8shohxie
-    - ol0yuoz6go
   more:
-    - saigai7cha
-    - dah6aifoce
-    - soiyaquah7
 ---
 
 # Functions
 
 The business logic of any application is usually what accounts for its real value.
-*Graphcool Functions* follows an **event-driven** concept that allows you to use functions as building blocks for the business logic needed for your app.
+**Graphcool Functions** follows an **event-driven** concept that allows you to use functions as building blocks to get full control for the business logic needed for your individual use case.
 
-You define functions by providing an **inline Javascript code** or a **webhook URL** to code hosted at platforms like AWS Lambda, Microsoft Azure, Google Cloud Functions or even to a self-hosted endpoint. This way you are in control of both the business logic itself as well as the infrastructure the code runs on.
+Functions can be created in the [Functions View]() in the Console.
 
 ## Use Cases for Functions
 
@@ -30,3 +25,12 @@ There are many different contexts that you can use a Graphcool Function in.
 * [Server-side subscriptions]() (formerly called mutation callbacks) allow you to get notified of special events. This can be used to build custom integrations with external services like **sending emails when a User signs up**.
 
 More use cases for functions are planned, for example **cron jobs**. Please let us know in [Slack](https://slack.graph.cool) or on [GitHub](https://github.com/graphcool/feature-requests/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Ffunctions) if you have suggestions.
+
+## Functions Runtime
+
+Whenever you use a function, you can choose between defining it inline or as a webhook.
+**Inline functions** can be specified using the functions editor in the Console. They run on a node runtime and every npm module is available for you to be imported.
+
+Functions can also be deployed as **webhooks** using Function-as-a-service providers such as [Serverless]() and [AWS Lambda](), [Google Cloud Functions](), [Microsoft Azure]() or by hosting the function yourself. Then you need to provide the webhook URL.
+
+> Function executions time out after 10 seconds.
