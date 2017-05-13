@@ -20,7 +20,7 @@ related:
 A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
 All queries are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.
 
-After you send a query to your [endpoint](!alias-uh8shohxie#client-api-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query.
+After you send a query to your [endpoint](!alias-uh8shohxie#project-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query.
 
 This is an example query:
 

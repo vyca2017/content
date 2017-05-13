@@ -21,7 +21,7 @@ related:
 *GraphQL subscriptions* allow you to be notified in realtime of changes to your data.
 All available subscriptions are automatically generated. To explore them, use the [playground](!alias-uh8shohxie#playground) inside your project.
 
-You subscribe to a subscription using your [endpoint](!alias-uh8shohxie#client-api-endpoints) using websockets.
+You subscribe to a subscription using your [endpoint](!alias-uh8shohxie#project-endpoints) using websockets.
 
 This is an example subscription that notifies you whenever a new post is created:
 

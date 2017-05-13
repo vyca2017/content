@@ -25,7 +25,7 @@ related:
 
 # Making requests to the Simple API
 
-To actually send a request to the Simple API, you first need to copy the [endpoint](!alias-uh8shohxie#client-api-endpoints) URL assigned to your project which looks like this:
+To actually send a request to the Simple API, you first need to copy the [endpoint](!alias-uh8shohxie#project-endpoints) URL assigned to your project which looks like this:
 
 `https://api.graph.cool/simple/v1/__PROJECT_ID__`
 
