@@ -24,7 +24,7 @@ related:
 
 # Making requests to the Relay API
 
-To actually send a request to the Relay API, you first need to copy the [endpoint](!alias-uh8shohxie#project-endpoints) URL assigned to your project, which looks like this:
+To actually send a request to the Relay API, you first need to copy the [endpoint](!alias-yahph3foch#project-endpoints) URL assigned to your project, which looks like this:
 
 `https://api.graph.cool/relay/v1/__PROJECT_ID__`
 
