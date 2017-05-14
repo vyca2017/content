@@ -19,7 +19,7 @@ related:
 
 As part of our file management system you are able to
 
-* upload files that are up to 50 MB
+* upload files that are up to 200 MB
 * rename or delete existing files
 
 Each project contains a [file type](!alias-uhieg2shio#file-type) by default that provides the possibility to add and modify files.
