@@ -75,6 +75,6 @@ query {
 
 ## How is the logged-in user determined?
 
-Requests at Graphcool are authenticated by supplying an [authentication token](!alias-wejileech9#authenticating-requests) in the `Authorization` header.
+Requests at Graphcool are authenticated by supplying an [authentication token](!alias-eip7ahqu5o) in the `Authorization` header.
 
 If the token is valid, any operation included in the request will be granted `AUTHENTICATED` permissions and the `user` query from above returns information for the user identified by the token. If the token does not belong to a registered user in your project or it has expired, no valid user can be determined.
