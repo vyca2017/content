@@ -30,7 +30,7 @@ For Email and Digits, the `signinUser` mutation returns a [temporary authenticat
 
 ## Permission setup
 
-Auth providers need an appropriate [permission setup](!alias-iegoo0heez#permissions-and-user-authentication) to work correctly.
+Auth providers need an appropriate [permission setup](!alias-geekae9gah) to work correctly.
 
 ## Email and Password
 
