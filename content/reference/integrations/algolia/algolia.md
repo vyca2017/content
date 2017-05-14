@@ -22,22 +22,22 @@ related:
 
 The [Algolia](https://algolia.com) integration allows you to automatically synchronize your data with Algolia search indices. While the Graphcool APIs offer very flexible query arguments for [filtering](!alias-xookaexai0) or [ordering](vequoog7hu), Algolia is specialized in full-text searches and comes with prepared libraries to build great search experiences.
 
-## Collect the needed Credentials
+## Activating the Algolia Integration
 
 In your Algolia settings, copy the Algolia App Id and create a new API key with **Add Records** and **Delete Records** enabled:
 
 ![](./algolia-settings.png?width=295)
 
-## Activate the Algolia Integration
-
-Enter the collected credentials in the Algolia integration popup in the Console:
+Enter the collected credentials in the Algolia integration popup in the [Integration View]():
 
 ![](./algolia-credentials.png?width=295)
 
-## Create new Search Indices
+## Creating new Search Indices
 
 * select the type that you want to define the index on
 * enter the name of the search index. This name needs to be entered in your application as well!
 * enter the query that defines the structure of the search index
 
 ![](./algolia-create-index.png)
+
+> An initial sync operation will only sync the first 1000 nodes over to Algolia. You can always initiate a sync for a specific node by "touching" it (call the update mutation without actually changing any values)

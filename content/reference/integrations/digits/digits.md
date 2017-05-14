@@ -22,15 +22,15 @@ related:
 
 The Digits integration ties in seamlessly with the [authentication](!alias-wejileech9) and [permission system](!alias-iegoo0heez).
 
-## Collect the needed Credentials
+## Activating the Digits Integration
 
 In your [Digits](https://get.digits.com/) settings, create a new app or use an existing one. Copy the following parameters that you can find in the app settings:
 
 * Consumer Key
 * Consumer Secret
 
-## Activate the Digits Integration
-
-Enter the collected credentials in the Digits integration popup:
+Enter the collected credentials in the Digits integration popup in the [Integration View]():
 
 ![](./digits-credentials.png)
+
+Read how this affects the `createUser` mutation to sign up users in the [API](!alias-eixu9osueb#digits-phone-verification) chapter.
