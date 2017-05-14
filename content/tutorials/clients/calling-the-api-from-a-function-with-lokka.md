@@ -48,7 +48,7 @@ Depending on your permission setup, the API calls in your mutation callback migh
 
 If you only want to perform operations that don't require special permissions and are available to [`EVERYONE`](!alias-iegoo0heez#permission-parameters), you are good to go.
 
-To perform operations that aren't permitted to everyone, you can issue a new [permanent authentication token](!alias-wejileech9#permanent-authentication-token) in the [Console](https://console.graph.cool). Give the token a meaningful name so you remember what it belongs to later. You shouldn't use this token outside of server-side code, as it grants full read and write access to your project data.
+To perform operations that aren't permitted to everyone, you can issue a new [permanent authentication token](!alias-eip7ahqu5o#token-types) in the [Console](https://console.graph.cool). Give the token a meaningful name so you remember what it belongs to later. You shouldn't use this token outside of server-side code, as it grants full read and write access to your project data.
 
 We will see how to use the permanent authentication token soon.
 

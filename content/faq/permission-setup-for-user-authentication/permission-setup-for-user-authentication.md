@@ -137,4 +137,4 @@ Finally, you can remove or disable all permissions for the `Create` operation on
 
 ![](./no-signups.png)
 
-In this case, only the Console user and server-side functions using a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) can create new users.
+In this case, only the Console user and server-side functions using a [permanent authentication token](!alias-eip7ahqu5o#token-types) can create new users.
