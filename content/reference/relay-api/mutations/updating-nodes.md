@@ -21,7 +21,7 @@ related:
 ---
 
 
-# Updating nodes with the Relay API
+# Updating nodes
 
 Updates [fields](!alias-teizeit5se) of an existing node of a certain [type](!alias-ij2choozae) specified by the `id` field.
 The node's fields will be updated according to the additionally provided values.

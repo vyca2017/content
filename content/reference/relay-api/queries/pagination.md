@@ -19,7 +19,7 @@ related:
     - cahzai2eur
 ---
 
-# Pagination in the Relay API
+# Pagination
 
 When querying all nodes of a specific [type](!alias-ij2choozae) you can supply arguments that allow you to paginate the query response.
 

@@ -14,9 +14,9 @@ related:
   - thaeghi8ro
 ---
 
-# Relay API
+# API
 
-The Relay API is meant to be used with the GraphQL client Relay.
+The **Relay API** is meant to be used with the GraphQL client Relay.
 
 ## Differences to the Simple API
 

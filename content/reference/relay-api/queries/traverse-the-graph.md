@@ -22,7 +22,7 @@ related:
     - ahwoh2fohj
 ---
 
-# Traversing the data graph with the Relay API
+# Traversing the data graph
 
 You can traverse the data graph in a query by including the field of a specific [relation](!alias-goh5uthoc1) and adding nested fields inside the now selected node.
 

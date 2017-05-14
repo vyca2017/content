@@ -19,7 +19,7 @@ related:
     - uo6uv0ecoh
 ---
 
-# Working with files in the Relay API
+# Working with files
 
 To interact with the [file management](!alias-eer4wiang0) of the platform, you can create, rename or delete files through queries and mutations exposed in the Relay API.
 

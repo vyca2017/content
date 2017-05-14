@@ -19,7 +19,7 @@ related:
     - vietahx7ih
 ---
 
-# Nested Create Mutations in the Relay API
+# Nested Create Mutations
 
 Nested create mutations connect the created node to a new node in the related type.
 Let's assume the following schema:

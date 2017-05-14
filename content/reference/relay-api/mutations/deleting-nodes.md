@@ -19,7 +19,7 @@ related:
     - dah6aifoce
 ---
 
-# Deleting nodes with the Relay API
+# Deleting nodes
 
 Deletes a node specified by the `id` field.
 

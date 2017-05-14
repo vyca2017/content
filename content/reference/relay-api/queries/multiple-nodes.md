@@ -21,7 +21,7 @@ related:
     - tioghei9go
 ---
 
-# Querying multiple nodes in the Relay API
+# Querying multiple nodes
 
 The Relay API contains automatically generated queries to fetch all nodes of a certain [type](!alias-ij2choozae). For example, for the `Post` type the query `allPosts` will be generated that is available through the `viewer`.
 

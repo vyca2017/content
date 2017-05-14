@@ -19,7 +19,7 @@ related:
     - dah6aifoce
 ---
 
-# Creating a node with the Relay API
+# Creating a node
 
 Creates a new node for a specific type that gets assigned a new `id`.
 All [required](!alias-teizeit5se#required) fields of the type without a [default value](!alias-teizeit5se#default-value) have to be specified, the other fields are optional arguments.

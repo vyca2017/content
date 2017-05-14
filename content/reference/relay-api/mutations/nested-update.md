@@ -19,7 +19,7 @@ related:
     - vietahx7ih
 ---
 
-# Nested Update Mutations in the Relay API
+# Nested Update Mutations
 
 Nested update mutations connect the original node to an existing node in the related type.
 Let's assume the following schema:

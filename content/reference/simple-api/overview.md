@@ -14,9 +14,9 @@ related:
   - thaeghi8ro
 ---
 
-# Simple API
+# API
 
-The Simple API is meant for GraphQL clients like Apollo or Lokka. If you are using Relay as your GraphQL client, check the [Relay API](!alias-aizoong9ah) instead.
+The **Simple API** is meant for GraphQL clients like Apollo or Lokka. If you are using Relay as your GraphQL client, check the [Relay API](!alias-aizoong9ah) instead.
 
 ## Differences to the Relay API
 

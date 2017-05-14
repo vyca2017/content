@@ -12,6 +12,6 @@ related:
     - aip7oojeiv
 ---
 
-# Subscriptions in the Relay API
+# Subscriptions
 
 Currently, the Relay API does not contain generated subscriptions. If you need GraphQL subscriptions in your application, refer to [subscriptions in the Simple API](aip7oojeiv).

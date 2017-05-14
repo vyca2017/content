@@ -20,7 +20,7 @@ related:
     - chietu0ahn
 ---
 
-# Modifying edges for one-to-one relations with the Relay API
+# Modifying edges for one-to-one relations
 
 A node in a one-to-one [relation](!alias-goh5uthoc1) can at most be connected to one node.
 

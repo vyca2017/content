@@ -20,7 +20,7 @@ related:
     - chietu0ahn
 ---
 
-# Modifying edges for one-to-many relations with the Relay API
+# Modifying edges for one-to-many relations
 
 One-to-many [relations](!alias-goh5uthoc1) relate two types to each other.
 
