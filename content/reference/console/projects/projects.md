@@ -28,7 +28,7 @@ By clicking the arrow next to the active project's name, you can expand the proj
 
 ![](./project-list.png?width=200)
 
-Click the plus button to create new projects. The schema of a new project will be populated with the existing [system models]().
+Click the plus button to create new projects. The schema of a new project will be populated with the existing [system types]().
 
 ## Project names and aliases
 
