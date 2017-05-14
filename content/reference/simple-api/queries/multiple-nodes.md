@@ -21,7 +21,7 @@ related:
     - tioghei9go
 ---
 
-# Querying multiple nodes in the Simple API
+# Querying multiple nodes
 
 The Simple API contains automatically generated queries to fetch all nodes of a certain [type](!alias-ij2choozae). For example, for the `Post` type the top-level query `allPosts` will be generated.
 

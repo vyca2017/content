@@ -21,7 +21,7 @@ related:
     - cahzai2eur
 ---
 
-# The session user in the Simple API
+# The session user
 
 If the request of a query or mutation contains authentication information on the [session user](!alias-geekae9gah#user-login), you can use the `user` query to query information on that user. All fields of the `User` type are available. Depending on the [auth providers](!alias-seimeish6e#authentication-providers) you enabled, you can additionally include different fields in the query.
 

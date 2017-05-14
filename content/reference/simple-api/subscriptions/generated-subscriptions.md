@@ -16,7 +16,7 @@ related:
     - kengor9ei3
 ---
 
-# Subscriptions in the Simple API
+# Subscriptions
 
 *GraphQL subscriptions* allow you to be notified in realtime of changes to your data.
 All available subscriptions are automatically generated. To explore them, use the [playground](!alias-oe1ier4iej) inside your project.

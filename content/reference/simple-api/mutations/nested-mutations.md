@@ -22,7 +22,7 @@ related:
     - vietahx7ih
 ---
 
-# Nested Mutations in the Simple API
+# Nested Mutations
 
 When creating or updating nodes, you can connect it to an existing related node or create a new related node that will be connected as well.
 

@@ -15,7 +15,7 @@ related:
     - eer4wiang0
 ---
 
-# Error management in the Simple API
+# Error management
 
 When an error occurs for one of your queries or mutations, the `data` field of the query response will usually be `null` and the error `code`, the error `message` and further information will be included in the `errors` field of the response JSON.
 

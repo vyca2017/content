@@ -14,7 +14,7 @@ related:
     - cahzai2eur
 ---
 
-# Queries in the Simple API
+# Queries
 
 A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
 All queries are automatically generated. To explore them, use the [playground](!alias-oe1ier4iej) inside your project.

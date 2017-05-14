@@ -17,7 +17,7 @@ related:
     - dah6aifoce
 ---
 
-# Mutations in the Simple API
+# Mutations
 
 With a *mutation* you can modify the data of your project.
 Similar to queries, all mutations are automatically generated. Explore them by using the [playground](!alias-oe1ier4iej) inside your project.

@@ -19,7 +19,7 @@ related:
     - cahzai2eur
 ---
 
-# Ordering by field in the Simple API
+# Ordering by field
 
 When querying all nodes of a [type](!alias-ij2choozae) you can supply the `orderBy` argument for every scalar field of the type: `orderBy: <field>_ASC` or `orderBy: <field>_DESC`.
 

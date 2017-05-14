@@ -19,7 +19,7 @@ related:
     - cahzai2eur
 ---
 
-# Filtering by field in the Simple API
+# Filtering by field
 
 When querying all nodes of a type you can supply different parameters to the `filter` argument to filter the query response accordingly. The available options depend on the scalar fields defined on the type in question.
 
