@@ -23,7 +23,7 @@ related:
 
 # How to query the currently logged-in user?
 
-If new users want to sign up at your application, you can use one of the available [auth providers](!alias-seimeish6e#authentication-providers) to add them to your Graphcool project. Then they can later receive a [temporary authentication token](!alias-wejileech9#temporary-authentication-token) by logging in to your application.
+If new users want to sign up at your application, you can use one of the available [auth providers](!alias-seimeish6e#authentication-providers) to add them to your Graphcool project. Then they can later receive a [temporary authentication token](!alias-eip7ahqu5o#token-types) by logging in to your application.
 
 ## Querying the user making a request
 
