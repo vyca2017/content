@@ -12,16 +12,16 @@ related:
 
 # Migrating Scalar Fields
 
-Fields in your GraphQL schema are always part of a GraphQL type and consist of a name and a [scalar GraphQL type]().
-Different modifiers exist to mark a fields as [unique]() or [list fields]().
+Fields in your GraphQL schema are always part of a GraphQL type and consist of a name and a [scalar GraphQL type](!alias-teizeit5se#scalar-types).
+Different modifiers exist to mark a fields as [unique](!alias-teizeit5se#unique) or [list fields](!alias-teizeit5se#list).
 
-Apart from scalar fields, fields can also be used to work with [relations]().
+Apart from scalar fields, fields can also be used to work with [relations](!alias-goh5uthoc1).
 
-> Read more about GraphQL [fields in the schema chapter]()
+> Read more about GraphQL [fields in the schema chapter](!alias-ahwoh2fohj)
 
 ## Adding a new scalar field
 
-You can add new fields to your GraphQL schema by including them in an existing type. This will modify existing [queries](), [mutations]() and [subscriptions]() in your GraphQL API.
+You can add new fields to your GraphQL schema by including them in an existing type. **This will modify existing queries, mutations and subscriptions** in your [GraphQL API](!alias-heshoov3ai).
 
 Consider this schema file:
 
@@ -62,13 +62,13 @@ type Story implements Node {
 }
 ```
 
-Have a look at the [naming conventions for fields]() to see what names are allowed and recommended.
+Have a look at the [naming conventions for fields](!alias-oe3raifamo#scalar-and-relation-fields) to see what names are allowed and recommended.
 
 ## Removing an existing field
 
 To remove an existing field, you can delete the corresponding line in the schema file. This will remove **all data for this field**.
 
-> Removing a field potentially breaks existing queries, mutations and subscriptions. Make sure to not rely on this field in your apps before deleting it.
+> Removing a field potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to not rely on this field in your apps before deleting it.
 
 Consider this schema file:
 
@@ -97,7 +97,7 @@ type User implements Node {
 
 Renaming a field can be done with the `@rename(oldName: String!)` directive.
 
-> Renaming a field potentially breaks existing queries, mutations and subscriptions. Make sure to adjust your app accordingly to the new name.
+> Renaming a field potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to adjust your app accordingly to the new name.
 
 Consider this schema file:
 
@@ -112,7 +112,7 @@ type Story implements Node {
 }
 ```
 
-To rename the `description` field to `information`, we use the [temporary directive]() `@rename(oldName: String!)` on the field itself:
+To rename the `description` field to `information`, we use the [temporary directive](!alias-aeph6oyeez#temporary-directives) `@rename(oldName: String!)` on the field itself:
 
 ```graphql
 type Story implements Node {

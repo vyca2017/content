@@ -28,7 +28,7 @@ In your Algolia settings, copy the Algolia App Id and create a new API key with 
 
 ![](./algolia-settings.png?width=295)
 
-Enter the collected credentials in the Algolia integration popup in the [Integration View]():
+Enter the collected credentials in the Algolia integration popup in the [Integration View](!alias-uh8shohxie):
 
 ![](./algolia-credentials.png?width=295)
 

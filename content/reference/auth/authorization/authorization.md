@@ -17,7 +17,7 @@ related:
 
 # Authorization
 
-Graphcool features a simple yet powerful permission system that integrates seamlessly with the available [authentication options]().
+Graphcool features a simple yet powerful permission system that integrates seamlessly with the available [authentication providers](!alias-seimeish6e#authentication-providers).
 
 > For a better getting started experience, every new Graphcool project is prepopulated with permissions that allow all operations. **Make sure to adjust the permission setup before your app goes to production**.
 
@@ -32,4 +32,4 @@ Essentially this means that a request is only executed if and only if it *matche
 
 ## Request Matching for Permissions
 
-When does a permission match a request? This is determined by the [permission parameters](). Additional conditions can be defined using [permission queries](!alias-iox3aqu0ee).
+When does a permission match a request? This is determined by the [permission parameters](!alias-soh5hu6xah). Additional conditions can be defined using [permission queries](!alias-iox3aqu0ee).

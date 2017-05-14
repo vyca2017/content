@@ -12,7 +12,7 @@ related:
 
 # Playground
 
-The GraphQL **Playground** lets you explore the [GraphQL API]() of your project and run queries, mutations and even subscriptions. It is based on the open source tool [GraphiQL](https://github.com/graphql/graphiql) by Facebook.
+The GraphQL **Playground** lets you explore the [GraphQL API](!alias-heshoov3ai) of your project and run queries, mutations and even subscriptions. It is based on the open source tool [GraphiQL](https://github.com/graphql/graphiql) by Facebook.
 
 ![](./playground.png)
 
@@ -24,7 +24,7 @@ The main feature of the GraphQL Playground is **running queries, mutations and s
 
 When executing a subscription, you will  **receive subscription events right in the Playground**! You can combine this with executing mutations in another Playground tab to test how subscriptions and mutations interact.
 
-> All GraphQL operations support the use of [GraphQL Variables](). Simply declare them in the query editor and supply the desired values in the query variables input field.
+> All GraphQL operations support the use of [GraphQL Variables](!alias-ejamaid4ae). Simply declare them in the query editor and supply the desired values in the query variables input field.
 
 ## Advanced Features
 
@@ -38,7 +38,7 @@ If you need to run a lot of different GraphQL operations, you can simply add new
 
 ### Selecting API Endpoint
 
-For each tab, you can choose to run queries to the [Simple API]() or [Relay API]().
+For each tab, you can choose to run queries to the [Simple or Relay API](!alias-heshoov3ai).
 
 ### Authenticating as a user
 

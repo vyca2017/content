@@ -17,15 +17,15 @@ related:
 Here you can configure and view general settings for your project.
 
 * The **project name** helps you to manage your different projects, but has no other effect.
-* The **project id** is automatically generated and not customizable. It can be found in your API [endpoints]() as well.
-* If you want to customize your API endpoints, you can set a custom **project alias**. Now you can use either the project id or project alias when using the project API or working wiht the [CLI]().
+* The **project id** is automatically generated and not customizable. It can be found in your API [endpoints](!alias-yahph3foch#project-endpoints) as well.
+* If you want to customize your API endpoints, you can set a custom **project alias**. Now you can use either the project id or project alias when using the project API or working with the [CLI](!alias-kie1quohli).
 * You can also **clone your project** and decide to optionally include data or other project settings.
 
 In the **danger zone** you can delete your projects data, schema, or delete your project all together. **These actions are not reversible**.
 
 ## Other settings
 
-In the **authentication** tab, you can create and manage [permanent access tokens](). These are mainly used in serverless functions or other server-side code that needs full access to your API.
+In the **authentication** tab, you can create and manage [permanent access tokens](!alias-eip7ahqu5o). These are mainly used in serverless functions or other server-side code that needs full access to your API.
 
 The **export** tab allows you to export your data as JSON files and download your schema. You can also use [get-graphql-schema](https://github.com/graphcool/get-graphql-schema) to download your schema for advanced uses.
 

@@ -12,7 +12,7 @@ related:
 
 # Integrations
 
-Graphcool integrates with different external services that can be configured in the [Integration View]() of your project.
+Graphcool integrates with different external services that can be configured in the [Integration View](!alias-uh8shohxie) of your project.
 
 ## Authentication Providers
 
@@ -31,7 +31,7 @@ Authentication is enabled by means of so called **authentication providers**. Al
 
 ## More integrations
 
-[Functions]() can be used to integrate with any service that you like. Examples:
+[Functions](!alias-boo6uteemo) can be used to integrate with any service that you like. Examples:
 
 * Stripe
 * Mailgun

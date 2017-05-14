@@ -14,12 +14,12 @@ related:
 
 ## Signup
 
-Depending on the enabled [auth providers]() you can use different versions of the `createUser` mutation to create and sign up a new user at the same time.
+Depending on the enabled [authentication providers](!alias-seimeish6e#authentication-providers) you can use different versions of the `createUser` mutation to create and sign up a new user at the same time.
 
-To allow the creation of new user accounts to everyone, you need to setup your [permissions]() so that `EVERYONE` can call the `createUser` mutation.
+To allow the creation of new user accounts to everyone, you need to setup your [permissions](!alias-iegoo0heez) so that `EVERYONE` can call the `createUser` mutation. Make sure to only return data in the `createUser` [mutation payload](!alias-gahth9quoo) that `EVERYONE` can access as well.
 
 ## User Login
 
-The [API]() is stateless - that means that users are not considered logged in or logged out per se. In fact, only requests can be considered authenticated or not. In an application, a user can therefor be seen as logged in if she is in possession of [a valid authentication token]() associated with her account.
+The [API](!alias-heshoov3ai) is stateless - that means that users are not considered logged in or logged out per se. In fact, only requests can be considered authenticated or not. In an application, a user can therefor be seen as logged in if she is in possession of [a valid authentication token](!alias-eip7ahqu5o) associated with her account.
 
-You can use the [`user` query]() to validate a given token. For valid tokens, it returns user data, while invalid tokens return no data.
+You can use the [`user` query](!alias-gieh7iw2ru) to validate a given token. For valid tokens, it returns user data, while invalid tokens return no data.

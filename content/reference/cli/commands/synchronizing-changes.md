@@ -59,7 +59,7 @@ If you made changes to your project file, you can push them with `graphcool push
 graphcool push project.graphcool
 ```
 
-This will likely result in changes to the [schema file](!alias-ahwoh2fohj) and will also increment the version number of your project file. This is a common way to do [schema migrations]().
+This will likely result in changes to the [schema file](!alias-ahwoh2fohj) and will also increment the version number of your project file. This is a common way to do [schema migrations](!alias-paesahku9t).
 
 If you are about to push changes that would result in data-loss, you receive a warning and the operation is aborted. If you are certain you want to update the schema with your local version, you can supply the `--force` argument:
 

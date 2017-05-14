@@ -16,7 +16,7 @@ Every request that reaches your API goes through different stages that are colle
 
 ## Trigger
 
-The trigger of the request pipeline associates the Request Pipeline function with a [create, update or delete mutation]() of a specific [type]().
+The trigger of the request pipeline associates the Request Pipeline function with a [create, update or delete mutation](!alias-ol0yuoz6go) of a specific [type](!alias-ij2choozae).
 
 ## Request Lifecycle
 
@@ -29,8 +29,8 @@ Every request to the GraphQL APIs pass several execution layers. The request pip
 The different **execution layers** can be seen in the above diagram.
 
 * First, the raw HTTP request hits your API layer.
-* The embedded GraphQL mutation is validated against the [GraphQL schema]() in the **schema validation** step
-* A valid GraphQL mutation is checked against [defined constraints]() and the [permission system]() in the **data validation** step.
+* The embedded GraphQL mutation is validated against the [GraphQL schema](!alias-ahwoh2fohj) in the **schema validation** step
+* A valid GraphQL mutation is checked against [defined constraints](!alias-teizeit5se#field-constraints) and the [permission system](!alias-iegoo0heez) in the **data validation** step.
 * If the request contained a valid mutation in terms of the GraphQL schema as well as the constraints and permissions, data is written to the database in the **data write** step.
 * The mutation payload is sent back as response to the initial HTTP request.
 
@@ -38,9 +38,9 @@ The different **execution layers** can be seen in the above diagram.
 
 In between the execution layers, you can use functions at several **hook points**:
 
-* The [`TRANSFORM_ARGUMENT` hook point]() after the schema validation allows you to **transforms the input arguments** of the GraphQL mutations and **enforce custom constraints**.
-* The [`PRE_WRITE` hook point]() after the data validation gives you the chance to **commmunicate with external APIs and services** before data is actually written to the database.
+* The [`TRANSFORM_ARGUMENT` hook point](!alias-caich7oeph) after the schema validation allows you to **transforms the input arguments** of the GraphQL mutations and **enforce custom constraints**.
+* The [`PRE_WRITE` hook point](!alias-phe1gei6io) after the data validation gives you the chance to **commmunicate with external APIs and services** before data is actually written to the database.
 * After the successful extraction of the GraphQL operations from the raw request, the **data validation** layer checks predefined constraints and permissions.
-* The [`TRANSFORM_PAYLOAD` hook point]() allows you **transform the payload** that is sent back as response.
+* The [`TRANSFORM_PAYLOAD` hook point](!alias-ecoos0ait6) allows you **transform the payload** that is sent back as response.
 
 > For a given trigger, only **one function** can be assigned to each hook point.

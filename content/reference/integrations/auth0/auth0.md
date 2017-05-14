@@ -36,7 +36,7 @@ In your Auth0 settings, create a new client or use an existing one. Copy the fol
 
 ![](./auth0-settings.png)
 
-Enter the collected credentials in the Auth0 integration popup in the [Integration View]():
+Enter the collected credentials in the Auth0 integration popup in the [Integration View](!alias-uh8shohxie):
 
 ![](./auth0-credentials.png)
 

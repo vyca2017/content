@@ -43,7 +43,7 @@ Depending on your types and relations certain [generated mutations](!alias-ol0yu
 
 ### Generated Subscriptions
 
-Depending on your types and relations, certain [generated subscriptions]() allow you to be notified in realtime of changes to your data.
+Depending on your types and relations, certain [generated subscriptions](!alias-aip7oojeiv) allow you to be notified in realtime of changes to your data.
 All available subscriptions are automatically generated.
 
 ### Errors

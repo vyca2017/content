@@ -12,7 +12,7 @@ related:
 
 # Transform Mutation Payloads
 
-Functions used for the `TRANSFORM_PAYLOAD` hook point can do arbitrary transformations on the [mutation payload]() after a mutation has been successfully executed.
+Functions used for the `TRANSFORM_PAYLOAD` hook point can do arbitrary transformations on the [mutation payload](!alias-gahth9quoo) after a mutation has been successfully executed.
 
 ## Examples
 

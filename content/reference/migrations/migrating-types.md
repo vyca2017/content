@@ -14,11 +14,11 @@ related:
 
 GraphQL types in your GraphQL schema can be controlled using the `type` keyword.
 
-> Read more about GraphQL [types in the schema chapter]()
+> Read more about GraphQL [types in the schema chapter](!alias-ahwoh2fohj)
 
 ## Adding a new type
 
-You can add new types to your GraphQL schema by adding a new `type` section in the schema file. This will automatically add [queries](), [mutations]() and [subscriptions]() to your GraphQL API.
+You can add new types to your GraphQL schema by adding a new `type` section in the schema file. This will automatically **add queries, mutations and subscriptions** to your [GraphQL API](!alias-heshoov3ai).
 
 Consider this schema file:
 
@@ -48,15 +48,15 @@ type Story implements Node {
 }
 ```
 
-This will automatically add the [system fields]() to the type as well, you don't need to specify them yourself. Using the [`@relation` directive](), you can also directly create new relations to existing types as well.
+This will automatically add the [system fields](!alias-uhieg2shio) to the type as well, you don't need to specify them yourself. Using the [`@relation` directive](!alias-aeph6oyeez#relation-fields), you can also directly create new relations to existing types as well.
 
-Have a look at the [naming conventions for types]() to see what names are allowed and recommended.
+Have a look at the [naming conventions for types](!alias-oe3raifamo#types) to see what names are allowed and recommended.
 
 ## Removing an existing type
 
 To remove an existing type **including all of its data and relations**, remove the corresponding section in the schema file. You also need to remove all relation tags for relations that include the type to be deleted as well.
 
-> Removing a type potentially breaks existing queries, mutations and subscriptions. Make sure to not rely on any operations on the type in your apps before deleting it.
+> Removing a type potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to not rely on any operations on the type in your apps before deleting it.
 
 Consider this schema file:
 
@@ -90,7 +90,7 @@ type User implements Node {
 
 Renaming a type can be done with the `@rename(oldName: String!)` directive.
 
-> Renaming a type potentially breaks existing queries, mutations and subscriptions. Make sure to adjust your app accordingly to the new name.
+> Renaming a type potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to adjust your app accordingly to the new name.
 
 Consider this schema file:
 
@@ -111,7 +111,7 @@ type Story implements Node {
 }
 ```
 
-To rename the `Story` type, we use the [temporary directive]() `@rename(oldName: String!)` on the type itself. We also need to update the type name for all relation fields that use the old type name. In this case, that's the `stories: [Story!]!` field.
+To rename the `Story` type, we use the [temporary directive](!alias-aeph6oyeez#temporary-directives) `@rename(oldName: String!)` on the type itself. We also need to update the type name for all relation fields that use the old type name. In this case, that's the `stories: [Story!]!` field.
 
 This is how it looks like:
 

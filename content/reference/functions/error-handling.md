@@ -14,7 +14,7 @@ related:
 
 ## Provoking an error
 
-By returning an object that contains an `error` property, you can populate errors from your functions. If your function is called as part of the [request pipeline](), further processing of the incoming request is aborted.
+By returning an object that contains an `error` property, you can populate errors from your functions. If your function is called as part of the [request pipeline](!alias-pa6guruhaf), further processing of the incoming request is aborted.
 
 ### Returning error messages
 

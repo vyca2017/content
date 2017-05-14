@@ -12,13 +12,13 @@ related:
 
 # Projects
 
-Apps you are building with Graphcool are organized into different projects. A project consists of a [data schema](), the data itself and other components like [integrations]() or [permission configuration]().
+Apps you are building with Graphcool are organized into different projects. A project consists of a [data schema](!alias-ahwoh2fohj), the data itself and other components like [integrations](!alias-seimeish6e) or [permissions](!alias-iegoo0heez).
 
-More options to manage your project can be found in the [project settings]().
+More options to manage your project can be found in the [project settings](!alias-aechi6iequ).
 
 ## Project Endpoints
 
-A project offers different [API]() endpoints that all contain the project id.
+A project offers different [API](!alias-heshoov3ai) endpoints that all contain the project id.
 
 ![](./endpoints.png?width=600)
 
@@ -28,7 +28,7 @@ By clicking the arrow next to the active project's name, you can expand the proj
 
 ![](./project-list.png?width=200)
 
-Click the plus button to create new projects. The schema of a new project will be populated with the existing [system types]().
+Click the plus button to create new projects. The schema of a new project will be populated with the existing [system types](!alias-uhieg2shio).
 
 ## Project names and aliases
 

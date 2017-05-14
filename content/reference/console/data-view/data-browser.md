@@ -12,10 +12,10 @@ related:
 
 # Data Browser
 
-In the **Data Browser** you can get an overview of the data for the different [types]() and [relations]() in your schema. Here you have the chance to create new data, or update or delete existing data.
+In the **Data Browser** you can get an overview of the data for the different [types](!alias-ij2choozae) and [relations](!alias-goh5uthoc1) in your schema. Here you have the chance to create new data, or update or delete existing data.
 
 ![](./data-browser.png)
 
-New nodes for [system types]() can't be created in the Data View.
+New nodes for [system types](!alias-uhieg2shio) can't be created in the Data View.
 
 > You can upload files to your project by drag-and-dropping them on the Data Browser.

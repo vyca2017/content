@@ -29,7 +29,7 @@ In your [Digits](https://get.digits.com/) settings, create a new app or use an e
 * Consumer Key
 * Consumer Secret
 
-Enter the collected credentials in the Digits integration popup in the [Integration View]():
+Enter the collected credentials in the Digits integration popup in the [Integration View](!alias-uh8shohxie):
 
 ![](./digits-credentials.png)
 

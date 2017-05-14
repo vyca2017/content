@@ -47,7 +47,7 @@ module.exports = function (event) {
 
 #### Input Validation
 
-> Reject further processing of the incoming GraphQL mutation by [throwing an error]().
+> Reject further processing of the incoming GraphQL mutation by [throwing an error](!alias-quawa7aed0).
 
 ```js
 module.exports = function (event) {
