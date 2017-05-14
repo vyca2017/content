@@ -43,7 +43,7 @@ An *Auth Provider* is a way for users to authenticate (sign-up/log-in) with your
 application using the `createUser` or `signinUser` mutation. These mutations will be automatically
 generated based on which provider you have enabled and return a user session
 token. This token needs to be sent as HTTP header for subsequent requests to
-authenticate the user. ([Read more.](!alias-wejileech9#auth-providers))
+authenticate the user. ([Read more.](!alias-seimeish6e#authentiation-providers))
 
 ![](./auth0-lock-demo.gif)
 > Works out-of-the-box with Auth0 Lock. An example can be found [here](https://github.com/graphcool-examples/react-lokka-auth0-example).
