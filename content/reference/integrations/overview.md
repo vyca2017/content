@@ -20,8 +20,8 @@ Authentication is enabled by means of so called **authentication providers**. Al
 
 * [Auth0](!alias-naed3eecie) offers authentication with popular social logins like Facebook, Google, Twitter or other methods like Passwordless.
 * [Digits](!alias-emaig4uiki) authenticates users with a passwordless SMS confirmation code, which they enter into your app to confirm their identity.
-* The built-in **Email-Password authentication** is a simple alternative to third-party authentication providers.
-* With the built-in **Anonymous Authentication**, users are identified with a unique secret instead of authentication credentials.
+* The built-in [Email-Password authentication](!alias-fiayee5voh) is a simple alternative to third-party authentication providers.
+* With the built-in [Anonymous authentication](!alias-ieph6iujah), users are identified with a unique secret instead of authentication credentials.
 
 > Multiple auth providers can be enabled at the same time, but a single user can only authenticate with one authentication provider that is determined upon user signup.
 
