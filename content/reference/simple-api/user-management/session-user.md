@@ -23,7 +23,7 @@ related:
 
 # The session user in the Simple API
 
-If the request of a query or mutation contains authentication information on the [session user](!alias-wejileech9#session-user), you can use the `user` query to query information on that user. All fields of the `User` type are available. Depending on the [auth providers](!alias-seimeish6e#authentiation-providers) you enabled, you can additionally include different fields in the query.
+If the request of a query or mutation contains authentication information on the [session user](!alias-wejileech9#session-user), you can use the `user` query to query information on that user. All fields of the `User` type are available. Depending on the [auth providers](!alias-seimeish6e#authentication-providers) you enabled, you can additionally include different fields in the query.
 
 ```graphql
 ---

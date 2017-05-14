@@ -23,7 +23,7 @@ related:
 
 # User Authentication with the Simple API
 
-The `createUser` and `signinUser` mutations that provide you with a way to create and sign in users respectively depend on your enabled [auth providers](!alias-seimeish6e#authentiation-providers). You can enable multiple or just one auth provider, however you can only use one auth provider per user.
+The `createUser` and `signinUser` mutations that provide you with a way to create and sign in users respectively depend on your enabled [auth providers](!alias-seimeish6e#authentication-providers). You can enable multiple or just one auth provider, however you can only use one auth provider per user.
 
 As any other `create` mutation, `createUser` returns the newly created `User` node.
 
