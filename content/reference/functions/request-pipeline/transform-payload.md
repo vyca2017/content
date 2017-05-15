@@ -21,9 +21,9 @@ Functions used for the `TRANSFORM_PAYLOAD` hook point can do arbitrary transform
 > The request is not modified at all.
 
 ```js
-module.exports = function (event) {
-  return {
-    event: event
-  }
+module.exports = function (input, log, cb) {
+  log(`input: ${input}`)
+
+  return input
 }
 ```

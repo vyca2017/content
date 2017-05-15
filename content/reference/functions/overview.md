@@ -23,8 +23,8 @@ Functions can be created in the [Functions View](!alias-ejamaid4ae) in the Conso
 
 There are many different contexts that you can use a Graphcool Function in.
 
-* The [Request Pipeline](!alias-pa6guruhaf) offers different hooks along the HTTP requests of your operations. Typical use cases for functions in the request pipeline are defining **custom validations**, **sending calls to external APIs** and more.
-* [Server-side subscriptions]() (formerly called mutation callbacks) allow you to get notified of special events. This can be used to build custom integrations with external services like **sending emails when a User signs up**.
+* The [Request Pipeline](!alias-pa6guruhaf) offers different hooks along the HTTP requests of your operations. Typical use cases for functions in the request pipeline are defining **custom validations**, **sending calls to external APIs** and more. Functions as part of the Request Pipeline are **synchronous**
+* [Server-side subscriptions]() (formerly called mutation callbacks) allow you to get notified of special events **asynchronously**. This can be used to build custom integrations with external services like **sending emails when a User signs up**.
 
 More use cases for functions are planned, for example **cron jobs**. Please let us know in [Slack](https://slack.graph.cool) or on [GitHub](https://github.com/graphcool/feature-requests/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Ffunctions) if you have suggestions.
 

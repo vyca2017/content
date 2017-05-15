@@ -17,24 +17,26 @@ Here you can make calls to external services and modify data that is about to be
 
 ## Examples
 
-#### No Transformation
+#### Pass through
 
-> The request is not modified at all.
+> The request is accepted.
 
 ```js
-module.exports = function (event) {
-  return {
-    event: event
-  }
+module.exports = function (input, logreq) {
+  log(`input: ${input}`)
+
+  return input
 }
 ```
 
 #### Call to External API
 
-```js
-require('isomorphic-fetch')
+> Make a request to any third party API
 
-module.exports = async (event) => {
+```js
+const request = require('request')
+
+module.exports = function (input, log, cb) => {
   // query external movie API for number of stored actors
   const movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
@@ -45,21 +47,23 @@ module.exports = async (event) => {
       }
     }
   `
-
-  const response = await fetch(movieAPI, {
-    method: 'post',
+  request.post({
+    url: movieAPI,
     headers: {
-      'Content-Type': 'application/json',
+      'content-type': 'application/json',
     },
-    body: JSON.stringify({ query })
-  }).then((response) => (response.json()))
+    body: JSON.stringify({ query }),
+  }).on('error', (e) => {
+    log('Error querying movieAPI: ' + e.toString())
+    cb(e, {})
+  }).on('data', (response) => {
+    const actorCount = JSON.parse(response).data.result.count
 
-  const actorCount = response.data.result.count
-
-  event.data.actorCount = actorCount
-
-  return {
-    event: event
-  }
+    const data = {
+      ...input.data,
+      actorCount
+    }
+    cb(null, input.data.)
+  })
 }
 ```
