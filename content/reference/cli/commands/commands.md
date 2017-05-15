@@ -7,7 +7,6 @@ tags:
   - cli
 related:
   further:
-    - chohbah0eo
     - he6jaicha8
   more:
     - kr84dktnp0

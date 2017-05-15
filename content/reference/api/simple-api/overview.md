@@ -8,7 +8,6 @@ tags:
   - simple-api
 related:
   further:
-    - chohbah0eo
     - aizoong9ah
   more:
   - thaeghi8ro

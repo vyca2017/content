@@ -11,7 +11,6 @@ tags:
   - open-source
 related:
   further:
-    - chohbah0eo
   more:
     - dah6aifoce
     - pheiph4ooj

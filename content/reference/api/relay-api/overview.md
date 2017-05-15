@@ -8,7 +8,6 @@ tags:
   - relay-api
 related:
   further:
-    - chohbah0eo
     - heshoov3ai
   more:
   - thaeghi8ro
