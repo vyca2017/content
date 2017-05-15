@@ -28,7 +28,7 @@ There are many different contexts that you can use a Graphcool Function in.
 
 More use cases for functions are planned, for example **cron jobs**. Please let us know in [Slack](https://slack.graph.cool) or on [GitHub](https://github.com/graphcool/feature-requests/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Ffunctions) if you have suggestions.
 
-## Functions Runtime
+## Function Runtime
 
 Whenever you use a function, you can choose between defining it inline or as a webhook.
 **Inline functions** can be specified using the functions editor in the Console. They run on a node runtime and every npm module is available for you to be imported.
