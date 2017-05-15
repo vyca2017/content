@@ -12,7 +12,6 @@ tags:
   - pricing
 related:
   further:
-    - chohbah0eo
   more:
     - ligh7fmn38
     - vietahx7ih

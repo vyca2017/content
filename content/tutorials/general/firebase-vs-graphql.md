@@ -9,7 +9,7 @@ tags:
 
 # GraphQL vs Firebase
 
-With the variety of server-side technologies today, developers have a lot of choices when it comes to deciding what kind of backend to use for the next app. In this article, we want to explore the differences between Firebase and GraphQL, two very popular server-side technologies. 
+With the variety of server-side technologies today, developers have a lot of choices when it comes to deciding what kind of backend to use for the next app. In this article, we want to explore the differences between Firebase and GraphQL, two very popular server-side technologies.
 
 ## Overview
 
@@ -19,7 +19,7 @@ Before diving into technical details, let's create some perspective on the two t
 
 [GraphQL](http://graphql.org/) is an open standard that defines how a server exposes data. It that was open-sourced by Facebook in 2015, but had been in internal use for much longer. Facebook released GraphQL as a *specification*, meaning that developers who want to use GraphQL either have to build a GraphQL server themselves or take advantage of services like [Graphcool](http://graph.cool/) that deliver a GraphQL API out-of-the-box.
 
-In that sense, GraphQL and Firebase are already very different. Where GraphQL only specifies a way how clients can consume an API, but it's irrelevant where and how that API is provided, Firebase is a solution that ties any client closely to its platform. 
+In that sense, GraphQL and Firebase are already very different. Where GraphQL only specifies a way how clients can consume an API, but it's irrelevant where and how that API is provided, Firebase is a solution that ties any client closely to its platform.
 
 ## Structuring Data
 
@@ -105,13 +105,13 @@ This query asks for all the tweets that are currently stored in the database. Th
       {
         "text": "GraphQL is awesome 🚀",
         "author": {
-          "username": "johnny"          
+          "username": "johnny"
         }
       },
       {
         "text": "Firebase? Sounds dangerous!🔥😱",
         "author": {
-          "username": "mike"          
+          "username": "mike"
         }
       },
       ...
@@ -120,7 +120,7 @@ This query asks for all the tweets that are currently stored in the database. Th
 }
 ```
 
-Another way of looking at a GraphQL query is as a *selection of JSON fields*. The query has the same *shape* as the JSON response, so it can be seen as a JSON object that has *only* *keys* but* no values*. 
+Another way of looking at a GraphQL query is as a *selection of JSON fields*. The query has the same *shape* as the JSON response, so it can be seen as a JSON object that has *only* *keys* but* no values*.
 
 This simple query already gives an idea about the power of GraphQL queries when it comes to retrieving *nested* information. In the above example above, we're only going one level deep by following the relation from `User` to `Tweet` (via the `author` field). However, we could extend the query and also ask for the last three followers of each `author`:
 
@@ -142,7 +142,7 @@ Having the ability to query nested structures by simply following the edges of t
 
 Next to `last` a GraphQL API typically accepts a few more related arguments such as `first`, `before`, `after` and `skip` that can be passed when querying a *to-many-relation. *This capability of an API makes it very easy to implement pagination on the client by asking for a specific range of objects from the list.
 
-With the flexibility of the GraphQL spec, it's further possible to specify powerful filters on the client that will be resolved by the server. In the [Graphcool Simple API](https://www.graph.cool/docs/reference/simple-api/overview-heshoov3ai/), it's also possible to specify a filter to restrict the amount of information that's returned by the server. Let's consider two simple examples. 
+With the flexibility of the GraphQL spec, it's further possible to specify powerful filters on the client that will be resolved by the server. In the [Graphcool Simple API](https://www.graph.cool/docs/reference/simple-api/overview-heshoov3ai/), it's also possible to specify a filter to restrict the amount of information that's returned by the server. Let's consider two simple examples.
 
 This query retrieves all tweets where the `text` contains the string "GraphQL":
 
@@ -180,9 +180,9 @@ It's further possible to combine filter conditions arbitrarily using the `AND` a
 
 ### writing directly To the Firebase json tree
 
-The most common scenario to make changes to the database in Firebase is again by using the given SDK (though the REST API also offers this functionality). The SDK exposes [four different methods](https://firebase.google.com/docs/database/admin/save-data) for saving data to the database: `set`, `update`, `push` and `transaction`. Each of these is to be used in a specific context, e.g. `push` is used to append new items to a list, `set` and `update` can both be used to update an existing data entry (note that the difference between them is [very subtle](http://stackoverflow.com/questions/38923644/firebase-update-vs-set)). Deleting data can be done by calling `remove` (or with `set` / `update` and then passing `null` as an argument). 
+The most common scenario to make changes to the database in Firebase is again by using the given SDK (though the REST API also offers this functionality). The SDK exposes [four different methods](https://firebase.google.com/docs/database/admin/save-data) for saving data to the database: `set`, `update`, `push` and `transaction`. Each of these is to be used in a specific context, e.g. `push` is used to append new items to a list, `set` and `update` can both be used to update an existing data entry (note that the difference between them is [very subtle](http://stackoverflow.com/questions/38923644/firebase-update-vs-set)). Deleting data can be done by calling `remove` (or with `set` / `update` and then passing `null` as an argument).
 
-Similar to when reading data from the JSON tree, with all of these methods a *path *needs to be specified that defines where in the JSON tree the write operation should be performed. 
+Similar to when reading data from the JSON tree, with all of these methods a *path *needs to be specified that defines where in the JSON tree the write operation should be performed.
 
 Creating a tweet using Firebase could look somewhat similar to this:
 
@@ -225,7 +225,7 @@ Another handy side-effect of performing mutations in the GraphQL way is the abil
 
 ## Realtime Functionality
 
-### realtime connection to the firebase db 
+### realtime connection to the firebase db
 
 The initial product of Firebase was a *realtime database* which eventually evolved into the more broad backend solution that it is today. Because of these roots however, realtime functionality is baked deep into Firebase's core. This also means that the API design of the Firebase SDK was focussed on realtime functionality from the very beginning, which is why many other common feature sometimes feel a bit unnatural or less intuitive to work with.
 
@@ -238,7 +238,7 @@ The initial product of Firebase was a *realtime database* which eventually evolv
 
 ### Sophisticated realtime updates with graphql subscriptions
 
-Realtime functionality in GraphQL can be implemented using the concept of [*subscriptions*](http://graphql.org/blog/subscriptions-in-graphql-and-relay/). Subscriptions are syntactically similar to queries and mutations, thus again allowing the developer to specify their data requirements in a declarative fashion. 
+Realtime functionality in GraphQL can be implemented using the concept of [*subscriptions*](http://graphql.org/blog/subscriptions-in-graphql-and-relay/). Subscriptions are syntactically similar to queries and mutations, thus again allowing the developer to specify their data requirements in a declarative fashion.
 
 A subscription is always coupled to a specific type of *event *that is happening in the backend. If a client subscribes to that event type, it will be notified whenever this even occurs. We can imagine three obvious events per type:
 
@@ -309,7 +309,7 @@ A simple version of such a JSON file could look as follows. Here *read *permissi
 }
 ```
 
-In general, it's possible two specify rules for *reading *and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data. 
+In general, it's possible two specify rules for *reading *and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data.
 
 As an example, this restriction means that you can not express in a simple manner that only a specific audience should be able to create new tweets and a different audience should be able to create *and* delete tweets. It's generally still possible to write such permissions but they require getting into the weeds of the Firebase permission system and writing complex and long permission strings.
 
@@ -329,7 +329,7 @@ There are generally three ways of specifying the audience for a permission:
 
 * Make the operation available to *everyone*
 * Make the operation available only to *authenticated* users
-* Use a *[permission query](https://www.graph.cool/docs/reference/platform/authorization/permission-queries-iox3aqu0ee//) *for very fine-grained control about the access rights
+* Use a *[permission query](!alaias-iox3aqu0ee/)* for very fine-grained control about the access rights
 
 The first two audiences are easy to set by ticking simply a checkbox in the Graphcool console. The third option, writing a *permission query*, allows to express any permission requirement using the syntax of GraphQL queries. Developers don't have to learn a new way of configuring permissions, instead they can express everything with a syntax they're already familiar with!
 
@@ -349,11 +349,11 @@ query ($user_id: ID!, $node_id: ID!) {
 ```
 
 
-Permission queries generally work in the way that they're evaluated right before the requested operation happens on the server-side. Only if the permission query returns `true`, the operation will actually be performed. 
+Permission queries generally work in the way that they're evaluated right before the requested operation happens on the server-side. Only if the permission query returns `true`, the operation will actually be performed.
 
 ## Client-Side Technologies
 
-A major part of the value of any server-side technology is the ease of using it on the client. As already mentioned, Firebase's recommended way of interacting with their backend is by using their custom SDKs. The REST API can be used as well but is more cumbersome to work with due to the unstructured nature of the JSON database that results in a certain unpredictability when accessing it through REST. 
+A major part of the value of any server-side technology is the ease of using it on the client. As already mentioned, Firebase's recommended way of interacting with their backend is by using their custom SDKs. The REST API can be used as well but is more cumbersome to work with due to the unstructured nature of the JSON database that results in a certain unpredictability when accessing it through REST.
 
 Firebase provides SDKs for all major development platforms such as Android, iOS and the Web. For the latter, there are also specific bindings for UI frameworks like React or Angular. When deciding to use Firebase for their next project, developers make themselves completely dependent on the infrastructure that is provided by Google. If Google takes down Firebase, the application's whole data layer will have to be rewritten!
 
@@ -361,9 +361,9 @@ GraphQL on the other hand can be consumed using plain HTTP (or any other transpo
 
 
 * [Apollo](http://dev.apollodata.com/): A fully-featured and flexible GraphQL client. It offers handy features such as caching, optimistic UI, pagination, helpers for server-side rendering and prefetching of data. ~~Apollo also is the only GraphQL client right now that has out-of-the-box support for [subscriptions](https://dev-blog.apollodata.com/graphql-subscriptions-in-apollo-client-9a2457f015fb)~~. It also integrates with all major UI frameworks such as React, Angular or Vue and is also available on iOS and Android.
-* [Relay](https://facebook.github.io/relay/): Facebook's GraphQL client that was open-sourced alongside GraphQL and recently upgraded to its official 1.0 release: [Relay Modern](https://facebook.github.io/relay/docs/relay-modern.html). Relay is a very sophisticated GraphQL client that however comes with a notable learning curve. It's not as easy to get started with as is the case for Apollo. It's however highly optimized for performance and especially shines in the context of complex and large-scale applications with lots of data-interdependencies. 
+* [Relay](https://facebook.github.io/relay/): Facebook's GraphQL client that was open-sourced alongside GraphQL and recently upgraded to its official 1.0 release: [Relay Modern](https://facebook.github.io/relay/docs/relay-modern.html). Relay is a very sophisticated GraphQL client that however comes with a notable learning curve. It's not as easy to get started with as is the case for Apollo. It's however highly optimized for performance and especially shines in the context of complex and large-scale applications with lots of data-interdependencies.
 
-For a deep-down comparison of Relay and Apollo, you can check out [this article](https://www.graph.cool/docs/tutorials/relay-vs-apollo-iechu0shia/) as well as the [Learn Apollo](http://www.learnapollo.com/) and [Learn Relay](https://www.learnrelay.org/) guides for comprehensive tutorials.
+For a deep-down comparison of Relay and Apollo, you can check out [this article](!alias-iechu0shia/) as well as the [Learn Apollo](http://www.learnapollo.com/) and [Learn Relay](https://www.learnrelay.org/) guides for comprehensive tutorials.
 
 ## Standards & Community
 
@@ -382,19 +382,17 @@ The fastest way to get your hands dirty and try out GraphQL yourself is by using
 npm install -g graphcool
 
 # Create the GraphQL API based on a remote schema
-graphcool init --url http://graphqlbin.com/twitter.graphql
+graphcool init --schema http://graphqlbin.com/twitter.graphql
 ```
 
 This will create a GraphQL API that you can access using the displayed endpoints. If you want to explore the capabilities of the API, simply paste the URL into a browser and start sending queries and mutations.
 [Image: https://quip.com/-/blob/KJaAAA6Bhbj/VlHZwt433FttfaoqpnQbxg]Also be sure to checkout the following resources that will help you get started and learn about GraphQL:
 
-* [Quickstart examples](https://dev.graph.cool/docs/quickstart/) demonstrating how to setup a full-stack app with a client technology of your choice
+* [Quickstart examples](https://graph.cool/docs/quickstart/) demonstrating how to setup a full-stack app with a client technology of your choice
 * [Full-stack tutorial series](http://graph.cool/freecom) to build a clone of the Intercom support chat
 * [Graphcool](https://www.graph.cool/blog/) and [Apollo](https://dev-blog.apollodata.com/) blogs with lots of helpful tutorials and insightful articles around GraphQL
-* [GraphQL Weekly](https://graphqlweekly.com/), a newsletter about the latest ongoings in the GraphQL community 
+* [GraphQL Weekly](https://graphqlweekly.com/), a newsletter about the latest ongoings in the GraphQL community
 
 ## Summary
 
-* Firebase enforces an artificial way of thinking about data to make sure there are no performance penalties and permissions work properly ---> GraphQL solves this naturally
-* 
-
+Firebase enforces an artificial way of thinking about data to make sure there are no performance penalties and permissions work properly.
