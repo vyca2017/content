@@ -312,7 +312,7 @@ A simple version of such a JSON file could look as follows. Here *read *permissi
 }
 ```
 
-In general, it's possible two specify rules for *reading *and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data.
+In general, it's possible to specify rules for *reading *and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data.
 
 As an example, this restriction means that you can not express in a simple manner that only a specific audience should be able to create new tweets and a different audience should be able to create *and* delete tweets. It's generally still possible to write such permissions but they require getting into the weeds of the Firebase permission system and writing complex and long permission strings.
 
