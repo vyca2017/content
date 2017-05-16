@@ -14,11 +14,11 @@ related:
 
 # Introducing a CLI & Functions
 
-Today we are announcing two new major additions to the Graphcool platform: Graphcool CLI and Functions. Together, these features enable you to extend your GraphQL API in new and powerful ways while introducing a much improved development workflow.
+Today we are announcing two new major additions to the Graphcool platform: Graphcool CLI and Functions. Together, these features enable you to extend your GraphQL API in new and powerful ways while introducing a significantly improved development workflow.
 
 ## A Local Development Workflow with the Graphcool CLI
 
-We have consistently received the feedback from our developer community that while working with the web-based Graphcool Console is easy, more advanced tools are required to manage projects as they grow in complexity.
+We have consistently received feedback from our developer community that while working with the web-based Graphcool Console is easy, more advanced tools are required to manage projects as they grow in complexity.
 
 The most requested features were:
 
@@ -26,7 +26,7 @@ The most requested features were:
 2. Performing multiple changes in a single migration
 3. Deploying the same schema to separate environments for staging and production
 
-All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview how it looks like:
+All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview of what it looks like:
 
 ![](http://imgur.com/Wam4FUN)
 
@@ -69,7 +69,7 @@ The CLI is self-documented, so you can dive right in. We also have [comprehensiv
 
 ## Implementing Business Logic with Serverless Functions
 
-Serverless functions is a powerful way to implement business logic for your Graphcool project. Today we are announcing three new features that make it easier for you to do this.
+Today we are announcing three new features that allow you to leverage the power of Serverless functions.
 
 ### Writing Functions Directly in the Console
 
