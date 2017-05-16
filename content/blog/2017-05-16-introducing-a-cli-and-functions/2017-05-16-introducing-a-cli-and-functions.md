@@ -28,7 +28,7 @@ The most requested features were:
 
 All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview of what it looks like:
 
-![](http://imgur.com/Wam4FUN.gif?width=700)
+![](https://im.ezgif.com/tmp/ezgif-1-0781ea085d.gif)
 
 ### Getting Started with the CLI
 
