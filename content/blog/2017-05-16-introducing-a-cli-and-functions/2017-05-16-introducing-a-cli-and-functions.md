@@ -22,9 +22,9 @@ We have consistently received feedback from our developer community that while w
 
 The most requested features were:
 
-1. Keeping your schema in version control
-2. Performing multiple changes in a single migration
-3. Deploying the same schema to separate environments for staging and production
+* Keeping your schema in version control
+* Performing multiple changes in a single migration
+* Deploying the same schema to separate environments for staging and production
 
 All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview of what it looks like:
 
