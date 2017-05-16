@@ -166,7 +166,7 @@ Another query could retrieve all tweets that have been sent *after* December 24,
 ```graphql
 {
   allTweets(filter: {
-    createdAt_gt: "2017-12-24T00:00:00.000Z"
+    createdAt_gt: "2016-12-24T00:00:00.000Z"
   }) {
     text
     author {
