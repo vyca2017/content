@@ -8,7 +8,6 @@ tags:
   - platform
 related:
   further:
-    - chohbah0eo
   more:
     - ul6ue9gait
     - oobai3shoh

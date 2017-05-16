@@ -122,7 +122,7 @@ These are the permissions that we use in your application:
 
 The default value `false` for `isPaid` and the missing permission to set `isPaid` when creating a new purchase guarantees that new purchases are automatically unpaid - ensuring that our payment workflow kicks in.
 
-Additionally, we'll need to generate a [permanent authentication token](!alias-wejileech9#permanent-authentication-token) to give our microservices access to read and modify data in our GraphQL backend.
+Additionally, we'll need to generate a [permanent authentication token](!alias-eip7ahqu5o#token-types) to give our microservices access to read and modify data in our GraphQL backend.
 
 > Note: Make sure to remove all other permissions, especially all permissions for `CardDetails` and the `stripeId` field on `User` to ensure that no unauthorized actions can be done with the credit card credentials.
 

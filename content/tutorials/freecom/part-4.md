@@ -38,7 +38,7 @@ This dilemma can be solved using Graphcool's [Anonymous Auth Provider](!alias-we
 
 ## Enabling Anonymous Authentication
 
-To use the [anonymous auth provider]() in our app, we first need to enable it in the **Integrations** section in the [Graphcool console](https://console.graph.cool):
+To use the [anonymous auth provider](!alias-ieph6iujah) in our app, we first need to enable it in the **Integrations** section in the [Graphcool console](https://console.graph.cool):
 
 ![](./img/fc4-anon-auth-provider-1.png?width=650)
 
@@ -100,7 +100,7 @@ Whenever this code is executed, a new `Customer` will be created in the database
 
 ### Configuring Apollo Client
 
-We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request. 
+We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request.
 
 Apollo Client uses the concept of [_middleware_](http://dev.apollodata.com/core/network.html#networkInterfaceMiddleware) for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
 
@@ -150,8 +150,8 @@ _Permission queries_ on the other hand are more sophisticated and allow to expre
 
 
 ### Writing a Permission Query
- 
-To implement our requirements from above, we have to take the second approach and actually write a permission query to specify that customers can only access messages in their own conversations. 
+
+To implement our requirements from above, we have to take the second approach and actually write a permission query to specify that customers can only access messages in their own conversations.
 
 Since we want to restrict access on the `Message` type, we are going to adjust the four already existing permissions for _reading_, _creating_, _updating_ and _deleting_ on it. Right now, all operations are allowed for all users:
 
@@ -239,13 +239,12 @@ The permissions queries for the remaining operations on the `Message` type (_Cre
 
 ## Wrap Up
 
-That's it for today's Freecom chapter! We learned how to express precise data access permissions for our users. For the Freecom app, we restricted the access on the `Message` type only to customers who are directly involved in the conversation where this message appears. 
+That's it for today's Freecom chapter! We learned how to express precise data access permissions for our users. For the Freecom app, we restricted the access on the `Message` type only to customers who are directly involved in the conversation where this message appears.
 
-The authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent requests. This token is then used to identify the user on the server-side and enabling to check the access permissions of the user performing the request. 
+The authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent requests. This token is then used to identify the user on the server-side and enabling to check the access permissions of the user performing the request.
 
 In the next chapter, we'll enable support agents to respond to a customer by integrating Slack using _mutation callbacks_ and _serverless functions_.
 
 Let us know how you like the tutorial or ask any questions you might have. Contact us on [Twitter](https://twitter.com/graphcool) or join our growing community on [Slack](http://slack.graph.cool/)!
 
 <!-- FREECOM_SIGNUP -->
-

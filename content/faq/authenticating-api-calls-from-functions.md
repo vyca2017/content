@@ -21,7 +21,7 @@ related:
 
 # Authenticating API Calls From Functions
 
-Functions are great for hooking into GraphQL events to implement custom business logic and as such, they usually act outside of traditional [user authentication](!alias-eixu9osueb). In this case, [permanent authentication token](!alias-wejileech9#permanent-authentication-token) are useful to provide your function with the needed access rights.
+Functions are great for hooking into GraphQL events to implement custom business logic and as such, they usually act outside of traditional [user authentication](!alias-eixu9osueb). In this case, [permanent authentication token](!alias-eip7ahqu5o#token-types) are useful to provide your function with the needed access rights.
 
 ## Using A Permanent Authentication Token
 
@@ -29,7 +29,7 @@ Currently, permanent authentication tokens give you **full read/write access**, 
 
 That's why you typically provide the authentication token as an *environment variable* or *encrypted secret* to the function. We show how to use environment variables with [stdlib](https://stdlib.com/) in this article. For alternative setups, look further down below.
 
-After [creating a permanent authentication token](!alias-wejileech9#permanent-authentication-token) in the Console, you can use them for the `Authorization` header of the requests you send from your function.
+After [creating a permanent authentication token](!alias-eip7ahqu5o#token-types) in the Console, you can use them for the `Authorization` header of the requests you send from your function.
 
 
 ## Configuring Environment Variables With stdlib

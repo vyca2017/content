@@ -12,37 +12,6 @@ related:
 
 # Miscellaneous Commands
 
-## Project specific commands
-
-Those commands need to be run in a folder that contains a `*.graphcool` file. If there are multiple `*.graphcool` files, you need to specify one of them using the `--project` argument.
-
-## export
-
-```sh
-# export data as JSON for the current project
-graphcool export
-
-# export data as JSON for specified project file
-graphcool export --project project.graphcool
-```
-
-## endpoints
-
-```sh
-# print API endpoints for current project
-graphcool endpoints
-```
-
-## console and playground
-
-```sh
-# open Console for current project in browser
-graphcool console
-
-# open Playground for current project in browser
-graphcool playground
-```
-
 ## General Commands
 
 ## status
@@ -75,4 +44,38 @@ graphcool auth
 ```sh
 # print version of the installed graphcool CLI
 graphcool version
+```
+
+## Project specific commands
+
+Those commands need to be run in a folder that contains a `*.graphcool` file. If there are multiple `*.graphcool` files, you need to specify one of them using the `--project` argument.
+
+## export
+
+```sh
+# export data as JSON for the current project
+graphcool export
+
+# export data as JSON for specified project file
+graphcool export project.graphcool
+```
+
+## endpoints
+
+```sh
+# print API endpoints for current project
+graphcool endpoints
+
+# print API endpoints for current project
+graphcool endpoints project.graphcool
+```
+
+## console and playground
+
+```sh
+# open Console for current project in browser
+graphcool console
+
+# open Playground for current project in browser
+graphcool playground
 ```
