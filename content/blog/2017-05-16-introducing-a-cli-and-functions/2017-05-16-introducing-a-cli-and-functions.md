@@ -12,7 +12,7 @@ related:
   more:
 ---
 
-# Introducing Functions & the Graphcool CLI
+# Introducing Functions & Graphcool CLI
 
 Today we are announcing two new major additions to the Graphcool platform: Functions & the Graphcool CLI.
 
