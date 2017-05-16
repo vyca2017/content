@@ -3,6 +3,7 @@ alias: ahde7paig2
 path: /docs/blog/introducing-the-serverless-graphql-backend-architecture
 layout: BLOG
 preview: serverless-graphql-backend.png
+publication_date: '2017-05-16'
 description: Introducing the Serverless GraphQL Backend Architecture
 tags:
   - mission
