@@ -47,9 +47,9 @@ GraphQL on the other hand is based on a strong [type system](http://graphql.org/
 type User {
   id: ID!
   username: String!
-  followers: [User] @relation(name: "`Following`")
+  followers: [User] @relation(name: "Following")
   follows: [User] @relation(name: "Following")
-  tweets: [Tweet] @relation(name: "`UserTweets`")
+  tweets: [Tweet] @relation(name: "UserTweets")
 }
 
 type Tweet {
