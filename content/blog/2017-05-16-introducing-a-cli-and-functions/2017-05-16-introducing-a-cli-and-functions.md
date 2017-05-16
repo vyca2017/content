@@ -18,7 +18,7 @@ Today we are announcing two new major additions to the Graphcool platform: Funct
 
 The CLI enables a completely new development workflow making it easier and quicker than ever to work with Graphcool. Using functions you can extend your GraphQL API to implement any kind of business logic without the need to run your own servers.
 
-## A better development workflow using the Graphcool CLI
+## A better development workflow using the CLI
 
 While the Console is a great way to get started with Graphcool, you need more advanced tools to manage your projects as they evolve and grow in complexity.
 
