@@ -76,7 +76,7 @@ Today we are changing the API for mutation callbacks to align with GraphQL subsc
 
 Checkout the following video to see Server-side Subscriptions in action or read more about it in the [documentation](!alias-ahlohd8ohn).
 
-
+<iframe height="315" src="https://www.youtube.com/embed/l-0jGOxXKGY" frameborder="0" allowfullscreen></iframe>
 
 ### Request Pipeline: Implementing data validation and transformation
 
