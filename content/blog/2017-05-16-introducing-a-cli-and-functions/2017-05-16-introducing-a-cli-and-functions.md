@@ -28,7 +28,7 @@ The most requested features were:
 
 All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview how it looks like:
 
-![](./cli-preview.gif)
+![](http://imgur.com/Wam4FUN)
 
 ### Getting Started with the CLI
 
