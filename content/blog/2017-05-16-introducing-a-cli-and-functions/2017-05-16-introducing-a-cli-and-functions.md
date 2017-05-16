@@ -12,7 +12,7 @@ related:
   more:
 ---
 
-# Introducing a CLI & Functions
+# Introducing the Graphcool CLI & Functions
 
 Today we are announcing two new major additions to the Graphcool platform: Graphcool CLI and Functions. Together, these features enable you to extend your GraphQL API in new and powerful ways while introducing a significantly improved development workflow.
 
