@@ -2,6 +2,7 @@
 alias: chi6oozus1
 path: /docs/tutorials/graphql-vs-firebase
 layout: TUTORIAL
+preview: firebase-graphql.png
 description: Learn about the differencs of Firebase and GraphQL
 tags:
   - firebase
@@ -31,7 +32,7 @@ This approach is very simple to understand but makes it more difficult to mainta
 
 The Firebase documentation further states that "building a properly structured database requires quite a bit of forethought". When designing the structure of the data, it is recommended to follow [best practices](https://firebase.google.com/docs/database/web/structure-data#best_practices_for_data_structure) and trying to keep the data tree as flat as possible to avoid *performance traps*. Since the full requirements for an application are rarely known upfront, it's extremely difficult to design a proper database structure before going into development. This becomes problematic when changes need to be made later on since these incur high costs due to the unstructured nature of the data stored in Firebase.
 
-A major limitation of the Firebase way to structure data is the missing concept of *relations*. Considering a simple Twitter-like data model with *users* that can publish *tweets*, the question is how to organize the relationship between the user and the tweet objects that are stored in the JSON tree. As mentioned above, it's recommended to keep the JSON tree as flat as possible. A common approach to solve this issue is to refer to other objects in the tree using IDs. This however leads to limitations when more complex data needs to be queried. Another approach is to duplicate data, which results in an extra maintenance burden and is also error-prone as it's likely that some duplicated parts of the tree will be forgotten when data needs to be updated. 
+A major limitation of the Firebase way to structure data is the missing concept of *relations*. Considering a simple Twitter-like data model with *users* that can publish *tweets*, the question is how to organize the relationship between the user and the tweet objects that are stored in the JSON tree. As mentioned above, it's recommended to keep the JSON tree as flat as possible. A common approach to solve this issue is to refer to other objects in the tree using IDs. This however leads to limitations when more complex data needs to be queried. Another approach is to duplicate data, which results in an extra maintenance burden and is also error-prone as it's likely that some duplicated parts of the tree will be forgotten when data needs to be updated.
 
 With the Firebase approach, developers also often end-up with structures that are *unnatural* to the way how we actually *think *about data. For example, when taking into account the Firebase [permission system](https://medium.com/@ChrisEsplin/firebase-security-rules-88d94606ce4a), you'll often end up with branches in the JSON tree whose names also encode data access rules like `admin`, `userReadable` or `userWritable`  which at that moment is adding unnecessary complexity to the nature of the data to be stored.
 
@@ -144,7 +145,7 @@ Having the ability to query nested structures by simply following the edges of t
 
 Next to `last` a GraphQL API typically accepts a few more related arguments such as `first`, `before`, `after` and `skip` that can be passed when querying a *to-many-relation. *This capability of an API makes it very easy to implement pagination on the client by asking for a specific range of objects from the list.
 
-With the flexibility of the GraphQL spec, it's further possible to specify powerful filters on the client that will be resolved by the server. In the [Graphcool Simple API](!alias-heshoov3ai/), it's also possible to specify a filter to restrict the amount of information that's returned by the server. Let's consider two simple examples. 
+With the flexibility of the GraphQL spec, it's further possible to specify powerful filters on the client that will be resolved by the server. In the [Graphcool Simple API](!alias-heshoov3ai/), it's also possible to specify a filter to restrict the amount of information that's returned by the server. Let's consider two simple examples.
 
 This query retrieves all tweets where the `text` contains the string "GraphQL":
 
@@ -227,7 +228,7 @@ mutation {
 
 ## Realtime Functionality
 
-### Realtime Connection to the Firebase DB 
+### Realtime Connection to the Firebase DB
 
 The initial product of Firebase was a *realtime database* which eventually evolved into the more broad backend solution that it is today. Because of these roots however, realtime functionality is baked deep into Firebase's core. This also means that the API design of the Firebase SDK was focussed on realtime functionality from the very beginning, which is why many other common feature sometimes feel a bit unnatural or less intuitive to work with.
 
@@ -331,7 +332,7 @@ There are generally three ways of specifying the audience for a permission:
 * Make the operation available only to *authenticated* users
 * Use a [*permission query*](!alias-iox3aqu0ee) for very fine-grained control about the access rights
 
-The full power of the permission system can be developed by combining these approaches. Meaning it's possible to specify permission that would require users to be authenticated, but could also refer to other properties of the users (or their relationships). 
+The full power of the permission system can be developed by combining these approaches. Meaning it's possible to specify permission that would require users to be authenticated, but could also refer to other properties of the users (or their relationships).
 
 In general, writing a *permission query *allows to express any permission requirement using the syntax of a GraphQL query. Developers don't have to learn a new way of configuring permissions, instead they can express everything with a syntax they're already familiar with!
 
@@ -362,7 +363,7 @@ Firebase provides SDKs for all major development platforms such as Android, iOS 
 GraphQL on the other hand can be consumed using plain HTTP (or any other transport layer). However, usage of client-side frameworks that implement common functionality can help save a lot of time and gives developers a head-start when working with GraphQL. There are two major client libraries at the moment:
 
 * [Apollo](http://dev.apollodata.com/): A fully-featured and flexible GraphQL client. It offers handy features such as caching, optimistic UI, pagination, helpers for server-side rendering and prefetching of data. Apollo also integrates with all major UI frameworks such as React, Angular or Vue and is also available on iOS and Android.
-* [Relay](https://facebook.github.io/relay/): Facebook's GraphQL client that was open-sourced alongside GraphQL and recently upgraded to its official 1.0 release: [Relay Modern](https://facebook.github.io/relay/docs/relay-modern.html). Relay is a very sophisticated GraphQL client that however comes with a notable learning curve. It's not as easy to get started with as is the case for Apollo. It's however highly optimized for performance and especially shines in the context of complex and large-scale applications with lots of data-interdependencies. 
+* [Relay](https://facebook.github.io/relay/): Facebook's GraphQL client that was open-sourced alongside GraphQL and recently upgraded to its official 1.0 release: [Relay Modern](https://facebook.github.io/relay/docs/relay-modern.html). Relay is a very sophisticated GraphQL client that however comes with a notable learning curve. It's not as easy to get started with as is the case for Apollo. It's however highly optimized for performance and especially shines in the context of complex and large-scale applications with lots of data-interdependencies.
 
 For a deep-down comparison of Relay and Apollo, you can check out [this article](!alias-iechu0shia/) as well as the [Learn Apollo](http://www.learnapollo.com/) and [Learn Relay](https://www.learnrelay.org/) guides for comprehensive tutorials.
 
@@ -399,5 +400,5 @@ Also be sure to checkout the following resources that will help you get started 
 
 ## Summary
 
-Firebase's roots as a realtime database still linger in the more evolved backend solution that it is today. Though many features like hosting and cloud storage have been added over time, many *essential API features* like complex querying or specifying permission rules often feel unnatural and are difficult if not impossible to accomplish. The unstructured nature of the stored JSON data has severe implications for building and maintaining a sustainable codebase over time. 
-With GraphQL, developers get the best of both worlds in terms of flexibility and safety. The strongly-typed schema can be used in many ways, in particular for optimizing performance and developer workflows between client and server. Graphcool is the easiest way to get started with GraphQL and provides a production-ready and powerful backend solution for web and mobile apps. 
+Firebase's roots as a realtime database still linger in the more evolved backend solution that it is today. Though many features like hosting and cloud storage have been added over time, many *essential API features* like complex querying or specifying permission rules often feel unnatural and are difficult if not impossible to accomplish. The unstructured nature of the stored JSON data has severe implications for building and maintaining a sustainable codebase over time.
+With GraphQL, developers get the best of both worlds in terms of flexibility and safety. The strongly-typed schema can be used in many ways, in particular for optimizing performance and developer workflows between client and server. Graphcool is the easiest way to get started with GraphQL and provides a production-ready and powerful backend solution for web and mobile apps.
