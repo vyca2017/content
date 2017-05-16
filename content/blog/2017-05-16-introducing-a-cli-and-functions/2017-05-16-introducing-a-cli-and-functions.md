@@ -30,7 +30,6 @@ All of these and many more use cases are enabled through the new Graphcool CLI. 
 
 ![](./cli-preview.gif)
 
-
 ### Getting Started with the CLI
 
 You can get started in seconds by installing the CLI and listing your current projects:
