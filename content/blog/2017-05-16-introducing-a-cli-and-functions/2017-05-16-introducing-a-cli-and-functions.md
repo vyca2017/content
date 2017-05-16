@@ -62,7 +62,7 @@ Functions are basically small building blocks and provide a way to perform some 
 
 ### Inline functions: Develop directly in your Console
 
-We have partnered with Auth0 Extend to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
+We have partnered with [Auth0 Extend](https://auth0.com/extend/?utm_source=graphcool&utm_medium=gp&utm_campaign=extend_site) to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
 
 ![](./inline-fn.png)
 
