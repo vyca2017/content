@@ -43,7 +43,9 @@ graphcool projects
 
 When creating a new project, the CLI will create a local `project.graphcool` file:
 
+```sh
 graphcool init
+```
 
 You can change your schema by editing the `project.graphcool` file locally and running `graphcool push` to deploy your changes:
 
