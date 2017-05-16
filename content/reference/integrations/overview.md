@@ -19,7 +19,7 @@ Graphcool integrates with different external services that can be configured in 
 Authentication is enabled by means of so called **authentication providers**. All authentication providers integrate seamlessly with the built-in [permission system](!alias-iegoo0heez).
 
 * [Auth0](!alias-naed3eecie) offers authentication with popular social logins like Facebook, Google, Twitter or other methods like Passwordless.
-* [Digits](!alias-emaig4uiki) authenticates users with a passwordless SMS confirmation code, which they enter into your app to confirm their identity.
+* [Digits](!alias-iaxohpee8o) authenticates users with a passwordless SMS confirmation code, which they enter into your app to confirm their identity.
 * The built-in [Email-Password authentication](!alias-fiayee5voh) is a simple alternative to third-party authentication providers.
 * With the built-in [Anonymous authentication](!alias-ieph6iujah), users are identified with a unique secret instead of authentication credentials.
 
