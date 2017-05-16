@@ -1,7 +1,7 @@
 ---
 alias: ahde7paig2
-path: /docs/tutorials/serverless-graphql-backend
-layout: TUTORIAL
+path: /docs/blog/introducing-the-serverless-graphql-backend-architecture
+layout: BLOG
 preview: serverless-graphql-backend.png
 description: Introducing the Serverless GraphQL Backend Architecture
 tags:
@@ -11,7 +11,6 @@ tags:
 # Introducing the Serverless GraphQL Backend Architecture
 
 At Graphcool we started writing apps combining GraphQL and serverless functions 1.5 years ago. As we became more familiar with both technologies we have found a few successful patterns that keep coming up in the applications we build. This blog post details how we build internal apps at Graphcool and how the Graphcool platform will evolve in the future.
-
 
 ## A Powerful API for Frontend and Backend
 
