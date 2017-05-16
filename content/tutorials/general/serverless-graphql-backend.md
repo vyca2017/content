@@ -2,6 +2,7 @@
 alias: ahde7paig2
 path: /docs/tutorials/serverless-graphql-backend
 layout: TUTORIAL
+preview: serverless-graphql-backend.png
 description: Introducing the Serverless GraphQL Backend Architecture
 tags:
   - mission
@@ -25,7 +26,7 @@ A core tenant of the serverless architecture is carried over from the [Twelve-Fa
 
 ### Asynchronous Events
 
-Often, application logic can be implemented with decoupled asynchronous events. Whenever possible, developers should favour this approach as it leads to applications that are easier to scale and maintain as load increases and more functionality is added. 
+Often, application logic can be implemented with decoupled asynchronous events. Whenever possible, developers should favour this approach as it leads to applications that are easier to scale and maintain as load increases and more functionality is added.
 
 The [event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture) is a proven tool in existing large scale backend development and is also very familiar to frontend developers dealing with the asynchronous nature of Javascript using frameworks like Redux.
 Examples of business logic that fit very well in this model include:
@@ -34,7 +35,7 @@ Examples of business logic that fit very well in this model include:
 * charging a credit card when an order is placed
 * performing spam detection when a new comment is created
 
-In a traditional event-driven architecture much work goes into deciding the right level of granularity for events. For example, does it matter that a user node is updated versus does it matter that a user changed email address? The development team is forced to make decisions up front, with limited knowledge of how the application will evolve in the future. 
+In a traditional event-driven architecture much work goes into deciding the right level of granularity for events. For example, does it matter that a user node is updated versus does it matter that a user changed email address? The development team is forced to make decisions up front, with limited knowledge of how the application will evolve in the future.
 
 The Serverless GraphQL Backend architecture sidesteps this issue completely by letting the event consumer decide what changes to be notified about using standard GraphQL subscription queries.
 
@@ -46,7 +47,7 @@ Sometimes it is either not feasible or adds too much complexity to implement bus
 * Sanitizing and normalizing user input
 * Retrieving extra information from an external system
 
-Synchronous data transformations are typically used to validate and transform data before it is persisted. In applications implementing the Serverless GraphQL Backend architecture, database writes are managed by GraphQL mutations. 
+Synchronous data transformations are typically used to validate and transform data before it is persisted. In applications implementing the Serverless GraphQL Backend architecture, database writes are managed by GraphQL mutations.
 
 A GraphQL mutation is a named action with typed input and output. The input type describes the data a client must provide to perform that action. The output type usually describes the shape of the persisted data. Mutations are part of the automatically generated GraphQL API.
 
@@ -56,7 +57,7 @@ This programming model makes it possible to compose business logic that performs
 
 ## Connecting Functions with a global type system
 
-Using the GraphQL type system it is possible to validate the data requirements of all serverless functions. 
+Using the GraphQL type system it is possible to validate the data requirements of all serverless functions.
 
 ### Using GraphQL For Data Requirements Of Functions
 
@@ -64,7 +65,7 @@ GraphQL introduces a type system that enables frontend libraries like Relay to v
 
 We already saw that Synchronous Data Transformation functions must respect the input and output types of the mutations they are hooked into. If a mutation has multiple steps in the pipeline, each step must have an input type that matches the output type of the former.
 
-Asynchronous Events specify their data requirements using a normal GraphQL subscription query exactly like the frontend application. 
+Asynchronous Events specify their data requirements using a normal GraphQL subscription query exactly like the frontend application.
 
 ### Typed Serverless Functions
 
@@ -73,8 +74,7 @@ Asynchronous Events and Synchronous Data Transformation are implemented as serve
 If serverless functions are implemented in a typed language we can go one step further and type-check each serverless function against their required input and output. Providing application wide type checking is a reason often stated for writing monolithic backend applications. The Serverless GraphQL Backend architecture brings the same level of type safety to serverless applications while maintaining the two main benefits:
 
 * Better scalability as each function scales individually to match current workload
-* Faster time-to-market as new business logic can be developed as independent modules 
+* Faster time-to-market as new business logic can be developed as independent modules
 
 
 All new internal applications at Graphcool follow this architecture and we are starting to build support for these patterns directly into the Graphcool platform. Today we took the first step by announcing(http://link.to.feature.post/) Serverside Subscriptions and the Request Pipeline.
-
