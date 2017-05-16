@@ -28,7 +28,7 @@ The most requested features were:
 
 All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview of what it looks like:
 
-![](http://imgur.com/Wam4FUN.gif)
+![](http://imgur.com/Wam4FUN.gif?width=700)
 
 ### Getting Started with the CLI
 
@@ -79,7 +79,7 @@ We have partnered with Auth0 Extend to enable you to write your functions direct
 
 ### Server-side Subscriptions Replace Mutation Callbacks
 
-The current mutation callback API has been with us from the very beginning, enabling you to implement business logic such as sending a welcome mail to new users or charging a credit card when an order is placed. We have received many suggestions on how we could improve the API, and when we implemented the GraphQL Subscriptions API late last year we took all this feedback into account.
+The current mutation callback API has been with us from the very beginning, enabling you to implement business logic such as sending a welcome mail to new users or charging a credit card when an order is placed. We have received many suggestions on how we could improve it, and when we implemented the GraphQL Subscriptions API late last year we took all this feedback into account.
 
 Today we are changing the API for mutation callbacks to align with GraphQL subscriptions and rebrand the feature to Server-side Subscriptions. Server-side Subscriptions can trigger a webhook or an inline serverless function and benefit from the extensive Subscription API.
 
@@ -101,7 +101,7 @@ The request pipeline allows you to write functions that hook into the processing
 * Hook into `PRE_WRITE` to call external systems after data validation, but before data is stored in the database
 * Hook into `TRANSFORM_PAYLOAD` if you need to transform the data that is returned from a mutation, but not what is stored in the database.
 
-Read our [detailed documentation](!alias-pa6guruhaf) to get started using the request pipeline, or dive in to our blog post [Introducting the Serverless GraphQL Backend Architecture](!alias-ahde7paig2).
+Read our [detailed documentation](!alias-pa6guruhaf) to get started with the request pipeline, or dive into our blog post [Introducting the Serverless GraphQL Backend Architecture](!alias-ahde7paig2).
 
 ### Bonus-feature: HTTP Headers for Webhooks
 
