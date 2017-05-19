@@ -431,7 +431,7 @@ Apollo would now _flatten_ the nested Pokemons and put them on the first level o
     "ciwj0dw5dm6aj01632pto44t0": {
       "id": "ciwj0dw5dm6aj01632pto44t0",
       "name": "Nikolas",
-      "ownedPokemons": [ciwj0dw6zpeuj0148xvsgc3hrm, ciwj0dw8gm6c80163wh8zku78]
+      "ownedPokemons": [ciwj0dw6zpeuj0148xvsgc3hr, ciwj0dw8gm6c80163wh8zku78]
     },
     "ciwj0dw6zpeuj0148xvsgc3hr": {
       "id": "ciwj0dw6zpeuj0148xvsgc3hr",

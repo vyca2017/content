@@ -25,16 +25,16 @@ First, copy the id of the project you want to work on using `graphcool projects`
 graphcool projects
 ```
 
-Then use `graphcool pull --source` to pull the latest version of the project file for that project:
+Then use `graphcool pull --project` to pull the latest version of the project file for that project:
 
 ```sh
 # obtain a project file for a specific project
-graphcool pull --source <project-id>
+graphcool pull --project <project-id>
 ```
 
 ## Status overview
 
-If you want to check the current status of your project, the command `grapchool status` is very useful. If there are pending local changes, all resulting operations will be listed here.
+If you want to check the current status of your project, the command `graphcool status` is very useful. If there are pending local changes, all resulting operations will be listed here.
 
 ## Update existing project file with remote changes
 
