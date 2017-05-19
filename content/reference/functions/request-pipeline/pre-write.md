@@ -12,8 +12,10 @@ related:
 
 # Communicate with External APIs
 
-Functions used for the `PRE_WRITE` hook point are the last execution later before data is written to the database.
-Here you can make calls to external services and modify data that is about to be persisted.
+Functions used for the `PRE_WRITE` hook point are the last execution layer before data is written to the database.
+Here you can initiate workflows for external services, like sending an email, charging a credit card or abort the processing of a request based on the result of external APIs.
+
+> In the `PRE_WRITE` hook points, data transformations are ignored. If you want to transform input data, refer to the `TRANSFORM_ARGUMENT` hook point.
 
 ## Examples
 
