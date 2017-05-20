@@ -17,7 +17,7 @@ related:
 
 # Schema
 
-The GraphQL schema of a project can be described in [IDL syntax](!alias-kr84dktnp0) and is usally managed using [schema files](!alias-aeph6oyeez). **The schema directly influences the available operations in the client APIs**.
+The GraphQL schema of a project can be described in [IDL syntax](!alias-kr84dktnp0) and is usually managed using [schema files](!alias-aeph6oyeez). **The schema directly influences the available operations in the client APIs**.
 
 GraphQL schemas are typically saved as `.graphql` files. This is an example schema file, `schema.graphql`:
 
