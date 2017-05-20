@@ -38,7 +38,7 @@ module.exports = function (input, logreq) {
 ```js
 const request = require('request')
 
-module.exports = function (input, log, cb) => {
+module.exports = function (input cb) => {
   // query external movie API for number of stored actors
   const movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
@@ -56,7 +56,7 @@ module.exports = function (input, log, cb) => {
     },
     body: JSON.stringify({ query }),
   }).on('error', (e) => {
-    log('Error querying movieAPI: ' + e.toString())
+    console.log('Error querying movieAPI: ' + e.toString())
     cb(e, {})
   }).on('data', (response) => {
     const actorCount = JSON.parse(response).data.result.count
@@ -65,7 +65,7 @@ module.exports = function (input, log, cb) => {
       ...input.data,
       actorCount
     }
-    cb(null, input.data.)
+    cb(null, input.data)
   })
 }
 ```
