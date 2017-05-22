@@ -15,6 +15,18 @@ related:
 
 # Changelog
 
+## Week 20 (May 15 - May 21)
+
+- Even though we are running in production for a long time already, **we finally launched officially** and were featured on [Product Hunt](https://www.producthunt.com/posts/graphcool-2) and reached first spot on the [Hacker News](https://news.ycombinator.com/item?id=14350129) frontpage 🎉 We published an article [about the Serverless GraphQL Backend Architecture](!alias-ahde7paig2/) and rolled out the [CLI and Functions](!alias-teko4ab8za).
+- As part of the launch, the homepage and documentation received a lot of love and should feel way smoother now
+- With the great help of the community, we fixed issues with the [Algolia Integration]() synchronization logic, made a lot of smaller improvements to the UX of the Console. We also fixed a bug that would apply too restrictive permissions for some mutations.
+- On May 21th, we're hosting [GraphQL Europe](https://graphql-europe.org), the first GraphQL conference in Europe.
+
+## Week 19 (May 8 - May 14)
+
+- We incorporated feedback we received regarding the UX of the Anonymous Authentication in the Console.
+- The new [CLI](!alias-kie1quohli) and the [Functions](!alias-boo6uteemo) feature are being tested in a closed beta program.
+
 ## Week 18 (May 1 - May 7)
 
 - Enums are now managed on a project-level instead a type-level. This means you can define the possible values for one enum and create fields that use this enum in different types now.
@@ -22,7 +34,7 @@ related:
 
 ## Week 17 (April 24 - April 30)
 
-- We [released permission queries](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries-oolooch8oh/)! This is a novel approach for customizable authorization rules and we're very excited about the launch. Thanks to the **over 100 developers** in our beta program for throroughly testing this feature!
+- We [released permission queries](![alias](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries)-oolooch8oh/)! This is a novel approach for customizable authorization rules and we're very excited about the launch. Thanks to the **over 100 developers** in our beta program for throroughly testing this feature!
 - We improved working with scalar lists in the databrowser.
 - To make debugging subscriptions in the Playground easier, API errors are now directly printed.
 
@@ -46,7 +58,7 @@ related:
 ## Week 14 (April 3 - April 9)
 
 - With the release of [Freecom](https://www.graph.cool/freecom/), we are kicking off a big full-stack tutorial series to build your own customer chat.
-- Performance and usability for the [Subscriptions API](aip7oojeiv) has been dramatically increased based on the feedback we received from the community.
+- Performance and usability for the [Subscriptions API](!alias-aip7oojeiv) has been dramatically increased based on the feedback we received from the community.
 - Using default values and migrations for Enum and JSON fields have been improved.
 - General improvements to migrations when changing a field in the Console.
 

@@ -49,7 +49,7 @@ The main components of a Schema Definition is the types and their fields. Additi
 A type has a name and can extend one or more interfaces:
 
 ```graphql
-type Post extends Item {
+type Post implements Item {
   # ...
 }
 ```

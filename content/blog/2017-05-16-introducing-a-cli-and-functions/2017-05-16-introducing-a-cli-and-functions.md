@@ -2,7 +2,7 @@
 alias: teko4ab8za
 path: /blog/2017-05-16-introducing-a-cli-functions
 layout: BLOG
-description: Today we are announcing Graphcool CLI and Functions to extend your GraphQL API and accomplish better workflows.
+description: Today we are announcing the Graphcool CLI and Functions to extend your GraphQL API and enable better workflows.
 preview: preview.png
 publication_date: '2017-05-16'
 tags:
@@ -12,80 +12,75 @@ related:
   more:
 ---
 
-# Introducing a CLI & Functions
+# Introducing Functions & Graphcool CLI
 
-Today we are announcing two new major additions to the Graphcool platform: Graphcool CLI and Functions. Together, these features enable you to extend your GraphQL API in new and powerful ways while introducing a significantly improved development workflow.
+Today we are announcing two new major additions to the Graphcool platform: Functions & the Graphcool CLI.
 
-## A Local Development Workflow with the Graphcool CLI
+The CLI enables a completely new development workflow making it easier and quicker than ever to work with Graphcool. Using functions you can extend your GraphQL API to implement any kind of business logic without the need to run your own servers.
 
-We have consistently received feedback from our developer community that while working with the web-based Graphcool Console is easy, more advanced tools are required to manage projects as they grow in complexity.
+## A better development workflow using the CLI
 
-The most requested features were:
+While the Console is a great way to get started with Graphcool, you need more advanced tools to manage your projects as they evolve and grow in complexity.
 
-* Keeping your schema in version control
-* Performing multiple changes in a single migration
-* Deploying the same schema to separate environments for staging and production
+We received a lot feedback from our developer community about this. These were the most common use cases:
 
-All of these and many more use cases are enabled through the new Graphcool CLI. Here is a quick preview of what it looks like:
+* How to keep your schema in version control?
+* How to perform multiple changes in a single migration?
+* How to deploy the same schema to separate environments for staging and production?
 
-![](http://imgur.com/Wam4FUN.gif?width=700)
+### Introducing `graphcool`
 
-### Getting Started with the CLI
+These and many other use cases are now possible using the Graphcool CLI. Additionally to your Graphcool Console, you can now edit your schema through a local project file (usually called `project.graphcool`) and push the changes using the CLI. Here is how it looks like:
 
-You can get started in seconds by installing the CLI and listing your current projects:
+![](./cli-preview.gif)
+
+### Getting started with the CLI
+
+It's easy to get started by installing the CLI via NPM (or [Yarn](https://yarnpkg.com/)). After an initial authentication, you can list all of your projects like this:
 
 ```sh
 # Install the CLI
 npm install -g graphcool
+
 # Show all projects
 graphcool projects
 ```
 
-When creating a new project, the CLI will create a local `project.graphcool` file:
+Creating a new project is now as easy as running `graphcool init`. This automatically creates a your local `project.graphcool` file containing the [GraphQL IDL](!alias-kr84dktnp0) schema for your data model. Simply edit this file in your editor to change your schema. You can apply your local changes to your project by running `graphcool push.
 
-```sh
-graphcool init
-```
+Check out the following tutorial to see how to get started using the Graphcool CLI or check out the [CLI documentation](!alias-kie1quohli).
 
-You can change your schema by editing the `project.graphcool` file locally and running `graphcool push` to deploy your changes:
+<iframe height="315" src="https://www.youtube.com/embed/sf0ZkyalSTg" frameborder="0" allowfullscreen></iframe>
 
-```graphql
-type Post {
-    title: String
-    body: String!
-    comments: [Comment!]! @relation(name: "Comments")
-}
+The CLI is open source and [available on Github](https://github.com/graphcool/graphcool-cli). Please open an issue if you have any feedback or want to request a feature. We're planning to reach feature parity between the Console and the CLI going forward.
 
-type Comment {
-    text: String!
-    post: Post @relation(name: "Comments")
-}
-```
+## Implementing business logic with functions
 
-![](./gc-push.png)
+The second big feature we're introducing today are **Functions**.
 
-The CLI is self-documented, so you can dive right in. We also have [comprehensive documentation](!alias-kie1quohli) available.
+Functions are basically small building blocks and provide a way to perform some kind of logic. There are two types of functions: Inline functions and webhooks (as previously used in "Mutation Callbacks").
 
+### Inline functions: Develop directly in your Console
 
-## Implementing Business Logic with Serverless Functions
-
-Today we are announcing three new features that allow you to leverage the power of Serverless functions.
-
-### Writing Functions Directly in the Console
-
-We have partnered with Auth0 Extend to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
+We have partnered with [Auth0 Extend](https://auth0.com/extend/?utm_source=graphcool&utm_medium=gp&utm_campaign=extend_site) to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
 
 ![](./inline-fn.png)
 
-### Server-side Subscriptions Replace Mutation Callbacks
+A function is always provided with an *event* as payload (or function argument) and invoked because of a *trigger*. Currently there are two types of event triggers: Server-side Subscriptions and Request Pipeline.
 
-The current mutation callback API has been with us from the very beginning, enabling you to implement business logic such as sending a welcome mail to new users or charging a credit card when an order is placed. We have received many suggestions on how we could improve it, and when we implemented the GraphQL Subscriptions API late last year we took all this feedback into account.
+### Server-side Subscriptions: The new "Mutation Callbacks"
 
-Today we are changing the API for mutation callbacks to align with GraphQL subscriptions and rebrand the feature to Server-side Subscriptions. Server-side Subscriptions can trigger a webhook or an inline serverless function and benefit from the extensive Subscription API.
+The current mutation callback API has been with us from the very beginning, enabling you to implement business logic such as sending a welcome mail to new users or charging a credit card when an order is placed. We have received many suggestions on how we could improve it, and when we implemented the GraphQL Subscriptions API late last year we planned ahead by incorporating this feedback for the API design.
 
-### Implementing Data Validation and Transformation
+Today we are changing the API for mutation callbacks to align with GraphQL subscriptions and rebrand the feature to Server-side Subscriptions. Server-side Subscriptions are an easy way trigger a function and benefit from powerful features like filtering familiar from the Subscription API.
 
-One of the most highly requested features is the ability to add data validation for specific fields. The Request Pipeline is a powerful programming model that allows you to do that and much more.
+Checkout the following video to see Server-side Subscriptions in action or read more about it in the [documentation](!alias-ahlohd8ohn).
+
+<iframe height="315" src="https://www.youtube.com/embed/l-0jGOxXKGY" frameborder="0" allowfullscreen></iframe>
+
+### Request Pipeline: Implementing data validation and transformation
+
+One of the most requested features was the ability to add data validation for specific fields. The Request Pipeline is a powerful programming model that allows you to do that and much more.
 
 With the request pipeline you can for example:
 
@@ -101,8 +96,12 @@ The request pipeline allows you to write functions that hook into the processing
 * Hook into `PRE_WRITE` to call external systems after data validation, but before data is stored in the database
 * Hook into `TRANSFORM_PAYLOAD` if you need to transform the data that is returned from a mutation, but not what is stored in the database.
 
-Read our [detailed documentation](!alias-pa6guruhaf) to get started with the request pipeline, or dive into our blog post [Introducting the Serverless GraphQL Backend Architecture](!alias-ahde7paig2).
+To get started with the Request Pipeline, check out the [documentation](!alias-pa6guruhaf) or read our latest blog post about [introducing the Serverless GraphQL Backend Architecture](!alias-ahde7paig2) to learn more about the involved concepts and the bigger picture. 
 
-### Bonus-feature: HTTP Headers for Webhooks
+### Bonus-feature: HTTP Headers for webhooks
 
-A small, but highly requested feature is the ability to add HTTP headers to webhooks. This feature enables you to secure your webhooks by including an Authorization header or connect directly to external systems that require special headers.
+Last but not least, a tiny, but strongly requested feature is to configure HTTP headers for webhooks. This feature enables you to secure your webhooks by including an Authorization header or connect directly to external systems that require special headers.
+
+## Enjoy building
+
+We're very excited about these two new features, as they enable a better development workflow and provide a lot of flexibility when building applications with Graphcool. Thank you for all of your feedback and support! 💚

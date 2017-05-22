@@ -100,7 +100,21 @@ $( 'form' ).submit(function ( e ) {
 })
 ```
 
-#### 2.1.3 curl
+#### 2.1.3 Python with request
+
+An example using the Python module `requests` would look like:
+
+```Python
+import requests
+
+url = 'https://api.graph.cool/file/v1/__PROJECT_ID__'
+
+file = {'data': open('example.png', 'rb')}
+
+r = requests.post(url, files=file)
+```
+
+#### 2.1.4 curl
 
 With curl, first navigate to the folder containing the file:
 
