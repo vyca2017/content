@@ -27,61 +27,67 @@ related:
 In this guide we will have a closer look at how auth providers and the permission system tie together when using a Graphcool project.
 You will learn how to configure Digits and use it in combination with React and Apollo to handle user login and sign up and what permission setup is needed to get started with authentication.
 
-> If you want to follow along, make sure to finish the [introduction guide](!alias-thaeghi8ro) on how to set up a GraphQL backend in less than 5 minutes.
+In this Instagram clone, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, she has to enter her name and email address and state if she is interested in notification emails.
 
-We will build a similar Instagram clone application as before, but add a few changes. In this application, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, he has to enter his name and email address  and state if he is interested in notification emails.
+> You can find the complete example on [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/authentication-with-digits-and-apollo).
 
-> You can find the complete [example on GitHub](https://github.com/graphcool-examples/react-apollo-digits-example).
 
-## 1. Preparation
+## 1. Setting up the Graphcool project
 
-In this step we will connect your Graphcool project to your Digits account.
+### 1.1 Creating the Project
 
-### 1.1 Create new Digits application
+The app will use the following data model:
 
-If you have no Digits account yet, head over to their [website](https://get.digits.com/) and create a new iOS or Android App to obtain the needed credentials for the Digits integration. After successfully creating the app, copy your *consumer key* and *consumer secret*.
+```graphql
+type Post {
+  description: String!
+  imageUrl: String!
+}
 
-### 1.2 Configure Digits with Graphcool
+type User {
+  name: String!
+  emailAddress: String!
+  emailSubscription: Boolean!
+}
+```
 
-In the [console](https://console.graph.cool), let's create a new project so we can freely experiment with Digits. Head over to the `User` type of your new project, select *Configure Auth Providers*, enable Digits and enter the information collected from above.
+You can create the project using the [Graphcool CLI](https://www.npmjs.com/package/graphcool):
 
-Now it's time to design our data schema.
+```sh
+# Install the Graphcool CLI
+npm install -g graphcool
 
-## 2. Setting up the project
+# Create new project
+graphcool init --schema https://graphqlbin.com/insta-auth0.graphql
+```
 
-### 2.1 Setting up the data schema
 
-As before, we want to create a `Post` type which the String fields `imageUrl` and `description`.
-In order to do that, please open your [console](https://console.graph.cool) and add a new type called `Post`.
-
-![](../../images/building-instagram-in-5-minutes-model.gif)
-
-Now create the fields `imageUrl` and `description` of type String.
-
-![](../../images/building-instagram-in-5-minutes-field.gif)
-
-We also add three required fields to the `User` type. Go to your `User` type and create the three required fields `emailSubscription` of type boolean and `name` and `emailAddress` of type String.
-
-### 2.2 Setting the permissions
+### 1.2 Setting the permissions
 
 To make our application behave correctly we have to setup permissions for the `Post` and `User` type in our project.
 
-As we want to restrict the creation of posts only to `AUTHENTICATED` users, we have to create the according permission for `Create Node` on the `Post` type.
+As we want to restrict the creation of posts only to _authenticated_ users, we have to create the according permission for `CREATE` on the `Post` type.
 
-![](./create-post-permissions.png?width=350)
+![](./img/create-post-permissions.png?width=350)
 
-To allow everyone to see posts, we have to add a `EVERYONE` permissions for `View Data` as well.
-Make sure that these two permissions are the only enabled ones, otherwise the final permissions might be too restrictive or too relaxed.
 
-![](./post-permissions.png?width=350)
+## 2. Preparation
 
-As we want to allow `EVERYONE` to signup with Digits, we create the according `Create Node` permission on the `User` type.
+In this step we will connect your Graphcool project to your Digits account.
 
-![](./create-user-permissions.png?width=350)
+### 2.1 Create new Digits application
 
-We also allow `EVERYONE` to view users by creating a new permission for `View Data`.
+If you have no Digits account yet, head over to their [website](https://get.digits.com/) and create a new iOS or Android App to obtain the needed credentials for the Digits integration. After successfully creating the app, copy your **consumer key** and **consumer secret**.
 
-![](./user-permissions.png?width=350)
+
+### 2.2 Configure Digits with Graphcool
+
+In the [console](https://console.graph.cool), open the **Integrations** tab in the side-menu and select click on the Auth0 integration:
+
+![](./img/digits-auth-provider.png?width=450)
+
+Now copy over your **consumer key** and **consumer secret** from the previous step into the corresponding fields.
+
 
 ## 3. Building the application
 
@@ -91,6 +97,7 @@ That's it, we are done configuring the project and we can start working on our f
 
 We will use [Apollo Client](http://dev.apollodata.com/) to make GraphQL requests in our React application.
 In Graphcool, requests are authenticated using the `Authorization` header. That's why we include it in every request if the user already signed in. We can use `applyMiddleware` on the `networkInterface` to accomplish this:
+
 ```js
 // in src/index.js
 const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__' })
