@@ -70,7 +70,7 @@ To make our application behave correctly we have to setup permissions for the `P
 
 As we want to restrict the creation of posts only to _authenticated_ users, we have to create the according permission for `CREATE` on the `Post` type.
 
-![](./create-post-permissions.png?width=350)
+![](./img/create-post-permissions.png?width=350)
 
 
 ## 2. Preparation
@@ -87,11 +87,11 @@ Make sure to add `http://localhost:3000` to the allowed callback URLs as well.
 
 In the [console](https://console.graph.cool), open the **Integrations** tab in the side-menu and select click on the Auth0 integration:
 
-![](./auth0-integration.png?width=350)
+![](./img/auth0-integration.png?width=350)
 
 Now copy over your **domain**, **client id** and **client secret** from the previous step into the corresponding fields:
 
-![](./auth0-config.png?with=600)
+![](./img/auth0-config.png?with=600)
 
 ## 3. Building the application
 
