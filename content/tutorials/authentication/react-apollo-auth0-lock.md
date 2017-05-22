@@ -29,7 +29,7 @@ related:
 In this guide we will have a closer look at how auth providers and the permission system tie together when using a Graphcool project.
 You will learn how to configure Auth0 and use Auth0 lock in combination with React and Apollo to handle user login and sign up and what permission setup is needed to get started with authentication.
 
-We will build a similar Instagram clone application as before, but add a few changes. In this application, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, he has to enter his name and email address and state if he is interested in notification emails.
+In this Instagram clone, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, he has to enter his name and email address and state if he is interested in notification emails.
 
 > You can find the complete example on [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/authentication-with-auth0-and-apollo).
 
@@ -66,7 +66,7 @@ graphcool init --schema https://graphqlbin.com/insta-auth0.graphql
 
 ### 1.2 Setting the permissions
 
-To make our application behave correctly we have to setup permissions for the `Post` and `User` type in our project.
+To make our application behave correctly we have to setup permissions for the `Post` type in our project.
 
 As we want to restrict the creation of posts only to _authenticated_ users, we have to create the according permission for `CREATE` on the `Post` type.
 
@@ -85,7 +85,7 @@ Make sure to add `http://localhost:3000` to the allowed callback URLs as well.
 
 ### 2.2 Configure Auth0 with Graphcool
 
-In the [console](https://console.graph.cool), open the **Integrations** tab in the side-menu and select click on the Auth0 integration:
+In the [console](https://console.graph.cool), open the **Integrations** tab in the side-menu and click on the **Auth0** integration:
 
 ![](./img/auth0-integration.png?width=350)
 
