@@ -24,10 +24,10 @@ Here you can initiate workflows for external services, like sending an email, ch
 > The request is accepted.
 
 ```js
-module.exports = function (input, logreq) {
-  log(`input: ${input}`)
+module.exports = function (event, req) {
+  console.log(`event: ${event}`)
 
-  return input
+  return {data: event.data}
 }
 ```
 
@@ -36,13 +36,13 @@ module.exports = function (input, logreq) {
 > Make a request to any third party API
 
 ```js
-const request = require('request')
+var request = require('request')
 
-module.exports = function (input cb) => {
+module.exports = function (event, cb) => {
   // query external movie API for number of stored actors
-  const movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
+  var movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
-  const query = `
+  var query = `
     query {
       result: _allActorsMeta {
         count
@@ -59,13 +59,13 @@ module.exports = function (input cb) => {
     console.log('Error querying movieAPI: ' + e.toString())
     cb(e, {})
   }).on('data', (response) => {
-    const actorCount = JSON.parse(response).data.result.count
+    var actorCount = JSON.parse(response).data.result.count
 
-    const data = {
-      ...input.data,
+    var data = Object.assign({}, ){
+      ...event.data,
       actorCount
     }
-    cb(null, input.data)
+    cb(null, event.data)
   })
 }
 ```

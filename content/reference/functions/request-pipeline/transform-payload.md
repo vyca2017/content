@@ -21,9 +21,27 @@ Functions used for the `TRANSFORM_PAYLOAD` hook point can do arbitrary transform
 > The request is not modified at all.
 
 ```js
-module.exports = function (input, log, cb) {
-  log(`input: ${input}`)
+module.exports = function (event, cb) {
+  console.log(`event: ${event}`)
 
-  return input
+  return event
 }
 ```
+
+#### Flip a boolean
+
+> A boolean contained in the input arguments is flipped.
+
+```js
+module.exports = function (event, cb) {
+  console.log(`event: ${event}`)
+
+  event.data.isPaid = !event.data.isPaid
+
+  return event
+}
+```
+
+## Current Limitations
+
+Currently, **only fields that are already part of the mutation payload can be modified**. No fields can be added or removed.
