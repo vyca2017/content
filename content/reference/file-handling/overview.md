@@ -53,7 +53,7 @@ After this request, the file is publicly available at its `url`. Each property i
 When downloading images, you can use a separate image API to control the size of the file. To get a 600x500 image, you can use
 
 ```
-https://images.graph.cool/__PROJECT_ID__/__FILE_ID__/600x500
+https://images.graph.cool/__PROJECT_ID__/__FILE_SECRET__/600x500
 ```
 
 For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
