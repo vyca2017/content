@@ -50,10 +50,12 @@ After this request, the file is publicly available at its `url`. Each property i
 
 ## Image API
 
-When downloading images, you can use a separate image API to control the size of the file. To get a 600x500 image, you can use
+The Image API provides a very thin layer on top of the File API for image transformations. Note that the Image API is work in progress. The Image API does not support image caching and only images up to 5MB can be transformed.
+
+To get a 600x500 image, you can use
 
 ```
-https://images.graph.cool/__PROJECT_ID__/__FILE_SECRET__/600x500
+https://images.graph.cool/__PROJECT_ID__/__SECRET__/600x500
 ```
 
 For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
