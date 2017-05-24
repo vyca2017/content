@@ -91,7 +91,7 @@ In the [console](https://console.graph.cool), open the **Integrations** tab in t
 
 Now copy over your **domain**, **client id** and **client secret** from the previous step into the corresponding fields:
 
-![](./img/auth0-config.png?with=600)
+![](./img/auth0-config.png?width=600)
 
 ## 3. Building the application
 
