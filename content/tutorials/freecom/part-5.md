@@ -98,7 +98,7 @@ module.exports = function (event) {
 
 Before we go into detail about how to use server-side subscriptions in order to connect our app to Slack, let's take a quick look at the visualization of the flow that is happening when a user hits return to send a message in the chat:
 
-![](./img/part-5/create-message.png)
+![](./img/part-5/create-message.png?width=800)
 
 Here's a brief outline of the interaction that takes place:
 
