@@ -159,10 +159,10 @@ Here is a graphical overview of the relations in our final schema:
 
 ## Preparing the GraphQL server
 
-You can now either create these types and relations manually in the Web UI of the  [Graphcool console](https://console.graph.cool) or use the [command-line interface](https://www.npmjs.com/package/graphcool) to create the project including the data model. Simply download the complete [schema file](http://graphqlbin.com/freecom.graphql) and execute the following command in a Terminal:
+You can now either create these types and relations manually in the Web UI of the  [Graphcool console](https://console.graph.cool) or use the [command-line interface](https://www.npmjs.com/package/graphcool) to create the project including the data model. Simply execute the following `graphcool init` command in a Terminal and pass the remote [schema](http://graphqlbin.com/freecom.graphql) as the `--schema` option:
 
 ```sh
-graphcool init --schema freecom.graphql --name Freecom
+graphcool init --schema http://graphqlbin.com/freecom.graphql --name Freecom
 ```
 
 Note that this will require you to authenticate with Graphcool by opening a browser window before creating the actual project.
