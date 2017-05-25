@@ -147,9 +147,9 @@ type Location {
 Since the schema file is already included in this repository, all you have to do is download or clone the project and then use our CLI tool to create your project along with the specified schema:
 
 ```sh
-git clone https://github.com/graphcool-examples/worldchat-subscriptions-example.git
-cd worldchat
-graphcool init Worldchat.schema
+git clone https://github.com/graphcool-examples/react-graphql.git
+cd react-graphql/subscriptions-with-apollo-worldchat/
+graphcool init --schema schema.graphql --name Worldchat
 ```
 
 This will automatically create a project called `Worldchat` that you can now access in our [console](https://console.graph.cool).
@@ -211,12 +211,12 @@ class App extends Component {
 }
 ```
 
-You can view the full implementation [here](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/App.js).
+You can view the full implementation [here](https://github.com/graphcool-examples/react-graphql/blob/master/subscriptions-with-apollo-worldchat/src/App.js).
 
 
 ## Building a Real-Time Chat with Subscriptions 💬
 
-Let's now look at how we implemented the chat feature in our application. You can refer to the [actual implementation](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/Chat.js) whenever you like.
+Let's now look at how we implemented the chat feature in our application. You can refer to the [actual implementation](https://github.com/graphcool-examples/react-graphql/blob/master/subscriptions-with-apollo-worldchat/src/Chat.js) whenever you like.
 
 All we need for the chat functionality is _one query_ to retrieve all messages from the database and _one mutation_ that allows us to create a new message:
 
@@ -304,7 +304,7 @@ Fantastic, this is all we need in order for our chat to update in realtime! 🚀
 
 ## Adding Geo-Locations to the App 🗺
 
-Let's now look at how to add a geo-location feature to the app so that we can display the chat participants on a map. The full implementation is located [here](https://github.com/graphcool-examples/worldchat-subscriptions-example/blob/master/src/WorldChat.js).
+Let's now look at how to add a geo-location feature to the app so that we can display the chat participants on a map. The full implementation is located [here](https://github.com/graphcool-examples/react-graphql/blob/master/subscriptions-with-apollo-worldchat/src/WorldChat.js).
 
 At first, we need one query that we use to initially retrieve all locations and their associated travellers.
 

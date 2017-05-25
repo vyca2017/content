@@ -46,7 +46,7 @@ const client = new ApolloClient({
 })
 ```
 
-Now you can use Apollo to do queries and mutations. If you are unsure about the setup, check our Instagram example app using Apollo in [React](https://github.com/graphcool-examples/react-apollo-instagram-example) or [Angular 2](https://github.com/graphcool-examples/angular-apollo-instagram-example). Find more information in the official [documentation](http://dev.apollodata.com/).
+Now you can use Apollo to do queries and mutations. If you are unsure about the setup, check our Instagram example app using Apollo in [React](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-apollo) or [Angular 2](https://github.com/graphcool-examples/angular-graphql/tree/master/quickstart-with-apollo). Find more information in the official [documentation](http://dev.apollodata.com/).
 
 ## lokka
 
@@ -63,7 +63,7 @@ const client = new Lokka({
 });
 ```
 
-Now you can use lokka to do queries and mutations. If you are unsure about the setup, check our [Todo example app using lokka](https://github.com/graphcool-examples/react-lokka-todo-example). Find more information in the official  [documentation](https://github.com/kadirahq/lokka/blob/master/README.md).
+Now you can use lokka to do queries and mutations. If you are unsure about the setup, check our [Todo example app using lokka](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-lokka-and-mobx). Find more information in the official [documentation](https://github.com/kadirahq/lokka/blob/master/README.md).
 
 ## curl
 

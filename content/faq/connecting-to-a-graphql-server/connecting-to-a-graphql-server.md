@@ -44,7 +44,7 @@ const client = new ApolloClient({
 })
 ```
 
-<!-- GITHUB_EXAMPLE('Instagram Example with Apollo', 'https://github.com/graphcool-examples/react-apollo-instagram-example') -->
+<!-- GITHUB_EXAMPLE('Instagram Example with Apollo', 'https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-apollo') -->
 
 ### Relay
 
@@ -58,7 +58,7 @@ Relay.injectNetworkLayer(
 )
 ```
 
-<!-- GITHUB_EXAMPLE('Instagram Example with Relay', 'https://github.com/graphcool-examples/relay-apollo-instagram-example') -->
+<!-- GITHUB_EXAMPLE('Instagram Example with Relay', 'https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay') -->
 
 ### Lokka
 
@@ -72,4 +72,4 @@ const transport = new Transport(GRAPHQL_ENDPOINT)
 const client = new Lokka({ transport })
 ```
 
-<!-- GITHUB_EXAMPLE('Todo Example with Lokka', 'https://github.com/graphcool-examples/react-lokka-todo-example') -->
+<!-- GITHUB_EXAMPLE('Todo Example with Lokka', 'https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-lokka-and-mobx') -->

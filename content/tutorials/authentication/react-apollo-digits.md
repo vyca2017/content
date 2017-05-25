@@ -431,7 +431,7 @@ If the user is signed in and once the data has finished loading, we render two t
 
 ## 4. Try it out yourself
 
-If you want to run the example on your own and experiment a bit with the a application yourself, checkout the code at [GitHub](https://github.com/graphcool-examples/react-apollo-digits-example). If you've already setup the data schema and Digits auth provider for your project, you only have to inject your simple API endpoint in `src/index.js`, enter your `consumerKey` in `src/components/App.js` and run `yarn && yarn start` and you're good to go!
+If you want to run the example on your own and experiment a bit with the a application yourself, checkout the code at [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/authentication-with-digits-and-apollo). If you've already setup the data schema and Digits auth provider for your project, you only have to inject your simple API endpoint in `src/index.js`, enter your `consumerKey` in `src/components/App.js` and run `yarn && yarn start` and you're good to go!
 
 Make sure to try things that shouldn't be allowed, like visiting the `/create` route without being logged in or using a fake authentication token in local storage. Have fun!
 
