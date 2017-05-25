@@ -3,7 +3,7 @@ alias: wohfoa8ahz
 path: /docs/tutorials/freecom-5-serverless-functions
 layout: TUTORIAL
 preview: freecom-part-5.png
-description: Business Logic with Serverless Functions
+description: Implementing Business Logic with Serverless Functions
 tags:
   - freecom
   - serverless
@@ -19,7 +19,7 @@ related:
 ---
 
 
-# Business Logic with Serverless Functions
+# Freecom Tutorial (5/6): Business Logic with Serverless Functions
 
 This is the fifth chapter of our Freecom tutorial series and it's all about extending the capabilities of Graphcool by integrating with third-party services. We are going to use serverless functions in order to connect Freecom with Slack and thus enable communication between customers and support agents. In the [previous chapter](!-pei9aid6ei), you learned how to implement authentication and permission rules to ensure customers only have access to their own conversations.
 
