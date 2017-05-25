@@ -46,7 +46,7 @@ token. This token needs to be sent as HTTP header for subsequent requests to
 authenticate the user. ([Read more.](!alias-seimeish6e#authentication-providers))
 
 ![](./auth0-lock-demo.gif)
-> Works out-of-the-box with Auth0 Lock. An example can be found [here](https://github.com/graphcool-examples/react-lokka-auth0-example).
+> Works out-of-the-box with Auth0 Lock. An example can be found [here](https://github.com/graphcool-examples/react-graphql/authentication-with-auth0-and-lokka).
 
 Besides Auth0 and Digits, we're also supporting the *Email Auth Provider*(email-password-based authentication) as part of the Graphcool platform and will continue to extend its functionality.
 

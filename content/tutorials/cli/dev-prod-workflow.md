@@ -117,7 +117,7 @@ type Post implements Node {
 }
 ```
 
-Note that we're using the `@rename` and `@migrationValue` [directives](!alias-aeph6oyeez). The latter is necessary because we already have posts in the database. Since we're now adding a new required field to the `Post` type, these existing posts need a value that can be written into these fields, that's preciselt what we specify with the `@migrationValue` directive. 
+Note that we're using the `@rename` and `@migrationValue` [directives](!alias-aeph6oyeez). The latter is necessary because we already have posts in the database. Since we're now adding a new required field to the `Post` type, these existing posts need a value that can be written into these fields, that's precisely what we specify with the `@migrationValue` directive. 
 
 We can submit the changes with `graphcool push dev.graphcool`.
 
