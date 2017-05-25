@@ -17,14 +17,14 @@ related:
 
 ## Week 20 (May 15 - May 21)
 
-- Even though we are running in production for a long time already, **we finally launched officially** and were featured on [Product Hunt](https://www.producthunt.com/posts/graphcool-2) and reached first spot on the [Hacker News](https://news.ycombinator.com/item?id=14350129) frontpage 🎉 We published an article [about the Serverless GraphQL Backend Architecture](!alias-ahde7paig2/) and rolled out the [CLI and Functions](!alias-teko4ab8za).
-- As part of the launch, the homepage and documentation received a lot of love and should feel way smoother now
-- With the great help of the community, we fixed issues with the [Algolia Integration]() synchronization logic, made a lot of smaller improvements to the UX of the Console. We also fixed a bug that would apply too restrictive permissions for some mutations.
+- We **launched officially** and were featured on [Product Hunt](https://www.producthunt.com/posts/graphcool-2) and reached first spot on the [Hacker News](https://news.ycombinator.com/item?id=14350129) frontpage 🎉 We published an article [about the Serverless GraphQL Backend Architecture](!alias-ahde7paig2/) and rolled out the [CLI and Functions](!alias-teko4ab8za).
+- As part of the launch, the homepage and documentation received a lot of love and should feel way smoother now.
+- We fixed issues with the [Algolia Integration](!alias-emaig4uiki) regarding nested nodes, made a lot of smaller improvements to the UX of the Console and fixed a bug that would apply too restrictive permissions for some mutations.
 - On May 21th, we're hosting [GraphQL Europe](https://graphql-europe.org), the first GraphQL conference in Europe.
 
 ## Week 19 (May 8 - May 14)
 
-- We incorporated feedback we received regarding the UX of the Anonymous Authentication in the Console.
+- We incorporated the feedback we received regarding the UX of the Anonymous Authentication in the Console.
 - The new [CLI](!alias-kie1quohli) and the [Functions](!alias-boo6uteemo) feature are being tested in a closed beta program.
 
 ## Week 18 (May 1 - May 7)
