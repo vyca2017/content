@@ -41,7 +41,7 @@ You can upload files up to 200MB each.
 
 ### 2.1 Uploading a File with plain HTTP
 
-<!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-apollo-file-upload-example') -->
+<!-- GITHUB_EXAMPLE('File upload with fetch', 'https://github.com/graphcool-examples/react-graphql/tree/master/files-with-apollo') -->
 
 Uploading a file will result in a response containing the new file id and the url. Let's upload our first file now. Pick a funny picture or similar and upload it! You can then go to the url in the response to verify that the image file was correctly uploaded. To read more on the fields of the response read the reference documentation on the [`File` type](!alias-uhieg2shio#file-type).
 

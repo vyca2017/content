@@ -48,4 +48,4 @@ To expose the GraphQL Schema to Relay, use [babel-plugin-react-relay](https://gi
 },
 ```
 
-Now you can use Relay to do queries and mutations. If you are unsure about the Relay setup, check this [example Instragram app in Relay app](https://github.com/graphcool-examples/react-relay-instagram-example). For more information on how to use Relay, check the [official Relay documentation](https://facebook.github.io/relay/).
+Now you can use Relay to do queries and mutations. If you are unsure about the Relay setup, check this [example Instragram app in Relay app](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay). For more information on how to use Relay, check the [official Relay documentation](https://facebook.github.io/relay/).

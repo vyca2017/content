@@ -32,7 +32,7 @@ Facebook's homegrown GraphQL client Relay finally was updated to its long-awaite
 
 If you want to get an idea about the major changes in the new version, the updated (and majorly improved) [documentation](https://facebook.github.io/relay/docs/new-in-relay-modern.html) is a great place to start. Additionally, [Sashko](https://twitter.com/stubailo) from the Apollo team wrote an excellent in-depth [article](https://dev-blog.apollodata.com/exploring-relay-modern-276f5965f827) shedding light on different aspects of the new Relay Modern.
 
-In the following post, we're going to explore what it's like to migrate a project from *Relay Classic* (yes, that's what the old API is called now) to its *Modern* counterpart. The project we're going to convert is a simple Todo app (TodoMVC). You can find the code for it on [Github](https://github.com/graphcool-examples/react-relay-todo-example). Note that the repo contains a branch `classic`, representing the code before the conversion as well as a branch called `modern` with the upgraded code.
+In the following post, we're going to explore what it's like to migrate a project from *Relay Classic* (yes, that's what the old API is called now) to its *Modern* counterpart. The project we're going to convert is a simple Todo app (TodoMVC). You can find the code for it on [Github](https://github.com/graphcool-examples/relay-modern-migration-example). Note that the repo contains a branch `classic`, representing the code before the conversion as well as a branch called `modern` with the upgraded code.
 
 ## Compatibility Mode
 
@@ -567,7 +567,7 @@ const root = <QueryRenderer
 
 The last step is simply cleaning up all the imports where we used `react-relay/classic` and `react-relay/compat`. Since we ensured that all our components are now using the new Relay APIs, we don't have to pull in the old Relay code any more. So, at this point running through our source files and adjusting all Relay imports to `react-relay` will do.
 
-You can view the final state of the codebase [here](https://github.com/graphcool-examples/react-relay-todo-example/tree/modern). Another important info for projects to be upgraded and making use of `react-relay-router` is that Relay Modern currently isn't supported by react-router-relay, but can be included with a slight workaround as explained in this [GitHub issue](https://github.com/relay-tools/react-router-relay/issues/234).
+You can view the final state of the codebase [here](https://github.com/graphcool-examples/relay-modern-migration-example). Another important info for projects to be upgraded and making use of `react-relay-router` is that Relay Modern currently isn't supported by react-router-relay, but can be included with a slight workaround as explained in this [GitHub issue](https://github.com/relay-tools/react-router-relay/issues/234).
 
 ## Summary
 

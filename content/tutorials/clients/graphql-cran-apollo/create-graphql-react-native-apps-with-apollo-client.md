@@ -23,7 +23,7 @@ related:
 # Tutorial: Using create-react-native-app with GraphQL & Apollo
 
 The easiest way to get started with React Native apps that are using a GraphQL backend is with [`create-react-native-app`](https://github.com/react-community/create-react-native-app) and [Apollo](http://dev.apollodata.com/).
-In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-native-apollo-instagram-example).
+In this tutorial we will learn how to build an Instagram app, where users can view and post images. The complete code for this tutorial is available on [GitHub](https://github.com/graphcool-examples/react-native-graphql/tree/master/quickstart-with-apollo).
 
 
 ## Getting your GraphQL endpoint
@@ -465,6 +465,6 @@ This will inject a function called `mutate` into the props of the `CreatePage` c
 
 ## Conclusion
 
-That's it! Using `create-react-app` and Apollo Client, it's easy to write React applications that work with a GraphQL backend. If you want to dive deeper in the example code, you can check it out on [GitHub](https://github.com/graphcool-examples/react-apollo-instagram-example).
+That's it! Using `create-react-native-app` and Apollo Client, it's easy to write React Native applications that work with a GraphQL backend. If you want to dive deeper in the example code, you can check it out on [GitHub](https://github.com/graphcool-examples/react-native-graphql/tree/master/quickstart-with-apollo).
 
 For a more comprehensive tutorial, checkout [Learn Apollo](https://learnapollo.com), a hands-on guide for Apollo Client created by Graphcool.
