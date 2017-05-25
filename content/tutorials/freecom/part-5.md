@@ -3,7 +3,8 @@ alias: wohfoa8ahz
 path: /docs/tutorials/freecom-5-serverless-functions
 layout: TUTORIAL
 preview: freecom-part-5.png
-description: Business Logic with Serverless Functions:
+description: Business Logic with Serverless Functions
+tags:
   - freecom
   - serverless
   - functions
