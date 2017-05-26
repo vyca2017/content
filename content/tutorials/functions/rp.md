@@ -170,7 +170,7 @@ You can test a function in two different ways:
     }
     ```
     
-    ![](./img/functions-4.png)
+    ![](./img/rp-1.png)
 
 2. Send an actual mutation to your GraphQL API. You can do that either by having an actual client application that sends the mutation or simply through a Playground. A sample mutation could look as follows:
 
