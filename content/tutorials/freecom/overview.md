@@ -58,11 +58,11 @@ In the [_1st chapter_](!alias-e8a6ajt8ax), we start by discussing the **concrete
 
 The [_2nd chapter_](!alias-oe8ahyo2ei) explains how to **integrate the [Apollo](http://dev.apollodata.com/react/) client** into the app so that it can interact with our API using **queries and mutations**. Watch the [video](https://www.youtube.com/watch?v=ZItsQWNPw1U).
 
-The _3rd chapter_ is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in Freecom to make the messages appear without the user refreshing the page.
+The [_3rd chapter_](!alias-die6mewitu) is all about bringing **realtime functionality** into our chat, this can be achieved using [**GraphQL subscriptions**](!alias-aip7oojeiv/). We'll explain how you can integrate subscriptions in Freecom to make the messages appear without the user refreshing the page. Watch the [video](https://www.youtube.com/watch?v=mJMYyniCJe4).
 
-In the _4th chapter_, we'll use the [**permission system**](!alias-iegoo0heez/) to make sure customers can only ever view their own messages.
+In the [_4th chapter_](!alias-pei9aid6ei), we'll use the [**permission system**](!alias-iegoo0heez/) to make sure customers can only ever view their own messages. Watch the [video](https://www.youtube.com/watch?v=RHI1affZAvM).
 
-Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the _5th chapter_, we'll therefore explain how to use **[mutation callbacks](!alias-ahlohd8ohn/) and [serverless functions](https://stdlib.com/)** to integrate with the Slack API.
+Our support chat will enable the support agents to chat with customers through [Slack](https://slack.com/). In the [_5th chapter_](!alias-wohfoa8ahz), we'll therefore explain how to use **[serverless functions](!alias-teko4ab8za)** to integrate with the Slack API. Watch the [video](https://www.youtube.com/watch?v=CNAtCbTjfT8).
 
 Finally, in the _6th chapter_, we are going to cover how to **[upload files](!alias-eer4wiang0/)** and do proper file management in a Graphcool backend.
 
