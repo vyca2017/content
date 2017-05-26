@@ -20,7 +20,7 @@ related:
 
 In this article, you'll learn how to use serverless functions to validate an email address and make sure it gets saved in the database in lowercase letters.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9r5f8orFy14" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GSV58k05vZI" frameborder="0" allowfullscreen></iframe>
 
 ## Overview: Serverless Functions
 
