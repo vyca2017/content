@@ -15,7 +15,7 @@ related:
 ---
 
 
-# Sending Welcome Emails with Server-side Subscriptions
+# Using Server-side Subscriptions to Send a Welcome Email
 
 In this article, you'll learn how to use serverless functions to send a welcome email to new users that are signing up with your app.
 
