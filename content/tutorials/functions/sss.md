@@ -39,7 +39,7 @@ These are precisely the features that you can implement with serverless function
 You generally have the choice between two different kinds of functions that serve slightly different purposes:
 
 - [**Server-side Subscriptions**](!alias-ahlohd8ohn): Execute a serverless function _after_ a mutation happened in the backend
-- [**Request Pipeline**](!alias-pa6guruhafw): Allows for transformation and validation of mutation input and response payload at various stages
+- [**Request Pipeline**](!alias-pa6guruhaf): Allows for transformation and validation of mutation input and response payload at various stages
 
 The use case of sending a welcome email to new users is best implemented with a Server-side Subscription, so that's what we'll discuss in the remainder of this article.
 
