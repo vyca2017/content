@@ -24,7 +24,7 @@ further:
 ---
 
 
-# 
+# Graphcool Feature Tour
 
 Graphcool is the easiest way for web and mobile developers to get started with their own GraphQL backend. In this post, we'll give an overview of the Graphcool platform, specific features and what problems they solve.
 
@@ -53,7 +53,7 @@ Once installed, it allows to manage your Graphcool projects locally without havi
 
 >  Learn about all major features of the CLI in this [video](https://www.youtube.com/watch?v=sf0ZkyalSTg).
 
-### The Project File: `project.graphcool`
+### The Project File
 
 The basis for managing a Graphcool project locally is the [project file](!-ow2yei7mew) called `project.graphcool` by default. The project file uses standard [GraphQL IDL](!alias-kr84dktnp0) syntax and consists of two major sections:
 
