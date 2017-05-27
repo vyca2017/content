@@ -2,7 +2,6 @@
 alias: ga2ahnee2a
 path: /docs/faq/importing-simple-data
 layout: FAQ
-preview: import-data-icon.png
 description: Use a script to import simple JSON data to your GraphQL backend.
 tags:
   - scripts
