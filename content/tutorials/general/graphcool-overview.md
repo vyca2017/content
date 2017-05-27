@@ -24,9 +24,9 @@ further:
 ---
 
 
-# Graphcool Feature Tour
+# Exploring Graphcool: The Serverless GraphQL Backend
 
-Graphcool is the easiest way for web and mobile developers to get started with their own GraphQL backend. In this post, we'll give an overview of the Graphcool platform, specific features and what problems they solve.
+Graphcool is the easiest way for web and mobile developers to get started with their own production-ready GraphQL backend. In this post, we'll give an overview of the Graphcool platform, specific features and what problems they solve.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZWAAmp406s" frameborder="0" allowfullscreen></iframe>
 
