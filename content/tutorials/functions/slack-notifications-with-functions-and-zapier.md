@@ -1,6 +1,6 @@
 ---
 alias: dah6aifoce
-path: /docs/tutorials/slack-notifications-with-mutation-callbacks
+path: /docs/tutorials/slack-notifications-with-functions-and-zapier
 layout: TUTORIAL
 preview: slack-zapier-notification-mutation-callback.png
 title: 'Sending Slack Notifications with GraphQL & Zapier'

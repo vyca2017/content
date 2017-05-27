@@ -1,8 +1,7 @@
 ---
 alias: eefoovo2ah
-path: /docs/tutorials/file-management
-layout: TUTORIAL
-preview: file-management-preview.png
+path: /docs/FAQ/managing-files-in-graphql
+layout: FAQ
 title: Managing files in a Graphcool project
 description: Upload, download, rename or delete files that are hosted at your GraphQL backend.
 tags:
@@ -20,7 +19,7 @@ related:
     - goij0cooqu
 ---
 
-# Managing files in a Graphcool project
+# Managing Files in GraphQL
 
 In this guide we will use the file management system at Graphcool to upload, download, rename and delete files.
 

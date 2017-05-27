@@ -1,7 +1,7 @@
 ---
 alias: uu2xighaef
-path: /docs/tutorials/migrating-data-using-a-node-script
-layout: TUTORIAL
+path: /docs/faq/migrating-data-using-a-node-script
+layout: FAQ
 preview: import-data-icon.png
 description: When you want to bulk migrate your existing data, you can run a migration script that combines multiple GraphQL mutations in one GraphQL request.
 tags:

@@ -1,12 +1,10 @@
 ---
 alias: ih4etheigo
-path: /docs/tutorials/calling-the-api-with-request
-layout: TUTORIAL
-preview: calling-api-icon.png
+path: /docs/faq/calling-the-api-with-request
+layout: FAQ
 description: Send queries and mutations to the GraphQL client APIs from a Function using plain http requests.
 tags:
   - functions
-  - mutation-callbacks
   - webtask
   - plain-http
   - client-apis

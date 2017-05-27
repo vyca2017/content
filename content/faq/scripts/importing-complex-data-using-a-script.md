@@ -1,7 +1,7 @@
 ---
 alias: aing2chaih
-path: /docs/tutorials/importing-complex-data
-layout: TUTORIAL
+path: /docs/faq/importing-complex-data
+layout: FAQ
 preview: import-data-icon.png
 description: Use a script to import nested JSON data to your GraphQL backend.
 tags:

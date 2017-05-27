@@ -1,8 +1,7 @@
 ---
 alias: taith2va1l
-path: /docs/tutorials/calling-the-api-with-lokka
-layout: TUTORIAL
-preview: calling-api-icon.png
+path: /docs/faq/calling-the-api-with-lokka
+layout: FAQ
 description: Send queries and mutations to the GraphQL client APIs from a Function using GraphQL Lokka.
 tags:
   - functions
