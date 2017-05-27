@@ -2,9 +2,11 @@
 alias: dee0aethoo
 path: /docs/tutorials/welcome-email-with-sss
 layout: TUTORIAL
-description: Getting Started with Serverless Functions
+description: Getting started with Server-side Subscriptions to integrate 3rd party services
 tags:
-  - freecom
+  - serverless
+  - functions
+  - server-side-subscriptions
 related:
   more:
     - iechu0shia

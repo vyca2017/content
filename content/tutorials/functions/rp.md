@@ -2,10 +2,11 @@
 alias: zeez7aiph3
 path: /docs/tutorials/validation-and-transformation-with-rp
 layout: TUTORIAL
-description: Getting Started with Serverless Functions
+description: Getting started with the Request Pipeline for data transformation & validation
 tags:
   - serverless
   - functions
+  - request-pipeline
 related:
   more:
     - iechu0shia
