@@ -1,6 +1,7 @@
 ---
 alias: zeez7aiph3
 path: /docs/tutorials/validation-and-transformation-with-rp
+preview: rp.png
 layout: TUTORIAL
 description: Getting started with the Request Pipeline for data transformation & validation
 tags:

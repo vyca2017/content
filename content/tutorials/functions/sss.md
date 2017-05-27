@@ -1,6 +1,7 @@
 ---
 alias: dee0aethoo
 path: /docs/tutorials/welcome-email-with-sss
+preview: sss.png
 layout: TUTORIAL
 description: Getting started with Server-side Subscriptions to integrate 3rd party services
 tags:
