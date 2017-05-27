@@ -1,8 +1,7 @@
 ---
 alias: ga2ahnee2a
-path: /docs/tutorials/importing-simple-data
-layout: TUTORIAL
-preview: import-data-icon.png
+path: /docs/faq/importing-simple-data
+layout: FAQ
 description: Use a script to import simple JSON data to your GraphQL backend.
 tags:
   - scripts
@@ -149,5 +148,3 @@ If you want to know more about working with dates and times, check the [guide on
 ## 5. Next steps
 
 Nice, you learned how to prepare your Graphcool project and execute a simple import script. If you want to import data that includes nested JSON objects instead, check out the [guide for importing advanced data](!alias-aing2chaih). If you want to run the code yourself, find instructions in the [repository on GitHub](https://github.com/graphcool-examples/node-import-movies-example/tree/master/simple).
-
-Scripts like these can add a lot of flexibility to your Graphcool project. For example, you can also execute an arbitrary script when a specific mutation occurs. If you are interested in mutation callbacks in general, the [guide about sending notification emails with mutation callbacks](!alias-saigai7cha) might be helpful.

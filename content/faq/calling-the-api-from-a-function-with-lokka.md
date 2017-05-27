@@ -1,14 +1,11 @@
 ---
-alias: ih4etheigo
-path: /docs/tutorials/calling-the-api-with-request
-layout: TUTORIAL
-preview: calling-api-icon.png
-description: Send queries and mutations to the GraphQL client APIs from a webtask using plain http requests.
+alias: taith2va1l
+path: /docs/faq/calling-the-api-with-lokka
+layout: FAQ
+description: Send queries and mutations to the GraphQL client APIs from a Function using GraphQL Lokka.
 tags:
   - functions
-  - mutation-callbacks
-  - webtask
-  - plain-http
+  - lokka
   - client-apis
   - open-source
 related:
@@ -17,19 +14,17 @@ related:
     - koo4eevun4
     - wejileech9
   more:
-  - taith2va1l
-  - saigai7cha
+    - ih4etheigo
 ---
 
-# Calling the API from a mutation callback with plain HTTP
 
-In mutation callbacks, you can run arbitrary code like [sending a notification email](!alias-saigai7cha) or [getting an alert in your Slack channel](!alias-dah6aifoce) as a reaction to a mutation. Sometimes, you need to query additional data from your Graphcool endpoint or want to perform another mutation right in the function.
+# Calling the API from a Function with Lokka
 
-> If you want to follow along with this example, make sure to read the [starting guide](!alias-thaeghi8ro) on how to set up a GraphQL backend in less than 5 minutes first.
+In functions, you can run arbitrary code as a reaction to a mutation. Sometimes, you need to query additional data from your Graphcool endpoint or want to perform another mutation right in the function.
 
-You can make calls to the [Simple API](!alias-heshoov3ai) or [Relay API](!alias-aizoong9ah) by doing plain HTTP requests or using a lightweight GraphQL client like Lokka. In this guide we will use plain HTTP requests to make calls to the Simple API of your Graphcool project.
+You can make calls to the [Simple API](!alias-heshoov3ai) or [Relay API](!alias-aizoong9ah) by doing plain HTTP requests or using a lightweight GraphQL client like Lokka. In this guide we will use [Lokka](https://github.com/kadirahq/lokka) to make calls to the Simple API of your Graphcool project.
 
-> You can also read [the Lokka version of this guide](!alias-taith2va1l).
+> You can also read [the plain HTTP version of this guide](!alias-ih4etheigo).
 
 In this guide, we will again use our Instagram example. We will create a mutation callback that lets users automatically like a post that they created.
 
@@ -39,7 +34,7 @@ In this guide, we will again use our Instagram example. We will create a mutatio
 
 To keep track of which posts a user likes, let's create the `LikedPosts` relation.
 It is a many-to-many relation, because a user can like many posts, and a post can be liked by many users at the same time.
-So go ahead and create the relation between the `User` and `Post` models. Name the fields `likedPosts` and `likedBy`, respectively.
+So go ahead and create the relation between the `User` and `Post` types. Name the fields `likedPosts` and `likedBy`, respectively.
 
 ### 1.2 On permissions
 
@@ -63,80 +58,75 @@ Read [here](https://webtask.io/cli) how to setup the webtask cli.
 
 > This is just one of the many use cases you can solve with mutation callbacks. If you have an advanced requirement, AWS Lambda might be the better choice as it is more powerful than webtask.
 
-## 2. Making API requests with plain HTTP
+## 2. Making API requests with Lokka
 
-In this example, we use the `request` package to do HTTP requests.
+In this example, we use the lightweight GraphQL client Lokka to do API calls.
 
-Get the code from [the GitHub repository](https://github.com/graphcool-examples/webtask-like-posts-example/tree/master/request).
+Get the code from [the GitHub repository](https://github.com/graphcool-examples/webtask-like-posts-example/tree/master/lokka).
 
-First, we insert our endpoint and permanent authentication token:
+<!-- GITHUB_EXAMPLE('Webtask Like Posts', 'https://github.com/graphcool-examples/webtask-like-posts-example') -->
+
+Let's look at the code together. We setup Lokka to connect to our project endpoint and add the permanent auth token for full access:
 
 ```js
-  const endpoint = 'https://api.graph.cool/simple/v1/__PROJECT_ID__'
-  const token = 'Bearer __PERMANENT_AUTH_TOKEN__'
+const {Lokka} = require('lokka')
+const {Transport} = require('lokka-transport-http')
+
+const headers = {
+  'Authorization': 'Bearer __PERMANENT_AUTH_TOKEN__'
+}
+
+const client = new Lokka({
+  transport: new Transport('https://api.graph.cool/simple/v1/__PROJECT_ID__', {headers})
+})
 ```
 
-Then we define the mutation that connects a user and post as part of the `LikedPosts` relation:
+Make sure to insert your endpoint and permanent auth token.
 
+In the exported function, we get the post and user id from the context data and use it to call the `addToLikedPosts` mutation:
 ```js
-  const mutation = `mutation {
+module.exports = (context, cb) => {
+  console.log(context)
+
+  const postId = context.data.createdNode.id
+  const userId = context.data.createdNode.author.id
+
+  client.mutate(`{
     addToLikedPosts(likedPostsPostId: "${postId}", likedByUserId: "${userId}") {
       # we don't need the response but we have to select something
       likedByUser {
         id
       }
     }
-  }`
+  }`)
+    .then(() => cb(null, 'success'))
+    .catch((e) => {
+      console.log('Error liking post: ' + e.toString())
+      cb(e, {})
+    })
+}
 ```
-
-Then we use `request.post` to send a HTTP POST request:
-
-```js
-  request.post({
-    url: endpoint,
-    headers: {
-      'Authorization' : token,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({query: mutation}),
-  }).on('error', (e) => {
-    console.log('Error liking post: ' + e.toString())
-    cb(e, {})
-  }).on('response', (response) => {
-    console.log('Response ' + JSON.stringify(response))
-    cb(null, 'success')
-  })
-```
-
-We include the `Authorization` and `content-type` headers and send the mutation as part of the `query` field in the body JSON.
 
 That's all you need to do to talk to your API in a webtask. You could also do queries, for example to query all posts:
 
 ```js
-const query =`query {
+client.query(`{
   allPosts {
     id
   }
-}`
+}`)
+  .then((response) => {
+    console.log(response.allPosts)
+  })
 ```
 
-and then later:
-
-```js
-request.post({
-  url: endpoint,
-  headers: {
-    'Authorization' : token,
-    'content-type': 'application/json',
-  },
-  body: JSON.stringify({query: query}),
-})
-```
-
-We don't have to bundle this code, so just create the webtask:
+Because we need external packages for Lokka, we have to bundle the code before creating the webtask.
+All that can be done like that:
 
 ```sh
-wt create like-posts-request.js
+npm i -g webtask-bundle
+wt-bundle like-posts-lokka.js --output build/like-posts-lokka.js -m
+wt create build/like-posts-lokka.js
 ```
 
 Copy the webtask url for later use.

@@ -16,7 +16,6 @@ related:
     - ofee7eseiy
     - goh5uthoc1
   more:
-    - daisheeb9x
     - chietu0ahn
 ---
 

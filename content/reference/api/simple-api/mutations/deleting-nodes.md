@@ -15,7 +15,6 @@ related:
     - koo4eevun4
   more:
     - cahzai2eur
-    - saigai7cha
     - dah6aifoce
     - iet3phoum8
 ---

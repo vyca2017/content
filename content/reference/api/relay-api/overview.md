@@ -10,7 +10,6 @@ related:
   further:
     - heshoov3ai
   more:
-  - thaeghi8ro
 ---
 
 # API

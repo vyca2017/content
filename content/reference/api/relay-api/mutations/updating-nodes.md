@@ -16,7 +16,6 @@ related:
     - thaiph8ung
   more:
     - cahzai2eur
-    - saigai7cha
     - dah6aifoce
 ---
 

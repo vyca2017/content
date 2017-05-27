@@ -15,11 +15,12 @@ related:
     - uh8shohxie
     - ahlohd8ohn
   more:
-    - saigai7cha
     - dah6aifoce
 ---
 
 # Stripe Payment Workflow with Mutation Callbacks using micro and now
+
+> Note: This guide uses the deprecated *mutation callbacks*. Use [Server-Side Subscriptions](!alias-ahlohd8ohn) instead.
 
 In this guide, we'll explore implementing a custom Stripe payment workflow with Graphcool mutation callbacks. While you can use any serverless solution like AWS Lambda or Auth0 webtask, we'll use zeit's [micro](https://github.com/zeit/micro) and [now](https://zeit.co/now) in this tutorial.
 

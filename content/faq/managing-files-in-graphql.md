@@ -1,8 +1,7 @@
 ---
 alias: eefoovo2ah
-path: /docs/tutorials/file-management
-layout: TUTORIAL
-preview: file-management-preview.png
+path: /docs/FAQ/managing-files-in-graphql
+layout: FAQ
 title: Managing files in a Graphcool project
 description: Upload, download, rename or delete files that are hosted at your GraphQL backend.
 tags:
@@ -20,11 +19,9 @@ related:
     - goij0cooqu
 ---
 
-# Managing files in a Graphcool project
+# Managing Files in GraphQL
 
 In this guide we will use the file management system at Graphcool to upload, download, rename and delete files.
-
-> To get the most out of this guide, you already should be familiar with the Graphcool platform. The [introductory guide](!alias-thaeghi8ro) on how to set up a GraphQL backend in less than 5 minutes is a great way to do that!
 
 ## 1. The File Management Workflow
 
@@ -177,9 +174,3 @@ Then you could use curl to download it using
 ```sh
 curl -O -J <your-file-url>
 ```
-
-## 5. Next steps
-
-Congratulations, you now should be able to work with files in your GraphQL backend on your own. If you want to read more about the file management system in detail, find out more in the [documentation](!alias-eer4wiang0).
-
-Remember that the `File` type is just another type in your backend. That means that you can create new fields and relations just as with any other type. For example, creating a relation `FileOwner` between the `User` and the `File` types could come in handy. If you want to read more on relations in general the [relations guide](!alias-daisheeb9x) might be useful to you.

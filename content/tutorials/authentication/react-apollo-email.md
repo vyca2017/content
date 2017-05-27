@@ -386,6 +386,4 @@ Make sure to try things that shouldn't be allowed, like visiting the `/create` r
 
 Great, you set up everything that's needed for authentication in your Graphcool project, built a React application that uses Apollo to let user sign up or login and let them see or create posts.
 
-As a next step, you could create a relation between `User` and `Post` and associate posts with their author. Find out more about relations in [this guide](!alias-daisheeb9x).
-
-You can also [send notification emails using mutation callbacks, webtask and Mailgun](!alias-saigai7cha) or [trigger Slack notifications using mutation callbacks and Zapier](!alias-dah6aifoce).
+Have a look at other [advanced features](!alias-ped6wohw0o).

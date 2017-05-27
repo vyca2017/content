@@ -14,7 +14,6 @@ related:
     - uhieg2shio
     - oe3raifamo
   more:
-    - daisheeb9x
     - aing2chaih
     - ahsoow1ool
 ---

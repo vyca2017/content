@@ -1,12 +1,11 @@
 ---
 alias: dah6aifoce
-path: /docs/tutorials/slack-notifications-with-mutation-callbacks
+path: /docs/tutorials/slack-notifications-with-functions-and-zapier
 layout: TUTORIAL
 preview: slack-zapier-notification-mutation-callback.png
 title: 'Sending Slack Notifications with GraphQL & Zapier'
 description: Use Zapier to create a Slack integration for your GraphQL server and get Slack notifications whenever a certain mutation is executed.
 tags:
-  - mutation-callbacks
   - functions
   - slack
   - zapier
@@ -16,7 +15,6 @@ related:
     - uh8shohxie
     - ahlohd8ohn
   more:
-    - saigai7cha
     - soiyaquah7
 ---
 
@@ -52,19 +50,25 @@ Next we will add a new mutation callback to a Zapier webhook, so that whenever a
 
 Head over to your Zapier account and create a new Zap. Choose `Webhooks by Zapier` for the trigger and select `Catch Hook`. When you are being prompted to test the webhook, switch back to your Graphcool project to setup a new mutation callback.
 
-### 2.2 Setup the mutation callback
+### 2.2 Setup the Function
 
-* Choose `User is created` as the trigger mutation
+* Create a new [Server-Side Subscription](!alias-ahlohd8ohn)
+* Choose `User is created` as the trigger
 * For the payload, enter this query:
 
     ```graphql
-    query {
-      createdNode {
-        id
-        name
+    subscription {
+      User(filter: {
+        mutation_in: [CREATED],
+      }) {
+        node {
+          id
+          name
+        }
       }
     }
     ```
+
 * Paste the webhook url obtained from Zapier into the handler url field.
 
 To progress further with Zapier, we will execute a test mutation.
@@ -87,12 +91,12 @@ Back in your new Zap trigger, you should shortly see the incoming data. After yo
 
 As the Zapier action, we can now add a new Slack notification. Choose the `Slack` action and select `Send Channel Message`. Link your Slack account to your Zapier account and you should be good to go. Pick your channel, and create a message like `User <name> signed up (<id>)` where `<name>` and `<id>` have to be replaced by selecting the fields provided by Zapier.
 
-## 3. Firing mutation callbacks
+## 3. Invoking Functions
 
 At this point you are good to go - if you want, you can run the mutation from above again (you can be creative and use your name this time!) and confirm that the Slack notification appears.
 
 ## 4. Next Steps
 
-You just setup a mutation callback that eventually notifies you whenever a new user signs up, neat!
+You just setup a function that eventually notifies you whenever a new user signs up, neat!
 
- If you want to read more about mutation callbacks, head over to the [reference documentation](!alias-ahlohd8ohn) or read [this guide on email notifications with mutation callbacks and Mailgun](!alias-saigai7cha).
+If you want to read more about functions, head over to the [reference documentation](!alias-boo6uteemo).

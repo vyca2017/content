@@ -1,8 +1,7 @@
 ---
 alias: ier7sa3eep
-path: /docs/tutorials/managing-date-and-time
-layout: TUTORIAL
-preview: time-icon.png
+path: /docs/faq/managing-date-and-time-in-graphql
+layout: FAQ
 description: Manage date and time values with the ISO 8601 format when working with your GraphQL server.
 tags:
   - functions
@@ -16,12 +15,11 @@ related:
     - goh5uthoc1
     - uhieg2shio
   more:
-    - thaeghi8ro
     - ga2ahnee2a
     - uu2xighaef
 ---
 
-# Managing date and time values
+# Managing Date and Time Values in GraphQL
 
 Working with date and time values in your application can be quite tricky. Learn how to efficiently work with them using [DateTime](!alias-teizeit5se#DateTime) fields in your Graphcool project.
 

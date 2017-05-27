@@ -1,6 +1,7 @@
 ---
 alias: ex4wo4zaep
 path: /docs/tutorials/cli-multi-staging-workflow
+preview: dev-prod-workflow.png
 layout: TUTORIAL
 description: Learn best practices to manage a multi-staging (dev & prod) development workflow with the Graphcool CLI
 tags:

@@ -17,7 +17,6 @@ related:
     - da7pu3seew
   more:
     - cahzai2eur
-    - saigai7cha
     - dah6aifoce
     - vietahx7ih
 ---

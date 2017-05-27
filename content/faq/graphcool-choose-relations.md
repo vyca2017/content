@@ -17,7 +17,6 @@ related:
     - ahwoh2fohj
     - goh5uthoc1
   more:
-    - daisheeb9x
     - ahsoow1ool
 ---
 

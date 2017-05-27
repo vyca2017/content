@@ -1,10 +1,13 @@
 ---
 alias: dee0aethoo
 path: /docs/tutorials/welcome-email-with-sss
+preview: sss.png
 layout: TUTORIAL
-description: Getting Started with Serverless Functions
+description: Getting started with Server-side Subscriptions to integrate 3rd party services
 tags:
-  - freecom
+  - serverless
+  - functions
+  - server-side-subscriptions
 related:
   more:
     - iechu0shia
@@ -15,7 +18,7 @@ related:
 ---
 
 
-# Sending Welcome Emails with Server-side Subscriptions
+# Using Server-side Subscriptions to Send a Welcome Email
 
 In this article, you'll learn how to use serverless functions to send a welcome email to new users that are signing up with your app.
 
