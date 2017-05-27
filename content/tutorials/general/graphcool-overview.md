@@ -1,6 +1,7 @@
 ---
 alias: ped6wohw0o
 path: /docs/tutorials/graphcool-features-overview
+preview: graphcool-overview.png
 layout: TUTORIAL
 description: A walktrough of all major Graphcool features with lots of helpful links and resources
 tags:
