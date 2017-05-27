@@ -13,7 +13,6 @@ related:
     - fasie2rahv
     - cahkav7nei
   more:
-    - saigai7cha
     - dah6aifoce
 ---
 

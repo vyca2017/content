@@ -15,7 +15,6 @@ related:
     - uh8shohxie
     - ahlohd8ohn
   more:
-    - saigai7cha
     - dah6aifoce
 ---
 

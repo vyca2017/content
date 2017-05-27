@@ -8,7 +8,6 @@ tags:
   - freecom
 related:
   more:
-    - thaeghi8ro
     - heshoov3ai
     - uh8shohxie
     - ahwoh2fohj

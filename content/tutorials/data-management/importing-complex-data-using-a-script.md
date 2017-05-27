@@ -257,5 +257,3 @@ We are flat mapping over every all the raw movies in our data set. For each movi
 ## 5. Next steps
 
 Nice, you learned how to prepare your Graphcool project and execute an import script for nested data. If you want to import simpler data structures, check out the [guide for importing simple data](!alias-ga2ahnee2a). If you want to run the code yourself, find instructions in the [repository on GitHub](https://github.com/graphcool-examples/node-import-movies-example/).
-
-Scripts like these can add a lot of flexibility to your Graphcool project. For example, you can also execute an arbitrary script when a specific mutation occurs. If you are interested in mutation callbacks in general, the [guide about sending notification emails with mutation callbacks](!alias-saigai7cha) might be helpful.

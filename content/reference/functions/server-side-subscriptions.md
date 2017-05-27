@@ -10,7 +10,6 @@ related:
     - uh8shohxie
     - ol0yuoz6go
   more:
-    - saigai7cha
     - dah6aifoce
     - soiyaquah7
 ---

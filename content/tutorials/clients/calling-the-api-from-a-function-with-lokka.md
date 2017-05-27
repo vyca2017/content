@@ -3,11 +3,9 @@ alias: taith2va1l
 path: /docs/tutorials/calling-the-api-with-lokka
 layout: TUTORIAL
 preview: calling-api-icon.png
-description: Send queries and mutations to the GraphQL client APIs from a webtask using GraphQL Lokka.
+description: Send queries and mutations to the GraphQL client APIs from a Function using GraphQL Lokka.
 tags:
   - functions
-  - mutation-callbacks
-  - webtask
   - lokka
   - client-apis
   - open-source
@@ -18,15 +16,12 @@ related:
     - wejileech9
   more:
     - ih4etheigo
-    - saigai7cha
 ---
 
 
-# Calling the API from a mutation callback with Lokka
+# Calling the API from a Function with Lokka
 
-In mutation callbacks, you can run arbitrary code like [sending a notification email](!alias-saigai7cha) or [getting an alert in your Slack channel](!alias-dah6aifoce) as a reaction to a mutation. Sometimes, you need to query additional data from your Graphcool endpoint or want to perform another mutation right in the function.
-
-> If you want to follow along with this example, make sure to read the [starting guide](!alias-thaeghi8ro) on how to set up a GraphQL backend in less than 5 minutes first.
+In functions, you can run arbitrary code as a reaction to a mutation. Sometimes, you need to query additional data from your Graphcool endpoint or want to perform another mutation right in the function.
 
 You can make calls to the [Simple API](!alias-heshoov3ai) or [Relay API](!alias-aizoong9ah) by doing plain HTTP requests or using a lightweight GraphQL client like Lokka. In this guide we will use [Lokka](https://github.com/kadirahq/lokka) to make calls to the Simple API of your Graphcool project.
 

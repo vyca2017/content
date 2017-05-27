@@ -14,7 +14,6 @@ related:
     - cahkav7nei
   more:
     - cahzai2eur
-    - saigai7cha
     - dah6aifoce
     - vietahx7ih
 ---
