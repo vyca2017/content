@@ -18,7 +18,7 @@ related:
     - wohfoa8ahz
 ---
 
-# Freecom Tutorial (4/6): Controlling Data Access with Authentication & Permissions
+# Freecom Tutorial: Controlling Data Access with Authentication & Permissions (4/6)
 
 In this fourth chapter of our [Freecom tutorial series](!alias-e8a6ajt8ax) you will learn how to use the autentication and permission features of Graphcool to control data access of your users. The [last chapter](!alias-die6mewitu) was about realtime functionality using GraphQL subscriptions. The goal for today is to make sure that customers only have access to their own conversations.
 
