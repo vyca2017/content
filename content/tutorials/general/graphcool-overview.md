@@ -2,7 +2,7 @@
 alias: ped6wohw0o
 path: /docs/tutorials/graphcool-features-overview
 layout: TUTORIAL
-description: A walktrough of all major Graphcool features and lots of helpful links and resources.
+description: A walktrough of all major Graphcool features with lots of helpful links and resources
 tags:
   - subscriptions
   - mutations
@@ -24,7 +24,7 @@ further:
 ---
 
 
-# Graphcool Features Overview
+# 
 
 Graphcool is the easiest way for web and mobile developers to get started with their own GraphQL backend. In this post, we'll give an overview of the Graphcool platform, specific features and what problems they solve.
 
@@ -35,12 +35,11 @@ Graphcool is the easiest way for web and mobile developers to get started with t
 
 GraphQL is becoming the new standard for API development. Web and mobile developers are the groups that benefit most from GraphQL, however, getting started with a new technology can be scary and time-consuming.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OoPQl8hcIug" frameborder="0" allowfullscreen></iframe>
-
 The [Graphcool Quickstart](https://www.graph.cool/docs/quickstart) examples provide simple starter kits for all major frameworks and platforms to help you get up-and-running in less than 5 minutes.
 
 ![](./img/quickstart.png)
 
+> Check out our tutorial [video](https://youtu.be/OoPQl8hcIug) that demonstrates how to get started with GraphQL, Apollo and React.
 
 ## CLI
 
@@ -52,7 +51,7 @@ npm install -g graphcool
 
 Once installed, it allows to manage your Graphcool projects locally without having to use the [Graphcool Console](https://console.graph.cool).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sf0ZkyalSTg" frameborder="0" allowfullscreen></iframe>
+>  Learn about all major features of the CLI in this [video](https://www.youtube.com/watch?v=sf0ZkyalSTg).
 
 ### The Project File: `project.graphcool`
 
@@ -128,15 +127,17 @@ Both APIs not only give you the full power of GraphQL by enabling you to query d
 
 Graphcool also provides built-in support for [GraphQL Susbcriptions](!alias-aip7oojeiv) enabling you to easily build _realtime_ apps! Here's a [tutorial](!alias-ui0eizishe) demonstrating how to build a location-based chat using React.
 
-// TODO: files
+[File management](!alias-eer4wiang0) and storage are also provided out-of-the-box with every Graphcool project.
+
 
 ## Authentication & Permissions
 
 Privacy and data protection are of immense importance in today's applications. With Graphcool, both are trivial to achieve!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l1KEssmlhPA" frameborder="0" allowfullscreen></iframe>
+Authentication can be implemented using different [authentication providers](!alias-seimeish6e) such as [Auth0](!alias-naed3eecie) for social logins, [Digits](alias-iaxohpee8o) for phone-based authentication as well as [email-and-password based](fiayee5voh) and 
+[anonymous](!alias-ieph6iujah) authentication.
 
-Authentication can be implemented using different [authentication providers](!alias-seimeish6e) such as [Auth0](!alias-naed3eecie) for social logins, [Digits](alias-iaxohpee8o) for phone-based authentication as well as [email-and-password based](fiayee5voh) and [anonymous](!alias-ieph6iujah) authentication.
+> Take a tour of the Graphcool permission system with this [video](https://www.youtube.com/watch?v=l1KEssmlhPA).
 
 Graphcool further offers an extremely powerful [permission system](!alias-oolooch8oh) to specify data access rules. Developers can declare fine-grained constrains about _which users_ should be able to perform _what operations_. These constrains are expressed using regular GraphQL queries, thus making use of a concept that is already very familiar and omitting the need for developers to learn a new system.
 
@@ -148,8 +149,6 @@ Check out these examples to get an idea of how the permissions system works:
 ## Functions
 
 [Serverless Functions](!alias-ahde7paig2) are a major trend in application development. With Graphcool, you can use them to extend the capabilities of your API and implement custom business logic.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GSV58k05vZI" frameborder="0" allowfullscreen></iframe>
 
 A few common use cases for functions are:
 
@@ -163,6 +162,7 @@ There are two different kinds of functions available:
 - [**Server-side Susbcriptions**](!alias-ahlohd8ohn) allow to execute a custom function _after_ a mutation was performed. This functionality is often used for sending welcome emails to new users or push notifications for specific events.
 - The [**Request Pipeline**](!alias-pa6guruhaf) allows to transform and validate input arguments and the payload that the server returns to the client. You can use this functionality to validate email addresses or remove spaces from credit card numbers.
 
+> See [Server-side Subscriptions (Video)](https://www.youtube.com/watch?v=l-0jGOxXKGY) and the [Request Pipeline (Video)](https://www.youtube.com/watch?v=GSV58k05vZI) in action.
 
 ## Integrations
 
