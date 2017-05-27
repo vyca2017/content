@@ -45,7 +45,7 @@ module.exports = function (input, log) {
   form.append('subject', 'Test')
   form.append('text', 'Hi')
 
-  const result = fetch(url, {
+  fetch(url, {
     headers: {
       'Authorization': `Basic ${Base64.btoa(apiKey)}`
     },
