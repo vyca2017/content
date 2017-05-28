@@ -55,7 +55,7 @@ The Image API provides a very thin layer on top of the File API for image transf
 To get a 600x500 image, you can use
 
 ```
-https://images.graph.cool/__PROJECT_ID__/__SECRET__/600x500
+https://images.graph.cool/v1/__PROJECT_ID__/__SECRET__/600x500
 ```
 
 For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
