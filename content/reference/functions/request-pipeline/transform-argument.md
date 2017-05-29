@@ -35,10 +35,9 @@ module.exports = function (event) {
 ```js
 module.exports = function (event) {
   console.log('Compute area')
-  var area = event.data.width * event.data.length
-  data = Object.assign({}, event.data, area)
+  event.data.area = event.data.width * event.data.length
 
-  return {data}
+  return event
 }
 ```
 
