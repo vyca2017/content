@@ -53,3 +53,7 @@ module.exports = function (input, log) {
   })
 }
 ```
+
+## Current Limitations
+
+Currently, no Server-Side Subscriptions are triggered for the `File` type.
