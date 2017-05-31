@@ -42,6 +42,8 @@ Depending on the pending operation, several **GraphQL variables** are available 
 
 * `$now: DateTime!` the current time as a [`DateTime`](!alias-teizeit5se#datetime)
 
+> The `$now` variable is not available yet.
+
 ### Variables for Type Permissions
 
 * `$node_id: ID!` the id of the current node
