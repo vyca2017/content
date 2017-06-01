@@ -120,7 +120,7 @@ Setting the *unique* constraint makes sure that two nodes of the type in questio
 
 > A typical example is the `email` field on the `User` type.
 
-Please note that only the first 191 characters in a String field are considered for uniqueness. Storing two different strings is not possible if the first 191 characters are the same.
+Please note that only the first 191 characters in a String field are considered for uniqueness and the unique check is **case insensitive**. Storing two different strings is not possible if the first 191 characters are the same or if they only differ in casing. 
 
 ## Default Value
 

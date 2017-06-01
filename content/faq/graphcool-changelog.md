@@ -15,6 +15,13 @@ related:
 
 # Changelog
 
+## Week 21 (May 22 - May 28)
+
+- Our homepage received layout fixes, a new [community section in the docs](https://graph.cool/docs) and a faster signup flow
+- In the Console, we released a brandnew onboarding that is even more interactive than before, introduced a mobile landing page, improved the UI for entering values in the field popup and introduced a new fullscreen mode for testing functions
+- Queries that involve Permission queries now have up to 10x better performance
+- The [fifth chapter of the Freecom tutorial series](!alias-wohfoa8ahz) is finally here and showcases how you can employ business logic with serverless functions.
+
 ## Week 20 (May 15 - May 21)
 
 - We **launched officially** and were featured on [Product Hunt](https://www.producthunt.com/posts/graphcool-2) and reached first spot on the [Hacker News](https://news.ycombinator.com/item?id=14350129) frontpage 🎉 We published an article [about the Serverless GraphQL Backend Architecture](!alias-ahde7paig2/) and rolled out the [CLI and Functions](!alias-teko4ab8za).

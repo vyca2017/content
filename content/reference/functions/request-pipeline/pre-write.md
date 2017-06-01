@@ -24,7 +24,7 @@ Here you can initiate workflows for external services, like sending an email, ch
 > The request is accepted.
 
 ```js
-module.exports = function (event, req) {
+module.exports = function (event) {
   console.log(`event: ${event}`)
 
   return {data: event.data}
@@ -36,9 +36,9 @@ module.exports = function (event, req) {
 > Make a request to any third party API
 
 ```js
-var request = require('request')
+require('isomorphic-fetch')
 
-module.exports = function (event, cb) => {
+module.exports = function (event) => {
   // query external movie API for number of stored actors
   var movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
@@ -49,23 +49,22 @@ module.exports = function (event, cb) => {
       }
     }
   `
-  request.post({
-    url: movieAPI,
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({ query }),
-  }).on('error', (e) => {
-    console.log('Error querying movieAPI: ' + e.toString())
-    cb(e, {})
-  }).on('data', (response) => {
-    var actorCount = JSON.parse(response).data.result.count
 
-    var data = Object.assign({}, ){
-      ...event.data,
-      actorCount
-    }
-    cb(null, event.data)
-  })
+  return fetch(movieAPI, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query })
+  }).then((response) => {
+    return response.json()
+  }).then((data) => {
+    console.log('Response ' + JSON.stringify(data))
+    event.data.actorCount = data.data.result.count
+    return event
+  }).catch((error) => {
+    console.log(error)
+    return {error: 'Could not connect to Movie API'}
+  }
 }
 ```

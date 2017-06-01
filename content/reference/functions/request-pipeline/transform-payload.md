@@ -21,7 +21,7 @@ Functions used for the `TRANSFORM_PAYLOAD` hook point can do arbitrary transform
 > The request is not modified at all.
 
 ```js
-module.exports = function (event, cb) {
+module.exports = function (event) {
   console.log(`event: ${event}`)
 
   return event
@@ -33,7 +33,7 @@ module.exports = function (event, cb) {
 > A boolean contained in the input arguments is flipped.
 
 ```js
-module.exports = function (event, cb) {
+module.exports = function (event) {
   console.log(`event: ${event}`)
 
   event.data.isPaid = !event.data.isPaid

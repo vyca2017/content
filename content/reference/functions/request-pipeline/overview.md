@@ -44,3 +44,9 @@ In between the execution layers, you can use functions at several **hook points*
 * The [`TRANSFORM_PAYLOAD` hook point](!alias-ecoos0ait6) allows you **transform the payload** that is sent back as response.
 
 > For a given trigger, only **one function** can be assigned to each hook point.
+
+## Current Limitations
+
+* Callbacks need to be converted to Promises. [Here's a guide](https://egghead.io/lessons/javascript-convert-a-callback-to-a-promise).
+* You can only transform arguments that are part of the initial input data of the mutation on the client. You cannot add or remove additional fields. This applies to all hook points. If you want to transform a given field, you can always include a dummy value for that in the client to enable its transformation in the function.
+* Input arguments for nested mutations are *read-only* at the moment. Changes to these are ignored. This applies to all hook points.
