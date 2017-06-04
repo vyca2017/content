@@ -38,8 +38,8 @@ module.exports = function (event) {
 ```js
 require('isomorphic-fetch')
 
+// only allow current mutation if more than 3 movies exist in external API
 module.exports = function (event) => {
-  // query external movie API for number of stored actors
   var movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
   var query = `
@@ -59,9 +59,11 @@ module.exports = function (event) => {
   }).then((response) => {
     return response.json()
   }).then((data) => {
-    console.log('Response ' + JSON.stringify(data))
-    event.data.actorCount = data.data.result.count
-    return event
+    if (data.data.result.count > 3) {
+      return event
+    } else {
+      return {error: `Could not finish mutation, because only ${data.data.result.count} movies exist.`}
+    }
   }).catch((error) => {
     console.log(error)
     return {error: 'Could not connect to Movie API'}
