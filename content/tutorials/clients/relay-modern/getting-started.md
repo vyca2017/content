@@ -11,8 +11,6 @@ tags:
   - relay-modern
 related:
   more:
-    - tioghei9go
-    - voht5ach9i
   further:
     - iechu0shia
     - aizoong9ah
@@ -255,8 +253,9 @@ Awesome, you're now ready to use Relay in your app 🚀
 > Note: If you lose the endpoint for your GraphQL API, you can always find it in the [Graphcool Console](https://console.graph.cool) (by clicking in _ENDPOINTS_-button on the bottom-left) or use the `graphcool endpoints` command in the same directory where the project file `project.graphcool` is located:
 > ![](./img/endpoints.png)
 
+<!-- alias:section1 -->
 
-## 2. Displaying all Posts
+## 3. Displaying all Posts
 
 ### Preparing React Components
 
@@ -672,7 +671,10 @@ By the way, if you're curios to see what the actual query looked like that the `
 ![](./img/query.png)
 
 
-## Adding and Deleting Posts
+<!-- alias:section2 -->
+
+
+## 4. Adding and Deleting Posts
 
 You're done with the first part of the tutorial where we wanted to load and display the posts returned by the server.
  
@@ -1161,7 +1163,7 @@ You can now click on the _Delete_-button on any post. The UI will then update im
 
 ## Conclusion
 
-That's it for this tutorial! You learned how to get off the ground with Relay Modern and built your own Instagram application from scratch using `create-react-app`. If you got lost along the way, you can check out the final version of the code on [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern).
+In this tutorial you learned how to get off the ground with Relay Modern and built your own Instagram application from scratch using `create-react-app`. If you got lost along the way, you can check out the final version of the code on [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern).
 
 Relay Modern is a great technology that is a tremendous help in building React applications at scale. Its major drawbacks right now are the still scarce documentation and unclear usage patterns and best practices, for example around routing. 
 
