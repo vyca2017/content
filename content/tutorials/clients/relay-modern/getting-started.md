@@ -375,7 +375,7 @@ npm start
 
 This will open up a browser and load the app from `http://localhost:3000` where you'll now see two lovely pigs:
 
-![](./img/initial-run.png)
+![](./img/initial-run.png?width=450)
 
 
 ### Load Data from Server
@@ -658,7 +658,7 @@ mutation howdy {
 
 Then click the _Play_-button and select each of these mutations exactly once:
 
-![](./img/playground.png)
+![](./img/playground.png?width=600)
 
 > Note: You can also use the [Data Browser](!alias-och3ookaeb) to add some post items.
 
@@ -668,7 +668,7 @@ Go ahead and run `npm start` to see what the app currently looks like - you shou
 
 By the way, if you're curios to see what the actual query looked like that the `QueryRenderer` composed for you and that was sent over to the backend, you can inspect the _Networking_-tab of your browser's dev tools:
 
-![](./img/query.png)
+![](./img/query.png?width=700)
 
 
 <!-- alias:section2 -->
