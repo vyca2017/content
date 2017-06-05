@@ -3,7 +3,7 @@ alias: chi6oozus1
 path: /docs/tutorials/graphql-vs-firebase
 layout: TUTORIAL
 preview: firebase-graphql.png
-description: Learn about the differencs of Firebase and GraphQL
+description: Learn about the differences of Firebase and GraphQL
 tags:
   - firebase
 ---
