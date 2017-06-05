@@ -15,6 +15,11 @@ related:
 
 # Changelog
 
+## Week 22 (May 29 - June 4)
+
+- We released new guides for [functions along the request pipeline](!alias-zeez7aiph3) and [server-side subscriptions](!alias-dee0aethoo).
+- With [graphql-request](https://github.com/graphcool/graphql-request) we published a minimal GraphQL client supporting Node and browsers for scripts or simple apps.
+
 ## Week 21 (May 22 - May 28)
 
 - Our homepage received layout fixes, a new [community section in the docs](https://graph.cool/docs) and a faster signup flow
