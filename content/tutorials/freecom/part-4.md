@@ -101,7 +101,7 @@ Whenever this code is executed, a new `Customer` will be created in the database
 
 ### Configuring Apollo Client
 
-We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request.
+We need to put this token into the header of the HTTP request, more precisely into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request.
 
 Apollo Client uses the concept of [_middleware_](http://dev.apollodata.com/core/network.html#networkInterfaceMiddleware) for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
 
