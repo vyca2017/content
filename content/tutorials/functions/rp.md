@@ -78,7 +78,7 @@ npm install -g graphcool
 graphcool init --schema https://graphqlbin.com/welcome-rp.graphql
 ```
 
-Once your project was created, you can open it in the [Graphcool Console](https://console.graph.cool), select **Functions** in the left side-menu and click the **New Function** button on top to start configuring the server-side subscription:
+Once your project was created, you can open it in the [Graphcool Console](https://console.graph.cool), select **Functions** in the left side-menu and click the **New Function** button on top to start configuring the function for the request pipeline:
 
 ![](./img/functions-0.png)
 
