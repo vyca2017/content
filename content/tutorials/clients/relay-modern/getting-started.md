@@ -1,6 +1,7 @@
 ---
 alias: woodito7ug
 path: /docs/tutorials/relay-modern-getting-started
+preview: getting-started-relay-modern.png
 layout: TUTORIAL
 description: Get started with Relay Modern by building an Instagram application from scratch!
 tags:
@@ -103,7 +104,7 @@ You first have to install several dependencies to pull in the different pieces t
 In the terminal window, first install the general `react-relay` package that was recently upgraded to version 1.0:
 
 ```sh
-npm install react-relay --save
+yarn add react-relay
 ```
 
 This dependency allows you to access all major Relay APIs, such as the [`QueryRenderer`](https://facebook.github.io/relay/docs/query-renderer.html) or [`FragmentContainer`](https://facebook.github.io/relay/docs/fragment-container.html) that you'll explore in a bit!
@@ -111,13 +112,13 @@ This dependency allows you to access all major Relay APIs, such as the [`QueryRe
 Next you need the two dependencies that make for much of the performance benefits in the Relay architecture through ahead-of-time optimizations: The [`relay-compiler`](https://facebook.github.io/relay/docs/relay-compiler.html) and [`babel-plugin-relay`](https://facebook.github.io/relay/docs/babel-plugin-relay.html). Both are installed as `dev` dependencies using the `--save-dev` option:
 
 ```sh
-npm install relay-compiler@dev --dev
+yarn add relay-compiler@dev --dev
 ```
 
 and
 
 ```sh
-npm install babel-plugin-relay --dev
+yarn add babel-plugin-relay --dev
 ```
 
 Note that you're pulling this from the `@dev` branch to work around [this bug](https://github.com/facebook/relay/issues/1654) that would break _watching_ your GraphQL files and automatically trigger a compile on every change.
@@ -132,7 +133,7 @@ All right, that's it for the first step! Go ahead and move on to configure Babel
 In the terminal, use the following command:
 
 ```sh
-create-react-app eject
+yarn eject
 ``` 
 
 This will change the folder structure to look as follows:
@@ -180,7 +181,7 @@ In this case, you need to add the `babel-plugin-relay` that you installed in the
   "plugins": [
     "relay"
   ]
-}
+},
 ```
 
 That's it already for the Babel configuration. Set up the Relay Environmnent in the app next!
@@ -370,7 +371,7 @@ The `App` is the root component for your application, so you tell it to render t
 With this setup, you can finally run the app. Type the following in the terminal:
 
 ```sh
-npm start
+yarn start
 ```
 
 This will open up a browser and load the app from `http://localhost:3000` where you'll now see two lovely pigs:
@@ -471,7 +472,7 @@ Notice that you're again following the same naming convention and name the fragm
 
 You're also reusing the `Post_post` fragment that you wrote in `Post.js`. That's because the `ListPage` is higher in the React component (and Relay container) tree, so it's responsible to include all the fragments of its children!
 
-The `@connection` directive is required for updating the cache later on - you need so that you can refer to that particular connection (identified by the key `ListPage_allPosts`) in the cache.
+The `@connection` directive is required for updating the cache later on - you need it so that you can refer to that particular connection (identified by the key `ListPage_allPosts`) in the cache.
 
 Finally, you also need to delete the mock data you used to render the posts before. Then update the part in `render` where you're mapping over all post items and create the `Post` components:
 
@@ -551,9 +552,11 @@ That's it! The app is now connected with the GraphQL server and ready to load so
 
 If you're just running the app now, you'll be disappointed that it throws some errors:
 
-> Failed to compile.
-> ./src/App.js
-> Module not found: Can't resolve './__generated__/AppAllPostQuery.graphql' in '.../instagram/src'
+```
+Failed to compile.
+./src/App.js
+Module not found: Can't resolve './__generated__/AppAllPostQuery.graphql' in '.../instagram/src'
+```
 
 That's because we've skipped the compilation of the GraphQL code that makes for much of Relay's actual power! You already installed the `relay-compiler`, so now you'll actually use it.
 
@@ -624,7 +627,7 @@ You'll also notice that the `__generated__` directory was now created and contai
 
 Before you run the app to see if everything works, you should add actual post items to the database. Open a GraphQL Playground by pasting your endpoint for the `Relay API` into the address bar of a browser.
 
-When the Playground is open, paste the following two mutations into the left pane:
+Once the Playground has opened, paste the following two mutations into the left pane:
 
 ```graphql
 mutation ice {
@@ -664,9 +667,9 @@ Then click the _Play_-button and select each of these mutations exactly once:
 
 All right, you now populated the database with some initial data.
 
-Go ahead and run `npm start` to see what the app currently looks like - you should now see the same two lovely pigs that you used as mock data before!
+Go ahead and run `yarn start` to see what the app currently looks like - you should now see the same two lovely pigs that you used as mock data before!
 
-By the way, if you're curios to see what the actual query looked like that the `QueryRenderer` composed for you and that was sent over to the backend, you can inspect the _Networking_-tab of your browser's dev tools:
+By the way, if you're curios to see what the actual query looked like that the `QueryRenderer` composed for you and that was sent over to the server, you can inspect the _Networking_-tab of your browser's dev tools:
 
 ![](./img/query.png?width=700)
 
@@ -742,8 +745,10 @@ Since we're in the early days of Relay Modern, there's not really much advise or
 So, to keep it simple in this tutorial, we'll use `react-router` which is a popular routing solution. The first thing you need to do is install the corresponding dependency:
 
 ```sh
-npm install react-router --save 
+yarn add react-router@2.8.1
 ```
+
+> Note that we're only using version 2.8.1 to be consistent with our other Quickstart examples.  
 
 Then replace all contents in `index.js` with the following:
 
@@ -777,7 +782,7 @@ render () {
       </Link>
       <div className='w-100' style={{ maxWidth: 400 }}>
         {this.props.viewer.allPosts.edges.map(({node}) =>
-          <Post key={node.id} post={node} viewer={this.props.viewer} />
+          <Post key={node.id} post={node} />
         )}
       </div>
     </div>
@@ -785,7 +790,13 @@ render () {
 }
 ```
 
-Pressing the `Link` element in the app will now trigger the `CreatePage` to appear on the screen. When you're done with that, you can run the app again and you should see everything as before, plus the _+ New Post_-button on the top right. Press it to convince yourself that it actually displays the `CreatePage` component:
+Also don't forget to import the `Link` component on top of the same file:
+
+```js
+import { Link } from 'react-router'
+```
+
+Pressing the `Link` element in the app will now trigger the `CreatePage` to appear on the screen. You can run the app again and you should see everything as before, plus the _+ New Post_-button on the top right. Press it to convince yourself that it actually displays the `CreatePage` component:
 
 ![](./img/create.png)
 
@@ -805,7 +816,7 @@ import {
   graphql,
 } from 'react-relay'
 import {ConnectionHandler} from 'relay-runtime'
-import environment from './Environemt'
+import environment from './Environment'
 
 // 2
 const mutation = graphql`
@@ -902,7 +913,7 @@ updater: (proxyStore) => {
   if (connection) {
     ConnectionHandler.insertEdgeAfter(connection, newPost)
   }
-}
+},
 ```
 
 Note that this code requires you to add a global variable called `tempID` into the file as well:
@@ -924,47 +935,47 @@ Next you need to actually use this mutation in `CreatePage.js`. The only problem
 So, we'll add another `QueryRenderer` for the `CreatePage` component where the `viewerId` can be fetched. Open `CreatePage.js` and update `render` as follows:
 
 ```js
-  render () {
-    return (
-      <QueryRenderer
-        environment={environment}
-        query={CreatePageViewerQuery}
-        render={({error, props}) => {
-          if (error) {
-            return <div>{error.message}</div>
-          } else if (props) {
-            return (
-              // --- previous implementation ----
-              <div className='w-100 pa4 flex justify-center'>
-                <div style={{ maxWidth: 400 }} className=''>
-                  <input
-                    className='w-100 pa3 mv2'
-                    value={this.state.description}
-                    placeholder='Description'
-                    onChange={(e) => this.setState({description: e.target.value})}
-                  />
-                  <input
-                    className='w-100 pa3 mv2'
-                    value={this.state.imageUrl}
-                    placeholder='Image Url'
-                    onChange={(e) => this.setState({imageUrl: e.target.value})}
-                  />
-                  {this.state.imageUrl &&
-                  <img src={this.state.imageUrl} className='w-100 mv3' />
-                  }
-                  {this.state.description && this.state.imageUrl &&
-                  <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={() => this._handlePost(props.viewer.id)}>Post</button>
-                  }
-                </div>
+render () {
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={CreatePageViewerQuery}
+      render={({error, props}) => {
+        if (error) {
+          return <div>{error.message}</div>
+        } else if (props) {
+          return (
+            // --- previous implementation ----
+            <div className='w-100 pa4 flex justify-center'>
+              <div style={{ maxWidth: 400 }} className=''>
+                <input
+                  className='w-100 pa3 mv2'
+                  value={this.state.description}
+                  placeholder='Description'
+                  onChange={(e) => this.setState({description: e.target.value})}
+                />
+                <input
+                  className='w-100 pa3 mv2'
+                  value={this.state.imageUrl}
+                  placeholder='Image Url'
+                  onChange={(e) => this.setState({imageUrl: e.target.value})}
+                />
+                {this.state.imageUrl &&
+                <img src={this.state.imageUrl} className='w-100 mv3' />
+                }
+                {this.state.description && this.state.imageUrl &&
+                <button className='pa3 bg-black-10 bn dim ttu pointer' onClick={() => this._handlePost(props.viewer.id)}>Post</button>
+                }
               </div>
-              // --- previous implementation ----
-            )
-          }
-          return <div>Loading</div>
-        }}
-      />
-    )
-  }
+            </div>
+            // --- previous implementation ----
+          )
+        }
+        return <div>Loading</div>
+      }}
+    />
+  )
+}
 ```
 
 With this code, you're effectively only wrapping the previous implementation of `CreatePage` in a `QueryRenderer` so you can request data from the server in here as well. You still need to define the `CreatePageViewerQuery` that is passed to the `QueryRenderer`. Put it on top of the file right after the imports:
@@ -1062,7 +1073,7 @@ export default (postId, viewerId) => {
 
 The approach you're taking this time is very similar to the `CreatePost` mutation. First you import all dependencies, then you declare the `mutation` to be sent to the server and finally you export a function that takes the required arguments and calls `commitMutation`. 
 
-For now, open `ListPage.js` and implement `_handleDelete` as follows:
+For now, open `Post.js` and implement `_handleDelete` as follows:
 
 ```js
 _handleDelete = () => {
@@ -1080,7 +1091,7 @@ Once more, invoke the `relay-compiler` and then run the app:
 
 ```sh
 relay-compiler --src ./src --schema ./schema.graphql
-npm start
+yarn start
 ```
 
 Deleting posts will now actually work, however, the UI doesn't get updated. The posts only actually disappear after you refresh the page. Again, that's precisely what Relay's new imperative mutation API is for. In `optimisticUpdate` and `updater` you have to specify how you'd like Relay to update the cache after the mutation was performed.
@@ -1088,18 +1099,20 @@ Deleting posts will now actually work, however, the UI doesn't get updated. The 
 Open `DeletePostMutation.js` again and implement them as follows:
 
 ```js
-updater: (proxyStore /* :RecordSourceSelectorProxy */) => {
+updater: (proxyStore) => {
   const deletePostField = proxyStore.getRootField('deletePost')
   const deletedId = deletePostField.getValue('deletedId')
+  const viewerProxy = proxyStore.get(viewerId)
   const connection = ConnectionHandler.getConnection(viewerProxy, 'ListPage_allPosts')
   if (connection) {
     ConnectionHandler.deleteNode(connection, deletedId)
   }
 },
 optimisticUpdater: (proxyStore) => {
+  const viewerProxy = proxyStore.get(viewerId)
   const connection = ConnectionHandler.getConnection(viewerProxy, 'ListPage_allPosts')
   if (connection) {
-    ConnectionHandler.deleteNode(connection, deletedId)
+    ConnectionHandler.deleteNode(connection, postId)
   }
 },
 ``` 
@@ -1158,7 +1171,7 @@ Now update the way how the `Post` components are created in `render`:
 <Post key={node.id} post={node} viewer={this.props.viewer} />
 ``` 
 
-You can now click on the _Delete_-button on any post. The UI will then update immediately and the post will be removed.
+Before you run the app, you need to invoke the Relay compiler again. You can then click on the _Delete_-button on any post and the UI will update immediately.
 
 
 ## Conclusion
