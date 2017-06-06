@@ -24,6 +24,8 @@ related:
 
 This post is a step-by-step tutorial with the goal of building a simple Instagram application from scratch using [`create-react-app`](https://github.com/facebookincubator/create-react-app). You can take a look at the final version of the code [here](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern), just follow the instructions in the README to get up-and-running.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XeALXh37WeU" frameborder="0" allowfullscreen></iframe>
+
 If you've been using Relay Classic before and are looking to migrate, check out [this tutorial](!alias-eijooto4se) about Relay's Compatability API.
 
 
