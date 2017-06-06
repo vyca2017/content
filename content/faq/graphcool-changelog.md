@@ -19,6 +19,8 @@ related:
 
 - We released new guides for [functions along the request pipeline](!alias-zeez7aiph3) and [server-side subscriptions](!alias-dee0aethoo).
 - With [graphql-request](https://github.com/graphcool/graphql-request) we published a minimal GraphQL client supporting Node and browsers for scripts or simple apps.
+- We restructured our [examples repository](https://github.com/graphcool-examples) to help you find exactly the example that you need and also updated the onboarding accordingly.
+- For better support of Relay Modern, we added more choices to the schema export feature. You can now export the full schema needed for Relay Modern and other tools right in your Console!
 
 ## Week 21 (May 22 - May 28)
 
