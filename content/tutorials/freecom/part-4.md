@@ -145,7 +145,7 @@ When restricting the access for specific operations on a type, we have two optio
 
 ![](./img/fc4-permissions-popup.png?width=500)
 
-If we only specify the first, option a user that sends a valid authentication token in the request's header will be able to perform the corresponding operation.
+If we only specify the first option, a user that sends a valid authentication token in the request's header will be able to perform the corresponding operation.
 
 _Permission queries_ on the other hand are more sophisticated and allow to express data access rules by leveraging the power of GraphQL queries.
 
