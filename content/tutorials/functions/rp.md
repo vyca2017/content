@@ -181,9 +181,10 @@ You can test a function in two different ways:
      createCustomer(
        name: "John Doe",
        email: "JOHN.DOE@GMAIL.COM"
-    ) {
-      id
-    } 
+     ) {
+        id
+     } 
+   }
    ```
    
    ![](./img/functions-5.png)
