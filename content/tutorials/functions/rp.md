@@ -103,7 +103,7 @@ You can then move on to the next tab **Define Function** where we can implement 
 
 ### 3. Write the Function
 
-For the request pipleine, it's important to note that we have an _input_ and an _output_. The _input_ is represented by the _type_ that we chose as the trigger, so in our case it's a JSON object that has the structure of the `Customer`:
+For the request pipeline, it's important to note that we have an _input_ and an _output_. The _input_ is represented by the _type_ that we chose as the trigger, so in our case it's a JSON object that has the structure of the `Customer`:
 
 ```graphql
 type CustomerInput {
@@ -115,10 +115,10 @@ type CustomerInput {
 }
 ```
 
-The _output_ has to be another JSON object and has either of two fields:
+The _output_ has to be another JSON object and has either one of two fields:
 
 - `data`: When returning the `data` field we're communicating that the validation and transformation were successful and the data can "proceed" to the next step in the request pipeline.
-- `error`: If the validation fails, we can return and `error` in the JSON object along with a string that represents the error message. 
+- `error`: If the validation fails, we can return an `error` in the JSON object along with a string that represents the error message. 
 
 With that knowledge, let's go and implement our function:
 
@@ -181,10 +181,9 @@ You can test a function in two different ways:
      createCustomer(
        name: "John Doe",
        email: "JOHN.DOE@GMAIL.COM"
-     ) {
-        id
-     } 
-   }
+    ) {
+      id
+    } 
    ```
    
    ![](./img/functions-5.png)
@@ -192,7 +191,7 @@ You can test a function in two different ways:
    
 ## Conclusion
 
-In this article you learned how to setup a function in the [request pipeline](!-ahlohd8ohn) directly in the Graphcool Console. The function is called every time a right before new customer is created and ensures that the email address that was provided is actually valid and further transforms it to only have lowercase characters.
+In this article you learned how to setup a function in the [request pipeline](!-ahlohd8ohn) directly in the Graphcool Console. The function is called every time right before a new customer is created and ensures that the email address that was provided is actually valid and further transforms it to only have lowercase characters.
 
 
 
