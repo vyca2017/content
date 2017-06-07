@@ -15,6 +15,22 @@ related:
 
 # Changelog
 
+## Week 23 (June 5 - June 11)
+
+- Exporting data now supports UTF8 encoding
+- Fixed a problem with Algolia Index queries that were not containing the node `id`
+- Based on the community feedback many improvements to [Graphcool Functions](!alias-boo6uteemo) could be added:
+  - Functions now support scalar lists, DateTime and Json fields
+  - Functions now work correctly when triggered by a nested mutation
+  - `PRE_WRITE` functions in the [request pipeline](!alias-pa6guruhaf) now receive the transformed output if a `TRANSFORM_ARGUMENT` function exists
+
+## Week 22 (May 29 - June 4)
+
+- We released new guides for [functions along the request pipeline](!alias-zeez7aiph3) and [server-side subscriptions](!alias-dee0aethoo).
+- With [graphql-request](https://github.com/graphcool/graphql-request) we published a minimal GraphQL client supporting Node and browsers for scripts or simple apps.
+- We restructured our [examples repository](https://github.com/graphcool-examples) to help you find exactly the example that you need and also updated the onboarding accordingly.
+- For better support of Relay Modern, we added more choices to the schema export feature. You can now export the full schema needed for Relay Modern and other tools right in your Console!
+
 ## Week 21 (May 22 - May 28)
 
 - Our homepage received layout fixes, a new [community section in the docs](https://graph.cool/docs) and a faster signup flow

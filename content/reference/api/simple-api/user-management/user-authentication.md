@@ -146,9 +146,9 @@ You might want to create a user and sign him in right afterwards. You can includ
 ```graphql
 mutation {
   createUser(authProvider: {
-    email:{
-      email:user@email.com"
-      password:"secret-password"
+    email: {
+      email: "user@email.com"
+      password: "secret-password"
     }
   }) {
     id
@@ -156,7 +156,7 @@ mutation {
   signinUser(email: {
     email: "user@email.com"
     password: "secret-password"
-  }){
+  }) {
     token
   }
 }

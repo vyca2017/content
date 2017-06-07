@@ -101,7 +101,7 @@ Whenever this code is executed, a new `Customer` will be created in the database
 
 ### Configuring Apollo Client
 
-We need to put this token into the header of the HTTP request, more preciselyin into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request.
+We need to put this token into the header of the HTTP request, more precisely into its `Authorization` field. However, since we're not performing any network requests directly when we're using Apollo, we have no direct access to the requests' headers. Apollo thus gives us the option to configure our instance of the `ApolloClient` such that it attaches the token for us with every request.
 
 Apollo Client uses the concept of [_middleware_](http://dev.apollodata.com/core/network.html#networkInterfaceMiddleware) for this. It's possible to add an additional step to the process of sending a network request by adding a middleware to the `networkInface` that we're passing to the `ApolloClient` constructor:
 
@@ -145,7 +145,7 @@ When restricting the access for specific operations on a type, we have two optio
 
 ![](./img/fc4-permissions-popup.png?width=500)
 
-If we only specify the first, option a user that sends a valid authentication token in the request's header will be able to perform the corresponding operation.
+If we only specify the first option, a user that sends a valid authentication token in the request's header will be able to perform the corresponding operation.
 
 _Permission queries_ on the other hand are more sophisticated and allow to express data access rules by leveraging the power of GraphQL queries.
 
@@ -158,7 +158,7 @@ Since we want to restrict access on the `Message` type, we are going to adjust t
 
 ![](./img/fc4-message-permissions.png?width=350)
 
-Let's adjust the permission for the _Read_ operation, simply click the corresponding rwo to bring up the configuration popup.
+Let's adjust the permission for the _Read_ operation. Simply click the corresponding row to bring up the configuration popup.
 
 In the popup, we first have to specify which _fields_ this permission should apply to. At this point we could potentially specify that _everyone_ should still be able to read the `id` of the messages, but only a specific audience can read the `text` and other fields. However, we actually want to restrict the access on the whole type, so we're going to select all the fields:
 
@@ -166,7 +166,7 @@ In the popup, we first have to specify which _fields_ this permission should app
 
 Next, we are switching to the **Define Rules** tab of the popup to specify the permission query.
 
-There are few things we need to know about permission queries before we start writing one:
+There are a few things we need to know about permission queries before we start writing one:
 
 - A permission query always returns `true` or `false`.
 - The permission query will be executed right before the operation is performed in the backend.
@@ -174,7 +174,7 @@ There are few things we need to know about permission queries before we start wr
 - The `$node_id` that's passed in identifies the node on which the operation is to be performed, in our case that'll be the `Message` to be read.
 - If we require authentication for an operation (by ticking the **Authentication required** checkbox), we also have access to the ID of the user who wants to perform the operation as an argument inside the query. This allows to specify the permission with respect to the currently authenticated user!
 
-The last point particularly is important, since we indeed want to express a permission requirements where the current user is involved. We thus first have to check the **Authentication required** checkbox before starting to write the query.
+The last point particularly is important, since we indeed want to express a permission requirement where the current user is involved. We thus first have to check the **Authentication required** checkbox before starting to write the query.
 
 Once the box is checked, we can write the query like so:
 
@@ -242,7 +242,7 @@ The permissions queries for the remaining operations on the `Message` type (_Cre
 
 That's it for today's Freecom chapter! We learned how to express precise data access permissions for our users. For the Freecom app, we restricted the access on the `Message` type only to customers who are directly involved in the conversation where this message appears.
 
-The authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent requests. This token is then used to identify the user on the server-side and enabling to check the access permissions of the user performing the request.
+Authentication in the Graphcool backend was done using the _anonymous auth provider_ which allows users to authenticate without having to leave their email address. When using this approach, the server returns an authentication token that is sent along with all subsequent requests. This token is then used to identify the user on the server-side and enabling to check the access permissions of the user performing the request.
 
 In the next chapter, we'll enable support agents to respond to a customer by integrating Slack using _mutation callbacks_ and _serverless functions_.
 

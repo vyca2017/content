@@ -3,7 +3,7 @@ alias: chi6oozus1
 path: /docs/tutorials/graphql-vs-firebase
 layout: TUTORIAL
 preview: firebase-graphql.png
-description: Learn about the differencs of Firebase and GraphQL
+description: Learn about the differences of Firebase and GraphQL
 tags:
   - firebase
 ---
@@ -34,7 +34,7 @@ The Firebase documentation further states that "building a properly structured d
 
 A major limitation of the Firebase way to structure data is the missing concept of *relations*. Considering a simple Twitter-like data model with *users* that can publish *tweets*, the question is how to organize the relationship between the user and the tweet objects that are stored in the JSON tree. As mentioned above, it's recommended to keep the JSON tree as flat as possible. A common approach to solve this issue is to refer to other objects in the tree using IDs. This however leads to limitations when more complex data needs to be queried. Another approach is to duplicate data, which results in an extra maintenance burden and is also error-prone as it's likely that some duplicated parts of the tree will be forgotten when data needs to be updated.
 
-With the Firebase approach, developers also often end-up with structures that are *unnatural* to the way how we actually *think *about data. For example, when taking into account the Firebase [permission system](https://medium.com/@ChrisEsplin/firebase-security-rules-88d94606ce4a), you'll often end up with branches in the JSON tree whose names also encode data access rules like `admin`, `userReadable` or `userWritable`  which at that moment is adding unnecessary complexity to the nature of the data to be stored.
+With the Firebase approach, developers also often end-up with structures that are *unnatural* to the way how we actually *think* about data. For example, when taking into account the Firebase [permission system](https://medium.com/@ChrisEsplin/firebase-security-rules-88d94606ce4a), you'll often end up with branches in the JSON tree whose names also encode data access rules like `admin`, `userReadable` or `userWritable`  which at that moment is adding unnecessary complexity to the nature of the data to be stored.
 
 
 
@@ -143,7 +143,7 @@ query {
 
 Having the ability to query nested structures by simply following the edges of the data graph is an immensely powerful feature that makes for much of the power and expressiveness of GraphQL!
 
-Next to `last` a GraphQL API typically accepts a few more related arguments such as `first`, `before`, `after` and `skip` that can be passed when querying a *to-many-relation. *This capability of an API makes it very easy to implement pagination on the client by asking for a specific range of objects from the list.
+Next to `last` a GraphQL API typically accepts a few more related arguments such as `first`, `before`, `after` and `skip` that can be passed when querying a *to-many-relation*. This capability of an API makes it very easy to implement pagination on the client by asking for a specific range of objects from the list.
 
 With the flexibility of the GraphQL spec, it's further possible to specify powerful filters on the client that will be resolved by the server. In the [Graphcool Simple API](!alias-heshoov3ai/), it's also possible to specify a filter to restrict the amount of information that's returned by the server. Let's consider two simple examples.
 
@@ -185,7 +185,7 @@ It's further possible to combine filter conditions arbitrarily using the `AND` a
 
 The most common scenario to make changes to the database in Firebase is again by using the given SDK (though the REST API also offers this functionality). The SDK exposes [four different methods](https://firebase.google.com/docs/database/admin/save-data) for saving data to the database: `set`, `update`, `push` and `transaction`. Each of these is to be used in a specific context, e.g. `push` is used to append new items to a list, `set` and `update` can both be used to update an existing data entry (note that the difference between them is [very subtle](http://stackoverflow.com/questions/38923644/firebase-update-vs-set)). Deleting data can be done by calling `remove` (or with `set` / `update` and then passing `null` as an argument).
 
-Similar to when reading data from the JSON tree, with all of these methods a *path *needs to be specified that defines where in the JSON tree the write operation should be performed.
+Similar to when reading data from the JSON tree, with all of these methods a *path* needs to be specified that defines where in the JSON tree the write operation should be performed.
 
 Creating a tweet using Firebase could look somewhat similar to this:
 
@@ -230,7 +230,7 @@ mutation {
 
 ### Realtime Connection to the Firebase DB
 
-The initial product of Firebase was a *realtime database* which eventually evolved into the more broad backend solution that it is today. Because of these roots however, realtime functionality is baked deep into Firebase's core. This also means that the API design of the Firebase SDK was focussed on realtime functionality from the very beginning, which is why many other common feature sometimes feel a bit unnatural or less intuitive to work with.
+The initial product of Firebase was a *realtime database* which eventually evolved into the more broad backend solution that it is today. Because of these roots however, realtime functionality is baked deep into Firebase's core. This also means that the API design of the Firebase SDK was focused on realtime functionality from the very beginning, which is why many other common feature sometimes feel a bit unnatural or less intuitive to work with.
 
  The realtime functionality in Firebase can be used by subscribing to specific data in the JSON tree with a callback and getting notified whenever it changes. Taking again the Javascript SDK as an example, we'd use the `on` method on the local DB reference and then pass a callback that gets executed on every change:
 
@@ -243,10 +243,10 @@ tweets.on('value', snapshot => { console.log(snapshot.val()) }
 
 Realtime functionality in GraphQL can be implemented using the concept of [*subscriptions*](http://graphql.org/blog/subscriptions-in-graphql-and-relay/). Subscriptions are syntactically similar to queries and mutations, thus again allowing the developer to specify their data requirements in a declarative fashion.
 
-A subscription is always coupled to a specific type of *event* that is happening in the backend. If a client subscribes to that event type, it will be notified whenever this even occurs. We can imagine three obvious events per type:
+A subscription is always coupled to a specific type of *event* that is happening in the backend. If a client subscribes to that event type, it will be notified whenever this event occurs. We can imagine three obvious events per type:
 
 * *creating* a new node of a specific type (e.g. a user creates a new `Tweet`)
-* *updating *an existing node of a specific type (e.g. a user changes the text of an existing `Tweet`)
+* *updating* an existing node of a specific type (e.g. a user changes the text of an existing `Tweet`)
 * *deleting* an existing node of a specific type (e.g. a user deletes a `Tweet`)
 
 Whenever one of these mutations now happens, the subscription will *fire* and the subscribed client receives the updated data.
@@ -297,7 +297,7 @@ If you want to know more about how subscriptions work in GraphQL and how they ca
 
 Firebase uses a rule-based permission system where the authorization rules are specified in a JSON object. The structure of that JSON object needs to be identical to the one of the tree that represents the database.
 
-A simple version of such a JSON file could look as follows. Here *read *permissions are only granted if a tweet was created in the last 10 minutes and *write* access is granted to everyone:
+A simple version of such a JSON file could look as follows. Here *read* permissions are only granted if a tweet was created in the last 10 minutes and *write* access is granted to everyone:
 
 ```js
 {
@@ -312,7 +312,7 @@ A simple version of such a JSON file could look as follows. Here *read *permissi
 }
 ```
 
-In general, it's possible to specify rules for *reading *and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data.
+In general, it's possible to specify rules for *reading* and *writing* data. However, it is not possible to distinguish out-of-the-box between different types of *writes*, such as *creating*, *updating* or *deleting* data.
 
 As an example, this restriction means that you can not express in a simple manner that only a specific audience should be able to create new tweets and a different audience should be able to create *and* delete tweets. It's generally still possible to write such permissions but they require getting into the weeds of the Firebase permission system and writing complex and long permission strings.
 
@@ -334,7 +334,7 @@ There are generally three ways of specifying the audience for a permission:
 
 The full power of the permission system can be developed by combining these approaches. Meaning it's possible to specify permission that would require users to be authenticated, but could also refer to other properties of the users (or their relationships).
 
-In general, writing a *permission query *allows to express any permission requirement using the syntax of a GraphQL query. Developers don't have to learn a new way of configuring permissions, instead they can express everything with a syntax they're already familiar with!
+In general, writing a *permission query* allows to express any permission requirement using the syntax of a GraphQL query. Developers don't have to learn a new way of configuring permissions, instead they can express everything with a syntax they're already familiar with!
 
 A sample permission query that only allows the author of a tweet to delete it could look as follows:
 
