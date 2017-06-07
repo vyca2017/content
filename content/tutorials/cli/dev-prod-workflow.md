@@ -107,7 +107,7 @@ Depending on the client technology that was used, we now only have to adjust the
 After version 1.0 of our app was deployed, we collected some feedback and did another iteration on the app and the schema. In particular, there are three changes that we added incrementally to the schema:
 
 
-1. Updating the `Post` type by renaming the `description` field to `title`, adding an optional field `subTitle` and a required field `location`
+**1)** Updating the `Post` type by renaming the `description` field to `title`, adding an optional field `subTitle` and a required field `location`
 
 ```graphql
 type Post implements Node {
@@ -122,7 +122,7 @@ Note that we're using the `@rename` and `@migrationValue` [directives](!alias-ae
 
 We can submit the changes with `graphcool push dev.graphcool`.
 
-2. Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
+**2)** Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
 
 ```graphql
 type Post implements Node {
@@ -138,7 +138,7 @@ type User implements Node {
 
 The changes were again submitted by using `graphcool push dev.graphcool`.
 
-3. Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
+**3)** Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
 
 ```graphql
 type Comment implements Node {
