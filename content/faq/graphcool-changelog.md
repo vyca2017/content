@@ -15,6 +15,15 @@ related:
 
 # Changelog
 
+## Week 23 (June 5 - June 11)
+
+- Exporting data now supports UTF8 encoding
+- Fixed a problem with Algolia Index queries that were not containing the node `id`
+- Based on the community feedback many improvements to [Graphcool Functions](!alias-boo6uteemo) could be added:
+  - Functions now support scalar lists, DateTime and Json fields
+  - Functions now work correctly when triggered by a nested mutation
+  - `PRE_WRITE` functions in the [request pipeline](!alias-pa6guruhaf) now receive the transformed output if a `TRANSFORM_ARGUMENT` function exists
+
 ## Week 22 (May 29 - June 4)
 
 - We released new guides for [functions along the request pipeline](!alias-zeez7aiph3) and [server-side subscriptions](!alias-dee0aethoo).
