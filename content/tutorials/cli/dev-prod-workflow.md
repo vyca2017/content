@@ -138,7 +138,7 @@ After version 1.0 of our app was deployed, we collected some feedback and did an
 
   The changes were again submitted by using `graphcool push dev.graphcool`.
 
-**3)** Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on P
+**3)** Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
 
   ```graphql
   type Comment implements Node {
