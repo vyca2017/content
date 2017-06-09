@@ -224,9 +224,10 @@ You can test a server-side subscriptions in two different ways:
      createCustomer(
        name: "John Doe",
        email: "john.doe@gmail.com"
-    ) {
-      id
-    } 
+      ) {
+        id
+      }
+   }
    ```
    
    ![](./img/functions-5.png)

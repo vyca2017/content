@@ -235,8 +235,8 @@ The path for creating a slash command for your Slack team is actually not obviou
 2. Click **Build** in the top-right corner
 3. Click **Start Building** in the center
 4. If the there is a popup prompting you to create a new app, simply click **Cancel**
-5. In the left side-bar, in the section **Appp features**, click **Slack commands**
-6. Scroll down to the very bottom of the page and in the last section titled **Attaching your custom command to an app**, click the highlighted link in the first bullet point that says: "Start with a **custom command** on yout own team. test it on your team and amke sure the experience feels right."
+5. In the left side-bar, in the section **App features**, click **Slack commands**
+6. Scroll down to the very bottom of the page and in the last section titled **Attaching your custom command to an app**, click the highlighted link in the first bullet point that says: "Start with a **custom command** on your own team. Test it on your team and make sure the experience feels right."
 7. You're now prompted to specify the slash command, so simply type `/fc` into the text field and click **Add Slash Command Integration**
 
 ![](http://imgur.com/Sq1QYV9.gif)

@@ -18,14 +18,19 @@ related:
 ---
 
 
+
 # Getting Started with Relay Modern
 
 [Realy Modern](https://facebook.github.io/relay/docs/relay-modern.html) is the very promising evolution and first 1.0-release of Facebook's homegrown GraphQL client _Relay_. It was announced at this year's F8 conference and officially released by Lee Byron during [his talk](https://www.youtube.com/watch?v=OdsMz7h_Li0) at React Europe. 
 
 This post is a step-by-step tutorial with the goal of building a simple Instagram application from scratch using [`create-react-app`](https://github.com/facebookincubator/create-react-app). You can take a look at the final version of the code [here](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern), just follow the instructions in the README to get up-and-running.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XeALXh37WeU" frameborder="0" allowfullscreen></iframe>
+
+
 If you've been using Relay Classic before and are looking to migrate, check out [this tutorial](!alias-eijooto4se) about Relay's Compatability API.
 
+<!-- alias:section1 -->
 
 ## Relay - A Brief History
 
@@ -252,7 +257,8 @@ Awesome, you're now ready to use Relay in your app 🚀
 > Note: If you lose the endpoint for your GraphQL API, you can always find it in the [Graphcool Console](https://console.graph.cool) (by clicking in _ENDPOINTS_-button on the bottom-left) or use the `graphcool endpoints` command in the same directory where the project file `project.graphcool` is located:
 > ![](./img/endpoints.png)
 
-<!-- alias:section1 -->
+<!-- alias:section2 -->
+
 
 ## 3. Displaying all Posts
 
@@ -672,7 +678,7 @@ By the way, if you're curios to see what the actual query looked like that the `
 ![](./img/query.png?width=700)
 
 
-<!-- alias:section2 -->
+<!-- alias:section3 -->
 
 
 ## 4. Adding and Deleting Posts

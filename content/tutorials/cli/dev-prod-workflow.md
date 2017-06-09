@@ -18,7 +18,7 @@ related:
 
 In most real-world project, developers maintain (at least) two different environments:
 
-- **Development (_dev_)**: Used during the development phase 
+- **Development (_dev_)**: Used during the development phase
 - **Production (_prod_)**: Used when the app gets deployed, this is where real user data is stored and managed
 
 In this tutorial, we want to show a typical workflow for how these two different environments can be properly maintained using the [Graphcool CLI](https://www.npmjs.com/package/graphcool).
@@ -38,7 +38,7 @@ The workflow we are going to simulate in this tutorial looks as follows:
 
 1. Create new Graphcool project that is used in dev
 2. Prepare a clone of the dev project for prod
-3. Iterate on the application by adjusting the schema of the dev project 
+3. Iterate on the application by adjusting the schema of the dev project
 4. Move all changes that happened in dev to prod
 
 ## 1. Creating development project
@@ -90,13 +90,13 @@ This is the project that we'll use for our development environment. It will neve
 Fast forward a bit and assume we're now done with all the frontend work and ready to deploy version 1.0 of the app. Before we do so, we need to create the _production environment_ with a schema that's identical to the one from dev. This can be done by calling the `init` command again and passing in the `--copy` and `--copy-options` arguments:
 
 ```bash
-graphcool init --copy insta-dev --name Instagram --alias insta-prod --copy-options mutation-callbacks --output prod.graphcool 
+graphcool init --copy insta-dev --name Instagram --alias insta-prod --copy-options mutation-callbacks --output prod.graphcool
 ```
 
 The only difference now is in the first line of the two project files:
 
 ```graphql
-# project: insta-prod 
+# project: insta-prod
 ```
 
 Depending on the client technology that was used, we now only have to adjust the API endpoints in the code that we wrote in the actual application and are ready to deploy 🚀
@@ -107,57 +107,57 @@ Depending on the client technology that was used, we now only have to adjust the
 After version 1.0 of our app was deployed, we collected some feedback and did another iteration on the app and the schema. In particular, there are three changes that we added incrementally to the schema:
 
 
-1. Updating the `Post` type by renaming the `description` field to `title`, adding an optional field `subTitle` and a required field `location`
+**1)** Updating the `Post` type by renaming the `description` field to `title`, adding an optional field `subTitle` and a required field `location`
 
-```graphql
-type Post implements Node {
-  ...
-  title: String! @rename(oldName: "description")
-  subTitle: String
-  location: String! @migrationValue(value: "Unknown")
-}
-```
+  ```graphql
+  type Post implements Node {
+    ...
+    title: String! @rename(oldName: "description")
+    subTitle: String
+    location: String! @migrationValue(value: "Unknown")
+  }
+  ```
 
-Note that we're using the `@rename` and `@migrationValue` [directives](!alias-aeph6oyeez). The latter is necessary because we already have posts in the database. Since we're now adding a new required field to the `Post` type, these existing posts need a value that can be written into these fields, that's precisely what we specify with the `@migrationValue` directive. 
+  Note that we're using the `@rename` and `@migrationValue` [directives](!alias-aeph6oyeez). The latter is necessary because we already have posts in the database. Since we're now adding a new required field to the `Post` type, these existing posts need a value that can be written into these fields, that's precisely what we specify with the `@migrationValue` directive.
 
-We can submit the changes with `graphcool push dev.graphcool`.
+  We can submit the changes with `graphcool push dev.graphcool`.
 
-2. Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
+**2)** Create a relation between `Post` and `User` so that it's clear which user created a post. We thus update the `Post` and the `User` type by adding a new _one-to-many_-relation:
 
-```graphql
-type Post implements Node {
-  ...
-  postedBy: User @relation(name: "PostsByUser")
-}
+  ```graphql
+  type Post implements Node {
+    ...
+    postedBy: User @relation(name: "PostsByUser")
+  }
 
-type User implements Node {
-  ...
-  posts: [Post!]! @relation(name: "PostsByUser")
-}
-```
+  type User implements Node {
+    ...
+    posts: [Post!]! @relation(name: "PostsByUser")
+  }
+  ```
 
-The changes were again submitted by using `graphcool push dev.graphcool`.
+  The changes were again submitted by using `graphcool push dev.graphcool`.
 
-3. Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
+**3)** Add a new type `Comment` including a _many-to-many_-relation to `Post` and a _one-to-many_-relation to `User` so that users can comment on Posts.
 
-```graphql
-type Comment implements Node {
-  author: User @relation(name: "CommentsByUser")
-  post: Post @relation(name: "CommentsOnPost")
-}
+  ```graphql
+  type Comment implements Node {
+    author: User @relation(name: "CommentsByUser")
+    post: Post @relation(name: "CommentsOnPost")
+  }
 
-type Post implements Node {
-  ...
-  comments: [Comment!]! @relation(name: "CommentsOnPost")
-}
+  type Post implements Node {
+    ...
+    comments: [Comment!]! @relation(name: "CommentsOnPost")
+  }
 
-type User implements Node {
-  ...
-  comments: [Comment!]! @relation(name: "CommentsByUser")
-}
-```
+  type User implements Node {
+    ...
+    comments: [Comment!]! @relation(name: "CommentsByUser")
+  }
+  ```
 
-Again, `graphcool push dev.graphcool` was used to make these changes take effect.
+  Again, `graphcool push dev.graphcool` was used to make these changes take effect.
 
 After we've performed these migrations, our project file has now grown to look as follows:
 
@@ -209,7 +209,7 @@ Note that `@rename` and `@migrationValue` were only _temporary_ directives that 
 
 ## 4. Update production environment
 
-To make sure our changes are transferred to the production environment, we have to update the schema in `prod.graphcool` manually and then perform the migration in the same way we did before. The schema needs to be identical to the one we currently have in `dev.graphcool`, plus any directives that we used for schema migrations along the way. 
+To make sure our changes are transferred to the production environment, we have to update the schema in `prod.graphcool` manually and then perform the migration in the same way we did before. The schema needs to be identical to the one we currently have in `dev.graphcool`, plus any directives that we used for schema migrations along the way.
 
 The manual process can also be replaced by a script where the schema from `dev.graphcool` is written automatically into `prod.graphcool`. Assuming we either used such a script or pasted the schema over manually, our `prod.graphcool` file should now look similar to `dev.graphcool` - except for the frontmatter and the migration directives:
 
@@ -258,10 +258,3 @@ type User implements Node {
 ```
 
 We can apply the changes by calling `graphcool push prod.graphcool` and are ready to deploy our next product iteration. 😎
-
-
-
-
-
-
-
