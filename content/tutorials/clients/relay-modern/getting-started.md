@@ -109,10 +109,10 @@ yarn add react-relay
 
 This dependency allows you to access all major Relay APIs, such as the [`QueryRenderer`](https://facebook.github.io/relay/docs/query-renderer.html) or [`FragmentContainer`](https://facebook.github.io/relay/docs/fragment-container.html) that you'll explore in a bit!
 
-Next you need the two dependencies that make for much of the performance benefits in the Relay architecture through ahead-of-time optimizations: The [`relay-compiler`](https://facebook.github.io/relay/docs/relay-compiler.html) and [`babel-plugin-relay`](https://facebook.github.io/relay/docs/babel-plugin-relay.html). Both are installed as `dev` dependencies using the `--save-dev` option:
+Next you need the two dependencies that make for much of the performance benefits in the Relay architecture through ahead-of-time optimizations: The [`relay-compiler`](https://facebook.github.io/relay/docs/relay-compiler.html) and [`babel-plugin-relay`](https://facebook.github.io/relay/docs/babel-plugin-relay.html). Both are installed as `dev` dependencies using the `--dev` option:
 
 ```sh
-yarn add relay-compiler@dev --dev
+yarn add relay-compiler --dev
 ```
 
 and
@@ -120,8 +120,6 @@ and
 ```sh
 yarn add babel-plugin-relay --dev
 ```
-
-Note that you're pulling this from the `@dev` branch to work around [this bug](https://github.com/facebook/relay/issues/1654) that would break _watching_ your GraphQL files and automatically trigger a compile on every change.
 
 All right, that's it for the first step! Go ahead and move on to configure Babel.
 
