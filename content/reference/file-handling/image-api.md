@@ -43,4 +43,4 @@ https://images.graph.cool/v1/__PROJECT_ID__/__FILE_SECRET__/
 
 ### Contributions
 
-Contributions and improvements to the Image API are appreciated! For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).
+Contributions and improvements to the Image API are welcome! For more information, see [serverless-image-proxy](https://github.com/graphcool/serverless-image-proxy).

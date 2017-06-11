@@ -12,7 +12,6 @@ tags:
   - mutations
 related:
   further:
-    - eefoovo2ah
   more:
     - yoh9thaip0
     - thaiph8ung
@@ -40,15 +39,6 @@ query {
     name
   }
 }
----
-{
-  "data": {
-    "File": {
-      "id": "my-file-id"
-      "name": "comment.png"
-    }
-  }
-}
 ```
 
 Similarly, the `allFiles` query can be used to query for [multiple file nodes](!alias-pa2aothaec).
@@ -69,15 +59,6 @@ mutation {
     }
   }
 }
----
-{
-  "data": {
-    "file": {
-      "id": "my-file-id"
-      "name": "new-comment-name"
-    }
-  }
-}
 ```
 
 ## Deleting files
@@ -89,14 +70,6 @@ mutation {
   deleteFile(id: "my-file-id") {
     file {
       id
-    }
-  }
-}
----
-{
-  "data": {
-    "file": {
-      "id": "my-file-id"
     }
   }
 }
