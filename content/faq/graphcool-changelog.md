@@ -17,12 +17,14 @@ related:
 
 ## Week 23 (June 5 - June 11)
 
-- Exporting data now supports UTF8 encoding
+- The [data export](!alias-aechi6iequ) feature now supports UTF8 encoding
 - Fixed a problem with Algolia Index queries that were not containing the node `id`
-- Based on the community feedback many improvements to [Graphcool Functions](!alias-boo6uteemo) could be added:
+- Based on the community feedback [Graphcool Functions](!alias-boo6uteemo) could be improved in many aspects:
   - Functions now support scalar lists, DateTime and Json fields
   - Functions now work correctly when triggered by a nested mutation
   - `PRE_WRITE` functions in the [request pipeline](!alias-pa6guruhaf) now receive the transformed output if a `TRANSFORM_ARGUMENT` function exists
+- The `Select User` feature in the [Graphcool Playground](!alias-oe1ier4iej) now works with [GraphQL Subscriptions](!alias-aip7oojeiv) as expected.
+- The [Getting Started with Relay](!alias-woodito7ug) tutorial and video guide have been released!
 
 ## Week 22 (May 29 - June 4)
 

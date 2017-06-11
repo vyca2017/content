@@ -387,4 +387,4 @@ query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
 
 Permission queries combine the simplicity and expressiveness of GraphQL queries with common authorization design patterns, allowing developers to specify complex permission setups in a straight-forward way.
 
-Thinking in terms of the concepts of role-based, relation-based and owner-based permissions helps when designing the permissions for your application. If you need help with your authorization configuration, feel free to [reach out in the forum](https://www.graph.cool/forum/c/platform).
+Thinking in terms of the concepts of role-based, relation-based and owner-based permissions helps when designing the permissions for your application. If you need help with your authorization configuration, feel free to [reach out in the forum](https://graph.cool/forum/c/platform).
