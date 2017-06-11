@@ -12,7 +12,6 @@ tags:
   - mutations
 related:
   further:
-    - eefoovo2ah
   more:
     - yoh9thaip0
     - thaiph8ung
@@ -25,7 +24,7 @@ To interact with the [file management](!alias-eer4wiang0) of the platform, you c
 
 ## Uploading files
 
-Coming soon. Right now, use [plain HTTP POST requests](!alias-eer4wiang0#uploading-a-file-with-plain-http) to upload files.
+Coming soon. For now, use [the File API directly](!alias-eer4wiang0) to upload files.
 
 ## Reading meta information of files
 
@@ -38,15 +37,6 @@ query {
   File(id: "my-file-id") {
     id
     name
-  }
-}
----
-{
-  "data": {
-    "File": {
-      "id": "my-file-id"
-      "name": "comment.png"
-    }
   }
 }
 ```
@@ -69,15 +59,6 @@ mutation {
     }
   }
 }
----
-{
-  "data": {
-    "file": {
-      "id": "my-file-id"
-      "name": "new-comment-name"
-    }
-  }
-}
 ```
 
 ## Deleting files
@@ -89,14 +70,6 @@ mutation {
   deleteFile(id: "my-file-id") {
     file {
       id
-    }
-  }
-}
----
-{
-  "data": {
-    "file": {
-      "id": "my-file-id"
     }
   }
 }
