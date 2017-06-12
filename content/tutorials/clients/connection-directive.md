@@ -17,16 +17,16 @@ related:
 
 # Relay Modern's @connection directive
 
-If you tried to get started with Relay Modern yourself, chances are that you took a look at the updated [Todo Example](https://github.com/relayjs/relay-examples/tree/master/todo-modern) project on GitHub. If you've also studied the [mutations](https://github.com/relayjs/relay-examples/tree/master/todo-modern) in these projects, you might have noticed the `@direction` directive that you need to specify when querying *lists* of items, Relay uses the concept of _connections_ for this.
+If you tried to get started with Relay Modern yourself, chances are that came across the updated [Todo Example](https://github.com/relayjs/relay-examples/tree/master/todo-modern) project on GitHub. If you've also studied the [mutations](https://github.com/relayjs/relay-examples/tree/master/todo-modern) in these projects, you might have noticed the `@connection` directive that you need to specify when querying *lists* of items.
+
+> In Relay, lists are represented through the concept of [_connections_](https://facebook.github.io/relay/docs/graphql-connections.html). This facilicates the implementation of a [cursor-based pagination](https://facebook.github.io/relay/graphql/connections.htm) approach on the client.
 
 This directive is new to Relay Modern and unfortunately doesn't have any official documentation yet. The directive takes two arguments:
 
-- a `key`: specifies how Relay will refer to this connection in its internal cache
-- a `filter`: represents an array of constraints that's used to filter the items in  connection
+- `key`: specifies how Relay will refer to this connection in its internal cache
+- `filter`: represents an array of constraints that are used to filter the items in the connection
 
-You'll notice the keys each being used twice throughout the project. Once for defining the connection in a GraphQL fragment, and once in the code that you used to update the cache after the mutation was performed.
-
-Let's take a look at how it's used in the  example the example:
+Let's take a look at how the directive used in the Todo example:
 
 #### `TodoList.js`
 
@@ -53,7 +53,7 @@ export default createFragmentContainer(TodoList, {
   `,
 ```
 
-In `TodoList.js` is where you declare the data dependencies for the `TodoList` component in the form of a GraphQL fragment. `todos` refers to a [_connection_](https://github.com/relayjs/relay-examples/blob/master/todo-modern/data/schema.graphql#L135) that's defined in the GraphQL schema. When requesting the items from this list, the `@connection` directive is used alongside the `todos` field. Relay will use the specified key `TodoList_todos` in its internal cache to refer to that connection.
+In `TodoList.js`, the data dependencies for the `TodoList` component are declared in the form of a GraphQL fragment. `todos` refers to a [_connection_](https://github.com/relayjs/relay-examples/blob/master/todo-modern/data/schema.graphql#L135) that's defined in the GraphQL schema. When requesting the items from this list, the `@connection` directive is used alongside the `todos` field. Relay will use the specified key `TodoList_todos` in its internal cache to refer to that connection.
 
 #### `AddTodoMutation.js`
 
@@ -68,4 +68,4 @@ function sharedUpdater(store, user, newEdge) {
 }
 ``` 
 
-The key is used again in `AddTodoMutation.js`. This time, it's purpose is to pull the connection from the internal cache using the `ConnectionHandler` API. The key is passed to the call to `ConnectionHandler.getConnection(...)`. This allows you to retrieve list from the cache and update it manually with the new todo item that was created through the mutation.
+The key is used again in `AddTodoMutation.js`. This time, its purpose is to pull the connection from the internal cache using the `ConnectionHandler` API. The key is passed to the call to `ConnectionHandler.getConnection(...)`. This allows you to retrieve the list from the cache and update it manually with the new todo item that was created through the mutation.
