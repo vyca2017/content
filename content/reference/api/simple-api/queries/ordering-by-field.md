@@ -101,3 +101,7 @@ query {
 
 Note: The field you are ordering by does not have to be selected in the actual query.
 Note: If you do not specify an ordering, the response is implicitely ordered ascending by the `id` field
+
+## Limitations
+
+It's currently not possible to order responses [by multiple fields](https://github.com/graphcool/feature-requests/issues/62) or [by related fields](https://github.com/graphcool/feature-requests/issues/95). Join the discussion in the feature requests if you're interested in these features!
