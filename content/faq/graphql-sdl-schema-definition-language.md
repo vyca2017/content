@@ -105,7 +105,7 @@ interface Item {
 }
 ```
 
-### Directive
+### Schema directive
 
 A directive allows you to attach arbitrary information to any other Schema Definition element. Directives are always placed behind the element they describe:
 
@@ -114,9 +114,4 @@ name: String! @default(value: "new blogpost")
 ```
 Directives don't have intrinsic meaning. Each GraphQL implementation can define their own custom directives that add new functinality.
 
-GraphQL specifies two built-in directives that can be used to include or exclude specific fields in a query:
-
-```graphql
-@skip(if: $someTest)
-@include(if: $someTest)
-```
+GraphQL specifies built-in `skip` and `include` directives that can be used to include or exclude specific fields in queries, but these aren't used in the schema language.
