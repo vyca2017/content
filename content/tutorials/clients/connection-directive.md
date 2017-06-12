@@ -1,6 +1,7 @@
 ---
 alias: ujaesaen0s
 path: /docs/tutorials/relay-modern-connection-directive
+preview: connection-directive.png
 layout: TUTORIAL
 shorttitle: The @connection directive in Relay Modern 
 description: Learn how Relay Modern uses the the @connection directive to refer to a list of items in the internal cache.
