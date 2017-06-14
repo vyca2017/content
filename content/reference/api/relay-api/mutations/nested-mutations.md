@@ -3,7 +3,7 @@ alias: yoo8vaifoa
 path: /docs/reference/relay-api/nested-mutations
 layout: REFERENCE
 shorttitle: Nested Mutations
-description: Create or update multiple nodes across relations all in a single mutation.
+description: Create or connect multiple nodes across relations all in a single mutation.
 simple_relay_twin: ubohch8quo
 tags:
   - relay-api
@@ -31,8 +31,8 @@ For every relation of a type, the `update` and `create` mutations expose an argu
 
 [Read more about nested create mutations](!alias-ma6eijae7a).
 
-### Nested Update Mutations
+### Nested Connect Mutations
 
 For every relation of a type, the `update` and `create` mutations expose an argument to connect the original node to an existing related node. Depending on the relation multiplicity, this argument allows to either add a single related node (for to-one relations) or multiple related nodes (for to-many relations) to the relation.
 
-[Read more about nested update mutations](!alias-ec6aegaiso).
+[Read more about nested connect mutations](!alias-ec6aegaiso).

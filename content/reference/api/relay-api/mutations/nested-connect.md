@@ -1,9 +1,9 @@
 ---
 alias: ec6aegaiso
-path: /docs/reference/relay-api/nested-update-mutations
+path: /docs/reference/relay-api/nested-connect-mutations
 layout: REFERENCE
-shorttitle: Nested Update Mutations
-description: Update multiple nodes across relations all in a single mutation.
+shorttitle: Nested Connect Mutations
+description: Connect multiple nodes across relations all in a single mutation.
 simple_relay_twin: tu9ohwa1ui
 tags:
   - relay-api
@@ -18,9 +18,9 @@ related:
     - vietahx7ih
 ---
 
-# Nested Update Mutations
+# Nested Connect Mutations
 
-Nested update mutations connect the original node to an existing node in the related type.
+Nested connect mutations connect the original node to an existing node in the related type.
 Let's assume the following schema:
 
 ```idl
@@ -44,11 +44,11 @@ type Post {
 }
 ```
 
-We're considering the `createAuthor` and `updateAuthor` mutation to see how to update nested nodes for the *to-one* relation `AuthorContactDetails` and the *to-many* relation `AuthorPosts`.
+We're considering the `createAuthor` and `updateAuthor` mutation to see how to connect nested nodes for the *to-one* relation `AuthorContactDetails` and the *to-many* relation `AuthorPosts`.
 
-## Nested Update Mutations for to-one Relations
+## Nested Connect Mutations for to-one Relations
 
-Let's explore the available nested update mutations for the `one-to-one` relation `AuthorContactDetails`.
+Let's explore the available nested connect mutations for the `one-to-one` relation `AuthorContactDetails`.
 
 #### Creating a new Author node and connect it to existing ContactDetails
 
@@ -99,9 +99,9 @@ mutation createAuthorAndConnectContactDetails {
 }
 ```
 
-## Nested Update Mutations for to-many Relations
+## Nested Connect Mutations for to-many Relations
 
-Let's explore the available nested update mutations for the `one-to-many` relation `AuthorPosts`.
+Let's explore the available nested connect mutations for the `one-to-many` relation `AuthorPosts`.
 
 #### Creating a new Author node and connect it to multiple existing Posts
 
