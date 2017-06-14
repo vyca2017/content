@@ -24,7 +24,7 @@ The main feature of the GraphQL Playground is **running queries, mutations and s
 
 When executing a subscription, you will  **receive subscription events right in the Playground**! You can combine this with executing mutations in another Playground tab to test how subscriptions and mutations interact.
 
-> All GraphQL operations support the use of [GraphQL Variables](!alias-ejamaid4ae). Simply declare them in the query editor and supply the desired values in the query variables input field.
+> All GraphQL operations support the use of [GraphQL Variables](!alias-thaexex7av). Simply declare them in the query editor and supply the desired values in the query variables input field.
 
 ## Advanced Features
 
