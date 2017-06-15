@@ -15,6 +15,11 @@ related:
 
 # Changelog
 
+## Week 24 (June 12 - June 18)
+
+* The [Image API](!alias-atiede8ata) is now production ready.
+* The [Graphcool CLI](https://github.com/graphcool/graphcool-cli/) shows more information for invalid commands and received multiple bug fixes. [Full Release Notes](https://github.com/graphcool/graphcool-cli/releases/tag/v1.1.0).
+
 ## Week 23 (June 5 - June 11)
 
 - The [data export](!alias-aechi6iequ) feature now supports UTF8 encoding
@@ -25,6 +30,7 @@ related:
   - `PRE_WRITE` functions in the [request pipeline](!alias-pa6guruhaf) now receive the transformed output if a `TRANSFORM_ARGUMENT` function exists
 - The `Select User` feature in the [Graphcool Playground](!alias-oe1ier4iej) now works with [GraphQL Subscriptions](!alias-aip7oojeiv) as expected.
 - The [Getting Started with Relay](!alias-woodito7ug) tutorial and video guide have been released!
+- The project settings, Algolia integration, different popups and more in the [Graphcool Console](https://console.graph.cool) received a lot of UI and UX improvements for Chrome, Safari and Firefox.
 
 ## Week 22 (May 29 - June 4)
 

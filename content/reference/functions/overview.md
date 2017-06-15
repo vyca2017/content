@@ -40,4 +40,4 @@ Functions can also be deployed as **webhooks** using Function-as-a-service provi
 ### Current Limitations
 
 * Callbacks need to be converted to Promises. [Here's a guide](https://egghead.io/lessons/javascript-convert-a-callback-to-a-promise).
-* Here's an [overview of currently available npm packges](https://tehsis.github.io/webtaskio-canirequire/). We already working on [supporting any npm package](https://github.com/graphcool/feature-requests/issues/226).
+* Here's an [overview of currently available npm packges](https://tehsis.github.io/webtaskio-canirequire/). We are already working on [supporting any npm package](https://github.com/graphcool/feature-requests/issues/226).
