@@ -16,7 +16,6 @@ related:
     - da7pu3seew
     - goh5uthoc1
   more:
-    - daisheeb9x
     - chietu0ahn
 ---
 

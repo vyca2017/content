@@ -21,10 +21,10 @@ Functions used for the `TRANSFORM_ARGUMENT` hook point can do arbitrary transfor
 > The request is not modified at all.
 
 ```js
-module.exports = function (input, log, cb) {
-  log(`input: ${input}`)
+module.exports = function (event) {
+  console.log(`event: ${event}`)
 
-  return input
+  return {data: event.data}
 }
 ```
 
@@ -33,16 +33,11 @@ module.exports = function (input, log, cb) {
 > Some of the input arguments are used to compute a different input argument.
 
 ```js
-module.exports = function (input, log, cb) {
-  log.('Compute area')
-  const area = input.data.width * input.data.length
+module.exports = function (event) {
+  console.log('Compute area')
+  event.data.area = event.data.width * event.data.length
 
-  return {
-    data: {
-      ...input.data,
-      area,
-    }
-  }
+  return event
 }
 ```
 
@@ -51,13 +46,13 @@ module.exports = function (input, log, cb) {
 > Reject further processing of the incoming GraphQL mutation by [throwing an error](!alias-quawa7aed0).
 
 ```js
-module.exports = function (input, log, cb) {
-  if (input.data.length < 0 || input.data.width < 0) {
+module.exports = function (event) {
+  if (event.data.length < 0 || event.data.width < 0) {
     return {
       error: 'Length and width must be greater than 0!'
     }
   }
 
-  return input
+  return event
 }
 ```

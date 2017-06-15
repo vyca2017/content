@@ -220,3 +220,356 @@ query enumValuesOfMetaInformationTags {
 ```
 
 Here we can see that the `META_INFORMATION_TAGS` offers the valid values `GENERAL` and `TRAVELLING`.
+
+## Query all Input Arguments of Mutations
+
+Sometimes you're interested in all available input arguments of a mutation. Using the `__type` field with the `Mutation` name returns all mutations in your GraphQL schema:
+
+```graphql
+---
+endpoint: https://api.graph.cool/simple/v1/cixne4sn40c7m0122h8fabni1
+disabled: false
+---
+query mutationInputArguments {
+  __type(name: "Mutation") {
+    name
+    fields {
+      name
+      args {
+        name
+      }
+    }
+  }
+}
+---
+{
+  "data": {
+    "__type": {
+      "name": "Mutation",
+      "fields": [
+        {
+          "name": "createFile",
+          "args": [
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "createMetaInformation",
+          "args": [
+            {
+              "name": "tags"
+            },
+            {
+              "name": "postId"
+            },
+            {
+              "name": "post"
+            }
+          ]
+        },
+        {
+          "name": "createPost",
+          "args": [
+            {
+              "name": "published"
+            },
+            {
+              "name": "slug"
+            },
+            {
+              "name": "text"
+            },
+            {
+              "name": "title"
+            },
+            {
+              "name": "authorId"
+            },
+            {
+              "name": "metaInformationId"
+            },
+            {
+              "name": "metaInformation"
+            },
+            {
+              "name": "likedByIds"
+            },
+            {
+              "name": "likedBy"
+            }
+          ]
+        },
+        {
+          "name": "updateFile",
+          "args": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            }
+          ]
+        },
+        {
+          "name": "updateMetaInformation",
+          "args": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "tags"
+            },
+            {
+              "name": "postId"
+            },
+            {
+              "name": "post"
+            }
+          ]
+        },
+        {
+          "name": "updatePost",
+          "args": [
+            {
+              "name": "id"
+            },
+            {
+              "name": "published"
+            },
+            {
+              "name": "slug"
+            },
+            {
+              "name": "text"
+            },
+            {
+              "name": "title"
+            },
+            {
+              "name": "authorId"
+            },
+            {
+              "name": "metaInformationId"
+            },
+            {
+              "name": "metaInformation"
+            },
+            {
+              "name": "likedByIds"
+            },
+            {
+              "name": "likedBy"
+            }
+          ]
+        },
+        {
+          "name": "updateUser",
+          "args": [
+            {
+              "name": "accessRole"
+            },
+            {
+              "name": "id"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "likedPostsIds"
+            },
+            {
+              "name": "likedPosts"
+            },
+            {
+              "name": "postsIds"
+            },
+            {
+              "name": "posts"
+            }
+          ]
+        },
+        {
+          "name": "updateOrCreateFile",
+          "args": [
+            {
+              "name": "update"
+            },
+            {
+              "name": "create"
+            }
+          ]
+        },
+        {
+          "name": "updateOrCreateMetaInformation",
+          "args": [
+            {
+              "name": "update"
+            },
+            {
+              "name": "create"
+            }
+          ]
+        },
+        {
+          "name": "updateOrCreatePost",
+          "args": [
+            {
+              "name": "update"
+            },
+            {
+              "name": "create"
+            }
+          ]
+        },
+        {
+          "name": "updateOrCreateUser",
+          "args": [
+            {
+              "name": "update"
+            },
+            {
+              "name": "create"
+            }
+          ]
+        },
+        {
+          "name": "deleteFile",
+          "args": [
+            {
+              "name": "id"
+            }
+          ]
+        },
+        {
+          "name": "deleteMetaInformation",
+          "args": [
+            {
+              "name": "id"
+            }
+          ]
+        },
+        {
+          "name": "deletePost",
+          "args": [
+            {
+              "name": "id"
+            }
+          ]
+        },
+        {
+          "name": "deleteUser",
+          "args": [
+            {
+              "name": "id"
+            }
+          ]
+        },
+        {
+          "name": "setPostMetaInformation",
+          "args": [
+            {
+              "name": "metaInformationMetaInformationId"
+            },
+            {
+              "name": "postPostId"
+            }
+          ]
+        },
+        {
+          "name": "unsetPostMetaInformation",
+          "args": [
+            {
+              "name": "metaInformationMetaInformationId"
+            },
+            {
+              "name": "postPostId"
+            }
+          ]
+        },
+        {
+          "name": "addToAuthorPosts",
+          "args": [
+            {
+              "name": "postsPostId"
+            },
+            {
+              "name": "authorUserId"
+            }
+          ]
+        },
+        {
+          "name": "addToLikedPosts",
+          "args": [
+            {
+              "name": "likedPostsPostId"
+            },
+            {
+              "name": "likedByUserId"
+            }
+          ]
+        },
+        {
+          "name": "removeFromAuthorPosts",
+          "args": [
+            {
+              "name": "postsPostId"
+            },
+            {
+              "name": "authorUserId"
+            }
+          ]
+        },
+        {
+          "name": "removeFromLikedPosts",
+          "args": [
+            {
+              "name": "likedPostsPostId"
+            },
+            {
+              "name": "likedByUserId"
+            }
+          ]
+        },
+        {
+          "name": "signinUser",
+          "args": [
+            {
+              "name": "email"
+            }
+          ]
+        },
+        {
+          "name": "createUser",
+          "args": [
+            {
+              "name": "accessRole"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "likedPostsIds"
+            },
+            {
+              "name": "likedPosts"
+            },
+            {
+              "name": "postsIds"
+            },
+            {
+              "name": "posts"
+            },
+            {
+              "name": "authProvider"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+Here we can see that the `createMetaInformation` has the input arguments `tags`, `postId` and `post` for example.

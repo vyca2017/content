@@ -17,8 +17,7 @@ related:
     - goh5uthoc1
   more:
     - tioghei9go
-    - cahzai2eur
-    - daisheeb9x
+    - cahzai2eur  
     - ahwoh2fohj
 ---
 

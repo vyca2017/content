@@ -22,6 +22,8 @@ related:
 
 # Relay vs Apollo - Comparing GraphQL clients for React apps
 
+> **Note**: This article only applies to **Relay Classic**, we'll update it for Relay Modern soon. Stay tuned!
+
 [Relay](https://facebook.github.io/relay/) and [Apollo](http://dev.apollodata.com/) are the most popular and sophisticated GraphQL clients available at the moment. But how do you know which one to choose?
 
 In this article, we are going to shed some light on the commonalities and differences between Relay and Apollo and want to help you in making an informed decision on which GraphQL client is the best for your next project! Our goal is to keep the contents of the article up to date as Apollo and Relay evolve.
@@ -431,7 +433,7 @@ Apollo would now _flatten_ the nested Pokemons and put them on the first level o
     "ciwj0dw5dm6aj01632pto44t0": {
       "id": "ciwj0dw5dm6aj01632pto44t0",
       "name": "Nikolas",
-      "ownedPokemons": [ciwj0dw6zpeuj0148xvsgc3hrm, ciwj0dw8gm6c80163wh8zku78]
+      "ownedPokemons": [ciwj0dw6zpeuj0148xvsgc3hr, ciwj0dw8gm6c80163wh8zku78]
     },
     "ciwj0dw6zpeuj0148xvsgc3hr": {
       "id": "ciwj0dw6zpeuj0148xvsgc3hr",

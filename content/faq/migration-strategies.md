@@ -10,7 +10,7 @@ related:
     - ul6ue9gait
 ---
 
-# Migration Strategies for Serverless GraphQL Backends
+# How to Export Your GraphQL Project
 
 Graphcool is a venture-backed company dedicated to establish the **Serverless GraphQL backend** paradigm. We don't plan to close shop anytime soon, but we're giving you a clear migration strategy in case you decide to not use Graphcool anymore.
 

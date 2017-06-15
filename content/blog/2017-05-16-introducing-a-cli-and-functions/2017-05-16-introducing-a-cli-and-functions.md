@@ -12,13 +12,13 @@ related:
   more:
 ---
 
-# Introducing Functions & the Graphcool CLI
+# Introducing Functions & Graphcool CLI
 
 Today we are announcing two new major additions to the Graphcool platform: Functions & the Graphcool CLI.
 
 The CLI enables a completely new development workflow making it easier and quicker than ever to work with Graphcool. Using functions you can extend your GraphQL API to implement any kind of business logic without the need to run your own servers.
 
-## A better development workflow using the Graphcool CLI
+## A better development workflow using the CLI
 
 While the Console is a great way to get started with Graphcool, you need more advanced tools to manage your projects as they evolve and grow in complexity.
 
@@ -62,7 +62,7 @@ Functions are basically small building blocks and provide a way to perform some 
 
 ### Inline functions: Develop directly in your Console
 
-We have partnered with Auth0 Extend to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
+We have partnered with [Auth0 Extend](https://auth0.com/extend/?utm_source=graphcool&utm_medium=gp&utm_campaign=extend_site) to enable you to write your functions directly in the Graphcool Console. Inline functions can be created in seconds and the integrated testing workflow and execution logs make it easy to implement and debug new business logic.
 
 ![](./inline-fn.png)
 

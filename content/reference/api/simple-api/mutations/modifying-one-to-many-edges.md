@@ -15,8 +15,7 @@ related:
     - ahwoh2fohj
     - zeich1raej
     - goh5uthoc1
-  more:
-    - daisheeb9x
+  more:    
     - chietu0ahn
 ---
 
@@ -99,7 +98,7 @@ mutation {
 ---
 {
   "data": {
-    "addToAuthorPosts": {
+    "removeFromAuthorPosts": {
       "authorUser": {
         "name": "John Doe"
       },

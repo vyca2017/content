@@ -10,7 +10,6 @@ related:
     - uh8shohxie
     - ol0yuoz6go
   more:
-    - saigai7cha
     - dah6aifoce
     - soiyaquah7
 ---
@@ -45,7 +44,7 @@ module.exports = function (input, log) {
   form.append('subject', 'Test')
   form.append('text', 'Hi')
 
-  const result = fetch(url, {
+  fetch(url, {
     headers: {
       'Authorization': `Basic ${Base64.btoa(apiKey)}`
     },
@@ -54,3 +53,7 @@ module.exports = function (input, log) {
   })
 }
 ```
+
+## Current Limitations
+
+Currently, no Server-Side Subscriptions are triggered for the `File` type.

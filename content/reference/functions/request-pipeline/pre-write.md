@@ -12,8 +12,10 @@ related:
 
 # Communicate with External APIs
 
-Functions used for the `PRE_WRITE` hook point are the last execution later before data is written to the database.
-Here you can make calls to external services and modify data that is about to be persisted.
+Functions used for the `PRE_WRITE` hook point are the last execution layer before data is written to the database.
+Here you can initiate workflows for external services, like sending an email, charging a credit card or abort the processing of a request based on the result of external APIs.
+
+> In the `PRE_WRITE` hook points, data transformations are ignored. If you want to transform input data, refer to the `TRANSFORM_ARGUMENT` hook point.
 
 ## Examples
 
@@ -22,10 +24,10 @@ Here you can make calls to external services and modify data that is about to be
 > The request is accepted.
 
 ```js
-module.exports = function (input, logreq) {
-  log(`input: ${input}`)
+module.exports = function (event) {
+  console.log(`event: ${event}`)
 
-  return input
+  return {data: event.data}
 }
 ```
 
@@ -34,36 +36,37 @@ module.exports = function (input, logreq) {
 > Make a request to any third party API
 
 ```js
-const request = require('request')
+require('isomorphic-fetch')
 
-module.exports = function (input, log, cb) => {
-  // query external movie API for number of stored actors
-  const movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
+// only allow current mutation if more than 3 movies exist in external API
+module.exports = function (event) => {
+  var movieAPI = 'https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr'
 
-  const query = `
+  var query = `
     query {
       result: _allActorsMeta {
         count
       }
     }
   `
-  request.post({
-    url: movieAPI,
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({ query }),
-  }).on('error', (e) => {
-    log('Error querying movieAPI: ' + e.toString())
-    cb(e, {})
-  }).on('data', (response) => {
-    const actorCount = JSON.parse(response).data.result.count
 
-    const data = {
-      ...input.data,
-      actorCount
+  return fetch(movieAPI, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ query })
+  }).then((response) => {
+    return response.json()
+  }).then((data) => {
+    if (data.data.result.count > 3) {
+      return event
+    } else {
+      return {error: `Could not finish mutation, because only ${data.data.result.count} movies exist.`}
     }
-    cb(null, input.data.)
-  })
+  }).catch((error) => {
+    console.log(error)
+    return {error: 'Could not connect to Movie API'}
+  }
 }
 ```

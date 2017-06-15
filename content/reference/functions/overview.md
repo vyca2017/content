@@ -31,8 +31,13 @@ More use cases for functions are planned, for example **cron jobs**. Please let 
 ## Function Runtime
 
 Whenever you use a function, you can choose between defining it inline or as a webhook.
-**Inline functions** can be specified using the functions editor in the Console. They run on a node runtime and every npm module is available for you to be imported.
+**Inline functions** can be specified using the functions editor in the Console. They run on a node runtime and many npm modules are available for you to be imported.
 
 Functions can also be deployed as **webhooks** using Function-as-a-service providers such as [Serverless](https://serverless.com/) and [AWS Lambda](https://aws.amazon.com/lambda/), [Google Cloud Functions](https://cloud.google.com/functions/), [Microsoft Azure Functions](https://azure.microsoft.com/) or by hosting the function yourself. Then you need to provide the webhook URL.
 
 > Function executions time out after 10 seconds.
+
+### Current Limitations
+
+* Callbacks need to be converted to Promises. [Here's a guide](https://egghead.io/lessons/javascript-convert-a-callback-to-a-promise).
+* Here's an [overview of currently available npm packges](https://tehsis.github.io/webtaskio-canirequire/). We are already working on [supporting any npm package](https://github.com/graphcool/feature-requests/issues/226).

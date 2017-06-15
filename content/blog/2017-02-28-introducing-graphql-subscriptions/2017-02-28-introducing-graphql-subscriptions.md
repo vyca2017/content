@@ -68,7 +68,7 @@ One of GraphQLs best features are interactive tools like [GraphiQL](https://gith
 
 To make it as easy as possible for you to get started with GraphQL Subscriptions, [we've prepared a tutorial](https://www.graph.cool/docs/tutorials/worldchat-subscriptions-example-ui0eizishe) for you. You will learn how to build a realtime chat app with GraphQL Subscriptions and Apollo.
 
-Check out the [live demo](https://demo.graph.cool/worldchat/) to see how it looks like or dive into the [source code on Github](https://github.com/graphcool-examples/worldchat-subscriptions-example). We've also recorded a video tutorial:
+Check out the [live demo](https://demo.graph.cool/worldchat/) to see how it looks like or dive into the [source code on Github](https://github.com/graphcool-examples/react-graphql/tree/master/subscriptions-with-apollo-worldchat). We've also recorded a video tutorial:
 
 <iframe height="315" src="https://www.youtube.com/embed/aSLF9f13o2c" frameborder="0" allowfullscreen></iframe>
 

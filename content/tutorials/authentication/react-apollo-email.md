@@ -27,54 +27,54 @@ related:
 In this guide we will have a closer look at how auth providers and the permission system tie together when using a Graphcool project.
 You will learn how to configure email authentication in combination with React and Apollo to handle user login and sign up and what permission setup is needed to get started with authentication.
 
-> If you want to follow along, make sure to finish the [introduction guide](!alias-thaeghi8ro) on how to set up a GraphQL backend in less than 5 minutes.
+In this Instagram clone, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, he has to enter his email, password and name and state if he is interested in notification emails.
 
-We will build a similar Instagram clone application as before, but add a few changes. In this application, everyone will be able to see posts but only authenticated users should be able to create new posts. When a new user signs up, he has to enter his email, password and name and state if he is interested in notification emails.
-
-> You can find the complete [example on GitHub](https://github.com/graphcool-examples/react-apollo-email-example).
-
-## 1. Setting up the project
-
-In the [console](https://console.graph.cool), let's create a new project so we can freely experiment with email-based authentication.
-
-### 1.1 Enabling email authentication
-
-Head over to the `User` type of your new project, select *Configure Auth Providers* and enable email authentication.
-
-### 1.2 Setting up the data schema
-
-As before, we want to create a `Post` type which the String fields `imageUrl` and `description`.
-In order to do that, please open your [console](https://console.graph.cool) and add a new type called `Post`.
-
-![](../../images/building-instagram-in-5-minutes-model.gif)
-
-Now create the fields `imageUrl` and `description` of type String.
-
-![](../../images/building-instagram-in-5-minutes-field.gif)
-
-We also add two required fields to the `User` type. Go to your `User` type and create the two required fields `emailSubscription` of type boolean and `name` of type String.
-
-### 1.3 Setting the permissions
-
-To make our application behave correctly we have to setup permissions for the `Post` and `User` type in our project.
+> You can find the complete [example on GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/authentication-with-email-and-apollo).
 
 
-As we want to restrict the creation of posts only to `AUTHENTICATED` users, we have to create the according permission for `Create Node` on the `Post` type.
+## 1. Setting up the Graphcool project
 
-![](./create-post-permissions.png)
+### 1.1 Creating the Project
 
-To allow everyone to see posts, we have to add a `EVERYONE` permissions for `View Data` as well.
-Make sure that these two permissions are the only enabled ones, otherwise the final permissions might be too restrictive or too relaxed.
+The app will use the following data model:
 
-![](./post-permissions.png?width=350)
+```graphql
+type Post {
+  description: String!
+  imageUrl: String!
+}
 
-As we want to allow `EVERYONE` to signup, we create the according `Create Node` permission on the `User` type.
+type User {
+  name: String!
+  emailAddress: String!
+  emailSubscription: Boolean!
+}
+```
 
-![](./create-user-permissions.png?width=350)
+You can create the project using the [Graphcool CLI](https://www.npmjs.com/package/graphcool):
 
-We also allow `EVERYONE` to view users by creating a new permission for `View Data`.
+```sh
+# Install the Graphcool CLI
+npm install -g graphcool
 
-![](./user-permissions.png?width=350)
+# Create new project
+graphcool init --schema https://graphqlbin.com/insta-auth0.graphql
+```
+
+
+### 1.2 Setting the permissions
+
+To make our application behave correctly we have to setup permissions for the `Post` type in our project.
+
+As we want to restrict the creation of posts only to _authenticated_ users, we have to create the according permission for `CREATE` on the `Post` type.
+
+![](./img/create-post-permissions.png?width=500)
+
+
+### 1.3 Enabling email authentication
+
+In the [console](https://console.graph.cool), open the **Integrations** tab in the side-menu and click on the **Email-Password Auth** integration. Then simply click **Enable** in the popup.
+
 
 ## 2. Building the application
 
@@ -84,6 +84,7 @@ That's it, we are done configuring the project and we can start working on our f
 
 We will use [Apollo Client](http://dev.apollodata.com/) to make GraphQL requests in our React application.
 In Graphcool, requests are authenticated using the `Authorization` header. That's why we include it in every request if the user already signed in. We can use `applyMiddleware` on the `networkInterface` to accomplish this:
+
 ```js
 // in src/index.js
 const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__' })
@@ -149,10 +150,10 @@ const userQuery = gql`
   }
 `
 
-export default graphql(userQuery, { options: {forceFetch: true }})(withRouter(App))
+export default graphql(userQuery, { options: {fetchPolicy: 'network-only' }})(withRouter(App))
 ```
 
-We use the option `forceFetch` here to make sure we are querying the user every time from the server and don't use Apollo Client's cache for this particular query. We can use the user query to determine the rendering of our main app:
+We set the option `fetchPolicy` to `network-only` to make sure we are querying the user every time from the server and don't use Apollo's cache for this particular query. We can use the user query to determine the rendering of our main app:
 
 ```js
 // in src/components/App.js
@@ -164,6 +165,7 @@ _isLoggedIn = () => {
 ```
 
 To log out, we can simply remove the authentication token from local storage and reload to cleanly reset Apollo Client's cache:
+
 ```js
 _logout = () => {
 // in src/components/App.js
@@ -214,14 +216,14 @@ const userQuery = gql`
 `
 
 export default graphql(createUser, {name: 'createUser'})(
-  graphql(userQuery, { options: { forceFetch: true }})(
+  graphql(userQuery, { options: { fetchPolicy: 'network-only' }})(
     graphql(signinUser, {name: 'signinUser'})(
       withRouter(CreateUser))
     )
 )
 ```
 
-Note that we again use the query option `forceFetch` to ensure that the query is actually sent to the GraphQL server, instead of using a potential cached version of the user.
+Note that we again use the query option `fetchPolicy` to ensure that the query is actually sent to the GraphQL server, instead of using a potential cached version of the user.
 
 Then we can focus on the `render` method of the `CreateUser` component. Here, we make a few checks to verify that
 
@@ -247,6 +249,7 @@ render () {
 ```
 
 If data has finished loading and no user is already logged in, we render the input elements needed for the sign up form. If the user entered the needed information, we additionally render a button to finish the sign up:
+
 ```js
 // in src/components/CreateUser.js
 render () {
@@ -308,7 +311,7 @@ const userQuery = gql`
 `
 
 export default graphql(signinUser, {name: 'signinUser'})(
-  graphql(userQuery, { options: { forceFetch: true }})(withRouter(CreateLogin))
+  graphql(userQuery, { options: { fetchPolicy: 'network-only' }})(withRouter(CreateLogin))
 )
 ```
 
@@ -353,11 +356,11 @@ const userQuery = gql`
 `
 
 export default graphql(createPost)(
-  graphql(userQuery, { options: { forceFetch: true }} )(withRouter(CreatePost))
+  graphql(userQuery, { options: { fetchPolicy: 'network-only' }} )(withRouter(CreatePost))
 )
 ```
 
-Again, we are using `forceFetch` for the user query to ensure we don't use Apollo's cache for this query. We use this query again to check if the user is signed in or not and redirect to `/` if the user is not signed in:
+Again, we are using `fetchPolicy` for the user query to ensure we don't use Apollo's cache for this query. We use this query again to check if the user is signed in or not and redirect to `/` if the user is not signed in:
 
 ```js
 // in src/components/CreatePost.js
@@ -375,7 +378,7 @@ If the user is signed in and once the data has finished loading, we render two t
 
 ## 3. Try it out yourself
 
-If you want to run the example on your own and experiment a bit with the a application yourself, checkout the code at [GitHub](https://github.com/graphcool-examples/react-apollo-email-example). If you've already setup the data schema and email-based authentication for your project, you only have to inject your simple API endpoint in `src/index.js` and run `yarn && yarn start` and you're good to go!
+If you want to run the example on your own and experiment a bit with the a application yourself, checkout the code at [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/authentication-with-email-and-apollo). If you've already setup the data schema and email-based authentication for your project, you only have to inject your simple API endpoint in `src/index.js` and run `yarn && yarn start` and you're good to go!
 
 Make sure to try things that shouldn't be allowed, like visiting the `/create` route without being logged in or using a fake `graphcoolToken` in local storage. Have fun!
 
@@ -383,6 +386,4 @@ Make sure to try things that shouldn't be allowed, like visiting the `/create` r
 
 Great, you set up everything that's needed for authentication in your Graphcool project, built a React application that uses Apollo to let user sign up or login and let them see or create posts.
 
-As a next step, you could create a relation between `User` and `Post` and associate posts with their author. Find out more about relations in [this guide](!alias-daisheeb9x).
-
-You can also [send notification emails using mutation callbacks, webtask and Mailgun](!alias-saigai7cha) or [trigger Slack notifications using mutation callbacks and Zapier](!alias-dah6aifoce).
+Have a look at other [advanced features](!alias-ped6wohw0o).

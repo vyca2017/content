@@ -1,6 +1,7 @@
 ---
 alias: eath7duf7d
 path: /docs/tutorials/advanced-features
+preview: advanced-features.png
 layout: TUTORIAL
 description: Learn about advanced capabilities of the Graphcool API
 tags:

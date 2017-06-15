@@ -138,12 +138,12 @@ Whenever our schema contains relations that express ownership, we need to make s
 #### Permission Query
 
 ```graphql
-query permitCreateDocuments($user_id: ID!, $ownerUserId: ID!) {
+query permitCreateDocuments($user_id: ID!, $ownerUser_id: ID!) {
   someUserExists(filter: {
     AND: [{
       id: $user_id
     }, {
-      id: $ownerUserId
+      id: $ownerUser_id
     }, {
       role: EDITOR
     }]
@@ -151,11 +151,11 @@ query permitCreateDocuments($user_id: ID!, $ownerUserId: ID!) {
 }
 ```
 
-Because we want to express two conditions on the `id` variable, we need to use the logical operator `AND`. Then we check that the two variables `$user_id` (the logged-in user) and `$ownerUserId` (the owner-to-be of the document) are the same. To only allow editors executing this operation, we add the `role: EDITOR` condition as well.
+Because we want to express two conditions on the `id` variable, we need to use the logical operator `AND`. Then we check that the two variables `$user_id` (the logged-in user) and `$ownerUser_id` (the owner-to-be of the document) are the same. To only allow editors executing this operation, we add the `role: EDITOR` condition as well.
 
 ### Moderators and admins can assign anyone as the document owner
 
-This is another permission on the `DocumentOwner` relation. But because moderators and admins can assign anyone as the owner of a document, we don't need the `$ownerUserId` variable in this case.
+This is another permission on the `DocumentOwner` relation. But because moderators and admins can assign anyone as the owner of a document, we don't need the `$ownerUser_id` variable in this case.
 
 #### Permission Parameters
 
@@ -387,4 +387,4 @@ query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
 
 Permission queries combine the simplicity and expressiveness of GraphQL queries with common authorization design patterns, allowing developers to specify complex permission setups in a straight-forward way.
 
-Thinking in terms of the concepts of role-based, relation-based and owner-based permissions helps when designing the permissions for your application. If you need help with your authorization configuration, feel free to [reach out in the forum](https://www.graph.cool/forum/c/platform).
+Thinking in terms of the concepts of role-based, relation-based and owner-based permissions helps when designing the permissions for your application. If you need help with your authorization configuration, feel free to [reach out in the forum](https://graph.cool/forum/c/platform).
