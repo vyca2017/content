@@ -68,7 +68,7 @@ The strongly typed nature of GraphQL ties in particularly well with other strong
 
 ## Reading Data
 
-### Limited options for retrieving data with firebase
+### Limited options for retrieving data with Firebase
 
 The most common way of reading data in Firebase is by using the [Firebase SDK](https://firebase.google.com/docs/reference/). No matter which platform you're using, you usually have to perform the following steps to retrieve data from the Firebase DB:
 
@@ -123,7 +123,7 @@ This query asks for all the tweets that are currently stored in the database. Th
 }
 ```
 
-Another way of looking at a GraphQL query is as a *selection of JSON fields*. The query has the same *shape* as the JSON response, so it can be seen as a JSON object that has *only* *keys* but* no values*.
+Another way of looking at a GraphQL query is as a *selection of JSON fields*. The query has the same *shape* as the JSON response, so it can be seen as a JSON object that has *only* *keys* but *no values*.
 
 This simple query already gives an idea about the power of GraphQL queries when it comes to retrieving *nested* information. In the above example above, we're only going one level deep by following the relation from `User` to `Tweet` (via the `author` field). However, we could extend the query and also ask for the last three followers of each `author`:
 
