@@ -1,6 +1,6 @@
 ---
 alias: aetoh3vad6
-path: /docs/reference/cli/commands/creating-and-cloning-projects
+path: /docs/reference/cli/commands/creating-and-copying-projects
 layout: REFERENCE
 description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
 tags:
@@ -10,7 +10,7 @@ related:
   more:
 ---
 
-# Creating and Cloning Projects
+# Creating and Copying Projects
 
 You can use `graphcool init` to create and copy projects. This will create a new [`project.graphcool` file](!alias-ow2yei7mew) in the current folder.
 
