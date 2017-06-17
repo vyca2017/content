@@ -121,6 +121,9 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/artyomc/" target="_blank">
   <img src="https://github.com/artyomc.png?size=64" width="64" height="64" alt="artyomc">
 </a>
+<a href="https://github.com/dpetrick/" target="_blank">
+  <img src="https://github.com/dpetrick.png?size=64" width="64" height="64" alt="dpetrick">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
