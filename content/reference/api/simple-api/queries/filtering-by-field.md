@@ -143,7 +143,7 @@ query {
 ```
 
 
-* For to-many relations, three additional arguments are avaiable: `every`, `some` and `none`, to define that a condition should match every, some or none related nodes.
+* For to-many relations, three additional arguments are available: `every`, `some` and `none`, to define that a condition should match every, some or none related nodes.
 
 > Query all users that have at least one published post
 
