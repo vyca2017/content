@@ -87,14 +87,14 @@ Let's have a look at a simple permission query:
 
 ```graphql
 query permitViewDocuments($node_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     published: true
   })
 }
 ```
 
-Here we use the `someDocumentExists` query to check if a given node of type `Document` (identified by `$node_id`) is published. Only then `someDocumentExists` returns `true`, and the operation is matched by this permission.
+Here we use the `SomeDocumentExists` query to check if a given node of type `Document` (identified by `$node_id`) is published. Only then `SomeDocumentExists` returns `true`, and the operation is matched by this permission.
 
 There are three broad categories of commonly used permission types that enable extremely powerful authorization rules when combined. Let's have a closer look!
 
@@ -116,14 +116,14 @@ Most role-based permission do not depend on the specific state of the node, or t
 
 ```graphql
 query permitViewDocuments($user_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     id: $user_id
     role: ADMIN
   })
 }
 ```
 
-In this case, we use the `someUserExists` query to check if the session user (identified by the `$user_id` variable) has the `ADMIN` role. We don't use `someDocumentExists` because the document is irrelevant in this case.
+In this case, we use the `SomeUserExists` query to check if the session user (identified by the `$user_id` variable) has the `ADMIN` role. We don't use `SomeDocumentExists` because the document is irrelevant in this case.
 
 ### Editors can only assign themselves as the document owner
 
@@ -139,7 +139,7 @@ Whenever our schema contains relations that express ownership, we need to make s
 
 ```graphql
 query permitCreateDocuments($user_id: ID!, $ownerUser_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     AND: [{
       id: $user_id
     }, {
@@ -167,7 +167,7 @@ This is another permission on the `DocumentOwner` relation. But because moderato
 
 ```graphql
 query permitCreateDocuments($user_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     id: $user_id
     role_in: [ADMIN, MODERATOR]
   })
@@ -188,7 +188,7 @@ This is a `role-based` permission that only acts on a subset of the available fi
 
 ```graphql
 query permitUpdateDocuments($user_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     id: $user_id
     role_in: [ADMIN, MODERATOR]
   })
@@ -209,7 +209,7 @@ Another *role-based* permission.
 
 ```graphql
 query permitDeleteDocuments($user_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     id: $user_id
     role: ADMIN
   })
@@ -236,7 +236,7 @@ Access control lists are a common concept when defining authorization because th
 
 ```graphql
 query permitViewDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     accessGroups_some: {
       accessLevel: READ
@@ -248,11 +248,11 @@ query permitViewDocuments($node_id: ID!, $user_id: ID!) {
 }
 ```
 
-Here we use relational filters, starting with the `someDocumentExists` query, to check if the document to be viewed (identified by `$node_id`) is connected to an access group with `READ` access that the session user (identified by `$user_id`) is connected to as well. Note that we can also turn the query around, starting with `someUserExists`:
+Here we use relational filters, starting with the `SomeDocumentExists` query, to check if the document to be viewed (identified by `$node_id`) is connected to an access group with `READ` access that the session user (identified by `$user_id`) is connected to as well. Note that we can also turn the query around, starting with `SomeUserExists`:
 
 ```graphql
 query permitViewDocuments($node_id: ID!, $user_id: ID!) {
-  someUserExists(filter: {
+  SomeUserExists(filter: {
     id: $user_id
     accessGroups_some: {
       accessLevel: READ
@@ -278,7 +278,7 @@ Here we follow the relation from the other side of the path, starting at the use
 
 ```graphql
 query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     accessGroups_some: {
       accessLevel: UPDATE
@@ -302,7 +302,7 @@ query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
 
 ```graphql
 query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     accessGroups_some: {
       accessLevel: DELETE
@@ -330,7 +330,7 @@ Finally, a special case for relation-based permissions are **owner-based permiss
 
 ```graphql
 query permitViewDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     owner: {
       id: $user_id
@@ -339,7 +339,7 @@ query permitViewDocuments($node_id: ID!, $user_id: ID!) {
 }
 ```
 
-Here, we use the `someDocumentExists` query and combine it with the `$node_id` and `$user_id` variables to ensure that the current node to be queried is owned by the logged-in user.
+Here, we use the `SomeDocumentExists` query and combine it with the `$node_id` and `$user_id` variables to ensure that the current node to be queried is owned by the logged-in user.
 
 ### The owner of a document can edit it
 
@@ -353,7 +353,7 @@ Here, we use the `someDocumentExists` query and combine it with the `$node_id` a
 
 ```graphql
 query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     owner: {
       id: $user_id
@@ -374,7 +374,7 @@ query permitUpdateDocuments($node_id: ID!, $user_id: ID!) {
 
 ```graphql
 query permitDeleteDocuments($node_id: ID!, $user_id: ID!) {
-  someDocumentExists(filter: {
+  SomeDocumentExists(filter: {
     id: $node_id
     owner: {
       id: $user_id
