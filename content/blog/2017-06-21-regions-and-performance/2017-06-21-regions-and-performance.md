@@ -116,9 +116,9 @@ In our old architecture, we kept a JSON serialized version of the schema cached 
 
 In the new architecture, we are moving the schema cache into the API servers themselves. This reduces network overhead and enables us to keep the GraphQL server warm between requests.
 
-### Results
+### Average response times are 80ms faster
 
-A graph of *50-percentile server side latency* gives a good indication of what kind of latency we should expect from simple queries, such as retrieving a single node or querying the first 10 nodes in a relation. The graph shows how this latency went down after we flipped the switch and enabled the infrastructure improvements at 6 PM, June 17: 
+A graph of *50-percentile server side latency* gives a good indication of what kind of latency we should expect from simple queries, such as retrieving a single node or querying the first 10 nodes in a relation. The graph shows how this latency went down after we flipped the switch and enabled the infrastructure improvements at 6 PM, June 17.
 
 ![](http://imgur.com/YZ29oDF.png)
 
@@ -130,6 +130,6 @@ The following graph shows the *average response time* across all queries on Grap
 
 As you can see, the average performance for these complex queries varies over time. The June 17 release reduced average response time from 180ms to 100ms.
 
-### Future
+### More improvements to come
 
 Over the next half year we will introduce more tools that help you analyse and tune performance of your queries. At the same time we are continuously working to make sure Graphcool delivers the best possible baseline performance. Stay tuned!
