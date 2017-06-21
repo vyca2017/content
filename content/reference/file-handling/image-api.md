@@ -14,7 +14,7 @@ related:
 
 The Image API provides a very thin layer on top of the File API for image transformations.
 
-Note that the Image API is work in progress. The Image API does not support image caching and only images up to 25MB can be transformed, and final results up to 6MB can be downloaded.
+Once an image has been calculated, it is persisted at the respective URL. Calling it again will not initiate another calculation. Only images up to 25MB can be transformed, and final results up to 6MB can be downloaded.
 
 The base URL of a supported image uploaded through the File API is:
 

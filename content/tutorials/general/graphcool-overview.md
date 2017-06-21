@@ -96,7 +96,7 @@ Note that this also works for _local files_:
 graphcool init --schema ./instagram.graphl
 ```
 
-Sometimes it's helpful to copy (or _clone_) an existing project, this can be done using by passing the `--copy` option to `init`:
+Sometimes it's helpful to copy an existing project, this can be done using by passing the `--copy` option to `init`:
 
 ```sh
 graphcool init --copy cj2m5hoko73t901758a052m5q

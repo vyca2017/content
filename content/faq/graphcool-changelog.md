@@ -17,8 +17,13 @@ related:
 
 ## Week 24 (June 12 - June 18)
 
-* The [Image API](!alias-atiede8ata) is now production ready.
-* The [Graphcool CLI](https://github.com/graphcool/graphcool-cli/) shows more information for invalid commands and received multiple bug fixes. [Full Release Notes](https://github.com/graphcool/graphcool-cli/releases/tag/v1.1.0).
+* The [Subscription API](!alias-aip7oojeiv) has been upgraded to the protocol specified in [the latest version `0.7` of `subscription-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws/releases). Thanks to the Apollo team for the great work! 💪
+* The [Image API](!alias-atiede8ata) is now production ready. 🤳
+* The [Graphcool CLI](https://github.com/graphcool/graphcool-cli/) shows more information for invalid commands and received multiple bug fixes. [Full Release Notes](https://github.com/graphcool/graphcool-cli/releases/tag/v1.1.0). Additionally, the CLI now provides a browserless sign in. You can obtain the necessary token in your [project settings](!alias-aechi6iequ).
+* A lot of useful resources have been added this week by our great community! 🎉
+  * The [functions repository](https://github.com/graphcool-examples/functions) now contains example Graphcool Functions for sending an email with SendGrid, image transformations with Cloudinary, using the Google Geocode API to address information and a small Stripe integration that is setup with Webpack and Babel to allow ES6 and async/await capabilities. Special thanks to the contributing members of the community [@heymartinadams](https://github.com/heymartinadams), [@kuldarkalvik](https://github.com/kuldarkalvik) and [@yusinto](https://github.com/yusinto). ⚡️
+  * In this week's [Graphcool Webinar](https://www.youtube.com/watch?v=MT2czo5U7x4), Hackages present an app that they are preparing for a workshop.
+  * The [latest tutorial on Relay Modern](!alias-ujaesaen0s) gives insights into the @connection directive that's now needed when querying lists with Relay.
 
 ## Week 23 (June 5 - June 11)
 

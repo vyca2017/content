@@ -10,7 +10,7 @@ related:
   more:
 ---
 
-# Graphcool CLI
+# CLI
 
 You can use the Graphcool CLI to manage your Graphcool projects and run schema migrations.
 
