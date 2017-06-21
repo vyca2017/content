@@ -2,7 +2,6 @@
 alias: she7yaab6l
 path: /docs/blog/introducing-regions-and-better-performance
 layout: BLOG
-preview: serverless-graphql-backend.png
 publication_date: '2017-06-21'
 description: Introducing Regions and improved API Performance
 tags:
