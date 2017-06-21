@@ -26,7 +26,7 @@ One of the most requested features from our customers was the ability to have co
 
 Due to the high demand, we now added two more regions that customers can choose from: _US West (Oregon)_ and _Asia Pacific (Tokyo)_. We've rolled out this feature over the last few months for some of our beta testers and are finally making it available for everybody today!
 
-![](http://imgur.com/tsdZCGJ.png)
+![](regions.png)
 
 > Creating your Graphcool project in a region close to your customers can dramatically increase the performance of your app.
 
@@ -72,7 +72,7 @@ When talking about global network routing, it is important to realise that the p
 
 Let's consider an example. If the primary region for your project is *US West*, a user located in France might be routed depicted in this image:
 
-![](http://imgur.com/F4KkHtp.png)
+![](forwarding.png)
 
 Graphcool operates an optimised CDN with more than 50 nodes all over the world. In our example above, the request is routed to the closest CDN node in Paris.
 
