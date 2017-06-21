@@ -3,7 +3,8 @@ alias: she7yaab6l
 path: /docs/blog/introducing-regions-and-better-performance
 layout: BLOG
 publication_date: '2017-06-21'
-description: Introducing Regions and improved API Performance
+description: Introducing new global data regions and improved API performance
+preview: preview.png
 tags:
   - regions
   - performance
@@ -33,7 +34,7 @@ Due to the high demand, we now added two more regions that customers can choose 
 
 When creating a new project in the [Graphcool Console](https://console.graph.cool/), you can now choose in which *region* the data should be stored. We also provide a recommendation as to which one might be the fastest for you. This is based on response times of a request from your machine to the corresponding datacenter:
 
-![](new_project.png?width=300)
+![](new-project.png?width=300)
 
 If you use the [Graphcool CLI](https://www.graph.cool/docs/reference/cli/overview-kie1quohli/), you can add the `--region` flag when creating a new project:
 
