@@ -271,4 +271,43 @@ mutation createMoonlight($releaseDate: DateTime!, $title: String!, $actors: [Mov
 }
 ```
 
+## Using GraphQL Variales for String Escaping
+
+GraphQL variables are great to save cumbersome String interpolaton and escaping. In the Playground, we actually need to escape the double quotes in the movie title:
+
+```graphql
+mutation createMovie($releaseDate: DateTime!, $title: String!) {
+  createMovie(
+    releaseDate: $releaseDate
+    title: $title
+  ) {
+    id
+  }
+}
+---
+{
+  "title": "The \"Real" Question",
+  "releaseDate": "2017-06-13"
+}
+```
+
+However, using a GraphQL client (and not the Playground), we can save this additional escaping step. For example, with [`graphql-request`](), we can run
+
+```js
+const query = `mutation createMovie($releaseDate: DateTime!, $title: String!) {
+  createMovie(
+    releaseDate: $releaseDate
+    title: $title
+  ) {
+    releaseDate
+  }
+}`
+
+const variables = {
+  title: 'The "Real" Question'
+}
+
+request('https://api.graph.cool/simple/v1/cixos23120m0n0173veiiwrjr', query, variables).then(data => console.log(data))
+```
+
 GraphQL variables are versatile and flexible, making them a useful tool when writing GraphQL queries.
