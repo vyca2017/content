@@ -13,7 +13,7 @@ tags:
 
 # New Regions and Improved Performance
 
-At Graphcool, we continuously invest in *new features* such as our [powerful permission system](!alias-oolooch8oh/) or the integration of [serverless functions](!alias-teko4ab8za/#implementing-business-logic-with-functions). However, we're also committed to making sure that we are delivering the *best possible performance* for our customers!
+At Graphcool, we continuously invest in new features such as our [powerful permission system](!alias-oolooch8oh/) or the integration of [serverless functions](!alias-teko4ab8za/#implementing-business-logic-with-functions). However, we're also committed to making sure that we are delivering the best possible performance for our customers!
 
 We have a lot of performance improvements planned for the next couple of months. Today, we are happy to announce two recent changes to our infrastructure that will be a first step in that direction and significantly improve the response times for your apps:
 
@@ -22,13 +22,13 @@ We have a lot of performance improvements planned for the next couple of months.
 
 ## Regions
 
-One of the most requested features from our customers was the ability to have control over the [region](https://aws.amazon.com/about-aws/global-infrastructure/) where their application data is stored. Until recently, all data of Graphcool projects would be stored in the _EU (Ireland)_ region.
+One of the most requested features from our customers was the ability to have control over the [region](https://aws.amazon.com/about-aws/global-infrastructure/) where their application data is stored. Until recently, all data of Graphcool projects was stored in the _EU (Ireland)_ region.
 
-Due to the high demand, we now added two more regions that customers can choose from: _US West (Oregon)_ and _Asia Pacific (Tokyo)_. We've rolled out this feature over the last few months for some of our beta testers and are finally making it available for everybody today!
+Due to high demand, we now added two more regions that customers can choose from: _US West (Oregon)_ and _Asia Pacific (Tokyo)_. We've rolled out this feature over the last few months for some of our beta testers and are finally making it available for everybody today!
 
 ![](./regions.png)
 
-> Creating your Graphcool project in a region close to your customers can dramatically increase the performance of your app.
+> Creating your Graphcool project in a region close to your customers can dramatically increase performance of your app.
 
 ### How does it work?
 
@@ -70,7 +70,7 @@ The Graphcool global network has 3 layers:
 
 When talking about global network routing, it is important to realise that the public internet is relatively slow and has a high variance in latency. The first step towards providing low and predictable latency is to route the request to our infrastructure as soon as possible.
 
-Let's consider an example. If the primary region for your project is *US West*, a user located in France might be routed depicted in this image:
+Let's consider an example. If the primary region for your project is *US West*, a user located in France might be routed as depicted in this image:
 
 ![](./forwarding.png)
 
@@ -100,7 +100,7 @@ We rely heavily on Docker to deploy and scale individual services. As you can se
 
 If you have previously created your own GraphQL server with a framework like [graphql-js](https://github.com/graphql/graphql-js) or [Sangria](https://github.com/sangria-graphql/sangria), you know that you have to define the capabilities of your API upfront in the form of a *GraphQL schema*. In effect, that schema is defined at compile-time and instantiated once when the server boots up. With Graphcool, the situation is a bit different since we support schema migrations to *live projects*. We thus needed to implement a more sophisticated system.
 
-API servers in the Project Cluster coordinate with the Schema API to make sure they always expose the most recent version of the GraphQL schema. By optimising this coordination process, we were able to reduce the baseline latency to one third of what it was before. Read on for the details!
+API servers in the Project Cluster coordinate with the Schema API to make sure they always expose the most recent version of the GraphQL schema. By optimising this coordination process, we were able to reduce the baseline latency to one third of what it was before. Read on for details!
 
 ## Improved API Performance
 
