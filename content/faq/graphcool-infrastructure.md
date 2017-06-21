@@ -19,11 +19,12 @@ Graphcool runs on highly scalable cloud infrastructure provided by AWS and is ba
 
 ## Infrastructure
 
-Currently, all projects are hosted in Amazon's `eu-west-1` datacenter located in Ireland. Datacenters in the US and Asia are [coming soon](https://github.com/graphcool/feature-requests/issues/61).
+Graphcool projects are hosted in a primary region (either one of Amazon's `eu-west-1`, `us-west-2`, `ap-northeast-1` datacenters). Here's [a broader overview of the infrastructure employed at Graphcool](!alias-she7yaab6l/).
+
 
 * **Data Storage:** Your data is persisted in a high-availability cluster of [AWS Aurora](https://aws.amazon.com/rds/aurora/) databases combined with a Redis-powered caching layer.
 
-* **File Storage:** Your uploaded files are securely stored in [Amazon S3](https://aws.amazon.com/s3/) and can be accessed through a fast CDN.
+* **File Storage:** Your uploaded files are securely stored in [Amazon S3](https://aws.amazon.com/s3/) and can be accessed through a fast CloudFront CDN.
 
 * **Business Logic:** Most of our business logic, such as the sign up workflow, is implemented as serverless functions and deployed to [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html).
 
