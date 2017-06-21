@@ -14,7 +14,7 @@ tags:
 
 At Graphcool, we continuously invest in *new features* such as our [powerful permission system](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries-oolooch8oh/) or the integration of [serverless functions](https://www.graph.cool/blog/2017-05-16-introducing-a-cli-functions-teko4ab8za/#implementing-business-logic-with-functions). However, we're also committed to making sure that we are delivering the *best possible performance* for our customers!
 
-We have a lot of performance improvements planned for the next couple of months. Today, we are happy to announce two recent changes to our infrastructure that will be a first step in that direction and significantly increase the numberonse times for your apps:
+We have a lot of performance improvements planned for the next couple of months. Today, we are happy to announce two recent changes to our infrastructure that will be a first step in that direction and significantly improve the response times for your apps:
 
 1. Selection of data regions
 2. Improved API performance
