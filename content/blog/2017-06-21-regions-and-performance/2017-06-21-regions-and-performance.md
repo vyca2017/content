@@ -13,7 +13,7 @@ tags:
 
 # New Regions and Improved Performance
 
-At Graphcool, we continuously invest in *new features* such as our [powerful permission system](https://www.graph.cool/blog/2017-04-25-graphql-permission-queries-oolooch8oh/) or the integration of [serverless functions](https://www.graph.cool/blog/2017-05-16-introducing-a-cli-functions-teko4ab8za/#implementing-business-logic-with-functions). However, we're also committed to making sure that we are delivering the *best possible performance* for our customers!
+At Graphcool, we continuously invest in *new features* such as our [powerful permission system](!alias-oolooch8oh/) or the integration of [serverless functions](!alias-teko4ab8za/#implementing-business-logic-with-functions). However, we're also committed to making sure that we are delivering the *best possible performance* for our customers!
 
 We have a lot of performance improvements planned for the next couple of months. Today, we are happy to announce two recent changes to our infrastructure that will be a first step in that direction and significantly improve the response times for your apps:
 
@@ -36,7 +36,7 @@ When creating a new project in the [Graphcool Console](https://console.graph.coo
 
 ![](new-project.png?width=300)
 
-If you use the [Graphcool CLI](https://www.graph.cool/docs/reference/cli/overview-kie1quohli/), you can add the `--region` flag when creating a new project:
+If you use the [Graphcool CLI](!alias-kie1quohli/), you can add the `--region` flag when creating a new project:
 
 ```sh
 graphcool init --region us-west-2
