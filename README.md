@@ -124,6 +124,9 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/dpetrick/" target="_blank">
   <img src="https://github.com/dpetrick.png?size=64" width="64" height="64" alt="dpetrick">
 </a>
+<a href="https://github.com/kandros/" target="_blank">
+  <img src="https://github.com/kandros.png?size=64" width="64" height="64" alt="kandros">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
