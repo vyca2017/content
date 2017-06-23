@@ -12,6 +12,10 @@ related:
 
 # Error Handling for Functions
 
+Graphcool Functions follow a unified concept for error handling.
+
+> To return an error from a webhook function, it's important **to respond with status code 200**!
+
 ## Provoking an error
 
 By returning an object that contains an `error` property, you can populate errors from your functions. If your function is called as part of the [request pipeline](!alias-pa6guruhaf), further processing of the incoming request is aborted.
