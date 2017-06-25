@@ -185,7 +185,7 @@ class CreatePage extends React.Component {
 export default withRouter(CreatePage)
 ```
 
-* `Post` in `src/componens/Post.js` to display and delete a single post
+* `Post` in `src/components/Post.js` to display and delete a single post
 
 ```js
 import React from 'react'
