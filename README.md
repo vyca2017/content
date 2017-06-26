@@ -127,6 +127,12 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/kandros/" target="_blank">
   <img src="https://github.com/kandros.png?size=64" width="64" height="64" alt="kandros">
 </a>
+<a href="https://github.com/MacsDickinson/" target="_blank">
+  <img src="https://github.com/MacsDickinson.png?size=64" width="64" height="64" alt="MacsDickinson">
+</a>
+<a href="https://github.com/dervos/" target="_blank">
+  <img src="https://github.com/dervos.png?size=64" width="64" height="64" alt="dervos">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
