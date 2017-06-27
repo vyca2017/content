@@ -15,6 +15,12 @@ related:
 
 # Changelog
 
+## Week 25 (June 19 - June 25)
+
+* Graphcool [now runs in multiple regions](!alias-she7yaab6l) and performance improvements reduced response times by 80ms on average! 🏇
+* We fixed a problem with [the File API](!alias-eer4wiang0) when renaming files.
+* We added a [description of all available filter options](!alias-aephaimu5n#explore-available-filter-criteria) to the GraphQL schema of the GraphQL APIs.
+
 ## Week 24 (June 12 - June 18)
 
 * The [Subscription API](!alias-aip7oojeiv) has been upgraded to the protocol specified in [the latest version `0.7` of `subscription-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws/releases). Thanks to the Apollo team for the great work! 💪
