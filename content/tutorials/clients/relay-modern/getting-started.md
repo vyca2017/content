@@ -482,7 +482,7 @@ Finally, you also need to delete the mock data you used to render the posts befo
 
 ```js
 {this.props.viewer.allPosts.edges.map(({node}) =>
-  <Post key={node.id} post={node} />
+  <Post key={node.__id} post={node} />
 )}
 ```
 
