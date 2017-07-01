@@ -34,9 +34,9 @@ type User {
   createdAt: DateTime!
   updatedAt: DateTime!
   username: String!
-  followers: [User] @relation(name: "Following")
-  follows: [User] @relation(name: "Following")
-  tweets: [Tweet] @relation(name: "UserTweets")
+  followers: [User!]! @relation(name: "Following")
+  follows: [User!]! @relation(name: "Following")
+  tweets: [Tweet!]! @relation(name: "UserTweets")
 }
 
 type Tweet {

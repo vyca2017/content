@@ -3,7 +3,7 @@ alias: ofee7eseiy
 path: /docs/reference/simple-api/one-to-many-edges
 layout: REFERENCE
 shorttitle: Modifying one-to-many edges
-description: Modify edges for one-to-many relations with the Relay API and connect or disconnect two nodes in your GraphQL backend.
+description: Modify edges for one-to-many relations with the Simple API and connect or disconnect two nodes in your GraphQL backend.
 simple_relay_twin: ek8eizeish
 tags:
   - simple-api
@@ -15,7 +15,7 @@ related:
     - ahwoh2fohj
     - zeich1raej
     - goh5uthoc1
-  more:    
+  more:
     - chietu0ahn
 ---
 
