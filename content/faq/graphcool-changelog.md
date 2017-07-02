@@ -15,6 +15,20 @@ related:
 
 # Changelog
 
+## Week 26 (June 26 - July 2)
+
+* [API](!alias-heshoov3ai)
+  * The pagination information for connections in [the Relay API](!alias-aizoong9ah) has been fixed.
+  * When the input argument of a [nested mutation](!alias-yoo8vaifoa) is null or otherwise invalid, an error message is now returned and the outer mutation is cancelled.
+* [Migrations](!alias-paesahku9t)
+  * The behaviour when [changing the type of a scalar field](!alias-ahv6rohnge#changing-the-type-of-an-existing-field) has been unified.
+  * Fixed a problem when migrating a String field to an enum.
+  * Fixed several edge cases with migration and default values for enums.
+* Resources and Community Contributions
+  * A [new episode of GraphQL Radion is available](https://www.youtube.com/watch?v=Gxag5PXGXN8), this time with Jordan Husney and Matthew Krick from Parabol. Discussed topics include adopting GraphQL, GraphQL Subscriptions and RethinkDB for real time support.
+  * Several [plugins to the File API using Graphcool Functions](https://github.com/graphcool-examples/functions/tree/master/file-proxy) have been collected and provided by community member [@kbrandwijk](https://github.com/kbrandwijk), and reviewed by community member [@yusinto](https://github.com/yusinto). Thanks for your contributions! 💯
+  * Community member [@derBingle](https://github.com/derBingle/) shared his cool [Graphcool Electron App](https://www.graph.cool/forum/t/nativefied-graphcool-console/277/1) in the forums. 😎
+
 ## Week 25 (June 19 - June 25)
 
 * Graphcool [now runs in multiple regions](!alias-she7yaab6l) and performance improvements reduced response times by 80ms on average! 🏇
