@@ -2,10 +2,10 @@
 alias: oof5shiej3
 path: /docs/faq/node-json-fields
 layout: FAQ
-description: Using node and Lokka you can easily create Json data. By using GraphQL variables and JSON stringify, we do not need to escape the data.
+description: Using node and graphql-request you can easily create JSON data with GraphQL. By using GraphQL variables and we do not need to escape the data.
 tags:
   - scripts
-  - lokka
+  - graphql-request
   - node
   - open-source
 related:
@@ -17,12 +17,10 @@ related:
     - thaexex7av
 ---
 
-# Creating Json data with GraphQL and Lokka
+# Creating Json data with GraphQL
 
 With `node` it's simple to create Json data.
-Using [Lokka](https://github.com/kadirahq/lokka), we can combine GraphQL variables with `JSON.stringify` and don't need to escape the Json input.
-
-<!-- GITHUB_EXAMPLE('Create Json data', 'https://github.com/graphcool-examples/scripts') -->
+Using [`graphql-request`](https://github.com/graphcool/graphql-request), we can combine GraphQL variables with `JSON.stringify` and don't need to escape the Json input. You can see [the full code on GitHub](https://github.com/graphcool-examples/scripts/tree/master/json-entries).
 
 In this example, we assume the following schema:
 
@@ -45,50 +43,28 @@ yarn # or npm install
 * Run the following script with
 
 ```sh
-node --harmony-async-await json-fields.js
+node json-fields.js
 ```
 
 ```js
-const {Lokka} = require('lokka')
-const {Transport} = require('lokka-transport-http')
+const { request } = require('graphql-request')
 
-const client = new Lokka({
-  transport: new Transport('https://api.graph.cool/simple/v1/__PROJECT_ID__')
-})
-
-const createEntry = async() => {
-  // define a mutation with json and jsonList variables
-  const mutation = `($json: Json, $jsonList: [Json!]) {
-    createEntry(
-      json: $json
-      jsonList: $jsonList
-    ) {
-      id
-      jsonList
-    }
-  }`
-
-  // stringify an object for a single Json field
-  const json = JSON.stringify({a: 2, message: "hello"})
-
-  // stringify an array of objects for a [Json!] field
-  const jsonList = JSON.stringify([{a: 2, message: "hello"}, {b: 3, message: "bye"}])
-
-  // pass vars to mutation
-  const vars = {
-    json,
+const query = `mutation jsons($json: Json!, $jsonList: [Json!]!) {
+  createEntry(
+    json: $json
+    jsonList: $jsonList
+  ) {
+    id
+    json
     jsonList
   }
+}`
 
-  return await client.mutate(mutation, vars)
+const variables = {
+  json: JSON.stringify({a: 'a'}),
+  jsonList: [JSON.stringify({a: 'a'})]
 }
 
-const main = async() => {
-  const res = await createEntry()
-  console.log('Created new entry:')
-  console.log(res.createEntry)
-  console.log('Done!')
-}
-
-main().catch((e) => console.error(e))
+request('https://api.graph.cool/simple/v1/__PROJECT_ID__', query, variables)
+  .then(({ createJsons }) => console.log(createJsons))
 ```
