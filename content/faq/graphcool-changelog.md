@@ -28,7 +28,7 @@ related:
   * A [new episode of GraphQL Radio is available](https://www.youtube.com/watch?v=Gxag5PXGXN8), this time with Jordan Husney and Matthew Krick from Parabol. Discussed topics include adopting GraphQL, GraphQL Subscriptions and RethinkDB for real time support.
   * Another week, another batch of Graphcool heroes! 💪
     * Several [plugins to the File API using Graphcool Functions](https://github.com/graphcool-examples/functions/tree/master/file-proxy) have been collected and provided by community member [@kbrandwijk](https://github.com/kbrandwijk), and reviewed by [@yusinto](https://github.com/yusinto). Thanks for your fantastic contributions! 💯
-    * [@derBingle](https://github.com/derBingle/) shared his cool [Graphcool Electron App](https://www.graph.cool/forum/t/nativefied-graphcool-console/277/1). 😎
+    * [@derBingle](https://github.com/derBingle/) shared his cool [Graphcool Electron App](https://github.com/derBingle/graphcool-desktop). 😎
     * [@notrab](https://github.com/notrab) is putting out a lot of useful GraphQL resources lately in his [YouTube channel](https://www.youtube.com/channel/UCcSj41xzQJCT2V0GNwlob_w)! He also recently [reviewed Graphcool](https://www.youtube.com/watch?v=5S4xaUVc9Dg), thanks for the valuable feedback! 🙋
 
 ## Week 25 (June 19 - June 25)
