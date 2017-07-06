@@ -39,7 +39,7 @@ We improve the discoverability of awesome content for you by letting you filter 
 
 As a bonus, we're including some of the talks that were given at GraphQL Europe earlier this year for the launch of this new resource.
 
-Right now there are already 5 videos available, among them [Dan Schafer](https://www.youtube.com/watch?v=5lcvRd80jYk) sharing interesting learnings and great insights from 5 years of using GraphQL at Facebook.
+Right now there are already 5 videos available, among them [Dan Schafer](https://www.youtube.com/watch?v=5lcvRd80jYk) sharing interesting learnings and great insights from five years of using GraphQL at Facebook.
 
 
 ## Stay Tuned
@@ -48,6 +48,6 @@ The best thing is, you don't have check the site - we'll let you know when there
 
 <!-- TALKS_SIGNUP -->
 
-> If you are a Meetup or conference organizer and want to see your recordings on GraphQL Talks as well, [let us know](mailto:hello@graph.cool).
+If you are a Meetup or conference organizer and want to see your recordings on GraphQL Talks as well, [let us know](mailto:hello@graph.cool).
 
 
