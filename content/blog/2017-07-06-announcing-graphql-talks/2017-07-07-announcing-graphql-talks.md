@@ -18,7 +18,7 @@ related:
 
 GraphQL is rapidly gaining popularity in the developer community and more and more companies and individuals start sharing their experiences in using it.
 
-## Lots of Talks to Watch
+## Lots of Awesome Talks to Watch
 
 There already are a lot of Meetups all over the world that are purely dedicated to GraphQL, many of which record the talks that are being given and publish them afterwards. 
 
@@ -26,7 +26,7 @@ The same goes for actual conferences, [GraphQL Summit](https://summit.graphql.co
 
 It's currently not easy to discover the talks that are given at all these different events, that's why we built GraphQL Talks!
 
-## Announcing GraphQL Talks
+## Announcing "GraphQL Talks"
 
 Starting today, you'll be able to find a collection of all the GraphQL Talks that were given at conferences and Meetups on the Graphcool website: [https://www.graph.cool/talks/](https://www.graph.cool/talks/)
 
