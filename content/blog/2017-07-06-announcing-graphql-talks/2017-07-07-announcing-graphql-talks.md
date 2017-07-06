@@ -21,8 +21,6 @@ With more and more awesome GraphQL talks given at conferences and Meetups, it’
 
 ## Lots of Awesome Talks to Watch
 
-While GraphQL is rapidly gaining popularity in the developer community, more and more developers start sharing their experiences in using it by speaking at Meetups and conferences.
-
 There already are a lot of Meetups all over the world that are purely dedicated to GraphQL, many of which record the talks that are being given and publish them afterwards. 
 
 The same goes for actual conferences, [GraphQL Summit](https://summit.graphql.com) in San Francisco had 350 attendees last year and will be much bigger in its upcoming version in October. [GraphQL Europe](https://graphql-europe.org), the first GraphQL-only conference in Europe, accomodated more than 300 developers earlier this year and is likely to also grow substantially in its next edition.  
