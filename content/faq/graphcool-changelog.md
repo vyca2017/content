@@ -15,6 +15,28 @@ related:
 
 # Changelog
 
+## Week 26 (June 26 - July 2)
+
+* [API](!alias-heshoov3ai)
+  * The pagination information for connections in [the Relay API](!alias-aizoong9ah) has been fixed.
+  * When the input argument of a [nested mutation](!alias-yoo8vaifoa) is null or otherwise invalid, an error message is now returned and the outer mutation is cancelled.
+* [Migrations](!alias-paesahku9t)
+  * The behaviour when [changing the type of a scalar field](!alias-ahv6rohnge#changing-the-type-of-an-existing-field) has been unified.
+  * Fixed a problem when migrating a String field to an enum.
+  * Fixed several edge cases with migration and default values for enums.
+* Resources and Community Contributions
+  * A [new episode of GraphQL Radio is available](https://www.youtube.com/watch?v=Gxag5PXGXN8), this time with Jordan Husney and Matthew Krick from Parabol. Discussed topics include adopting GraphQL, GraphQL Subscriptions and RethinkDB for real time support.
+  * Another week, another batch of Graphcool heroes! 💪
+    * Several [plugins to the File API using Graphcool Functions](https://github.com/graphcool-examples/functions/tree/master/file-proxy) have been collected and provided by community member [@kbrandwijk](https://github.com/kbrandwijk), and reviewed by [@yusinto](https://github.com/yusinto). Thanks for your fantastic contributions! 💯
+    * [@derBingle](https://github.com/derBingle/) shared his cool [Graphcool Electron App](https://github.com/derBingle/graphcool-desktop). 😎
+    * [@notrab](https://github.com/notrab) is putting out a lot of useful GraphQL resources lately in his [YouTube channel](https://www.youtube.com/channel/UCcSj41xzQJCT2V0GNwlob_w)! He also recently [reviewed Graphcool](https://www.youtube.com/watch?v=5S4xaUVc9Dg), thanks for the valuable feedback! 🙋
+
+## Week 25 (June 19 - June 25)
+
+* Graphcool [now runs in multiple regions](!alias-she7yaab6l) and performance improvements reduced response times by 80ms on average! 🏇
+* We fixed a problem with [the File API](!alias-eer4wiang0) when renaming files.
+* We added a [description of all available filter options](!alias-aephaimu5n#explore-available-filter-criteria) to the GraphQL schema of the GraphQL APIs.
+
 ## Week 24 (June 12 - June 18)
 
 * The [Subscription API](!alias-aip7oojeiv) has been upgraded to the protocol specified in [the latest version `0.7` of `subscription-transport-ws`](https://github.com/apollographql/subscriptions-transport-ws/releases). Thanks to the Apollo team for the great work! 💪

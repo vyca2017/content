@@ -324,4 +324,131 @@ Note how we nested the `AND` combinator inside the `OR` combinator, on the same 
 
 ## Explore available filter criteria
 
-Apart from the filter combinators `AND` and `OR`, the available filter arguments for a query for all nodes of a type depend on the fields of the type and their types. To explore the available filters, use the playground and its documentation and auto-completion features.
+Apart from the filter combinators `AND` and `OR`, the available filter arguments for a query for all nodes of a type depend on the fields of the type and their types.
+
+Let's consider the following schema:
+
+```graphql
+type Meta {
+  id: ID!
+  text: String!
+  number: Int!
+  decimal: Float!
+  flag: Boolean!
+  date: DateTime!
+  enum: SomeEnum!
+  object: Json!
+}
+```
+
+Based on this type, a `MetaFilter` type will be generated with the following fields, grouped by field type.
+
+```graphql
+input MetaFilter {
+  # logical operators
+  AND: [MetaFilter!] # combines all passed `MetaFilter` objects with logical AND
+  OR: [MetaFilter!] # combines all passed `MetaFilter` objects with logical OR
+
+  # DateTime filters
+  createdAt: DateTime # matches all nodes with exact value
+  createdAt_not: DateTime # matches all nodes with different value
+  createdAt_in: [DateTime!] # matches all nodes with value in the passed list
+  createdAt_not_in: [DateTime!] # matches all nodes with value not in the passed list
+  createdAt_lt: DateTime # matches all nodes with lesser value
+  createdAt_lte: DateTime # matches all nodes with lesser or equal value
+  createdAt_gt: DateTime # matches all nodes with greater value
+  createdAt_gte: DateTime # matches all nodes with greater or equal value
+
+  # Float filters
+  decimal: Float # matches all nodes with exact value
+  decimal_not: Float # matches all nodes with different value
+  decimal_in: [Float!] # matches all nodes with value in the passed list
+  decimal_not_in: [Float!] # matches all nodes with value not in the passed list
+  decimal_lt: Float # matches all nodes with lesser value
+  decimal_lte: Float # matches all nodes with lesser or equal value
+  decimal_gt: Float # matches all nodes with greater value
+  decimal_gte: Float # matches all nodes with greater or equal value
+
+  # Enum filters
+  enum: META_ENUM # matches all nodes with exact value
+  enum_not: META_ENUM # matches all nodes with different value
+  enum_in: [META_ENUM!] # matches all nodes with value in the passed list
+  enum_not_in: [META_ENUM!] # matches all nodes with value not in the passed list
+
+  # Boolean filters
+  flag: Boolean # matches all nodes with exact value
+  flag_not: Boolean # matches all nodes with different value
+
+  # ID filters
+  id: ID # matches all nodes with exact value
+  id_not: ID # matches all nodes with different value
+  id_in: [ID!] # matches all nodes with value in the passed list
+  id_not_in: [ID!] # matches all nodes with value not in the passed list
+  id_lt: ID # matches all nodes with lesser value
+  id_lte: ID # matches all nodes with lesser or equal value
+  id_gt: ID # matches all nodes with greater value
+  id_gte: ID # matches all nodes with greater or equal value
+  id_contains: ID # matches all nodes with a value that contains given substring
+  id_not_contains: ID # matches all nodes with a value that does not contain given substring
+  id_starts_with: ID # matches all nodes with a value that starts with given substring
+  id_not_starts_with: ID # matches all nodes with a value that does not start with given substring
+  id_ends_with: ID # matches all nodes with a value that ends with given substring
+  id_not_ends_with: ID # matches all nodes with a value that does not end with given substring
+
+  # Int filters
+  number: Int # matches all nodes with exact value
+  number_not: Int # matches all nodes with different value
+  number_in: [Int!] # matches all nodes with value in the passed list
+  number_not_in: [Int!] # matches all nodes with value not in the passed list
+  number_lt: Int # matches all nodes with lesser value
+  number_lte: Int # matches all nodes with lesser or equal value
+  number_gt: Int # matches all nodes with greater value
+  number_gte: Int # matches all nodes with greater or equal value
+
+  # String filters
+  text: String # matches all nodes with exact value
+  text_not: String # matches all nodes with different value
+  text_in: [String!] # matches all nodes with value in the passed list
+  text_not_in: [String!] # matches all nodes with value not in the passed list
+  text_lt: String # matches all nodes with lesser value
+  text_lte: String # matches all nodes with lesser or equal value
+  text_gt: String # matches all nodes with greater value
+  text_gte: String # matches all nodes with greater or equal value
+  text_contains: String # matches all nodes with a value that contains given substring
+  text_not_contains: String # matches all nodes with a value that does not contain given substring
+  text_starts_with: String # matches all nodes with a value that starts with given substring
+  text_not_starts_with: String # matches all nodes with a value that does not start with given substring
+  text_ends_with: String # matches all nodes with a value that ends with given substring
+  text_not_ends_with: String # matches all nodes with a value that does not end with given substring
+}
+```
+
+## Limitations
+
+Currently, neither [**scalar list filters**](https://github.com/graphcool/feature-requests/issues/60) nor [**JSON filters**](https://github.com/graphcool/feature-requests/issues/148) are available. Join the discussion in the respective feature requests on GitHub!
+
+If you want to filter a list of strings `tags: [String!]!`:
+
+```graphql
+type Item {
+  id: ID!
+  tags: [String!]!
+}
+```
+
+you can introduce a new type `Tag` with a single `key: String` field and connect `Item` to `Key` one-to-many or many-to-many:
+
+```graphql
+type Item {
+  id: ID!
+  tags: [Tag!]! @relation(name: "ItemTags")
+}
+
+type Tag {
+  id: ID!
+  key: String!
+  item: Item @relation(name: "ItemTags")
+}
+```
+
+Now you can filter items based on their connected tags using the `tag_none`, `tags_some` and `tags_every` filters.

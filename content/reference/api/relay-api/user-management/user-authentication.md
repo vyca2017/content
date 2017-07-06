@@ -162,7 +162,7 @@ mutation {
   createUser(input: {
     authProvider: {
       email:{
-        email: user@email.com"
+        email: "user@email.com"
         password: "secret-password"
         }
       }

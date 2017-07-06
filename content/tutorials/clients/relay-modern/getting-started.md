@@ -21,7 +21,7 @@ related:
 
 # Getting Started with Relay Modern
 
-[Realy Modern](https://facebook.github.io/relay/docs/relay-modern.html) is the very promising evolution and first 1.0-release of Facebook's homegrown GraphQL client _Relay_. It was announced at this year's F8 conference and officially released by Lee Byron during [his talk](https://www.youtube.com/watch?v=OdsMz7h_Li0) at React Europe. 
+[Realy Modern](https://facebook.github.io/relay/docs/relay-modern.html) is the very promising evolution and first 1.0-release of Facebook's homegrown GraphQL client _Relay_. It was announced at this year's F8 conference and officially released by Lee Byron during [his talk](https://www.youtube.com/watch?v=OdsMz7h_Li0) at React Europe.
 
 This post is a step-by-step tutorial with the goal of building a simple Instagram application from scratch using [`create-react-app`](https://github.com/facebookincubator/create-react-app). You can take a look at the final version of the code [here](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern), just follow the instructions in the README to get up-and-running.
 
@@ -34,13 +34,13 @@ If you've been using Relay Classic before and are looking to migrate, check out 
 
 ## Relay - A Brief History
 
-[Relay](https://facebook.github.io/relay/) and [Apollo](https://www.apollodata.com) are currently the most popular and sophisticated [GraphQL clients](https://dev-blog.apollodata.com/why-you-might-want-a-graphql-client-e864050f789c) available. 
+[Relay](https://facebook.github.io/relay/) and [Apollo](https://www.apollodata.com) are currently the most popular and sophisticated [GraphQL clients](https://dev-blog.apollodata.com/why-you-might-want-a-graphql-client-e864050f789c) available.
 
-Apollo is a very community-driven effort to build a flexible and easy-to-understand client that let's get you get started quickly with GraphQL on the frontend. In only a bit more than a year it has become a powerful solution for people looking to use GraphQL in web (and mobile!) projects. 
+Apollo is a very community-driven effort to build a flexible and easy-to-understand client that let's get you get started quickly with GraphQL on the frontend. In only a bit more than a year it has become a powerful solution for people looking to use GraphQL in web (and mobile!) projects.
 
-Relay on the other hand is a project whose key ideas grew while Facebook was using the early versions of GraphQL in their native mobile apps starting 2012. Facebook took the learnings they gathered from using GraphQL in their native apps to build a declarative data management framework that integrates well with React. For Relay becoming open-source, much like with GraphQL, it was pulled out of Facebook's infrastructure with the ambition to build a data loading and storage solution that would also work in non-Facebook projects. 
+Relay on the other hand is a project whose key ideas grew while Facebook was using the early versions of GraphQL in their native mobile apps starting 2012. Facebook took the learnings they gathered from using GraphQL in their native apps to build a declarative data management framework that integrates well with React. For Relay becoming open-source, much like with GraphQL, it was pulled out of Facebook's infrastructure with the ambition to build a data loading and storage solution that would also work in non-Facebook projects.
 
-Apollo and Relay have different focus areas. Where Apollo optimizes for flexibilty and simplicity, one of Relay's key goals is performance. 
+Apollo and Relay have different focus areas. Where Apollo optimizes for flexibilty and simplicity, one of Relay's key goals is performance.
 
 > Relay Modern [...] incorporates the learnings and best practices from classic Relay, our native mobile GraphQL clients, and the GraphQL community. Relay Modern retains the best parts of Relay — colocated data and view definitions, declarative data fetching — while also simplifying the API, adding features, improving performance, and reducing the size of the framework. [Relay Modern: Simpler, faster, more extensible](https://code.facebook.com/posts/1362748677097871/relay-modern-simpler-faster-more-extensible/)
 
@@ -104,7 +104,7 @@ Let's jump right in!
 
 ### 1. Add Relay Dependencies
 
-You first have to install several dependencies to pull in the different pieces that are required for Relay to work. 
+You first have to install several dependencies to pull in the different pieces that are required for Relay to work.
 
 In the terminal window, first install the general `react-relay` package that was recently upgraded to version 1.0:
 
@@ -131,13 +131,13 @@ All right, that's it for the first step! Go ahead and move on to configure Babel
 
 ### 2. Eject from `create-react-app` to configure Babel
 
-`create-react-app` hides all the build tooling configurations from you and provides a comfortable spot for starting out. However, in your case you actually need to do some custom [Babel](https://babeljs.io/) configurations to get Relay to work. So you need to [_eject_](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html#no-lock-in) from `create-react-app`. 
+`create-react-app` hides all the build tooling configurations from you and provides a comfortable spot for starting out. However, in your case you actually need to do some custom [Babel](https://babeljs.io/) configurations to get Relay to work. So you need to [_eject_](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html#no-lock-in) from `create-react-app`.
 
 In the terminal, use the following command:
 
 ```sh
 yarn eject
-``` 
+```
 
 This will change the folder structure to look as follows:
 
@@ -246,7 +246,7 @@ This code has been taken from the example in the [docs](https://facebook.github.
 Let's quickly discuss the commented sections to understand better what's going on:
 
 1. You first import the required JS modules that you need to instantiate and configure the `Environment`.
-2. Here you instantiate the required `Store` that will store the cached data. 
+2. Here you instantiate the required `Store` that will store the cached data.
 3. Now you create a `Network` that knows your GraphQL server from before, it's instantiated with a function that returns a `Promise` of a networking call to the GraphQL API - here that's done using `fetch`.
 4. At this point, you need to **replace `__RELAY_API_ENDPOINT__` with your endpoint for the `Relay API`**
 5. With the `store` and `network` available you can instantiate the actual `Environment`.
@@ -264,7 +264,7 @@ Awesome, you're now ready to use Relay in your app 🚀
 
 ### Preparing React Components
 
-Before doing anything else, go ahead and prepare the React components. 
+Before doing anything else, go ahead and prepare the React components.
 
 You'll use [Tachyons](http://tachyons.io/) to ease working with CSS in this project. Open `public/index.html` and add a third `link` tag to in the `head` section so that it looks like this:
 
@@ -345,7 +345,7 @@ class ListPage extends React.Component {
       </div>
     )
   }
-  
+
 }
 
 export default ListPage
@@ -398,8 +398,8 @@ This effectively means that you'll never write any actual GraphQL queries yourse
 But if you're never writing any queries in Relay, how can the GraphQL server respond with sensible data?
 
 That's the cool part about Relay! Under the hood, it will figure out the most efficient way for your React components to fetch the data that's required for them to render, based on the data dependencies they declared in their fragments.
- 
-You don't have to worry about fetching the data one bit - all networking and caching logic is abstracted away and you can focus on writing your React components and what data they need! Declarative data fetching ftw 😎 
+
+You don't have to worry about fetching the data one bit - all networking and caching logic is abstracted away and you can focus on writing your React components and what data they need! Declarative data fetching ftw 😎
 
 #### Fragment Containers
 
@@ -410,7 +410,7 @@ The function `createFragmentContainer` is a higher-order component that takes in
 1. A React component for which you want to declare some data dependencies
 2. Data dependencies written as a GraphQL fragment and wrapper using the `graphql` function
 
-Go ahead and write the fragment containers for the two components that you added before. 
+Go ahead and write the fragment containers for the two components that you added before.
 
 Open `Post.js` and add the following import to its top:
 
@@ -426,7 +426,7 @@ All that's done there is importing the required Relay modules that you need to c
 Now also adjust the export at the bottom of the file by replacing the current `export default Post` statement with the following:
 
 ```js
-export default createFragmentContainer(Post, graphql`  
+export default createFragmentContainer(Post, graphql`
   fragment Post_post on Post {
     id
     description
@@ -441,7 +441,7 @@ You're using the `createFragmentContainer` higher-order component and pass in tw
 
 One important note here is that there is a [_naming convention_](https://facebook.github.io/relay/docs/fragment-container.html#data-dependencies-with-graphql) for the fragments you're creating! Each fragment should be named according to the _file_ and the _prop_ that will get injected into the component: `<FileName>_<propName>`
 
-In your case, the file is called `Post.js` and the prop in the component should be called `post`. So you end up with `Post_post` for the name of the fragment.  
+In your case, the file is called `Post.js` and the prop in the component should be called `post`. So you end up with `Post_post` for the name of the fragment.
 
 Great work so far! Go and add the the fragment container for `ListPage` as well.
 
@@ -482,7 +482,7 @@ Finally, you also need to delete the mock data you used to render the posts befo
 
 ```js
 {this.props.viewer.allPosts.edges.map(({node}) =>
-  <Post key={node.id} post={node} />
+  <Post key={node.__id} post={node} />
 )}
 ```
 
@@ -569,7 +569,7 @@ The compiler can be invoked using the `relay-compiler` command in the terminal w
 1. `--src`: The path to all your files that contain `graphql` code
 2. `--schema`: The path to your full GraphQL schema
 
-You can get access to the full GraphQL schema by using a command line utility called [`get-graphql-schema`]((https://github.com/graphcool/get-graphql-schema)): 
+You can get access to the full GraphQL schema by using a command line utility called [`get-graphql-schema`](https://github.com/graphcool/get-graphql-schema): 
 
 ```sh
 npm install -g get-graphql-schema
@@ -684,7 +684,7 @@ By the way, if you're curios to see what the actual query looked like that the `
 ## 4. Adding and Deleting Posts
 
 You're done with the first part of the tutorial where we wanted to load and display the posts returned by the server.
- 
+
 Now you need to make sure that your users can also _add_ new posts and _delete_ existing ones!
 
 For adding new posts, you'll use a new _page_ in the app. Create a new file in the `src` directory, call it `CreatePage.js` and add the following code:
@@ -752,7 +752,7 @@ So, to keep it simple in this tutorial, we'll use `react-router` which is a popu
 yarn add react-router@2.8.1
 ```
 
-> Note that we're only using version 2.8.1 to be consistent with our other Quickstart examples.  
+> Note that we're only using version 2.8.1 to be consistent with our other Quickstart examples.
 
 Then replace all contents in `index.js` with the following:
 
@@ -773,7 +773,7 @@ ReactDOM.render(
 )
 
 registerServiceWorker()
-``` 
+```
 
 Next, open `ListPage.js` and add a `Link` to the new page by again replacing the current implementation or `render` with the following:
 
@@ -845,7 +845,7 @@ export default (description, imageUrl, viewerId, callback) => {
       clientMutationId: ""
     },
   }
-  
+
   // 5
   commitMutation(
     environment,
@@ -882,7 +882,7 @@ Let's quickly walk through the different things that happen here:
 
 #### Using Relay's New Imperative Store API
 
-Let's quickly discuss the `optimisticUpdater` and `updater` functions that are teased here. The `proxyStore` that's being passed into them allows you to directly manipulate the cache with the changes you expect to happen through this mutation. 
+Let's quickly discuss the `optimisticUpdater` and `updater` functions that are teased here. The `proxyStore` that's being passed into them allows you to directly manipulate the cache with the changes you expect to happen through this mutation.
 
 `optimisticUpdater` is triggered right after the mutation is sent (before the server response comes back) - it allows you to implement the _success scenario_ of the mutation so that the user sees the effect of her mutation right away without having to wait for the server response.
 
@@ -898,7 +898,7 @@ optimisticUpdater: (proxyStore) => {
   newPost.setValue(id, 'id')
   newPost.setValue(description, 'description')
   newPost.setValue(imageUrl, 'imageUrl')
-  
+
   // 2 - add `newPost` to the store
   const viewerProxy = proxyStore.get(viewerId)
   const connection = ConnectionHandler.getConnection(viewerProxy, 'ListPage_allPosts')
@@ -910,7 +910,7 @@ updater: (proxyStore) => {
   // 1 - retrieve the `newPost` from the server response
   const createPostField = proxyStore.getRootField('createPost')
   const newPost = createPostField.getLinkedRecord('post')
-  
+
   // 2 - add `newPost` to the store
   const viewerProxy = proxyStore.get(viewerId)
   const connection = ConnectionHandler.getConnection(viewerProxy, 'ListPage_allPosts')
@@ -928,13 +928,13 @@ let tempID = 0
 
 Phew! There's a lot of stuff going on, let's tear it apart a bit. First notice that the second part of the both functions are completely identical! That's because the `proxyStore` (your interface to manipulate the cache) doesn't care where the object that you're inserting comes from!
 
-So, in `optimisticUpdater`, you're simply creating the `newPost` yourself based on the data (`description` and `imageUrl`) that is provided. However, for the `id`, you need to generate a new value for every post that's created and that will be the temporary ID of the post in the store until the actual one arrives from the server -  that's why you introduce this `tempID` variable that gets incremented with every new post. 
+So, in `optimisticUpdater`, you're simply creating the `newPost` yourself based on the data (`description` and `imageUrl`) that is provided. However, for the `id`, you need to generate a new value for every post that's created and that will be the temporary ID of the post in the store until the actual one arrives from the server -  that's why you introduce this `tempID` variable that gets incremented with every new post.
 
 For the `updater` you can make use of the actual server response to update the cache. With `getRootField` and `getLinkedRecord` you get access to the payload of the `mutation` that you specified on top of the file:
 
 ![](./img/updater.png)
 
-Next you need to actually use this mutation in `CreatePage.js`. The only problem left right now is that in `CreatePage`, you don't have access to the `viewerId` at the moment - but it's a required argument for the mutation. At this point, you _could_ use `react-router` and pass simply pass the `viewerId` from the `ListPage` on to the `CreatePage` component. However, we want to make proper use of Relay and each component should be responsible for its own data dependencies. 
+Next you need to actually use this mutation in `CreatePage.js`. The only problem left right now is that in `CreatePage`, you don't have access to the `viewerId` at the moment - but it's a required argument for the mutation. At this point, you _could_ use `react-router` and pass simply pass the `viewerId` from the `ListPage` on to the `CreatePage` component. However, we want to make proper use of Relay and each component should be responsible for its own data dependencies.
 
 So, we'll add another `QueryRenderer` for the `CreatePage` component where the `viewerId` can be fetched. Open `CreatePage.js` and update `render` as follows:
 
@@ -1032,7 +1032,7 @@ That's it, you can now go ahead and add a new post through the UI of your app! H
 
 
 ### Deleting Posts
- 
+
 The last bit of functionality that's still missing is the ability for the user to delete existing posts. Similar to the `CreatePostMutation`, the first thing you need to do is setup a new file called `DeletePostMutation.js` in `src` and copy the following code into it:
 
 ```js
@@ -1075,7 +1075,7 @@ export default (postId, viewerId) => {
 }
 ```
 
-The approach you're taking this time is very similar to the `CreatePost` mutation. First you import all dependencies, then you declare the `mutation` to be sent to the server and finally you export a function that takes the required arguments and calls `commitMutation`. 
+The approach you're taking this time is very similar to the `CreatePost` mutation. First you import all dependencies, then you declare the `mutation` to be sent to the server and finally you export a function that takes the required arguments and calls `commitMutation`.
 
 For now, open `Post.js` and implement `_handleDelete` as follows:
 
@@ -1119,13 +1119,13 @@ optimisticUpdater: (proxyStore) => {
     ConnectionHandler.deleteNode(connection, postId)
   }
 },
-``` 
+```
 
 The `optimisticUpdater` and `updater` also work in the same ways as before - except that in the `optimisticUpdater` you have to do less work and don't have to create a temporary mocked post object. In the `updater`, you're accessing the `deletePost` and `deletedId` fields that you specified in the payload of the `mutation`.
 
 With this code, you're telling Relay that you'd like to remove the deleted posts (identified by `deletedId` which is specified in the payload of the mutation) from the `allPosts` connection.
 
-You need to make a few more adjustments for this to work! 
+You need to make a few more adjustments for this to work!
 
 First you have to pass the `viewerId` as an argument when calling `DeletePostMutation` in `Post.js`. However, the `Post` component currently doesn't have access to it (i.e. it doesn't declare it as a _data dependency_).
 
@@ -1173,7 +1173,7 @@ Now update the way how the `Post` components are created in `render`:
 
 ```js
 <Post key={node.id} post={node} viewer={this.props.viewer} />
-``` 
+```
 
 Before you run the app, you need to invoke the Relay compiler again. You can then click on the _Delete_-button on any post and the UI will update immediately.
 
@@ -1182,13 +1182,8 @@ Before you run the app, you need to invoke the Relay compiler again. You can the
 
 In this tutorial you learned how to get off the ground with Relay Modern and built your own Instagram application from scratch using `create-react-app`. If you got lost along the way, you can check out the final version of the code on [GitHub](https://github.com/graphcool-examples/react-graphql/tree/master/quickstart-with-relay-modern).
 
-Relay Modern is a great technology that is a tremendous help in building React applications at scale. Its major drawbacks right now are the still scarce documentation and unclear usage patterns and best practices, for example around routing. 
+Relay Modern is a great technology that is a tremendous help in building React applications at scale. Its major drawbacks right now are the still scarce documentation and unclear usage patterns and best practices, for example around routing.
 
 We hope you enjoyed learning about Relay Modern! If you have any questions, check out our [documentation](graph.cool/docs), join our [forum](https://www.graph.cool/forum/) or [Slack](https://slack.graph.cool).
 
 To stay up-to-date about everything that happens in the GraphQL community, make sure to subscribe to [GraphQL Weekly](https://graphqlweekly.com/).
-
-
-
-
-

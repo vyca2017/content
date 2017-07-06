@@ -139,3 +139,90 @@ type Story implements Node {
 ```
 
 Note that the temporary directive `@rename` is not in the schema file anymore.
+
+## Changing the type of an existing field
+
+If no data exists on a given model type, changing the type of an existing field can always be achieved.
+
+If there is already data, some field type migrations require the `@migrationValue` directive, while others don't. The following examples can be summarized with these rules:
+
+* When only the raw type changes, but the required flag for the field stays the same (for example from `Int!` to `String!` or from `Int` to `String`):
+  * When updating a field type **to String, no migration value needs to be provided**, the raw value will simply be casted to a String. If you provide a migration value however, all nodes will be migrated to that value.
+  * All **other field type migrations require a migration value**.
+* When the required flag changes:
+  * When updating a field type **to required, a migration value has to be provided**.
+  * When updating a field type **to optional, no migration needs to be provided**. If you provide a migration value however, all nodes will be migrated to that value.
+
+### Changing a field to String
+
+Consider this schema:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: String!
+  length: Int
+}
+```
+
+Whether or not there is already data, `length` can be updated to a `String` without providing a migration value:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: String!
+  length: String
+}
+```
+
+If a node formerly had `length: 3`, it is now `length: "3"`.
+
+### Changing a field to another type
+
+Consider this schema:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: String!
+  length: Int
+}
+```
+
+If there is already data, `name` can only be updated to an `Boolean!` when a migration value is provided:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: Boolean! @migrationValue(value: "true")
+  length: String!
+}
+```
+
+All nodes will have `name: true`.
+
+### Changing a field from optional to required
+
+Consider this schema:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: String!
+  length: Int
+}
+```
+
+Whether or not there is already data, `length` can only be updated to an `Int!` when providing a migration value:
+
+```graphql
+type Story implements Node {
+  id: ID!
+  name: Boolean! @migrationValue(value: "true")
+  length: Int! @migrationValue(value: "0")
+}
+```
+
+All nodes that formerly had `length: null` will now have `length: 0`. Nodes with a former non-null value for `length` will keep that value.
+
+> Note: migrating optional list fields to be required, for example of type `[String!]` to `[String!]!` overwrites all values, not only the non-null values.
