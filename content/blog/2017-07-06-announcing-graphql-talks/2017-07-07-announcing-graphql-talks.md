@@ -26,12 +26,13 @@ The same goes for actual conferences, [GraphQL Summit](https://summit.graphql.co
 
 It's currently not easy to discover the talks that are given at all these different events, that's why we built GraphQL Talks!
 
-
 ## Announcing GraphQL Talks
 
 Starting today, you'll be able to find a collection of all the GraphQL Talks that were given at conferences and Meetups on the Graphcool website: [https://www.graph.cool/talks/](https://www.graph.cool/talks/)
 
 We improve the discoverability of awesome content for you by letting you filter the available talks by **Events** or **Topics** (such as _Best Practices_, _Case Studies_, _GraphQL Clients_ and many more).
+
+![](./graphql-talks.png?width=500)
 
 
 ## Bonus: GraphQL Europe Videos
@@ -39,8 +40,6 @@ We improve the discoverability of awesome content for you by letting you filter 
 As a bonus, we're including some of the talks that were given at GraphQL Europe earlier this year for the launch of this new resource.
 
 Right now there are already 5 videos available, among them [Dan Schafer](https://www.youtube.com/watch?v=5lcvRd80jYk) sharing interesting learnings and great insights from 5 years of using GraphQL at Facebook.
-
-![](http://imgur.com/XtQRfnf.png?width=300)
 
 
 ## Stay Tuned
