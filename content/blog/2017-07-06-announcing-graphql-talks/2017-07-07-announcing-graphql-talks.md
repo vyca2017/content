@@ -16,7 +16,7 @@ related:
 
 # All GraphQL Talks in One Place
 
-GraphQL is rapidly gaining popularity in the developer community and more and more companies and individuals start sharing their experiences in using it.
+While GraphQL is rapidly gaining popularity in the developer community, more and more developers start sharing their experiences in using it by speaking at Meetups and conferences.
 
 ## Lots of Awesome Talks to Watch
 
