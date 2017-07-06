@@ -3,7 +3,7 @@ alias: eevevoo1ae
 path: /blog/2017-07-06-graphql-talks
 layout: BLOG
 description: GraphQL Talks is the place to find all talks around GraphQL that were given at conferences & meetups.
-preview: preview3.png
+preview: preview.png
 publication_date: '2017-07-06'
 tags:
   - talks
@@ -35,7 +35,7 @@ We improve the discoverability of awesome content for you by letting you filter 
 ![](./graphql-talks.png)
 
 
-## Bonus: GraphQL Europe Videos
+## Bonus: GraphQL Europe Videos 🇪🇺
 
 As a bonus, we're including some of the talks that were given at GraphQL Europe earlier this year for the launch of this new resource.
 
