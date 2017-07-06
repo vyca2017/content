@@ -14,11 +14,14 @@ related:
   more:
 ---
 
-# All GraphQL Talks in One Place
+# Find & Watch the Best GraphQL Talks
 
-While GraphQL is rapidly gaining popularity in the developer community, more and more developers start sharing their experiences in using it by speaking at Meetups and conferences.
+With more and more awesome GraphQL talks given at conferences and Meetups, it’s hard to stay on-top and discover the most interesting content. Today, we're launchig GraphQL Talks, a new resource that'll help you find the best talks all around GraphQL.
+
 
 ## Lots of Awesome Talks to Watch
+
+While GraphQL is rapidly gaining popularity in the developer community, more and more developers start sharing their experiences in using it by speaking at Meetups and conferences.
 
 There already are a lot of Meetups all over the world that are purely dedicated to GraphQL, many of which record the talks that are being given and publish them afterwards. 
 
