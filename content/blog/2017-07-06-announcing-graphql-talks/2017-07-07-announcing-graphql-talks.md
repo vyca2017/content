@@ -46,7 +46,7 @@ Right now there are already 5 videos available, among them [Dan Schafer](https:/
 
 The best thing is, you don't have check the site - we'll let you know when there are new videos available. All you have to do is put in your email address and we inform you about all the new videos that are added to the page.
 
-__SUBSCRIBE_GRAPHQL_TALKS__
+<!-- TALKS_SIGNUP -->
 
 > If you are a Meetup or conference organizer and want to see your recordings on GraphQL Talks as well, [let us know](mailto:hello@graph.cool).
 
