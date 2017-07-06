@@ -3,7 +3,7 @@ alias: eevevoo1ae
 path: /blog/2017-07-06-graphql-talks
 layout: BLOG
 description: GraphQL Talks is the place to find all talks around GraphQL that were given at conferences & meetups.
-preview: preview.png
+preview: preview2.png
 publication_date: '2017-07-06'
 tags:
   - talks
@@ -40,14 +40,14 @@ As a bonus, we're including some of the talks that were given at GraphQL Europe 
 
 Right now there are already 5 videos available, among them [Dan Schafer](https://www.youtube.com/watch?v=5lcvRd80jYk) sharing interesting learnings and great insights from 5 years of using GraphQL at Facebook.
 
-![](http://imgur.com/XtQRfnf.png)
+![](http://imgur.com/XtQRfnf.png?width=300)
 
 
 ## Stay Tuned
 
 The best thing is, you don't have check the site - we'll let you know when there are new videos available. All you have to do is put in your email address and we inform you about all the new videos that are added to the page.
 
-__SUBSCRIBE_FOR_NEW_VIDEOS__
+__SUBSCRIBE_GRAPHQL_TALKS__
 
 > If you are a Meetup or conference organizer and want to see your recordings on GraphQL Talks as well, [let us know](mailto:hello@graph.cool).
 
