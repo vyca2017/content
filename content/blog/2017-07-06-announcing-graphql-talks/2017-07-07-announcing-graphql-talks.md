@@ -32,7 +32,7 @@ Starting today, you'll be able to find a collection of all the GraphQL Talks tha
 
 We improve the discoverability of awesome content for you by letting you filter the available talks by **Events** or **Topics** (such as _Best Practices_, _Case Studies_, _GraphQL Clients_ and many more).
 
-![](./graphql-talks.png?width=500)
+![](./graphql-talks.png)
 
 
 ## Bonus: GraphQL Europe Videos
