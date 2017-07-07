@@ -29,6 +29,8 @@ Pagination allows you to request a certain amount of nodes at the same time. You
 
 You can also skip an arbitrary amount of nodes in whichever direction you are seeking by supplying the `skip` argument.
 
+Note that **a maximum of 1000 nodes* can be returned per pagination field. If you need to query more nodes than that, you can use `first` and `skip` to seek through the different pages. You can also include multiple versions of the same field with different pagination parameters in one query.
+
 > Consider a blog where only 3 posts are shown at the front page. To query the first page:
 
 ```graphql
