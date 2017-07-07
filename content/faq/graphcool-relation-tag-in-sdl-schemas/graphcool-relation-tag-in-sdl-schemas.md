@@ -16,9 +16,9 @@ related:
     - kr84dktnp0
 ---
 
-# How can I define relations in an IDL schema file?
+# How can I define relations in an SDL schema file?
 
-With the [IDL schema definition language](!alias-kr84dktnp0), it's easy to describe the data model of a GraphQL project. Here's an example schema:
+With the [SDL (schema definition language)](!alias-kr84dktnp0), it's easy to describe the data model of a GraphQL project. Here's an example schema:
 
 ```graphql
 type User {

@@ -98,7 +98,7 @@ Once the Relay compiler is installed, we can use it by providing our source file
 relay-compiler --src ./src --schema ./schema.graphql
 ```
 
-The `schema.graphql` represents our *full* GraphQL API expressed with the [GraphQL IDL](!alias-kr84dktnp0/) syntax. It might be worth setting up an npm script in the `package.json` that makes this call:
+The `schema.graphql` represents our *full* GraphQL API expressed with the [GraphQL SDL (schema definition language)](!alias-kr84dktnp0/) syntax. It might be worth setting up an npm script in the `package.json` that makes this call:
 
 ```js
 "scripts": {

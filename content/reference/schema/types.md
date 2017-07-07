@@ -27,7 +27,7 @@ A *GraphQL type* defines the structure for a certain type of your data. If you a
 
 An instantiation of a type is called a *node*. The collection of all nodes is what you would refer to as "your data". The term node refers to a node inside your data graph.
 
-Every type you define will be available as a type in your GraphQL schema. A common notation to quickly describe a type is the [GraphQL IDL](!alias-kr84dktnp0) (interface definition language).
+Every type you define will be available as a type in your GraphQL schema. A common notation to quickly describe a type is the [GraphQL SDL (schema definition language)](!alias-kr84dktnp0) (interface definition language).
 
 ## GraphQL Types in the Data Schema
 
