@@ -15,7 +15,7 @@ tags:
   - authentication
   - cli
 more:
-further: 
+further:
   - ahwoh2fohj
   - boo6uteemo
   - wejileech9
@@ -32,7 +32,7 @@ Graphcool is the easiest way for web and mobile developers to get started with t
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QZWAAmp406s" frameborder="0" allowfullscreen></iframe>
 
 
-## Quickstart 
+## Quickstart
 
 GraphQL is becoming the new standard for API development. Web and mobile developers are the groups that benefit most from GraphQL, however, getting started with a new technology can be scary and time-consuming.
 
@@ -56,7 +56,7 @@ Once installed, it allows to manage your Graphcool projects locally without havi
 
 ### The Project File
 
-The basis for managing a Graphcool project locally is the [project file](!-ow2yei7mew) called `project.graphcool` by default. The project file uses standard [GraphQL IDL](!alias-kr84dktnp0) syntax and consists of two major sections:
+The basis for managing a Graphcool project locally is the [project file](!-ow2yei7mew) called `project.graphcool` by default. The project file uses standard [GraphQL SDL (schema definition language)](!alias-kr84dktnp0) syntax and consists of two major sections:
 
 1. _Frontmatter_: On the top of the file, metadata about the project (such as project ID and schema version) is stored in comments. Note that this part must not be modified manually.
 2. _Schema_: The schema represents the data model of the application and is the basis for the API.
@@ -121,7 +121,7 @@ The Graphcool CLI further allows you to export project data, open up a playgroun
 
 When creating a new Graphcool projects, you'll have two GraphQL APIs available:
 
-- [`Simple API`](!alias-heshoov3ai): Offers simple and intuitive CRUD-style operations for each type in the project's schema. 
+- [`Simple API`](!alias-heshoov3ai): Offers simple and intuitive CRUD-style operations for each type in the project's schema.
 - [`Relay API`](!alias-aizoong9ah): If you want to use Facebook's homegrown GraphQL client [Relay](https://facebook.github.io/relay/), you can use the `Relay API` that adheres to Relay specific requirements.
 
 Both APIs not only give you the full power of GraphQL by enabling you to query deeply nested information, they also offer powerful filters and out-of-the-box support for pagination and ordering making it easy to build sophisticated web and mobile apps. Check out [this article](!alias-eath7duf7d) for a few practical examples.
@@ -135,7 +135,7 @@ Graphcool also provides built-in support for [GraphQL Susbcriptions](!alias-aip7
 
 Privacy and data protection are of immense importance in today's applications. With Graphcool, both are trivial to achieve!
 
-Authentication can be implemented using different [authentication providers](!alias-seimeish6e) such as [Auth0](!alias-naed3eecie) for social logins, [Digits](alias-iaxohpee8o) for phone-based authentication as well as [email-and-password based](fiayee5voh) and 
+Authentication can be implemented using different [authentication providers](!alias-seimeish6e) such as [Auth0](!alias-naed3eecie) for social logins, [Digits](alias-iaxohpee8o) for phone-based authentication as well as [email-and-password based](fiayee5voh) and
 [anonymous](!alias-ieph6iujah) authentication.
 
 > Take a tour of the Graphcool permission system with this [video](https://www.youtube.com/watch?v=l1KEssmlhPA).
@@ -181,14 +181,3 @@ Graphcool offers everything developers need! Next to a powerful GraphQL API that
 If you want to get your hands dirty with the features that were mentioned in this article, check out our [Freecom Fullstack Tutorial](!alias-e8a6ajt8ax) series that covers all of them using a practical example.
 
 If you still have open questions, take a look at our [documentation](https://www.graph.cool/docs/) or join our fast growing [Slack](http://slack.graph.cool/) community!
-
-
-
-
-
-
-
-
-
-
-

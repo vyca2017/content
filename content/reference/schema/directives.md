@@ -2,7 +2,7 @@
 alias: aeph6oyeez
 path: /docs/reference/schema/directives
 layout: REFERENCE
-description: The GraphQL schema of a project is managed using schema files in IDL syntax.
+description: The GraphQL schema of a project is managed using schema files in SDL syntax.
 tags:
   - platform
   - schema
@@ -13,7 +13,7 @@ related:
 
 # GraphQL Directives
 
-A schema file follows the [IDL syntax](!alias-kr84dktnp0) and can contain additional **static and temporary GraphQL directives**.
+A schema file follows the [SDL syntax](!alias-kr84dktnp0) and can contain additional **static and temporary GraphQL directives**.
 
 ## Static Directives
 

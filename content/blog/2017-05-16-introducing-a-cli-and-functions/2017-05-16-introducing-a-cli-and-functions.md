@@ -46,7 +46,7 @@ npm install -g graphcool
 graphcool projects
 ```
 
-Creating a new project is now as easy as running `graphcool init`. This automatically creates a your local `project.graphcool` file containing the [GraphQL IDL](!alias-kr84dktnp0) schema for your data model. Simply edit this file in your editor to change your schema. You can apply your local changes to your project by running `graphcool push.
+Creating a new project is now as easy as running `graphcool init`. This automatically creates a your local `project.graphcool` file containing the [GraphQL SDL](!alias-kr84dktnp0) schema for your data model. Simply edit this file in your editor to change your schema. You can apply your local changes to your project by running `graphcool push.
 
 Check out the following tutorial to see how to get started using the Graphcool CLI or check out the [CLI documentation](!alias-kie1quohli).
 
@@ -96,7 +96,7 @@ The request pipeline allows you to write functions that hook into the processing
 * Hook into `PRE_WRITE` to call external systems after data validation, but before data is stored in the database
 * Hook into `TRANSFORM_PAYLOAD` if you need to transform the data that is returned from a mutation, but not what is stored in the database.
 
-To get started with the Request Pipeline, check out the [documentation](!alias-pa6guruhaf) or read our latest blog post about [introducing the Serverless GraphQL Backend Architecture](!alias-ahde7paig2) to learn more about the involved concepts and the bigger picture. 
+To get started with the Request Pipeline, check out the [documentation](!alias-pa6guruhaf) or read our latest blog post about [introducing the Serverless GraphQL Backend Architecture](!alias-ahde7paig2) to learn more about the involved concepts and the bigger picture.
 
 ### Bonus-feature: HTTP Headers for webhooks
 

@@ -135,8 +135,8 @@ related:
 
 ## Week 11 (March 13 - March 19)
 
-- We introduce [graphql-up](https://www.graph.cool/graphql-up/) that generates a ready-to-use GraphQL API based on a schema file in [IDL schema definition syntax](!alias-kr84dktnp0).
-- Launch of the new Schema View. You now have a better overview over your schema through the GraphQL IDL view and an awesome tool called [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager/), which we've now included in the Graphcool Console for you.
+- We introduce [graphql-up](https://www.graph.cool/graphql-up/) that generates a ready-to-use GraphQL API based on a schema file in [SDL (schema definition language) syntax](!alias-kr84dktnp0).
+- Launch of the new Schema View. You now have a better overview over your schema through [Schema Editor](!alias-zezoo7uaph) and an awesome tool called [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager/), which we've now included in the Graphcool Console for you.
 
 ## Week 10 (March 6 - March 12)
 
