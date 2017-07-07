@@ -23,7 +23,7 @@ related:
 
 A *GraphQL type* defines the structure for a certain type of your data. If you are familiar with SQL databases you can think of a type as the schema for a table. A type has a name, an optional description and one or multiple [fields](!alias-teizeit5se).
 
-> Previously, types we referred to as models in this documentation.
+> Previously, types were referred to as models in this documentation.
 
 An instantiation of a type is called a *node*. The collection of all nodes is what you would refer to as "your data". The term node refers to a node inside your data graph.
 
