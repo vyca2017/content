@@ -68,7 +68,7 @@ mutation {
 
 Note: First removes existing connections containing one of the specified nodes, then adds the edge connecting both nodes.
 
-You can also use the `updatePost` or `updateMetaInformation` to connect a post with a meta information:
+You can also use the `updatePost` or `updateMetaInformation` mutations to connect a post with a meta information:
 
 ```graphql
 ---
@@ -120,9 +120,6 @@ mutation {
 #   }
 # }
 ```
-
-
-
 
 ## Disconnect two nodes in a one-to-one relation
 

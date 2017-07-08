@@ -21,7 +21,7 @@ related:
     - tioghei9go
 ---
 
-# Querying multiple nodes
+# Querying Multiple Nodes in the Simple API
 
 The Simple API contains automatically generated queries to fetch all nodes of a certain [type](!alias-ij2choozae). For example, for the `Post` type the top-level query `allPosts` will be generated.
 
@@ -71,13 +71,3 @@ query {
 * type name: `Hobby`, query name: `allHobbies`.
 
 Note: The query name approximate the plural rules of the English language. If you are unsure about the actual query name, explore available queries in your [playground](!alias-oe1ier4iej).
-
-## Modifying the query response
-
-The query response of a query fetching multiple nodes can be further controlled by supplying different query arguments. The response can be
-
-* [ordered by field](!alias-vequoog7hu)
-* [filtered by multiple fields](!alias-xookaexai0)
-* [paginated](!alias-ojie8dohju) into multiple pages by fixing one specific node and either seeking forwards or backwards
-
-These query arguments can be combined to achieve very specific query responses.

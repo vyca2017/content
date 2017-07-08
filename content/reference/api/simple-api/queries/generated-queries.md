@@ -2,7 +2,7 @@
 alias: nia9nushae
 path: /docs/reference/simple-api/queries
 layout: REFERENCE
-description: Use queries to fetch data. Queries in the GraphQL schema of your project are derived from types and relations that you defined.
+description: A GraphQL query is used to fetch data from a GraphQL endpoint.
 simple_relay_twin: oiviev0xi7
 tags:
   - simple-api
@@ -14,14 +14,9 @@ related:
     - cahzai2eur
 ---
 
-# Queries
+# Queries in the Simple API
 
-A *query* enables you to declare data requirements in your app by supplying multiple [fields](!alias-teizeit5se).
-All queries are automatically generated. To explore them, use the [playground](!alias-oe1ier4iej) inside your project.
-
-After you send a query to your [endpoint](!alias-yahph3foch#project-endpoints) you will receive the *query response*. It contains the actual data for all fields that were specified in the query.
-
-This is an example query:
+A *GraphQL query* is used to fetch data from a GraphQL [endpoint](!alias-yahph3foch#project-endpoints). This is an example query:
 
 ```graphql
 ---
@@ -59,16 +54,11 @@ query {
 }
 ```
 
-There are different categories of generated queries. Depending on the query category, different *query arguments* are available that allow you to further modify the query response.
+Different queries are available:
 
-## Querying one node
+* For every [type](!alias-ij2choozae) in your [GraphQL schema](!alias-ahwoh2fohj), so called type queries will be generated to fetch [single](!alias-ua6eer7shu) or [multiple nodes](!alias-pa2aothaec) for that type.
+* Queries can be used to [traverse the data graph](!alias-aihaeph5ip) whenever there's a [relation](!alias-goh5uthoc1).
+* Some queries support [query arguments](!alias-ohrai1theo) to further control the query response.
+* A special query to get more information on [an authenticated user](!alias-gieh7iw2ru) is available.
 
-For each [type](!alias-ij2choozae) in your project there is a query to fetch [one specific node](!alias-ua6eer7shu) of that type.
-
-## Querying multiple nodes
-
-For each [type](!alias-ij2choozae) in your project there is a query to fetch [multiple nodes](!alias-pa2aothaec) of that type.
-
-## Session user
-
-To get more information on the currently signed in user, there is a query for the [session user](!alias-gieh7iw2ru)
+To explore the available queries, use the [playground](!alias-oe1ier4iej) inside your project.

@@ -21,7 +21,7 @@ related:
     - ier7sa3eep
 ---
 
-# Querying one node
+# Querying One Node in the Simple API
 
 For each [type](!alias-ij2choozae) in your project, the Simple API provides an automatically generated query to fetch one specific node of that type. To specify the node, all you need to provide is its `id` or another unique field.
 

@@ -2,7 +2,7 @@
 alias: gieh7iw2ru
 path: /docs/reference/simple-api/session-user
 layout: REFERENCE
-shorttitle: The session user
+shorttitle: The authenticated user
 description: Query the signed in user in the Simple API. The user needs to be registered with an authentication provider like Auth0 in your GraphQL backend.
 simple_relay_twin: peyaaph9vi
 tags:
@@ -21,7 +21,7 @@ related:
     - cahzai2eur
 ---
 
-# The session user
+# The Authenticated User in the Simple API
 
 If the request of a query or mutation contains authentication information on the [session user](!alias-geekae9gah#user-login), you can use the `user` query to query information on that user. All fields of the `User` type are available. Depending on the [auth providers](!alias-seimeish6e#authentication-providers) you enabled, you can additionally include different fields in the query.
 
