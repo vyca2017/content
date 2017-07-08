@@ -2,7 +2,7 @@
 alias: ua6eer7shu
 path: /docs/reference/simple-api/one-node
 layout: REFERENCE
-shorttitle: Querying one node
+shorttitle: Fetch one node
 description: Query one node by specifying a unique field such as its id.
 simple_relay_twin: ga4chied8m
 tags:
@@ -21,7 +21,7 @@ related:
     - ier7sa3eep
 ---
 
-# Querying One Node in the Simple API
+# Fetch One Node in the Simple API
 
 For each [type](!alias-ij2choozae) in your project, the Simple API provides an automatically generated query to fetch one specific node of that type. To specify the node, all you need to provide is its `id` or another unique field.
 
