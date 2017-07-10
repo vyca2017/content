@@ -27,9 +27,11 @@ related:
   * Fixed passing `DateTime` values in Request Pipeline functions.
 * [Schema](!alias-ahwoh2fohj)
   * Fixed regression with size limit of `String` fields.
+* [Auth](!alias-wejileech9)
+  * The closed beta for custom authentication is being kicked off with [an example for authentication with Facebook Login](https://github.com/graphcool-examples/functions/pull/16).
 * Resources and Community Contributions
   * A big shoutout to this week's Graphcool Heroes for their awesome contributions 🎉
-    * [@dkh215]() added an example to fetch and store repository information with the [Github API using Graphcool Function](https://github.com/graphcool-examples/functions/pull/15) ⚡️
+    * [@dkh215](https://github.com/dkh215) added an example to fetch and store repository information with the [Github API using Graphcool Function](https://github.com/graphcool-examples/functions/pull/15) ⚡️
     * In his new article, [@j4amesjung](https://medium.com/@j4mesjung) explains how [Optimistic UI works with Apollo and Graphcool](https://medium.com/@j4mesjung/apollo-graphcool-optimistic-ui-for-delete-mutations-abc23f8aab18).
   * [GraphQL Talks](https://graph.cool/blog/2017-07-06-graphql-talks-eevevoo1ae/) was launched together with the release of the first badge videos from [GraphQL-Europe 2017](https://www.youtube.com/playlist?list=PLn2e1F9Rfr6n_WFm9fPE-_wYPrYvSTySt).
   * Thanks to [@wesbos](https://twitter.com/wesbos) and [@stolinski](https://twitter.com/stolinski) for the shoutout on their new [Syntax. podcast](https://syntax.fm/show/001/react-tools).
