@@ -28,7 +28,7 @@ uploadFile = (files) => {
   data.append('data', files[0])
 
   // use the file endpoint
-  fetch('https://api.graph.cool/file/v1/__PROJECT_ID__'), {
+  fetch('https://api.graph.cool/file/v1/__PROJECT_ID__', {
     method: 'POST',
     body: data
   }).then(response => {
