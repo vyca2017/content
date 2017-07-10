@@ -151,3 +151,144 @@ type Story implements Node {
   user: User! @relation(name: "UserOnStory")
 }
 ```
+
+## Changing the type of a relation field
+
+Whether changing the type of a relation field is possible might change depending on if there are already connected nodes in the relation.
+
+> Changing the type of a relation field potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to adjust your app accordingly to the changes.
+
+Consider this schema file:
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserStories")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: User! @relation(name: "UserStories")
+}
+```
+
+To change the type of the `user` field from `User!` to `Author`, modify the according type in the schema (here, we're also adding a new `Author` type) and transfer the `stories` field from the `User` to the `Author` type:
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+}
+
+type Author implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserOnStory")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: [Author!]! @relation(name: "UserOnStory")
+}
+```
+
+Changing the type of a relation field is only possible when no nodes are connected in the relation.
+
+## Changing the multiplicity of a relation field
+
+Whether changing the multiplicity of a relation field is possible might change depending on if there are already connected nodes in the relation.
+
+> Changing the multiplicity of a relation field potentially breaks existing queries, mutations and subscriptions in your [GraphQL API](!alias-heshoov3ai). Make sure to adjust your app accordingly to the changes.
+
+### Changing a relation field from to-many to to-one
+
+Consider this schema file:
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserStories")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: User! @relation(name: "UserStories")
+}
+```
+
+To change the multiplicity of the `stories` field from `to-many` to `to-one`, simply change the type from `[Story!]!` to `Story`.
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserOnStory")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: User! @relation(name: "UserOnStory")
+}
+```
+
+Changing a `to-many` to a `to-one` field is only possible when no nodes are connected in the relation.
+
+### Changing a relation field from to-one to to-many
+
+Consider this schema file:
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserStories")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: User! @relation(name: "UserStories")
+}
+```
+
+To change the multiplicity of the `user` field from `to-one` to `to-many`, simply change the type from `User!` to `[User!]!]`.
+
+```graphql
+type User implements Node {
+  id: ID!
+  name: String!
+  stories: [Story!]! @relation(name: "UserOnStory")
+}
+
+type Story implements Node {
+  id: ID!
+  isPublished: Boolean!
+  text: String!
+  slug: String! @isUnique
+  tags: [String!]
+  user: [User!]! @relation(name: "UserOnStory")
+}
+```
+
+This is always possible, whether or not there are already connectd nodes in the relation.

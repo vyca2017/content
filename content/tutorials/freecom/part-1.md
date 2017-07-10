@@ -188,7 +188,7 @@ To open up a Playground, simply paste the GraphQL endpoint (so, in your case tha
 endpoint: https://api.graph.cool/simple/v1/cj1bse9l1eilg0105jcl6nglk
 disabled: false
 ---
-{
+query {
   allCustomers {
     name
     _conversationsMeta {
@@ -234,9 +234,11 @@ Note that mutations are disabled in the embedded Playground above.
 After having created this `Customer` in the database, you can convince yourself that the data was actually stored by either verifying it in the [data browser](https://www.youtube.com/watch?v=XeLKw2BSdI4&t=18s) or by sending the following query for which the response should will now include the newly created user:
 
 ```graphql
-allCustomers {
-  id
-  name
+query {
+  allCustomers {
+    id
+    name
+  }
 }
 ```
 
