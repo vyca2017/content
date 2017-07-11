@@ -16,7 +16,7 @@ more:
   - ol0yuoz6go
   - nia9nushae
   - aip7oojeiv
-further: 
+further:
   - e8a6ajt8ax
   - ui0eizishe
   - aing7uech3
@@ -24,7 +24,7 @@ further:
 
 # Advanced GraphQL Features of the Graphcool API
 
-GraphQL allows for much more advanced communication between a client and a server than possible with any other API standard. 
+GraphQL allows for much more advanced communication between a client and a server than possible with any other API standard.
 
 In this post, we'll highlight a few of the advanced GraphQL features that you get out of the box when using Graphcool. We'll use the following data model as the basis for all the following examples:
 
@@ -55,7 +55,7 @@ First and foremost, clients have the ability to send [complex](!alias-nia9nushae
 
 ### Nesting
 
-A major advantage of GraphQL is that clients can request data that goes over multiple relationships. With the above data model, it would be possible to ask for  specific `Tweet` (by specifying the tweets `id`), it's `author` and their `followers`. With the GraphQL [GraphQL IDL](!alias-kr84dktnp0), this quite complex query could still be written in a natural way:
+A major advantage of GraphQL is that clients can request data that goes over multiple relationships. With the above data model, it would be possible to ask for  specific `Tweet` (by specifying the tweets `id`), it's `author` and their `followers`. With the GraphQL [GraphQL SDL (schema definition language)](!alias-kr84dktnp0), this quite complex query could still be written in a natural way:
 
 ```graphql
 {
@@ -89,7 +89,7 @@ Another example would be to ask for all users, for each including a list of who 
 
 ### Filtering
 
-The Graphcool API allows clients to specify [powerful filters](!alias-xookaexai0) that restrict precisely what information the server should return. Filter can be applied to all the fields of the types in the data model. 
+The Graphcool API allows clients to specify [powerful filters](!alias-xookaexai0) that restrict precisely what information the server should return. Filter can be applied to all the fields of the types in the data model.
 
 Here's an example for a query asking for all the tweets where the `text` contains the string _GraphQL_:
 
@@ -137,10 +137,10 @@ Note that it's also possible to combine filters using `AND` and `OR`. We could t
     AND: [
       {
         author: {username_starts_with: "A"}
-      }, 
+      },
       {
         createdAt_gt: "2016-12-24T00:00:00.000Z"
-      }, 
+      },
       {
         author: {username_starts_with: "A"
       }
@@ -202,7 +202,7 @@ mutation {
     }
   }
 }
-``` 
+```
 
 Note that it's possible to specify a payload in a mutation that allows to retrieve the updated data from the backend in a single roundtrip!
 
@@ -219,7 +219,7 @@ There are generally three different kinds of _events_ a client be informed about
 - when an existing node is _updated_
 - when an existing node is _deleted_
 
-Subscriptions use the same GraphQL syntax as queries and mutations, so when writing a subscription it's possible to take advantage of all the complex querying features we saw in the first section. 
+Subscriptions use the same GraphQL syntax as queries and mutations, so when writing a subscription it's possible to take advantage of all the complex querying features we saw in the first section.
 
 Here's a simple example for a subscription that will fire every time a new `Tweet` is created, _or_ an existing one is updated or deleted:
 
@@ -244,5 +244,3 @@ The payload of a subscription contains some special fields that provide informat
 The `mutation` field contains either of three values indicating which of the three above mentioned event types happened: `CREATED`, `UPDATE` or `DELETED`.
 
 The `node` field represents the `node` that was _created_ or _updated_. `previousValues` can be used in the case _updated_ or _deleted_ nodes to find out what the values of that node were before they were updated in the database.
-
-

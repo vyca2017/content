@@ -22,26 +22,15 @@ related:
 
 A *relation* defines the interaction between two [types](!alias-ij2choozae). Two types in a relation are connected via a [relation field](!alias-teizeit5se) on each type.
 
-> Note: A type can be related to itself.
+A relation can also connect a type with itself. It is then referred to as a *self-relation*
 
-## Relation parameters
+## Required Relations
 
-## Multiplicity
+For a `to-one` relation field, you can configure whether it is *required* or *optional*. The required flag acts as a contract in GraphQL that this field can never be `null`. A field for the address of a user would therefore be of type `Address` or `Address!`.
 
-Both sides of a relation can have two different multiplicities, singular and plural, or more typically called one and many.
+Nodes for a type that contains a required `to-one` relation field can only be created using a [nested mutation](!alias-ubohch8quo) to ensure the according field will not be `null`.
 
-### One-to-one
-
-> `PostMetadata` could be a one-to-one relation relating the `Post` type to the `Metadata` type. Starting from a `Post` node you can access the related `Metadata` node via the `metadata` field. The related post is exposed on nodes of the `Metadata` type using the `post` field.
-
-### One-to-many
-
-> `PostAuthor` could be a one-to-many relation relating the `User` type to the `Post` type, because one author can write multiple posts while a post can only have one author. Starting from a `User` node you can access the related `Post` nodes via the `posts` field. The author is exposed on nodes of the Post type using the `author` field.
-
-
-### Many-to-many
-
-> If a book can have multiple authors, `BookAuthors` could be a many-to-many relation between the `Book` and `User` types, because one author can write many books, while one book also can be written by multiple authors.
+> Note that a `to-many` relation field is always set to required. For example, a field that contains many user addresses always uses the type `[Address!]!` and can never be of type `[Address!]`. The reason is that in case the field doesn't contain any nodes, `[]` will be returned, which is not `null`.
 
 ## Relations in the Data Schema
 

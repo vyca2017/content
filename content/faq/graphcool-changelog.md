@@ -15,6 +15,28 @@ related:
 
 # Changelog
 
+## Week 27 (July 3 - July 9)
+
+* [Console](!alias-uh8shohxie)
+  * Fixed a problem with updating [Server-Side Subscription functions](!alias-ahlohd8ohn).
+* [Migrations](!alias-paesahku9t)
+  * Fixed removing two related types at once.
+  * Fixed a problem that allowed the addition of a required relation to types that already contain data.
+  * The [`@isUnique` directive](!alias-aeph6oyeez) is now correctly applied and enums are supported when initializing a new project with the [Graphcool CLI](!alias-kie1quohli).
+* [Functions](!alias-boo6uteemo)
+  * Fixed passing `DateTime` values in Request Pipeline functions.
+* [Schema](!alias-ahwoh2fohj)
+  * Fixed regression with size limit of `String` fields.
+* [Auth](!alias-wejileech9)
+  * The closed beta for custom authentication is being kicked off with [an example for authentication with Facebook Login](https://github.com/graphcool-examples/functions/pull/16).
+* Resources and Community Contributions
+  * A big shoutout to this week's Graphcool Heroes for their awesome contributions 🎉
+    * [@dkh215](https://github.com/dkh215) added an example to fetch and store repository information with the [Github API using Graphcool Function](https://github.com/graphcool-examples/functions/pull/15) ⚡️
+    * In his new article, [@j4amesjung](https://medium.com/@j4mesjung) explains how [Optimistic UI works with Apollo and Graphcool](https://medium.com/@j4mesjung/apollo-graphcool-optimistic-ui-for-delete-mutations-abc23f8aab18).
+  * [GraphQL Talks](https://graph.cool/blog/2017-07-06-graphql-talks-eevevoo1ae/) was launched together with the release of the first badge videos from [GraphQL-Europe 2017](https://www.youtube.com/playlist?list=PLn2e1F9Rfr6n_WFm9fPE-_wYPrYvSTySt).
+  * Thanks to [@wesbos](https://twitter.com/wesbos) and [@stolinski](https://twitter.com/stolinski) for the shoutout on their new [Syntax. podcast](https://syntax.fm/show/001/react-tools).
+
+
 ## Week 26 (June 26 - July 2)
 
 * [API](!alias-heshoov3ai)
@@ -27,7 +49,7 @@ related:
 * Resources and Community Contributions
   * A [new episode of GraphQL Radio is available](https://www.youtube.com/watch?v=Gxag5PXGXN8), this time with Jordan Husney and Matthew Krick from Parabol. Discussed topics include adopting GraphQL, GraphQL Subscriptions and RethinkDB for real time support.
   * Another week, another batch of Graphcool heroes! 💪
-    * Several [plugins to the File API using Graphcool Functions](https://github.com/graphcool-examples/functions/tree/master/file-proxy) have been collected and provided by community member [@kbrandwijk](https://github.com/kbrandwijk), and reviewed by [@yusinto](https://github.com/yusinto). Thanks for your fantastic contributions! 💯
+    * Several [plugins to the File API using Graphcool Functions](https://github.com/graphcool-examples/functions/pull/11) have been collected and provided by community member [@kbrandwijk](https://github.com/kbrandwijk), and reviewed by [@yusinto](https://github.com/yusinto). Thanks for your fantastic contributions! 💯
     * [@derBingle](https://github.com/derBingle/) shared his cool [Graphcool Electron App](https://github.com/derBingle/graphcool-desktop). 😎
     * [@notrab](https://github.com/notrab) is putting out a lot of useful GraphQL resources lately in his [YouTube channel](https://www.youtube.com/channel/UCcSj41xzQJCT2V0GNwlob_w)! He also recently [reviewed Graphcool](https://www.youtube.com/watch?v=5S4xaUVc9Dg), thanks for the valuable feedback! 🙋
 
@@ -135,8 +157,8 @@ related:
 
 ## Week 11 (March 13 - March 19)
 
-- We introduce [graphql-up](https://www.graph.cool/graphql-up/) that generates a ready-to-use GraphQL API based on a schema file in [IDL schema definition syntax](!alias-kr84dktnp0).
-- Launch of the new Schema View. You now have a better overview over your schema through the GraphQL IDL view and an awesome tool called [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager/), which we've now included in the Graphcool Console for you.
+- We introduce [graphql-up](https://www.graph.cool/graphql-up/) that generates a ready-to-use GraphQL API based on a schema file in [SDL (schema definition language) syntax](!alias-kr84dktnp0).
+- Launch of the new Schema View. You now have a better overview over your schema through [Schema Editor](!alias-zezoo7uaph) and an awesome tool called [GraphQL Voyager](https://github.com/APIs-guru/graphql-voyager/), which we've now included in the Graphcool Console for you.
 
 ## Week 10 (March 6 - March 12)
 

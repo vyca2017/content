@@ -40,9 +40,9 @@ With the Firebase approach, developers also often end-up with structures that ar
 
 ### Flexibility & Safety with the Graphql Type System
 
-GraphQL on the other hand is based on a strong [type system](http://graphql.org/learn/schema/#type-system) that serves to describe the data that is going to be stored in a database. The data model (or [*schema*](!alias-ahwoh2fohj/)) for an application is expressed using a simple and powerful syntax, called GraphQL [Interface Definition Language](!alias-kr84dktnp0/) (IDL). The types that are specified in the schema are the basis for the capabilities of the API.
+GraphQL on the other hand is based on a strong [type system](http://graphql.org/learn/schema/#type-system) that serves to describe the data that is going to be stored in a database. The data model (or [*schema*](!alias-ahwoh2fohj/)) for an application is expressed using a simple and powerful syntax, called [GraphQL SDL (schema definition language)](!alias-kr84dktnp0/) (IDL). The types that are specified in the schema are the basis for the capabilities of the API.
 
- A simple example of a schema for a Twitter application written in the IDL could look as follows:
+ A simple example of a schema for a Twitter application written in the SDL could look as follows:
 
 ```graphql
 type User {

@@ -110,14 +110,14 @@ You can also use any WebSocket client as described below.
 
 Subscriptions are managed through WebSockets. First establish a WebSocket connection and specify the `graphql-subscriptions` protocol:
 
-```
+```javascript
 let webSocket = new WebSocket('wss://subscriptions.graph.cool/v1/__PROJECT_ID__', 'graphql-subscriptions');
 ```
 #### Initiate Handshake
 
 Next you need to initiate a handshake with the WebSocket server. You do this by listening to the `open` event and then sending a JSON message to the server with the `type` property set to `init`:
 
-```
+```javascript
 webSocket.onopen = (event) => {
   const message = {
       type: 'init'
@@ -131,7 +131,7 @@ webSocket.onopen = (event) => {
 
 The server may respond with a variety of messages distinguished by their `type` property. You can react to each message as appropriate for your application:
 
-```
+```javascript
 webSocket.onmessage = (event) => {
   const data = JSON.parse(event.data)
 
@@ -168,7 +168,7 @@ webSocket.onmessage = (event) => {
 
 To subscribe to data changes, send a message with the `type` property set to `subscription_start`:
 
-```
+```javascript
 const message = {
   id: '1',
   type: 'subscription_start',
@@ -196,7 +196,7 @@ You should receive a message with `type` set to `subscription_success`. When dat
 
 To unsubscribe from data changes, send a message with the `type` property set to `subscription_end`:
 
-```
+```javascript
 const message = {
   id: '1',
   type: 'subscription_end'
