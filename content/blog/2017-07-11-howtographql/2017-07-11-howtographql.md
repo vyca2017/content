@@ -45,6 +45,6 @@ Special thanks to the contributors of all initial tutorials that are available a
 
 ## Stay tuned about new content
 
-To get informed about new content that's added to the site, follow **How To GraphQL** on [Twitter](https://twitter.com/howtographql).
+To get informed about new content that's added to the site, [follow us on Twitter](https://twitter.com/graphcool).
 
 > If you're interested in contributing a tutorial for a missing programming language or framework, [get in touch](mailto:howtographql@graph.cool)!
