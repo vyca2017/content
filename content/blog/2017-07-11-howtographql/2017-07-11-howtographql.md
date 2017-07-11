@@ -40,7 +40,7 @@ How to GraphQL was created with the help of many amazing developers who did a gr
 Special thanks to the contributors of all initial tutorials that are available at the launch:
 - [Maira Bello](https://github.com/mairatma): Contributed the [graphql-js](https://www.howtographql.com/graphql-js/0-introduction/) tutorial
 - [Radoslav Stankov](https://twitter.com/rstankov): Contributed the [graphql-ruby](https://www.howtographql.com/graphql-ruby/0-introduction/) tutorial
-- [Bojan Tomic](https://twitter.com/kaqqao): Contributed [graphql-java](https://www.howtographql.com/graphql-java/0-introduction/) tutorial
+- [Bojan Tomic](https://twitter.com/kaqqao): Contributed the [graphql-java](https://www.howtographql.com/graphql-java/0-introduction/) tutorial
 - [Ben Wilson](https://twitter.com/benwilson512) & [Bruce Williams](https://twitter.com/wbruce): Contributed the [Absinthe/Elixir](https://www.howtographql.com/graphql-elixir/0-introduction/) tutorial
 
 ## Stay tuned about new content
