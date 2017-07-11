@@ -35,7 +35,7 @@ However, as GraphQL can be used with _any_ server-side programming language deve
 
 ## For the Community, by the Community 
 
-How to GraphQL was created with the help of many amazing develoeprs who did a great job in creating the content for the different tutorial tracks.
+How to GraphQL was created with the help of many amazing developers who did a great job in creating the content for the different tutorial tracks.
 
 Special thanks to the contributors of all initial tutorials that are available at the launch:
 - [Maira Bello](https://github.com/mairatma): Contributed the [graphql-js](https://www.howtographql.com/graphql-js/0-introduction/) tutorial
