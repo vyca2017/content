@@ -24,7 +24,7 @@ GraphQL is a revolutionary way to expose data from APIs - yet many developers ha
 
 Our whole team at Graphcool is full of GraphQL enthusiasts - we love GraphQL and we want everyone to be able to participate in using this fantastic API technology. 
 
-However, as GraphQL can be used with _any_ server-side programming language developers often have a hard time to find just the "right" tutorial. Additionaly, the tutorial space for GraphQL is very fragmented which makes it even more difficult to find the right content that fits a specific use case and technology stack.
+However, as GraphQL can be used with _any_ server-side programming language developers often have a hard time to find just the "right" tutorial. Additionally, the tutorial space for GraphQL is very fragmented which makes it even more difficult to find the right content that fits a specific use case and technology stack.
 
 **How To GraphQL** provides a holistic approach to learning GraphQL. There are three major parts:
 
