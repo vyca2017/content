@@ -4,11 +4,11 @@ path: /blog/2017-07-11-howtographql
 layout: BLOG
 description: How To GraphQL is a new and open-source tutorial website to learn about fullstack GraphQL development.
 preview: preview.png
-publication_date: '2017-07-06'
+publication_date: '2017-07-11'
 tags:
-  - talks
-  - videos
-  - conferences
+  - tutorials
+  - graphql
+  - howtographql
 related:
   further:
   more:
