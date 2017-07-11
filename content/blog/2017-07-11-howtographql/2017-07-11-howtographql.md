@@ -18,7 +18,7 @@ related:
 
 GraphQL is a revolutionary way to expose data from APIs - yet many developers have difficulties to understand where it fits into their technology stack. We are very excited to launch a new, holistic tutorial website that teaches you how to use GraphQL on the frontend and the backend, using all major programming languages and frameworks. All content is completely free and open-source!
 
-![](./htg.png)
+![](./preview.png)
 
 ## Hard to find the "right" Tutorial
 
