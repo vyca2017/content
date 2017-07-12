@@ -139,6 +139,9 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/brenmcnamara/" target="_blank">
   <img src="https://github.com/brenmcnamara.png?size=64" width="64" height="64" alt="brenmcnamara">
 </a>
+<a href="https://github.com/jakelowen/" target="_blank">
+  <img src="https://github.com/jakelowen.png?size=64" width="64" height="64" alt="jakelowen">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
