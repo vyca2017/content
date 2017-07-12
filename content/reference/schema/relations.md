@@ -49,7 +49,7 @@ type Story {
 }
 ```
 
-Here we are defining a *one-to-many* relation between the `User` and `Story` types. The relation fields are `stores: [Story!]!` and `author: User!`. Note how `[Story!]!` defines multiple stories and `User!` a single user.
+Here we are defining a *one-to-many* relation between the `User` and `Story` types. The relation fields are `stories: [Story!]!` and `author: User!`. Note how `[Story!]!` defines multiple stories and `User!` a single user.
 
 ## Generated Operations Based On Relations
 
