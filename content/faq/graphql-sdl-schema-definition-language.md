@@ -42,7 +42,7 @@ type Blog {
 }
 ```
 
-The main components of a Schema Definition is the types and their fields. Additional information can be provided as custom directives like the `@default` value specified for the likes field.
+The main components of a Schema Definition are the types and their fields. Additional information can be provided as custom directives like the `@default` value specified for the likes field.
 
 ### Type
 
@@ -70,7 +70,7 @@ The GraphQL spec defines some [built-in](https://facebook.github.io/graphql/#sec
  - Boolean
  - ID
 
-In addition to scalar types a field can use any other type defined in the Schema Definition.
+In addition to scalar types, a field can use any other type defined in the Schema Definition.
 
 non-nullable fields are denoted by an exclamation mark:
 
@@ -112,6 +112,6 @@ A directive allows you to attach arbitrary information to any other Schema Defin
 ```graphql
 name: String! @default(value: "new blogpost")
 ```
-Directives don't have intrinsic meaning. Each GraphQL implementation can define their own custom directives that add new functinality.
+Directives don't have intrinsic meaning. Each GraphQL implementation can define their own custom directives that add new functionality.
 
 GraphQL specifies built-in `skip` and `include` directives that can be used to include or exclude specific fields in queries, but these aren't used in the schema language.
