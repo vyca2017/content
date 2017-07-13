@@ -110,7 +110,7 @@ interface Item {
 A directive allows you to attach arbitrary information to any other Schema Definition element. Directives are always placed behind the element they describe:
 
 ```graphql
-name: String! @default(value: "new blogpost")
+name: String! @defaultValue(value: "new blogpost")
 ```
 Directives don't have intrinsic meaning. Each GraphQL implementation can define their own custom directives that add new functionality.
 
