@@ -70,10 +70,16 @@ Now you can use Lokka to do queries and mutations. If you are unsure about the s
 
 You can also communicate with the Simple API by using plain HTTP POST requests. For example, to query `allUsers`, do a POST request to your endpoint `https://api.graph.cool/simple/v1/__PROJECT_ID__`.
 
-With `curl` you could do:
+With `curl` you can query like this:
 
 ```bash
 curl 'https://api.graph.cool/simple/v1/__PROJECT_ID__' -H 'content-type: application/json' --data-binary '{"query":"query {allUsers {id name}}"}' --compressed
+```
+
+and do mutations like this:
+
+```bash
+curl 'https://api.graph.cool/simple/v1/__PROJECT_ID__' -H 'content-type: application/json' --data-binary '{"query":"mutation {createUser(name: "Nilan") { id }}"}' --compressed
 ```
 
 With `fetch` you could do:
