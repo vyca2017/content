@@ -109,16 +109,6 @@ mutation {
     }
   }
 }
-
-# {
-#   "data": {
-#     "updateMetaInformation": {
-#       "post": {
-#         "title": "My biggest Adventure"
-#       }
-#     }
-#   }
-# }
 ```
 
 
