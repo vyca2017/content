@@ -39,4 +39,4 @@ For every relation of a type, the `update` and `create` mutations expose an argu
 
 ## Limitations
 
-* Currently, the maximum nested level is 3. If you want to nest more often than that, you need to split up the nested mutations into two separate mutations.
+* Currently, the maximum nested level is 3. If you want to nest more often than that, you need to split up the nested mutations into two separate mutations. Please [join the discussion](https://github.com/graphcool/feature-requests/issues/313) for an according feature request to increase this limit.
