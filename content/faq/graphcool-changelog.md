@@ -15,6 +15,36 @@ related:
 
 # Changelog
 
+## Week 28 (July 10 - July 16)
+
+* [CLI](!alias-kie1quohli)
+
+  The **Graphcool CLI version 1.2.0** is now released with improvements to regions, better error messages and the status command. See the [full release notes](https://github.com/graphcool/graphcool-cli/releases/tag/v1.2.0).
+
+* [Migrations](!alias-paesahku9t)
+
+  **Schema migrations have been improved** around adding optional and required [relations](!alias-goh5uthoc1), using the [migrationValue](!alias-aeph6oyeez#migrating-the-value-of-a-scalar-field) directive and renaming relations. In general, **schema migrations handle bad input more robust and user friendly** than before.
+
+* [API](!alias-heshoov3ai)
+
+  **Invalid JSON data is now handled gracefully** for queries and mutations. See the fix for JSON data in RP functions below, too.
+
+* [Functions](!alias-boo6uteemo)
+
+  **Event data parsing and validation for [functions in  the Request Pipeline](!alias-pa6guruhaf) has been improved**. [JSON fields](!alias-teizeit5se#json) are now correctly validated and passing empty lists is working as expected.
+
+* Resources and Community Contributions
+
+  * The Fullstack GraphQL Tutorial [How to GraphQL](https://www.howtographql.com) has been [launched](https://www.graph.cool/blog/2017-07-11-howtographql-xaixed1aa9/) with big success 🎉 Thanks to all the initial contributors, but also all the great contributions from the community on GitHub!
+  * The closed beta for **Schema Extensions** is quickly progressing thanks to the help of the community 🏇. Many new examples are now available, with more to come soon:
+    * [@petrvlcek](https://github.com/petrvlcek) contributed an [amazing example for authentication with Auth0](https://github.com/graphcool-examples/functions/pull/18) and `RS256` tokens. It comes in a AWS Lambda and Auth0 Webtask variant.
+    * Another wonderful example for [Email/Password authentication](https://github.com/graphcool-examples/functions/pull/19) has been contributed by [@stevewpatterson](https://github.com/stevewpatterson). It includes flows for **signup, login, updating email and password**.
+    * We added an example for [authentication using Google](https://github.com/graphcool-examples/functions/pull/17).
+
+    Reach out in Slack if you're interested to participate in the beta program.
+
+  * Thanks to [@mwickett](https://github.com/mwickett) for improving the [generate slug example](https://github.com/graphcool-examples/functions/pull/20) with a better approach for slug generation.
+
 ## Week 27 (July 3 - July 9)
 
 * [Console](!alias-uh8shohxie)
