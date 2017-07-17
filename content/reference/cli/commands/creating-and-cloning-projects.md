@@ -2,11 +2,12 @@
 alias: aetoh3vad6
 path: /docs/reference/cli/commands/creating-and-copying-projects
 layout: REFERENCE
-description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
+description: A common workflow the Graphcool CLI is used for is creating and copying projects.
 tags:
   - cli
 related:
   further:
+    - yahph3foch
   more:
 ---
 

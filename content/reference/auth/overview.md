@@ -2,11 +2,13 @@
 alias: wejileech9
 path: /docs/reference/auth/overview
 layout: REFERENCE
-description: Authentication allows you to manage users in your GraphQL backend. Use authentication providers like Auth0 and Digits out-of-the-box.
+description: The auth concept at Graphcool combines flexible authentication with powerful authorization solutions. Use Auth0, Firebase Auth or any Social Login
 tags:
   - authentication
 related:
   further:
+    - ahfah0joo1
+    - heshoov3ai
   more:
 ---
 

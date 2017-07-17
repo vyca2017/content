@@ -9,15 +9,9 @@ tags:
   - data-schema
 related:
   further:
-    - ahwoh2fohj
-    - ij2choozae
-    - goh5uthoc1
-    - uhieg2shio
-    - oe3raifamo
+    - xookaexai0
+    - ahv6rohnge
   more:
-    - ier7sa3eep
-    - ga2ahnee2a
-    - uu2xighaef
 ---
 
 # Fields
@@ -120,7 +114,7 @@ Setting the *unique* constraint makes sure that two nodes of the type in questio
 
 > A typical example is the `email` field on the `User` type.
 
-Please note that only the first 191 characters in a String field are considered for uniqueness and the unique check is **case insensitive**. Storing two different strings is not possible if the first 191 characters are the same or if they only differ in casing. 
+Please note that only the first 191 characters in a String field are considered for uniqueness and the unique check is **case insensitive**. Storing two different strings is not possible if the first 191 characters are the same or if they only differ in casing.
 
 ## Default Value
 

@@ -2,11 +2,13 @@
 alias: aechi6iequ
 path: /docs/reference/console/projects
 layout: REFERENCE
-description: In the Graphcool console, you can manage multiple GraphQL projects, define your GraphQL schema and create or modify your data set.
+description: The Graphcool project settings gives you an overview of your monthly usage, allows you to manage collaborators and more.
 tags:
   - console
 related:
   further:
+    - eip7ahqu5o
+    - heshoov3ai
   more:
 ---
 

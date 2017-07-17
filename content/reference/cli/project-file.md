@@ -2,11 +2,12 @@
 alias: ow2yei7mew
 path: /docs/reference/cli/project-files
 layout: REFERENCE
-description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
+description: The project.graphcool file contains all the schema information for your project. It can be used for evolving a project schema.
 tags:
   - cli
 related:
   further:
+    - ahwoh2fohj
   more:
 ---
 

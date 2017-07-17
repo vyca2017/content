@@ -25,14 +25,18 @@ related:
 
 When creating or updating nodes, you can connect it to an existing related node or create a new related node that will be connected as well.
 
-### Nested Create Mutations
+## Nested Create Mutations
 
 For every relation of a type, the `update` and `create` mutations expose an argument to issue a nested create operation on the related type. Depending on the relation multiplicity, this argument allows to either create a single related node (for to-one relations) or multiple related nodes (for to-many relations).
 
 [Read more about nested create mutations](!alias-ma6eijae7a).
 
-### Nested Connect Mutations
+## Nested Connect Mutations
 
 For every relation of a type, the `update` and `create` mutations expose an argument to connect the original node to an existing related node. Depending on the relation multiplicity, this argument allows to either add a single related node (for to-one relations) or multiple related nodes (for to-many relations) to the relation.
 
 [Read more about nested connect mutations](!alias-ec6aegaiso).
+
+## Limitations
+
+* Currently, the maximum nested level is 3. If you want to nest more often than that, you need to split up the nested mutations into two separate mutations. Please [join the discussion](https://github.com/graphcool/feature-requests/issues/313) for an according feature request to increase this limit.

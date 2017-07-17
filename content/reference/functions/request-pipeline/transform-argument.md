@@ -2,7 +2,7 @@
 alias: caich7oeph
 path: /docs/reference/functions/request-pipeline/transform-input-arguments
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Use Graphcool Functions to validate or transform input arguments of a GraphQL mutation synchronously.
 tags:
   - functions
 related:

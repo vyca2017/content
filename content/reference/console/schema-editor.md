@@ -2,11 +2,13 @@
 alias: zezoo7uaph
 path: /docs/reference/console/schema-editor
 layout: REFERENCE
-description: In the Graphcool console, you can manage multiple GraphQL projects, define your GraphQL schema and create or modify your data set.
+description: The schema editor in the Graphcool Console allows you to manage and evolve the data schema for your Graphcool project.
 tags:
   - console
 related:
   further:
+    - ahwoh2fohj
+    - paesahku9t
   more:
 ---
 

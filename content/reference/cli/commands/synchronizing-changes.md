@@ -2,11 +2,12 @@
 alias: gechieb9ae
 path: /docs/reference/cli/synchronizing-changes
 layout: REFERENCE
-description: The Graphcool CLI lets you work with the schema of a project. You can easily create a new project or update the schema of an existing one.
+description: Changes to the project file can be two-way synchronized between your local representation and the remote state.
 tags:
   - cli
 related:
   further:
+    - paesahku9t
   more:
 ---
 

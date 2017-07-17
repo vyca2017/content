@@ -2,11 +2,12 @@
 alias: ou3ucheewu
 path: /docs/reference/console/permissions-view
 layout: REFERENCE
-description: In the Graphcool console, you can manage multiple GraphQL projects, define your GraphQL schema and create or modify your data set.
+description: The permissions view in the Graphcool Console allows you to manage permissions for your Graphcool project to secure data and data access.
 tags:
   - console
 related:
   further:
+    - iegoo0heez
   more:
 ---
 

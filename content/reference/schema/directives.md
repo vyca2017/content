@@ -2,12 +2,13 @@
 alias: aeph6oyeez
 path: /docs/reference/schema/directives
 layout: REFERENCE
-description: The GraphQL schema of a project is managed using schema files in SDL syntax.
+description: Different GraphQL directives are used in your data schema to express special situations like data constraints or relations.
 tags:
   - platform
   - schema
 related:
   further:
+    - paesahku9t
   more:
 ---
 

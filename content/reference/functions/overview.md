@@ -2,11 +2,12 @@
 alias: boo6uteemo
 path: /docs/reference/functions/overview
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Graphcool Functions are used to add different capabilities to your Graphcool project. Validate mutation input, extend your schema and more!
 tags:
   - functions
 related:
   further:
+    - ejamaid4ae
   more:
 ---
 

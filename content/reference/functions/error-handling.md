@@ -2,7 +2,7 @@
 alias: quawa7aed0
 path: /docs/reference/functions/error-handling
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Graphcool Functions allow you to return customized error messages or JSON objects as a response to a GraphQL mutation.
 tags:
   - functions
 related:

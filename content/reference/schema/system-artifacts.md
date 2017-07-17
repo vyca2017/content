@@ -2,7 +2,7 @@
 alias: uhieg2shio
 path: /docs/reference/schema/system-artifacts
 layout: REFERENCE
-description: In order to make the platform as seamless and integrated as possible, we introduced some predefined artifacts in each project.
+description: In order to make the platform as seamless and integrated as possible, certain predefined artifacts are defined for each project.
 tags:
   - platform
   - system

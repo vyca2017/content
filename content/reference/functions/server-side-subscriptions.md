@@ -2,16 +2,13 @@
 alias: ahlohd8ohn
 path: /docs/reference/functions/server-side-subscriptions
 layout: REFERENCE
-description: Server-side subscriptions are a simple yet powerful event-based concept on top of GraphQL to implement custom business logic.
+description: Server-side subscriptions are a simple yet powerful event-based concept on top of GraphQL to implement custom business logic asynchronously.
 tags:
   - functions
 related:
   further:
-    - uh8shohxie
-    - ol0yuoz6go
+    - dee0aethoo
   more:
-    - dah6aifoce
-    - soiyaquah7
 ---
 
 # Server-side Subscriptions

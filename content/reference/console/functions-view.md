@@ -2,11 +2,12 @@
 alias: ejamaid4ae
 path: /docs/reference/console/functions-view
 layout: REFERENCE
-description: In the Graphcool console, you can manage multiple GraphQL projects, define your GraphQL schema and create or modify your data set.
+description: The functions view in the Graphcool Console allows you to manage Graphcool functions in your Graphcool project.
 tags:
   - console
 related:
   further:
+    - boo6uteemo
   more:
 ---
 

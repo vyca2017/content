@@ -2,11 +2,12 @@
 alias: eip7ahqu5o
 path: /docs/reference/auth/authentication-tokens
 layout: REFERENCE
-description: Authentication allows you to manage users in your GraphQL backend. Use authentication providers like Auth0 and Digits out-of-the-box.
+description: GraphQL requests are authenticated using an authentication token. For server-side reqeusts, permanent authentication tokens can be used.
 tags:
   - authentication
 related:
   further:
+    - ahfah0joo1
   more:
 ---
 

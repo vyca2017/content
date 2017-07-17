@@ -2,11 +2,12 @@
 alias: pa6guruhaf
 path: /docs/reference/functions/request-pipeline/overview
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Functions along the request pipeline of a GraphQL mutation allow you to transform input arguments, initiate workflows and transform the payload.
 tags:
   - functions
 related:
   further:
+    - zeez7aiph3
   more:
 ---
 

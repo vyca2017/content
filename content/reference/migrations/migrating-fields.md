@@ -2,11 +2,12 @@
 alias: ahv6rohnge
 path: /docs/reference/migrations/fields
 layout: REFERENCE
-description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
+description: Fields are the smallest component in your data schema. You can add, remove or modify existing fields using schema migrations.
 tags:
   - migrations
 related:
   further:
+    - teizeit5se
   more:
 ---
 

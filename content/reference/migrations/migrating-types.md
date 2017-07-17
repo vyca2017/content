@@ -2,11 +2,12 @@
 alias: xohs5xooph
 path: /docs/reference/migrations/types
 layout: REFERENCE
-description: There are many possible options to update a GraphQL schema, referred to as schema migrations. Some of them require data migrations as well.
+description: Types are the foundation of your data schema. You can add, remove or modify existing types using schema migrations.
 tags:
   - migrations
 related:
   further:
+    - ij2choozae
   more:
 ---
 

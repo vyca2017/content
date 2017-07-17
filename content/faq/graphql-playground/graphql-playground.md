@@ -11,11 +11,8 @@ tags:
   - mutations
 related:
   further:
-    - ol0yuoz6go
-    - nia9nushae
-    - teizeit5se
+    - oe1ier4iej
   more:
-    - moach1gich
 ---
 
 # Tips And Tricks: The GraphQL Playground

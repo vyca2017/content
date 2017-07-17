@@ -2,7 +2,7 @@
 alias: iegoo0heez
 path: /docs/reference/auth/authorization
 layout: REFERENCE
-description: Graphcool features a simple yet powerful permission system that integrates seamlessly with the available authentication providers.
+description: Graphcool features a simple yet powerful permission system that integrates seamlessly with the available authentication solutions.
 tags:
   - permissions
   - authorization
@@ -11,8 +11,6 @@ related:
     - uh8shohxie
     - eixu9osueb
   more:
-    - pheiph4ooj
-    - miesho4goo
 ---
 
 # Authorization
