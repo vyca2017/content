@@ -67,6 +67,6 @@ module.exports = function (event) => {
   }).catch((error) => {
     console.log(error)
     return {error: 'Could not connect to Movie API'}
-  }
+  })
 }
 ```
