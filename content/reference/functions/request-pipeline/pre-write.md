@@ -2,7 +2,7 @@
 alias: phe1gei6io
 path: /docs/reference/functions/request-pipeline/communicate-with-external-apis
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Use Graphcool Functions to initiate external workflows before data is written to the database.
 tags:
   - functions
 related:

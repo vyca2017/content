@@ -2,7 +2,7 @@
 alias: yahph3foch
 path: /docs/reference/console/projects
 layout: REFERENCE
-description: In the Graphcool console, you can manage multiple GraphQL projects, define your GraphQL schema and create or modify your data set.
+description: A GraphQL projects exposes different API endpoints, and offers different settings like setting an alias.
 tags:
   - console
 related:

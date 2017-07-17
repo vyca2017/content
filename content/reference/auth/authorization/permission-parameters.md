@@ -2,7 +2,7 @@
 alias: soh5hu6xah
 path: /docs/reference/auth/permission-parameters
 layout: REFERENCE
-description: Graphcool features a simple yet powerful permission system that integrates seamlessly with the available authentication providers.
+description: Permissions are described using different parameters like the operation and the applied fields.
 tags:
   - permissions
   - authorization

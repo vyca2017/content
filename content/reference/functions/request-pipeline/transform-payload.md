@@ -2,7 +2,7 @@
 alias: ecoos0ait6
 path: /docs/reference/functions/request-pipeline/transform-mutation-payloads
 layout: REFERENCE
-description: Functions give developers a nice and familiar way to employ custom business logic.
+description: Use Graphcool Functions to transform the payload of a GraphQL mutation synchronously.
 tags:
   - functions
 related:

@@ -2,7 +2,7 @@
 alias: geekae9gah
 path: /docs/reference/auth/authentication
 layout: REFERENCE
-description: Authentication allows you to manage users in your GraphQL backend. Use authentication providers like Auth0 and Digits out-of-the-box.
+description: Authentication allows you to manage users in your GraphQL backend. Use authentication providers like Auth0 and Facebook.
 tags:
   - authentication
 related:
