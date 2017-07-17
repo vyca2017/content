@@ -11,8 +11,6 @@ related:
     - uh8shohxie
     - eixu9osueb
   more:
-    - pheiph4ooj
-    - miesho4goo
 ---
 
 # Authorization

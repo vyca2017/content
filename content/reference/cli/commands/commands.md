@@ -8,8 +8,8 @@ tags:
 related:
   further:
     - he6jaicha8
-  more:
     - kr84dktnp0
+  more:
 ---
 
 # Commands Overview

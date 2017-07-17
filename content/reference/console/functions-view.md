@@ -7,6 +7,7 @@ tags:
   - console
 related:
   further:
+    - boo6uteemo
   more:
 ---
 

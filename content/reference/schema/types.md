@@ -9,14 +9,8 @@ tags:
   - data-schema
 related:
   further:
-    - ahwoh2fohj
-    - teizeit5se
-    - goh5uthoc1
-    - uhieg2shio
-    - oe3raifamo
+    - xohs5xooph
   more:
-    - ga2ahnee2a
-    - aing2chaih
 ---
 
 # GraphQL Types
