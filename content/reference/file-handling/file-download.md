@@ -26,4 +26,4 @@ curl -O -J <your-file-url>
 
 Files are secured using a unique and unguessable `secret`. You can protect this secret by using the read permissions on the `File` type as with any other type. For example, you can restrict access to a file's `secret` to authenticated users.
 
-File downloads howefver are currently not governed by permissions on the `File` type. As such, everyone with a file's secret and the project id can download a file. Please reach out in the [Forum](https://graph.cool/forum) or [Slack](https://slack.graph.cool) if you have any questions about this.
+File downloads however are currently not governed by permissions on the `File` type. As such, everyone with a file's secret and the project id can download a file. Please reach out in the [Forum](https://graph.cool/forum) or [Slack](https://slack.graph.cool) if you have any questions about this.
