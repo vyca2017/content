@@ -237,7 +237,7 @@ To change the multiplicity of the `stories` field from `to-many` to `to-one`, si
 type User implements Node {
   id: ID!
   name: String!
-  stories: [Story!]! @relation(name: "UserOnStory")
+  stories: Story @relation(name: "UserOnStory")
 }
 
 type Story implements Node {
